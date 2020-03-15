@@ -77,7 +77,7 @@ namespace Fonlow.OpenApiClientGen
 		static void ShowHelp()
 		{
 			Console.WriteLine(@"
-Parameter 1: Open API YAML/JSON file
+Parameter 1: Open API YAML/JSON definition file
 Parameter 2: Settings file in JSON format.
 Example:  
 For classes decorated by DataContractAttribute:

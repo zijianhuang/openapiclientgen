@@ -60,11 +60,9 @@ namespace SwagTests
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 			var jsOutput = new JSOutput
 			{
-				CamelCase = settings.CamelCase,
 				JSPath = CreateTsPath("Results", filePath),
 				AsModule = true,
 				ContentType = "application/json;charset=UTF-8",
-				ClientNamespaceSuffix = "Client",
 			};
 
 			var gen = new Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen(settings, jsOutput);

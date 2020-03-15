@@ -104,8 +104,6 @@
 		/// </summary>
 		public bool GenerateBothAsyncAndSync { get; set; }
 
-		public bool? CamelCase { get; set; }
-
 		public JSPlugin[] Plugins { get; set; }
 
 	}
@@ -115,13 +113,6 @@
 	/// </summary>
 	public class JSOutput
 	{
-		/// <summary>
-		/// Whether to conform to the camel casing convention of javascript and JSON.
-		/// If not defined, WebApiClientGen will check if GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver is Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver;
-		/// If CamelCasePropertyNamesContractResolver is presented, camelCasing will be used. If not, no camelCasing transformation will be used.
-		/// </summary>
-		public bool? CamelCase { get; set; }
-
 		public string JSPath { get; set; }
 
 		public bool AsModule { get; set; }
@@ -130,8 +121,6 @@
 		///// HTTP content type used in POST of HTTP of NG2. so text/plain could be used to avoid preflight in CORS.
 		///// </summary>
 		public string ContentType { get; set; }
-
-		public string ClientNamespaceSuffix { get; set; } = ".Client";
 	}
 
 	public class JSPlugin
@@ -154,7 +143,5 @@
 		/// True to have "export namespace"; false to have "namespace". jQuery wants "namespace".
 		/// </summary>
 		public bool AsModule { get; set; }
-
-		public string ClientNamespaceSuffix { get; set; } = ".Client";
 	}
 }

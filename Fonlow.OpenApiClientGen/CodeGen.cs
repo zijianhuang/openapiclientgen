@@ -68,11 +68,9 @@ namespace Fonlow.CodeDom.Web
 				{
 					var jsOutput = new JSOutput
 					{
-						CamelCase = settings.CamelCase,
 						JSPath = CreateTsPath(plugin.TargetDir, plugin.TSFile),
 						AsModule = plugin.AsModule,
 						ContentType = plugin.ContentType,
-						ClientNamespaceSuffix = plugin.ClientNamespaceSuffix,
 					};
 
 					var assemblyFilePath = System.IO.Path.Combine(exeDir, plugin.AssemblyName + ".dll");
