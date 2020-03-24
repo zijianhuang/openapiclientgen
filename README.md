@@ -19,7 +19,7 @@ Check out this repository and do a release build or a Visual Stuido's Publish.
 
 ### Binary Download
 
-Download this zip file and extract to a local folder.
+Download the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) and extract to a local folder.
 
 
 ## Code Generation
@@ -37,7 +37,7 @@ For classes decorated by SerializableAttribute:
   Fonlow.OpenApiClientGen.exe my.yaml ..\myproj.json
 ```
 
-A typical CodeGen JSON file is like this:
+A typical CodeGen JSON file is like this "mycodegen.json":
 ```json
 {
     "ClientNamespace": "My.Misc.Client",
@@ -48,10 +48,22 @@ A typical CodeGen JSON file is like this:
     "ActionNameStrategy": 3,
 
     "Plugins": [
-
+        {
+            "AssemblyName": "Fonlow.OpenApiClientGen.NG2",
+            "TargetDir": "../Tests",
+            "TSFile": "MyNG2Auto.ts",
+            "AsModule": true,
+            "ContentType": "application/json;charset=UTF-8"
+        }
     ]
 
 }
+```
+
+You may run the code generator through a batch file:
+```batch
+cd %~dp0
+c:\green\OpenApiClientGen\Fonlow.OpenApiClientGen.exe some_service.yaml mycodegen.json
 ```
 
 The JSON file is mapped to the following which describes each setting:
@@ -188,11 +200,7 @@ public class JSPlugin
 
 ```
 
-Typically you may run the code generator through a batch file:
-```batch
-cd %~dp0
-c:\green\OpenApiClientGen\Fonlow.OpenApiClientGen.exe some_service.yaml mycodegen.json
-```
+
 
 ## Plugins
 
