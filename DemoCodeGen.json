@@ -1,0 +1,29 @@
+{
+    "ClientNamespace": "My.Pet.Client",
+    "ClientLibraryProjectFolderName": "./Tests/DemoClientApi",
+    "ContainerClassName": "PetClient",
+    "ClientLibraryFileName": "PetAuto.cs",
+    "ActionNameStrategy": 4,
+    "UseEnsureSuccessStatusCodeEx": true,
+    "DecorateDataModelWithDataContract": true,
+    "DataContractNamespace": "http://pet.domain/2020/03",
+
+    "Plugins": [
+{
+            "AssemblyName": "Fonlow.OpenApiClientGen.NG2",
+            "TargetDir": "./DemoNGCli/NGSource/src/clientapi",
+            "TSFile": "WebApiCoreNg2ClientAuto.ts",
+            "AsModule": true,
+            "ContentType": "application/json;charset=UTF-8"
+        },
+
+        {
+            "AssemblyName": "Fonlow.OpenApiClientGen.Axios",
+            "TargetDir": "./axios/src/clientapi",
+            "TSFile": "WebApiAxiosClientAuto.ts",
+            "AsModule": true,
+            "ContentType": "application/json;charset=UTF-8"
+        }
+    ]
+
+}

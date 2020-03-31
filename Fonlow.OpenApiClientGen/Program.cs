@@ -30,6 +30,20 @@ namespace Fonlow.OpenApiClientGen
 				return;
 			}
 
+			var defFile = args[0];
+			if (!File.Exists(defFile))
+			{
+				Console.WriteLine($"{defFile} not exist.");
+				return;
+			}
+
+			var settingsFile = args[1];
+			if (!File.Exists(settingsFile))
+			{
+				Console.WriteLine($"{settingsFile} not exist.");
+				return;
+			}
+
 			var configuration = new ConfigurationBuilder()
 					.AddJsonFile("appsettings.json", false, true)
 					.Build();
@@ -52,9 +66,6 @@ namespace Fonlow.OpenApiClientGen
 			using (var listener = new Fonlow.Diagnostics.LoggerTraceListener(logger))
 			{
 				System.Diagnostics.Trace.Listeners.Add(listener);
-
-				var defFile = args[0];
-				var settingsFile = args[1];
 
 				var settingsString = File.ReadAllText(settingsFile);
 				var settings = System.Text.Json.JsonSerializer.Deserialize<ClientTypes.Settings>(settingsString);

@@ -62,8 +62,6 @@ namespace Fonlow.CodeDom.Web.Ts
 				new CodeParameterDeclarationExpression(Poco2TsGen.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType), d.Name))
 				.ToArray();
 
-			//parameters.Add(new CodeParameterDeclarationExpression(callbackTypeReference, "callback"));
-
 			Method.Parameters.AddRange(parameters);
 
 			if (RequestBodyCodeTypeReference != null)
@@ -75,8 +73,6 @@ namespace Fonlow.CodeDom.Web.Ts
 			var jsUriQuery = UriQueryHelper.CreateUriQueryForTs(RelativePath, ParameterDescriptions);
 			var uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" :
 				RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
-
-			// var mapFunction = returnTypeText == NG2HttpResponse ? String.Empty : ".map(response=> response.json())";
 
 			if (ReturnTypeReference != null && ReturnTypeReference.BaseType == "System.String" && ReturnTypeReference.ArrayElementType == null)//stringAsString is for .NET Core Web API
 			{

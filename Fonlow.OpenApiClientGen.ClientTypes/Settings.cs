@@ -104,6 +104,11 @@
 		/// </summary>
 		public bool GenerateBothAsyncAndSync { get; set; }
 
+		/// <summary>
+		/// Replace EnsureSuccessStatusCode with EnsureSuccessStatusCodeEx for specific unsuccessful HTTP status handling, which throws YourClientWebApiRequestException.
+		/// </summary>
+		public bool UseEnsureSuccessStatusCodeEx { get; set; }
+
 		public JSPlugin[] Plugins { get; set; }
 
 	}

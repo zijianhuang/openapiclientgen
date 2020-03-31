@@ -50,12 +50,15 @@ namespace Fonlow.OpenApiClientGen.Cs
 		//	return gen.CreateApiFunction();
 		//}
 
-		public CodeMemberMethod CreateApiFunction(SharedContext sharedContext, Settings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToCsTypes poco2CsGen, bool forAsync = false)
+		string statementOfEnsureSuccessStatusCode;
+
+		public CodeMemberMethod CreateApiFunction(SharedContext sharedContext, Settings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToCsTypes poco2CsGen, bool forAsync, bool useEnsureSuccessStatusCodeEx)
 		{
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
 			this.apiOperation = apiOperation;
 			this.httpMethod = httpMethod;
+			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
 			this.parameterDescriptions = nameComposer.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
@@ -263,7 +266,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 			//else
 			{
 				CodeTryCatchFinallyStatement try1 = new CodeTryCatchFinallyStatement();
-				try1.TryStatements.Add(new CodeMethodInvokeExpression(resultReference, "EnsureSuccessStatusCode"));
+				try1.TryStatements.Add(new CodeMethodInvokeExpression(resultReference, statementOfEnsureSuccessStatusCode));
 				method.Statements.Add(try1);
 
 				//Statement: return something;
@@ -491,7 +494,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 			{
 				CodeTryCatchFinallyStatement try1 = new CodeTryCatchFinallyStatement();
 				method.Statements.Add(try1);
-				try1.TryStatements.Add(new CodeMethodInvokeExpression(resultReference, "EnsureSuccessStatusCode"));
+				try1.TryStatements.Add(new CodeMethodInvokeExpression(resultReference, statementOfEnsureSuccessStatusCode));
 
 				//Statement: return something;
 				if (returnTypeReference != null)

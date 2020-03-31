@@ -25,8 +25,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{C6D5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC372E94-AF86-4792-B47E-B0A76957D63A}"
 	ProjectSection(SolutionItems) = preProject
+		CodeGen.bat = CodeGen.bat
+		DemoCodeGen.json = DemoCodeGen.json
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiClientGenCore.Axios", "OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj", "{B66919B1-86F7-4F44-B339-2BA9ABACC94B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +70,10 @@ Global
 		{72565E5F-CFAE-4E59-8AEA-89D55B0E5C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72565E5F-CFAE-4E59-8AEA-89D55B0E5C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72565E5F-CFAE-4E59-8AEA-89D55B0E5C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66919B1-86F7-4F44-B339-2BA9ABACC94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66919B1-86F7-4F44-B339-2BA9ABACC94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66919B1-86F7-4F44-B339-2BA9ABACC94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66919B1-86F7-4F44-B339-2BA9ABACC94B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +83,7 @@ Global
 		{D543EBC2-C396-4DC4-9B8F-E17621986449} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{DE481D82-F451-4DE4-84C9-D4C73CD5BFE7} = {C6D5C60F-4996-4F2B-80DD-BBE5FA1906C6}
 		{72565E5F-CFAE-4E59-8AEA-89D55B0E5C30} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
+		{B66919B1-86F7-4F44-B339-2BA9ABACC94B} = {C6D5C60F-4996-4F2B-80DD-BBE5FA1906C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BEA7BD1-2BD3-4E85-8E05-D98DE5C44574}

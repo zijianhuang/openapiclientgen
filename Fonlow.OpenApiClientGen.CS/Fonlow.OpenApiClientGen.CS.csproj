@@ -7,6 +7,7 @@
     <Authors>Zijian Huang</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/webapiclientgen</PackageProjectUrl>
+    <Version>1.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
