@@ -1,0 +1,13 @@
+{
+    "ClientNamespace": "DemoPet.Client",
+    "ClientLibraryProjectFolderName": "",
+    "ContainerClassName": "PetClient",
+    "ClientLibraryFileName": "PetAuto.cs",
+    "ActionNameStrategy": 4,
+    "UseEnsureSuccessStatusCodeEx": true,
+
+    "Plugins": [
+
+    ]
+
+}

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace My.Pet.Client
+namespace DemoPet.Client
 {
 	using System;
 	using System.Collections.Generic;
@@ -17,24 +17,19 @@ namespace My.Pet.Client
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class ApiResponse
 	{
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public int Code { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Type { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Message { get; set; }
 	}
 	
 	/// <summary>
 	/// A representation of a cat
 	/// </summary>
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class Cat : Pet
 	{
 		
@@ -42,54 +37,43 @@ namespace My.Pet.Client
 		/// The measured skill for hunting
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public CatHuntingSkill HuntingSkill { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public enum CatHuntingSkill
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clueless = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lazy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		adventurous = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aggressive = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class Category
 	{
 		
 		/// <summary>
 		/// Category ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public long Id { get; set; }
 		
 		/// <summary>
 		/// Category name
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Test Sub Category
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Sub { get; set; }
 	}
 	
 	/// <summary>
 	/// A representation of a dog
 	/// </summary>
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class Dog : Pet
 	{
 		
@@ -97,14 +81,12 @@ namespace My.Pet.Client
 		/// The size of the pack the dog is from
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public int PackSize { get; set; }
 	}
 	
 	/// <summary>
 	/// A representation of a honey bee
 	/// </summary>
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class HoneyBee : Pet
 	{
 		
@@ -112,201 +94,162 @@ namespace My.Pet.Client
 		/// Average amount of honey produced per day in ounces
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public float HoneyPerDay { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class Order
 	{
 		
 		/// <summary>
 		/// Order ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public long Id { get; set; }
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public long PetId { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public int Quantity { get; set; }
 		
 		/// <summary>
 		/// Estimated ship date
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public System.DateTimeOffset ShipDate { get; set; }
 		
 		/// <summary>
 		/// Order Status
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public OrderStatus Status { get; set; }
 		
 		/// <summary>
 		/// Indicates whenever order was completed or not
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public bool Complete { get; set; }
 		
 		/// <summary>
 		/// Unique Request Id
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public enum OrderStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		placed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approved = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class Pet
 	{
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public long Id { get; set; }
 		
 		/// <summary>
 		/// Categories this pet belongs to
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Category { get; set; }
 		
 		/// <summary>
 		/// The name given to a pet
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string[] PhotoUrls { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Friend { get; set; }
 		
 		/// <summary>
 		/// Tags attached to the pet
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public Tag[] Tags { get; set; }
 		
 		/// <summary>
 		/// Pet status in the store
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public PetStatus Status { get; set; }
 		
 		/// <summary>
 		/// Type of a pet
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string PetType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public enum PetStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		available = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sold = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class Tag
 	{
 		
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public long Id { get; set; }
 		
 		/// <summary>
 		/// Tag name
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://pet.domain/2020/03")]
 	public class User
 	{
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public long Id { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Pet { get; set; }
 		
 		/// <summary>
 		/// User supplied username
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Username { get; set; }
 		
 		/// <summary>
 		/// User first name
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string FirstName { get; set; }
 		
 		/// <summary>
 		/// User last name
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string LastName { get; set; }
 		
 		/// <summary>
 		/// User email address
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Email { get; set; }
 		
 		/// <summary>
 		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Password { get; set; }
 		
 		/// <summary>
 		/// User phone number in international format
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Phone { get; set; }
 		
 		/// <summary>
 		/// User status
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
 		public int UserStatus { get; set; }
 	}
 	
@@ -315,7 +258,9 @@ namespace My.Pet.Client
 		
 		private System.Net.Http.HttpClient client;
 		
-		public PetClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public PetClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -324,6 +269,7 @@ namespace My.Pet.Client
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -337,7 +283,7 @@ namespace My.Pet.Client
 			var requestUri = "pet";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -362,7 +308,7 @@ namespace My.Pet.Client
 			var requestUri = "pet";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PutAsync(requestUri, content);
@@ -513,7 +459,7 @@ namespace My.Pet.Client
 			var requestUri = "store/order";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -592,7 +538,7 @@ namespace My.Pet.Client
 			var requestUri = "user";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -645,7 +591,7 @@ namespace My.Pet.Client
 			var requestUri = "user/"+Uri.EscapeDataString(username);
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PutAsync(requestUri, content);
@@ -690,7 +636,7 @@ namespace My.Pet.Client
 			var requestUri = "user/createWithArray";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -715,7 +661,7 @@ namespace My.Pet.Client
 			var requestUri = "user/createWithList";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);

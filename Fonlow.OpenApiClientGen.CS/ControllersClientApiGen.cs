@@ -17,6 +17,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 	{
 		internal CodeFieldReferenceExpression clientReference { get; set; }
 		internal CodeFieldReferenceExpression baseUriReference { get; set; }
+		internal CodeFieldReferenceExpression jsonSettingsReference { get; set; }
 	}
 
 
@@ -249,6 +250,12 @@ namespace Fonlow.OpenApiClientGen.Cs
 			clientField.Type = new CodeTypeReference("System.Net.Http.HttpClient");
 			targetClass.Members.Add(clientField);
 
+			CodeMemberField jsonSettingsField = new CodeMemberField();
+			jsonSettingsField.Attributes = MemberAttributes.Private;
+			jsonSettingsField.Name = "jsonSerializerSettings";
+			jsonSettingsField.Type = new CodeTypeReference("JsonSerializerSettings");
+			targetClass.Members.Add(jsonSettingsField);
+
 			//CodeMemberField baseUriField = new CodeMemberField();
 			//baseUriField.Attributes = MemberAttributes.Private;
 			//baseUriField.Name = "baseUri";
@@ -267,6 +274,9 @@ namespace Fonlow.OpenApiClientGen.Cs
 			constructor.Parameters.Add(new CodeParameterDeclarationExpression(
 				"System.Net.Http.HttpClient", "client"));
 
+			constructor.Parameters.Add(new CodeParameterDeclarationExpression(
+				"JsonSerializerSettings", "jsonSerializerSettings=null"));
+
 			constructor.Statements.Add(new CodeSnippetStatement(@"			if (client == null)
 				throw new ArgumentNullException(""Null HttpClient."", ""client"");
 "));
@@ -276,6 +286,10 @@ namespace Fonlow.OpenApiClientGen.Cs
 			// Add field initialization logic
 			sharedContext.clientReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "client");
 			constructor.Statements.Add(new CodeAssignStatement(sharedContext.clientReference, new CodeArgumentReferenceExpression("client")));
+
+			sharedContext.jsonSettingsReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "jsonSerializerSettings");
+			constructor.Statements.Add(new CodeAssignStatement(sharedContext.jsonSettingsReference, new CodeArgumentReferenceExpression("jsonSerializerSettings")));
+
 			targetClass.Members.Add(constructor);
 		}
 

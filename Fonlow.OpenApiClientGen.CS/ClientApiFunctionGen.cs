@@ -431,7 +431,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 				method.Statements.Add(new CodeSnippetStatement(
 @"			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();"
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);"
 ));
 				method.Statements.Add(new CodeMethodInvokeExpression(new CodeSnippetExpression("requestSerializer"), "Serialize",
 					new CodeSnippetExpression("requestWriter"),
