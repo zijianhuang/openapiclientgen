@@ -82,7 +82,7 @@ namespace Fonlow.CodeDom.Web
 				else if (d.ParameterTypeReference.ArrayRank > 0)
 				{
 					var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))";
-					return newUriText + "?\"+" + arrayQuery;
+					return newUriText + "\"+" + arrayQuery;
 				}
 				else
 				{
