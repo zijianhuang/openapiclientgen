@@ -62,6 +62,8 @@ namespace MyNS
 		/// Type of a pet
 		/// </summary>
 		public string PetType { get; set; }//;
+		
+		public System.Nullable<System.DateTimeOffset> BirthDateTime { get; set; }//;
 	}
 }
 ";
@@ -358,7 +360,7 @@ namespace MyNS
 		/// <summary>
 		/// Estimated ship date
 		/// </summary>
-		public System.DateTimeOffset ShipDate { get; set; }//;
+		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }//;
 		
 		/// <summary>
 		/// Order Status

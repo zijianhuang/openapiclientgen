@@ -10,6 +10,7 @@
 namespace MyNS
 {
 	using System;
+	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
 	using System.Net.Http;
@@ -24,7 +25,7 @@ namespace MyNS
 		
 		public string ClaimId { get; set; }
 		
-		public System.DateTimeOffset LodgementDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> LodgementDate { get; set; }
 	}
 	
 	public class ProviderType
@@ -52,7 +53,7 @@ namespace MyNS
 		
 		public string PayerName { get; set; }
 		
-		public System.DateTimeOffset RunDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> RunDate { get; set; }
 		
 		public string RunNumber { get; set; }
 	}
@@ -91,7 +92,7 @@ namespace MyNS
 		
 		public string ClaimId { get; set; }
 		
-		public System.DateTimeOffset LodgementDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> LodgementDate { get; set; }
 		
 		public string TransactionId { get; set; }
 	}
@@ -175,7 +176,7 @@ namespace MyNS
 		
 		public string Id { get; set; }
 		
-		public System.DateTimeOffset EventDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> EventDate { get; set; }
 	}
 	
 	public class MembershipStatusType
@@ -187,7 +188,7 @@ namespace MyNS
 		
 		public IdentityType CurrentMember { get; set; }
 		
-		public System.DateTimeOffset ProcessDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> ProcessDate { get; set; }
 	}
 	
 	public class StatusType
@@ -209,7 +210,7 @@ namespace MyNS
 	public class IdentityType
 	{
 		
-		public System.DateTimeOffset DateOfBirth { get; set; }
+		public System.Nullable<System.DateTimeOffset> DateOfBirth { get; set; }
 		
 		public string FamilyName { get; set; }
 		
@@ -328,13 +329,13 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
 		public string Id { get; set; }
 		
-		public System.DateTimeOffset AccessionDateTime { get; set; }
+		public System.Nullable<System.DateTimeOffset> AccessionDateTime { get; set; }
 		
 		public string AftercareOverrideInd { get; set; }
 		
 		public string ChargeAmount { get; set; }
 		
-		public System.DateTimeOffset CollectionDateTime { get; set; }
+		public System.Nullable<System.DateTimeOffset> CollectionDateTime { get; set; }
 		
 		public string DuplicateServiceOverrideInd { get; set; }
 		
@@ -408,11 +409,11 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
 		public System.DateTimeOffset AuthorisationDate { get; set; }
 		
-		public System.DateTimeOffset BreakInEpisodeEndDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> BreakInEpisodeEndDate { get; set; }
 		
 		public string BreakInEpisodeOfCareNumber { get; set; }
 		
-		public System.DateTimeOffset BreakInEpisodeStartDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> BreakInEpisodeStartDate { get; set; }
 		
 		public string NumberOfCNCHours { get; set; }
 		
@@ -506,11 +507,11 @@ namespace MyNS
 		
 		public string AccountReferenceNumber { get; set; }
 		
-		public System.DateTimeOffset AdmissionDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> AdmissionDate { get; set; }
 		
 		public string ChargeAmount { get; set; }
 		
-		public System.DateTimeOffset DischargeDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> DischargeDate { get; set; }
 		
 		public int DistanceKilometres { get; set; }
 		
@@ -639,7 +640,7 @@ namespace MyNS
 		
 		public string ClaimId { get; set; }
 		
-		public System.DateTimeOffset LodgementDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> LodgementDate { get; set; }
 	}
 	
 	public class DVAPaymentReportResponseType
@@ -687,7 +688,7 @@ namespace MyNS
 		
 		public string Id { get; set; }
 		
-		public System.DateTimeOffset EventDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> EventDate { get; set; }
 	}
 	
 	public class VeteranMembershipStatusType
@@ -699,7 +700,7 @@ namespace MyNS
 		
 		public StatusType Status { get; set; }
 		
-		public System.DateTimeOffset ProcessDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> ProcessDate { get; set; }
 	}
 	
 	public class VeteranMembershipResponseType : VeteranMembershipType
@@ -750,7 +751,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
 		public MedicarePatientType Patient { get; set; }
 		
-		public System.DateTimeOffset DateOfService { get; set; }
+		public System.Nullable<System.DateTimeOffset> DateOfService { get; set; }
 	}
 	
 	public class EnterpriseConcessionVerificationResponseType
@@ -784,7 +785,7 @@ namespace MyNS
 		
 		public StatusType Status { get; set; }
 		
-		public System.DateTimeOffset ProcessDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> ProcessDate { get; set; }
 	}
 	
 	public class EnterprisePatientVerificationRequestType
@@ -811,7 +812,7 @@ namespace MyNS
 		
 		public ProviderType Provider { get; set; }
 		
-		public System.DateTimeOffset DateOfService { get; set; }
+		public System.Nullable<System.DateTimeOffset> DateOfService { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
 		public string TypeCode { get; set; }
@@ -870,7 +871,7 @@ namespace MyNS
 		
 		public IdentityType CurrentMember { get; set; }
 		
-		public System.DateTimeOffset ProcessDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> ProcessDate { get; set; }
 	}
 	
 	public class EnterpriseVeteranVerificationRequestType
@@ -1039,7 +1040,7 @@ namespace MyNS
 		
 		public ServiceResponseType[] Service { get; set; }
 		
-		public System.DateTimeOffset EventDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> EventDate { get; set; }
 		
 		public string Id { get; set; }
 	}
@@ -1114,9 +1115,9 @@ namespace MyNS
 		
 		public string AssociateName { get; set; }
 		
-		public System.DateTimeOffset FromDateTime { get; set; }
+		public System.Nullable<System.DateTimeOffset> FromDateTime { get; set; }
 		
-		public System.DateTimeOffset ToDateTime { get; set; }
+		public System.Nullable<System.DateTimeOffset> ToDateTime { get; set; }
 		
 		public string ReportStatus { get; set; }
 		
@@ -1139,7 +1140,7 @@ namespace MyNS
 		
 		public string AssociateName { get; set; }
 		
-		public System.DateTimeOffset LodgementDateTime { get; set; }
+		public System.Nullable<System.DateTimeOffset> LodgementDateTime { get; set; }
 		
 		public string ProcessStatus { get; set; }
 		
@@ -1157,7 +1158,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public McpClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public McpClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -1166,6 +1169,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -1178,7 +1182,7 @@ namespace MyNS
 			var requestUri = "mcp/bulkbillpaymentreport/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1209,7 +1213,7 @@ namespace MyNS
 			var requestUri = "mcp/bulkbillprocessingreport/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1240,7 +1244,7 @@ namespace MyNS
 			var requestUri = "mcp/bulkbillstoreforward/general/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1271,7 +1275,7 @@ namespace MyNS
 			var requestUri = "mcp/bulkbillstoreforward/pathology/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1302,7 +1306,7 @@ namespace MyNS
 			var requestUri = "mcp/bulkbillstoreforward/specialist/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1333,7 +1337,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaalliedhealth/allied/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1364,7 +1368,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaalliedhealth/communitynursing/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1395,7 +1399,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaalliedhealth/dental/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1426,7 +1430,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaalliedhealth/optical/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1457,7 +1461,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaalliedhealth/psych/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1488,7 +1492,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaalliedhealth/speechpathology/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1519,7 +1523,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaclaim/general/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1550,7 +1554,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaclaim/pathology/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1581,7 +1585,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaclaim/specialist/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1612,7 +1616,7 @@ namespace MyNS
 			var requestUri = "mcp/dvapaymentreport/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1643,7 +1647,7 @@ namespace MyNS
 			var requestUri = "mcp/dvaprocessingreport/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1674,7 +1678,7 @@ namespace MyNS
 			var requestUri = "mcp/enterpriseconcessionverification/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1705,7 +1709,7 @@ namespace MyNS
 			var requestUri = "mcp/enterprisepatientverification/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1736,7 +1740,7 @@ namespace MyNS
 			var requestUri = "mcp/enterpriseveteranverification/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1767,7 +1771,7 @@ namespace MyNS
 			var requestUri = "mcp/patientclaiminteractive/general/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1798,7 +1802,7 @@ namespace MyNS
 			var requestUri = "mcp/patientclaiminteractive/pathology/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1829,7 +1833,7 @@ namespace MyNS
 			var requestUri = "mcp/patientclaiminteractive/specialist/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1860,7 +1864,7 @@ namespace MyNS
 			var requestUri = "mcp/patientverification/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1891,7 +1895,7 @@ namespace MyNS
 			var requestUri = "mcp/patientverification/hf/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1922,7 +1926,7 @@ namespace MyNS
 			var requestUri = "mcp/patientverification/medicare/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1953,7 +1957,7 @@ namespace MyNS
 			var requestUri = "mcp/enterpriseconcessionverification/retrievereport/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -1984,7 +1988,7 @@ namespace MyNS
 			var requestUri = "mcp/enterprisepatientverification/retrievereport/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -2015,7 +2019,7 @@ namespace MyNS
 			var requestUri = "mcp/enterpriseveteranverification/retrievereport/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -2046,7 +2050,7 @@ namespace MyNS
 			var requestUri = "mcp/samedaydelete/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -2077,7 +2081,7 @@ namespace MyNS
 			var requestUri = "mcp/statusreport/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -2108,7 +2112,7 @@ namespace MyNS
 			var requestUri = "mcp/veteranverification/v1";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);

@@ -1,8 +1,7 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
-using Fonlow.Web.Meta;
 using Microsoft.OpenApi.Models;
 using System;
-
+using Fonlow.Web.Meta;
 namespace Fonlow.CodeDom.Web
 {
 	public static class CodeGen

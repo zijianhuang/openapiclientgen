@@ -40,6 +40,8 @@
     <None Remove="Results\developer_analytics.txt" />
     <None Remove="Results\mcp.txt" />
     <None Remove="Results\Pet.txt" />
+    <None Remove="Results\PetByNumbers.txt" />
+    <None Remove="Results\PetByTags.txt" />
     <None Remove="Results\PetDataContracts.txt" />
     <None Remove="Results\PetDelete.txt" />
     <None Remove="Results\PetFindByStatus.txt" />
@@ -81,6 +83,9 @@
     <None Remove="SwagMock\PathItemValues.json" />
     <None Remove="SwagMock\pet.json" />
     <None Remove="SwagMock\pet.yaml" />
+    <None Remove="SwagMock\petByNumbers.yaml" />
+    <None Remove="SwagMock\petByStatus.yaml" />
+    <None Remove="SwagMock\petByTags.yaml" />
     <None Remove="SwagMock\PetDelete.json" />
     <None Remove="SwagMock\PetDogCat.json" />
     <None Remove="SwagMock\PetFindByStatus.json" />
@@ -205,6 +210,12 @@
     <Content Include="Results\mcp.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Results\PetByNumbers.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\PetByTags.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Results\PetDataContracts.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -316,6 +327,15 @@
     <Content Include="SwagMock\mcp.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="SwagMock\petByNumbers.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petByTags.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petByStatus.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SwagMock\sell_account_v1_oas3.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -415,7 +435,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="1.2.0">
+    <PackageReference Include="coverlet.collector" Version="1.2.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

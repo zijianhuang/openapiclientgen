@@ -211,6 +211,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		string currentTypeName;
 
+		static readonly Type nullableDateTimeOffset = typeof(DateTimeOffset?);
+		static readonly Type typeofDateTimeOffset = typeof(DateTimeOffset);
+
 		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema)
 		{
 			foreach (var p in schema.Properties)
@@ -254,7 +257,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						var customPropertyType = refToType.Type;
 						var customPropertyFormat = refToType.Format;
 						var customType = nameComposer.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-						clientProperty = CreateProperty(propertyName, customType);
+						if (customType == typeofDateTimeOffset && !isRequired)
+						{
+							clientProperty = CreateProperty(propertyName, nullableDateTimeOffset);
+						}
+						else
+						{
+							clientProperty = CreateProperty(propertyName, customType);
+						}
 					}
 				}
 				else
@@ -295,7 +305,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{
 						var simpleType = nameComposer.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-						clientProperty = CreateProperty(propertyName, simpleType);
+						if (simpleType == typeofDateTimeOffset && !isRequired)
+						{
+							clientProperty = CreateNullableProperty(propertyName, simpleType);
+						}
+						else
+						{
+							clientProperty = CreateProperty(propertyName, simpleType);
+						}
 					}
 					else // for casual enum
 					{
@@ -372,6 +389,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			string memberName = propertyName + " { get; set; }//";
 
 			CodeMemberField result = new CodeMemberField() { Type = TranslateToClientTypeReference(type), Name = memberName };
+			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
+			return result;
+		}
+
+		CodeMemberField CreateNullableProperty(string propertyName, Type type)
+		{
+			Debug.Assert(type.IsValueType);
+			// This is a little hack. Since you cant create auto properties in CodeDOM,
+			//  we make the getter and setter part of the member name.
+			// This leaves behind a trailing semicolon that we comment out.
+			//  Later, we remove the commented out semicolons.
+			string memberName = propertyName + " { get; set; }//";
+
+			CodeMemberField result = new CodeMemberField( $"System.Nullable<{type.FullName}>",  memberName );
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
 			return result;
 		}

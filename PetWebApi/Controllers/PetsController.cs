@@ -8,12 +8,11 @@ using System.Collections.Concurrent;
 
 namespace MyNamespace
 {
-
-    [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.3.0.0 (NJsonSchema v10.1.11.0 (Newtonsoft.Json v12.0.0.0))")]
-    [Route("petstore.swagger.io/v2")]
-    public partial class Controller : ControllerBase
+    [ApiController]
+    //[Route("[controller]")]
+    public partial class PetController : ControllerBase
     {
-        public Controller()
+        public PetController()
         {
         }
 
@@ -21,9 +20,12 @@ namespace MyNamespace
         /// <param name="accept_Language">The language you prefer for messages. Supported values are en-AU, en-CA, en-GB, en-US</param>
         /// <param name="cookieParam">Some cookie</param>
         [HttpPost, Route("pet")]
-        public async Task<IActionResult> AddPet([FromBody] object body, [FromHeader(Name = "Accept-Language")] string accept_Language, long cookieParam)
+        public async Task<IActionResult> AddPet([FromBody] Pet body)//, [FromHeader(Name = "Accept-Language")] string accept_Language, long cookieParam)
         {
-            return _implementation.AddPetAsync(body, accept_Language ?? "en-AU", cookieParam);
+            var key = PetData.Instance.GetCurrentMax();
+            body.Id = key;
+            PetData.Instance.Dic.TryAdd(key, body);
+            return Ok();
         }
 
         /// <summary>Update an existing pet</summary>
@@ -32,7 +34,7 @@ namespace MyNamespace
         [HttpPut, Route("pet")]
         public async Task<IActionResult> UpdatePet([FromBody] object body, [FromHeader(Name = "Accept-Language")] string accept_Language, long cookieParam)
         {
-            return _implementation.UpdatePetAsync(body, accept_Language ?? "en-AU", cookieParam);
+            throw new NotImplementedException();
         }
 
         /// <summary>Find pet by ID</summary>
@@ -90,7 +92,7 @@ namespace MyNamespace
         [HttpGet, Route("pet/findByStatus")]
         public async Task<ActionResult<System.Collections.Generic.ICollection<Pet>>> FindPetsByStatus([FromQuery] System.Collections.Generic.IEnumerable<PetStatus> status)
         {
-            PetData.Instance.Dic.Values.Where(d=>d.Status== status).to
+            return PetData.Instance.Dic.Values.Where(d => status.Contains(d.Status)).ToArray();
         }
 
         /// <summary>Finds Pets by tags</summary>
@@ -100,7 +102,7 @@ namespace MyNamespace
         [HttpGet, Route("pet/findByTags")]
         public async Task<ActionResult<System.Collections.Generic.ICollection<Pet>>> FindPetsByTags([FromQuery] System.Collections.Generic.IEnumerable<string> tags)
         {
-            return _implementation.FindPetsByTagsAsync(tags);
+            return PetData.Instance.Dic.Values.Where(d => tags.Intersect(d.Tags.Select(k=>k.Name)).Count()>0).ToArray();
         }
 
         /// <summary>Returns pet inventories by status</summary>
@@ -108,7 +110,7 @@ namespace MyNamespace
         [HttpGet, Route("store/inventory")]
         public async Task<ActionResult<System.Collections.Generic.IDictionary<string, int>>> GetInventory()
         {
-            return _implementation.GetInventoryAsync();
+            throw new NotImplementedException();
         }
 
         /// <summary>Place an order for a pet</summary>
@@ -117,7 +119,7 @@ namespace MyNamespace
         [HttpPost, Route("store/order")]
         public async Task<ActionResult<Order>> PlaceOrder([FromBody] Order body)
         {
-            return _implementation.PlaceOrderAsync(body);
+            throw new NotImplementedException();
         }
 
         /// <summary>Find purchase order by ID</summary>
@@ -126,7 +128,7 @@ namespace MyNamespace
         [HttpGet, Route("store/order/{orderId}")]
         public async Task<ActionResult<Order>> GetOrderById(long orderId)
         {
-            return _implementation.GetOrderByIdAsync(orderId);
+            throw new NotImplementedException();
         }
 
         /// <summary>Delete purchase order by ID</summary>
@@ -134,7 +136,7 @@ namespace MyNamespace
         [HttpDelete, Route("store/order/{orderId}")]
         public async Task<IActionResult> DeleteOrder(string orderId)
         {
-            return _implementation.DeleteOrderAsync(orderId);
+            throw new NotImplementedException();
         }
 
         /// <summary>Create user</summary>
@@ -143,7 +145,7 @@ namespace MyNamespace
         [HttpPost, Route("user")]
         public async Task<IActionResult> CreateUser([FromBody] User body)
         {
-            return _implementation.CreateUserAsync(body);
+            throw new NotImplementedException();
         }
 
         /// <summary>Get user by user name</summary>
@@ -152,7 +154,7 @@ namespace MyNamespace
         [HttpGet, Route("user/{username}")]
         public async Task<ActionResult<User>> GetUserByName(string username)
         {
-            return _implementation.GetUserByNameAsync(username);
+            throw new NotImplementedException();
         }
 
         /// <summary>Updated user</summary>
@@ -161,7 +163,7 @@ namespace MyNamespace
         [HttpPut, Route("user/{username}")]
         public async Task<IActionResult> UpdateUser(string username, [FromBody] User body)
         {
-            return _implementation.UpdateUserAsync(username, body);
+            throw new NotImplementedException();
         }
 
         /// <summary>Delete user</summary>
@@ -169,7 +171,7 @@ namespace MyNamespace
         [HttpDelete, Route("user/{username}")]
         public async Task<IActionResult> DeleteUser(string username)
         {
-            return _implementation.DeleteUserAsync(username);
+            throw new NotImplementedException();
         }
 
         /// <summary>Creates list of users with given input array</summary>
@@ -177,7 +179,7 @@ namespace MyNamespace
         [HttpPost, Route("user/createWithArray")]
         public async Task<IActionResult> CreateUsersWithArrayInput([FromBody] object body)
         {
-            return _implementation.CreateUsersWithArrayInputAsync(body);
+            throw new NotImplementedException();
         }
 
         /// <summary>Creates list of users with given input array</summary>
@@ -185,7 +187,7 @@ namespace MyNamespace
         [HttpPost, Route("user/createWithList")]
         public async Task<IActionResult> CreateUsersWithListInput([FromBody] object body)
         {
-            return _implementation.CreateUsersWithListInputAsync(body);
+            throw new NotImplementedException();
         }
 
         /// <summary>Logs user into the system</summary>
@@ -195,7 +197,7 @@ namespace MyNamespace
         [HttpGet, Route("user/login")]
         public async Task<ActionResult<string>> LoginUser([FromQuery] string username, [FromQuery] string password)
         {
-            return _implementation.LoginUserAsync(username, password);
+            throw new NotImplementedException();
         }
 
         /// <summary>Logs out current logged in user session</summary>
@@ -203,7 +205,7 @@ namespace MyNamespace
         [HttpGet, Route("user/logout")]
         public async Task<IActionResult> LogoutUser()
         {
-            return _implementation.LogoutUserAsync();
+            throw new NotImplementedException();
         }
 
     }
@@ -761,6 +763,11 @@ namespace MyNamespace
         }
 
         public ConcurrentDictionary<long, Pet> Dic { get; private set; }
+
+        public long GetCurrentMax()
+        {
+            return Dic.Keys.Max();
+        }
     }
 }
 

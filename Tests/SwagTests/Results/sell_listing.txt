@@ -10,10 +10,12 @@
 namespace MyNS
 {
 	using System;
+	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
 	using System.Net.Http;
 	using Newtonsoft.Json;
+	using Fonlow.Net.Http;
 	
 	
 	/// <summary>
@@ -256,7 +258,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public Item_draftClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public Item_draftClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -265,6 +269,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -276,13 +281,13 @@ namespace MyNS
 			var requestUri = "item_draft/";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -300,18 +305,51 @@ namespace MyNS
 			var requestUri = "item_draft/";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = this.client.PostAsync(requestUri, content).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
 				responseMessage.Dispose();
 			}
+			}
+		}
+	}
+}
+namespace Fonlow.Net.Http
+{
+	using System.Net.Http;
+
+	public class WebApiRequestException : HttpRequestException
+	{
+		public System.Net.HttpStatusCode StatusCode { get; private set; }
+
+		public string Response { get; private set; }
+
+		public System.Net.Http.Headers.HttpResponseHeaders Headers { get; private set; }
+
+		public WebApiRequestException(string message, System.Net.HttpStatusCode statusCode, string response, System.Net.Http.Headers.HttpResponseHeaders headers) : base(message)
+		{
+			StatusCode = statusCode;
+			Response = response;
+			Headers = headers;
+		}
+	}
+
+	public static class ResponseMessageExtensions
+	{
+		public static void EnsureSuccessStatusCodeEx(this HttpResponseMessage responseMessage)
+		{
+			if (!responseMessage.IsSuccessStatusCode)
+			{
+				var responseText = responseMessage.Content.ReadAsStringAsync().Result;
+				var contentType = responseMessage.Content.Headers.ContentType;
+				throw new WebApiRequestException(responseMessage.ReasonPhrase, responseMessage.StatusCode, responseText, responseMessage.Headers);
 			}
 		}
 	}

@@ -23,5 +23,7 @@ namespace MyNS
 		/// Type of a pet
 		/// </summary>
 		public string PetType { get; set; }
+		
+		public System.Nullable<System.DateTimeOffset> BirthDateTime { get; set; }
 	}
 }

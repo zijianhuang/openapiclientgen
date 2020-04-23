@@ -3,7 +3,7 @@ using System;
 using Xunit;
 using System.Threading.Tasks;
 using MyNS;
-using DemoPet.Client;
+
 namespace IntegrationTests
 {
 	public class PetsFixture : IDisposable
@@ -61,7 +61,7 @@ namespace IntegrationTests
 		[Fact]
 		public async Task TestFindPets()
 		{
-			var aa = await api.FindPetsByStatusAsync("w");
+			var aa = await api.FindPetsByStatusAsync(new string[] {"w" });
 			Assert.Equal(3, aa.Length);
 		}
 

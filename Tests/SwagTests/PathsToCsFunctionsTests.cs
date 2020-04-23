@@ -27,7 +27,8 @@ namespace SwagTests
 				PathPrefixToRemove = "/api",
 				ContainerClassName = "Misc",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
-				GenerateBothAsyncAndSync = true
+				GenerateBothAsyncAndSync = true,
+				UseEnsureSuccessStatusCodeEx = true,
 			};
 			var gen = new ControllersClientApiGen(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
@@ -43,7 +44,8 @@ namespace SwagTests
 		{
 			var s = TranslateJsonToCode(openApiFile, mySettings);
 			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
-			Assert.Equal(ReadFromResults(expectedFile), s);
+			var expected = ReadFromResults(expectedFile);
+			Assert.Equal(expected, s);
 		}
 
 		[Fact]
@@ -63,6 +65,24 @@ namespace SwagTests
 		{
 			GenerateAndAssert("SwagMock\\pet.yaml", "Results\\Pet.txt");
 		}
+
+		[Fact]
+		public void TestPetByTags()
+		{
+			GenerateAndAssert("SwagMock\\petByTags.yaml", "Results\\PetByTags.txt");
+		}
+
+		[Fact]
+		public void TestPetByNumbers()
+		{
+			GenerateAndAssert("SwagMock\\petByNumbers.yaml", "Results\\PetByNumbers.txt");
+		}
+
+		//[Fact]
+		//public void TestPetByStatus()
+		//{
+		//	GenerateAndAssert("SwagMock\\petByStatus.yaml", "Results\\Pet.txt");
+		//}
 
 		[Fact]
 		public void TestPetWithDataContractAttribute()

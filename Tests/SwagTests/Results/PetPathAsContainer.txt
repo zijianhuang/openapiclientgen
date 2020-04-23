@@ -10,6 +10,7 @@
 namespace MyNS
 {
 	using System;
+	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
 	using System.Net.Http;
@@ -114,7 +115,7 @@ namespace MyNS
 		/// <summary>
 		/// Estimated ship date
 		/// </summary>
-		public System.DateTimeOffset ShipDate { get; set; }
+		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
 		
 		/// <summary>
 		/// Order Status
@@ -257,7 +258,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public PetClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public PetClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -266,6 +269,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -279,7 +283,7 @@ namespace MyNS
 			var requestUri = "pet";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -304,7 +308,7 @@ namespace MyNS
 			var requestUri = "pet";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PutAsync(requestUri, content);
@@ -371,7 +375,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public PetUploadImageClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public PetUploadImageClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -380,6 +386,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 	}
 	
@@ -388,7 +395,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public PetFindByStatusClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public PetFindByStatusClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -397,6 +406,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -432,7 +442,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public PetFindByTagsClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public PetFindByTagsClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -441,6 +453,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -476,7 +489,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public StoreInventoryClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public StoreInventoryClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -485,6 +500,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -518,7 +534,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public StoreOrderClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public StoreOrderClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -527,6 +545,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -540,7 +559,7 @@ namespace MyNS
 			var requestUri = "store/order";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -614,7 +633,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public UserClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public UserClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -623,6 +644,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -636,7 +658,7 @@ namespace MyNS
 			var requestUri = "user";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -689,7 +711,7 @@ namespace MyNS
 			var requestUri = "user/"+Uri.EscapeDataString(username);
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PutAsync(requestUri, content);
@@ -730,7 +752,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public UserCreateWithArrayClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public UserCreateWithArrayClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -739,6 +763,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -751,7 +776,7 @@ namespace MyNS
 			var requestUri = "user/createWithArray";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -772,7 +797,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public UserCreateWithListClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public UserCreateWithListClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -781,6 +808,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -793,7 +821,7 @@ namespace MyNS
 			var requestUri = "user/createWithList";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
@@ -814,7 +842,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public UserLoginClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public UserLoginClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -823,6 +853,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -857,7 +888,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public UserLogoutClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public UserLogoutClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -866,6 +899,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>

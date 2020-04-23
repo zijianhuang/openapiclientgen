@@ -107,7 +107,15 @@ namespace Fonlow.OpenApiClientGen.Cs
 				using (var stringWriter = new StringWriter())
 				{
 					var s = stringReader.ReadToEnd();
-					stringWriter.Write(s.Replace("//;", ""));
+					if (settings.UseEnsureSuccessStatusCodeEx)
+					{
+						stringWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
+					}
+					else
+					{
+						stringWriter.Write(s.Replace("//;", ""));
+					}
+
 					return stringWriter.ToString();
 				}
 			}
@@ -135,6 +143,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 			clientNamespace.Imports.AddRange(new CodeNamespaceImport[]{
 				new CodeNamespaceImport("System"),
+				new CodeNamespaceImport("System.Linq"),
 				new CodeNamespaceImport("System.Collections.Generic"),
 				new CodeNamespaceImport("System.Threading.Tasks"),
 				new CodeNamespaceImport("System.Net.Http"),
@@ -310,13 +319,13 @@ namespace Fonlow.Net.Http
 
 		public string Response { get; private set; }
 
-		public System.Net.Http.Headers.MediaTypeHeaderValue ContentType { get; private set; }
+		public System.Net.Http.Headers.HttpResponseHeaders Headers { get; private set; }
 
-		public WebApiRequestException(string message, System.Net.HttpStatusCode statusCode, string response, System.Net.Http.Headers.MediaTypeHeaderValue contentType) : base(message)
+		public WebApiRequestException(string message, System.Net.HttpStatusCode statusCode, string response, System.Net.Http.Headers.HttpResponseHeaders headers) : base(message)
 		{
 			StatusCode = statusCode;
 			Response = response;
-			ContentType = contentType;
+			Headers = headers;
 		}
 	}
 
@@ -328,7 +337,7 @@ namespace Fonlow.Net.Http
 			{
 				var responseText = responseMessage.Content.ReadAsStringAsync().Result;
 				var contentType = responseMessage.Content.Headers.ContentType;
-				throw new WebApiRequestException(responseMessage.ReasonPhrase, responseMessage.StatusCode, responseText, contentType);
+				throw new WebApiRequestException(responseMessage.ReasonPhrase, responseMessage.StatusCode, responseText, responseMessage.Headers);
 			}
 		}
 	}

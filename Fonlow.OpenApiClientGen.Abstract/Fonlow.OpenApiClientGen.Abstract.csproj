@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Fonlow.Web.MetaCore" Version="1.5.1" />
+    <PackageReference Include="Tavis.UriTemplates" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Fonlow.OpenApiClientGen.ClientTypes\Fonlow.OpenApiClientGen.ClientTypes.csproj" />
   </ItemGroup>
 

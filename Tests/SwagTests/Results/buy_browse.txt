@@ -10,10 +10,12 @@
 namespace MyNS
 {
 	using System;
+	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
 	using System.Net.Http;
 	using Newtonsoft.Json;
+	using Fonlow.Net.Http;
 	
 	
 	/// <summary>
@@ -1964,7 +1966,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public Item_summaryClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public Item_summaryClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -1973,6 +1977,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -1998,7 +2003,7 @@ namespace MyNS
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2035,7 +2040,7 @@ namespace MyNS
 			var responseMessage = this.client.GetAsync(requestUri).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2055,7 +2060,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public Search_by_imageClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public Search_by_imageClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -2064,6 +2071,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -2084,13 +2092,13 @@ namespace MyNS
 			var requestUri = "item_summary/search_by_image?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_ids=" + Uri.EscapeDataString(category_ids)+"&epid=" + Uri.EscapeDataString(epid)+"&filter=" + Uri.EscapeDataString(filter)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&sort=" + Uri.EscapeDataString(sort);
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2123,13 +2131,13 @@ namespace MyNS
 			var requestUri = "item_summary/search_by_image?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_ids=" + Uri.EscapeDataString(category_ids)+"&epid=" + Uri.EscapeDataString(epid)+"&filter=" + Uri.EscapeDataString(filter)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&sort=" + Uri.EscapeDataString(sort);
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = this.client.PostAsync(requestUri, content).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2150,7 +2158,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public ItemClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public ItemClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -2159,6 +2169,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -2174,7 +2185,7 @@ namespace MyNS
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2201,7 +2212,7 @@ namespace MyNS
 			var responseMessage = this.client.GetAsync(requestUri).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2230,7 +2241,7 @@ namespace MyNS
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2259,7 +2270,7 @@ namespace MyNS
 			var responseMessage = this.client.GetAsync(requestUri).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2285,7 +2296,7 @@ namespace MyNS
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2311,7 +2322,7 @@ namespace MyNS
 			var responseMessage = this.client.GetAsync(requestUri).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2336,13 +2347,13 @@ namespace MyNS
 			var requestUri = "item/"+Uri.EscapeDataString(item_id)+"/check_compatibility";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2368,13 +2379,13 @@ namespace MyNS
 			var requestUri = "item/"+Uri.EscapeDataString(item_id)+"/check_compatibility";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = this.client.PostAsync(requestUri, content).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2395,7 +2406,9 @@ namespace MyNS
 		
 		private System.Net.Http.HttpClient client;
 		
-		public Shopping_cartClient(System.Net.Http.HttpClient client)
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public Shopping_cartClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -2404,6 +2417,7 @@ namespace MyNS
 				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
 
 			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -2416,13 +2430,13 @@ namespace MyNS
 			var requestUri = "shopping_cart/add_item";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2447,13 +2461,13 @@ namespace MyNS
 			var requestUri = "shopping_cart/add_item";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = this.client.PostAsync(requestUri, content).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2479,7 +2493,7 @@ namespace MyNS
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2504,7 +2518,7 @@ namespace MyNS
 			var responseMessage = this.client.GetAsync(requestUri).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2528,13 +2542,13 @@ namespace MyNS
 			var requestUri = "shopping_cart/remove_item";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2559,13 +2573,13 @@ namespace MyNS
 			var requestUri = "shopping_cart/remove_item";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = this.client.PostAsync(requestUri, content).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2590,13 +2604,13 @@ namespace MyNS
 			var requestUri = "shopping_cart/update_quantity";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync(requestUri, content);
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2621,13 +2635,13 @@ namespace MyNS
 			var requestUri = "shopping_cart/update_quantity";
 			using (var requestWriter = new System.IO.StringWriter())
 			{
-			var requestSerializer = JsonSerializer.Create();
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			var responseMessage = this.client.PostAsync(requestUri, content).Result;
 			try
 			{
-				responseMessage.EnsureSuccessStatusCode();
+				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
@@ -2639,6 +2653,39 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+		}
+	}
+}
+namespace Fonlow.Net.Http
+{
+	using System.Net.Http;
+
+	public class WebApiRequestException : HttpRequestException
+	{
+		public System.Net.HttpStatusCode StatusCode { get; private set; }
+
+		public string Response { get; private set; }
+
+		public System.Net.Http.Headers.HttpResponseHeaders Headers { get; private set; }
+
+		public WebApiRequestException(string message, System.Net.HttpStatusCode statusCode, string response, System.Net.Http.Headers.HttpResponseHeaders headers) : base(message)
+		{
+			StatusCode = statusCode;
+			Response = response;
+			Headers = headers;
+		}
+	}
+
+	public static class ResponseMessageExtensions
+	{
+		public static void EnsureSuccessStatusCodeEx(this HttpResponseMessage responseMessage)
+		{
+			if (!responseMessage.IsSuccessStatusCode)
+			{
+				var responseText = responseMessage.Content.ReadAsStringAsync().Result;
+				var contentType = responseMessage.Content.Headers.ContentType;
+				throw new WebApiRequestException(responseMessage.ReasonPhrase, responseMessage.StatusCode, responseText, responseMessage.Headers);
 			}
 		}
 	}

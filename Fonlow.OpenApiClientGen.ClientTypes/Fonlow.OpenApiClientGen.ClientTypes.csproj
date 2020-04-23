@@ -19,8 +19,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fonlow.Poco2TsCore" Version="2.6.1" />
-    <PackageReference Include="Fonlow.Web.MetaCore" Version="1.5.0" />
+    <PackageReference Include="Fonlow.Poco2TsCore" Version="2.7.1" />
+    <PackageReference Include="Fonlow.Web.MetaCore" Version="1.5.1" />
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.1.4" />
   </ItemGroup>
 

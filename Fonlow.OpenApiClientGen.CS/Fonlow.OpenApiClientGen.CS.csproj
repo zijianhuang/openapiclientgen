@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Fonlow.OpenApiClientGen.Abstract\Fonlow.OpenApiClientGen.Abstract.csproj" />
     <ProjectReference Include="..\Fonlow.OpenApiClientGen.ClientTypes\Fonlow.OpenApiClientGen.ClientTypes.csproj" />
   </ItemGroup>
 
