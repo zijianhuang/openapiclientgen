@@ -280,9 +280,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(string tags)
+		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags)
 		{
-			var requestUri = "pet/findByTags?tags=" + Uri.EscapeDataString(tags);
+			var requestUri = "pet/findByTags??"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{
@@ -307,9 +307,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByTags(string tags)
+		public Pet[] FindPetsByTags(string[] tags)
 		{
-			var requestUri = "pet/findByTags?tags=" + Uri.EscapeDataString(tags);
+			var requestUri = "pet/findByTags??"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
 			var responseMessage = this.client.GetAsync(requestUri).Result;
 			try
 			{

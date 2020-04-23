@@ -73,9 +73,9 @@ namespace MyNS
 		/// <param name="tags">tags to filter by</param>
 		/// <param name="limit">maximum number of results to return</param>
 		/// <returns>pet response</returns>
-		public async Task<Pet[]> FindPetsAsync(string tags, int limit)
+		public async Task<Pet[]> FindPetsAsync(string[] tags, int limit)
 		{
-			var requestUri = "pets?tags=" + Uri.EscapeDataString(tags)+"&limit="+limit;
+			var requestUri = "pets??"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"))&limit="+limit;
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{
