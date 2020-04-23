@@ -3,7 +3,6 @@ using System.CodeDom;
 using System.Linq;
 using System.Diagnostics;
 using Fonlow.Reflection;
-using Fonlow.Web.Meta;
 using Microsoft.OpenApi.Models;
 using Fonlow.CodeDom.Web;
 using Fonlow.OpenApiClientGen.ClientTypes;
@@ -17,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 	{
 		SharedContext sharedContext;
 		OpenApiOperation apiOperation;
-		ParameterDescription[] parameterDescriptions;
+		ParameterDescriptionEx[] parameterDescriptions;
 		CodeTypeReference requestBodyCodeTypeReference; // for post and put
 		string requestBodyComment;
 
@@ -231,15 +230,14 @@ namespace Fonlow.OpenApiClientGen.Cs
 			var parameters = apiOperation.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(d => new CodeParameterDeclarationExpression()
 			{
 				Name = d.Name,
-				Type = nameComposer.GetParameterCodeTypeReference(d),
+				Type = nameComposer.OpenApiParameterToCodeTypeReference(d),
 
 			}).ToArray();
 
 			method.Parameters.AddRange(parameters);
 
 			var jsUriQuery = UriQueryHelper.CreateUriQuery(relativePath, parameterDescriptions);
-			var uriText = jsUriQuery == null ? $"\"{relativePath}\"" :
-				RemoveTrialEmptyString($"\"{jsUriQuery}\"");
+			var uriText = jsUriQuery == null ? $"\"{relativePath}\"" : RemoveTrialEmptyString($"\"{jsUriQuery}\"");
 
 			method.Statements.Add(new CodeVariableDeclarationStatement(
 				new CodeTypeReference("var"), "requestUri",
@@ -358,7 +356,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 		static bool IsPrimitive(string typeName)
 		{
-			string[] ts = new string[] { "System.Int32", "System.Int64", "System.Float", "System.Double", "System.DateTime", "System.Boolean" };
+			string[] ts = new string[] { "System.Int32", "System.Int64", "System.Float", "System.Double", "System.DateTime", "System.Boolean", "System.Enum" };
 			return ts.Contains(typeName);
 		}
 
@@ -509,14 +507,21 @@ namespace Fonlow.OpenApiClientGen.Cs
 				method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
 		}
 
-		static string RemoveTrialEmptyString(string s)
+		private static string RemoveTrialEmptyString(string s)
 		{
 			var p = s.IndexOf("+\"\"");
-			if (p == -1)
+			if (p >= 0)
 			{
-				return s;
+				return s.Remove(p, 3);
 			}
-			return s.Remove(p, 3);
+
+			var p2 = s.IndexOf("))\"");
+			if (p2 >= 0)
+			{
+				return s.Remove(p2 + 2, 1);
+			}
+
+			return s;
 		}
 
 	}

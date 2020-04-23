@@ -20,8 +20,8 @@
 
   <ItemGroup>
     <PackageReference Include="Fonlow.Poco2TsCore" Version="2.7.1" />
-    <PackageReference Include="Fonlow.Web.MetaCore" Version="1.5.1" />
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.1.4" />
+    <PackageReference Include="Tavis.UriTemplates" Version="1.1.1" />
   </ItemGroup>
 
 </Project>

@@ -79,7 +79,8 @@ namespace SwagTests
 		{
 			var s = TranslateJsonToCode(openApiFile, mySettings);
 			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
-			Assert.Equal(ReadFromResults(expectedFile), s);
+			var expected = ReadFromResults(expectedFile);
+			Assert.Equal(expected, s);
 		}
 
 

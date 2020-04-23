@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.CodeDom;
-using Fonlow.Web.Meta;
 using System.Text.RegularExpressions;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
@@ -255,16 +254,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return Tuple.Create(new CodeTypeReference(complexTypeName), stringAsString, true);
 		}
 
-		public CodeTypeReference GetParameterCodeTypeReference(OpenApiParameter p)
-		{
-			var type = PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format);
-			return new CodeTypeReference(type);
-		}
-
-		public ParameterDescription[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
+		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
 			return ps.Select(p =>
-				new ParameterDescription()
+				new ParameterDescriptionEx()
 				{
 					Name = p.Name,
 					Documentation = p.Description,
@@ -274,7 +267,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						ParameterName = p.Name,
 						ParameterType = PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
-					}
+					},
+
+					ParameterTypeReference= OpenApiParameterToCodeTypeReference(p)
 				}
 			).Where(k => k.ParameterDescriptor.ParameterBinder != ParameterBinder.None).ToArray();
 		}
@@ -529,5 +524,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			};
 			return typeReference;
 		}
+	}
+
+	public class ParameterDescriptionEx : ParameterDescription
+	{
+		public CodeTypeReference ParameterTypeReference { get; set; }
 	}
 }

@@ -1,6 +1,5 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using Fonlow.TypeScriptCodeDom;
-using Fonlow.Web.Meta;
 using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
@@ -15,7 +14,7 @@ namespace Fonlow.CodeDom.Web.Ts
 	public abstract class ClientApiTsFunctionGenAbstract
 	{
 		OpenApiOperation apiOperation;
-		protected ParameterDescription[] ParameterDescriptions { get; private set; }
+		protected ParameterDescriptionEx[] ParameterDescriptions { get; private set; }
 		protected CodeTypeReference RequestBodyCodeTypeReference { get; private set; }
 		string requestBodyComment;
 
@@ -128,7 +127,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			builder.AppendLine(HttpMethod + " " + RelativePath);
 			foreach (var item in ParameterDescriptions)
 			{
-				var tsParameterType = Poco2TsGen.TranslateToClientTypeReference(item.ParameterDescriptor.ParameterType);
+				var tsParameterType = item.ParameterTypeReference;// Poco2TsGen.TranslateToClientTypeReference(item.ParameterDescriptor.ParameterType);
 				if (!String.IsNullOrEmpty(item.Documentation))
 				{
 					builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {item.Documentation}");
@@ -163,7 +162,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected abstract void RenderImplementation();
 
-		protected abstract string CreateUriQueryForTs(string uriText, ParameterDescription[] parameterDescriptions);
+		protected abstract string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions);
 	}
 
 }

@@ -1,4 +1,4 @@
-﻿using Fonlow.Web.Meta;
+﻿using Fonlow.OpenApiClientGen.ClientTypes;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -9,7 +9,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		}
 
-		protected override string CreateUriQueryForTs(string uriText, ParameterDescription[] parameterDescriptions)
+		protected override string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions)
 		{
 			return UriQueryHelper.CreateUriQueryForTs(uriText, parameterDescriptions);
 		}

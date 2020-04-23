@@ -1,10 +1,42 @@
-﻿using Fonlow.Web.Meta;
+﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Fonlow.CodeDom.Web
 {
 	internal static class UriTemplateTransform
 	{
+		static readonly HashSet<string> simpleListTypeNames = new HashSet<string>(
+		new string[] {
+			typeof(IEnumerable<>).Name,
+			typeof(IList<>).Name,
+			typeof(ICollection<>).Name,
+			typeof(IQueryable<>).Name,
+			typeof(IReadOnlyList<>).Name,
+			typeof(List<>).Name,
+			typeof(System.Collections.ObjectModel.Collection<>).Name,
+			typeof(IReadOnlyCollection<>).Name,
+			"System.Collections.Generic.IAsyncEnumerable`1",
+		   typeof(System.Collections.ObjectModel.ObservableCollection<>).Name,
+	   }
+	   );
+
+		static readonly HashSet<string> simpleArrayTypeNames = new HashSet<string>(
+		new string[] {
+		   "Int32[]",
+		   "Int64[]",
+		   "Decimal[]",
+		   "Double[]",
+		   "Single[]",
+		   "String[]",
+		   "UInt32[]",
+		   "UInt64[]",
+		   "Int16[]",
+		   "UInt16[]",
+	   }
+	   );
+
 		static readonly Type typeofString = typeof(string);
 		static readonly Type typeofDateTime = typeof(DateTime);
 		static readonly Type typeofDateTimeNullable = typeof(DateTime?);
@@ -12,9 +44,9 @@ namespace Fonlow.CodeDom.Web
 		static readonly Type typeofDateTimeOffsetNullable = typeof(DateTimeOffset?);
 		static readonly Type typeOfNullableDefinition = typeof(Nullable<>);
 
-		public static string Transform(string newUriText, ParameterDescription d)
+		public static string Transform(string newUriText, ParameterDescriptionEx d)
 		{
-			if (d.ParameterDescriptor.ParameterType == typeofString)
+			if (d.ParameterTypeReference.BaseType == "System.String" && d.ParameterTypeReference.ArrayRank == 0)
 			{
 				return newUriText.Replace($"{{{d.Name}}}", $"\"+Uri.EscapeDataString({d.Name})+\"");
 			}
@@ -41,6 +73,13 @@ namespace Fonlow.CodeDom.Web
 				}
 
 				return replaced;
+			}
+			else if (d.ParameterTypeReference.ArrayRank > 0)
+			{
+				var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(k => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(k.ToString())}}\"))";
+				//				var placeHolder = $"{d.ParameterDescriptor.ParameterName}={{{d.ParameterDescriptor.ParameterName}}}&";
+				//				return newUriText.Replace(placeHolder, "\"+" + arrayQuery);
+				return newUriText + "?\"+" + arrayQuery;
 			}
 			else
 			{
@@ -93,6 +132,23 @@ namespace Fonlow.CodeDom.Web
 		static bool IsNullablePrimitive(Type t)
 		{
 			return (t.IsGenericType && typeOfNullableDefinition.Equals(t.GetGenericTypeDefinition()) && (t.GetGenericArguments()[0].IsPrimitive || t.GetGenericArguments()[0].IsValueType));
+		}
+
+		static bool IsSimpleArrayType(Type type)
+		{
+			return simpleArrayTypeNames.Contains(type.Name);
+		}
+
+		public static bool IsSimpleListType(Type type)
+		{
+			return simpleListTypeNames.Contains(type.Name) && IsSimpleType(type.GenericTypeArguments[0]);
+		}
+
+		static readonly Type typeOfString = typeof(string);
+
+		public static bool IsSimpleType(Type type)
+		{
+			return type.IsPrimitive || type.Equals(typeOfString) || type.BaseType?.FullName == "System.Enum";
 		}
 
 
