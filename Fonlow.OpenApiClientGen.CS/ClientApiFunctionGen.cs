@@ -58,7 +58,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 		{
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(nameComposer);
+			this.parametersHelper = new ParametersHelper(nameComposer, poco2CsGen.ClientNamespace);
 			this.apiOperation = apiOperation;
 			this.httpMethod = httpMethod;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";

@@ -21,8 +21,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			this.codeCompileUnit = codeCompileUnit;
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.clientNamespace = clientNamespace;
+			this.ClientNamespace = clientNamespace;
 		}
+
+		public CodeNamespace ClientNamespace { get; private set; }
 
 		readonly CodeCompileUnit codeCompileUnit;
 
@@ -81,8 +83,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		CodeNamespace clientNamespace;
-
 		/// <summary>
 		/// Create TypeScript CodeDOM for POCO types. 
 		/// For an enum type, all members will be processed regardless of EnumMemberAttribute.
@@ -111,7 +111,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 					{
-						typeDeclaration = PodGenHelper.CreatePodClientInterface(clientNamespace, typeName);
+						typeDeclaration = PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName);
 						if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 						{
 							var allOfRef = allOfBaseTypeSchemaList[0];
@@ -139,7 +139,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else
 				{
-					typeDeclaration = PodGenHelper.CreatePodClientEnum(clientNamespace, typeName);
+					typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, typeName);
 					CreateTypeOrMemberDocComment(item, typeDeclaration);
 					AddEnumMembers(typeDeclaration, enumTypeList);
 				}
@@ -241,7 +241,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 							{
 								var casualTypeName = typeDeclaration.Name + ToTitleCase(propertyName);
-								var casualTypeDeclaration = PodGenHelper.CreatePodClientInterface(clientNamespace, casualTypeName);
+								var casualTypeDeclaration = PodGenHelper.CreatePodClientInterface(ClientNamespace, casualTypeName);
 								AddProperties(casualTypeDeclaration, arrayItemsSchema);
 								var arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, isRequired);
@@ -267,7 +267,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else // for casual enum
 					{
 						var casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
-						var casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(clientNamespace, casualEnumName);
+						var casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
 						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
 						clientProperty = CreateProperty(propertyName, casualEnumName, isRequired);
 					}

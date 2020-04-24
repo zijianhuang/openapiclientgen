@@ -41,7 +41,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		{
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(nameComposer);
+			this.parametersHelper = new ParametersHelper(nameComposer, com2TsTypes.ClientNamespace);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
 			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);

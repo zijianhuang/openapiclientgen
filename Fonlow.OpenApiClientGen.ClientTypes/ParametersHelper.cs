@@ -13,12 +13,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class ParametersHelper
 	{
-		public ParametersHelper(NameComposer nameComposer)
+		public ParametersHelper(NameComposer nameComposer, CodeNamespace clientNamespace)
 		{
 			this.nameComposer = nameComposer;
+			this.clientNamespace = clientNamespace;
 		}
 
 		NameComposer nameComposer;
+		CodeNamespace clientNamespace;
 
 		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
@@ -99,6 +101,38 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				default:
 					return ParameterBinder.None; //so to be skiped/ignored
 			}
+		}
+
+		public CodeTypeDeclaration LocateEnumDeclaration(string[] ms)
+		{
+			for (int i = 0; i < clientNamespace.Types.Count; i++)
+			{
+				var tc = clientNamespace.Types[i];
+				if (tc.IsEnum)
+				{
+					var memberCount = tc.Members.Count;
+					if (memberCount != ms.Length)
+					{
+						continue;
+					}
+
+					for (int k = 0; k < memberCount; k++)
+					{
+						var tem = tc.Members[k];
+						if (tem.Name != ms[k])
+						{
+							break;
+						}
+
+						if (k == memberCount - 1)// last one pass
+						{
+							return tc;
+						}
+					}
+				}
+			}
+
+			return null;
 		}
 	}
 
