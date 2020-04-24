@@ -257,9 +257,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						var customPropertyType = refToType.Type;
 						var customPropertyFormat = refToType.Format;
 						var customType = nameComposer.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-						if (customType == typeofDateTimeOffset && !isRequired)
+						if (!customType.IsClass && !isRequired)
 						{
-							clientProperty = CreateProperty(propertyName, nullableDateTimeOffset);
+							clientProperty = CreateNullableProperty(propertyName, customType);
 						}
 						else
 						{

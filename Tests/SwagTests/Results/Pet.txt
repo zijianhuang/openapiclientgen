@@ -59,7 +59,7 @@ namespace MyNS
 		/// <summary>
 		/// Category ID
 		/// </summary>
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Category name
@@ -104,12 +104,12 @@ namespace MyNS
 		/// <summary>
 		/// Order ID
 		/// </summary>
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		public long PetId { get; set; }
+		public System.Nullable<System.Int64> PetId { get; set; }
 		
 		public System.Nullable<System.Int32> Quantity { get; set; }
 		
@@ -150,7 +150,7 @@ namespace MyNS
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Categories this pet belongs to
@@ -203,7 +203,7 @@ namespace MyNS
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Tag name

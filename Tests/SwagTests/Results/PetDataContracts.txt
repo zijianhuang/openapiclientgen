@@ -75,7 +75,7 @@ namespace MyNS
 		/// Category ID
 		/// </summary>
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Category name
@@ -131,13 +131,13 @@ namespace MyNS
 		/// Order ID
 		/// </summary>
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public long PetId { get; set; }
+		public System.Nullable<System.Int64> PetId { get; set; }
 		
 		[System.Runtime.Serialization.DataMemberAttribute()]
 		public System.Nullable<System.Int32> Quantity { get; set; }
@@ -191,7 +191,7 @@ namespace MyNS
 		/// Pet ID
 		/// </summary>
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Categories this pet belongs to
@@ -259,7 +259,7 @@ namespace MyNS
 		/// Tag ID
 		/// </summary>
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Tag name
