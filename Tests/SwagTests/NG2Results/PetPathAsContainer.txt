@@ -199,7 +199,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		GetByStatus(status: Array<PetStatus>): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${encodeURIComponent(z)}`).join('&'));
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${z}`).join('&'));
 		}
 	}
 

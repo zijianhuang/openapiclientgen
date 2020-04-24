@@ -88,8 +88,16 @@ namespace Fonlow.CodeDom.Web
 				}
 				else if (d.ParameterTypeReference.ArrayRank > 0)
 				{
-					var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
-					return newUriText + "\"+" + arrayQuery;
+					if (d.ParameterTypeReference.BaseType == "System.String")
+					{
+						var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
+						return newUriText + "\"+" + arrayQuery;
+					}
+					else
+					{
+						var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{z}}\"))+\"";
+						return newUriText + "\"+" + arrayQuery;
+					}
 				}
 				else
 				{
@@ -162,8 +170,16 @@ namespace Fonlow.CodeDom.Web
 				}
 				else if (d.ParameterTypeReference.ArrayRank > 0)
 				{
-					var arrayQuery = $"{d.ParameterDescriptor.ParameterName}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
-					return newUriText + "'+" + arrayQuery + " + '";
+					if (d.ParameterTypeReference.BaseType == "System.String")
+					{
+						var arrayQuery = $"{d.ParameterDescriptor.ParameterName}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
+						return newUriText + "'+" + arrayQuery + " + '";
+					}
+					else
+					{
+						var arrayQuery = $"{d.ParameterDescriptor.ParameterName}.map(z => `{d.ParameterDescriptor.ParameterName}=${{z}}`).join('&')";
+						return newUriText + "'+" + arrayQuery + " + '";
+					}
 				}
 				else
 				{

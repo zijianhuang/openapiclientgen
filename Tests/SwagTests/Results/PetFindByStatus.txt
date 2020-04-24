@@ -182,7 +182,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
 		{
-			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{
@@ -209,7 +209,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Pet[] FindPetsByStatus(PetStatus[] status)
 		{
-			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			var responseMessage = this.client.GetAsync(requestUri).Result;
 			try
 			{
