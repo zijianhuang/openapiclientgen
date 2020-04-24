@@ -70,13 +70,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 								var enumArrayReference = nameComposer.CreateArrayOfCustomTypeReference(existingTypeName, 1);
 								return enumArrayReference;
 							}
+
+							//warning about bad yaml design.
+							Trace.TraceWarning($"Parameter {content.Name} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 						}
-						else
-						{
-							var clrType = nameComposer.PrimitiveSwaggerTypeToClrType(arrayType, null);
-							var arrayCodeTypeReference = nameComposer.CreateArrayTypeReference(clrType, 1);
-							return arrayCodeTypeReference;
-						}
+
+						var clrType = nameComposer.PrimitiveSwaggerTypeToClrType(arrayType, null);
+						var arrayCodeTypeReference = nameComposer.CreateArrayTypeReference(clrType, 1);
+						return arrayCodeTypeReference;
 					}
 				}
 				else if (content.Schema.Enum.Count == 0) // for primitive type
