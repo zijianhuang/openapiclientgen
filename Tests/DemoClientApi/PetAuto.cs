@@ -21,7 +21,7 @@ namespace DemoPet.Client
 	public class ApiResponse
 	{
 		
-		public int Code { get; set; }
+		public System.Nullable<System.Int32> Code { get; set; }
 		
 		public string Type { get; set; }
 		
@@ -59,7 +59,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Category ID
 		/// </summary>
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Category name
@@ -104,14 +104,14 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Order ID
 		/// </summary>
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		public long PetId { get; set; }
+		public System.Nullable<System.Int64> PetId { get; set; }
 		
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
 		/// Estimated ship date
@@ -126,7 +126,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Indicates whenever order was completed or not
 		/// </summary>
-		public bool Complete { get; set; }
+		public System.Nullable<System.Boolean> Complete { get; set; }
 		
 		/// <summary>
 		/// Unique Request Id
@@ -150,7 +150,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Categories this pet belongs to
@@ -203,7 +203,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Tag name
@@ -214,7 +214,7 @@ namespace DemoPet.Client
 	public class User
 	{
 		
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		public string Pet { get; set; }
 		
@@ -251,7 +251,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// User status
 		/// </summary>
-		public int UserStatus { get; set; }
+		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
 	
 	public partial class PetClient

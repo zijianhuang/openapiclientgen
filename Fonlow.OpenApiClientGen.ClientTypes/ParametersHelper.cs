@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Models;
 using Fonlow.CodeDom.Web;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Microsoft.OpenApi.Extensions;
+using Microsoft.OpenApi.Any;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -59,11 +60,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else
 					{
 						var arrayType = arrayItemsSchema.Type;
-						//if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
-						//{
-						//	var enumMemberNames = arrayItemsSchema.Enum.Select(m => m.AnyType.GetDisplayName());
-						//}
-						//else
+						if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
+						{
+							var enumMemberNames = arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+							var existingDeclaration = LocateEnumDeclaration(enumMemberNames);
+							if (existingDeclaration != null)
+							{
+								var existingTypeName = existingDeclaration.Name;
+								var enumArrayReference = nameComposer.CreateArrayOfCustomTypeReference(existingTypeName, 1);
+								return enumArrayReference;
+							}
+						}
+						else
 						{
 							var clrType = nameComposer.PrimitiveSwaggerTypeToClrType(arrayType, null);
 							var arrayCodeTypeReference = nameComposer.CreateArrayTypeReference(clrType, 1);

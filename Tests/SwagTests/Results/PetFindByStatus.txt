@@ -17,20 +17,6 @@ namespace MyNS
 	using Newtonsoft.Json;
 	
 	
-	public class Pet
-	{
-		
-		/// <summary>
-		/// The name given to a pet
-		/// </summary>
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// Type of a pet
-		/// </summary>
-		public string PetType { get; set; }
-	}
-	
 	/// <summary>
 	/// A representation of a cat
 	/// </summary>
@@ -40,7 +26,132 @@ namespace MyNS
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
-		public string HuntingSkill { get; set; }
+		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		public CatHuntingSkill HuntingSkill { get; set; }
+	}
+	
+	public enum CatHuntingSkill
+	{
+		
+		clueless = 0,
+		
+		lazy = 1,
+		
+		adventurous = 2,
+		
+		aggressive = 3,
+	}
+	
+	public class Category
+	{
+		
+		/// <summary>
+		/// Category ID
+		/// </summary>
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		/// <summary>
+		/// Category name
+		/// </summary>
+		public string Name { get; set; }
+		
+		/// <summary>
+		/// Test Sub Category
+		/// </summary>
+		public string Sub { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a dog
+	/// </summary>
+	public class Dog : Pet
+	{
+		
+		/// <summary>
+		/// The size of the pack the dog is from
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		public int PackSize { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a honey bee
+	/// </summary>
+	public class HoneyBee : Pet
+	{
+		
+		/// <summary>
+		/// Average amount of honey produced per day in ounces
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		public float HoneyPerDay { get; set; }
+	}
+	
+	public class Pet
+	{
+		
+		/// <summary>
+		/// Pet ID
+		/// </summary>
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		/// <summary>
+		/// Categories this pet belongs to
+		/// </summary>
+		public string Category { get; set; }
+		
+		/// <summary>
+		/// The name given to a pet
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		public string Name { get; set; }
+		
+		/// <summary>
+		/// The list of URL to a cute photos featuring pet
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		public string[] PhotoUrls { get; set; }
+		
+		public string Friend { get; set; }
+		
+		/// <summary>
+		/// Tags attached to the pet
+		/// </summary>
+		public Tag[] Tags { get; set; }
+		
+		/// <summary>
+		/// Pet status in the store
+		/// </summary>
+		public PetStatus Status { get; set; }
+		
+		/// <summary>
+		/// Type of a pet
+		/// </summary>
+		public string PetType { get; set; }
+	}
+	
+	public enum PetStatus
+	{
+		
+		available = 0,
+		
+		pending = 1,
+		
+		sold = 2,
+	}
+	
+	public class Tag
+	{
+		
+		/// <summary>
+		/// Tag ID
+		/// </summary>
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		/// <summary>
+		/// Tag name
+		/// </summary>
+		public string Name { get; set; }
 	}
 	
 	public partial class Misc
@@ -69,7 +180,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(string[] status)
+		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={Uri.EscapeDataString(z.ToString())}"));
 			var responseMessage = await client.GetAsync(requestUri);
@@ -96,7 +207,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus(string[] status)
+		public Pet[] FindPetsByStatus(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={Uri.EscapeDataString(z.ToString())}"));
 			var responseMessage = this.client.GetAsync(requestUri).Result;

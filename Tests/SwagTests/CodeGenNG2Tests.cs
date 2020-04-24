@@ -78,7 +78,7 @@ namespace SwagTests
 		static void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
 			var s = TranslateJsonToCode(openApiFile, mySettings);
-			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			var expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 		}
@@ -369,7 +369,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetFindByStatus()
 		{
-			GenerateAndAssert("SwagMock\\PetFindByStatus.json" , "NG2Results\\PetFindByStatus.txt", new Settings()
+			GenerateAndAssert("SwagMock\\petByStatus.yaml", "NG2Results\\PetFindByStatus.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",

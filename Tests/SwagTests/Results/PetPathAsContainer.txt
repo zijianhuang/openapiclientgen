@@ -416,7 +416,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> GetByStatusAsync(string[] status)
+		public async Task<Pet[]> GetByStatusAsync(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={Uri.EscapeDataString(z.ToString())}"));
 			var responseMessage = await client.GetAsync(requestUri);

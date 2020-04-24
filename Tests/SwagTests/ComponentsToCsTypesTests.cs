@@ -323,7 +323,7 @@ namespace MyNS
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		public long Id { get; set; }//;
+		public System.Nullable<System.Int64> Id { get; set; }//;
 		
 		/// <summary>
 		/// Tag name
@@ -415,7 +415,7 @@ namespace MyNS
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		public long Id { get; set; }//;
+		public System.Nullable<System.Int64> Id { get; set; }//;
 		
 		/// <summary>
 		/// Tag name

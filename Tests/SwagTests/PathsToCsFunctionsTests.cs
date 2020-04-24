@@ -128,7 +128,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetFindByStatus()
 		{
-			GenerateAndAssert("SwagMock\\PetFindByStatus.json", "Results\\PetFindByStatus.txt", new Settings()
+			GenerateAndAssert("SwagMock\\petByStatus.yaml", "Results\\PetFindByStatus.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",

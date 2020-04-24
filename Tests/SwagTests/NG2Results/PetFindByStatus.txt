@@ -2,21 +2,78 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
-	export interface Pet {
-
-		/**The name given to a pet */
-		name?: string;
-
-		/**Type of a pet */
-		petType?: string;
-	}
-
 
 	/**A representation of a cat */
 	export interface Cat extends Pet {
 
 		/**The measured skill for hunting */
-		huntingSkill?: string;
+		huntingSkill: CatHuntingSkill;
+	}
+
+	export enum CatHuntingSkill { clueless = 0, lazy = 1, adventurous = 2, aggressive = 3 }
+
+	export interface Category {
+
+		/**Category ID */
+		id?: number;
+
+		/**Category name */
+		name?: string;
+
+		/**Test Sub Category */
+		sub?: string;
+	}
+
+
+	/**A representation of a dog */
+	export interface Dog extends Pet {
+
+		/**The size of the pack the dog is from */
+		packSize: number;
+	}
+
+
+	/**A representation of a honey bee */
+	export interface HoneyBee extends Pet {
+
+		/**Average amount of honey produced per day in ounces */
+		honeyPerDay: number;
+	}
+
+	export interface Pet {
+
+		/**Pet ID */
+		id?: number;
+
+		/**Categories this pet belongs to */
+		category?: string;
+
+		/**The name given to a pet */
+		name: string;
+
+		/**The list of URL to a cute photos featuring pet */
+		photoUrls: Array<string>;
+		friend?: string;
+
+		/**Tags attached to the pet */
+		tags?: Array<Tag>;
+
+		/**Pet status in the store */
+		status?: PetStatus;
+
+		/**Type of a pet */
+		petType?: string;
+	}
+
+	export enum PetStatus { available = 0, pending = 1, sold = 2 }
+
+	export interface Tag {
+
+		/**Tag ID */
+		id?: number;
+
+		/**Tag name */
+		name?: string;
 	}
 
 	@Injectable()
@@ -28,10 +85,10 @@ export namespace MyNS {
 		 * Finds Pets by status
 		 * Multiple status values can be provided with comma separated strings
 		 * Get pet/findByStatus
-		 * @param {Array<string>} status Status values that need to be considered for filter
+		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByStatus(status: Array<string>): Observable<Array<Pet>> {
+		FindPetsByStatus(status: Array<PetStatus>): Observable<Array<Pet>> {
 			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${encodeURIComponent(z)}`).join('&'));
 		}
 	}
