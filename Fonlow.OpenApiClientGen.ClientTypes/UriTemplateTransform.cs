@@ -81,7 +81,7 @@ namespace Fonlow.CodeDom.Web
 				}
 				else if (d.ParameterTypeReference.ArrayRank > 0)
 				{
-					var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))";
+					var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
 					return newUriText + "\"+" + arrayQuery;
 				}
 				else
@@ -119,11 +119,10 @@ namespace Fonlow.CodeDom.Web
 
 					return replaced;
 				}
-				else if (IsSimpleArrayType(d.ParameterDescriptor.ParameterType) || IsSimpleListType(d.ParameterDescriptor.ParameterType))
+				else if (d.ParameterTypeReference.ArrayRank > 0)
 				{
-					var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(k => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(k.ToString())}}\"))";
-					var placeHolder = $"{d.ParameterDescriptor.ParameterName}={{{d.ParameterDescriptor.ParameterName}}}";
-					return newUriText.Replace(placeHolder, "\"+" + arrayQuery);
+					var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
+					return newUriText + "\"+" + arrayQuery;
 				}
 				else
 				{
