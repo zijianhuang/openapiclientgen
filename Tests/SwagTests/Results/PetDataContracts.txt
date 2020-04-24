@@ -23,7 +23,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public int Code { get; set; }
+		public System.Nullable<System.Int32> Code { get; set; }
 		
 		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Type { get; set; }
@@ -140,7 +140,7 @@ namespace MyNS
 		public long PetId { get; set; }
 		
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
 		/// Estimated ship date
@@ -158,7 +158,7 @@ namespace MyNS
 		/// Indicates whenever order was completed or not
 		/// </summary>
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public bool Complete { get; set; }
+		public System.Nullable<System.Boolean> Complete { get; set; }
 		
 		/// <summary>
 		/// Unique Request Id
@@ -274,7 +274,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public long Id { get; set; }
+		public System.Nullable<System.Int64> Id { get; set; }
 		
 		[System.Runtime.Serialization.DataMemberAttribute()]
 		public string Pet { get; set; }
@@ -319,7 +319,7 @@ namespace MyNS
 		/// User status
 		/// </summary>
 		[System.Runtime.Serialization.DataMemberAttribute()]
-		public int UserStatus { get; set; }
+		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
 	
 	public partial class PetClient

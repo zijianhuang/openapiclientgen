@@ -81,7 +81,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items returned on a single page from the result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The URI for the next page of results. This value is returned only if there is an additional page of results in the result set. Max length: 2048
@@ -91,7 +91,7 @@ namespace MyNS
 		/// <summary>
 		/// The value of the offset submitted in the request, which is the number of results to skip before listing the first returned result.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the previous page of results. This value is returned only if there is a previous page of results in the result set. Max length: 2048
@@ -101,7 +101,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of items in the result set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -162,7 +162,7 @@ namespace MyNS
 		/// <summary>
 		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ad was successful created.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
 	/// <summary>
@@ -358,7 +358,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, eBay adds all inventory matching the campaign criterion to the campaign, including any new listings created from the items in your inventory. In other words, if you create a new listing, and it is is eligible for the Promoted Listings campaign (it is a multiple-quantity fixed-price listing that matches the selection rules of the campaign), it will be automatically added to the campaign.Default: false
 		/// </summary>
-		public bool AutoSelectFutureInventory { get; set; }
+		public System.Nullable<System.Boolean> AutoSelectFutureInventory { get; set; }
 		
 		/// <summary>
 		/// This enum defines the criterion (selection rule) types. Currently, the only criterion type supported is INVENTORY_PARTITION. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/CriterionTypeEnum.html'>eBay API documentation</a>
@@ -390,7 +390,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items returned on a single page from the result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The URI for the next page of results. This value is returned only if there is an additional page of results in the result set. Max length: 2048
@@ -400,7 +400,7 @@ namespace MyNS
 		/// <summary>
 		/// The value of the offset submitted in the request, which is the number of results to skip before listing the first returned result.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the previous page of results. This value is returned only if there is a previous page of results in the result set. Max length: 2048
@@ -410,7 +410,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of items in the result set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -520,7 +520,7 @@ namespace MyNS
 		/// <summary>
 		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successful created.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
 	/// <summary>
@@ -653,7 +653,7 @@ namespace MyNS
 		/// <summary>
 		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ad was successfully deleted.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
 	/// <summary>
@@ -702,7 +702,7 @@ namespace MyNS
 		/// <summary>
 		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successfully deleted.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
 	/// <summary>
@@ -807,7 +807,7 @@ namespace MyNS
 		/// <summary>
 		/// Required if: you are creating a volume pricing promotion. This field indicates the order in which the discountRules are presented. The value specified for this field must equal the associated minQuantity value.
 		/// </summary>
-		public int RuleOrder { get; set; }
+		public System.Nullable<System.Int32> RuleOrder { get; set; }
 	}
 	
 	/// <summary>
@@ -824,7 +824,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items that must be purchased in order to qualify for the discount. Valid values: &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 &nbsp; 20, 25, 50, 75, 100
 		/// </summary>
-		public int ForEachQuantity { get; set; }
+		public System.Nullable<System.Int32> ForEachQuantity { get; set; }
 		
 		/// <summary>
 		/// This type defines a monetary value as represented by a currency. The currency is normally set to the currency used on the associated eBay marketplace.
@@ -834,12 +834,12 @@ namespace MyNS
 		/// <summary>
 		/// The minimum quantity of promoted items that needs to be bought in order to qualify for the promotion's discount. Valid values: &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &nbsp; 12, 13, 14, 15, 16, 17, 18, 19 &nbsp; 20, 25, 50, 75, 100
 		/// </summary>
-		public int MinQuantity { get; set; }
+		public System.Nullable<System.Int32> MinQuantity { get; set; }
 		
 		/// <summary>
 		/// Use this field to configure &quot;Buy One Get One&quot; (or BOGO) promotions. You must couple this field with forEachQuantity and an amountOffItem or percentOffItem field to configure your BOGO promotion. This field is not valid with order-based promotions. The value of this field represents the number of items to be discounted when other promotion criteria is met. For example, when the buyer adds the number of items identified by the forEachQuantity value to their cart, they are then eligible to receive the stated discount from an additional number of like items (the number of which is identified by this field) when they add those items to their cart. To receive the discount, the buyer must purchase the number of items indicated by forEachQuantity plus the number indicated by this field. Valid values: &nbsp; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 		/// </summary>
-		public int NumberOfDiscountedItems { get; set; }
+		public System.Nullable<System.Int32> NumberOfDiscountedItems { get; set; }
 	}
 	
 	/// <summary>
@@ -861,7 +861,7 @@ namespace MyNS
 		/// <summary>
 		/// A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of reference IDs that identify the specific request elements most closely associated to the error or warning, if any. For JSON, use JSONPath notation.
@@ -993,17 +993,17 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, free shipping is applied to the first shipping service specified for the item. The first domestic shipping option is set to &quot;free shipping,&quot; regardless if the shipping optionType for that service is set to FLAT_RATE, CALCULATED, or NOT_SPECIFIED (freight). This flag essentially adds free shipping as a promotional bonus. Default: false
 		/// </summary>
-		public bool ApplyFreeShipping { get; set; }
+		public System.Nullable<System.Boolean> ApplyFreeShipping { get; set; }
 		
 		/// <summary>
 		/// If set to true, eBay will automatically add inventory items to the markdown promotion if they meet the selectedInventoryDiscounts criteria specified for the markdown promotion. Default: false
 		/// </summary>
-		public bool AutoSelectFutureInventory { get; set; }
+		public System.Nullable<System.Boolean> AutoSelectFutureInventory { get; set; }
 		
 		/// <summary>
 		/// If set to true, price increases (including removing the free shipping flag) are blocked and an error message is returned if a seller attempts to adjust the price of an item that's partaking in this markdown promotion. If set to false, an item is dropped from the markdown promotion if the seller adjusts the price. Default: false
 		/// </summary>
-		public bool BlockPriceIncreaseInItemRevision { get; set; }
+		public System.Nullable<System.Boolean> BlockPriceIncreaseInItemRevision { get; set; }
 		
 		/// <summary>
 		/// This field is required if you are configuring an MARKDOWN_SALE promotion. This is the seller-defined &quot;tag line&quot; for the offer, such as &quot;Save on designer shoes.&quot; A tag line appears under the &quot;offer-type text&quot; that is generated for the promotion. The text is displayed on the offer tile that is shown on the seller's All Offers page and on the event page for the promotion. Note: Offer-type text is a teaser that's presented throughout the buyer's journey through the sales flow and is generated by eBay. This text is not editable by the seller&mdash;it's derived from the settings in the discountRules and discountSpecification fields&mdash;and can be, for example, &quot;20% off&quot;. Maximum length: 50
@@ -1060,7 +1060,7 @@ namespace MyNS
 		/// <summary>
 		/// This flag is only relevant in volume pricing promotions (VOLUME_DISCOUNT). If set to true, the discount is applied only when the buyer purchases multiple quantities of a single item in the promotion. Otherwise, the promotional discount applies to multiple quantities of any items in the promotion. Note that this flag is not relevant if the inventoryCriterion container identifies a single listing ID for the promotion.
 		/// </summary>
-		public bool ApplyDiscountToSingleItemOnly { get; set; }
+		public System.Nullable<System.Boolean> ApplyDiscountToSingleItemOnly { get; set; }
 		
 		/// <summary>
 		/// Required if you are configuring ORDER_DISCOUNT or MARKDOWN_SALE promotions (and not valid for VOLUME_DISCOUNT promotions). This is the seller-defined &quot;tag line&quot; for the offer, such as &quot;Save on designer shoes.&quot; The tag line appears under the &quot;offer-type text&quot; that is generated for the promotion and is displayed on the offer tile that's shown on the seller's All Offers page, and on the event page for the promotion. Note: Offer-type text is a teaser that's presented throughout the buyer's journey through the sales flow and is generated by eBay. The offer-type text is not editable by the seller&mdash;it's derived from the settings in the discountRules and discountSpecification fields&mdash;and can be, for example, &quot;Extra 20% off when you buy 3+&quot;. Maximum length: 50
@@ -1127,7 +1127,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the discount is applied only when the buyer purchases multiple quantities of a single item in the promotion. Otherwise, the promotional discount applies to multiple quantities of any items in the promotion. Note that this flag is not relevant if the inventoryCriterion container identifies a single listing ID for the promotion.
 		/// </summary>
-		public bool ApplyDiscountToSingleItemOnly { get; set; }
+		public System.Nullable<System.Boolean> ApplyDiscountToSingleItemOnly { get; set; }
 		
 		/// <summary>
 		/// This is the seller-defined &quot;tag line&quot; for the offer, such as &quot;Save on designer shoes.&quot; The tag line appears under the &quot;offer-type text&quot; that is generated for the promotion and is displayed under the offer tile that is shown on the seller's All Offers page and on the event page for the promotion. This tag line is not used with volume pricing promotions. Note: Offer-type text is a teaser that's presented throughout the buyer's journey through the sales flow and is generated by eBay. This text is not editable by the seller&mdash;it's derived from the settings in the discountRules and discountSpecification fields&mdash;and can be, for example, &quot;Extra 20% off when you buy 3+&quot;. Maximum length: 50
@@ -1308,12 +1308,12 @@ namespace MyNS
 		/// <summary>
 		/// This is the quantity of items purchased in a threshold promotion where the threshold has been met and the discount was applied. For example, suppose you're running a &quot;Buy 1, get 1 at 50%&quot; promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your number of items sold (itemsSoldQuantity) would be 2 and you number of orders sold (numberOfOrdersSold) would be 1.
 		/// </summary>
-		public int ItemsSoldQuantity { get; set; }
+		public System.Nullable<System.Int32> ItemsSoldQuantity { get; set; }
 		
 		/// <summary>
 		/// This is the number of orders sold in a threshold promotion where the threshold has been met and the discount was applied. For example, suppose you're running a &quot;Buy 1, get 1 at 50%&quot; promotion on $5 socks. One buyer purchases two pairs of socks, so they pay $7.50 for both pairs (rather than the full price of $10). Your numberOfOrdersSold would be 1 and your itemsSoldQuantity would be 2.
 		/// </summary>
-		public int NumberOfOrdersSold { get; set; }
+		public System.Nullable<System.Int32> NumberOfOrdersSold { get; set; }
 		
 		/// <summary>
 		/// The percentage sales lift is the total dollar amount gained due to promotions. This value is calculated as follows: promotionSale / totalSale = percentageSalesLift
@@ -1370,7 +1370,7 @@ namespace MyNS
 		/// <summary>
 		/// The value of the limit parameter submitted in the request, which is the maximum number of promotions returned on a page from the result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The URI for the next page of results. This value is returned if there is another page of results to return from the result set.
@@ -1380,7 +1380,7 @@ namespace MyNS
 		/// <summary>
 		/// The value of the offset submitted in the request, which is the number of promotions to skip before returning the first result.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the previous set of results. This is returned if there is a previous page of results in the result set.
@@ -1395,7 +1395,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of promotions in the result set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -1412,7 +1412,7 @@ namespace MyNS
 		/// <summary>
 		/// The value of the limit parameter submitted in the request, which is the maximum number of reports returned on a page from the result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The URI for the next page of results. This value is returned if there is another page of results to return from the result set.
@@ -1422,7 +1422,7 @@ namespace MyNS
 		/// <summary>
 		/// The value of the offset submitted in the request, which is the number of reports to skip before returning the first result.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the previous set of results. This is returned if there is a previous page of results in the result set.
@@ -1437,7 +1437,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of promotions in the result set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -1454,12 +1454,12 @@ namespace MyNS
 		/// <summary>
 		/// The maximum number of dimensions that can be requested for the specified report type.
 		/// </summary>
-		public int MaxNumberOfDimensionsToRequest { get; set; }
+		public System.Nullable<System.Int32> MaxNumberOfDimensionsToRequest { get; set; }
 		
 		/// <summary>
 		/// The maximum number of metrics that can be requested for the specified report type.
 		/// </summary>
-		public int MaxNumberOfMetricsToRequest { get; set; }
+		public System.Nullable<System.Int32> MaxNumberOfMetricsToRequest { get; set; }
 		
 		/// <summary>
 		/// A list containing the metadata for the metrics in the report.
@@ -1605,7 +1605,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items returned on a single page from the result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The URI for the next page of results. This value is returned only if there is an additional page of results in the result set. Max length: 2048
@@ -1615,7 +1615,7 @@ namespace MyNS
 		/// <summary>
 		/// The value of the offset submitted in the request, which is the number of results to skip before listing the first returned result.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the previous page of results. This value is returned only if there is a previous page of results in the result set. Max length: 2048
@@ -1625,7 +1625,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of items in the result set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 		
 		/// <summary>
 		/// A list of report tasks contained on this page from the paginated response.
@@ -1689,7 +1689,7 @@ namespace MyNS
 		/// <summary>
 		/// For markdown promotions, this field is reserved for future use.
 		/// </summary>
-		public int RuleOrder { get; set; }
+		public System.Nullable<System.Int32> RuleOrder { get; set; }
 	}
 	
 	/// <summary>

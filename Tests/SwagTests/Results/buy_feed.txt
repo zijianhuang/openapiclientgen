@@ -37,7 +37,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.
@@ -218,12 +218,12 @@ namespace MyNS
 		/// <summary>
 		/// A boolean that indicates whether the images can be altered. If the value is true, you cannot modify the image. Note: Due to image licensing agreements and other legal concerns, modification (including resizing) of some images is strictly prohibited. These images are for display as-is only.
 		/// </summary>
-		public bool ImageAlteringProhibited { get; set; }
+		public System.Nullable<System.Boolean> ImageAlteringProhibited { get; set; }
 		
 		/// <summary>
 		/// The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned.
 		/// </summary>
-		public int EstimatedAvailableQuantity { get; set; }
+		public System.Nullable<System.Int32> EstimatedAvailableQuantity { get; set; }
 		
 		/// <summary>
 		/// This column has a value only when the seller sets their Display Item Quantity preference to Display &quot;More than 10 available&quot; in your listing (if applicable). The value of this column will be MORE_THAN. This indicates that the seller has more than the 'Display Item Quantity', which is 10, in stock for this item. The following are the Display Item Quantity preferences the seller can set. Display &quot;More than 10 available&quot; in your listing (if applicable) If the seller enables this preference, this column will have a value as long as there are more than 10 of this item in inventory. If the quantity is equal to 10 or drops below 10, this column will be null and the estimated quantity of the item is returned in the estimatedAvailableQuantity column. Display the exact quantity in your items If the seller enables this preference, the availabilityThresholdType and availabilityThreshold columns will be null and the estimated quantity of the item is returned in the estimatedAvailableQuantity column. Note: Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. Code so that your app gracefully handles any future changes to these preferences. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/feed/types/AvailabilityThresholdEnum.html'>eBay API documentation</a>
@@ -233,17 +233,17 @@ namespace MyNS
 		/// <summary>
 		/// This column has a value only when the seller sets their 'display item quantity' preference to Display &quot;More than 10 available&quot; in your listing (if applicable). The value of this column will be &quot;10&quot;, which is the threshold value. Code so that your app gracefully handles any future changes to this value.
 		/// </summary>
-		public int AvailabilityThreshold { get; set; }
+		public System.Nullable<System.Int32> AvailabilityThreshold { get; set; }
 		
 		/// <summary>
 		/// Indicates whether the seller accepts returns for the item.
 		/// </summary>
-		public bool ReturnsAccepted { get; set; }
+		public System.Nullable<System.Boolean> ReturnsAccepted { get; set; }
 		
 		/// <summary>
 		/// The amount of days that the buyer has to return the item after the purchase date. For example, if this value is '30', the return period is 30 days.
 		/// </summary>
-		public int ReturnPeriodValue { get; set; }
+		public System.Nullable<System.Int32> ReturnPeriodValue { get; set; }
 		
 		/// <summary>
 		/// An enumeration value that indicates the period of time being used to measure the duration, such as business days, months, or years. TimeDurationUnitEnum is a common type shared by multiple eBay APIs and fields to express the time unit, but for return period duration, this value will always be DAY. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/feed/types/TimeDurationUnitEnum.html'>eBay API documentation</a>
@@ -348,7 +348,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items in a lot. In other words, a lot size is the number of items that are being sold together. A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot, such as the package of batteries shown in the example below. For example: Item Lot Definition Lot Size A package of 24 AA batteries A box of 10 packages 10 A P235/75-15 Goodyear tire 4 tires 4 Fashion Jewelry Rings Package of 100 assorted rings 100 Note: Lots are not supported in all categories.
 		/// </summary>
-		public int LotSize { get; set; }
+		public System.Nullable<System.Int32> LotSize { get; set; }
 		
 		/// <summary>
 		/// The unit of measurement used for the package dimensions, such as INCH, FEET, CENTIMETER, or METER. Code so that your app gracefully handles any future changes to this list. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/feed/types/LengthUnitOfMeasureEnum.html'>eBay API documentation</a>
@@ -398,7 +398,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items used when calculating the estimation information.
 		/// </summary>
-		public int QuantityUsedForEstimate { get; set; }
+		public System.Nullable<System.Int32> QuantityUsedForEstimate { get; set; }
 		
 		/// <summary>
 		/// The name of the shipping provider, such as FedEx, or USPS.
@@ -470,7 +470,7 @@ namespace MyNS
 		/// <summary>
 		/// A boolean that indicates whether the images can be altered. If the value is true, you cannot modify the image. Note: Due to image licensing agreements and other legal concerns, modification (including resizing) of some images is strictly prohibited. These images are for display as-is only.
 		/// </summary>
-		public bool ImageAlteringProhibited { get; set; }
+		public System.Nullable<System.Boolean> ImageAlteringProhibited { get; set; }
 	}
 	
 	/// <summary>
@@ -631,12 +631,12 @@ namespace MyNS
 		/// <summary>
 		/// A boolean that indicates whether the images can be altered. If the value is true, you cannot modify the image. Note: Due to image licensing agreements and other legal concerns, modification (including resizing) of some images is strictly prohibited. These images are for display as-is only.
 		/// </summary>
-		public bool ImageAlteringProhibited { get; set; }
+		public System.Nullable<System.Boolean> ImageAlteringProhibited { get; set; }
 		
 		/// <summary>
 		/// The estimated number of this item that are available for purchase. Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. So instead of returning quantity, the estimated availability of the item is returned.
 		/// </summary>
-		public int EstimatedAvailableQuantity { get; set; }
+		public System.Nullable<System.Int32> EstimatedAvailableQuantity { get; set; }
 		
 		/// <summary>
 		/// This column has a value only when the seller sets their Display Item Quantity preference to Display &quot;More than 10 available&quot; in your listing (if applicable). The value of this column will be MORE_THAN. This indicates that the seller has more than the 'Display Item Quantity', which is 10, in stock for this item. The following are the Display Item Quantity preferences the seller can set. Display &quot;More than 10 available&quot; in your listing (if applicable) If the seller enables this preference, this column will have a value as long as there are more than 10 of this item in inventory. If the quantity is equal to 10 or drops below 10, this column will be null and the estimated quantity of the item is returned in the estimatedAvailableQuantity column. Display the exact quantity in your items If the seller enables this preference, the availabilityThresholdType and availabilityThreshold columns will be null and the estimated quantity of the item is returned in the estimatedAvailableQuantity column. Note: Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. Code so that your app gracefully handles any future changes to these preferences. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/feed/types/AvailabilityThresholdEnum.html'>eBay API documentation</a>
@@ -646,7 +646,7 @@ namespace MyNS
 		/// <summary>
 		/// This column has a value only when the seller sets their 'display item quantity' preference to Display &quot;More than 10 available&quot; in your listing (if applicable). The value of this column will be &quot;10&quot;, which is the threshold value. Code so that your app gracefully handles any future changes to this value.
 		/// </summary>
-		public int AvailabilityThreshold { get; set; }
+		public System.Nullable<System.Int32> AvailabilityThreshold { get; set; }
 		
 		/// <summary>
 		/// This timestamp denotes the date and time the changes for that item were picked up and added to the snapshot feed file. For example, let's say you have a snapshot feed file and also ran the getItem method. When you compare the same item information from the two sources, you see that the price in the getItem method response is different from the price in the snapshot feed file. By knowing the date and time you submitted the getItem method, you can use the itemSnapshotDate data to determine which price is the most current for this item.
@@ -676,12 +676,12 @@ namespace MyNS
 		/// <summary>
 		/// Indicates whether the seller accepts returns for the item.
 		/// </summary>
-		public bool ReturnsAccepted { get; set; }
+		public System.Nullable<System.Boolean> ReturnsAccepted { get; set; }
 		
 		/// <summary>
 		/// The amount of days that the buyer has to return the item after the purchase date. For example, if this value is 30, the return period is 30 days.
 		/// </summary>
-		public int ReturnPeriodValue { get; set; }
+		public System.Nullable<System.Int32> ReturnPeriodValue { get; set; }
 		
 		/// <summary>
 		/// An enumeration value that indicates the period of time being used to measure the duration, such as business days, months, or years. TimeDurationUnitEnum is a common type shared by multiple eBay APIs and fields to express the time unit, but for return period duration, this value will always be DAY. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/feed/types/TimeDurationUnitEnum.html'>eBay API documentation</a>
@@ -741,7 +741,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items in a lot. In other words, a lot size is the number of items that are being sold together. A lot is a set of two or more items included in a single listing that must be purchased together in a single order line item. All the items in the lot are the same but there can be multiple items in a single lot, such as the package of batteries shown in the example below. Item Lot Definition Lot Size A package of 24 AA batteries A box of 10 packages 10 A P235/75-15 Goodyear tire 4 tires 4 Fashion Jewelry Rings Package of 100 assorted rings 100 Note: Lots are not supported in all categories.
 		/// </summary>
-		public int LotSize { get; set; }
+		public System.Nullable<System.Int32> LotSize { get; set; }
 		
 		/// <summary>
 		/// Indicates the class of the shipping cost. Valid Values: FIXED or CALCULATED Code so that your app gracefully handles any future changes to this list.
@@ -761,7 +761,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items used when calculating the shipping estimation information.
 		/// </summary>
-		public int QuantityUsedForEstimate { get; set; }
+		public System.Nullable<System.Int32> QuantityUsedForEstimate { get; set; }
 		
 		/// <summary>
 		/// The name of the shipping provider, such as FedEx, or USPS.

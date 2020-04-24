@@ -194,7 +194,7 @@ namespace MyNS
 	public class StatusType
 	{
 		
-		public int Code { get; set; }
+		public System.Nullable<System.Int32> Code { get; set; }
 		
 		public string Text { get; set; }
 	}
@@ -513,7 +513,7 @@ namespace MyNS
 		
 		public System.Nullable<System.DateTimeOffset> DischargeDate { get; set; }
 		
-		public int DistanceKilometres { get; set; }
+		public System.Nullable<System.Int32> DistanceKilometres { get; set; }
 		
 		public string DuplicateServiceOverrideInd { get; set; }
 		
@@ -619,7 +619,7 @@ namespace MyNS
 		
 		public string AccountReferenceNumber { get; set; }
 		
-		public int DistanceKilometres { get; set; }
+		public System.Nullable<System.Int32> DistanceKilometres { get; set; }
 	}
 	
 	public class DVAClaimResponseType
@@ -732,7 +732,7 @@ namespace MyNS
 	public class EnterpriseConcessionVerificationRequestType
 	{
 		
-		public int Timeout { get; set; }
+		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
 		public ReferenceConcessionVerificationRequestType[] ConcessionVerificationRequest { get; set; }
@@ -791,7 +791,7 @@ namespace MyNS
 	public class EnterprisePatientVerificationRequestType
 	{
 		
-		public int Timeout { get; set; }
+		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
 		public ReferencePatientVerificationRequestType[] PatientVerificationRequest { get; set; }
@@ -877,7 +877,7 @@ namespace MyNS
 	public class EnterpriseVeteranVerificationRequestType
 	{
 		
-		public int Timeout { get; set; }
+		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
 		public ReferenceVeteranVerificationRequestType[] VeteranVerificationRequest { get; set; }

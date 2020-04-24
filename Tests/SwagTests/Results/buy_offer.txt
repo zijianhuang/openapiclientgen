@@ -54,7 +54,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of proxy bids that have been placed for the auction.
 		/// </summary>
-		public int BidCount { get; set; }
+		public System.Nullable<System.Int32> BidCount { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for a monetary value and its currency.
@@ -69,7 +69,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates if the buyer is the highest bidder.
 		/// </summary>
-		public bool HighBidder { get; set; }
+		public System.Nullable<System.Boolean> HighBidder { get; set; }
 		
 		/// <summary>
 		/// The eBay RESTful identifier of an item being bid on, which was submitted in the request.
@@ -79,7 +79,7 @@ namespace MyNS
 		/// <summary>
 		/// This indicates if the reserve price of the item has been met. A reserve price is set by the seller and is the minimum amount the seller is willing to sell the item for. If the highest bid is not equal to or higher than the reserve price when the auction ends, the listing ends and the item is not sold. Note: This is returned only for auctions that have a reserve price.
 		/// </summary>
-		public bool ReservePriceMet { get; set; }
+		public System.Nullable<System.Boolean> ReservePriceMet { get; set; }
 		
 		/// <summary>
 		/// The suggested bid amount for the next bid. Note: These are generated suggestions and do not guarantee the buyer will win the bid. This means these suggestions do not take into account the max bid amount of other bidders. The buyer can be outbid even if they submit the highest suggested bid.
@@ -106,7 +106,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.
@@ -208,7 +208,7 @@ namespace MyNS
 		/// <summary>
 		/// The type that defines the fields for buyer consent to bid on adult-only items. For more information about adult-only items on eBay, see Adult-Only items on eBay.
 		/// </summary>
-		public bool AdultOnlyItem { get; set; }
+		public System.Nullable<System.Boolean> AdultOnlyItem { get; set; }
 	}
 	
 	public partial class BiddingClient

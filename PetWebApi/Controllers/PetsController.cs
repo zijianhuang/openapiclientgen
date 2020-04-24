@@ -73,7 +73,7 @@ namespace MyNamespace
             }
             else
             {
-                return NotFound();
+                return NotFound("NoSuchPet");
             }
         }
 
@@ -749,13 +749,13 @@ namespace MyNamespace
         {
             Dic = new ConcurrentDictionary<long, Pet>(new KeyValuePair<long, Pet>[] {
                 new KeyValuePair<long, Pet>(11, new Pet {Id=11, Name="Nice" }),
-                new KeyValuePair<long, Pet>(12, new Pet {Id=12, Name="Narco" }),
+                new KeyValuePair<long, Pet>(12, new Pet {Id=12, Name="Narco", Status= PetStatus.Sold }),
                 new KeyValuePair<long, Pet>(13, new Pet {Id=13, Name="Bombasto" }),
                 new KeyValuePair<long, Pet>(14, new Pet {Id=14, Name="Celeritas" }),
-                new KeyValuePair<long, Pet>(15, new Pet {Id=15, Name="Magneta" }),
+                new KeyValuePair<long, Pet>(15, new Pet {Id=15, Name="Magneta", Status= PetStatus.Sold }),
                 new KeyValuePair<long, Pet>(16, new Pet {Id=16, Name="RubberMan" }),
                 new KeyValuePair<long, Pet>(17, new Pet {Id=17, Name="Dynama" }),
-                new KeyValuePair<long, Pet>(18, new Pet {Id=18, Name="IQ" }),
+                new KeyValuePair<long, Pet>(18, new Pet {Id=18, Name="IQ", Status= PetStatus.Pending }),
                 new KeyValuePair<long, Pet>(19, new Pet {Id=19, Name="Magma" }),
                 new KeyValuePair<long, Pet>(20, new Pet {Id=29, Name="Tornado" }),
 

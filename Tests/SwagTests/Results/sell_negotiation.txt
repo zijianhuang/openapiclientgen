@@ -44,7 +44,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the buyer is allowed to make a counter-offer to the seller's offer. Note: Currently, you must set this field to false; counter-offers are not supported in this release. Default: false
 		/// </summary>
-		public bool AllowCounterOffer { get; set; }
+		public System.Nullable<System.Boolean> AllowCounterOffer { get; set; }
 		
 		/// <summary>
 		/// A seller-defined message related to the offer being made. This message is sent to the list of &quot;interested&quot; buyers. To increase the conversion rate of the offers a seller makes to buyers, eBay recommends you always add a customized message to your offers. Maximum length: 2,000 characters
@@ -93,7 +93,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.
@@ -149,7 +149,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the buyer is allowed to make a counter-offer to the seller's offer.
 		/// </summary>
-		public bool AllowCounterOffer { get; set; }
+		public System.Nullable<System.Boolean> AllowCounterOffer { get; set; }
 		
 		/// <summary>
 		/// This complex type identifies an eBay user.
@@ -231,7 +231,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the number of items in the eBay listing for which the offer is being made. The offer being made by the seller is an &quot;all or nothing&quot; offer, meaning the buyer must purchase the indicated quantity of items in order to receive the discount on the transaction. Default: 1
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 	}
 	
 	/// <summary>
@@ -253,7 +253,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items returned on a single page from the result set. This value can be set in the request with the limit query parameter.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. Max length: 2048
@@ -263,7 +263,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the offset query parameter. Note: The items in a paginated result set use a zero-based list where the first item in the list has an offset of 0.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. Max length: 2048
@@ -273,7 +273,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of items retrieved in the result set. If no items match the search criteria, the server returns the HTTP status code 204 No Content.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -302,7 +302,7 @@ namespace MyNS
 		/// <summary>
 		/// An integer that represents an amount of time, as measured by the time-measurement unit specified in the unit field.
 		/// </summary>
-		public int Value { get; set; }
+		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
 	/// <summary>

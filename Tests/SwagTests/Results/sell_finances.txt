@@ -66,7 +66,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.
@@ -152,7 +152,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the number of monetary transactions (all orders, refunds, and credits, etc.) that have occurred with the corresponding payout. Its value should always be at least 1, since there is at least one order per seller payout.
 		/// </summary>
-		public int TransactionCount { get; set; }
+		public System.Nullable<System.Int32> TransactionCount { get; set; }
 	}
 	
 	/// <summary>
@@ -191,12 +191,12 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the total count of payouts to the seller that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0).
 		/// </summary>
-		public int PayoutCount { get; set; }
+		public System.Nullable<System.Int32> PayoutCount { get; set; }
 		
 		/// <summary>
 		/// This integer value indicates the total count of monetary transactions (order payments, buyer refunds, and seller credits) associated with the payouts that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). If there is at least one payout that matches the input criteria, the value in this field will be at least 1.
 		/// </summary>
-		public int TransactionCount { get; set; }
+		public System.Nullable<System.Int32> TransactionCount { get; set; }
 	}
 	
 	/// <summary>
@@ -213,7 +213,7 @@ namespace MyNS
 		/// <summary>
 		/// The maximum number of payouts that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer payouts than the limit value. To determine the number of pages in a result set, divide the total value (total number of payouts matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total payouts) and the limit value was 50 (show 50 payouts per page), the total number of pages in the result set is three, so the seller would have to make three separate getPayouts calls to view all payouts matching the input criteria. Maximum: 200 Default: 20
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The getPayouts call URI to use if you wish to view the next page of the result set. This field is only returned if there is a next page of results to view based on the current input criteria.
@@ -223,7 +223,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the actual position that the first payout returned on the current page has in the results set. So, if you wanted to view the 11th payout of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the call retrieves payouts 31 thru 40 from the resulting collection of payouts. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero)
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// An array of one or more payouts that match the input criteria. Details for each payout include the unique identifier of the payout, the status of the payout, the amount of the payout, and the number of monetary transactions associated with the payout.
@@ -238,7 +238,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value is the total number of payouts in the results set based on the current input criteria. Based on the total number of payouts that match the criteria, and on the limit and offset values, there may be additional pages in the results set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -349,7 +349,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the total number of the seller's sales and/or credits that match the input criteria. Note: Unless the transactionType filter is used in the request to retrieve a specific type of monetary transaction (sale, buyer refund, or seller credit), the creditCount and creditAmount fields account for both order sales and seller credits (the count and value is not distinguished between the two monetary transaction types). This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to either REFUND, DISPUTE, or SHIPPING_LABEL.
 		/// </summary>
-		public int CreditCount { get; set; }
+		public System.Nullable<System.Int32> CreditCount { get; set; }
 		
 		/// <summary>
 		/// This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit.
@@ -364,7 +364,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the total number of payment disputes that have been initiated by one or more buyers. Only the orders that match the input criteria are considered. The Payment Disputes methods in the Fulfillment API can be used by the seller to retrieve more information about any payment disputes. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than DISPUTE.
 		/// </summary>
-		public int DisputeCount { get; set; }
+		public System.Nullable<System.Int32> DisputeCount { get; set; }
 		
 		/// <summary>
 		/// This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit.
@@ -379,7 +379,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the total number of order sales where the associated funds are on hold. Only the orders that match the input criteria are considered. This field is generally returned, even if 0, but it will not be returned if a transactionStatus filter is used, and its value is set to any value other than FUNDS_ON_HOLD.
 		/// </summary>
-		public int OnHoldCount { get; set; }
+		public System.Nullable<System.Int32> OnHoldCount { get; set; }
 		
 		/// <summary>
 		/// This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit.
@@ -394,7 +394,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the total number of buyer refunds that match the input criteria. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than REFUND.
 		/// </summary>
-		public int RefundCount { get; set; }
+		public System.Nullable<System.Int32> RefundCount { get; set; }
 		
 		/// <summary>
 		/// This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit.
@@ -409,7 +409,7 @@ namespace MyNS
 		/// <summary>
 		/// This is the total number of eBay shipping labels purchased by the seller. The count returned here may depend on the specified input criteria.
 		/// </summary>
-		public int ShippingLabelCount { get; set; }
+		public System.Nullable<System.Int32> ShippingLabelCount { get; set; }
 	}
 	
 	/// <summary>
@@ -426,7 +426,7 @@ namespace MyNS
 		/// <summary>
 		/// The maximum number of monetary transactions that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer monetary transactions than the limit value. To determine the number of pages in a result set, divide the total value (total number of monetary transactions matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total monetary transactions) and the limit value was 50 (show 50 monetary transactions per page), the total number of pages in the result set is three, so the seller would have to make three separate getTransactions calls to view all monetary transactions matching the input criteria. Maximum: 200 Default: 20
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The getTransactions method URI to use if you wish to view the next page of the result set. This field is only returned if there is a next page of results to view based on the current input criteria.
@@ -436,7 +436,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the actual position that the first monetary transaction returned on the current page has in the results set. So, if you wanted to view the 11th monetary transaction of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves monetary transactions 31 thru 40 from the resulting collection of monetary transactions. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero)
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The getTransactions method URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria.
@@ -446,7 +446,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value is the total amount of monetary transactions in the result set based on the current input criteria. Based on the total number of monetary transactions that match the criteria, and on the limit and offset values, there may be additional pages in the results set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 		
 		/// <summary>
 		/// An array of one or more monetary transactions that match the input criteria. Details for each monetary transaction may include the unique identifier of the order associated with the monetary transaction, the status of the transaction, the amount of the order, the order's buyer, and the unique identifier of the payout (if a payout has been initiated/issued for the order).

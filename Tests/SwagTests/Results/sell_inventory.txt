@@ -125,7 +125,7 @@ namespace MyNS
 		/// <summary>
 		/// This field indicates whether or not the Best Offer feature is enabled for the listing. A seller can enable the Best Offer feature for a listing as long as the category supports the Best Offer feature. The seller includes this field and sets its value to true to enable Best Offer feature.
 		/// </summary>
-		public bool BestOfferEnabled { get; set; }
+		public System.Nullable<System.Boolean> BestOfferEnabled { get; set; }
 	}
 	
 	/// <summary>
@@ -342,12 +342,12 @@ namespace MyNS
 		/// <summary>
 		/// The actual height (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public float Height { get; set; }
+		public System.Nullable<System.Single> Height { get; set; }
 		
 		/// <summary>
 		/// The actual length (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public float Length { get; set; }
+		public System.Nullable<System.Single> Length { get; set; }
 		
 		/// <summary>
 		/// The unit of measurement used to specify the dimensions of a shipping package. All fields of the dimensions container are required if package dimensions are specified. If the English system of measurement is being used, the applicable values for dimension units are FEET and INCH. If the metric system of measurement is being used, the applicable values for weight units are METER and CENTIMETER. The metric system is used by most countries outside of the US. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/LengthUnitOfMeasureEnum.html'>eBay API documentation</a>
@@ -357,7 +357,7 @@ namespace MyNS
 		/// <summary>
 		/// The actual width (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public float Width { get; set; }
+		public System.Nullable<System.Single> Width { get; set; }
 	}
 	
 	/// <summary>
@@ -369,7 +369,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the quantity of the inventory item (specified by the sku value) that will be available for purchase by buyers shopping on the eBay site specified in the marketplaceId field. For unpublished offers where the available quantity has yet to be set, the availableQuantity value is set to 0.
 		/// </summary>
-		public int AvailableQuantity { get; set; }
+		public System.Nullable<System.Int32> AvailableQuantity { get; set; }
 		
 		/// <summary>
 		/// The unique identifier of the primary eBay category that the inventory item is listed under. This field is always returned for published offers, but is only returned if set for unpublished offers.
@@ -409,7 +409,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is only applicable and returned if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value in this field is the number of identical items being sold through the lot listing.
 		/// </summary>
-		public int LotSize { get; set; }
+		public System.Nullable<System.Int32> LotSize { get; set; }
 		
 		/// <summary>
 		/// This enumeration value is the unique identifier of the eBay site on which the offer is available, or will be made available. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/MarketplaceEnum.html'>eBay API documentation</a>
@@ -434,7 +434,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity of an inventory item per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceed the quantity in this field. So, if this field's value is 5, each buyer may purchase a quantity of the inventory item between one and five, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase.
 		/// </summary>
-		public int QuantityLimitPerBuyer { get; set; }
+		public System.Nullable<System.Int32> QuantityLimitPerBuyer { get; set; }
 		
 		/// <summary>
 		/// This is the seller-defined SKU value of the product in the offer. Max Length: 50
@@ -466,7 +466,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value sets the quantity of the inventory item that will be available through the offer. Quantity must be set to 1 or more in order for the inventory item to be purchasable. This value should not be more than the quantity that is specified for the inventory item record. If this field exists for the current unpublished or published offer, it should be provided again in the updateOffer call, even if the value is not changing. If this particular field is omitted in an updateOffer call, the general available quantity set for the inventory item record may be used instead, and this may not be accurate if the inventory item is being sold across multiple marketplaces.
 		/// </summary>
-		public int AvailableQuantity { get; set; }
+		public System.Nullable<System.Int32> AvailableQuantity { get; set; }
 		
 		/// <summary>
 		/// The unique identifier of the eBay category that the inventory item is/will be listed under. This field is not immediately required for an unpublished offer, but will be required before publishing the offer. Sellers can use the getCategorySuggestions method of the Taxonomy API or the GetSuggestedCategories call of the Trading API to retrieve suggested category ID values. The seller passes in a query string like &quot;iPhone 6&quot;, and category ID values for suggested categories are returned in the response. If this field exists for the current unpublished offer, it should be provided again in the updateOffer call, even if the eBay category is not changing. For a published offer (aka active eBay listing), this field must be provided or an error may occur. The eBay category of an active eBay listing cannot be changed once the listing has one or more sales, or if the listing is scheduled to end in less than 12 hours.
@@ -496,7 +496,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is only applicable if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value passed into this field is the number of identical items being sold through the lot listing.
 		/// </summary>
-		public int LotSize { get; set; }
+		public System.Nullable<System.Int32> LotSize { get; set; }
 		
 		/// <summary>
 		/// The unique identifier of a merchant's inventory location (where the inventory item in the offer is located). A merchantLocationKey value is established when the merchant creates an inventory location using the createInventoryLocation call. To get more information about inventory locations, the getInventoryLocation call can be used. This field is not initially required upon first creating an offer, but will become required before an offer can be published. Max length: 36
@@ -511,7 +511,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceeding the quantity specified for this field. So, if this field's value is 5, each buyer may purchase between one to five of these products, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase. If this field currently exists for an unpublished or published offer, it should be provided again in an updateOffer call, even if the value is not changing.
 		/// </summary>
-		public int QuantityLimitPerBuyer { get; set; }
+		public System.Nullable<System.Int32> QuantityLimitPerBuyer { get; set; }
 		
 		/// <summary>
 		/// This container is used if the seller would like to place the inventory item into one or two store categories that the seller has set up for their eBay store. The string value(s) passed in to this container will be the full path(s) to the store categories, as shown below: &quot;storeCategoryNames&quot;: [  &quot;/Fashion/Men/Shirts&quot;,  &quot;/Fashion/Men/Accessories&quot; ], If this field currently exists for an unpublished or published offer, it should be provided again in an updateOffer call, even if the eBay categories are not changing.
@@ -533,7 +533,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value sets the quantity of the inventory item (specified by the sku value) that will be available for purchase by buyers shopping on the eBay site specified in the marketplaceId field. Quantity must be set to 1 or more in order for the inventory item to be purchasable, but this field is not necessarily required, even for published offers, if the general quantity of the inventory item has already been set in the inventory item record.
 		/// </summary>
-		public int AvailableQuantity { get; set; }
+		public System.Nullable<System.Int32> AvailableQuantity { get; set; }
 		
 		/// <summary>
 		/// The unique identifier of the eBay category that the inventory item will be listed under. This field is not immediately required upon creating an offer, but will be required before publishing the offer. Sellers can use the getCategorySuggestions method of the Taxonomy API or the GetSuggestedCategories call of the Trading API to retrieve suggested category ID values. The seller passes in a query string like &quot;iPhone 6&quot;, and category ID values for suggested categories are returned in the response.
@@ -568,7 +568,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is only applicable if the listing is a lot listing. A lot listing is a listing that has multiple quantity of the same product. An example would be a set of four identical car tires. The integer value passed into this field is the number of identical items being sold through the lot listing.
 		/// </summary>
-		public int LotSize { get; set; }
+		public System.Nullable<System.Int32> LotSize { get; set; }
 		
 		/// <summary>
 		/// This enumeration value is the unique identifier of the eBay site for which the offer will be made available. See MarketplaceEnum for the list of supported enumeration values. This field is required. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/MarketplaceEnum.html'>eBay API documentation</a>
@@ -588,7 +588,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceed the quantity specified for this field. So, if this field's value is 5, each buyer may purchase between one to five of these products, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase.
 		/// </summary>
-		public int QuantityLimitPerBuyer { get; set; }
+		public System.Nullable<System.Int32> QuantityLimitPerBuyer { get; set; }
 		
 		/// <summary>
 		/// This container is used if the seller would like to place the inventory item into one or two eBay store categories that the seller has set up for their eBay store. The string value(s) passed in to this container will be the full path(s) to the eBay store categories, as shown below: &quot;storeCategoryNames&quot;: [  &quot;/Fashion/Men/Shirts&quot;,  &quot;/Fashion/Men/Accessories&quot; ],
@@ -625,7 +625,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of one or more reference IDs which identify the specific request element(s) most closely associated to the error or warning, if any.
@@ -740,12 +740,12 @@ namespace MyNS
 		/// <summary>
 		/// The latitude (North-South) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location.
 		/// </summary>
-		public float Latitude { get; set; }
+		public System.Nullable<System.Single> Latitude { get; set; }
 		
 		/// <summary>
 		/// The longitude (East-West) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location.
 		/// </summary>
-		public float Longitude { get; set; }
+		public System.Nullable<System.Single> Longitude { get; set; }
 	}
 	
 	/// <summary>
@@ -784,7 +784,7 @@ namespace MyNS
 		/// <summary>
 		/// The HTTP status code returned in this field indicates the success or failure of retrieving the inventory item record for the inventory item specified in the sku field. See the HTTP status codes table to see which each status code indicates.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 		
 		/// <summary>
 		/// This container will be returned if there were one or more warnings associated with retrieving the inventory item record.
@@ -929,7 +929,7 @@ namespace MyNS
 		/// <summary>
 		/// The HTTP status code returned in this field indicates the success or failure of creating or updating the inventory item record for the inventory item indicated in the sku field. See the HTTP status codes table to see which each status code indicates.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 		
 		/// <summary>
 		/// This container will be returned if there were one or more warnings associated with the creation or update to the inventory item record.
@@ -1094,7 +1094,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value is the number of inventory items that will be displayed on each results page.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// This is the URL to the next page of inventory items. This field will only be returned if there are additional inventory items to view.
@@ -1109,12 +1109,12 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the total number of pages of results that are available. This number will depend on the total number of inventory items available for viewing, and on the limit value.
 		/// </summary>
-		public int Size { get; set; }
+		public System.Nullable<System.Int32> Size { get; set; }
 		
 		/// <summary>
 		/// This integer value is the total number of inventory items that exist for the seller's account. Based on this number and on the limit value, the seller may have to toggle through multiple pages to view all inventory items.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -1297,7 +1297,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the quantity of the product that has been sold for the published offer.
 		/// </summary>
-		public int SoldQuantity { get; set; }
+		public System.Nullable<System.Int32> SoldQuantity { get; set; }
 	}
 	
 	/// <summary>
@@ -1314,7 +1314,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is included in an offer and set to true if a Top-Rated seller is opted in to the eBay Plus program. With the eBay Plus program, qualified sellers must commit to next-day delivery of the item, and the buyers must have an eBay Plus subscription to be eligible to receive the benefits of this program, which are free, next-day delivery, as well as free returns. Currently, this program is only available on the Germany and Australian sites. This field will be returned in the getOffer and getOffers calls if set for the offer.
 		/// </summary>
-		public bool EBayPlusIfEligible { get; set; }
+		public System.Nullable<System.Boolean> EBayPlusIfEligible { get; set; }
 		
 		/// <summary>
 		/// This unique identifier indicates the fulfillment listing policy that will be used once an offer is published and converted to an eBay listing. This fulfillment listing policy will set all fulfillment-related settings for the eBay listing. Listing policies are not immediately required for offers, but are required before an offer can be published. The seller should review the fulfillment listing policy before assigning it to the offer to make sure it is compatible with the inventory item and the offer settings. The seller may also want to review the shipping service costs in the fulfillment policy, and that seller might decide to override the shipping costs for one or more shipping service options by using the shippingCostOverrides container. Listing policies can be created and managed in My eBay or with the Account API. To get a list of all return policies associated with a seller's account on a specific eBay Marketplace, use the Account API's getFulfillmentPolicies call. There are also calls in the Account API to retrieve a fulfillment policy by policy ID or policy name. This field will be returned in the getOffer and getOffers calls if set for the offer.
@@ -1390,7 +1390,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items returned on a single page from the result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// An array of one or more of the merchant's inventory locations.
@@ -1405,7 +1405,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of results skipped in the result set before listing the first returned result. This value is set in the request with the offset query parameter. Note: The items in a paginated result set use a zero-based list where the first item in the list has an offset of 0.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. Max length: 2048
@@ -1415,7 +1415,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of items retrieved in the result set. If no items are found, this field is returned with a value of 0.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -1464,7 +1464,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is returned for each listing that the seller attempted to migrate. See the HTTP status codes table to see which each status code indicates.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 		
 		/// <summary>
 		/// If one or more warnings occur with the attempt to migrate the listing, this container will be returned with detailed information on each warning. It is possible that a listing can be successfully migrated even if a warning occurs.
@@ -1522,7 +1522,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is used if the seller wants to modify the current quantity of the inventory item that will be available for purchase in the offer (identified by the corresponding offerId value). Either the availableQuantity field or the price container is required, but not necessarily both.
 		/// </summary>
-		public int AvailableQuantity { get; set; }
+		public System.Nullable<System.Int32> AvailableQuantity { get; set; }
 		
 		/// <summary>
 		/// This field is the unique identifier of the offer. If an offers container is used to update one or more offers associated to a specific inventory item, the offerId value is required in order to identify the offer to update with a modified price and/or quantity. The seller can run a getOffers call (passing in the correct SKU value as a query parameter) to retrieve offerId values for offers associated with the SKU.
@@ -1576,7 +1576,7 @@ namespace MyNS
 		/// <summary>
 		/// The HTTP status code returned in this field indicates the success or failure of publishing the offer specified in the offerId field. See the HTTP status codes table to see which each status code indicates.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 		
 		/// <summary>
 		/// This container will be returned if there were one or more warnings associated with publishing the offer.
@@ -1618,7 +1618,7 @@ namespace MyNS
 		/// <summary>
 		/// The integer value returned in this field is the http status code. If an offer is created successfully, the value returned in this field should be 200. A user can view the HTTP status codes section for information on other status codes that may be returned with the bulkCreateOffer method.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 		
 		/// <summary>
 		/// This container will be returned at the offer level, and will contain one or more warnings if any occurred with the attempted creation of the corresponding offer. Note that it is possible that an offer can be created successfully even if one or more warnings are triggered.
@@ -1640,7 +1640,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value is the number of offers that will be displayed on each results page.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// This is the URL to the next page of offers. This field will only be returned if there are additional offers to view.
@@ -1660,12 +1660,12 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the number of offers being displayed on the current page of results. This number will generally be the same as the limit value if there are additional pages of results to view. Note: Currently, the Inventory API does not support the same SKU across multiple eBay marketplaces, so the Get Offers call will only return one offer, so this value should always be 1.
 		/// </summary>
-		public int Size { get; set; }
+		public System.Nullable<System.Int32> Size { get; set; }
 		
 		/// <summary>
 		/// This integer value is the total number of offers that exist for the specified SKU value. Based on this number and on the limit value, the seller may have to toggle through multiple pages to view all offers. Note: Currently, the Inventory API does not support the same SKU across multiple eBay marketplaces, so the Get Offers call will only return one offer, so this value should always be 1.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -1731,7 +1731,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value indicates the quantity of the inventory item that is available for In-Store Pickup at the store identified by the merchantLocationKey value. The value of quantity should be an integer value greater than 0, unless the inventory item is out of stock. This field is required if the pickupAtLocationAvailability container is used, and is always returned with the pickupAtLocationAvailability container.
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 	}
 	
 	/// <summary>
@@ -1780,7 +1780,7 @@ namespace MyNS
 		/// <summary>
 		/// The value returned in this container will indicate the status of the attempt to update the price and/or quantity of the offer (specified in the corresponding offerId field) or the attempt to update the total 'ship-to-home' quantity of an inventory item (specified in the corresponding sku field). For a completely successful update of an offer or inventory item record, a value of 200 will appear in this field. A user can view the HTTP status codes section for information on other status codes that may be returned with the bulkUpdatePriceQuantity method.
 		/// </summary>
-		public int StatusCode { get; set; }
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 		
 		/// <summary>
 		/// This array will be returned if there were one or more warnings associated with the update to the offer or inventory item record.
@@ -1979,7 +1979,7 @@ namespace MyNS
 		/// <summary>
 		/// This container is used to set the total 'ship-to-home' quantity of the inventory item that will be available for purchase through one or more published offers. This container is not immediately required, but 'ship-to-home' quantity must be set before an offer of the inventory item can be published. If an existing inventory item is being updated, and the 'ship-to-home' quantity already exists for the inventory item record, this container should be included again, even if the value is not changing, or the available quantity data will be lost.
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 	}
 	
 	/// <summary>
@@ -1996,7 +1996,7 @@ namespace MyNS
 		/// <summary>
 		/// The integer value input into this field, along with the shippingServiceType value, sets which domestic or international shipping service option in the fulfillment policy will be modified with updated shipping costs. Specifically, the shippingCostOverrides.shippingServiceType value in a createOffer or updateOffer call must match the shippingOptions.optionType value in a fulfillment listing policy, and the shippingCostOverrides.priority value in a createOffer or updateOffer call must match the shippingOptions.shippingServices.sortOrderId value in a fulfillment listing policy. This field is always required when overriding the shipping costs of a shipping service option, and will be always be returned for each shipping service option whose costs are being overridden.
 		/// </summary>
-		public int Priority { get; set; }
+		public System.Nullable<System.Int32> Priority { get; set; }
 		
 		/// <summary>
 		/// This type is used to express a dollar value and the applicable currency.
@@ -2057,7 +2057,7 @@ namespace MyNS
 		/// <summary>
 		/// This field will be included and set to true if the seller would like to reference their account-level Sales Tax Table to calculate sales tax for an order. A seller's Sales Tax Table can be created and managed manually in My eBay's Payment Preferences. This Sales Tax Table contains all tax jurisdictions for the seller's country (individual states and territories in US), and the seller can set the sales tax rate for these individual tax jurisdictions. The Trading API has a SetTaxTable call to add/modify sales tax rates for one or more tax jurisdictions, and a GetTaxTable call that will retrieve all tax jurisdictions and related data, such as the sales tax rate (if defined) and a boolean field to indicate if sales tax is applied to shipping and handling costs. The Account API has a getSalesTaxTable call to retrieve all tax jurisdictions that have a defined sales tax rate, a getSalesTaxTableEntry call to retrieve a sales tax rate for a specific tax jurisdiction, a createSalesTaxTableEntry call to set/modify a sales tax rate for a specific tax jurisdiction, and a deleteSalesTaxTableEntry call to remove a sales tax rate from a specific tax jurisdiction. Note that a seller can enable the use of a sales tax table, but if a sales tax rate is not specified for the buyer's state/tax jurisdiction, sales tax will not be applied to the order. If a thirdPartyTaxCategory value is used, the applyTax field must also be used and set to true This field will be returned if set for the offer. See the Using a tax table help page for more information on setting up and using a sales tax table.
 		/// </summary>
-		public bool ApplyTax { get; set; }
+		public System.Nullable<System.Boolean> ApplyTax { get; set; }
 		
 		/// <summary>
 		/// The tax exception category code. If this field is used, sales tax will also apply to a service/fee, and not just the item price. This is to be used only by sellers who have opted into sales tax being calculated by a sales tax calculation vendor. If you are interested in becoming a tax calculation vendor partner with eBay, contact developer-relations@ebay.com. One supported value for this field is WASTE_RECYCLING_FEE. If this field is used, the applyTax field must also be used and set to true This field will be returned if set for the offer.
@@ -2067,7 +2067,7 @@ namespace MyNS
 		/// <summary>
 		/// This value is the Value Add Tax (VAT) rate for the item, if any. When a VAT percentage is specified, the item's VAT information appears on the listing's View Item page. In addition, the seller can choose to print an invoice that includes the item's net price, VAT percent, VAT amount, and total price. Since VAT rates vary depending on the item and on the user's country of residence, a seller is responsible for entering the correct VAT rate; it is not calculated by eBay. To use VAT, a seller must be a business seller with a VAT-ID registered with eBay, and must be listing the item on a VAT-enabled site. Max applicable length is 6 characters, including the decimal (e.g., 12.345). The scale is 3 decimal places. (If you pass in 12.3456, eBay may round up the value to 12.346). This field will be returned if set for the offer.
 		/// </summary>
-		public float VatPercentage { get; set; }
+		public System.Nullable<System.Single> VatPercentage { get; set; }
 	}
 	
 	/// <summary>
@@ -2084,7 +2084,7 @@ namespace MyNS
 		/// <summary>
 		/// The integer value in this field, along with the time unit in the unit field, will indicate how soon after an In-Store Pickup purchase can the buyer pick up the item at the designated store location. If the value of this field is 4, and the value of the unit field is HOUR, then the fulfillment time for the In-Store Pickup order is four hours, which means that the buyer will be able to pick up the item at the store four hours after the transaction took place.
 		/// </summary>
-		public int Value { get; set; }
+		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
 	/// <summary>
@@ -2135,7 +2135,7 @@ namespace MyNS
 		/// <summary>
 		/// The actual weight (in the measurement unit specified in the unit field) of the shipping package. Both the unit and value fields are required if the weight container is used. If a shipping package weighed 20.5 ounces, the container would look as follows: &quot;weight&quot;: {  &quot;value&quot;: 20.5,  &quot;unit&quot;: &quot;OUNCE&quot;  }
 		/// </summary>
-		public float Value { get; set; }
+		public System.Nullable<System.Single> Value { get; set; }
 	}
 	
 	/// <summary>

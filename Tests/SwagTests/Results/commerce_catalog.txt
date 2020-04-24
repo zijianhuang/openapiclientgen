@@ -66,7 +66,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of times the value of localizedAspectValue has been used for eBay product listings. By comparing this quantity to the matchCount for other values of the same aspect, you can present a histogram of the values to sellers, who can use that information to select which aspect value is most appropriate for their product. You can then include the user-selected value in the the search call's aspect_filter parameter to refine your search.
 		/// </summary>
-		public int MatchCount { get; set; }
+		public System.Nullable<System.Int32> MatchCount { get; set; }
 		
 		/// <summary>
 		/// A HATEOAS reference that further refines the search with this particular localizedAspectValue.
@@ -346,7 +346,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.
@@ -412,7 +412,7 @@ namespace MyNS
 		/// <summary>
 		/// The maximum number of change requests in this page, a subset of the full collection of change requests that match the filter criteria of this call. This field combines with the offset field to identify the change requests being returned.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The getChangeRequests call URI for the next page. For example, the following URI returns records 41 thru 50 from the collection of change requests: path/change_request?limit=10&amp;offset=40 Note: This feature employs a zero-based list, where the first order in the list has an offset of 0.
@@ -422,7 +422,7 @@ namespace MyNS
 		/// <summary>
 		/// The first change request in this page based on its position in the returned collection of change requests. For example, if offset is set to 10 and limit is set to 10, this page includes change requests 11 thru 20 from the resulting collection of change requests. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The getChangeRequests call URI for the previous page. For example, the following URI returns orders 21 thru 30 from the collection of orders: path/change_request?limit=10&amp;offset=20 Note: This feature employs a zero-based list, where the first order in the list has an offset of 0.
@@ -432,7 +432,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of change requests in the collection. Note: If no change requests are found, this field is returned with a value of 0.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -444,7 +444,7 @@ namespace MyNS
 		/// <summary>
 		/// The height of the image in pixels.
 		/// </summary>
-		public int Height { get; set; }
+		public System.Nullable<System.Int32> Height { get; set; }
 		
 		/// <summary>
 		/// The eBay Picture Services (EPS) URL of the image.
@@ -454,7 +454,7 @@ namespace MyNS
 		/// <summary>
 		/// The width of the image in pixels.
 		/// </summary>
-		public int Width { get; set; }
+		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
 	/// <summary>
@@ -617,7 +617,7 @@ namespace MyNS
 		/// <summary>
 		/// A value of true indicates that the aspect is mandatory for products listed in this category.
 		/// </summary>
-		public bool AspectRequired { get; set; }
+		public System.Nullable<System.Boolean> AspectRequired { get; set; }
 		
 		/// <summary>
 		/// This value indicates the level of importance of the product identifier appearing in the catalog product. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/ImportanceEnum.html'>eBay API documentation</a>
@@ -683,7 +683,7 @@ namespace MyNS
 		/// <summary>
 		/// A value of true indicates that the identifier is mandatory for the product or categories specified.
 		/// </summary>
-		public bool Required { get; set; }
+		public System.Nullable<System.Boolean> Required { get; set; }
 	}
 	
 	/// <summary>
@@ -764,7 +764,7 @@ namespace MyNS
 		/// <summary>
 		/// A value of true indicates that this product aspect can be removed from the specified catalog product definition by omitting it from a product change request. A value of false indicates that this product aspect cannot be dropped (although it is possible that its value could be modified).
 		/// </summary>
-		public bool Droppable { get; set; }
+		public System.Nullable<System.Boolean> Droppable { get; set; }
 		
 		/// <summary>
 		/// The name of the product aspect, such as Model Number, Size, or Color.
@@ -833,7 +833,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of product summaries returned in the response. This is the result set, a subset of the full collection of products that match the search or filter criteria of this call. If the limit query parameter was included in the request, this field will have the same value. Default: 50
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// This field is reserved for internal or future use.
@@ -843,7 +843,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is reserved for internal or future use.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// This field is reserved for internal or future use.
@@ -863,7 +863,7 @@ namespace MyNS
 		/// <summary>
 		/// This field is reserved for internal or future use.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>

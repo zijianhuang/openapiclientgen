@@ -3,6 +3,8 @@ using System;
 using Xunit;
 using System.Threading.Tasks;
 using MyNS;
+using DemoPet.Client;
+using Fonlow.Net.Http;
 
 namespace IntegrationTests
 {
@@ -61,8 +63,15 @@ namespace IntegrationTests
 		[Fact]
 		public async Task TestFindPets()
 		{
-			var aa = await api.FindPetsByStatusAsync(new string[] {"w" });
+			var aa = await api.FindPetsByStatusAsync(new PetStatus[] { PetStatus.sold, PetStatus.pending });
 			Assert.Equal(3, aa.Length);
+		}
+
+		[Fact]
+		public async Task TestGetPet()
+		{
+			var d = await api.GetPetByIdAsync(12);
+			Assert.Equal("Narco", d.Name);
 		}
 
 		[Fact]
@@ -78,7 +87,8 @@ namespace IntegrationTests
 		[Fact]
 		public async Task TestPetsDelete()
 		{
-			await api.DeletePetAsync(9);
+			var ex = await Assert.ThrowsAsync<WebApiRequestException>(()=> api.DeletePetAsync(9));
+			Assert.Equal("NoSuchPet", ex.Response);
 		}
 
 	}

@@ -37,7 +37,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of reference IDs that identify the specific request elements most closely associated to the error or warning, if any.
@@ -130,7 +130,7 @@ namespace MyNS
 		/// <summary>
 		/// Reserved for future use.
 		/// </summary>
-		public int Height { get; set; }
+		public System.Nullable<System.Int32> Height { get; set; }
 		
 		/// <summary>
 		/// The URL of the image.
@@ -140,7 +140,7 @@ namespace MyNS
 		/// <summary>
 		/// Reserved for future use.
 		/// </summary>
-		public int Width { get; set; }
+		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
 	/// <summary>
@@ -199,12 +199,12 @@ namespace MyNS
 		/// <summary>
 		/// The total number of eBay users that rated the product.
 		/// </summary>
-		public int RatingCount { get; set; }
+		public System.Nullable<System.Int32> RatingCount { get; set; }
 		
 		/// <summary>
 		/// The total number of eBay users that wrote a review for the product.
 		/// </summary>
-		public int ReviewCount { get; set; }
+		public System.Nullable<System.Int32> ReviewCount { get; set; }
 		
 		/// <summary>
 		/// The title of the product.
@@ -221,7 +221,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of eBay users that rated the product on this aspect.
 		/// </summary>
-		public int Count { get; set; }
+		public System.Nullable<System.Int32> Count { get; set; }
 		
 		/// <summary>
 		/// The name of the rating aspect. Camping tent examples: Is it lightweight? or Is it easy to set up?
@@ -248,7 +248,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of eBay users that choose this rating aspect value.
 		/// </summary>
-		public int Count { get; set; }
+		public System.Nullable<System.Int32> Count { get; set; }
 		
 		/// <summary>
 		/// The percentage of the aspect rating value. ratingAspectDistributions.percentage = ratingAspectDistributions.count / ratingAspects.count

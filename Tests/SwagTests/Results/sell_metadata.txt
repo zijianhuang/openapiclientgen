@@ -56,7 +56,7 @@ namespace MyNS
 		/// <summary>
 		/// An amount of time, as measured by the time-measurement units specified in the unit field.
 		/// </summary>
-		public int Value { get; set; }
+		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
 	/// <summary>
@@ -78,7 +78,7 @@ namespace MyNS
 		/// <summary>
 		/// A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation.
@@ -154,7 +154,7 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the maximum number of compatible vehicle-applications allowed per item.
 		/// </summary>
-		public int MaxNumberOfCompatibleVehicles { get; set; }
+		public System.Nullable<System.Int32> MaxNumberOfCompatibleVehicles { get; set; }
 	}
 	
 	public class AutomotivePartsCompatibilityPolicyResponse
@@ -213,7 +213,7 @@ namespace MyNS
 		/// <summary>
 		/// This flag denotes whether or not you must list the item condition in a listing for the specified category. If set to true, you must specify an item condition for the associated category.
 		/// </summary>
-		public bool ItemConditionRequired { get; set; }
+		public System.Nullable<System.Boolean> ItemConditionRequired { get; set; }
 		
 		/// <summary>
 		/// The item-condition values allowed in the category.
@@ -251,7 +251,7 @@ namespace MyNS
 		/// <summary>
 		/// This flag denotes whether or not the associated category supports listings with item variations. If set to true, the category does support item variations.
 		/// </summary>
-		public bool VariationsSupported { get; set; }
+		public System.Nullable<System.Boolean> VariationsSupported { get; set; }
 	}
 	
 	public class ListingStructurePolicyResponse
@@ -274,17 +274,17 @@ namespace MyNS
 		/// <summary>
 		/// This flag denotes whether or not the category supports the setting of a price at which best offers are automatically accepted. If set to true, the category does support the setting of an automatic price for best-offers.
 		/// </summary>
-		public bool BestOfferAutoAcceptEnabled { get; set; }
+		public System.Nullable<System.Boolean> BestOfferAutoAcceptEnabled { get; set; }
 		
 		/// <summary>
 		/// This flag denotes whether or not the category supports the setting of an auto-decline price for best offers. If set to true, the category does support the setting of an automatic-decline price for best-offers.
 		/// </summary>
-		public bool BestOfferAutoDeclineEnabled { get; set; }
+		public System.Nullable<System.Boolean> BestOfferAutoDeclineEnabled { get; set; }
 		
 		/// <summary>
 		/// This flag denotes whether or not the category supports the setting for an automatic counter-offer on best offers. If set to true, the category does support the setting of an automatic counter-offer price for best-offers.
 		/// </summary>
-		public bool BestOfferCounterEnabled { get; set; }
+		public System.Nullable<System.Boolean> BestOfferCounterEnabled { get; set; }
 		
 		/// <summary>
 		/// The category ID to which the negotiated-price policies apply.
@@ -335,7 +335,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, items must include an ePID value in their item description before they can be listed in the category identified by the associated categoryId. In contrast, a value of false indicates that items listed in the associated category do not require ePID values. Important! It is possible for a productAdoptionPolicies container to not contain this productRequired field. This occurs if the eBay category is not part of the PBSE Phase 1 or Phase 2 mandate. In these scenarios, please treat the response the same as if this field were present and contained a value of false.
 		/// </summary>
-		public bool ProductRequired { get; set; }
+		public System.Nullable<System.Boolean> ProductRequired { get; set; }
 	}
 	
 	/// <summary>
@@ -381,7 +381,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, this flag indicates that you must specify a return policy for items listed in the associated category. Note that not accepting returns (setting returnsAcceptedEnabled to false) is a valid return policy.
 		/// </summary>
-		public bool Required { get; set; }
+		public System.Nullable<System.Boolean> Required { get; set; }
 	}
 	
 	/// <summary>
@@ -393,7 +393,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, this flag indicates you can supply a detailed return policy description within your return policy (for example, by populating the returnInstructions field in the Account API's createReturnPolicy). User-supplied return policy details are allowed only in the DE, ES, FR, and IT marketplaces.
 		/// </summary>
-		public bool PolicyDescriptionEnabled { get; set; }
+		public System.Nullable<System.Boolean> PolicyDescriptionEnabled { get; set; }
 		
 		/// <summary>
 		/// A list of refund methods allowed for the associated category.
@@ -413,7 +413,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, this flag indicates the seller can configure how they handle domestic returns.
 		/// </summary>
-		public bool ReturnsAcceptanceEnabled { get; set; }
+		public System.Nullable<System.Boolean> ReturnsAcceptanceEnabled { get; set; }
 		
 		/// <summary>
 		/// A list of allowed values for who pays for the return shipping cost. Note that for SNAD returns, the seller is always responsible for the return shipping cost.

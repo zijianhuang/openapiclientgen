@@ -355,7 +355,7 @@ namespace MyNS
 	public class Order
 	{
 		
-		public int Quantity { get; set; }//;
+		public System.Nullable<System.Int32> Quantity { get; set; }//;
 		
 		/// <summary>
 		/// Estimated ship date
@@ -370,7 +370,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates whenever order was completed or not
 		/// </summary>
-		public bool Complete { get; set; }//;
+		public System.Nullable<System.Boolean> Complete { get; set; }//;
 		
 		/// <summary>
 		/// Unique Request Id

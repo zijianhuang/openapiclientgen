@@ -42,7 +42,7 @@ namespace MyNS
 		/// <summary>
 		/// The absolute level of the ancestor category node in the hierarchy of its category tree. Note: The root node of any full category tree is always at level 0.
 		/// </summary>
-		public int CategoryTreeNodeLevel { get; set; }
+		public System.Nullable<System.Int32> CategoryTreeNodeLevel { get; set; }
 	}
 	
 	/// <summary>
@@ -86,7 +86,7 @@ namespace MyNS
 		/// <summary>
 		/// A value of true indicates that this aspect can be used to help identify item variations.
 		/// </summary>
-		public bool AspectEnabledForVariations { get; set; }
+		public System.Nullable<System.Boolean> AspectEnabledForVariations { get; set; }
 		
 		/// <summary>
 		/// Returned only if the value of aspectDataType identifies a data type that requires specific formatting. Currently, this field provides formatting hints as follows: DATE: YYYY, YYYYMM, YYYYMMDD NUMBER: int32, double
@@ -96,7 +96,7 @@ namespace MyNS
 		/// <summary>
 		/// The maximum length of the item/instance aspect's value. The seller must make sure not to exceed this length when specifying the instance aspect's value for a product. This field is only returned for instance aspects.
 		/// </summary>
-		public int AspectMaxLength { get; set; }
+		public System.Nullable<System.Int32> AspectMaxLength { get; set; }
 		
 		/// <summary>
 		/// The manner in which values of this aspect must be specified by the seller (as free text or by selecting from available options). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/taxonomy/types/AspectModeEnum.html'>eBay API documentation</a>
@@ -106,7 +106,7 @@ namespace MyNS
 		/// <summary>
 		/// A value of true indicates that this aspect is required when offering items in the specified category.
 		/// </summary>
-		public bool AspectRequired { get; set; }
+		public System.Nullable<System.Boolean> AspectRequired { get; set; }
 		
 		/// <summary>
 		/// The enumeration value returned in this field will indicate if the corresponding aspect is recommended or optional. Note: This field is always returned, even for hard-mandated/required aspects (where aspectRequired: true). The value returned for required aspects will be RECOMMENDED, but they are actually required and a seller will be blocked from listing or revising an item without these aspects. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/taxonomy/types/AspectUsageEnum.html'>eBay API documentation</a>
@@ -223,7 +223,7 @@ namespace MyNS
 		/// <summary>
 		/// The absolute level of the category tree node in the hierarchy of its category tree. Note: The root node of any full category tree is always at level 0.
 		/// </summary>
-		public int CategoryTreeNodeLevel { get; set; }
+		public System.Nullable<System.Int32> CategoryTreeNodeLevel { get; set; }
 		
 		/// <summary>
 		/// This field is reserved for internal or future use.
@@ -294,7 +294,7 @@ namespace MyNS
 		/// <summary>
 		/// The absolute level of the current category tree node in the hierarchy of its category tree. Note: The root node of any full category tree is always at level 0.
 		/// </summary>
-		public int CategoryTreeNodeLevel { get; set; }
+		public System.Nullable<System.Int32> CategoryTreeNodeLevel { get; set; }
 		
 		/// <summary>
 		/// An array of one or more category tree nodes that are the immediate children of the current category tree node, as well as their children, recursively down to the leaf nodes. Returned only if the the current category tree node is not a leaf node (the value of leafCategoryTreeNode is false).
@@ -304,7 +304,7 @@ namespace MyNS
 		/// <summary>
 		/// A value of true indicates that the current category tree node is a leaf node (it has no child nodes). A value of false indicates that the current node has one or more child nodes, which are identified by the childCategoryTreeNodes array. Returned only if the value of this field is true.
 		/// </summary>
-		public bool LeafCategoryTreeNode { get; set; }
+		public System.Nullable<System.Boolean> LeafCategoryTreeNode { get; set; }
 		
 		/// <summary>
 		/// The href portion of the getCategorySubtree call that retrieves the subtree below the parent of this category tree node. Not returned if the current category tree node is the root node of its tree.
@@ -360,7 +360,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.

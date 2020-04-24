@@ -49,7 +49,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items with this aspect.
 		/// </summary>
-		public int MatchCount { get; set; }
+		public System.Nullable<System.Int32> MatchCount { get; set; }
 		
 		/// <summary>
 		/// A HATEOAS reference for this aspect.
@@ -68,7 +68,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items having this buying option.
 		/// </summary>
-		public int MatchCount { get; set; }
+		public System.Nullable<System.Int32> MatchCount { get; set; }
 		
 		/// <summary>
 		/// The HATEOAS reference for this buying option.
@@ -107,7 +107,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items in this category.
 		/// </summary>
-		public int MatchCount { get; set; }
+		public System.Nullable<System.Int32> MatchCount { get; set; }
 		
 		/// <summary>
 		/// The HATEOAS reference of this category.
@@ -134,7 +134,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items having the condition.
 		/// </summary>
-		public int MatchCount { get; set; }
+		public System.Nullable<System.Int32> MatchCount { get; set; }
 		
 		/// <summary>
 		/// The HATEOAS reference of this condition.
@@ -185,7 +185,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.
@@ -241,7 +241,7 @@ namespace MyNS
 		/// <summary>
 		/// Reserved for future use.
 		/// </summary>
-		public int Height { get; set; }
+		public System.Nullable<System.Int32> Height { get; set; }
 		
 		/// <summary>
 		/// The URL of the image.
@@ -251,7 +251,7 @@ namespace MyNS
 		/// <summary>
 		/// Reserved for future use.
 		/// </summary>
-		public int Width { get; set; }
+		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
 	/// <summary>
@@ -310,12 +310,12 @@ namespace MyNS
 		/// <summary>
 		/// This indicates if the item is for adults only. For more information about adult-only items on eBay, see Adult items policy for sellers and Adult-Only items on eBay for buyers.
 		/// </summary>
-		public bool AdultOnly { get; set; }
+		public System.Nullable<System.Boolean> AdultOnly { get; set; }
 		
 		/// <summary>
 		/// This integer value indicates the total number of bids that have been placed for an auction item. This field is only returned for auction items.
 		/// </summary>
-		public int BidCount { get; set; }
+		public System.Nullable<System.Int32> BidCount { get; set; }
 		
 		/// <summary>
 		/// A comma separated list of the purchase options available for the item, such as FIXED_PRICE, AUCTION. FIXED_PRICE - Returned for fixed-price items (non-auction) AUCTION - Returned for auction items without Buy It Now feature FIXED_PRICE and AUCTION - Returned for auction items enabled with the Buy It Now feature Code so that your app gracefully handles any future changes to this list.
@@ -407,7 +407,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of this item that have been sold.
 		/// </summary>
-		public int TotalSoldQuantity { get; set; }
+		public System.Nullable<System.Int32> TotalSoldQuantity { get; set; }
 	}
 	
 	/// <summary>
@@ -458,7 +458,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items returned on a single page from the result set. This value can be set in the request with the limit query parameter.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. Max length: 2048
@@ -468,7 +468,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the offset query parameter.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. Max length: 2048
@@ -483,7 +483,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of items retrieved in the result set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -500,7 +500,7 @@ namespace MyNS
 		/// <summary>
 		/// The feedback score of the seller. This value is based on the ratings from eBay members that bought items from this seller.
 		/// </summary>
-		public int FeedbackScore { get; set; }
+		public System.Nullable<System.Int32> FeedbackScore { get; set; }
 		
 		/// <summary>
 		/// The username created by the seller for use on eBay.

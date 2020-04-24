@@ -20,7 +20,7 @@ namespace MyNS
 	public class DataSetList
 	{
 		
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 		
 		public DataSetListApis[] DataSetListApis { get; set; }
 	}

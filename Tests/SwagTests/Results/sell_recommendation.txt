@@ -94,7 +94,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.
@@ -201,7 +201,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items returned on a single page from the result set. This value can be set with the limit request parameter.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// Returns a list of listingRecommendations, where each element in the list offers recommendations for the associated listing ID.
@@ -216,7 +216,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of results skipped in the result set before listing the first returned result. This value can be set with the offset request parameter.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// The URI for the previous page of results. This value is returned only if there is a previous page of results in the result set. Max length: 2048
@@ -226,7 +226,7 @@ namespace MyNS
 		/// <summary>
 		/// The total number of items in the result set.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>

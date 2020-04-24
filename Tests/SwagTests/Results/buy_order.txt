@@ -305,12 +305,12 @@ namespace MyNS
 		/// <summary>
 		/// The month the credit card expires.
 		/// </summary>
-		public int ExpireMonth { get; set; }
+		public System.Nullable<System.Int32> ExpireMonth { get; set; }
 		
 		/// <summary>
 		/// The year the credit card expires.
 		/// </summary>
-		public int ExpireYear { get; set; }
+		public System.Nullable<System.Int32> ExpireYear { get; set; }
 	}
 	
 	/// <summary>
@@ -332,7 +332,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.
@@ -541,7 +541,7 @@ namespace MyNS
 		/// <summary>
 		/// Reserved for future use.
 		/// </summary>
-		public int Height { get; set; }
+		public System.Nullable<System.Int32> Height { get; set; }
 		
 		/// <summary>
 		/// The URL of the image.
@@ -551,7 +551,7 @@ namespace MyNS
 		/// <summary>
 		/// Reserved for future use.
 		/// </summary>
-		public int Width { get; set; }
+		public System.Nullable<System.Int32> Width { get; set; }
 	}
 	
 	/// <summary>
@@ -649,7 +649,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of individual items ordered for this line item.
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for the basic seller information.
@@ -686,7 +686,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of items ordered in this line item.
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 	}
 	
 	/// <summary>
@@ -703,7 +703,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of individual items ordered for this line item, as specified by the buyer.
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 	}
 	
 	/// <summary>
@@ -742,7 +742,7 @@ namespace MyNS
 		/// <summary>
 		/// A boolean that indicates whether the buyer wants to receive marketing messages.
 		/// </summary>
-		public bool MarketingTermsAccepted { get; set; }
+		public System.Nullable<System.Boolean> MarketingTermsAccepted { get; set; }
 		
 		/// <summary>
 		/// An enumeration value representing the available types of marketing messages. Valid Values: OFFER PROMOTION SURVEY Required: You must always pass in all these values, even if marketingTermsAccepted is set to false. See the Samples for an example.
@@ -809,7 +809,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of individual items in this line item.
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for the basic seller information.
@@ -929,7 +929,7 @@ namespace MyNS
 		/// <summary>
 		/// Reserved for future use.
 		/// </summary>
-		public bool RequiredForUserConfirmation { get; set; }
+		public System.Nullable<System.Boolean> RequiredForUserConfirmation { get; set; }
 		
 		/// <summary>
 		/// Reserved for future use.
@@ -1161,7 +1161,7 @@ namespace MyNS
 		/// <summary>
 		/// The feedback score of the seller. This value is based on the ratings from eBay members that bought items from this seller.
 		/// </summary>
-		public int FeedbackScore { get; set; }
+		public System.Nullable<System.Int32> FeedbackScore { get; set; }
 		
 		/// <summary>
 		/// Indicates if the seller is a business or an individual. This is determined when the seller registers with eBay. If they register for a business account, this value will be BUSINESS. If they register for a private account, this value will be INDIVIDUAL. This designation is required by the tax laws in some countries. This field is returned only on the following sites. EBAY_AT, EBAY_BE, EBAY_CH, EBAY_DE, EBAY_ES, EBAY_FR, EBAY_GB, EBAY_IE, EBAY_IT, EBAY_PL Valid values: BUSINESS INDIVIDUALCode so that your app gracefully handles any future changes to this list.
@@ -1423,7 +1423,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates if the shipping method is selected.
 		/// </summary>
-		public bool Selected { get; set; }
+		public System.Nullable<System.Boolean> Selected { get; set; }
 		
 		/// <summary>
 		/// The shipping provider, such as FedEx, or USPS for the line item.
@@ -1472,7 +1472,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of individual items ordered in this line item, as specified by the buyer.
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 	}
 	
 	/// <summary>

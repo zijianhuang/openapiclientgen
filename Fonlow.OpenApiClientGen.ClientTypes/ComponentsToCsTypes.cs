@@ -305,7 +305,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{
 						var simpleType = nameComposer.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-						if (simpleType == typeofDateTimeOffset && !isRequired)
+						if (!simpleType.IsClass && !isRequired)
 						{
 							clientProperty = CreateNullableProperty(propertyName, simpleType);
 						}

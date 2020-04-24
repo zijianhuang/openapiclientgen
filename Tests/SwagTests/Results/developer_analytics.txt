@@ -27,12 +27,12 @@ namespace MyNS
 		/// <summary>
 		/// The maximum number of requests that can be made to this resource during a set time period. The length of time to which the limit is applied is defined by the associated timeWindow value. This value is often referred to as the &quot;call quota&quot; for the resource.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// The remaining number of requests that can be made to this resource before the associated time window resets.
 		/// </summary>
-		public int Remaining { get; set; }
+		public System.Nullable<System.Int32> Remaining { get; set; }
 		
 		/// <summary>
 		/// The data and time the time window and accumulated calls for this resource reset. When the reset time is reached, the remaining value is reset to the value of limit, and this reset value is reset to the current time plus the number of seconds defined by the timeWindow value. The time stamp is formatted as an ISO 8601 string, which is based on the 24-hour Universal Coordinated Time (UTC) clock. Format: YYYY-MM-DDTHH:MM:SS.SSSZ Example: 2018-08-04T07:09:00.000Z
@@ -42,7 +42,7 @@ namespace MyNS
 		/// <summary>
 		/// A period of time, expressed in seconds. The call quota for a resource is applied to the period of time defined by the value of this field.
 		/// </summary>
-		public int TimeWindow { get; set; }
+		public System.Nullable<System.Int32> TimeWindow { get; set; }
 	}
 	
 	/// <summary>
@@ -120,7 +120,7 @@ namespace MyNS
 		/// <summary>
 		/// A unique number to identify the error.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// An array of request elements most closely associated to the error.

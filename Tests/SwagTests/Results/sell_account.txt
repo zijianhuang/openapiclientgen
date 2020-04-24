@@ -44,7 +44,7 @@ namespace MyNS
 		/// <summary>
 		/// Sellers can create multiple policies for any marketplaceId and categoryTypes.name combination. For example, you can create multiple fulfillment policies for one marketplace, where they all target the same category type name. However, only one policy can be the default for any marketplaceId and name combination, and eBay designates the first policy created for a combination as the default. If set to true, this policy is the default policy for the associated categoryTypes.name and marketplaceId pair. Note: eBay considers the status of this field only when you create listings through the Web flow. If you create listings using the APIs, you must specifically set the policies you want applied to a listing in the payload of the call you use to create the listing. If you use the Web flow to create item listings, eBay uses the default policy for the marketplace and category type specified, unless you override the default. For more on default policies, see Changing the default policy for a category type.
 		/// </summary>
-		public bool Default { get; set; }
+		public System.Nullable<System.Boolean> Default { get; set; }
 		
 		/// <summary>
 		/// The category type to which the policy applies (motor vehicles or non-motor vehicles). Note for return policies: The 'MOTORS_VEHICLES' category type is not valid for return policies because eBay flows do not support the return of motor vehicles. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/CategoryTypeEnum.html'>eBay API documentation</a>
@@ -93,7 +93,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers freight shipping. Default: false
 		/// </summary>
-		public bool FreightShipping { get; set; }
+		public System.Nullable<System.Boolean> FreightShipping { get; set; }
 		
 		/// <summary>
 		/// A unique eBay-assigned ID for the fulfillment policy. This ID is generated when the policy is created.
@@ -103,7 +103,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller has opted-in to the eBay Global Shipping Program and that they use that service for their international shipments. Setting this value automatically sets the international shipping service for the policy to International Priority Shipping and the buyer does not need to set any other shipping services for their INTERNATIONAL shipping options (unless they sell items not covered by the Global Shipping Program). If this value is set to false, the seller is responsible for manually specifying the international shipping services, as described in Setting up worldwide shipping. To opt-in to the Global Shipping Program, log in to eBay and navigate to My Account &gt; Site Preferences &gt; Shipping preferences. Default: false
 		/// </summary>
-		public bool GlobalShipping { get; set; }
+		public System.Nullable<System.Boolean> GlobalShipping { get; set; }
 		
 		/// <summary>
 		/// A complex type that specifies a period of time using a specified time-measurement unit.
@@ -113,7 +113,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers local pickup of their items. Local pickup is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable local pickup, a seller (1) must be eligible for local pickup and (2) must set this boolean field to 'true'. Currently, local pickup is available to only large retail merchants and can be applied to only multiple-quantity, fixed-price listings. In addition to setting this field, the merchant must also do the following to enable the &quot;Local Pickup&quot; option on a multiple-quantity, fixed-price listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Include the seller-defined SKU value of the product(s) in the request. For single-variation listings, the SKU value is specified in the Item.SKU field and for multiple-variation listings, the SKU value(s) are specified in the Item.Variations.Variation.SKU field(s). Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a seller is successful at listing an item with the In-Store Pickup feature enabled, prospective buyers within a reasonable distance (25 miles or so) from one of the seller's stores (that has stock available) will see the &quot;Available for In-Store Pickup&quot; option on the listing, along with information on the closest store that has the item.Default: false
 		/// </summary>
-		public bool LocalPickup { get; set; }
+		public System.Nullable<System.Boolean> LocalPickup { get; set; }
 		
 		/// <summary>
 		/// The ID of the eBay marketplace to which this fulfillment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a>
@@ -128,7 +128,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers the &quot;Click and Collect&quot; feature. Click and Collect is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable &quot;Click and Collect&quot;, a seller (1) must be eligible for Click and Collect and (2) must set this boolean field to 'true'. Currently, Click and Collect is available to only large retail merchants selling in the eBay AU and UK marketplaces. In addition to setting this field, the merchant must also do the following to enable the &quot;Click and Collect&quot; option on a listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Set the immediatePay flag in the payment policy to 'true'. Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a UK merchant successfully lists an item with Click and Collect, prospective buyers within a reasonable distance from one of the merchant's stores (that has stock available) will see the &quot;Available for Click and Collect&quot; option on the listing, along with information on the closest store that has the item.Default: false
 		/// </summary>
-		public bool PickupDropOff { get; set; }
+		public System.Nullable<System.Boolean> PickupDropOff { get; set; }
 		
 		/// <summary>
 		/// A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. shippingOptions is a list with a single element if the seller ships to only domestic locations. If the seller also ships internationally, the list contains a second element that defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, any rate tables the seller wants to associate with the shipping services, plus other details (such as the shippingServices offered for domestic or international shipments).
@@ -160,12 +160,12 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers freight shipping. Default: false
 		/// </summary>
-		public bool FreightShipping { get; set; }
+		public System.Nullable<System.Boolean> FreightShipping { get; set; }
 		
 		/// <summary>
 		/// If set to true, the seller has opted-in to the eBay Global Shipping Program and that they use that service for their international shipments. Setting this value automatically sets the international shipping service for the policy to International Priority Shipping and the buyer does not need to set any other shipping services for their INTERNATIONAL shipping options (unless they sell items not covered by the Global Shipping Program). If this value is set to false, the seller is responsible for manually specifying the international shipping services, as described in Setting up worldwide shipping. To opt-in to the Global Shipping Program, log in to eBay and navigate to My Account &gt; Site Preferences &gt; Shipping preferences. Default: false
 		/// </summary>
-		public bool GlobalShipping { get; set; }
+		public System.Nullable<System.Boolean> GlobalShipping { get; set; }
 		
 		/// <summary>
 		/// A complex type that specifies a period of time using a specified time-measurement unit.
@@ -175,7 +175,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers local pickup of their items. Local pickup is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable local pickup, a seller (1) must be eligible for local pickup and (2) must set this boolean field to 'true'. Currently, local pickup is available to only large retail merchants and can be applied to only multiple-quantity, fixed-price listings. In addition to setting this field, the merchant must also do the following to enable the &quot;Local Pickup&quot; option on a multiple-quantity, fixed-price listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Include the seller-defined SKU value of the product(s) in the request. For single-variation listings, the SKU value is specified in the Item.SKU field and for multiple-variation listings, the SKU value(s) are specified in the Item.Variations.Variation.SKU field(s). Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a seller is successful at listing an item with the In-Store Pickup feature enabled, prospective buyers within a reasonable distance (25 miles or so) from one of the seller's stores (that has stock available) will see the &quot;Available for In-Store Pickup&quot; option on the listing, along with information on the closest store that has the item.Default: false
 		/// </summary>
-		public bool LocalPickup { get; set; }
+		public System.Nullable<System.Boolean> LocalPickup { get; set; }
 		
 		/// <summary>
 		/// The ID of the eBay marketplace to which this fulfillment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a>
@@ -190,7 +190,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers the &quot;Click and Collect&quot; feature. Click and Collect is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable &quot;Click and Collect&quot;, a seller (1) must be eligible for Click and Collect and (2) must set this boolean field to 'true'. Currently, Click and Collect is available to only large retail merchants selling in the eBay AU and UK marketplaces. In addition to setting this field, the merchant must also do the following to enable the &quot;Click and Collect&quot; option on a listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Set the immediatePay flag in the payment policy to 'true'. Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a UK merchant successfully lists an item with Click and Collect, prospective buyers within a reasonable distance from one of the merchant's stores (that has stock available) will see the &quot;Available for Click and Collect&quot; option on the listing, along with information on the closest store that has the item.Default: false
 		/// </summary>
-		public bool PickupDropOff { get; set; }
+		public System.Nullable<System.Boolean> PickupDropOff { get; set; }
 		
 		/// <summary>
 		/// A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. shippingOptions is a list with a single element if the seller ships to only domestic locations. If the seller also ships internationally, the list contains a second element that defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, any rate tables the seller wants to associate with the shipping services, plus other details (such as the shippingServices offered for domestic or international shipments).
@@ -222,7 +222,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns the maximum number of results that can be returned in result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// Returns a URL link to the next set of results.
@@ -232,7 +232,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns how many result sets were skipped before the currently returned result set.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// Returns a URL link to the previous set of results.
@@ -242,7 +242,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns the total number of result sets in the paginated collection.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -264,7 +264,7 @@ namespace MyNS
 		/// <summary>
 		/// Required if the seller wants to set an international return policy that differs from their domestic return policy. If set to true, the seller allows international returns. If set to false, the seller does not accept international returns.
 		/// </summary>
-		public bool ReturnsAccepted { get; set; }
+		public System.Nullable<System.Boolean> ReturnsAccepted { get; set; }
 		
 		/// <summary>
 		/// Required if the internationalOverride.returnsAccepted field is set to true. This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a>
@@ -323,7 +323,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. The seller can change the immediate payment requirement at any time during the life cycle of a listing. The following must be true before a seller can apply an immediate payment requirement to an item: The seller must have a PayPal Business account. The Buy It Now price cannot be higher than $60,000 USD. The eBay marketplace on which the item is listed must support PayPal payments. The listing type must be fixed-price, or an auction with a Buy It Now option.To enable the immediate payment requirement, the seller must also perform the following actions via API calls: Provide a valid paymentMethods.recipientAccountReference.referenceId value. Offer PayPal as the only payment method for the item(s). Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges. Include and set the shippingProfileDiscountInfo container values if you are going to use promotional shipping discounts.For more information, see the Understanding immediate payment Help page. Note: Listings created with the Inventory API must reference a payment policy that has immediatePay is set to true. Items listed with the Inventory API must also be fixed-price good-till-canceled (GTC) listings where PayPal is the only supported payment method (paymentMethod must be set to PAYPAL).Default: false
 		/// </summary>
-		public bool ImmediatePay { get; set; }
+		public System.Nullable<System.Boolean> ImmediatePay { get; set; }
 		
 		/// <summary>
 		/// The ID of the eBay marketplace to which the payment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a>
@@ -380,7 +380,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. The seller can change the immediate payment requirement at any time during the life cycle of a listing. The following must be true before a seller can apply an immediate payment requirement to an item: The seller must have a PayPal Business account. The Buy It Now price cannot be higher than $60,000 USD. The eBay marketplace on which the item is listed must support PayPal payments. The listing type must be fixed-price, or an auction with a Buy It Now option.To enable the immediate payment requirement, the seller must also perform the following actions via API calls: Provide a valid paymentMethods.recipientAccountReference.referenceId value. Offer PayPal as the only payment method for the item(s). Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges. Include and set the shippingProfileDiscountInfo container values if you are going to use promotional shipping discounts.For more information, see the Understanding immediate payment Help page. Note: Listings created with the Inventory API must reference a payment policy that has immediatePay is set to true. Items listed with the Inventory API must also be fixed-price good-till-canceled (GTC) listings where PayPal is the only supported payment method (paymentMethod must be set to PAYPAL).Default: false
 		/// </summary>
-		public bool ImmediatePay { get; set; }
+		public System.Nullable<System.Boolean> ImmediatePay { get; set; }
 		
 		/// <summary>
 		/// The ID of the eBay marketplace to which the payment policy applies. If this value is not specified, the value defaults to the eBay registration site of the seller. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a>
@@ -417,7 +417,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns the maximum number of results that can be returned in result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// Returns a URL link to the next set of results.
@@ -427,7 +427,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns how many result sets were skipped before the currently returned result set.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// A list of the seller's payment policies.
@@ -442,7 +442,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns the total number of result sets in the paginated collection.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -469,7 +469,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller was at one point opted-in to the associated payment program, but they later opted out of the program. A value of false indicates the seller never opted-in to the program or if they did opt-in to the program, they never opted-out of it. It's important to note that the setting of this field does not indicate the seller's current status regarding the payment program. It is possible for this field to return true while the status field returns OPTED_IN.
 		/// </summary>
-		public bool WasPreviouslyOptedIn { get; set; }
+		public System.Nullable<System.Boolean> WasPreviouslyOptedIn { get; set; }
 	}
 	
 	/// <summary>
@@ -605,7 +605,7 @@ namespace MyNS
 		/// <summary>
 		/// Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is neither read nor returned. If set to true, the seller offers an Extended Holiday Returns policy for their listings. IMPORTANT: Extended Holiday Returns is a seasonally available feature that is offered on some eBay marketplaces. To see if the feature is enabled in any given year, check the Returns on eBay page before the holiday season begins. If the feature is not enabled for the season, this field is ignored. The extended holiday returns period is defined by three dates: The start date = start of November. The purchase cutoff date = end of the year. The end date = end of January. The above dates may vary by a few days each year. Sellers are notified of the current dates on their eBay marketplace before the holiday period starts. Sellers can specify Extended Holiday Returns (as well as their regular non-holiday returns period) for chosen listings at any time during the year. The Extended Holiday Returns offer is not visible in listings until the start date of current year's holiday returns period, at which point it overrides the non-holiday returns policy. Buyers can see the Extended Holiday Returns offer in listings displayed through the purchase cutoff date and are able to return those purchases until the end date of the period. After the purchase cutoff date, the Extended Holiday Returns offer automatically disappears from the listings and the seller's non-holiday returns period reappears. Purchases made from that point on are subject to the non-holiday returns period, while purchases made before the cutoff date still have until the end of the period to return under the program. If the value of holidayReturns is false for an item, the return period specified by the returnsWithinOption field applies, regardless of the purchase date. If the item is listed with a policy of no returns, holidayReturns is automatically reset to false.
 		/// </summary>
-		public bool ExtendedHolidayReturnsOffered { get; set; }
+		public System.Nullable<System.Boolean> ExtendedHolidayReturnsOffered { get; set; }
 		
 		/// <summary>
 		/// This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns.
@@ -655,7 +655,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller accepts returns. Call the getReturnPolicies in the Metadata API to see what categories require returns to be offered for listings in each category. Also, note that some European marketplaces (for example, UK, IE, and DE) require sellers to accept returns for fixed-price items and auctions listed with Buy It Now. For details, see Returns and the Law (UK). Note:Top-Rated sellers must accept item returns and the handlingTime should be set to zero days or one day for a listing to receive a Top-Rated Plus badge on the View Item or search result pages. For more information on eBay's Top-Rated seller program, see Becoming a Top Rated Seller and qualifying for Top Rated Plus benefits.
 		/// </summary>
-		public bool ReturnsAccepted { get; set; }
+		public System.Nullable<System.Boolean> ReturnsAccepted { get; set; }
 		
 		/// <summary>
 		/// This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a>
@@ -682,7 +682,7 @@ namespace MyNS
 		/// <summary>
 		/// Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is ignored, it is neither read nor returned. If set to true, the seller offers an Extended Holiday Returns policy for their listings. IMPORTANT: Extended Holiday Returns is a seasonally available feature that is offered on some eBay marketplaces. To see if the feature is enabled in any given year, check the Returns on eBay page before the holiday season begins. If the feature is not enabled for the season, this field is ignored. The extended holiday returns period is defined by three dates: The start date = start of November. The purchase cutoff date = end of the year. The end date = end of January. The above dates may vary by a few days each year. Sellers are notified of the current dates on their eBay marketplace before the holiday period starts. Sellers can specify Extended Holiday Returns (as well as their regular non-holiday returns period) for chosen listings at any time during the year. The Extended Holiday Returns offer is not visible in listings until the start date of current year's holiday returns period, at which point it overrides the non-holiday returns policy. Buyers can see the Extended Holiday Returns offer in listings displayed through the purchase cutoff date and are able to return those purchases until the end date of the period. After the purchase cutoff date, the Extended Holiday Returns offer automatically disappears from the listings and the seller's non-holiday returns period reappears. Purchases made from that point on are subject to the non-holiday returns period, while purchases made before the cutoff date still have until the end of the period to return under the program. If the value of holidayReturns is false for an item, the return period specified by the returnsWithinOption field applies, regardless of the purchase date. If the item is listed with a policy of no returns, holidayReturns is automatically reset to false.
 		/// </summary>
-		public bool ExtendedHolidayReturnsOffered { get; set; }
+		public System.Nullable<System.Boolean> ExtendedHolidayReturnsOffered { get; set; }
 		
 		/// <summary>
 		/// This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns.
@@ -727,7 +727,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller accepts returns. Call the getReturnPolicies in the Metadata API to see what categories require returns to be offered for listings in each category. Also, note that some European marketplaces (for example, UK, IE, and DE) require sellers to accept returns for fixed-price items and auctions listed with Buy It Now. For details, see Returns and the Law (UK). Note:Top-Rated sellers must accept item returns and the handlingTime should be set to zero days or one day for a listing to receive a Top-Rated Plus badge on the View Item or search result pages. For more information on eBay's Top-Rated seller program, see Becoming a Top Rated Seller and qualifying for Top Rated Plus benefits.
 		/// </summary>
-		public bool ReturnsAccepted { get; set; }
+		public System.Nullable<System.Boolean> ReturnsAccepted { get; set; }
 		
 		/// <summary>
 		/// Required if returnsAccepted is set to true. This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a>
@@ -749,7 +749,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns the maximum number of results that can be returned in result set.
 		/// </summary>
-		public int Limit { get; set; }
+		public System.Nullable<System.Int32> Limit { get; set; }
 		
 		/// <summary>
 		/// Returns a URL link to the next set of results.
@@ -759,7 +759,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns how many result sets were skipped before the currently returned result set.
 		/// </summary>
-		public int Offset { get; set; }
+		public System.Nullable<System.Int32> Offset { get; set; }
 		
 		/// <summary>
 		/// Returns a URL link to the previous set of results.
@@ -774,7 +774,7 @@ namespace MyNS
 		/// <summary>
 		/// Returns the total number of result sets in the paginated collection.
 		/// </summary>
-		public int Total { get; set; }
+		public System.Nullable<System.Int32> Total { get; set; }
 	}
 	
 	/// <summary>
@@ -801,7 +801,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, shipping and handling charges are taxed.
 		/// </summary>
-		public bool ShippingAndHandlingTaxed { get; set; }
+		public System.Nullable<System.Boolean> ShippingAndHandlingTaxed { get; set; }
 	}
 	
 	/// <summary>
@@ -818,7 +818,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, shipping and handling charges are taxed.
 		/// </summary>
-		public bool ShippingAndHandlingTaxed { get; set; }
+		public System.Nullable<System.Boolean> ShippingAndHandlingTaxed { get; set; }
 	}
 	
 	/// <summary>
@@ -847,7 +847,7 @@ namespace MyNS
 		/// <summary>
 		/// The maximum quantity of items that can be listed by the seller per calendar month. Note that for a listing with variations, all of the items listed in the variation count as individual items.
 		/// </summary>
-		public int Quantity { get; set; }
+		public System.Nullable<System.Int32> Quantity { get; set; }
 	}
 	
 	/// <summary>
@@ -859,7 +859,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller's registration is completed.
 		/// </summary>
-		public bool SellerRegistrationCompleted { get; set; }
+		public System.Nullable<System.Boolean> SellerRegistrationCompleted { get; set; }
 		
 		/// <summary>
 		/// Defines the selling limit applied to an eBay seller's account.
@@ -886,7 +886,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers freight shipping.
 		/// </summary>
-		public bool FreightShipping { get; set; }
+		public System.Nullable<System.Boolean> FreightShipping { get; set; }
 		
 		/// <summary>
 		/// A unique eBay-assigned ID for a fulfillment policy. This ID is generated when the policy is created.
@@ -896,7 +896,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller has opted-in to the Global Shipping Program and eBay automatically sets the international shipping service options to International Priority Shipping. If the value of globalShipping is false, the seller is responsible for specifying one or more international shipping service options if they want to ship internationally.
 		/// </summary>
-		public bool GlobalShipping { get; set; }
+		public System.Nullable<System.Boolean> GlobalShipping { get; set; }
 		
 		/// <summary>
 		/// A complex type that specifies a period of time using a specified time-measurement unit.
@@ -906,7 +906,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers local pickup of their items.
 		/// </summary>
-		public bool LocalPickup { get; set; }
+		public System.Nullable<System.Boolean> LocalPickup { get; set; }
 		
 		/// <summary>
 		/// The ID of the eBay marketplace to which this fulfillment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a>
@@ -921,7 +921,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers the &quot;Click and Collect&quot; option. Currently, &quot;Click and Collect&quot; is available only to large retail merchants the eBay AU and UK marketplaces.
 		/// </summary>
-		public bool PickupDropOff { get; set; }
+		public System.Nullable<System.Boolean> PickupDropOff { get; set; }
 		
 		/// <summary>
 		/// A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. The list has a single element if the seller ships to only domestic locations. If the seller also ships internationally, a second element defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, and any rate tables the seller wants to associate with the shipping services. Each shippingOption element has a shippingServices container that defines the list of shipping services (domestic or international) offered with this fulfillment policy.
@@ -968,7 +968,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). Your items will be available for other buyers until payment is complete. This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. Default: false
 		/// </summary>
-		public bool ImmediatePay { get; set; }
+		public System.Nullable<System.Boolean> ImmediatePay { get; set; }
 		
 		/// <summary>
 		/// The ID of the eBay marketplace to which this payment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a>
@@ -1020,7 +1020,7 @@ namespace MyNS
 		/// <summary>
 		/// Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is ignored, it is neither read nor returned. If set to true, the seller offers an Extended Holiday Returns policy for their listings. IMPORTANT: Extended Holiday Returns is a seasonally available feature that is offered on some eBay marketplaces. To see if the feature is enabled in any given year, check the eBay Seller Center Returns on eBay page of before the holiday season begins.
 		/// </summary>
-		public bool ExtendedHolidayReturnsOffered { get; set; }
+		public System.Nullable<System.Boolean> ExtendedHolidayReturnsOffered { get; set; }
 		
 		/// <summary>
 		/// This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns.
@@ -1070,7 +1070,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller accepts returns. If set to false, this field indicates that the seller does not accept returns.
 		/// </summary>
-		public bool ReturnsAccepted { get; set; }
+		public System.Nullable<System.Boolean> ReturnsAccepted { get; set; }
 		
 		/// <summary>
 		/// This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a>
@@ -1102,7 +1102,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers buyer-paid shipping insurance. The optionType shows whether this is for either a domestic or international shipment. Buyer-paid shipping insurance is currently supported in only Australia (AU), France (FR), and Italy (IT).
 		/// </summary>
-		public bool InsuranceOffered { get; set; }
+		public System.Nullable<System.Boolean> InsuranceOffered { get; set; }
 		
 		/// <summary>
 		/// Required if the policy offers shipping options using a shippingOptions container. Use this field to set the ShippingOption element to either DOMESTIC or INTERNATIONAL. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ShippingOptionTypeEnum.html'>eBay API documentation</a>
@@ -1139,12 +1139,12 @@ namespace MyNS
 		/// <summary>
 		/// This field is only applicable to vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for picking up the vehicle. Otherwise, the seller should specify the vehicle pickup arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false
 		/// </summary>
-		public bool BuyerResponsibleForPickup { get; set; }
+		public System.Nullable<System.Boolean> BuyerResponsibleForPickup { get; set; }
 		
 		/// <summary>
 		/// This field is applicable for only items listed in vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for the shipment of the vehicle. Otherwise, the seller should specify the vehicle shipping arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false
 		/// </summary>
-		public bool BuyerResponsibleForShipping { get; set; }
+		public System.Nullable<System.Boolean> BuyerResponsibleForShipping { get; set; }
 		
 		/// <summary>
 		/// A complex type that describes the value of a monetary amount as represented by a global currency.
@@ -1154,7 +1154,7 @@ namespace MyNS
 		/// <summary>
 		/// If set to true, the seller offers free shipping to the buyer. This field can only be included and set to 'true' for the first domestic shipping service option specified in the shippingServices container (it is ignored if set for subsequent shipping services). The first specified shipping service option has a sortOrder value of 1 or (if the sortOrderId field is not used) it is the shipping service option that's specified first in the shippingServices container.
 		/// </summary>
-		public bool FreeShipping { get; set; }
+		public System.Nullable<System.Boolean> FreeShipping { get; set; }
 		
 		/// <summary>
 		/// The shipping carrier, such as 'USPS', 'FedEx', 'UPS', and so on.
@@ -1179,7 +1179,7 @@ namespace MyNS
 		/// <summary>
 		/// This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service).
 		/// </summary>
-		public int SortOrder { get; set; }
+		public System.Nullable<System.Int32> SortOrder { get; set; }
 		
 		/// <summary>
 		/// A complex type that describes the value of a monetary amount as represented by a global currency.
@@ -1201,7 +1201,7 @@ namespace MyNS
 		/// <summary>
 		/// Required in the TimeDuration container. An amount of time, as measured by the time-measurement units specified in the unit field. Supported values for this field vary according to the object using the time duration. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring.
 		/// </summary>
-		public int Value { get; set; }
+		public System.Nullable<System.Int32> Value { get; set; }
 	}
 	
 	/// <summary>
@@ -1223,7 +1223,7 @@ namespace MyNS
 		/// <summary>
 		/// A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
 		/// </summary>
-		public int ErrorId { get; set; }
+		public System.Nullable<System.Int32> ErrorId { get; set; }
 		
 		/// <summary>
 		/// Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation.
