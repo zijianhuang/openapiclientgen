@@ -80,15 +80,24 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return arrayCodeTypeReference;
 					}
 				}
-				else if (content.Schema.Enum.Count == 0) // for primitive type
+				else if (content.Schema.Enum.Count > 0) // for enum
 				{
-					var simpleType = nameComposer.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
-					var codeTypeReference = new CodeTypeReference(simpleType);
-					return codeTypeReference;
+					var enumMemberNames = content.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+					var existingDeclaration = LocateEnumDeclaration(enumMemberNames);
+					if (existingDeclaration != null)
+					{
+						var existingTypeName = existingDeclaration.Name;
+						var enumReference = nameComposer.TranslateToClientTypeReference(existingTypeName);
+						return enumReference;
+					}
 				}
 
-				var schemaFormat = content.Schema.Format;
-				return new CodeTypeReference(nameComposer.PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat));
+				var simpleType = nameComposer.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
+				var codeTypeReference = new CodeTypeReference(simpleType);
+				return codeTypeReference;
+
+				//var schemaFormat = content.Schema.Format;
+				//return new CodeTypeReference(nameComposer.PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat));
 			}
 
 			return null;

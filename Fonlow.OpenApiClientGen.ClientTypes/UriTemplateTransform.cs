@@ -53,7 +53,14 @@ namespace Fonlow.CodeDom.Web
 
 				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference.ArrayRank == 0)
 				{
-					return newUriText += $"{d.Name}=\" + Uri.EscapeDataString({d.Name})+\"";
+					if (d.ParameterTypeReference.BaseType == "System.String")
+					{
+						return newUriText += $"{d.Name}=\" + Uri.EscapeDataString({d.Name})+\"";
+					}
+					else
+					{
+						return newUriText += $"{d.Name}=\" + {d.Name}+\"";
+					}
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset)
 				{
@@ -140,7 +147,14 @@ namespace Fonlow.CodeDom.Web
 
 				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference.ArrayRank == 0)
 				{
-					return newUriText += $"{d.Name}=' + encodeURIComponent({d.Name}) + '";
+					if (d.ParameterTypeReference.BaseType == "System.String")
+					{
+						return newUriText += $"{d.Name}=' + encodeURIComponent({d.Name}) + '";
+					}
+					else
+					{
+						return newUriText += $"{d.Name}=' + {d.Name} + '";
+					}
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset)
 				{
