@@ -7,6 +7,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -402,7 +403,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + " { get; set; }//";
 
-			CodeMemberField result = new CodeMemberField( $"System.Nullable<{type.FullName}>",  memberName );
+			CodeMemberField result = new CodeMemberField($"System.Nullable<{type.FullName}>", memberName);
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
 			return result;
 		}
@@ -469,5 +470,36 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return typeReference;
 		}
 
+		public static CodeTypeDeclaration LocateEnumDeclaration(CodeNamespace clientNamespace, string[] ms)
+		{
+			for (int i = 0; i < clientNamespace.Types.Count; i++)
+			{
+				var tc = clientNamespace.Types[i];
+				if (tc.IsEnum)
+				{
+					var memberCount = tc.Members.Count;
+					if (memberCount != ms.Length)
+					{
+						continue;
+					}
+					
+					for (int k = 0; k < memberCount; k++)
+					{
+						var tem = tc.Members[k];
+						if (tem.Name != ms[k])
+						{
+							break;
+						}
+
+						if (k==memberCount-1)// last one pass
+						{
+							return tc;
+						}
+					}
+				}
+			}
+
+			return null;
+		}
 	}
 }

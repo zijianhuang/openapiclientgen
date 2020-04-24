@@ -1,11 +1,13 @@
 ﻿using System;
 using System.CodeDom;
 using System.Linq;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Fonlow.Reflection;
 using Microsoft.OpenApi.Models;
 using Fonlow.CodeDom.Web;
 using Fonlow.OpenApiClientGen.ClientTypes;
+using Microsoft.OpenApi.Extensions;
 
 namespace Fonlow.OpenApiClientGen.Cs
 {
@@ -26,6 +28,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 		CodeMemberMethod method;
 		ComponentsToCsTypes coms2CsTypes;
 		NameComposer nameComposer;
+		ParametersHelper parametersHelper;
 		Settings settings;
 		string actionName;
 		OperationType httpMethod;
@@ -55,10 +58,11 @@ namespace Fonlow.OpenApiClientGen.Cs
 		{
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
+			this.parametersHelper = new ParametersHelper(nameComposer);
 			this.apiOperation = apiOperation;
 			this.httpMethod = httpMethod;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
-			this.parameterDescriptions = nameComposer.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
+			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				var kc = nameComposer.GetBodyContent(apiOperation);
@@ -232,7 +236,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 				new CodeParameterDeclarationExpression()
 				{
 					Name = d.Name,
-					Type = nameComposer.OpenApiParameterToCodeTypeReference(d),
+					Type = parametersHelper.OpenApiParameterToCodeTypeReference(d),
 
 				})
 				.ToArray();

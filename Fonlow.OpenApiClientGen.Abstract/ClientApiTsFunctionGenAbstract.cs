@@ -25,6 +25,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		protected CodeMemberMethod Method { get; private set; }
 		protected ComponentsToTsTypes ComToTsTypes { get; private set; }
 		NameComposer nameComposer;
+		ParametersHelper parametersHelper;
 		Settings settings;
 		protected string ActionName { get; private set; }
 		protected OperationType HttpMethod { get; private set; }
@@ -40,9 +41,10 @@ namespace Fonlow.CodeDom.Web.Ts
 		{
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
+			this.parametersHelper = new ParametersHelper(nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
-			this.ParameterDescriptions = nameComposer.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
+			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				var kc = nameComposer.GetBodyContent(apiOperation);

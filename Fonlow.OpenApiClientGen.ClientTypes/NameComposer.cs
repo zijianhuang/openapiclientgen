@@ -254,44 +254,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return Tuple.Create(new CodeTypeReference(complexTypeName), stringAsString, true);
 		}
 
-		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
-		{
-			return ps.Select(p =>
-				new ParameterDescriptionEx()
-				{
-					Name = p.Name,
-					Documentation = p.Description,
-					ParameterDescriptor = new ParameterDescriptor()
-					{
-						IsOptional = !p.Required,
-						ParameterName = p.Name,
-						ParameterType = PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
-						ParameterBinder = ParameterLocationToParameterBinder(p.In),
-					},
-
-					ParameterTypeReference= OpenApiParameterToCodeTypeReference(p)
-				}
-			).Where(k => k.ParameterDescriptor.ParameterBinder != ParameterBinder.None).ToArray();
-		}
-
-		ParameterBinder ParameterLocationToParameterBinder(ParameterLocation? lo)
-		{
-			if (!lo.HasValue)
-			{
-				throw new InvalidDataException("ParameterLocation is REQUIRED");
-			}
-
-			switch (lo)
-			{
-				case ParameterLocation.Query:
-					return ParameterBinder.FromQuery;
-				case ParameterLocation.Path:
-					return ParameterBinder.FromUri;
-				default:
-					return ParameterBinder.None; //so to be skiped/ignored
-			}
-		}
-
 		/// <summary>
 		/// Get CodeTypeReference and description of requestBody of operation.
 		/// </summary>
@@ -341,42 +303,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="content"></param>
 		/// <returns></returns>
 		CodeTypeReference OpenApiMediaTypeToCodeTypeReference(OpenApiMediaType content)
-		{
-			var schemaType = content.Schema.Type;
-			if (schemaType != null)
-			{
-				if (schemaType == "array") // for array
-				{
-					var arrayItemsSchema = content.Schema.Items;
-					if (arrayItemsSchema.Reference != null) //array of custom type
-					{
-						var arrayTypeName = arrayItemsSchema.Reference.Id;
-						var arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
-						return arrayCodeTypeReference;
-					}
-					else
-					{
-						var arrayType = arrayItemsSchema.Type;
-						var clrType = PrimitiveSwaggerTypeToClrType(arrayType, null);
-						var arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
-						return arrayCodeTypeReference;
-					}
-				}
-				else if (content.Schema.Enum.Count == 0) // for primitive type
-				{
-					var simpleType = PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
-					var codeTypeReference = new CodeTypeReference(simpleType);
-					return codeTypeReference;
-				}
-
-				var schemaFormat = content.Schema.Format;
-				return new CodeTypeReference(PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat));
-			}
-
-			return null;
-		}
-
-		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter content)
 		{
 			var schemaType = content.Schema.Type;
 			if (schemaType != null)
@@ -506,7 +432,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
+		public CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
 		{
 			var otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
 			{
@@ -515,7 +441,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return otherArrayType;
 		}
 
-		CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
+		public CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
 		{
 			var elementTypeReference = new CodeTypeReference(typeName);
 			var typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
