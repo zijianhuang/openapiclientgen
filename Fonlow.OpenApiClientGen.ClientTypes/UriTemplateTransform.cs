@@ -131,14 +131,14 @@ namespace Fonlow.CodeDom.Web
 			}
 		}
 
-		public static string TransformForTs(string newUriText, ParameterDescription d)
+		public static string TransformForTs(string newUriText, ParameterDescriptionEx d)
 		{
 			if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 			{
 				bool queryExists = newUriText.Contains("?");
 				newUriText += queryExists ? "&" : "?";
 
-				if (d.ParameterDescriptor.ParameterType == typeofString)
+				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference.ArrayRank == 0)
 				{
 					return newUriText += $"{d.Name}=' + encodeURIComponent({d.Name}) + '";
 				}
@@ -146,11 +146,10 @@ namespace Fonlow.CodeDom.Web
 				{
 					return newUriText += $"{d.Name}=' + {d.Name}.toISOString() + '";
 				}
-				else if (IsSimpleArrayType(d.ParameterDescriptor.ParameterType) || IsSimpleListType(d.ParameterDescriptor.ParameterType))
+				else if (d.ParameterTypeReference.ArrayRank > 0)
 				{
 					var arrayQuery = $"{d.ParameterDescriptor.ParameterName}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
-					var placeHolder = $"{d.ParameterDescriptor.ParameterName}={{{d.ParameterDescriptor.ParameterName}}}";
-					return newUriText.Replace(placeHolder, "'+" + arrayQuery);
+					return newUriText + "'+" + arrayQuery + " + '";
 				}
 				else
 				{

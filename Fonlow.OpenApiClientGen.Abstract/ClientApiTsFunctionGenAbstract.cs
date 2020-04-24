@@ -23,7 +23,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		//bool returnTypeIsStream;
 
 		protected CodeMemberMethod Method { get; private set; }
-		protected ComponentsToTsTypes Poco2TsGen { get; private set; }
+		protected ComponentsToTsTypes ComToTsTypes { get; private set; }
 		NameComposer nameComposer;
 		Settings settings;
 		protected string ActionName { get; private set; }
@@ -36,7 +36,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		static readonly Type typeOfChar = typeof(char);
 
-		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes poco2TsGen)
+		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes com2TsTypes)
 		{
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
@@ -58,7 +58,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
-			this.Poco2TsGen = poco2TsGen;
+			this.ComToTsTypes = com2TsTypes;
 
 			this.RelativePath = RemovePrefixSlash(relativePath);
 			if (ActionName.EndsWith("Async"))
@@ -153,6 +153,12 @@ namespace Fonlow.CodeDom.Web.Ts
 			if (p > -1)
 			{
 				return s.Remove(p, 5);
+			}
+
+			var p2 = s.IndexOf(")'");
+			if (p2 > -1)
+			{
+				return s.Remove(p2 + 1, 1);
 			}
 
 			return s;

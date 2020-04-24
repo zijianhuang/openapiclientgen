@@ -59,7 +59,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			var httpMethodName = HttpMethod.ToString().ToLower(); //Method is always uppercase.
 																  //deal with parameters
 			var parameters = ParameterDescriptions.Select(d =>
-				new CodeParameterDeclarationExpression(Poco2TsGen.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType), d.Name))
+				new CodeParameterDeclarationExpression(TypeMapper.MapCodeTypeReferenceToTsText(d.ParameterTypeReference), d.Name))
 				.ToArray();
 
 			Method.Parameters.AddRange(parameters);

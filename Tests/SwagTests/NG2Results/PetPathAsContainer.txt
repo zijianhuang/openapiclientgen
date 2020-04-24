@@ -195,11 +195,11 @@ export namespace MyNS {
 		 * Finds Pets by status
 		 * Multiple status values can be provided with comma separated strings
 		 * Get pet/findByStatus
-		 * @param {string} status Status values that need to be considered for filter
+		 * @param {Array<string>} status Status values that need to be considered for filter
 		 * @return {Array<Pet>} successful operation
 		 */
-		GetByStatus(status: string): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?status=' + encodeURIComponent(status));
+		GetByStatus(status: Array<string>): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${encodeURIComponent(z)}`).join('&'));
 		}
 	}
 
@@ -212,11 +212,11 @@ export namespace MyNS {
 		 * Finds Pets by tags
 		 * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
 		 * Get pet/findByTags
-		 * @param {string} tags Tags to filter by
+		 * @param {Array<string>} tags Tags to filter by
 		 * @return {Array<Pet>} successful operation
 		 */
-		GetByTags(tags: string): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?tags=' + encodeURIComponent(tags));
+		GetByTags(tags: Array<string>): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?'+tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'));
 		}
 	}
 

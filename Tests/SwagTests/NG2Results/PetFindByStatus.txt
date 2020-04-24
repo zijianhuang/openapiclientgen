@@ -28,11 +28,11 @@ export namespace MyNS {
 		 * Finds Pets by status
 		 * Multiple status values can be provided with comma separated strings
 		 * Get pet/findByStatus
-		 * @param {string} status Status values that need to be considered for filter
+		 * @param {Array<string>} status Status values that need to be considered for filter
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByStatus(status: string): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?status=' + encodeURIComponent(status));
+		FindPetsByStatus(status: Array<string>): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${encodeURIComponent(z)}`).join('&'));
 		}
 	}
 
