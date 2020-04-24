@@ -106,9 +106,16 @@ namespace Fonlow.CodeDom.Web
 			}
 			else
 			{
-				if (d.ParameterDescriptor.ParameterType == typeofString)
+				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference.ArrayRank == 0)
 				{
-					return newUriText.Replace($"{{{d.Name}}}", $"\"+Uri.EscapeDataString({d.Name})+\"");
+					if (d.ParameterTypeReference.BaseType == "System.String")
+					{
+						return newUriText.Replace($"{{{d.Name}}}", $"\"+Uri.EscapeDataString({d.Name})+\"");
+					}
+					else
+					{
+						return newUriText.Replace($"{{{d.Name}}}", $"\"+{d.Name}+\"");
+					}
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset)
 				{
@@ -136,8 +143,16 @@ namespace Fonlow.CodeDom.Web
 				}
 				else if (d.ParameterTypeReference.ArrayRank > 0)
 				{
-					var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
-					return newUriText + "\"+" + arrayQuery;
+					if (d.ParameterTypeReference.BaseType == "System.String")
+					{
+						var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
+						return newUriText + "\"+" + arrayQuery;
+					}
+					else
+					{
+						var arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{z}}\"))+\"";
+						return newUriText + "\"+" + arrayQuery;
+					}
 				}
 				else
 				{
@@ -188,9 +203,16 @@ namespace Fonlow.CodeDom.Web
 			}
 			else
 			{
-				if (d.ParameterDescriptor.ParameterType == typeofString)
+				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference.ArrayRank == 0)
 				{
-					return newUriText.Replace($"{{{d.Name}}}", $"' + encodeURIComponent({d.Name}) + '");
+					if (d.ParameterTypeReference.BaseType == "System.String")
+					{
+						return newUriText.Replace($"{{{d.Name}}}", $"' + encodeURIComponent({d.Name}) + '");
+					}
+					else
+					{
+						return newUriText.Replace($"{{{d.Name}}}", $"' + {d.Name} + '");
+					}
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset)
 				{
@@ -216,14 +238,20 @@ namespace Fonlow.CodeDom.Web
 
 					return replaced;
 				}
-				else if (IsSimpleArrayType(d.ParameterDescriptor.ParameterType) || IsSimpleListType(d.ParameterDescriptor.ParameterType))
+				else if (d.ParameterTypeReference.ArrayRank > 0)
 				{
-					var elementBaseTypeIsEnum = d.ParameterDescriptor.ParameterType.GenericTypeArguments.Length > 0 && d.ParameterDescriptor.ParameterType.GenericTypeArguments[0].BaseType?.FullName == "System.Enum";
-					var arrayQuery = elementBaseTypeIsEnum ?
-						$"{d.ParameterDescriptor.ParameterName}.map(z => `{d.ParameterDescriptor.ParameterName}=${{z}}`).join('&')"
-						: $"{d.ParameterDescriptor.ParameterName}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
-					var placeHolder = $"{d.ParameterDescriptor.ParameterName}={{{d.ParameterDescriptor.ParameterName}}}";
-					return newUriText.Replace(placeHolder, "'+" + arrayQuery);
+					if (d.ParameterTypeReference.BaseType == "System.String")
+					{
+						var arrayQuery = $"{d.ParameterDescriptor.ParameterName}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
+						var placeHolder = $"{d.ParameterDescriptor.ParameterName}={{{d.ParameterDescriptor.ParameterName}}}";
+						return newUriText.Replace(placeHolder, "'+" + arrayQuery);
+					}
+					else
+					{
+						var arrayQuery = $"{d.ParameterDescriptor.ParameterName}.map(z => `{d.ParameterDescriptor.ParameterName}=${{z}}`).join('&')";
+						var placeHolder = $"{d.ParameterDescriptor.ParameterName}={{{d.ParameterDescriptor.ParameterName}}}";
+						return newUriText.Replace(placeHolder, "'+" + arrayQuery);
+					}
 				}
 				else
 				{
