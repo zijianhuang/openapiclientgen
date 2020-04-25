@@ -464,47 +464,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema, CodeMemberField memberField)
-		{
-			List<string> ss = new List<string>();
-			if (fieldSchema.MaxLength.HasValue)
-			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Max length: {0}", fieldSchema.MaxLength.Value));
-			}
-
-			if (fieldSchema.MinLength.HasValue)
-			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Min length: {0}", fieldSchema.MinLength.Value));
-			}
-
-			if (fieldSchema.Minimum.HasValue)
-			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Minimum: {0}", fieldSchema.Minimum.Value));
-			}
-
-			if (fieldSchema.Maximum.HasValue)
-			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Maximum: {0}", fieldSchema.Maximum.Value));
-			}
-
-			if (fieldSchema.MinItems.HasValue)
-			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Minimum items: {0}", fieldSchema.MinItems.Value));
-			}
-
-			if (fieldSchema.MaxItems.HasValue)
-			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Maximum items: {0}", fieldSchema.MaxItems.Value));
-			}
-
-			if (!String.IsNullOrEmpty(fieldSchema.Pattern))
-			{
-				ss.Add(String.Format(CultureInfo.CurrentCulture, "Pattern: {0}", fieldSchema.Pattern));
-			}
-
-			return ss;
-		}
-
 		string GetDefaultValue(OpenApiSchema s)
 		{
 			if (s.Default == null)
@@ -573,7 +532,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			var typeComment = item.Value.Description;
 			if (settings.DataAnnotationsToComments)
 			{
-				var ss = GetCommentsFromAnnotations(item.Value, property);
+				var ss = CommentsHelper.GetCommentsFromAnnotations(item.Value);
 				if (!String.IsNullOrEmpty(typeComment))
 				{
 					ss.Insert(0, typeComment);

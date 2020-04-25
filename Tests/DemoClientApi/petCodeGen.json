@@ -6,6 +6,7 @@
     "ActionNameStrategy": 4,
     "UseEnsureSuccessStatusCodeEx": true,
     "DataAnnotationsEnabled": true,
+    "DataAnnotationsToComments": true,
 
     "Plugins": [
 

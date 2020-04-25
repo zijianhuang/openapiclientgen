@@ -277,7 +277,7 @@ export namespace MyNS {
 		/**This path parameter specifies the payment program whose status is returned by the call. Currently the only supported payments program is EBAY_PAYMENTS. For details on the program, see Payments Terms of Use. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentsProgramType.html'>eBay API documentation</a> */
 		paymentsProgramType?: string;
 
-		/** For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentsProgramStatus.html'>eBay API documentation</a> */
+		/**For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentsProgramStatus.html'>eBay API documentation</a> */
 		status?: string;
 
 		/**If set to true, the seller was at one point opted-in to the associated payment program, but they later opted out of the program. A value of false indicates the seller never opted-in to the program or if they did opt-in to the program, they never opted-out of it. It's important to note that the setting of this field does not indicate the seller's current status regarding the payment program. It is possible for this field to return true while the status field returns OPTED_IN. */

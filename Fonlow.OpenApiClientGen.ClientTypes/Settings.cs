@@ -111,13 +111,13 @@
 
 
 		/// <summary>
-		/// System.ComponentModel.DataAnnotations attributes are to be copied over, including Required, Range, MaxLength, MinLength and StringLength.
+		/// System.ComponentModel.DataAnnotations attributes are to be copied over, including Required, Range, MaxLength, MinLength and StringLength. Applied to C# only.
 		/// </summary>
 		public bool DataAnnotationsEnabled { get; set; }
 
 		/// <summary>
 		/// System.ComponentModel.DataAnnotations attributes are translated into Doc Comments, 
-		/// including Required, Range, MaxLength, MinLength, StringLength, DataType and RegularExpression..
+		/// including Required, Range, MaxLength, MinLength, StringLength, DataType and RegularExpression. Applied to C# and TypeScript.
 		/// </summary>
 		public bool DataAnnotationsToComments { get; set; }
 

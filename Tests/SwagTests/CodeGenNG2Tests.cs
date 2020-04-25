@@ -53,6 +53,7 @@ namespace SwagTests
 				PathPrefixToRemove = "/api",
 				ContainerClassName = "Misc",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
+				DataAnnotationsToComments = true,
 			};
 
 			var codeCompileUnit = new System.CodeDom.CodeCompileUnit();
@@ -202,7 +203,10 @@ namespace SwagTests
 		/**Type of a pet */
 		petType?: string;
 
-		/**The list of URL to a cute photos featuring pet */
+		/**
+		 * The list of URL to a cute photos featuring pet
+		 * Maximum items: 20
+		 */
 		photoUrls?: Array<string>;
 	}
 
@@ -225,7 +229,10 @@ namespace SwagTests
 		/**Type of a pet */
 		petType?: string;
 
-		/**Tags attached to the pet */
+		/**
+		 * Tags attached to the pet
+		 * Minimum items: 1
+		 */
 		tags?: Array<Tag>;
 	}
 
@@ -234,7 +241,10 @@ namespace SwagTests
 		/**Tag ID */
 		id?: number;
 
-		/**Tag name */
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
 		name?: string;
 	}
 
@@ -283,7 +293,10 @@ namespace SwagTests
 		/**Tag ID */
 		id?: number;
 
-		/**Tag name */
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
 		name?: string;
 	}
 

@@ -122,7 +122,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							AddProperties(typeDeclaration, allOfProperteisSchema);
 						}
 
-						CreateTypeOrMemberDocComment(item, typeDeclaration);
+						CreateTypeDocComment(item, typeDeclaration);
 						//	typeDeclarationDic.Add(typeName, typeDeclaration);
 
 						AddProperties(typeDeclaration, schema);
@@ -140,7 +140,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else
 				{
 					typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, typeName);
-					CreateTypeOrMemberDocComment(item, typeDeclaration);
+					CreateTypeDocComment(item, typeDeclaration);
 					AddEnumMembers(typeDeclaration, enumTypeList);
 				}
 			}
@@ -273,23 +273,46 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 				}
 
-				if (isRequired)
-				{
-					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.RequiredAttribute"));
-				}
+				//if (isRequired)
+				//{
+				//	clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.RequiredAttribute"));
+				//}
 
-				CreateTypeOrMemberDocComment(p, clientProperty);
+				CreateMemberDocComment(p, clientProperty);
 
 				typeDeclaration.Members.Add(clientProperty);
 			}
 		}
 
-		void CreateTypeOrMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
+		void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
 		{
 			if (String.IsNullOrEmpty(item.Value.Description))
 				return;
 
 			declaration.Comments.Add(new CodeCommentStatement(item.Value.Description, true));
+		}
+
+		void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property)
+		{
+			if (String.IsNullOrEmpty(item.Value.Description))
+				return;
+
+
+			var typeComment = item.Value.Description;
+			if (settings.DataAnnotationsToComments)
+			{
+				var ss = CommentsHelper.GetCommentsFromAnnotations(item.Value);
+				if (!String.IsNullOrEmpty(typeComment))
+				{
+					ss.Insert(0, typeComment);
+				}
+
+				property.Comments.Add(new CodeCommentStatement(Fonlow.DocComment.StringFunctions.IndentedArrayToString(ss), true));
+			}
+			else
+			{
+				property.Comments.Add(new CodeCommentStatement(typeComment, true));
+			}
 		}
 
 		CodeMemberField CreateProperty(string propertyName, Type type, bool isRequired)

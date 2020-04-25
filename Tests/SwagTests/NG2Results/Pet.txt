@@ -23,7 +23,10 @@ export namespace MyNS {
 		/**Category ID */
 		id?: number;
 
-		/**Category name */
+		/**
+		 * Category name
+		 * Min length: 1
+		 */
 		name?: string;
 
 		/**Test Sub Category */
@@ -34,7 +37,10 @@ export namespace MyNS {
 	/**A representation of a dog */
 	export interface Dog extends Pet {
 
-		/**The size of the pack the dog is from */
+		/**
+		 * The size of the pack the dog is from
+		 * Minimum: 1
+		 */
 		packSize: number;
 	}
 
@@ -81,11 +87,17 @@ export namespace MyNS {
 		/**The name given to a pet */
 		name: string;
 
-		/**The list of URL to a cute photos featuring pet */
+		/**
+		 * The list of URL to a cute photos featuring pet
+		 * Maximum items: 20
+		 */
 		photoUrls: Array<string>;
 		friend?: string;
 
-		/**Tags attached to the pet */
+		/**
+		 * Tags attached to the pet
+		 * Minimum items: 1
+		 */
 		tags?: Array<Tag>;
 
 		/**Pet status in the store */
@@ -102,7 +114,10 @@ export namespace MyNS {
 		/**Tag ID */
 		id?: number;
 
-		/**Tag name */
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
 		name?: string;
 	}
 
@@ -110,22 +125,38 @@ export namespace MyNS {
 		id?: number;
 		pet?: string;
 
-		/**User supplied username */
+		/**
+		 * User supplied username
+		 * Min length: 4
+		 */
 		username?: string;
 
-		/**User first name */
+		/**
+		 * User first name
+		 * Min length: 1
+		 */
 		firstName?: string;
 
-		/**User last name */
+		/**
+		 * User last name
+		 * Min length: 1
+		 */
 		lastName?: string;
 
 		/**User email address */
 		email?: string;
 
-		/**User password, MUST contain a mix of upper and lower case letters, as well as digits */
+		/**
+		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
+		 * Min length: 8
+		 * Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
+		 */
 		password?: string;
 
-		/**User phone number in international format */
+		/**
+		 * User phone number in international format
+		 * Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
+		 */
 		phone?: string;
 
 		/**User status */
