@@ -30,6 +30,7 @@ namespace SwagTests
 				GenerateBothAsyncAndSync = true,
 				UseEnsureSuccessStatusCodeEx = true,
 				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
 			};
 			var gen = new ControllersClientApiGen(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
@@ -44,7 +45,7 @@ namespace SwagTests
 		static void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
 			var s = TranslateJsonToCode(openApiFile, mySettings);
-			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			var expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 		}
@@ -183,6 +184,7 @@ namespace SwagTests
 				RegexForNormalizedOperationId = @"\w*",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
 				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
 				GenerateBothAsyncAndSync = false
 
 			});
@@ -200,6 +202,7 @@ namespace SwagTests
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				GenerateBothAsyncAndSync = false,
 				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
 				PathPrefixToRemove = "/mcp",
 			});
 		}

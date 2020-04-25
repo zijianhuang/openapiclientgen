@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Globalization;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -125,7 +126,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							AddProperties(typeDeclaration, allOfProperteisSchema);
 						}
 
-						CreateTypeOrMemberDocComment(item, typeDeclaration);
+						CreateTypeDocComment(item, typeDeclaration);
 
 						AddProperties(typeDeclaration, schema);
 
@@ -152,7 +153,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else
 				{
 					typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, currentTypeName);
-					CreateTypeOrMemberDocComment(item, typeDeclaration);
+					CreateTypeDocComment(item, typeDeclaration);
 					AddEnumMembers(typeDeclaration, enumTypeList);
 
 					if (settings.DecorateDataModelWithDataContract)
@@ -320,7 +321,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						var casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
 						var casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
 						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue==null? null : (casualEnumName + "." + defaultValue));
+						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
 
 						if (isRequired)
 						{
@@ -338,7 +339,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
 						}
 
-						CreateTypeOrMemberDocComment(p, clientProperty);
+						CreateMemberDocComment(p, clientProperty);
 						typeDeclaration.Members.Add(clientProperty);
 						continue;
 					}
@@ -354,7 +355,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
 				}
 
-				CreateTypeOrMemberDocComment(p, clientProperty);
+				CreateMemberDocComment(p, clientProperty);
 
 				if (settings.DataAnnotationsEnabled)
 				{
@@ -463,6 +464,47 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
+		List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema, CodeMemberField memberField)
+		{
+			List<string> ss = new List<string>();
+			if (fieldSchema.MaxLength.HasValue)
+			{
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Max length: {0}", fieldSchema.MaxLength.Value));
+			}
+
+			if (fieldSchema.MinLength.HasValue)
+			{
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Min length: {0}", fieldSchema.MinLength.Value));
+			}
+
+			if (fieldSchema.Minimum.HasValue)
+			{
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Minimum: {0}", fieldSchema.Minimum.Value));
+			}
+
+			if (fieldSchema.Maximum.HasValue)
+			{
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Maximum: {0}", fieldSchema.Maximum.Value));
+			}
+
+			if (fieldSchema.MinItems.HasValue)
+			{
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Minimum items: {0}", fieldSchema.MinItems.Value));
+			}
+
+			if (fieldSchema.MaxItems.HasValue)
+			{
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Maximum items: {0}", fieldSchema.MaxItems.Value));
+			}
+
+			if (!String.IsNullOrEmpty(fieldSchema.Pattern))
+			{
+				ss.Add(String.Format(CultureInfo.CurrentCulture, "Pattern: {0}", fieldSchema.Pattern));
+			}
+
+			return ss;
+		}
+
 		string GetDefaultValue(OpenApiSchema s)
 		{
 			if (s.Default == null)
@@ -519,10 +561,30 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
 		}
 
-		void CreateTypeOrMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
+		void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration)
 		{
 			var typeComment = item.Value.Description;
-			AddDocComments(typeComment, declaration.Comments);
+			AddDocComments(typeComment, typeDeclaration.Comments);
+
+		}
+
+		void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property)
+		{
+			var typeComment = item.Value.Description;
+			if (settings.DataAnnotationsToComments)
+			{
+				var ss = GetCommentsFromAnnotations(item.Value, property);
+				if (!String.IsNullOrEmpty(typeComment))
+				{
+					ss.Insert(0, typeComment);
+				}
+
+				AddDocComments(ss, property.Comments);
+			}
+			else
+			{
+				AddDocComments(typeComment, property.Comments);
+			}
 
 		}
 
@@ -532,6 +594,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				comments.Add(new CodeCommentStatement("<summary>", true));
 				comments.Add(new CodeCommentStatement(description, true));
+				comments.Add(new CodeCommentStatement("</summary>", true));
+			}
+		}
+
+		static void AddDocComments(List<string> ss, CodeCommentStatementCollection comments)
+		{
+			if (ss != null && ss.Count > 0 && comments != null)
+			{
+				comments.Add(new CodeCommentStatement("<summary>", true));
+				ss.ForEach(s => comments.Add(new CodeCommentStatement(s, true)));
 				comments.Add(new CodeCommentStatement("</summary>", true));
 			}
 		}

@@ -56,6 +56,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Category name
+		/// Min length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
@@ -74,6 +75,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// The size of the pack the dog is from
+		/// Minimum: 1.0
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.Range(1.0, System.Int32.MaxValue)]
@@ -106,6 +108,9 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Int64> PetId { get; set; }
 		
+		/// <summary>
+		/// Minimum: 1.0
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Range(1.0, System.Int32.MaxValue)]
 		public System.Nullable<System.Int32> Quantity { get; set; }
 		
@@ -161,6 +166,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
+		/// Maximum items: 20
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.MaxLength(20)]
@@ -170,6 +176,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Tags attached to the pet
+		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public Tag[] Tags { get; set; }
@@ -205,6 +212,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Tag name
+		/// Min length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
@@ -219,18 +227,21 @@ namespace MyNS
 		
 		/// <summary>
 		/// User supplied username
+		/// Min length: 4
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=4)]
 		public string Username { get; set; }
 		
 		/// <summary>
 		/// User first name
+		/// Min length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string FirstName { get; set; }
 		
 		/// <summary>
 		/// User last name
+		/// Min length: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string LastName { get; set; }
@@ -242,12 +253,15 @@ namespace MyNS
 		
 		/// <summary>
 		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
+		/// Min length: 8
+		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=8)]
 		public string Password { get; set; }
 		
 		/// <summary>
 		/// User phone number in international format
+		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
 		/// </summary>
 		public string Phone { get; set; }
 		
