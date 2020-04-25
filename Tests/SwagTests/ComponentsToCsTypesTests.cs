@@ -461,7 +461,7 @@ namespace MyNS
 		/// <summary>
 		/// The name given to a pet
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }//;
 		
 		/// <summary>
@@ -479,7 +479,7 @@ namespace MyNS
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public string HuntingSkill { get; set; }//;
 	}
 }

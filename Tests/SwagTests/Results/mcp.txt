@@ -23,6 +23,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType PayeeProvider { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(6, MinimumLength=6)]
 		public string ClaimId { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> LodgementDate { get; set; }
@@ -32,6 +33,7 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
 		public string ProviderNumber { get; set; }
 	}
 	
@@ -42,6 +44,7 @@ namespace MyNS
 		
 		public PaymentType PaymentInfo { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ClaimSummaryType[] ClaimSummary { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -72,10 +75,13 @@ namespace MyNS
 	public class BankAccountType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(30, MinimumLength=1)]
 		public string AccountName { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=1)]
 		public string AccountNumber { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(6, MinimumLength=6)]
 		public string BsbCode { get; set; }
 	}
 	
@@ -86,6 +92,7 @@ namespace MyNS
 		
 		public string Benefit { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=1)]
 		public string ChargeAmount { get; set; }
 		
 		public string ClaimChannelCode { get; set; }
@@ -104,6 +111,7 @@ namespace MyNS
 		public ServiceMessagesTypeHighestSeverity HighestSeverity { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ServiceMessageType[] ServiceMessage { get; set; }
 	}
 	
@@ -156,12 +164,14 @@ namespace MyNS
 	public class ClaimAssessmentType
 	{
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public MedicalEventResponseType[] MedicalEvent { get; set; }
 		
 		public ProviderType ServiceProvider { get; set; }
 		
 		public string BenefitPaid { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=1)]
 		public string ChargeAmount { get; set; }
 		
 		public string ClaimId { get; set; }
@@ -172,6 +182,7 @@ namespace MyNS
 		
 		public MembershipStatusType Patient { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ServiceResponseType[] Service { get; set; }
 		
 		public string Id { get; set; }
@@ -202,8 +213,10 @@ namespace MyNS
 	public class MembershipType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(10, MinimumLength=10)]
 		public string MemberNumber { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string MemberRefNumber { get; set; }
 	}
 	
@@ -216,8 +229,10 @@ namespace MyNS
 		
 		public string GivenName { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string SecondInitial { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string Sex { get; set; }
 	}
 	
@@ -232,6 +247,7 @@ namespace MyNS
 		
 		public string BenefitPaid { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=1)]
 		public string ChargeAmount { get; set; }
 		
 		public string ItemNumber { get; set; }
@@ -249,11 +265,14 @@ namespace MyNS
 	public class BulkBillClaimStoreForwardClaimType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
 		public string FacilityId { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string HospitalInd { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public BBSMedicalEventType[] MedicalEvent { get; set; }
 		
 		public ProviderType PayeeProvider { get; set; }
@@ -262,6 +281,7 @@ namespace MyNS
 		public ProviderType ServiceProvider { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string ServiceTypeCode { get; set; }
 	}
 	
@@ -269,6 +289,7 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string Id { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -287,12 +308,15 @@ namespace MyNS
 		
 		public ReferralType Referral { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string ReferralOverrideCode { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ServiceType[] Service { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string SubmissionAuthorityInd { get; set; }
 	}
 	
@@ -312,14 +336,17 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateTimeOffset IssueDate { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string Period { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string PeriodCode { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType Provider { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string TypeCode { get; set; }
 	}
 	
@@ -327,40 +354,55 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(4, MinimumLength=4)]
 		public string Id { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> AccessionDateTime { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string AftercareOverrideInd { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=1)]
 		public string ChargeAmount { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> CollectionDateTime { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string DuplicateServiceOverrideInd { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string FieldQuantity { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(5, MinimumLength=1)]
 		public string ItemNumber { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(6, MinimumLength=1)]
 		public string LspNumber { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string MultipleProcedureOverrideInd { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string NumberOfPatientsSeen { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string RestrictiveOverrideCode { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string Rule3ExemptInd { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string S4b3ExemptInd { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(5, MinimumLength=3)]
 		public string ScpId { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string SelfDeemedCode { get; set; }
 		
 		public string Text { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=3)]
 		public string TimeDuration { get; set; }
 	}
 	
@@ -384,9 +426,11 @@ namespace MyNS
 	public class VAAClaimType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string HospitalInd { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public VAAMedicalEventType[] MedicalEvent { get; set; }
 		
 		public ProviderType PayeeProvider { get; set; }
@@ -395,6 +439,7 @@ namespace MyNS
 		public ProviderType ServiceProvider { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string ServiceTypeCode { get; set; }
 	}
 	
@@ -402,6 +447,7 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string Id { get; set; }
 		
 		public AcceptedDisabilityType AcceptedDisability { get; set; }
@@ -411,21 +457,27 @@ namespace MyNS
 		
 		public System.Nullable<System.DateTimeOffset> BreakInEpisodeEndDate { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string BreakInEpisodeOfCareNumber { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> BreakInEpisodeStartDate { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(5, MinimumLength=1)]
 		public string NumberOfCNCHours { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=1)]
 		public string NumberOfCNCVisits { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateTimeOffset CreateDateTime { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(5, MinimumLength=1)]
 		public string NumberOfENHours { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=1)]
 		public string NumberOfENVisits { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
 		public string FacilityId { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -433,8 +485,10 @@ namespace MyNS
 		
 		public string MedicalEventTime { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(5, MinimumLength=1)]
 		public string NumberOfNSSHours { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=1)]
 		public string NumberOfNSSVisits { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -442,16 +496,21 @@ namespace MyNS
 		
 		public ReferralType Referral { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string ReferralOverrideCode { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(5, MinimumLength=1)]
 		public string NumberOfRNHours { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=1)]
 		public string NumberOfRNVisits { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public VAAServiceType[] Service { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string SubmissionAuthorityInd { get; set; }
 	}
 	
@@ -462,6 +521,7 @@ namespace MyNS
 		public string Code { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string Ind { get; set; }
 	}
 	
@@ -483,12 +543,16 @@ namespace MyNS
 	public class AddressType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
 		public string AddressLineOne { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
 		public string AddressLineTwo { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
 		public string Locality { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(4, MinimumLength=4)]
 		public string Postcode { get; set; }
 	}
 	
@@ -496,6 +560,7 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=3)]
 		public string VeteranNumber { get; set; }
 	}
 	
@@ -503,43 +568,58 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(4, MinimumLength=4)]
 		public string Id { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=1)]
 		public string AccountReferenceNumber { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> AdmissionDate { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(7, MinimumLength=3)]
 		public string ChargeAmount { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> DischargeDate { get; set; }
 		
 		public System.Nullable<System.Int32> DistanceKilometres { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string DuplicateServiceOverrideInd { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(5, MinimumLength=1)]
 		public string ItemNumber { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string MultipleProcedureOverrideInd { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string NumberOfPatientsSeen { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string NumberOfTeeth { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string OpticalScriptCode { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string RestrictiveOverrideCode { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string SecondDeviceInd { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string SelfDeemedCode { get; set; }
 		
 		public string Text { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=3)]
 		public string TimeDuration { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string ToothNumber { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=3)]
 		public string UpperLowerJawCode { get; set; }
 	}
 	
@@ -563,12 +643,15 @@ namespace MyNS
 	public class DVAClaimType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string HospitalInd { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string ServiceTypeCode { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public DVAMedicalEventType[] MedicalEvent { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -581,6 +664,7 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string Id { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -589,6 +673,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateTimeOffset CreateDateTime { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
 		public string FacilityId { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -596,11 +681,14 @@ namespace MyNS
 		
 		public string MedicalEventTime { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string ReferralOverrideCode { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string SubmissionAuthorityInd { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string TreatmentLocationCode { get; set; }
 		
 		public AcceptedDisabilityType AcceptedDisability { get; set; }
@@ -611,12 +699,14 @@ namespace MyNS
 		public VeteranPatientType Patient { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public DVAServiceType[] Service { get; set; }
 	}
 	
 	public class DVAServiceType : ServiceType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=1)]
 		public string AccountReferenceNumber { get; set; }
 		
 		public System.Nullable<System.Int32> DistanceKilometres { get; set; }
@@ -638,6 +728,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType PayeeProvider { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(6, MinimumLength=6)]
 		public string ClaimId { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> LodgementDate { get; set; }
@@ -650,6 +741,7 @@ namespace MyNS
 		
 		public PaymentType PaymentInfo { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ClaimSummaryType[] ClaimSummary { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -668,12 +760,14 @@ namespace MyNS
 	public class DVAClaimAssessmentType
 	{
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public DVAMedicalEventAssessmentType[] MedicalEvent { get; set; }
 		
 		public ProviderType ServiceProvider { get; set; }
 		
 		public string BenefitPaid { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=1)]
 		public string ChargeAmount { get; set; }
 		
 		public string ClaimId { get; set; }
@@ -684,6 +778,7 @@ namespace MyNS
 		
 		public VeteranMembershipStatusType Patient { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public DVAServiceAssessmentType[] Service { get; set; }
 		
 		public string Id { get; set; }
@@ -720,6 +815,7 @@ namespace MyNS
 		
 		public string BenefitPaid { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=1)]
 		public string ChargeAmount { get; set; }
 		
 		public string GstInd { get; set; }
@@ -735,6 +831,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferenceConcessionVerificationRequestType[] ConcessionVerificationRequest { get; set; }
 	}
 	
@@ -760,6 +857,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferenceConcessionVerificationResponseType[] ConcessionVerificationResponse { get; set; }
 	}
 	
@@ -794,6 +892,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferencePatientVerificationRequestType[] PatientVerificationRequest { get; set; }
 	}
 	
@@ -815,6 +914,7 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> DateOfService { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=3)]
 		public string TypeCode { get; set; }
 	}
 	
@@ -831,10 +931,13 @@ namespace MyNS
 	public class FundMembershipType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(19, MinimumLength=1)]
 		public string MemberNumber { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=1)]
 		public string MemberRefNumber { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=3)]
 		public string Organisation { get; set; }
 	}
 	
@@ -844,6 +947,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferencePatientVerificationResponseType[] PatientVerificationResponse { get; set; }
 	}
 	
@@ -880,6 +984,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferenceVeteranVerificationRequestType[] VeteranVerificationRequest { get; set; }
 	}
 	
@@ -903,6 +1008,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferenceVeteranVerificationResponseType[] VeteranVerificationResponse { get; set; }
 	}
 	
@@ -937,6 +1043,7 @@ namespace MyNS
 		public ClaimantType Claimant { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public PCIMedicalEventType[] MedicalEvent { get; set; }
 		
 		public ProviderType PayeeProvider { get; set; }
@@ -944,14 +1051,17 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType ServiceProvider { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string ReferralOverrideCode { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string AccountPaidInd { get; set; }
 		
 		public string AccountReferenceId { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string SubmissionAuthorityInd { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -971,10 +1081,12 @@ namespace MyNS
 	public class ContactType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(128, MinimumLength=5)]
 		public string EmailAddress { get; set; }
 		
 		public string Name { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(19, MinimumLength=8)]
 		public string PhoneNumber { get; set; }
 	}
 	
@@ -982,9 +1094,11 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public PCIServiceType[] Service { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string Id { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -996,10 +1110,13 @@ namespace MyNS
 	public class PCIServiceType : ServiceType
 	{
 		
+		[System.ComponentModel.DataAnnotations.StringLength(7, MinimumLength=3)]
 		public string PatientContribAmount { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
 		public string FacilityId { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string HospitalInd { get; set; }
 	}
 	
@@ -1020,6 +1137,7 @@ namespace MyNS
 		
 		public CurrentMembershipType Patient { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public PCIMedicalEventResponseType[] MedicalEvent { get; set; }
 		
 		public StatusType Error { get; set; }
@@ -1038,6 +1156,7 @@ namespace MyNS
 	public class PCIMedicalEventResponseType
 	{
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ServiceResponseType[] Service { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> EventDate { get; set; }
@@ -1049,12 +1168,14 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public string[] TransactionId { get; set; }
 	}
 	
 	public class RetrieveReportResponseType
 	{
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ContentType[] Content { get; set; }
 	}
 	
@@ -1098,6 +1219,7 @@ namespace MyNS
 		public MedicarePatientType Patient { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=3)]
 		public string ReasonCode { get; set; }
 	}
 	
@@ -1111,6 +1233,7 @@ namespace MyNS
 	public class StatusReportRequestType
 	{
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public string[] TransactionId { get; set; }
 		
 		public string AssociateName { get; set; }
@@ -1129,6 +1252,7 @@ namespace MyNS
 	public class StatusReportResponseType
 	{
 		
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public TransactionStatusType[] TransactionStatus { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]

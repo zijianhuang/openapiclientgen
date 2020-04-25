@@ -229,7 +229,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var primitivePropertyType = propertySchema.Type;
 				var isPrimitiveType = nameComposer.IsPrimitiveType(primitivePropertyType);
 				var isRequired = schema.Required.Contains(p.Key); //compare with the original key
-
+				var defaultValue = GetDefaultValue(propertySchema);
 				//Debug.Assert(propertyName != "HuntingSkill");
 				CodeMemberField clientProperty;
 				if (String.IsNullOrEmpty(primitivePropertyType)) // for custom type, pointing to a custom time "$ref": "#/components/schemas/PhoneType"
@@ -238,7 +238,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (propertySchema.Reference != null)
 					{
 						var typeId = propertySchema.Reference.Id;
-						clientProperty = CreateProperty(propertyName, typeId);
+						clientProperty = CreateProperty(propertyName, typeId, defaultValue);
 					}
 					else
 					{
@@ -277,7 +277,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						{
 							var arrayTypeName = arrayItemsSchema.Reference.Id;
 							var arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName);
+							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 						}
 						else
 						{
@@ -288,20 +288,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 								var casualTypeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, casualTypeName);
 								AddProperties(casualTypeDeclaration, arrayItemsSchema);
 								var arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName);
+								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, defaultValue);
 							}
 							else
 							{
 								var clrType = nameComposer.PrimitiveSwaggerTypeToClrType(arrayType, null);
 								var arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName);
+								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
 					}
 					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
 						var complexType = propertySchema.Reference.Id;
-						clientProperty = CreateProperty(propertyName, complexType);
+						clientProperty = CreateProperty(propertyName, complexType, defaultValue);
 					}
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{
@@ -320,7 +320,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						var casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
 						var casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
 						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-						clientProperty = CreateProperty(propertyName, casualEnumName);
+						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue==null? null : (casualEnumName + "." + defaultValue));
 
 						if (isRequired)
 						{
@@ -463,6 +463,57 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
+		string GetDefaultValue(OpenApiSchema s)
+		{
+			if (s.Default == null)
+			{
+				return null;
+			}
+
+			var stringValue = s.Default as OpenApiString;
+			if (stringValue != null)
+			{
+				if (s.Enum == null || s.Enum.Count == 0)
+				{
+					return "\"" + stringValue.Value + "\"";
+				}
+				else
+				{
+					//var enumMemberNames = s.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+					//var existingEnumDeclaration = ClientNamespace.LocateEnumDeclaration(enumMemberNames);
+					//return existingEnumDeclaration.Name + "." + stringValue.Value;
+					return stringValue.Value;
+				}
+			}
+
+			var integerValue = s.Default as OpenApiInteger;
+			if (integerValue != null)
+			{
+				return integerValue.Value.ToString();
+			}
+
+			var boolValue = s.Default as OpenApiBoolean;
+			if (boolValue != null)
+			{
+				return boolValue.Value.ToString();
+			}
+
+			var floatValue = s.Default as OpenApiFloat;
+			if (floatValue != null)
+			{
+				return floatValue.Value.ToString();
+			}
+
+			var doubleValue = s.Default as OpenApiDouble;
+			if (doubleValue != null)
+			{
+				return doubleValue.Value.ToString();
+			}
+
+			Trace.TraceWarning($"Default as {s.GetType().FullName} is not yet supported.");
+			return null;
+		}
+
 		static string ToTitleCase(string s)
 		{
 			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
@@ -512,18 +563,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		CodeMemberField CreateProperty(string propertyName, string typeName)
+		CodeMemberField CreateProperty(string propertyName, string typeName, string defaultValue)
 		{
-			string memberName = propertyName + " { get; set; }//";
+			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
 			CodeMemberField result = new CodeMemberField() { Type = TranslateToClientTypeReference(typeName), Name = memberName };
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
 			return result;
 		}
 
-		CodeMemberField CreateProperty(CodeTypeReference codeTypeReference, string propertyName)
+		CodeMemberField CreateProperty(CodeTypeReference codeTypeReference, string propertyName, string defaultValue)
 		{
-			string memberName = propertyName + " { get; set; }//";
+			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
 			CodeMemberField result = new CodeMemberField(codeTypeReference, memberName);
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;

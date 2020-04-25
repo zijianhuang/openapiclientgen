@@ -38,7 +38,7 @@ namespace DemoPet.Client
 		/// The measured skill for hunting
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public CatHuntingSkill HuntingSkill { get; set; }
+		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
 	}
 	
 	public enum CatHuntingSkill

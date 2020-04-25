@@ -182,6 +182,7 @@ namespace SwagTests
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
 				RegexForNormalizedOperationId = @"\w*",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
+				DataAnnotationsEnabled = true,
 				GenerateBothAsyncAndSync = false
 
 			});
@@ -198,6 +199,7 @@ namespace SwagTests
 				//RegexForNormalizedOperationId = @"\w*",
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				GenerateBothAsyncAndSync = false,
+				DataAnnotationsEnabled = true,
 				PathPrefixToRemove = "/mcp",
 			});
 		}
