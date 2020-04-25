@@ -17,25 +17,25 @@ namespace MyNS
 	using Newtonsoft.Json;
 	
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class ApiResponse
 	{
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int32> Code { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Type { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Message { get; set; }
 	}
 	
 	/// <summary>
 	/// A representation of a cat
 	/// </summary>
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class Cat : Pet
 	{
@@ -43,12 +43,12 @@ namespace MyNS
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		public CatHuntingSkill HuntingSkill { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public enum CatHuntingSkill
 	{
@@ -66,7 +66,7 @@ namespace MyNS
 		aggressive = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class Category
 	{
@@ -74,26 +74,26 @@ namespace MyNS
 		/// <summary>
 		/// Category ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Category name
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Test Sub Category
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Sub { get; set; }
 	}
 	
 	/// <summary>
 	/// A representation of a dog
 	/// </summary>
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class Dog : Pet
 	{
@@ -101,15 +101,15 @@ namespace MyNS
 		/// <summary>
 		/// The size of the pack the dog is from
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		public int PackSize { get; set; }
 	}
 	
 	/// <summary>
 	/// A representation of a honey bee
 	/// </summary>
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class HoneyBee : Pet
 	{
@@ -117,12 +117,12 @@ namespace MyNS
 		/// <summary>
 		/// Average amount of honey produced per day in ounces
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		public float HoneyPerDay { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class Order
 	{
@@ -130,44 +130,44 @@ namespace MyNS
 		/// <summary>
 		/// Order ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> PetId { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
 		/// Estimated ship date
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
 		
 		/// <summary>
 		/// Order Status
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public OrderStatus Status { get; set; }
 		
 		/// <summary>
 		/// Indicates whenever order was completed or not
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Boolean> Complete { get; set; }
 		
 		/// <summary>
 		/// Unique Request Id
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public enum OrderStatus
 	{
@@ -182,7 +182,7 @@ namespace MyNS
 		delivered = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class Pet
 	{
@@ -190,52 +190,52 @@ namespace MyNS
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Categories this pet belongs to
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Category { get; set; }
 		
 		/// <summary>
 		/// The name given to a pet
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		public string[] PhotoUrls { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Friend { get; set; }
 		
 		/// <summary>
 		/// Tags attached to the pet
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public Tag[] Tags { get; set; }
 		
 		/// <summary>
 		/// Pet status in the store
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public PetStatus Status { get; set; }
 		
 		/// <summary>
 		/// Type of a pet
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string PetType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public enum PetStatus
 	{
@@ -250,7 +250,7 @@ namespace MyNS
 		sold = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class Tag
 	{
@@ -258,67 +258,67 @@ namespace MyNS
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Tag name
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContractAttribute(Name="http://openapidemo.com/09/2019")]
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class User
 	{
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Pet { get; set; }
 		
 		/// <summary>
 		/// User supplied username
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Username { get; set; }
 		
 		/// <summary>
 		/// User first name
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string FirstName { get; set; }
 		
 		/// <summary>
 		/// User last name
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string LastName { get; set; }
 		
 		/// <summary>
 		/// User email address
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Email { get; set; }
 		
 		/// <summary>
 		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Password { get; set; }
 		
 		/// <summary>
 		/// User phone number in international format
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Phone { get; set; }
 		
 		/// <summary>
 		/// User status
 		/// </summary>
-		[System.Runtime.Serialization.DataMemberAttribute()]
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
 	

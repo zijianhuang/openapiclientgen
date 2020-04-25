@@ -29,6 +29,7 @@ namespace SwagTests
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
 				GenerateBothAsyncAndSync = true,
 				UseEnsureSuccessStatusCodeEx = true,
+				DataAnnotationsEnabled = true,
 			};
 			var gen = new ControllersClientApiGen(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
@@ -94,9 +95,9 @@ namespace SwagTests
 				ContainerClassName = "Misc",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
 				GenerateBothAsyncAndSync = true,
-				DecorateDataModelWithDataContract=true,
-				DataContractNamespace="http://openapidemo.com/09/2019",
-				DecorateDataModelWithSerializable=true
+				DecorateDataModelWithDataContract = true,
+				DataContractNamespace = "http://openapidemo.com/09/2019",
+				DecorateDataModelWithSerializable = true
 			});
 		}
 

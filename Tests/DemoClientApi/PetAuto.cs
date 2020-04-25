@@ -37,7 +37,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public CatHuntingSkill HuntingSkill { get; set; }
 	}
 	
@@ -64,6 +64,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Category name
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -81,7 +82,8 @@ namespace DemoPet.Client
 		/// <summary>
 		/// The size of the pack the dog is from
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
 		public int PackSize { get; set; }
 	}
 	
@@ -94,7 +96,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Average amount of honey produced per day in ounces
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public float HoneyPerDay { get; set; }
 	}
 	
@@ -111,6 +113,7 @@ namespace DemoPet.Client
 		/// </summary>
 		public System.Nullable<System.Int64> PetId { get; set; }
 		
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
 		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
@@ -160,13 +163,14 @@ namespace DemoPet.Client
 		/// <summary>
 		/// The name given to a pet
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.MaxLength(20)]
 		public string[] PhotoUrls { get; set; }
 		
 		public string Friend { get; set; }
@@ -174,6 +178,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Tags attached to the pet
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public Tag[] Tags { get; set; }
 		
 		/// <summary>
@@ -208,6 +213,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// Tag name
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
 	}
 	
@@ -221,16 +227,19 @@ namespace DemoPet.Client
 		/// <summary>
 		/// User supplied username
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=4)]
 		public string Username { get; set; }
 		
 		/// <summary>
 		/// User first name
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string FirstName { get; set; }
 		
 		/// <summary>
 		/// User last name
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string LastName { get; set; }
 		
 		/// <summary>
@@ -241,6 +250,7 @@ namespace DemoPet.Client
 		/// <summary>
 		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=8)]
 		public string Password { get; set; }
 		
 		/// <summary>
@@ -379,7 +389,7 @@ namespace DemoPet.Client
 		/// <returns>successful operation</returns>
 		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
 		{
-			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			var responseMessage = await client.GetAsync(requestUri);
 			try
 			{

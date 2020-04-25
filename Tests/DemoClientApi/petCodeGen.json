@@ -5,6 +5,7 @@
     "ClientLibraryFileName": "PetAuto.cs",
     "ActionNameStrategy": 4,
     "UseEnsureSuccessStatusCodeEx": true,
+    "DataAnnotationsEnabled": true,
 
     "Plugins": [
 

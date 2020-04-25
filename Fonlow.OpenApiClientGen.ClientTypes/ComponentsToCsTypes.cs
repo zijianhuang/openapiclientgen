@@ -131,7 +131,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						if (settings.DecorateDataModelWithDataContract)
 						{
-							typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContractAttribute", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+							typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
 						}
 
 						if (settings.DecorateDataModelWithSerializable)
@@ -157,7 +157,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
-						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContractAttribute", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
 					}
 
 					if (settings.DecorateDataModelWithSerializable)
@@ -324,13 +324,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						if (isRequired)
 						{
-							clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.RequiredAttribute"));
+							clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
 						}
 
 						if (settings.DecorateDataModelWithDataContract)
 						{
-							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContractAttribute", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
-							clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMemberAttribute"));
+							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+							clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
 						}
 
 						if (settings.DecorateDataModelWithSerializable)
@@ -346,17 +346,121 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (isRequired)
 				{
-					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.RequiredAttribute"));
+					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
 				}
 
 				if (settings.DecorateDataModelWithDataContract)
 				{
-					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMemberAttribute"));
+					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
 				}
 
 				CreateTypeOrMemberDocComment(p, clientProperty);
+
+				if (settings.DataAnnotationsEnabled)
+				{
+					AddValidationAttributes(propertySchema, clientProperty);
+				}
+
 				typeDeclaration.Members.Add(clientProperty);
 			}
+		}
+
+		void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
+		{
+			if (fieldSchema.MaxLength.HasValue || fieldSchema.MinLength.HasValue)
+			{
+				if (fieldSchema.Type == "string")
+				{
+					List<CodeAttributeArgument> attributeParams = new List<CodeAttributeArgument>();
+
+					if (fieldSchema.MaxLength.HasValue)
+					{
+						var max = new CodeSnippetExpression(fieldSchema.MaxLength.Value.ToString());
+						attributeParams.Add(new CodeAttributeArgument(max));
+					}
+					else
+					{
+						var max = new CodeSnippetExpression("int.MaxValue");
+						attributeParams.Add(new CodeAttributeArgument(max));
+					}
+
+					if (fieldSchema.MinLength.HasValue)
+					{
+						var min = new CodeSnippetExpression(fieldSchema.MinLength.Value.ToString());
+						attributeParams.Add(new CodeAttributeArgument("MinimumLength", min));
+					}
+
+					var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.StringLength", attributeParams.ToArray());
+					memberField.CustomAttributes.Add(cad);
+				}
+				else
+				{
+					if (fieldSchema.MinLength.HasValue)
+					{
+						var len = new CodeSnippetExpression(fieldSchema.MinLength.Value.ToString());
+						var attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+						var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
+						memberField.CustomAttributes.Add(cad);
+					}
+
+					if (fieldSchema.MaxLength.HasValue)
+					{
+						var len = new CodeSnippetExpression(fieldSchema.MaxLength.Value.ToString());
+						var attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+						var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
+						memberField.CustomAttributes.Add(cad);
+					}
+
+				}
+			}
+
+			if (fieldSchema.Maximum.HasValue || fieldSchema.Minimum.HasValue)
+			{
+				var type = nameComposer.PrimitiveSwaggerTypeToClrType(fieldSchema.Type, fieldSchema.Format);
+				List<CodeAttributeArgument> attributeParams = new List<CodeAttributeArgument>();
+
+				if (fieldSchema.Minimum.HasValue)
+				{
+					var min = new CodeSnippetExpression($"{fieldSchema.Minimum.Value}");
+					attributeParams.Add(new CodeAttributeArgument(min));
+				}
+				else
+				{
+					var min = new CodeSnippetExpression($"{type.FullName}.MinValue");
+					attributeParams.Add(new CodeAttributeArgument(min));
+				}
+
+				if (fieldSchema.Maximum.HasValue)
+				{
+					var max = new CodeSnippetExpression($"{fieldSchema.Maximum.Value}");
+					attributeParams.Add(new CodeAttributeArgument(max));
+				}
+				else
+				{
+					var max = new CodeSnippetExpression($"{type.FullName}.MaxValue");
+					attributeParams.Add(new CodeAttributeArgument(max));
+				}
+
+				var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Range", attributeParams.ToArray());
+				memberField.CustomAttributes.Add(cad);
+			}
+
+			if (fieldSchema.MinItems.HasValue)
+			{
+				var len = new CodeSnippetExpression(fieldSchema.MinItems.Value.ToString());
+				var attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+				var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
+				memberField.CustomAttributes.Add(cad);
+			}
+
+			if (fieldSchema.MaxItems.HasValue)
+			{
+				var len = new CodeSnippetExpression(fieldSchema.MaxItems.Value.ToString());
+				var attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+				var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
+				memberField.CustomAttributes.Add(cad);
+			}
+
 		}
 
 		static string ToTitleCase(string s)

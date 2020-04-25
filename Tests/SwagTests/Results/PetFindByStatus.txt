@@ -26,7 +26,7 @@ namespace MyNS
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public CatHuntingSkill HuntingSkill { get; set; }
 	}
 	
@@ -70,7 +70,7 @@ namespace MyNS
 		/// <summary>
 		/// The size of the pack the dog is from
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public int PackSize { get; set; }
 	}
 	
@@ -83,7 +83,7 @@ namespace MyNS
 		/// <summary>
 		/// Average amount of honey produced per day in ounces
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public float HoneyPerDay { get; set; }
 	}
 	
@@ -103,13 +103,13 @@ namespace MyNS
 		/// <summary>
 		/// The name given to a pet
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public string[] PhotoUrls { get; set; }
 		
 		public string Friend { get; set; }

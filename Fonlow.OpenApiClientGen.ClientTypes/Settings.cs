@@ -109,6 +109,18 @@
 		/// </summary>
 		public bool UseEnsureSuccessStatusCodeEx { get; set; }
 
+
+		/// <summary>
+		/// System.ComponentModel.DataAnnotations attributes are to be copied over, including Required, Range, MaxLength, MinLength and StringLength.
+		/// </summary>
+		public bool DataAnnotationsEnabled { get; set; }
+
+		/// <summary>
+		/// System.ComponentModel.DataAnnotations attributes are translated into Doc Comments, 
+		/// including Required, Range, MaxLength, MinLength, StringLength, DataType and RegularExpression..
+		/// </summary>
+		public bool DataAnnotationsToComments { get; set; }
+
 		public JSPlugin[] Plugins { get; set; }
 
 	}

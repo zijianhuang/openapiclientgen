@@ -21,10 +21,10 @@ namespace MyNS
 	public class Pet
 	{
 		
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public long Id { get; set; }
 		
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
 		public string Tag { get; set; }
@@ -33,10 +33,10 @@ namespace MyNS
 	public class Error
 	{
 		
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public int Code { get; set; }
 		
-		[System.ComponentModel.DataAnnotations.RequiredAttribute()]
+		[System.ComponentModel.DataAnnotations.Required()]
 		public string Message { get; set; }
 	}
 	
