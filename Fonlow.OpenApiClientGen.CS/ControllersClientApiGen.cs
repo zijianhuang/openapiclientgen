@@ -309,6 +309,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 		const string blockOfEnsureSuccessStatusCodeEx =
 		@"
+
 namespace Fonlow.Net.Http
 {
 	using System.Net.Http;
@@ -321,11 +322,14 @@ namespace Fonlow.Net.Http
 
 		public System.Net.Http.Headers.HttpResponseHeaders Headers { get; private set; }
 
-		public WebApiRequestException(string message, System.Net.HttpStatusCode statusCode, string response, System.Net.Http.Headers.HttpResponseHeaders headers) : base(message)
+		public System.Net.Http.Headers.MediaTypeHeaderValue ContentType { get; private set; }
+
+		public WebApiRequestException(string message, System.Net.HttpStatusCode statusCode, string response, System.Net.Http.Headers.HttpResponseHeaders headers, System.Net.Http.Headers.MediaTypeHeaderValue contentType) : base(message)
 		{
 			StatusCode = statusCode;
 			Response = response;
 			Headers = headers;
+			ContentType = contentType;
 		}
 	}
 
@@ -337,7 +341,7 @@ namespace Fonlow.Net.Http
 			{
 				var responseText = responseMessage.Content.ReadAsStringAsync().Result;
 				var contentType = responseMessage.Content.Headers.ContentType;
-				throw new WebApiRequestException(responseMessage.ReasonPhrase, responseMessage.StatusCode, responseText, responseMessage.Headers);
+				throw new WebApiRequestException(responseMessage.ReasonPhrase, responseMessage.StatusCode, responseText, responseMessage.Headers, contentType);
 			}
 		}
 	}
