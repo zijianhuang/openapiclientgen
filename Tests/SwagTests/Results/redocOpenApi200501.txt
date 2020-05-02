@@ -82,10 +82,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// The size of the pack the dog is from
-		/// Minimum: 1
+		/// Minimum: 1.0
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		[System.ComponentModel.DataAnnotations.Range(1.0, System.Int32.MaxValue)]
 		public int PackSize { get; set; }
 	}
 	
@@ -116,9 +116,9 @@ namespace MyNS
 		public System.Nullable<System.Int64> PetId { get; set; }
 		
 		/// <summary>
-		/// Minimum: 1
+		/// Minimum: 1.0
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		[System.ComponentModel.DataAnnotations.Range(1.0, System.Int32.MaxValue)]
 		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
@@ -302,16 +302,10 @@ namespace MyNS
 		/// Add new pet to the store inventory.
 		/// AddPet pet
 		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task AddPetAsync(Pet requestBody)
+		public async Task AddPetAsync()
 		{
 			var requestUri = "pet";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -319,7 +313,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -328,16 +321,10 @@ namespace MyNS
 		/// Add new pet to the store inventory.
 		/// AddPet pet
 		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public void AddPet(Pet requestBody)
+		public void AddPet()
 		{
 			var requestUri = "pet";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -345,7 +332,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -353,16 +339,10 @@ namespace MyNS
 		/// Update an existing pet
 		/// UpdatePet pet
 		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody)
+		public async Task UpdatePetAsync()
 		{
 			var requestUri = "pet";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			var responseMessage = await client.PutAsync(requestUri, new StringContent(String.Empty));
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -370,7 +350,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -378,16 +357,10 @@ namespace MyNS
 		/// Update an existing pet
 		/// UpdatePet pet
 		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public void UpdatePet(Pet requestBody)
+		public void UpdatePet()
 		{
 			var requestUri = "pet";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			var responseMessage = this.client.PutAsync(requestUri, new StringContent(String.Empty)).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -395,7 +368,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -826,6 +798,56 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 		}
+		
+		/// <summary>
+		/// Subscribe to the Store events
+		/// Add subscription for a store events
+		/// Subscribe store/subscribe
+		/// </summary>
+		public async Task SubscribeAsync(string requestBody)
+		{
+			var requestUri = "store/subscribe";
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.PostAsync(requestUri, content);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Subscribe to the Store events
+		/// Add subscription for a store events
+		/// Subscribe store/subscribe
+		/// </summary>
+		public void Subscribe(string requestBody)
+		{
+			var requestUri = "store/subscribe";
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
 	}
 	
 	public partial class UserClient
@@ -1049,16 +1071,10 @@ namespace MyNS
 		/// Creates list of users with given input array
 		/// CreateUsersWithArrayInput user/createWithArray
 		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithArrayInputAsync(User[] requestBody)
+		public async Task CreateUsersWithArrayInputAsync()
 		{
 			var requestUri = "user/createWithArray";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1066,7 +1082,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1074,16 +1089,10 @@ namespace MyNS
 		/// Creates list of users with given input array
 		/// CreateUsersWithArrayInput user/createWithArray
 		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public void CreateUsersWithArrayInput(User[] requestBody)
+		public void CreateUsersWithArrayInput()
 		{
 			var requestUri = "user/createWithArray";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1091,7 +1100,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1099,16 +1107,10 @@ namespace MyNS
 		/// Creates list of users with given input array
 		/// CreateUsersWithListInput user/createWithList
 		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithListInputAsync(User[] requestBody)
+		public async Task CreateUsersWithListInputAsync()
 		{
 			var requestUri = "user/createWithList";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1116,7 +1118,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -1124,16 +1125,10 @@ namespace MyNS
 		/// Creates list of users with given input array
 		/// CreateUsersWithListInput user/createWithList
 		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public void CreateUsersWithListInput(User[] requestBody)
+		public void CreateUsersWithListInput()
 		{
 			var requestUri = "user/createWithList";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1141,7 +1136,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 		}
 		

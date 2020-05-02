@@ -112,6 +112,7 @@
 
 		/// <summary>
 		/// System.ComponentModel.DataAnnotations attributes are to be copied over, including Required, Range, MaxLength, MinLength and StringLength. Applied to C# only.
+		/// What defined in "default" of YAML will become the default value of respective property.
 		/// </summary>
 		public bool DataAnnotationsEnabled { get; set; }
 
