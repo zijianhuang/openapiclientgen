@@ -79,7 +79,7 @@ namespace SwagTests
 		static void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
 			var s = TranslateJsonToCode(openApiFile, mySettings);
-			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			var expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 		}
@@ -502,7 +502,11 @@ namespace SwagTests
 			GenerateAndAssert("SwagMock\\sell_recommendation_v1_oas3.yaml", "NG2Results\\sell_recommendation.txt");
 		}
 
-
+		[Fact]
+		public void TestRedocOpenApi()
+		{
+			GenerateAndAssert("SwagMock\\redocOpenApi200501.json", "NG2Results\\redocOpenApi200501.txt");
+		}
 	}
 
 }

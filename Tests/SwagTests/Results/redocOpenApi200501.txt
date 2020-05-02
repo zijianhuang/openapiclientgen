@@ -804,7 +804,7 @@ namespace MyNS
 		/// Add subscription for a store events
 		/// Subscribe store/subscribe
 		/// </summary>
-		public async Task SubscribeAsync(string requestBody)
+		public async Task SubscribeAsync(SubscribeBody requestBody)
 		{
 			var requestUri = "store/subscribe";
 			using (var requestWriter = new System.IO.StringWriter())
@@ -829,7 +829,7 @@ namespace MyNS
 		/// Add subscription for a store events
 		/// Subscribe store/subscribe
 		/// </summary>
-		public void Subscribe(string requestBody)
+		public void Subscribe(SubscribeBody requestBody)
 		{
 			var requestUri = "store/subscribe";
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1226,6 +1226,32 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 		}
+	}
+	
+	public class SubscribeBody
+	{
+		
+		/// <summary>
+		/// This URL will be called by the server when the desired event will occur
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public string CallbackUrl { get; set; }
+		
+		/// <summary>
+		/// Event name for the subscription
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public SubscribeBodyEventName EventName { get; set; }
+	}
+	
+	public enum SubscribeBodyEventName
+	{
+		
+		orderInProgress = 0,
+		
+		orderShipped = 1,
+		
+		orderDelivered = 2,
 	}
 }
 

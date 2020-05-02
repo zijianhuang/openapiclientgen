@@ -663,5 +663,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return typeReference;
 		}
 
+		public CodeTypeDeclaration FindTypeDeclaration(string typeName)
+		{
+			return ClientNamespace.FindTypeDeclaration(typeName);
+		}
 	}
 }

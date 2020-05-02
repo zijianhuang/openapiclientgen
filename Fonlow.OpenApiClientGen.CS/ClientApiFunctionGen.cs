@@ -55,19 +55,20 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 		string statementOfEnsureSuccessStatusCode;
 
-		public CodeMemberMethod CreateApiFunction(SharedContext sharedContext, Settings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToCsTypes poco2CsGen, bool forAsync, bool useEnsureSuccessStatusCodeEx)
+		public CodeMemberMethod CreateApiFunction(SharedContext sharedContext, Settings settings, string relativePath, OperationType httpMethod, 
+			OpenApiOperation apiOperation, ComponentsToCsTypes poco2CsGen, bool forAsync, bool useEnsureSuccessStatusCodeEx)
 		{
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
 			this.parametersHelper = new ParametersHelper(nameComposer, poco2CsGen.ClientNamespace);
-			this.bodyContentRefBuilder = new BodyContentRefBuilder();
+			this.bodyContentRefBuilder = new BodyContentRefBuilder(poco2CsGen, nameComposer);
 			this.apiOperation = apiOperation;
 			this.httpMethod = httpMethod;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
 			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
-				var kc = bodyContentRefBuilder.GetBodyContent(apiOperation);
+				var kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
 				if (kc != null)
 				{
 					this.requestBodyCodeTypeReference = kc.Item1;

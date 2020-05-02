@@ -43,13 +43,13 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
 			this.parametersHelper = new ParametersHelper(nameComposer, com2TsTypes.ClientNamespace);
-			this.bodyContentRefBuilder = new BodyContentRefBuilder();
+			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
 			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
-				var kc = bodyContentRefBuilder.GetBodyContent(apiOperation);
+				var kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
 				if (kc != null)
 				{
 					this.RequestBodyCodeTypeReference = kc.Item1;

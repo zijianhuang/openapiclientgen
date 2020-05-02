@@ -200,12 +200,12 @@ namespace SwagTests
 				PathPrefixToRemove = "/mcp",
 			});
 		}
+
 		[Fact]
 		public void TestRedocOpenApi()
 		{
 			GenerateAndAssert("SwagMock\\redocOpenApi200501.json", "Results\\redocOpenApi200501.txt");
 		}
-
 
 		[Fact]
 		public void TestEBaySellAccount()

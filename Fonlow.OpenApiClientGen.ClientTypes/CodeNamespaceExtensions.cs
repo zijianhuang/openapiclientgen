@@ -7,7 +7,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public static class CodeNamespaceExtensions
 	{
-		public static CodeTypeDeclaration LocateEnumDeclaration(this CodeNamespace clientNamespace, string[] ms)
+		/// <summary>
+		/// Find existing enum type according to enum members in literal string.
+		/// </summary>
+		/// <param name="clientNamespace"></param>
+		/// <param name="ms"></param>
+		/// <returns></returns>
+		public static CodeTypeDeclaration FindEnumDeclaration(this CodeNamespace clientNamespace, string[] ms)
 		{
 			for (int i = 0; i < clientNamespace.Types.Count; i++)
 			{
@@ -33,6 +39,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							return tc;
 						}
 					}
+				}
+			}
+
+			return null;
+		}
+
+		public static CodeTypeDeclaration FindTypeDeclaration(this CodeNamespace clientNamespace, string typeName)
+		{
+			for (int i = 0; i < clientNamespace.Types.Count; i++)
+			{
+				var tc = clientNamespace.Types[i];
+				if (tc.Name == typeName)
+				{
+					return tc;
 				}
 			}
 

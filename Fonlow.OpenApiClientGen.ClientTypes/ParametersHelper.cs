@@ -63,7 +63,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
 						{
 							var enumMemberNames = arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
-							var existingDeclaration = clientNamespace.LocateEnumDeclaration(enumMemberNames);
+							var existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
 							if (existingDeclaration != null)
 							{
 								var existingTypeName = existingDeclaration.Name;
@@ -83,7 +83,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (content.Schema.Enum.Count > 0) // for enum
 				{
 					var enumMemberNames = content.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
-					var existingDeclaration = clientNamespace.LocateEnumDeclaration(enumMemberNames);
+					var existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
 					if (existingDeclaration != null)
 					{
 						var existingTypeName = existingDeclaration.Name;
