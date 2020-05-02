@@ -26,6 +26,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		protected ComponentsToTsTypes ComToTsTypes { get; private set; }
 		NameComposer nameComposer;
 		ParametersHelper parametersHelper;
+		BodyContentRefBuilder bodyContentRefBuilder;
 		Settings settings;
 		protected string ActionName { get; private set; }
 		protected OperationType HttpMethod { get; private set; }
@@ -42,12 +43,13 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
 			this.parametersHelper = new ParametersHelper(nameComposer, com2TsTypes.ClientNamespace);
+			this.bodyContentRefBuilder = new BodyContentRefBuilder();
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
 			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
-				var kc = TypeRefBuilder.GetBodyContent(apiOperation);
+				var kc = bodyContentRefBuilder.GetBodyContent(apiOperation);
 				if (kc != null)
 				{
 					this.RequestBodyCodeTypeReference = kc.Item1;

@@ -37,54 +37,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		}
 
 		/// <summary>
-		/// Get CodeTypeReference and description of requestBody of operation.
-		/// </summary>
-		/// <param name="op"></param>
-		/// <returns>bool is whether to support generating codes for this.</returns>
-		public static Tuple<CodeTypeReference, string, bool> GetBodyContent(OpenApiOperation op)
-		{
-			if (op.RequestBody != null && op.RequestBody.Content != null)
-			{
-				OpenApiMediaType content;
-				var description = op.RequestBody.Description;//todo: comment
-
-				if (op.RequestBody.Reference != null)
-				{
-					if (op.RequestBody.Content.TryGetValue("application/json", out content) && (content.Schema.Type != null && content.Schema.Type != "object"))
-					{
-						return Tuple.Create(OpenApiMediaTypeToCodeTypeReference(content), description, true);
-					}
-
-					var typeName = op.RequestBody.Reference.Id;
-					var codeTypeReference = new CodeTypeReference(typeName);
-					return Tuple.Create(codeTypeReference, description, true);
-				}
-				else if (op.RequestBody.Content.TryGetValue("application/json", out content))
-				{
-					if (content.Schema != null && content.Schema.Reference != null)
-					{
-						var typeName = content.Schema.Reference.Id;
-						var codeTypeReference = new CodeTypeReference(typeName);
-						return Tuple.Create(codeTypeReference, description, true);
-					}
-
-					return Tuple.Create(OpenApiMediaTypeToCodeTypeReference(content), description, true);
-				}
-				else if (op.RequestBody.Content.Count > 0) // with content but not supported
-				{
-					return Tuple.Create<CodeTypeReference, string, bool>(null, null, false);
-				}
-			}
-
-			return null; //empty post
-		}
-
-		/// <summary>
 		/// Translate OpenApiMediaType content to CodeTypeReference
 		/// </summary>
 		/// <param name="content"></param>
 		/// <returns></returns>
-		static CodeTypeReference OpenApiMediaTypeToCodeTypeReference(OpenApiMediaType content)
+		public static CodeTypeReference OpenApiMediaTypeToCodeTypeReference(OpenApiMediaType content)
 		{
 			var schemaType = content.Schema.Type;
 			if (schemaType != null)

@@ -29,6 +29,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 		ComponentsToCsTypes coms2CsTypes;
 		NameComposer nameComposer;
 		ParametersHelper parametersHelper;
+		BodyContentRefBuilder bodyContentRefBuilder;
 		Settings settings;
 		string actionName;
 		OperationType httpMethod;
@@ -59,13 +60,14 @@ namespace Fonlow.OpenApiClientGen.Cs
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
 			this.parametersHelper = new ParametersHelper(nameComposer, poco2CsGen.ClientNamespace);
+			this.bodyContentRefBuilder = new BodyContentRefBuilder();
 			this.apiOperation = apiOperation;
 			this.httpMethod = httpMethod;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
 			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
-				var kc = TypeRefBuilder.GetBodyContent(apiOperation);
+				var kc = bodyContentRefBuilder.GetBodyContent(apiOperation);
 				if (kc != null)
 				{
 					this.requestBodyCodeTypeReference = kc.Item1;

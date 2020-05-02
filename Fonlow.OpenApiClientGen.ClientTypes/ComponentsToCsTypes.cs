@@ -15,7 +15,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// <summary>
 	/// Create CS Types CodeDOM from OpenApiComponents
 	/// </summary>
-	public class ComponentsToCsTypes
+	public class ComponentsToCsTypes : IComponentToCodeDom
 	{
 		public ComponentsToCsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
 		{
@@ -102,59 +102,41 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			foreach (var item in components.Schemas)
 			{
-				currentTypeName = ToTitleCase(item.Key);
-				Debug.WriteLine("clientClass: " + currentTypeName);
-				var schema = item.Value;
-				var type = schema.Type;
-				var allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
-				var enumTypeList = schema.Enum; //maybe empty
-				bool isForClass = enumTypeList.Count == 0;
-				var schemaProperties = schema.Properties;
-				CodeTypeDeclaration typeDeclaration;
-				if (isForClass)
+				AddTypeToClientNamespace(item);
+			}
+
+		}
+
+		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
+		{
+			currentTypeName = ToTitleCase(item.Key);
+			Debug.WriteLine("clientClass: " + currentTypeName);
+			var schema = item.Value;
+
+			var type = schema.Type;
+			var allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
+			var enumTypeList = schema.Enum; //maybe empty
+			bool isForClass = enumTypeList.Count == 0;
+			var schemaProperties = schema.Properties;
+			CodeTypeDeclaration typeDeclaration;
+			if (isForClass)
+			{
+				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 				{
-					if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
+					typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
+					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 					{
-						typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
-						if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
-						{
-							var allOfRef = allOfBaseTypeSchemaList[0];
-							var baseTypeName = allOfRef.Reference.Id; //pointing to parent class
-							typeDeclaration.BaseTypes.Add(baseTypeName);
+						var allOfRef = allOfBaseTypeSchemaList[0];
+						var baseTypeName = allOfRef.Reference.Id; //pointing to parent class
+						typeDeclaration.BaseTypes.Add(baseTypeName);
 
-							var allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
-							AddProperties(typeDeclaration, allOfProperteisSchema);
-						}
-
-						CreateTypeDocComment(item, typeDeclaration);
-
-						AddProperties(typeDeclaration, schema);
-
-						if (settings.DecorateDataModelWithDataContract)
-						{
-							typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
-						}
-
-						if (settings.DecorateDataModelWithSerializable)
-						{
-							typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
-						}
+						var allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
+						AddProperties(typeDeclaration, allOfProperteisSchema);
 					}
-					else if (type == "array") // wrapper of array. Microsoft OpenApi library could not intepret this as type alias, so I have to register the alias myself.
-					{
-						var itemsRef = schema.Items.Reference;
-						TypeAliasDic.Instance.Add(currentTypeName, $"{itemsRef.Id}[]");
-					}
-					else
-					{
-						Trace.TraceInformation($"Type Alias {currentTypeName} is skipped:.");
-					}
-				}
-				else
-				{
-					typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, currentTypeName);
+
 					CreateTypeDocComment(item, typeDeclaration);
-					AddEnumMembers(typeDeclaration, enumTypeList);
+
+					AddProperties(typeDeclaration, schema);
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
@@ -165,6 +147,31 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
 					}
+				}
+				else if (type == "array") // wrapper of array. Microsoft OpenApi library could not intepret this as type alias, so I have to register the alias myself.
+				{
+					var itemsRef = schema.Items.Reference;
+					TypeAliasDic.Instance.Add(currentTypeName, $"{itemsRef.Id}[]");
+				}
+				else
+				{
+					Trace.TraceInformation($"Type Alias {currentTypeName} is skipped:.");
+				}
+			}
+			else
+			{
+				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, currentTypeName);
+				CreateTypeDocComment(item, typeDeclaration);
+				AddEnumMembers(typeDeclaration, enumTypeList);
+
+				if (settings.DecorateDataModelWithDataContract)
+				{
+					typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+				}
+
+				if (settings.DecorateDataModelWithSerializable)
+				{
+					typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
 				}
 			}
 

@@ -14,7 +14,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// <summary>
 	/// POCO to TypeScript interfaces generator. Create CodeDOM and output TS codes, with TypeScript CodeDOM provider
 	/// </summary>
-	public class ComponentsToTsTypes
+	public class ComponentsToTsTypes: IComponentToCodeDom
 	{
 		public ComponentsToTsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
 		{
@@ -98,53 +98,58 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			foreach (var item in components.Schemas)
 			{
-				var typeName = ToTitleCase(item.Key);
-				Debug.WriteLine("clientClass: " + typeName);
-				var schema = item.Value;
-				var type = schema.Type;
-				var allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
-				var enumTypeList = schema.Enum; //maybe empty
-				bool isForClass = enumTypeList.Count == 0;
-				var schemaProperties = schema.Properties;
-				CodeTypeDeclaration typeDeclaration;
-				if (isForClass)
+				AddTypeToClientNamespace(item);
+			}
+
+		}
+
+		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
+		{
+			var typeName = ToTitleCase(item.Key);
+			Debug.WriteLine("clientClass: " + typeName);
+			var schema = item.Value;
+			var type = schema.Type;
+			var allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
+			var enumTypeList = schema.Enum; //maybe empty
+			bool isForClass = enumTypeList.Count == 0;
+			var schemaProperties = schema.Properties;
+			CodeTypeDeclaration typeDeclaration;
+			if (isForClass)
+			{
+				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 				{
-					if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
+					typeDeclaration = PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName);
+					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 					{
-						typeDeclaration = PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName);
-						if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
-						{
-							var allOfRef = allOfBaseTypeSchemaList[0];
-							var baseTypeName = allOfRef.Reference.Id; //pointing to parent class
-							typeDeclaration.BaseTypes.Add(baseTypeName);
+						var allOfRef = allOfBaseTypeSchemaList[0];
+						var baseTypeName = allOfRef.Reference.Id; //pointing to parent class
+						typeDeclaration.BaseTypes.Add(baseTypeName);
 
-							var allOfProperteisSchema = allOfBaseTypeSchemaList[1];
-							AddProperties(typeDeclaration, allOfProperteisSchema);
-						}
+						var allOfProperteisSchema = allOfBaseTypeSchemaList[1];
+						AddProperties(typeDeclaration, allOfProperteisSchema);
+					}
 
-						CreateTypeDocComment(item, typeDeclaration);
-						//	typeDeclarationDic.Add(typeName, typeDeclaration);
+					CreateTypeDocComment(item, typeDeclaration);
+					//	typeDeclarationDic.Add(typeName, typeDeclaration);
 
-						AddProperties(typeDeclaration, schema);
-					}
-					else if (type == "array") // wrapper of array
-					{
-						var itemsRef = schema.Items.Reference;
-						TypeAliasDic.Instance.Add(typeName, $"{itemsRef.Id}[]");
-					}
-					else
-					{
-						Trace.TraceInformation($"Type Alias {typeName} is skipped:.");
-					}
+					AddProperties(typeDeclaration, schema);
+				}
+				else if (type == "array") // wrapper of array
+				{
+					var itemsRef = schema.Items.Reference;
+					TypeAliasDic.Instance.Add(typeName, $"{itemsRef.Id}[]");
 				}
 				else
 				{
-					typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, typeName);
-					CreateTypeDocComment(item, typeDeclaration);
-					AddEnumMembers(typeDeclaration, enumTypeList);
+					Trace.TraceInformation($"Type Alias {typeName} is skipped:.");
 				}
 			}
-
+			else
+			{
+				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, typeName);
+				CreateTypeDocComment(item, typeDeclaration);
+				AddEnumMembers(typeDeclaration, enumTypeList);
+			}
 		}
 
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
