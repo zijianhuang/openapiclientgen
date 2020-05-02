@@ -190,7 +190,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var propertyName = p.Key;
 				var propertySchema = p.Value;
 				var primitivePropertyType = propertySchema.Type;
-				var isPrimitiveType = nameComposer.IsPrimitiveType(primitivePropertyType);
+				var isPrimitiveType = TypeRefBuilder.IsPrimitiveType(primitivePropertyType);
 				var isRequired = schema.Required.Contains(p.Key);//compare with the original key
 
 
@@ -220,7 +220,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						var customPropertyType = refToType.Type;
 						var customPropertyFormat = refToType.Format;
-						var customType = nameComposer.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
+						var customType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
 						clientProperty = CreateProperty(propertyName, customType, isRequired);
 					}
 				}
@@ -248,7 +248,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 							else
 							{
-								var clrType = nameComposer.PrimitiveSwaggerTypeToClrType(arrayType, null);
+								var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
 								var arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
 							}
@@ -261,7 +261,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{
-						var simpleType = nameComposer.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
+						var simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 						clientProperty = CreateProperty(propertyName, simpleType, isRequired);
 					}
 					else // for casual enum

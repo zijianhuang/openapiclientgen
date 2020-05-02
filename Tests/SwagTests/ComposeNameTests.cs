@@ -76,18 +76,18 @@ namespace SwagTests
 		[Fact]
 		public void TestSwaggerTypeToClrType()
 		{
-			Assert.Equal(typeof(long), composer.PrimitiveSwaggerTypeToClrType("integer", "int64"));
-			Assert.Equal(typeof(double), composer.PrimitiveSwaggerTypeToClrType("number", "double"));
-			Assert.Equal(typeof(string), composer.PrimitiveSwaggerTypeToClrType("string", ""));
-			Assert.Equal(typeof(DateTimeOffset), composer.PrimitiveSwaggerTypeToClrType("string", "date"));
-			Assert.Equal(typeof(DateTimeOffset), composer.PrimitiveSwaggerTypeToClrType("string", "date-time"));
+			Assert.Equal(typeof(long), TypeRefBuilder.PrimitiveSwaggerTypeToClrType("integer", "int64"));
+			Assert.Equal(typeof(double), TypeRefBuilder.PrimitiveSwaggerTypeToClrType("number", "double"));
+			Assert.Equal(typeof(string), TypeRefBuilder.PrimitiveSwaggerTypeToClrType("string", ""));
+			Assert.Equal(typeof(DateTimeOffset), TypeRefBuilder.PrimitiveSwaggerTypeToClrType("string", "date"));
+			Assert.Equal(typeof(DateTimeOffset), TypeRefBuilder.PrimitiveSwaggerTypeToClrType("string", "date-time"));
 		}
 
 		[Fact]
 		public void TestReturnSimpleType()
 		{
 			var pathItem = doc.Paths["/api/SuperDemo/decimal/{d}"];
-			var t = composer.GetOperationReturnSimpleTypeReference(pathItem.Operations[OperationType.Get]);
+			var t = TypeRefBuilder.GetOperationReturnSimpleTypeReference(pathItem.Operations[OperationType.Get]);
 			Assert.Equal("System.Double", t.Item1.BaseType);
 		}
 
@@ -95,7 +95,7 @@ namespace SwagTests
 		public void TestReturnComplexType()
 		{
 			var pathItem = doc.Paths["/api/Entities/getPerson/{id}"];
-			var t = composer.GetOperationReturnComplexTypeReference(pathItem.Operations[OperationType.Get]);
+			var t = TypeRefBuilder.GetOperationReturnComplexTypeReference(pathItem.Operations[OperationType.Get]);
 			Assert.Equal("Person", t);
 		}
 

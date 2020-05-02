@@ -228,7 +228,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				var propertySchema = p.Value;
 				var primitivePropertyType = propertySchema.Type;
-				var isPrimitiveType = nameComposer.IsPrimitiveType(primitivePropertyType);
+				var isPrimitiveType = TypeRefBuilder.IsPrimitiveType(primitivePropertyType);
 				var isRequired = schema.Required.Contains(p.Key); //compare with the original key
 				var defaultValue = GetDefaultValue(propertySchema);
 				//Debug.Assert(propertyName != "HuntingSkill");
@@ -258,7 +258,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						var customPropertyType = refToType.Type;
 						var customPropertyFormat = refToType.Format;
-						var customType = nameComposer.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
+						var customType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
 						if (!customType.IsClass && !isRequired)
 						{
 							clientProperty = CreateNullableProperty(propertyName, customType);
@@ -293,7 +293,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 							else
 							{
-								var clrType = nameComposer.PrimitiveSwaggerTypeToClrType(arrayType, null);
+								var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
 								var arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
@@ -306,7 +306,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{
-						var simpleType = nameComposer.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
+						var simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 						if (!simpleType.IsClass && !isRequired)
 						{
 							clientProperty = CreateNullableProperty(propertyName, simpleType);
@@ -417,7 +417,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (fieldSchema.Maximum.HasValue || fieldSchema.Minimum.HasValue)
 			{
-				var type = nameComposer.PrimitiveSwaggerTypeToClrType(fieldSchema.Type, fieldSchema.Format);
+				var type = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(fieldSchema.Type, fieldSchema.Format);
 				List<CodeAttributeArgument> attributeParams = new List<CodeAttributeArgument>();
 
 				if (fieldSchema.Minimum.HasValue)

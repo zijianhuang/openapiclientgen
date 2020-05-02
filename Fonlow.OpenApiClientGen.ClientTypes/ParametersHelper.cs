@@ -34,7 +34,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						IsOptional = !p.Required,
 						ParameterName = p.Name,
-						ParameterType = nameComposer.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
+						ParameterType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
 
@@ -54,7 +54,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (arrayItemsSchema.Reference != null) //array of custom type
 					{
 						var arrayTypeName = arrayItemsSchema.Reference.Id;
-						var arrayCodeTypeReference = nameComposer.CreateArrayOfCustomTypeReference(arrayTypeName, 1);
+						var arrayCodeTypeReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(arrayTypeName, 1);
 						return arrayCodeTypeReference;
 					}
 					else
@@ -67,7 +67,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (existingDeclaration != null)
 							{
 								var existingTypeName = existingDeclaration.Name;
-								var enumArrayReference = nameComposer.CreateArrayOfCustomTypeReference(existingTypeName, 1);
+								var enumArrayReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(existingTypeName, 1);
 								return enumArrayReference;
 							}
 
@@ -75,8 +75,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							Trace.TraceWarning($"Parameter {content.Name} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 						}
 
-						var clrType = nameComposer.PrimitiveSwaggerTypeToClrType(arrayType, null);
-						var arrayCodeTypeReference = nameComposer.CreateArrayTypeReference(clrType, 1);
+						var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
+						var arrayCodeTypeReference = TypeRefBuilder.CreateArrayTypeReference(clrType, 1);
 						return arrayCodeTypeReference;
 					}
 				}
@@ -87,12 +87,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (existingDeclaration != null)
 					{
 						var existingTypeName = existingDeclaration.Name;
-						var enumReference = nameComposer.TranslateToClientTypeReference(existingTypeName);
+						var enumReference = TypeRefBuilder.TranslateToClientTypeReference(existingTypeName);
 						return enumReference;
 					}
 				}
 
-				var simpleType = nameComposer.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
+				var simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
 				var codeTypeReference = new CodeTypeReference(simpleType);
 				return codeTypeReference;
 

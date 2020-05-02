@@ -47,7 +47,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
-				var kc = nameComposer.GetBodyContent(apiOperation);
+				var kc = TypeRefBuilder.GetBodyContent(apiOperation);
 				if (kc != null)
 				{
 					this.RequestBodyCodeTypeReference = kc.Item1;
@@ -66,7 +66,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			if (ActionName.EndsWith("Async"))
 				ActionName = ActionName.Substring(0, ActionName.Length - 5);
 
-			var r = nameComposer.GetOperationReturnTypeReference(apiOperation);
+			var r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
 			ReturnTypeReference = r.Item1;
 			stringAsString = r.Item2;
 
