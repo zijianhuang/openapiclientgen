@@ -272,7 +272,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
-							clientProperty = CreateProperty(propertyName, customType);
+							clientProperty = CreateProperty(propertyName, customType, defaultValue);
 						}
 					}
 				}
@@ -320,7 +320,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
-							clientProperty = CreateProperty(propertyName, simpleType);
+							clientProperty = CreateProperty(propertyName, simpleType, defaultValue);
 						}
 					}
 					else // for casual enum
@@ -574,13 +574,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		CodeMemberField CreateProperty(string propertyName, Type type)
+		CodeMemberField CreateProperty(string propertyName, Type type, string defaultValue)
 		{
 			// This is a little hack. Since you cant create auto properties in CodeDOM,
 			//  we make the getter and setter part of the member name.
 			// This leaves behind a trailing semicolon that we comment out.
 			//  Later, we remove the commented out semicolons.
-			string memberName = propertyName + " { get; set; }//";
+			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
 			CodeMemberField result = new CodeMemberField() { Type = TranslateToClientTypeReference(type), Name = memberName };
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
