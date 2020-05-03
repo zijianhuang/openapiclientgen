@@ -29,7 +29,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (op.RequestBody != null && op.RequestBody.Content != null)
 			{
 				OpenApiMediaType content;
-				var description = op.RequestBody.Description;//todo: comment
+				var description = op.RequestBody.Description;
 
 				if (op.RequestBody.Reference != null)
 				{

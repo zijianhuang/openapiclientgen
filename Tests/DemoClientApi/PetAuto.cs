@@ -86,7 +86,7 @@ namespace DemoPet.Client
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public int PackSize { get; set; }
+		public int PackSize { get; set; } = 1;
 	}
 	
 	/// <summary>
