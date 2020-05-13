@@ -358,7 +358,9 @@ namespace DemoPet.Client
 		public async Task<Pet> GetPetByIdAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -373,6 +375,7 @@ namespace DemoPet.Client
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -383,7 +386,9 @@ namespace DemoPet.Client
 		public async Task DeletePetAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
-			var responseMessage = await client.DeleteAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -391,6 +396,7 @@ namespace DemoPet.Client
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -404,7 +410,9 @@ namespace DemoPet.Client
 		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -418,6 +426,7 @@ namespace DemoPet.Client
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -431,7 +440,9 @@ namespace DemoPet.Client
 		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags)
 		{
 			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -446,6 +457,7 @@ namespace DemoPet.Client
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -457,7 +469,9 @@ namespace DemoPet.Client
 		public async Task<string> GetInventoryAsync()
 		{
 			var requestUri = "store/inventory";
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -470,6 +484,7 @@ namespace DemoPet.Client
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -515,7 +530,9 @@ namespace DemoPet.Client
 		public async Task<Order> GetOrderByIdAsync(long orderId)
 		{
 			var requestUri = "store/order/"+orderId;
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -530,6 +547,7 @@ namespace DemoPet.Client
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -541,7 +559,9 @@ namespace DemoPet.Client
 		public async Task DeleteOrderAsync(string orderId)
 		{
 			var requestUri = "store/order/"+Uri.EscapeDataString(orderId);
-			var responseMessage = await client.DeleteAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -549,6 +569,7 @@ namespace DemoPet.Client
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -587,7 +608,9 @@ namespace DemoPet.Client
 		public async Task<User> GetUserByNameAsync(string username)
 		{
 			var requestUri = "user/"+Uri.EscapeDataString(username);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -601,6 +624,7 @@ namespace DemoPet.Client
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -640,7 +664,9 @@ namespace DemoPet.Client
 		public async Task DeleteUserAsync(string username)
 		{
 			var requestUri = "user/"+Uri.EscapeDataString(username);
-			var responseMessage = await client.DeleteAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -648,6 +674,7 @@ namespace DemoPet.Client
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -711,7 +738,9 @@ namespace DemoPet.Client
 		public async Task<string> LoginUserAsync(string username, string password)
 		{
 			var requestUri = "user/login?username=" + Uri.EscapeDataString(username)+"&password=" + Uri.EscapeDataString(password);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -725,6 +754,7 @@ namespace DemoPet.Client
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -734,7 +764,9 @@ namespace DemoPet.Client
 		public async Task LogoutUserAsync()
 		{
 			var requestUri = "user/logout";
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -742,6 +774,7 @@ namespace DemoPet.Client
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

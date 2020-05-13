@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Models;
 using Fonlow.CodeDom.Web;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Microsoft.OpenApi.Extensions;
+using System.Net.Http;
 
 namespace Fonlow.OpenApiClientGen.Cs
 {
@@ -113,31 +114,8 @@ namespace Fonlow.OpenApiClientGen.Cs
 			switch (httpMethod)
 			{
 				case OperationType.Get:
-					if (forAsync)
-					{
-						RenderGetOrDeleteImplementation(
-							new CodeMethodInvokeExpression(new CodeSnippetExpression("await " + sharedContext.clientReference.FieldName), "GetAsync", new CodeSnippetExpression("requestUri")));
-					}
-					else
-					{
-						RenderGetOrDeleteImplementation(
-							new CodePropertyReferenceExpression(
-							new CodeMethodInvokeExpression(sharedContext.clientReference, "GetAsync", new CodeSnippetExpression("requestUri")), "Result"));
-					}
-					break;
 				case OperationType.Delete:
-					if (forAsync)
-					{
-						RenderGetOrDeleteImplementation(
-							new CodeMethodInvokeExpression(new CodeSnippetExpression("await " + sharedContext.clientReference.FieldName), "DeleteAsync", new CodeSnippetExpression("requestUri")));
-					}
-					else
-					{
-						RenderGetOrDeleteImplementation(
-							new CodePropertyReferenceExpression(
-							new CodeMethodInvokeExpression(sharedContext.clientReference, "DeleteAsync", new CodeSnippetExpression("requestUri"))
-							, "Result"));
-					}
+					RenderGetOrDeleteImplementation(httpMethod, forAsync);
 					break;
 				case OperationType.Post:
 					RenderPostOrPutImplementation(true);
@@ -231,7 +209,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 			CreateDocComment("returns", nameComposer.GetOperationReturnComment(apiOperation));
 		}
 
-		void RenderGetOrDeleteImplementation(CodeExpression httpMethodInvokeExpression)
+		void RenderGetOrDeleteImplementation(OperationType httpMethod, bool forAsync)
 		{
 			//Create function parameters
 			var parameters = apiOperation.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query)
@@ -253,8 +231,13 @@ namespace Fonlow.OpenApiClientGen.Cs
 				new CodeTypeReference("var"), "requestUri",
 				new CodeSnippetExpression(uriText)));
 
+			method.Statements.Add(new CodeSnippetStatement(
+				$@"			using (var request = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
+			{{"
+				));
+
 			method.Statements.Add(new CodeVariableDeclarationStatement(
-				new CodeTypeReference("var"), "responseMessage", httpMethodInvokeExpression));
+				new CodeTypeReference("var"), "responseMessage", forAsync?new CodeSnippetExpression("await client.SendAsync(request)"): new CodeSnippetExpression("client.SendAsync(request).Result")));
 
 
 			var resultReference = new CodeVariableReferenceExpression("responseMessage");
@@ -272,6 +255,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 			try1.FinallyStatements.Add(new CodeMethodInvokeExpression(resultReference, "Dispose"));
 
+			method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
 		}
 
 		void RenderPostOrPutImplementation(bool isPost)
