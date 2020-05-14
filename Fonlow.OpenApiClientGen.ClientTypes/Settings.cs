@@ -122,6 +122,11 @@
 		/// </summary>
 		public bool DataAnnotationsToComments { get; set; }
 
+		/// <summary>
+		/// C# function parameters contain a callback to handle HTTP request headers
+		/// </summary>
+		public bool HandleHttpRequestHeaders { get; set; }
+
 		public JSPlugin[] Plugins { get; set; }
 
 	}

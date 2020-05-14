@@ -1,15 +1,16 @@
 {
-    "ClientNamespace": "DemoPet.Client",
-    "ClientLibraryProjectFolderName": "",
-    "ContainerClassName": "PetClient",
-    "ClientLibraryFileName": "PetAuto.cs",
-    "ActionNameStrategy": 4,
-    "UseEnsureSuccessStatusCodeEx": true,
-    "DataAnnotationsEnabled": true,
-    "DataAnnotationsToComments": true,
+	"ClientNamespace": "DemoPet.Client",
+	"ClientLibraryProjectFolderName": "",
+	"ContainerClassName": "PetClient",
+	"ClientLibraryFileName": "PetAuto.cs",
+	"ActionNameStrategy": 4,
+	"UseEnsureSuccessStatusCodeEx": true,
+	"DataAnnotationsEnabled": true,
+	"DataAnnotationsToComments": true,
+	"HandleHttpRequestHeaders": true,
 
-    "Plugins": [
+	"Plugins": [
 
-    ]
+	]
 
 }

@@ -219,8 +219,12 @@ namespace Fonlow.OpenApiClientGen.Cs
 				})
 				.ToArray();
 			method.Parameters.AddRange(parameters);
-			method.Parameters.Add(new CodeParameterDeclarationExpression(
-				"Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
+
+			if (settings.HandleHttpRequestHeaders)
+			{
+				method.Parameters.Add(new CodeParameterDeclarationExpression(
+					"Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
+			}
 
 			var jsUriQuery = UriQueryHelper.CreateUriQuery(relativePath, parameterDescriptions);
 			var uriText = jsUriQuery == null ? $"\"{relativePath}\"" : RemoveTrialEmptyString($"\"{jsUriQuery}\"");
@@ -230,14 +234,20 @@ namespace Fonlow.OpenApiClientGen.Cs
 				new CodeSnippetExpression(uriText)));
 
 			method.Statements.Add(new CodeSnippetStatement(
-				$@"			using (var request = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
-			{{
-			if (handleHeaders != null)
+			$@"			using (var request = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
+			{{"
+			));
+			
+			if (settings.HandleHttpRequestHeaders)
+			{
+				method.Statements.Add(new CodeSnippetStatement(
+				$@"			if (handleHeaders != null)
 			{{
 				handleHeaders(request.Headers);
 			}}
 "
 				));
+			}
 
 			method.Statements.Add(new CodeVariableDeclarationStatement(
 				new CodeTypeReference("var"), "responseMessage", forAsync?new CodeSnippetExpression("await client.SendAsync(request)"): new CodeSnippetExpression("client.SendAsync(request).Result")));
