@@ -41,10 +41,17 @@ namespace MyNS
 		/// ValuesGet api/Values
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<string[]> ValuesGetAsync()
+		public async Task<string[]> ValuesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values";
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -58,6 +65,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -65,10 +73,17 @@ namespace MyNS
 		/// ValuesGet api/Values
 		/// </summary>
 		/// <returns>Success</returns>
-		public string[] ValuesGet()
+		public string[] ValuesGet(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values";
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -83,21 +98,30 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
 		/// ValuesPost api/Values
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<string> ValuesPostAsync(string requestBody)
+		public async Task<string> ValuesPostAsync(string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -112,21 +136,30 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
 		/// ValuesPost api/Values
 		/// </summary>
 		/// <returns>Success</returns>
-		public string ValuesPost(string requestBody)
+		public string ValuesPost(string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -141,16 +174,24 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
 		/// ValuesGetById api/Values/{id}
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<string> ValuesGetByIdAsync(int id)
+		public async Task<string> ValuesGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values/"+id;
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -164,16 +205,24 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
 		/// ValuesGetById api/Values/{id}
 		/// </summary>
 		/// <returns>Success</returns>
-		public string ValuesGetById(int id)
+		public string ValuesGetById(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values/"+id;
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -187,21 +236,30 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
 		/// ValuesPutById api/Values/{id}
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task ValuesPutByIdAsync(int id, string requestBody)
+		public async Task ValuesPutByIdAsync(int id, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values/"+id;
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -211,21 +269,57 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
 		/// ValuesPutById api/Values/{id}
 		/// </summary>
 		/// <returns>Success</returns>
-		public void ValuesPutById(int id, string requestBody)
+		public void ValuesPutById(int id, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values/"+id;
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// ValuesDeleteById api/Values/{id}
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task ValuesDeleteByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "api/Values/"+id;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -241,10 +335,17 @@ namespace MyNS
 		/// ValuesDeleteById api/Values/{id}
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task ValuesDeleteByIdAsync(int id)
+		public void ValuesDeleteById(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/Values/"+id;
-			var responseMessage = await client.DeleteAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -253,23 +354,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-		}
-		
-		/// <summary>
-		/// ValuesDeleteById api/Values/{id}
-		/// </summary>
-		/// <returns>Success</returns>
-		public void ValuesDeleteById(int id)
-		{
-			var requestUri = "api/Values/"+id;
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 	}

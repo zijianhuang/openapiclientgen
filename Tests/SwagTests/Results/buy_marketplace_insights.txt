@@ -542,10 +542,17 @@ namespace MyNS
 		/// <param name="q">A string consisting of one or more keywords that are used to search for items on eBay. The keywords are handled as follows: If the keywords are separated by a comma, it is treated as an AND. In the following example, the query returns items that have iphone AND ipad. /buy/marketplace-insights/v1_beta/item_sales/search?q=iphone,ipad&amp;category_ids=15724 If the keywords are separated by a space, it is treated as an OR. In the following examples, the query returns items that have iphone OR ipad. /buy/marketplace-insights/v1_beta/item_sales/search?q=iphone&amp;category_ids=15724&nbsp;ipad /buy/marketplace-insights/v1_beta/item_sales/search?q=iphone,&nbsp;ipad&amp;category_ids=15724 Restriction: The * wildcard character is not allowed in this field. Required: At least 1 category_ids Optional: Any combination of epid, gtin, or q</param>
 		/// <param name="sort">This field specifies the order and the field name to use to sort the items. To sort in descending order use - before the field name. Currently, you can only sort by price (in ascending or descending order). If no sort parameter is submitted, the result set is sorted by &quot;Best Match&quot;. The following are examples of using the sort query parameter. Sort Result &amp;sort=price Sorts by price in ascending order (lowest price first) &amp;sort=-price Sorts by price in descending order (highest price first) Default: ascending For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/marketplace_insights/types/SortField.html</param>
 		/// <returns>Success</returns>
-		public async Task<SalesHistoryPagedCollection> SearchAsync(string aspect_filter, string category_ids, string epid, string fieldgroups, string filter, string gtin, string limit, string offset, string q, string sort)
+		public async Task<SalesHistoryPagedCollection> SearchAsync(string aspect_filter, string category_ids, string epid, string fieldgroups, string filter, string gtin, string limit, string offset, string q, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "item_sales/search?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_ids=" + Uri.EscapeDataString(category_ids)+"&epid=" + Uri.EscapeDataString(epid)+"&fieldgroups=" + Uri.EscapeDataString(fieldgroups)+"&filter=" + Uri.EscapeDataString(filter)+"&gtin=" + Uri.EscapeDataString(gtin)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&q=" + Uri.EscapeDataString(q)+"&sort=" + Uri.EscapeDataString(sort);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -559,6 +566,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -577,10 +585,17 @@ namespace MyNS
 		/// <param name="q">A string consisting of one or more keywords that are used to search for items on eBay. The keywords are handled as follows: If the keywords are separated by a comma, it is treated as an AND. In the following example, the query returns items that have iphone AND ipad. /buy/marketplace-insights/v1_beta/item_sales/search?q=iphone,ipad&amp;category_ids=15724 If the keywords are separated by a space, it is treated as an OR. In the following examples, the query returns items that have iphone OR ipad. /buy/marketplace-insights/v1_beta/item_sales/search?q=iphone&amp;category_ids=15724&nbsp;ipad /buy/marketplace-insights/v1_beta/item_sales/search?q=iphone,&nbsp;ipad&amp;category_ids=15724 Restriction: The * wildcard character is not allowed in this field. Required: At least 1 category_ids Optional: Any combination of epid, gtin, or q</param>
 		/// <param name="sort">This field specifies the order and the field name to use to sort the items. To sort in descending order use - before the field name. Currently, you can only sort by price (in ascending or descending order). If no sort parameter is submitted, the result set is sorted by &quot;Best Match&quot;. The following are examples of using the sort query parameter. Sort Result &amp;sort=price Sorts by price in ascending order (lowest price first) &amp;sort=-price Sorts by price in descending order (highest price first) Default: ascending For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/marketplace_insights/types/SortField.html</param>
 		/// <returns>Success</returns>
-		public SalesHistoryPagedCollection Search(string aspect_filter, string category_ids, string epid, string fieldgroups, string filter, string gtin, string limit, string offset, string q, string sort)
+		public SalesHistoryPagedCollection Search(string aspect_filter, string category_ids, string epid, string fieldgroups, string filter, string gtin, string limit, string offset, string q, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "item_sales/search?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_ids=" + Uri.EscapeDataString(category_ids)+"&epid=" + Uri.EscapeDataString(epid)+"&fieldgroups=" + Uri.EscapeDataString(fieldgroups)+"&filter=" + Uri.EscapeDataString(filter)+"&gtin=" + Uri.EscapeDataString(gtin)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&q=" + Uri.EscapeDataString(q)+"&sort=" + Uri.EscapeDataString(sort);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -594,6 +609,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

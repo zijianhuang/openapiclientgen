@@ -843,10 +843,17 @@ namespace MyNS
 		/// <param name="category_id">An eBay top-level category ID of the items to be returned in the feed file. The list of eBay category IDs changes over time and category IDs are not the same across all the eBay marketplaces. To get a list of the top-level categories for a marketplaces, you can use the Taxonomy API getCategoryTree method. This method retrieves the complete category tree for the marketplace. The top-level categories are identified by the categoryTreeNodeLevel field. For example: &nbsp;&nbsp;&quot;categoryTreeNodeLevel&quot;: 1 For details see Get Categories for Buy APIs. Restriction: Must be a top-level (L1) category</param>
 		/// <param name="date">The date of the daily Item feed file (feed_scope=NEWLY_LISTED) you want. The date is required only for the daily Item feed file. If you specify a date for the Item Bootstrap file (feed_scope=ALL_ACTIVE), the date is ignored and the latest file is returned. The date the Item Bootstrap feed file was generated is returned in the Last-Modified response header. The Item feed files are generated every day and there are 14 daily files available. Note: The daily Item feed files are available each day after 9AM MST (US Mountain Standard Time), which is -7 hours UTC time. There is a 48 hour latency when generating the Item feed files. This means you can download the file for July 10th on July 12 after 9AM MST. Note: For categories with a large number of items, the latency can be up to 72 hours. Format: yyyyMMdd Requirements: Required when feed_scope=NEWLY_LISTED Must be within 3-14 days in the past</param>
 		/// <returns>Success</returns>
-		public async Task GetItemFeedAsync(string feed_scope, string category_id, string date)
+		public async Task GetItemFeedAsync(string feed_scope, string category_id, string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "item?feed_scope=" + Uri.EscapeDataString(feed_scope)+"&category_id=" + Uri.EscapeDataString(category_id)+"&date=" + Uri.EscapeDataString(date);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -854,6 +861,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -865,10 +873,17 @@ namespace MyNS
 		/// <param name="category_id">An eBay top-level category ID of the items to be returned in the feed file. The list of eBay category IDs changes over time and category IDs are not the same across all the eBay marketplaces. To get a list of the top-level categories for a marketplaces, you can use the Taxonomy API getCategoryTree method. This method retrieves the complete category tree for the marketplace. The top-level categories are identified by the categoryTreeNodeLevel field. For example: &nbsp;&nbsp;&quot;categoryTreeNodeLevel&quot;: 1 For details see Get Categories for Buy APIs. Restriction: Must be a top-level (L1) category</param>
 		/// <param name="date">The date of the daily Item feed file (feed_scope=NEWLY_LISTED) you want. The date is required only for the daily Item feed file. If you specify a date for the Item Bootstrap file (feed_scope=ALL_ACTIVE), the date is ignored and the latest file is returned. The date the Item Bootstrap feed file was generated is returned in the Last-Modified response header. The Item feed files are generated every day and there are 14 daily files available. Note: The daily Item feed files are available each day after 9AM MST (US Mountain Standard Time), which is -7 hours UTC time. There is a 48 hour latency when generating the Item feed files. This means you can download the file for July 10th on July 12 after 9AM MST. Note: For categories with a large number of items, the latency can be up to 72 hours. Format: yyyyMMdd Requirements: Required when feed_scope=NEWLY_LISTED Must be within 3-14 days in the past</param>
 		/// <returns>Success</returns>
-		public void GetItemFeed(string feed_scope, string category_id, string date)
+		public void GetItemFeed(string feed_scope, string category_id, string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "item?feed_scope=" + Uri.EscapeDataString(feed_scope)+"&category_id=" + Uri.EscapeDataString(category_id)+"&date=" + Uri.EscapeDataString(date);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -876,6 +891,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -907,10 +923,17 @@ namespace MyNS
 		/// <param name="category_id">An eBay top-level category ID of the items to be returned in the feed file. The list of eBay category IDs changes over time and category IDs are not the same across all the eBay marketplaces. To get a list of the top-level categories for a marketplaces, you can use the Taxonomy API getCategoryTree method. This method retrieves the complete category tree for the marketplace. The top-level categories are identified by the categoryTreeNodeLevel field. For example: &nbsp;&nbsp;&quot;categoryTreeNodeLevel&quot;: 1 For details see Get Categories for Buy APIs. Restriction: Must be a top-level category</param>
 		/// <param name="date">The date of the daily Item Group feed file (feed_scope=NEWLY_LISTED) you want. The date is required only for the daily Item Group feed file. If you specify a date for the Item Group Bootstrap file (feed_scope=ALL_ACTIVE), the date is ignored and the latest file is returned. The date the Item Group Bootstrap feed file was generated is returned in the Last-Modified response header. The Item Group feed files are generated every day and there are 14 daily files available. There is a 48 hour latency when generating the files. This means on July 10, the latest feed file you can download is July 8. Note: The generated files are stored using MST (US Mountain Standard Time), which is -7 hours UTC time. Format: yyyyMMdd Requirement: Requirements: Required only when feed_scope=NEWLY_LISTED Must be within 3-14 days in the past</param>
 		/// <returns>Success</returns>
-		public async Task GetItemGroupFeedAsync(string feed_scope, string category_id, string date)
+		public async Task GetItemGroupFeedAsync(string feed_scope, string category_id, string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "item_group?feed_scope=" + Uri.EscapeDataString(feed_scope)+"&category_id=" + Uri.EscapeDataString(category_id)+"&date=" + Uri.EscapeDataString(date);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -918,6 +941,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -929,10 +953,17 @@ namespace MyNS
 		/// <param name="category_id">An eBay top-level category ID of the items to be returned in the feed file. The list of eBay category IDs changes over time and category IDs are not the same across all the eBay marketplaces. To get a list of the top-level categories for a marketplaces, you can use the Taxonomy API getCategoryTree method. This method retrieves the complete category tree for the marketplace. The top-level categories are identified by the categoryTreeNodeLevel field. For example: &nbsp;&nbsp;&quot;categoryTreeNodeLevel&quot;: 1 For details see Get Categories for Buy APIs. Restriction: Must be a top-level category</param>
 		/// <param name="date">The date of the daily Item Group feed file (feed_scope=NEWLY_LISTED) you want. The date is required only for the daily Item Group feed file. If you specify a date for the Item Group Bootstrap file (feed_scope=ALL_ACTIVE), the date is ignored and the latest file is returned. The date the Item Group Bootstrap feed file was generated is returned in the Last-Modified response header. The Item Group feed files are generated every day and there are 14 daily files available. There is a 48 hour latency when generating the files. This means on July 10, the latest feed file you can download is July 8. Note: The generated files are stored using MST (US Mountain Standard Time), which is -7 hours UTC time. Format: yyyyMMdd Requirement: Requirements: Required only when feed_scope=NEWLY_LISTED Must be within 3-14 days in the past</param>
 		/// <returns>Success</returns>
-		public void GetItemGroupFeed(string feed_scope, string category_id, string date)
+		public void GetItemGroupFeed(string feed_scope, string category_id, string date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "item_group?feed_scope=" + Uri.EscapeDataString(feed_scope)+"&category_id=" + Uri.EscapeDataString(category_id)+"&date=" + Uri.EscapeDataString(date);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -940,6 +971,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -970,10 +1002,17 @@ namespace MyNS
 		/// <param name="category_id">An eBay top-level category ID of the items to be returned in the feed file. The list of eBay category IDs changes over time and category IDs are not the same across all the eBay marketplaces. To get a list of the top-level categories for a marketplace, you can use the Taxonomy API getCategoryTree method. This method retrieves the complete category tree for the marketplace. The top-level categories are identified by the categoryTreeNodeLevel field. For example: &nbsp;&nbsp;&quot;categoryTreeNodeLevel&quot;: 1 For details see Get Categories for Buy APIs. Restriction: Must be a top-level category</param>
 		/// <param name="snapshot_date">The date and hour of the snapshot feed file you want. Each file contains the items that changed within the hour in the specified category. So, the 9AM file contains the items that changed between 9AM and 9:59AM on the day specified. It takes 2 hours to generate a snapshot file, which means to get the file for 9AM the earliest you could submit the call is at 11AM. There are 7 days of Hourly Snapshot feed files available. Note: The Feed API uses GMT, so you must convert your local time to GMT. For example, if you lived in California and wanted the September 15th 7pm file, you would submit the following call: item_snapshot?category_id=625&amp;snapshot_date=2017-09-16T02:00:00.000Z Format: UTC format (yyyy-MM-ddThh:00:00.000Z) Files are generated on the hour, so minutes and seconds are always zeros.</param>
 		/// <returns>Success</returns>
-		public async Task GetItemSnapshotFeedAsync(string category_id, string snapshot_date)
+		public async Task GetItemSnapshotFeedAsync(string category_id, string snapshot_date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "item_snapshot?category_id=" + Uri.EscapeDataString(category_id)+"&snapshot_date=" + Uri.EscapeDataString(snapshot_date);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -981,6 +1020,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -991,10 +1031,17 @@ namespace MyNS
 		/// <param name="category_id">An eBay top-level category ID of the items to be returned in the feed file. The list of eBay category IDs changes over time and category IDs are not the same across all the eBay marketplaces. To get a list of the top-level categories for a marketplace, you can use the Taxonomy API getCategoryTree method. This method retrieves the complete category tree for the marketplace. The top-level categories are identified by the categoryTreeNodeLevel field. For example: &nbsp;&nbsp;&quot;categoryTreeNodeLevel&quot;: 1 For details see Get Categories for Buy APIs. Restriction: Must be a top-level category</param>
 		/// <param name="snapshot_date">The date and hour of the snapshot feed file you want. Each file contains the items that changed within the hour in the specified category. So, the 9AM file contains the items that changed between 9AM and 9:59AM on the day specified. It takes 2 hours to generate a snapshot file, which means to get the file for 9AM the earliest you could submit the call is at 11AM. There are 7 days of Hourly Snapshot feed files available. Note: The Feed API uses GMT, so you must convert your local time to GMT. For example, if you lived in California and wanted the September 15th 7pm file, you would submit the following call: item_snapshot?category_id=625&amp;snapshot_date=2017-09-16T02:00:00.000Z Format: UTC format (yyyy-MM-ddThh:00:00.000Z) Files are generated on the hour, so minutes and seconds are always zeros.</param>
 		/// <returns>Success</returns>
-		public void GetItemSnapshotFeed(string category_id, string snapshot_date)
+		public void GetItemSnapshotFeed(string category_id, string snapshot_date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "item_snapshot?category_id=" + Uri.EscapeDataString(category_id)+"&snapshot_date=" + Uri.EscapeDataString(snapshot_date);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1002,6 +1049,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

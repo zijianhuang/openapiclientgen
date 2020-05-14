@@ -236,10 +236,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="item_id">The eBay RESTful identifier of an item that you want the buyer's bidding information. This ID is returned by the Browse and Feed API methods. RESTful Item ID example: v1|272394640372|0 For more information about item ID for RESTful APIs, see the Legacy API compatibility section of the Buy APIs Overview. Restriction: The buyer must have placed a bid for this item.</param>
 		/// <returns>OK</returns>
-		public async Task<Bidding> GetBiddingAsync(string item_id)
+		public async Task<Bidding> GetBiddingAsync(string item_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bidding/"+Uri.EscapeDataString(item_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -253,6 +260,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -262,10 +270,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="item_id">The eBay RESTful identifier of an item that you want the buyer's bidding information. This ID is returned by the Browse and Feed API methods. RESTful Item ID example: v1|272394640372|0 For more information about item ID for RESTful APIs, see the Legacy API compatibility section of the Buy APIs Overview. Restriction: The buyer must have placed a bid for this item.</param>
 		/// <returns>OK</returns>
-		public Bidding GetBidding(string item_id)
+		public Bidding GetBidding(string item_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bidding/"+Uri.EscapeDataString(item_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -280,6 +295,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -288,15 +304,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="item_id">The eBay RESTful identifier of an item you want to bid on. This ID is returned by the Browse and Feed API methods. RESTful Item ID Example: v1|272394640372|0 For more information about item ID for RESTful APIs, see the Legacy API compatibility section of the Buy APIs Overview.</param>
 		/// <returns>OK</returns>
-		public async Task<PlaceProxyBidResponse> PlaceProxyBidAsync(string item_id, PlaceProxyBidRequest requestBody)
+		public async Task<PlaceProxyBidResponse> PlaceProxyBidAsync(string item_id, PlaceProxyBidRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bidding/"+Uri.EscapeDataString(item_id)+"/place_proxy_bid";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -312,6 +336,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -320,15 +345,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="item_id">The eBay RESTful identifier of an item you want to bid on. This ID is returned by the Browse and Feed API methods. RESTful Item ID Example: v1|272394640372|0 For more information about item ID for RESTful APIs, see the Legacy API compatibility section of the Buy APIs Overview.</param>
 		/// <returns>OK</returns>
-		public PlaceProxyBidResponse PlaceProxyBid(string item_id, PlaceProxyBidRequest requestBody)
+		public PlaceProxyBidResponse PlaceProxyBid(string item_id, PlaceProxyBidRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bidding/"+Uri.EscapeDataString(item_id)+"/place_proxy_bid";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -342,6 +375,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}

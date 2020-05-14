@@ -65,10 +65,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="limit">How many items to return at one time (max 100)</param>
 		/// <returns>A paged array of pets</returns>
-		public async Task<Pet[]> ListPetsAsync(int limit)
+		public async Task<Pet[]> ListPetsAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets?limit="+limit;
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -82,6 +89,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -91,10 +99,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="limit">How many items to return at one time (max 100)</param>
 		/// <returns>A paged array of pets</returns>
-		public Pet[] ListPets(int limit)
+		public Pet[] ListPets(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets?limit="+limit;
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -109,16 +124,19 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
 		/// Create a pet
 		/// CreatePets pets
 		/// </summary>
-		public async Task CreatePetsAsync()
+		public async Task CreatePetsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets";
-			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -127,16 +145,19 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
 		/// Create a pet
 		/// CreatePets pets
 		/// </summary>
-		public void CreatePets()
+		public void CreatePets(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets";
-			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -144,6 +165,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -153,10 +175,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="petId">The id of the pet to retrieve</param>
 		/// <returns>Expected response to a valid request</returns>
-		public async Task<Pet> ShowPetByIdAsync(string petId)
+		public async Task<Pet> ShowPetByIdAsync(string petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets/"+Uri.EscapeDataString(petId);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -171,6 +200,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -179,10 +209,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="petId">The id of the pet to retrieve</param>
 		/// <returns>Expected response to a valid request</returns>
-		public Pet ShowPetById(string petId)
+		public Pet ShowPetById(string petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets/"+Uri.EscapeDataString(petId);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -196,6 +233,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

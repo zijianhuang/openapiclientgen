@@ -1298,10 +1298,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="marketplace_id">This query parameter specifies the eBay marketplace of the policies you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <returns>Success</returns>
-		public async Task<FulfillmentPolicyResponse> GetFulfillmentPoliciesAsync(string marketplace_id)
+		public async Task<FulfillmentPolicyResponse> GetFulfillmentPoliciesAsync(string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1315,6 +1322,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -1324,10 +1332,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="marketplace_id">This query parameter specifies the eBay marketplace of the policies you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <returns>Success</returns>
-		public FulfillmentPolicyResponse GetFulfillmentPolicies(string marketplace_id)
+		public FulfillmentPolicyResponse GetFulfillmentPolicies(string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1342,6 +1357,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1349,15 +1365,23 @@ namespace MyNS
 		/// CreateFulfillmentPolicy fulfillment_policy/
 		/// </summary>
 		/// <param name="requestBody">Request to create a seller account fulfillment policy.</param>
-		public async Task CreateFulfillmentPolicyAsync(FulfillmentPolicyRequest requestBody)
+		public async Task CreateFulfillmentPolicyAsync(FulfillmentPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1367,6 +1391,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1374,15 +1399,23 @@ namespace MyNS
 		/// CreateFulfillmentPolicy fulfillment_policy/
 		/// </summary>
 		/// <param name="requestBody">Request to create a seller account fulfillment policy.</param>
-		public void CreateFulfillmentPolicy(FulfillmentPolicyRequest requestBody)
+		public void CreateFulfillmentPolicy(FulfillmentPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1390,6 +1423,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -1400,10 +1434,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public async Task<FulfillmentPolicy> GetFulfillmentPolicyAsync(string fulfillmentPolicyId)
+		public async Task<FulfillmentPolicy> GetFulfillmentPolicyAsync(string fulfillmentPolicyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1418,6 +1459,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1426,10 +1468,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public FulfillmentPolicy GetFulfillmentPolicy(string fulfillmentPolicyId)
+		public FulfillmentPolicy GetFulfillmentPolicy(string fulfillmentPolicyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1444,6 +1493,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1453,15 +1503,23 @@ namespace MyNS
 		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy you want to update.</param>
 		/// <param name="requestBody">Fulfillment policy request</param>
 		/// <returns>OK</returns>
-		public async Task<SetFulfillmentPolicyResponse> UpdateFulfillmentPolicyAsync(string fulfillmentPolicyId, FulfillmentPolicyRequest requestBody)
+		public async Task<SetFulfillmentPolicyResponse> UpdateFulfillmentPolicyAsync(string fulfillmentPolicyId, FulfillmentPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1477,6 +1535,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1486,15 +1545,23 @@ namespace MyNS
 		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy you want to update.</param>
 		/// <param name="requestBody">Fulfillment policy request</param>
 		/// <returns>OK</returns>
-		public SetFulfillmentPolicyResponse UpdateFulfillmentPolicy(string fulfillmentPolicyId, FulfillmentPolicyRequest requestBody)
+		public SetFulfillmentPolicyResponse UpdateFulfillmentPolicy(string fulfillmentPolicyId, FulfillmentPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1510,24 +1577,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-		
-		/// <summary>
-		/// This method deletes a fulfillment policy. Supply the ID of the policy you want to delete in the fulfillmentPolicyId path parameter. Note that you cannot delete the default fulfillment policy.
-		/// DeleteFulfillmentPolicy fulfillment_policy/{fulfillmentPolicyId}
-		/// </summary>
-		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy to delete.</param>
-		public async Task DeleteFulfillmentPolicyAsync(string fulfillmentPolicyId)
-		{
-			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
-			var responseMessage = await client.DeleteAsync(requestUri);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -1536,10 +1585,17 @@ namespace MyNS
 		/// DeleteFulfillmentPolicy fulfillment_policy/{fulfillmentPolicyId}
 		/// </summary>
 		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy to delete.</param>
-		public void DeleteFulfillmentPolicy(string fulfillmentPolicyId)
+		public async Task DeleteFulfillmentPolicyAsync(string fulfillmentPolicyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1547,6 +1603,34 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This method deletes a fulfillment policy. Supply the ID of the policy you want to delete in the fulfillmentPolicyId path parameter. Note that you cannot delete the default fulfillment policy.
+		/// DeleteFulfillmentPolicy fulfillment_policy/{fulfillmentPolicyId}
+		/// </summary>
+		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy to delete.</param>
+		public void DeleteFulfillmentPolicy(string fulfillmentPolicyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -1557,10 +1641,17 @@ namespace MyNS
 		/// <param name="marketplace_id">This query parameter specifies the eBay marketplace of the policy you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <param name="name">This query parameter specifies the user-defined name of the fulfillment policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public async Task<FulfillmentPolicy> GetFulfillmentPolicyByNameAsync(string marketplace_id, string name)
+		public async Task<FulfillmentPolicy> GetFulfillmentPolicyByNameAsync(string marketplace_id, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1575,6 +1666,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1584,10 +1676,17 @@ namespace MyNS
 		/// <param name="marketplace_id">This query parameter specifies the eBay marketplace of the policy you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <param name="name">This query parameter specifies the user-defined name of the fulfillment policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public FulfillmentPolicy GetFulfillmentPolicyByName(string marketplace_id, string name)
+		public FulfillmentPolicy GetFulfillmentPolicyByName(string marketplace_id, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1601,6 +1700,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -1630,10 +1730,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="marketplace_id">This query parameter specifies the eBay marketplace of the policies you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <returns>Success</returns>
-		public async Task<PaymentPolicyResponse> GetPaymentPoliciesAsync(string marketplace_id)
+		public async Task<PaymentPolicyResponse> GetPaymentPoliciesAsync(string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1647,6 +1754,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -1656,10 +1764,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="marketplace_id">This query parameter specifies the eBay marketplace of the policies you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <returns>Success</returns>
-		public PaymentPolicyResponse GetPaymentPolicies(string marketplace_id)
+		public PaymentPolicyResponse GetPaymentPolicies(string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1674,6 +1789,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1681,15 +1797,23 @@ namespace MyNS
 		/// CreatePaymentPolicy payment_policy/
 		/// </summary>
 		/// <param name="requestBody">Payment policy request</param>
-		public async Task CreatePaymentPolicyAsync(PaymentPolicyRequest requestBody)
+		public async Task CreatePaymentPolicyAsync(PaymentPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1699,6 +1823,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1706,15 +1831,23 @@ namespace MyNS
 		/// CreatePaymentPolicy payment_policy/
 		/// </summary>
 		/// <param name="requestBody">Payment policy request</param>
-		public void CreatePaymentPolicy(PaymentPolicyRequest requestBody)
+		public void CreatePaymentPolicy(PaymentPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1722,6 +1855,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -1732,10 +1866,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public async Task<PaymentPolicy> GetPaymentPolicyAsync(string payment_policy_id)
+		public async Task<PaymentPolicy> GetPaymentPolicyAsync(string payment_policy_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1750,6 +1891,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1758,10 +1900,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public PaymentPolicy GetPaymentPolicy(string payment_policy_id)
+		public PaymentPolicy GetPaymentPolicy(string payment_policy_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1776,6 +1925,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1785,15 +1935,23 @@ namespace MyNS
 		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to update.</param>
 		/// <param name="requestBody">Payment policy request</param>
 		/// <returns>OK</returns>
-		public async Task<SetPaymentPolicyResponse> UpdatePaymentPolicyAsync(string payment_policy_id, PaymentPolicyRequest requestBody)
+		public async Task<SetPaymentPolicyResponse> UpdatePaymentPolicyAsync(string payment_policy_id, PaymentPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1809,6 +1967,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1818,15 +1977,23 @@ namespace MyNS
 		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to update.</param>
 		/// <param name="requestBody">Payment policy request</param>
 		/// <returns>OK</returns>
-		public SetPaymentPolicyResponse UpdatePaymentPolicy(string payment_policy_id, PaymentPolicyRequest requestBody)
+		public SetPaymentPolicyResponse UpdatePaymentPolicy(string payment_policy_id, PaymentPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1842,24 +2009,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-		
-		/// <summary>
-		/// This method deletes a payment policy. Supply the ID of the policy you want to delete in the paymentPolicyId path parameter. Note that you cannot delete the default payment policy.
-		/// DeletePaymentPolicy payment_policy/{payment_policy_id}
-		/// </summary>
-		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to delete.</param>
-		public async Task DeletePaymentPolicyAsync(string payment_policy_id)
-		{
-			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
-			var responseMessage = await client.DeleteAsync(requestUri);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -1868,10 +2017,17 @@ namespace MyNS
 		/// DeletePaymentPolicy payment_policy/{payment_policy_id}
 		/// </summary>
 		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to delete.</param>
-		public void DeletePaymentPolicy(string payment_policy_id)
+		public async Task DeletePaymentPolicyAsync(string payment_policy_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1879,6 +2035,34 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This method deletes a payment policy. Supply the ID of the policy you want to delete in the paymentPolicyId path parameter. Note that you cannot delete the default payment policy.
+		/// DeletePaymentPolicy payment_policy/{payment_policy_id}
+		/// </summary>
+		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to delete.</param>
+		public void DeletePaymentPolicy(string payment_policy_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -1889,10 +2073,17 @@ namespace MyNS
 		/// <param name="marketplace_id">This query parameter specifies the eBay marketplace of the policy you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <param name="name">This query parameter specifies the user-defined name of the payment policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public async Task<PaymentPolicy> GetPaymentPolicyByNameAsync(string marketplace_id, string name)
+		public async Task<PaymentPolicy> GetPaymentPolicyByNameAsync(string marketplace_id, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1907,6 +2098,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1916,10 +2108,17 @@ namespace MyNS
 		/// <param name="marketplace_id">This query parameter specifies the eBay marketplace of the policy you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <param name="name">This query parameter specifies the user-defined name of the payment policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public PaymentPolicy GetPaymentPolicyByName(string marketplace_id, string name)
+		public PaymentPolicy GetPaymentPolicyByName(string marketplace_id, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1933,6 +2132,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -1963,10 +2163,17 @@ namespace MyNS
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace of the payment program for which you want to retrieve the seller's status.</param>
 		/// <param name="payments_program_type">This path parameter specifies the payments program whose status is returned by the call. Currently the only supported payments program is EBAY_PAYMENTS. For details on the program, see Payments Terms of Use.</param>
 		/// <returns>Success</returns>
-		public async Task<PaymentsProgramResponse> GetPaymentsProgramAsync(string marketplace_id, string payments_program_type)
+		public async Task<PaymentsProgramResponse> GetPaymentsProgramAsync(string marketplace_id, string payments_program_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payments_program/"+Uri.EscapeDataString(marketplace_id)+"/"+Uri.EscapeDataString(payments_program_type);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1981,6 +2188,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1990,10 +2198,17 @@ namespace MyNS
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace of the payment program for which you want to retrieve the seller's status.</param>
 		/// <param name="payments_program_type">This path parameter specifies the payments program whose status is returned by the call. Currently the only supported payments program is EBAY_PAYMENTS. For details on the program, see Payments Terms of Use.</param>
 		/// <returns>Success</returns>
-		public PaymentsProgramResponse GetPaymentsProgram(string marketplace_id, string payments_program_type)
+		public PaymentsProgramResponse GetPaymentsProgram(string marketplace_id, string payments_program_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "payments_program/"+Uri.EscapeDataString(marketplace_id)+"/"+Uri.EscapeDataString(payments_program_type);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2007,6 +2222,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -2035,10 +2251,17 @@ namespace MyNS
 		/// GetPrivileges privilege/
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<SellingPrivileges> GetPrivilegesAsync()
+		public async Task<SellingPrivileges> GetPrivilegesAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "privilege/";
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2053,6 +2276,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2060,10 +2284,17 @@ namespace MyNS
 		/// GetPrivileges privilege/
 		/// </summary>
 		/// <returns>Success</returns>
-		public SellingPrivileges GetPrivileges()
+		public SellingPrivileges GetPrivileges(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "privilege/";
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2077,6 +2308,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -2105,10 +2337,17 @@ namespace MyNS
 		/// GetOptedInPrograms program/get_opted_in_programs
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<Programs> GetOptedInProgramsAsync()
+		public async Task<Programs> GetOptedInProgramsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "program/get_opted_in_programs";
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2122,6 +2361,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -2130,10 +2370,17 @@ namespace MyNS
 		/// GetOptedInPrograms program/get_opted_in_programs
 		/// </summary>
 		/// <returns>Success</returns>
-		public Programs GetOptedInPrograms()
+		public Programs GetOptedInPrograms(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "program/get_opted_in_programs";
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2148,6 +2395,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2156,15 +2404,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Program being opted-in to.</param>
 		/// <returns>Success</returns>
-		public async Task<string> OptInToProgramAsync(Program requestBody)
+		public async Task<string> OptInToProgramAsync(Program requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "program/opt_in";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2179,6 +2435,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2187,15 +2444,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Program being opted-in to.</param>
 		/// <returns>Success</returns>
-		public string OptInToProgram(Program requestBody)
+		public string OptInToProgram(Program requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "program/opt_in";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2210,6 +2475,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2218,15 +2484,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Program being opted-out of.</param>
 		/// <returns>Success</returns>
-		public async Task<string> OptOutOfProgramAsync(Program requestBody)
+		public async Task<string> OptOutOfProgramAsync(Program requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "program/opt_out";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2241,6 +2515,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2249,15 +2524,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Program being opted-out of.</param>
 		/// <returns>Success</returns>
-		public string OptOutOfProgram(Program requestBody)
+		public string OptOutOfProgram(Program requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "program/opt_out";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2270,6 +2553,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2300,10 +2584,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="country_code">This query parameter specifies the two-letter ISO 3166-1 Alpha-2 code of country for which you want shipping-rate table information. If you do not specify a county code, the request returns all the seller-defined rate tables. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/CountryCodeEnum.html</param>
 		/// <returns>Success</returns>
-		public async Task<RateTableResponse> GetRateTablesAsync(string country_code)
+		public async Task<RateTableResponse> GetRateTablesAsync(string country_code, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "rate_table/?country_code=" + Uri.EscapeDataString(country_code);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2318,6 +2609,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2326,10 +2618,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="country_code">This query parameter specifies the two-letter ISO 3166-1 Alpha-2 code of country for which you want shipping-rate table information. If you do not specify a county code, the request returns all the seller-defined rate tables. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/CountryCodeEnum.html</param>
 		/// <returns>Success</returns>
-		public RateTableResponse GetRateTables(string country_code)
+		public RateTableResponse GetRateTables(string country_code, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "rate_table/?country_code=" + Uri.EscapeDataString(country_code);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2343,6 +2642,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -2372,10 +2672,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="marketplace_id">This query parameter specifies the ID of the eBay marketplace of the policy you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <returns>Success</returns>
-		public async Task<ReturnPolicyResponse> GetReturnPoliciesAsync(string marketplace_id)
+		public async Task<ReturnPolicyResponse> GetReturnPoliciesAsync(string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2389,6 +2696,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -2398,10 +2706,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="marketplace_id">This query parameter specifies the ID of the eBay marketplace of the policy you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <returns>Success</returns>
-		public ReturnPolicyResponse GetReturnPolicies(string marketplace_id)
+		public ReturnPolicyResponse GetReturnPolicies(string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2416,6 +2731,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2423,15 +2739,23 @@ namespace MyNS
 		/// CreateReturnPolicy return_policy/
 		/// </summary>
 		/// <param name="requestBody">Return policy request</param>
-		public async Task CreateReturnPolicyAsync(ReturnPolicyRequest requestBody)
+		public async Task CreateReturnPolicyAsync(ReturnPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2441,6 +2765,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2448,15 +2773,23 @@ namespace MyNS
 		/// CreateReturnPolicy return_policy/
 		/// </summary>
 		/// <param name="requestBody">Return policy request</param>
-		public void CreateReturnPolicy(ReturnPolicyRequest requestBody)
+		public void CreateReturnPolicy(ReturnPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2464,6 +2797,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2474,10 +2808,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="return_policy_id">This path parameter specifies the of the return policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public async Task<ReturnPolicy> GetReturnPolicyAsync(string return_policy_id)
+		public async Task<ReturnPolicy> GetReturnPolicyAsync(string return_policy_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2492,6 +2833,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2500,10 +2842,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="return_policy_id">This path parameter specifies the of the return policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public ReturnPolicy GetReturnPolicy(string return_policy_id)
+		public ReturnPolicy GetReturnPolicy(string return_policy_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2518,6 +2867,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2527,15 +2877,23 @@ namespace MyNS
 		/// <param name="return_policy_id">This path parameter specifies the ID of the return policy you want to update.</param>
 		/// <param name="requestBody">Container for a return policy request.</param>
 		/// <returns>OK</returns>
-		public async Task<SetReturnPolicyResponse> UpdateReturnPolicyAsync(string return_policy_id, ReturnPolicyRequest requestBody)
+		public async Task<SetReturnPolicyResponse> UpdateReturnPolicyAsync(string return_policy_id, ReturnPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2551,6 +2909,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2560,15 +2919,23 @@ namespace MyNS
 		/// <param name="return_policy_id">This path parameter specifies the ID of the return policy you want to update.</param>
 		/// <param name="requestBody">Container for a return policy request.</param>
 		/// <returns>OK</returns>
-		public SetReturnPolicyResponse UpdateReturnPolicy(string return_policy_id, ReturnPolicyRequest requestBody)
+		public SetReturnPolicyResponse UpdateReturnPolicy(string return_policy_id, ReturnPolicyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2584,24 +2951,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-		
-		/// <summary>
-		/// This method deletes a return policy. Supply the ID of the policy you want to delete in the returnPolicyId path parameter. Note that you cannot delete the default return policy.
-		/// DeleteReturnPolicy return_policy/{return_policy_id}
-		/// </summary>
-		/// <param name="return_policy_id">This path parameter specifies the ID of the return policy you want to delete.</param>
-		public async Task DeleteReturnPolicyAsync(string return_policy_id)
-		{
-			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
-			var responseMessage = await client.DeleteAsync(requestUri);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -2610,10 +2959,17 @@ namespace MyNS
 		/// DeleteReturnPolicy return_policy/{return_policy_id}
 		/// </summary>
 		/// <param name="return_policy_id">This path parameter specifies the ID of the return policy you want to delete.</param>
-		public void DeleteReturnPolicy(string return_policy_id)
+		public async Task DeleteReturnPolicyAsync(string return_policy_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2621,6 +2977,34 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This method deletes a return policy. Supply the ID of the policy you want to delete in the returnPolicyId path parameter. Note that you cannot delete the default return policy.
+		/// DeleteReturnPolicy return_policy/{return_policy_id}
+		/// </summary>
+		/// <param name="return_policy_id">This path parameter specifies the ID of the return policy you want to delete.</param>
+		public void DeleteReturnPolicy(string return_policy_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -2631,10 +3015,17 @@ namespace MyNS
 		/// <param name="marketplace_id">This query parameter specifies the ID of the eBay marketplace of the policy you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <param name="name">This query parameter specifies the user-defined name of the return policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public async Task<ReturnPolicy> GetReturnPolicyByNameAsync(string marketplace_id, string name)
+		public async Task<ReturnPolicy> GetReturnPolicyByNameAsync(string marketplace_id, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2649,6 +3040,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2658,10 +3050,17 @@ namespace MyNS
 		/// <param name="marketplace_id">This query parameter specifies the ID of the eBay marketplace of the policy you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html</param>
 		/// <param name="name">This query parameter specifies the user-defined name of the return policy you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public ReturnPolicy GetReturnPolicyByName(string marketplace_id, string name)
+		public ReturnPolicy GetReturnPolicyByName(string marketplace_id, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2675,6 +3074,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -2705,10 +3105,17 @@ namespace MyNS
 		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country whose tax table you want to retrieve.</param>
 		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales tax jurisdiction for the tax table entry you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public async Task<SalesTax> GetSalesTaxAsync(string countryCode, string jurisdictionId)
+		public async Task<SalesTax> GetSalesTaxAsync(string countryCode, string jurisdictionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2722,6 +3129,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -2732,10 +3140,17 @@ namespace MyNS
 		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country whose tax table you want to retrieve.</param>
 		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales tax jurisdiction for the tax table entry you want to retrieve.</param>
 		/// <returns>Success</returns>
-		public SalesTax GetSalesTax(string countryCode, string jurisdictionId)
+		public SalesTax GetSalesTax(string countryCode, string jurisdictionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2750,6 +3165,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2759,15 +3175,23 @@ namespace MyNS
 		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country for which you want to create tax table entry.</param>
 		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales-tax jurisdiction for the table entry you want to create.</param>
 		/// <param name="requestBody">A container that describes the how the sales tax is calculated.</param>
-		public async Task CreateOrReplaceSalesTaxAsync(string countryCode, string jurisdictionId, SalesTaxBase requestBody)
+		public async Task CreateOrReplaceSalesTaxAsync(string countryCode, string jurisdictionId, SalesTaxBase requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2777,6 +3201,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2786,15 +3211,52 @@ namespace MyNS
 		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country for which you want to create tax table entry.</param>
 		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales-tax jurisdiction for the table entry you want to create.</param>
 		/// <param name="requestBody">A container that describes the how the sales tax is calculated.</param>
-		public void CreateOrReplaceSalesTax(string countryCode, string jurisdictionId, SalesTaxBase requestBody)
+		public void CreateOrReplaceSalesTax(string countryCode, string jurisdictionId, SalesTaxBase requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This call deletes a tax table entry for a jurisdiction. Specify the jurisdiction to delete using the countryCode and jurisdictionId path parameters.
+		/// DeleteSalesTax sales_tax/{countryCode}/{jurisdictionId}
+		/// </summary>
+		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country whose tax table entry you want to delete.</param>
+		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales tax jurisdiction whose table entry you want to delete.</param>
+		public async Task DeleteSalesTaxAsync(string countryCode, string jurisdictionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2812,10 +3274,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country whose tax table entry you want to delete.</param>
 		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales tax jurisdiction whose table entry you want to delete.</param>
-		public async Task DeleteSalesTaxAsync(string countryCode, string jurisdictionId)
+		public void DeleteSalesTax(string countryCode, string jurisdictionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
-			var responseMessage = await client.DeleteAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2824,25 +3293,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-		}
-		
-		/// <summary>
-		/// This call deletes a tax table entry for a jurisdiction. Specify the jurisdiction to delete using the countryCode and jurisdictionId path parameters.
-		/// DeleteSalesTax sales_tax/{countryCode}/{jurisdictionId}
-		/// </summary>
-		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country whose tax table entry you want to delete.</param>
-		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales tax jurisdiction whose table entry you want to delete.</param>
-		public void DeleteSalesTax(string countryCode, string jurisdictionId)
-		{
-			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -2852,10 +3302,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="country_code">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country whose tax table you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/CountryCodeEnum.html</param>
 		/// <returns>Success</returns>
-		public async Task<SalesTaxes> GetSalesTaxesAsync(string country_code)
+		public async Task<SalesTaxes> GetSalesTaxesAsync(string country_code, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sales_tax/?country_code=" + Uri.EscapeDataString(country_code);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2870,6 +3327,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2878,10 +3336,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="country_code">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 code for the country whose tax table you want to retrieve. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/account/types/CountryCodeEnum.html</param>
 		/// <returns>Success</returns>
-		public SalesTaxes GetSalesTaxes(string country_code)
+		public SalesTaxes GetSalesTaxes(string country_code, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "sales_tax/?country_code=" + Uri.EscapeDataString(country_code);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2895,6 +3360,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

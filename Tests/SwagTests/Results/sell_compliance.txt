@@ -351,10 +351,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="compliance_type">A user passes in one or more compliance type values through this query parameter. See ComplianceTypeEnum for more information on the supported compliance types that can be passed in here. If more than one compliance type value is used, delimit these values with a comma. If no compliance type values are passed in, the listing count for all compliance types will be returned. Note: Only a canned response, with counts for all listing compliance types, is returned in the Sandbox environment. Due to this limitation, the compliance_type query parameter (if used) will not have an effect on the response.</param>
 		/// <returns>Success</returns>
-		public async Task GetListingViolationsSummaryAsync(string compliance_type)
+		public async Task GetListingViolationsSummaryAsync(string compliance_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "listing_violation_summary?compliance_type=" + Uri.EscapeDataString(compliance_type);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -362,6 +369,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -371,10 +379,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="compliance_type">A user passes in one or more compliance type values through this query parameter. See ComplianceTypeEnum for more information on the supported compliance types that can be passed in here. If more than one compliance type value is used, delimit these values with a comma. If no compliance type values are passed in, the listing count for all compliance types will be returned. Note: Only a canned response, with counts for all listing compliance types, is returned in the Sandbox environment. Due to this limitation, the compliance_type query parameter (if used) will not have an effect on the response.</param>
 		/// <returns>Success</returns>
-		public void GetListingViolationsSummary(string compliance_type)
+		public void GetListingViolationsSummary(string compliance_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "listing_violation_summary?compliance_type=" + Uri.EscapeDataString(compliance_type);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -382,6 +397,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -415,10 +431,17 @@ namespace MyNS
 		/// <param name="limit">This query parameter is used if the user wants to set a limit on the number of listing violations that are returned on one page of the result set. This parameter is used in conjunction with the offset parameter to control the pagination of the output. For example, if offset is set to 10 and limit is set to 10, the call retrieves listing violations 11 thru 20 from the collection of listing violations that match the value set in the compliance_type parameter. Note: This feature employs a zero-based index, where the first item in the list has an offset of 0. If the listing_id parameter is included in the request, this parameter will be ignored. Default: 100 Maximum: 200</param>
 		/// <param name="filter">This filter allows a user to retrieve only listings that are currently out of compliance, or only listings that are at risk of becoming out of compliance. Although other filters may be added in the future, complianceState is the only supported filter type at this time. The two compliance 'states' are OUT_OF_COMPLIANCE and AT_RISK. Below is an example of how to set up this compliance state filter. Notice that the filter type and filter value are separated with a colon (:) character, and the filter value is wrapped with curly brackets. filter=complianceState:{OUT_OF_COMPLIANCE}</param>
 		/// <returns>Success</returns>
-		public async Task GetListingViolationsAsync(string compliance_type, string offset, string listing_id, string limit, string filter)
+		public async Task GetListingViolationsAsync(string compliance_type, string offset, string listing_id, string limit, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "listing_violation?compliance_type=" + Uri.EscapeDataString(compliance_type)+"&offset=" + Uri.EscapeDataString(offset)+"&listing_id=" + Uri.EscapeDataString(listing_id)+"&limit=" + Uri.EscapeDataString(limit)+"&filter=" + Uri.EscapeDataString(filter);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -426,6 +449,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -439,34 +463,17 @@ namespace MyNS
 		/// <param name="limit">This query parameter is used if the user wants to set a limit on the number of listing violations that are returned on one page of the result set. This parameter is used in conjunction with the offset parameter to control the pagination of the output. For example, if offset is set to 10 and limit is set to 10, the call retrieves listing violations 11 thru 20 from the collection of listing violations that match the value set in the compliance_type parameter. Note: This feature employs a zero-based index, where the first item in the list has an offset of 0. If the listing_id parameter is included in the request, this parameter will be ignored. Default: 100 Maximum: 200</param>
 		/// <param name="filter">This filter allows a user to retrieve only listings that are currently out of compliance, or only listings that are at risk of becoming out of compliance. Although other filters may be added in the future, complianceState is the only supported filter type at this time. The two compliance 'states' are OUT_OF_COMPLIANCE and AT_RISK. Below is an example of how to set up this compliance state filter. Notice that the filter type and filter value are separated with a colon (:) character, and the filter value is wrapped with curly brackets. filter=complianceState:{OUT_OF_COMPLIANCE}</param>
 		/// <returns>Success</returns>
-		public void GetListingViolations(string compliance_type, string offset, string listing_id, string limit, string filter)
+		public void GetListingViolations(string compliance_type, string offset, string listing_id, string limit, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "listing_violation?compliance_type=" + Uri.EscapeDataString(compliance_type)+"&offset=" + Uri.EscapeDataString(offset)+"&listing_id=" + Uri.EscapeDataString(listing_id)+"&limit=" + Uri.EscapeDataString(limit)+"&filter=" + Uri.EscapeDataString(filter);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
-			try
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				responseMessage.EnsureSuccessStatusCodeEx();
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-		}
-		
-		/// <summary>
-		/// This call suppresses a listing violation for a specific listing. Only listing violations in the AT_RISK state (returned in the violations.complianceState field of the getListingViolations call) can be suppressed. Note: At this time, the suppressViolation call only supports the suppressing of ASPECTS_ADOPTION listing violations in the AT_RISK state. In the future, it is possible that this method can be used to suppress other listing violation types. A successful call returns a http status code of 204 Success. There is no response payload. If the call is not successful, an error code will be returned stating the issue.
-		/// SuppressViolation suppress_listing_violation
-		/// </summary>
-		/// <param name="requestBody">This type is the base request type of the SuppressViolation method.</param>
-		public async Task SuppressViolationAsync(SuppressViolationRequest requestBody)
-		{
-			var requestUri = "suppress_listing_violation";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -483,15 +490,23 @@ namespace MyNS
 		/// SuppressViolation suppress_listing_violation
 		/// </summary>
 		/// <param name="requestBody">This type is the base request type of the SuppressViolation method.</param>
-		public void SuppressViolation(SuppressViolationRequest requestBody)
+		public async Task SuppressViolationAsync(SuppressViolationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "suppress_listing_violation";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -499,6 +514,41 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This call suppresses a listing violation for a specific listing. Only listing violations in the AT_RISK state (returned in the violations.complianceState field of the getListingViolations call) can be suppressed. Note: At this time, the suppressViolation call only supports the suppressing of ASPECTS_ADOPTION listing violations in the AT_RISK state. In the future, it is possible that this method can be used to suppress other listing violation types. A successful call returns a http status code of 204 Success. There is no response payload. If the call is not successful, an error code will be returned stating the issue.
+		/// SuppressViolation suppress_listing_violation
+		/// </summary>
+		/// <param name="requestBody">This type is the base request type of the SuppressViolation method.</param>
+		public void SuppressViolation(SuppressViolationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "suppress_listing_violation";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}

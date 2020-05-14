@@ -343,10 +343,17 @@ namespace MyNS
 		/// <param name="limit">This query parameter specifies the maximum number of items to return from the result set on a page in the paginated response. Minimum: 1 &nbsp; &nbsp;Maximum: 200 Default: 10</param>
 		/// <param name="offset">This query parameter specifies the number of results to skip in the result set before returning the first result in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 results from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0</param>
 		/// <returns>Success</returns>
-		public async Task<PagedEligibleItemCollection> FindEligibleItemsAsync(string limit, string offset)
+		public async Task<PagedEligibleItemCollection> FindEligibleItemsAsync(string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "find_eligible_items?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -360,6 +367,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -370,10 +378,17 @@ namespace MyNS
 		/// <param name="limit">This query parameter specifies the maximum number of items to return from the result set on a page in the paginated response. Minimum: 1 &nbsp; &nbsp;Maximum: 200 Default: 10</param>
 		/// <param name="offset">This query parameter specifies the number of results to skip in the result set before returning the first result in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 results from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0</param>
 		/// <returns>Success</returns>
-		public PagedEligibleItemCollection FindEligibleItems(string limit, string offset)
+		public PagedEligibleItemCollection FindEligibleItems(string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "find_eligible_items?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -388,6 +403,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -396,15 +412,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Send offer to eligible items request.</param>
 		/// <returns>Success</returns>
-		public async Task<SendOfferToInterestedBuyersCollectionResponse> SendOfferToInterestedBuyersAsync(CreateOffersRequest requestBody)
+		public async Task<SendOfferToInterestedBuyersCollectionResponse> SendOfferToInterestedBuyersAsync(CreateOffersRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "send_offer_to_interested_buyers";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -420,6 +444,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -428,15 +453,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Send offer to eligible items request.</param>
 		/// <returns>Success</returns>
-		public SendOfferToInterestedBuyersCollectionResponse SendOfferToInterestedBuyers(CreateOffersRequest requestBody)
+		public SendOfferToInterestedBuyersCollectionResponse SendOfferToInterestedBuyers(CreateOffersRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "send_offer_to_interested_buyers";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -450,6 +483,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}

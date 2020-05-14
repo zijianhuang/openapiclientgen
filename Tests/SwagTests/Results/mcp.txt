@@ -1782,15 +1782,23 @@ namespace MyNS
 		/// McpBulkBillPaymentReport1Eigw mcp/bulkbillpaymentreport/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<BBSPaymentReportResponseType> McpBulkBillPaymentReport1EigwAsync(BBSReportRequestType requestBody)
+		public async Task<BBSPaymentReportResponseType> McpBulkBillPaymentReport1EigwAsync(BBSReportRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/bulkbillpaymentreport/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -1806,6 +1814,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1813,15 +1822,23 @@ namespace MyNS
 		/// McpBulkBillProcessingReport1Eigw mcp/bulkbillprocessingreport/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<BBSProcessingReportResponseType> McpBulkBillProcessingReport1EigwAsync(BBSReportRequestType requestBody)
+		public async Task<BBSProcessingReportResponseType> McpBulkBillProcessingReport1EigwAsync(BBSReportRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/bulkbillprocessingreport/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -1837,6 +1854,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1844,15 +1862,23 @@ namespace MyNS
 		/// McpBulkBillStoreForwardGeneral1Eigw mcp/bulkbillstoreforward/general/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<BulkBillStoreForwardResponseType> McpBulkBillStoreForwardGeneral1EigwAsync(BulkBillStoreForwardRequestType requestBody)
+		public async Task<BulkBillStoreForwardResponseType> McpBulkBillStoreForwardGeneral1EigwAsync(BulkBillStoreForwardRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/bulkbillstoreforward/general/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -1866,6 +1892,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -1875,15 +1902,23 @@ namespace MyNS
 		/// McpBulkBillStoreForwardPathology1Eigw mcp/bulkbillstoreforward/pathology/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<BulkBillStoreForwardResponseType> McpBulkBillStoreForwardPathology1EigwAsync(BulkBillStoreForwardRequestType requestBody)
+		public async Task<BulkBillStoreForwardResponseType> McpBulkBillStoreForwardPathology1EigwAsync(BulkBillStoreForwardRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/bulkbillstoreforward/pathology/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -1897,6 +1932,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -1906,15 +1942,23 @@ namespace MyNS
 		/// McpBulkBillStoreForwardSpecialist1Eigw mcp/bulkbillstoreforward/specialist/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<BulkBillStoreForwardResponseType> McpBulkBillStoreForwardSpecialist1EigwAsync(BulkBillStoreForwardRequestType requestBody)
+		public async Task<BulkBillStoreForwardResponseType> McpBulkBillStoreForwardSpecialist1EigwAsync(BulkBillStoreForwardRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/bulkbillstoreforward/specialist/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -1930,6 +1974,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -1937,15 +1982,23 @@ namespace MyNS
 		/// McpDvaAlliedHealthAllied1Eigw mcp/dvaalliedhealth/allied/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthAllied1EigwAsync(AlliedHealthClaimRequestType requestBody)
+		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthAllied1EigwAsync(AlliedHealthClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaalliedhealth/allied/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -1959,6 +2012,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -1968,15 +2022,23 @@ namespace MyNS
 		/// McpDvaAlliedHealthCommunityNursing1Eigw mcp/dvaalliedhealth/communitynursing/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthCommunityNursing1EigwAsync(AlliedHealthClaimRequestType requestBody)
+		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthCommunityNursing1EigwAsync(AlliedHealthClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaalliedhealth/communitynursing/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -1990,6 +2052,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -1999,15 +2062,23 @@ namespace MyNS
 		/// McpDvaAlliedHealthDental1Eigw mcp/dvaalliedhealth/dental/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthDental1EigwAsync(AlliedHealthClaimRequestType requestBody)
+		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthDental1EigwAsync(AlliedHealthClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaalliedhealth/dental/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2021,6 +2092,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2030,15 +2102,23 @@ namespace MyNS
 		/// McpDvaAlliedHealthOptical1Eigw mcp/dvaalliedhealth/optical/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthOptical1EigwAsync(AlliedHealthClaimRequestType requestBody)
+		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthOptical1EigwAsync(AlliedHealthClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaalliedhealth/optical/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2052,6 +2132,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2061,15 +2142,23 @@ namespace MyNS
 		/// McpDvaAlliedHealthPsych1Eigw mcp/dvaalliedhealth/psych/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthPsych1EigwAsync(AlliedHealthClaimRequestType requestBody)
+		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthPsych1EigwAsync(AlliedHealthClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaalliedhealth/psych/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2083,6 +2172,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2092,15 +2182,23 @@ namespace MyNS
 		/// McpDvaAlliedHealthSpeechPathology1Eigw mcp/dvaalliedhealth/speechpathology/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthSpeechPathology1EigwAsync(AlliedHealthClaimRequestType requestBody)
+		public async Task<AlliedHealthClaimResponseType> McpDvaAlliedHealthSpeechPathology1EigwAsync(AlliedHealthClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaalliedhealth/speechpathology/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2116,6 +2214,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2123,15 +2222,23 @@ namespace MyNS
 		/// McpDvaClaimGeneral1Eigw mcp/dvaclaim/general/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<DVAClaimResponseType> McpDvaClaimGeneral1EigwAsync(DVAClaimRequestType requestBody)
+		public async Task<DVAClaimResponseType> McpDvaClaimGeneral1EigwAsync(DVAClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaclaim/general/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2145,6 +2252,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2154,15 +2262,23 @@ namespace MyNS
 		/// McpDvaClaimPathology1Eigw mcp/dvaclaim/pathology/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<DVAClaimResponseType> McpDvaClaimPathology1EigwAsync(DVAClaimRequestType requestBody)
+		public async Task<DVAClaimResponseType> McpDvaClaimPathology1EigwAsync(DVAClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaclaim/pathology/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2176,6 +2292,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2185,15 +2302,23 @@ namespace MyNS
 		/// McpDvaClaimSpecialist1Eigw mcp/dvaclaim/specialist/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<DVAClaimResponseType> McpDvaClaimSpecialist1EigwAsync(DVAClaimRequestType requestBody)
+		public async Task<DVAClaimResponseType> McpDvaClaimSpecialist1EigwAsync(DVAClaimRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaclaim/specialist/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2209,6 +2334,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2216,15 +2342,23 @@ namespace MyNS
 		/// McpDvaPaymentReport1Eigw mcp/dvapaymentreport/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<DVAPaymentReportResponseType> McpDvaPaymentReport1EigwAsync(DVAReportRequestType requestBody)
+		public async Task<DVAPaymentReportResponseType> McpDvaPaymentReport1EigwAsync(DVAReportRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvapaymentreport/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2240,6 +2374,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2247,15 +2382,23 @@ namespace MyNS
 		/// McpDvaProcessingReport1Eigw mcp/dvaprocessingreport/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<DVAProcessingReportResponseType> McpDvaProcessingReport1EigwAsync(DVAReportRequestType requestBody)
+		public async Task<DVAProcessingReportResponseType> McpDvaProcessingReport1EigwAsync(DVAReportRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/dvaprocessingreport/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2271,6 +2414,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2278,15 +2422,23 @@ namespace MyNS
 		/// McpEnterpriseConcessionVerification1Eigw mcp/enterpriseconcessionverification/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<EnterpriseConcessionVerificationResponseType> McpEnterpriseConcessionVerification1EigwAsync(EnterpriseConcessionVerificationRequestType requestBody)
+		public async Task<EnterpriseConcessionVerificationResponseType> McpEnterpriseConcessionVerification1EigwAsync(EnterpriseConcessionVerificationRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/enterpriseconcessionverification/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2302,6 +2454,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2309,15 +2462,23 @@ namespace MyNS
 		/// McpEnterprisePatientVerification1Eigw mcp/enterprisepatientverification/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<EnterprisePatientVerificationResponseType> McpEnterprisePatientVerification1EigwAsync(EnterprisePatientVerificationRequestType requestBody)
+		public async Task<EnterprisePatientVerificationResponseType> McpEnterprisePatientVerification1EigwAsync(EnterprisePatientVerificationRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/enterprisepatientverification/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2333,6 +2494,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2340,15 +2502,23 @@ namespace MyNS
 		/// McpEnterpriseVeteranVerification1Eigw mcp/enterpriseveteranverification/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<EnterpriseVeteranVerificationResponseType> McpEnterpriseVeteranVerification1EigwAsync(EnterpriseVeteranVerificationRequestType requestBody)
+		public async Task<EnterpriseVeteranVerificationResponseType> McpEnterpriseVeteranVerification1EigwAsync(EnterpriseVeteranVerificationRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/enterpriseveteranverification/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2364,6 +2534,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2371,15 +2542,23 @@ namespace MyNS
 		/// McpPatientClaimInteractiveGeneral1Eigw mcp/patientclaiminteractive/general/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<PatientClaimInteractiveResponseType> McpPatientClaimInteractiveGeneral1EigwAsync(PatientClaimInteractiveRequestType requestBody)
+		public async Task<PatientClaimInteractiveResponseType> McpPatientClaimInteractiveGeneral1EigwAsync(PatientClaimInteractiveRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/patientclaiminteractive/general/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2393,6 +2572,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2402,15 +2582,23 @@ namespace MyNS
 		/// McpPatientClaimInteractivePathology1Eigw mcp/patientclaiminteractive/pathology/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<PatientClaimInteractiveResponseType> McpPatientClaimInteractivePathology1EigwAsync(PatientClaimInteractiveRequestType requestBody)
+		public async Task<PatientClaimInteractiveResponseType> McpPatientClaimInteractivePathology1EigwAsync(PatientClaimInteractiveRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/patientclaiminteractive/pathology/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2424,6 +2612,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2433,15 +2622,23 @@ namespace MyNS
 		/// McpPatientClaimInteractiveSpecialist1Eigw mcp/patientclaiminteractive/specialist/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<PatientClaimInteractiveResponseType> McpPatientClaimInteractiveSpecialist1EigwAsync(PatientClaimInteractiveRequestType requestBody)
+		public async Task<PatientClaimInteractiveResponseType> McpPatientClaimInteractiveSpecialist1EigwAsync(PatientClaimInteractiveRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/patientclaiminteractive/specialist/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2457,6 +2654,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2464,15 +2662,23 @@ namespace MyNS
 		/// McpPatientVerification1Eigw mcp/patientverification/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<PatientVerificationResponseType> McpPatientVerification1EigwAsync(PatientVerificationRequestType requestBody)
+		public async Task<PatientVerificationResponseType> McpPatientVerification1EigwAsync(PatientVerificationRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/patientverification/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2486,6 +2692,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2495,15 +2702,23 @@ namespace MyNS
 		/// McpPatientVerificationHf1Eigw mcp/patientverification/hf/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<PatientVerificationResponseType> McpPatientVerificationHf1EigwAsync(PatientVerificationRequestType requestBody)
+		public async Task<PatientVerificationResponseType> McpPatientVerificationHf1EigwAsync(PatientVerificationRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/patientverification/hf/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2517,6 +2732,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2526,15 +2742,23 @@ namespace MyNS
 		/// McpPatientVerificationMedicare1Eigw mcp/patientverification/medicare/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<PatientVerificationResponseType> McpPatientVerificationMedicare1EigwAsync(PatientVerificationRequestType requestBody)
+		public async Task<PatientVerificationResponseType> McpPatientVerificationMedicare1EigwAsync(PatientVerificationRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/patientverification/medicare/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2550,6 +2774,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2557,15 +2782,23 @@ namespace MyNS
 		/// McpRetrieveReportEcv1Eigw mcp/enterpriseconcessionverification/retrievereport/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<RetrieveReportResponseType> McpRetrieveReportEcv1EigwAsync(RetrieveReportRequestType requestBody)
+		public async Task<RetrieveReportResponseType> McpRetrieveReportEcv1EigwAsync(RetrieveReportRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/enterpriseconcessionverification/retrievereport/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2579,6 +2812,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2588,15 +2822,23 @@ namespace MyNS
 		/// McpRetrieveReportEpv1Eigw mcp/enterprisepatientverification/retrievereport/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<RetrieveReportResponseType> McpRetrieveReportEpv1EigwAsync(RetrieveReportRequestType requestBody)
+		public async Task<RetrieveReportResponseType> McpRetrieveReportEpv1EigwAsync(RetrieveReportRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/enterprisepatientverification/retrievereport/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2610,6 +2852,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2619,15 +2862,23 @@ namespace MyNS
 		/// McpRetrieveReportEvv1Eigw mcp/enterpriseveteranverification/retrievereport/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<RetrieveReportResponseType> McpRetrieveReportEvv1EigwAsync(RetrieveReportRequestType requestBody)
+		public async Task<RetrieveReportResponseType> McpRetrieveReportEvv1EigwAsync(RetrieveReportRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/enterpriseveteranverification/retrievereport/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2643,6 +2894,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2650,15 +2902,23 @@ namespace MyNS
 		/// McpSameDayDelete1Eigw mcp/samedaydelete/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<SameDayDeleteResponseType> McpSameDayDelete1EigwAsync(SameDayDeleteRequestType requestBody)
+		public async Task<SameDayDeleteResponseType> McpSameDayDelete1EigwAsync(SameDayDeleteRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/samedaydelete/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2674,6 +2934,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2681,15 +2942,23 @@ namespace MyNS
 		/// McpStatusReport1Eigw mcp/statusreport/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<StatusReportResponseType> McpStatusReport1EigwAsync(StatusReportRequestType requestBody)
+		public async Task<StatusReportResponseType> McpStatusReport1EigwAsync(StatusReportRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/statusreport/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2705,6 +2974,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2712,15 +2982,23 @@ namespace MyNS
 		/// McpVeteranVerification1Eigw mcp/veteranverification/v1
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<VeteranVerificationResponseType> McpVeteranVerification1EigwAsync(VeteranVerificationRequestType requestBody)
+		public async Task<VeteranVerificationResponseType> McpVeteranVerification1EigwAsync(VeteranVerificationRequestType requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "mcp/veteranverification/v1";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -2734,6 +3012,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}

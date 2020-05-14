@@ -289,10 +289,17 @@ namespace MyNS
 		/// <param name="gtin">The unique Global Trade Item Number of the item as defined by http://www.gtin.info. This can be a UPC (Universal Product Code), EAN (European Article Number), or an ISBN (International Standard Book Number value. Required: You must specify one epid, or one gtin, or one brand plus mpn pair.</param>
 		/// <param name="mpn">The manufacturer part number of the product. Restriction: This must be used along with brand. Required: You must specify one epid, or one gtin, or one brand plus mpn pair.</param>
 		/// <returns>This call returns products that were also bought when shoppers bought the product specified in the request. Showing 'also bought' products inspires up-selling and cross-selling. You specify the product by one of the following: epid - eBay Product ID gtin - Global Trade Item Number (UPC, ISBN, EAN) brand (brand name, such as Nike) plus mpn (Manufacturer's Part Number) Restrictions For a list of supported sites and other restrictions, see API Restrictions. Note: A maximum of 12 products are returned. The call will return up to 12 products, but it can be less than 12. If the number of products found is less than 12, the call will return all of the products matching the criteria.</returns>
-		public async Task<BestSellingProductResponse> GetAlsoBoughtByProductAsync(string brand, string epid, string gtin, string mpn)
+		public async Task<BestSellingProductResponse> GetAlsoBoughtByProductAsync(string brand, string epid, string gtin, string mpn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "merchandised_product/get_also_bought_products?brand=" + Uri.EscapeDataString(brand)+"&epid=" + Uri.EscapeDataString(epid)+"&gtin=" + Uri.EscapeDataString(gtin)+"&mpn=" + Uri.EscapeDataString(mpn);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -306,6 +313,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -318,10 +326,17 @@ namespace MyNS
 		/// <param name="gtin">The unique Global Trade Item Number of the item as defined by http://www.gtin.info. This can be a UPC (Universal Product Code), EAN (European Article Number), or an ISBN (International Standard Book Number value. Required: You must specify one epid, or one gtin, or one brand plus mpn pair.</param>
 		/// <param name="mpn">The manufacturer part number of the product. Restriction: This must be used along with brand. Required: You must specify one epid, or one gtin, or one brand plus mpn pair.</param>
 		/// <returns>This call returns products that were also bought when shoppers bought the product specified in the request. Showing 'also bought' products inspires up-selling and cross-selling. You specify the product by one of the following: epid - eBay Product ID gtin - Global Trade Item Number (UPC, ISBN, EAN) brand (brand name, such as Nike) plus mpn (Manufacturer's Part Number) Restrictions For a list of supported sites and other restrictions, see API Restrictions. Note: A maximum of 12 products are returned. The call will return up to 12 products, but it can be less than 12. If the number of products found is less than 12, the call will return all of the products matching the criteria.</returns>
-		public BestSellingProductResponse GetAlsoBoughtByProduct(string brand, string epid, string gtin, string mpn)
+		public BestSellingProductResponse GetAlsoBoughtByProduct(string brand, string epid, string gtin, string mpn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "merchandised_product/get_also_bought_products?brand=" + Uri.EscapeDataString(brand)+"&epid=" + Uri.EscapeDataString(epid)+"&gtin=" + Uri.EscapeDataString(gtin)+"&mpn=" + Uri.EscapeDataString(mpn);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -336,6 +351,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -347,10 +363,17 @@ namespace MyNS
 		/// <param name="gtin">The unique Global Trade Item Number of the item as defined by http://www.gtin.info. This can be a UPC (Universal Product Code), EAN (European Article Number), or an ISBN (International Standard Book Number value. Required: You must specify one epid, or one gtin, or one brand plus mpn pair.</param>
 		/// <param name="mpn">The manufacturer part number of the product. Restriction: This must be used along with brand.</param>
 		/// <returns>This call returns products that were also viewed when shoppers viewed the product specified in the request. Showing 'also viewed' products encourages up-selling and cross-selling. You specify the product by one of the following: epid - eBay Product ID gtin - Global Trade Item Number (UPC, ISBN, EAN) brand (brand name, such as Nike) plus mpn (Manufacturer's Part Number) Restrictions For a list of supported sites and other restrictions, see API Restrictions. Note: A maximum of 12 products are returned. The call will return up to 12 products, but it can be less than 12. If the number of products found is less than 12, the call will return all of the products matching the criteria.</returns>
-		public async Task<BestSellingProductResponse> GetAlsoViewedByProductAsync(string brand, string epid, string gtin, string mpn)
+		public async Task<BestSellingProductResponse> GetAlsoViewedByProductAsync(string brand, string epid, string gtin, string mpn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "merchandised_product/get_also_viewed_products?brand=" + Uri.EscapeDataString(brand)+"&epid=" + Uri.EscapeDataString(epid)+"&gtin=" + Uri.EscapeDataString(gtin)+"&mpn=" + Uri.EscapeDataString(mpn);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -365,6 +388,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -376,10 +400,17 @@ namespace MyNS
 		/// <param name="gtin">The unique Global Trade Item Number of the item as defined by http://www.gtin.info. This can be a UPC (Universal Product Code), EAN (European Article Number), or an ISBN (International Standard Book Number value. Required: You must specify one epid, or one gtin, or one brand plus mpn pair.</param>
 		/// <param name="mpn">The manufacturer part number of the product. Restriction: This must be used along with brand.</param>
 		/// <returns>This call returns products that were also viewed when shoppers viewed the product specified in the request. Showing 'also viewed' products encourages up-selling and cross-selling. You specify the product by one of the following: epid - eBay Product ID gtin - Global Trade Item Number (UPC, ISBN, EAN) brand (brand name, such as Nike) plus mpn (Manufacturer's Part Number) Restrictions For a list of supported sites and other restrictions, see API Restrictions. Note: A maximum of 12 products are returned. The call will return up to 12 products, but it can be less than 12. If the number of products found is less than 12, the call will return all of the products matching the criteria.</returns>
-		public BestSellingProductResponse GetAlsoViewedByProduct(string brand, string epid, string gtin, string mpn)
+		public BestSellingProductResponse GetAlsoViewedByProduct(string brand, string epid, string gtin, string mpn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "merchandised_product/get_also_viewed_products?brand=" + Uri.EscapeDataString(brand)+"&epid=" + Uri.EscapeDataString(epid)+"&gtin=" + Uri.EscapeDataString(gtin)+"&mpn=" + Uri.EscapeDataString(mpn);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -394,6 +425,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -405,10 +437,17 @@ namespace MyNS
 		/// <param name="limit">This value specifies the maximum number of products to return in a result set. Note: Maximum value means the call will return up to that many products per set, but it can be less than this value. If the number of products found is less than this value, the call will return all of the products matching the criteria. Default: 8 Maximum: 100</param>
 		/// <param name="metric_name">This value filters the result set by the specified metric. Only products in this metric are returned. Currently, the only metric supported is BEST_SELLING. Default: BEST_SELLING Maximum: 1 Required: 1</param>
 		/// <returns>This call returns an array of products based on the category and metric specified. This includes details of the product, such as the eBay product ID (EPID), title, and user reviews and ratings for the product. You can use the epid returned by this call in the Browse API search call to retrieve items for this product. Restrictions For a list of supported sites and other restrictions, see API Restrictions.</returns>
-		public async Task<BestSellingProductResponse> GetMerchandisedProductsAsync(string aspect_filter, string category_id, string limit, string metric_name)
+		public async Task<BestSellingProductResponse> GetMerchandisedProductsAsync(string aspect_filter, string category_id, string limit, string metric_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "merchandised_product?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_id=" + Uri.EscapeDataString(category_id)+"&limit=" + Uri.EscapeDataString(limit)+"&metric_name=" + Uri.EscapeDataString(metric_name);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -423,6 +462,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -434,10 +474,17 @@ namespace MyNS
 		/// <param name="limit">This value specifies the maximum number of products to return in a result set. Note: Maximum value means the call will return up to that many products per set, but it can be less than this value. If the number of products found is less than this value, the call will return all of the products matching the criteria. Default: 8 Maximum: 100</param>
 		/// <param name="metric_name">This value filters the result set by the specified metric. Only products in this metric are returned. Currently, the only metric supported is BEST_SELLING. Default: BEST_SELLING Maximum: 1 Required: 1</param>
 		/// <returns>This call returns an array of products based on the category and metric specified. This includes details of the product, such as the eBay product ID (EPID), title, and user reviews and ratings for the product. You can use the epid returned by this call in the Browse API search call to retrieve items for this product. Restrictions For a list of supported sites and other restrictions, see API Restrictions.</returns>
-		public BestSellingProductResponse GetMerchandisedProducts(string aspect_filter, string category_id, string limit, string metric_name)
+		public BestSellingProductResponse GetMerchandisedProducts(string aspect_filter, string category_id, string limit, string metric_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "merchandised_product?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_id=" + Uri.EscapeDataString(category_id)+"&limit=" + Uri.EscapeDataString(limit)+"&metric_name=" + Uri.EscapeDataString(metric_name);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -451,6 +498,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

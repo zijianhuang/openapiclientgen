@@ -474,10 +474,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="marketplace_id">The ID of the eBay marketplace for which the category tree ID is being requested. For a list of supported marketplace IDs, see Marketplaces with Default Category Trees.</param>
 		/// <returns>Success</returns>
-		public async Task<BaseCategoryTree> GetDefaultCategoryTreeIdAsync(string marketplace_id)
+		public async Task<BaseCategoryTree> GetDefaultCategoryTreeIdAsync(string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "get_default_category_tree_id?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -491,6 +498,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -501,10 +509,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="marketplace_id">The ID of the eBay marketplace for which the category tree ID is being requested. For a list of supported marketplace IDs, see Marketplaces with Default Category Trees.</param>
 		/// <returns>Success</returns>
-		public BaseCategoryTree GetDefaultCategoryTreeId(string marketplace_id)
+		public BaseCategoryTree GetDefaultCategoryTreeId(string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "get_default_category_tree_id?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -519,6 +534,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -528,10 +544,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="category_tree_id">The unique identifier of the eBay category tree being requested.</param>
 		/// <returns>Success</returns>
-		public async Task<CategoryTree> GetCategoryTreeAsync(string category_tree_id)
+		public async Task<CategoryTree> GetCategoryTreeAsync(string category_tree_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -546,6 +569,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -555,10 +579,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="category_tree_id">The unique identifier of the eBay category tree being requested.</param>
 		/// <returns>Success</returns>
-		public CategoryTree GetCategoryTree(string category_tree_id)
+		public CategoryTree GetCategoryTree(string category_tree_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -573,6 +604,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -583,10 +615,17 @@ namespace MyNS
 		/// <param name="category_id">The unique identifier of the category at the top of the subtree being requested. Note: If the category_id submitted identifies the root node of the tree, this call returns an error. To retrieve the complete tree, use this value with the getCategoryTree call. If the category_id submitted identifies a leaf node of the tree, the call response will contain information about only that leaf node, which is a valid subtree.</param>
 		/// <param name="category_tree_id">The unique identifier of the eBay category tree from which a category subtree is being requested.</param>
 		/// <returns>Success</returns>
-		public async Task<CategorySubtree> GetCategorySubtreeAsync(string category_id, string category_tree_id)
+		public async Task<CategorySubtree> GetCategorySubtreeAsync(string category_id, string category_tree_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_category_subtree?category_id=" + Uri.EscapeDataString(category_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -601,6 +640,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -611,10 +651,17 @@ namespace MyNS
 		/// <param name="category_id">The unique identifier of the category at the top of the subtree being requested. Note: If the category_id submitted identifies the root node of the tree, this call returns an error. To retrieve the complete tree, use this value with the getCategoryTree call. If the category_id submitted identifies a leaf node of the tree, the call response will contain information about only that leaf node, which is a valid subtree.</param>
 		/// <param name="category_tree_id">The unique identifier of the eBay category tree from which a category subtree is being requested.</param>
 		/// <returns>Success</returns>
-		public CategorySubtree GetCategorySubtree(string category_id, string category_tree_id)
+		public CategorySubtree GetCategorySubtree(string category_id, string category_tree_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_category_subtree?category_id=" + Uri.EscapeDataString(category_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -629,6 +676,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -639,10 +687,17 @@ namespace MyNS
 		/// <param name="category_tree_id">The unique identifier of the eBay category tree for which suggested nodes are being requested.</param>
 		/// <param name="q">A quoted string that describes or characterizes the item being offered for sale. The string format is free form, and can contain any combination of phrases or keywords. eBay will parse the string and return suggested categories for the item.</param>
 		/// <returns>Success</returns>
-		public async Task<CategorySuggestionResponse> GetCategorySuggestionsAsync(string category_tree_id, string q)
+		public async Task<CategorySuggestionResponse> GetCategorySuggestionsAsync(string category_tree_id, string q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_category_suggestions?q=" + Uri.EscapeDataString(q);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -657,6 +712,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -667,10 +723,17 @@ namespace MyNS
 		/// <param name="category_tree_id">The unique identifier of the eBay category tree for which suggested nodes are being requested.</param>
 		/// <param name="q">A quoted string that describes or characterizes the item being offered for sale. The string format is free form, and can contain any combination of phrases or keywords. eBay will parse the string and return suggested categories for the item.</param>
 		/// <returns>Success</returns>
-		public CategorySuggestionResponse GetCategorySuggestions(string category_tree_id, string q)
+		public CategorySuggestionResponse GetCategorySuggestions(string category_tree_id, string q, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_category_suggestions?q=" + Uri.EscapeDataString(q);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -685,6 +748,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -694,10 +758,17 @@ namespace MyNS
 		/// <param name="category_id">The unique identifier of the leaf category for which aspects are being requested. Note: If the category_id submitted does not identify a leaf node of the tree, this call returns an error.</param>
 		/// <param name="category_tree_id">The unique identifier of the eBay category tree from which the specified category's aspects are being requested.</param>
 		/// <returns>Success</returns>
-		public async Task<AspectMetadata> GetItemAspectsForCategoryAsync(string category_id, string category_tree_id)
+		public async Task<AspectMetadata> GetItemAspectsForCategoryAsync(string category_id, string category_tree_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_item_aspects_for_category?category_id=" + Uri.EscapeDataString(category_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -712,6 +783,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -721,10 +793,17 @@ namespace MyNS
 		/// <param name="category_id">The unique identifier of the leaf category for which aspects are being requested. Note: If the category_id submitted does not identify a leaf node of the tree, this call returns an error.</param>
 		/// <param name="category_tree_id">The unique identifier of the eBay category tree from which the specified category's aspects are being requested.</param>
 		/// <returns>Success</returns>
-		public AspectMetadata GetItemAspectsForCategory(string category_id, string category_tree_id)
+		public AspectMetadata GetItemAspectsForCategory(string category_id, string category_tree_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_item_aspects_for_category?category_id=" + Uri.EscapeDataString(category_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -739,6 +818,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -749,10 +829,17 @@ namespace MyNS
 		/// <param name="category_tree_id">This is the unique identifier of category tree. The following is the list of category_tree_id values and the eBay marketplaces that they represent. One of these ID values must be passed in as a path parameter, and the category_id value, that is passed in as query parameter, must be a valid eBay category on that eBay marketplace that supports parts compatibility for cars, trucks, or motorcyles. eBay US: 0 eBay Motors US: 100 eBay Canada: 2 eBay UK: 3 eBay Germany: 77 eBay Australia: 15 eBay France: 71 eBay Italy: 101 eBay Spain: 186</param>
 		/// <param name="category_id">The unique identifier of an eBay category. This eBay category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcyles. The getAutomotivePartsCompatibilityPolicies method of the Selling Metadata API can be used to retrieve all eBay categories for an eBay marketplace that supports parts compatibility cars, trucks, or motorcyles. The getAutomotivePartsCompatibilityPolicies method can also be used to see if one or more specific eBay categories support parts compatibility.</param>
 		/// <returns>Success</returns>
-		public async Task<GetCompatibilityMetadataResponse> GetCompatibilityPropertiesAsync(string category_tree_id, string category_id)
+		public async Task<GetCompatibilityMetadataResponse> GetCompatibilityPropertiesAsync(string category_tree_id, string category_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_compatibility_properties?category_id=" + Uri.EscapeDataString(category_id);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -767,6 +854,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -777,10 +865,17 @@ namespace MyNS
 		/// <param name="category_tree_id">This is the unique identifier of category tree. The following is the list of category_tree_id values and the eBay marketplaces that they represent. One of these ID values must be passed in as a path parameter, and the category_id value, that is passed in as query parameter, must be a valid eBay category on that eBay marketplace that supports parts compatibility for cars, trucks, or motorcyles. eBay US: 0 eBay Motors US: 100 eBay Canada: 2 eBay UK: 3 eBay Germany: 77 eBay Australia: 15 eBay France: 71 eBay Italy: 101 eBay Spain: 186</param>
 		/// <param name="category_id">The unique identifier of an eBay category. This eBay category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcyles. The getAutomotivePartsCompatibilityPolicies method of the Selling Metadata API can be used to retrieve all eBay categories for an eBay marketplace that supports parts compatibility cars, trucks, or motorcyles. The getAutomotivePartsCompatibilityPolicies method can also be used to see if one or more specific eBay categories support parts compatibility.</param>
 		/// <returns>Success</returns>
-		public GetCompatibilityMetadataResponse GetCompatibilityProperties(string category_tree_id, string category_id)
+		public GetCompatibilityMetadataResponse GetCompatibilityProperties(string category_tree_id, string category_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_compatibility_properties?category_id=" + Uri.EscapeDataString(category_id);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -795,6 +890,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -807,10 +903,17 @@ namespace MyNS
 		/// <param name="category_id">The unique identifier of an eBay category. This eBay category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcyles. The getAutomotivePartsCompatibilityPolicies method of the Selling Metadata API can be used to retrieve all eBay categories for an eBay marketplace that supports parts compatibility cars, trucks, or motorcyles. The getAutomotivePartsCompatibilityPolicies method can also be used to see if one or more specific eBay categories support parts compatibility.</param>
 		/// <param name="filter">One or more compatible vehicle property name/value pairs are passed in through this query parameter. The compatible vehicle property name and corresponding value are delimited with a colon (:), such as filter=Year:2018, and multiple compatible vehicle property name/value pairs are delimited with a comma (,). For example, if you wanted to retrieve all vehicle trims for a 2018 Toyota Camry, you would set the compatibility_property filter as follows: compatibility_property=Trim; and then include the following three name/value filters through one filter parameter: filter=Year:2018,Make:Toyota,Model:Camry. So, putting this all together, your URI would look something like this: GET https://api.ebay.com/commerce/ taxonomy/v1_beta/category_tree/100/ get_compatibility_property_values? category_id=6016&amp;compatibility_property=Trim &amp;filter=filter=Year:2018,Make:Toyota,Model:Camry For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/taxonomy/types/ConstraintFilter.html</param>
 		/// <returns>Success</returns>
-		public async Task<GetCompatibilityPropertyValuesResponse> GetCompatibilityPropertyValuesAsync(string category_tree_id, string compatibility_property, string category_id, string filter)
+		public async Task<GetCompatibilityPropertyValuesResponse> GetCompatibilityPropertyValuesAsync(string category_tree_id, string compatibility_property, string category_id, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_compatibility_property_values?compatibility_property=" + Uri.EscapeDataString(compatibility_property)+"&category_id=" + Uri.EscapeDataString(category_id)+"&filter=" + Uri.EscapeDataString(filter);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -825,6 +928,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -837,10 +941,17 @@ namespace MyNS
 		/// <param name="category_id">The unique identifier of an eBay category. This eBay category must be a valid eBay category on the specified eBay marketplace, and the category must support parts compatibility for cars, trucks, or motorcyles. The getAutomotivePartsCompatibilityPolicies method of the Selling Metadata API can be used to retrieve all eBay categories for an eBay marketplace that supports parts compatibility cars, trucks, or motorcyles. The getAutomotivePartsCompatibilityPolicies method can also be used to see if one or more specific eBay categories support parts compatibility.</param>
 		/// <param name="filter">One or more compatible vehicle property name/value pairs are passed in through this query parameter. The compatible vehicle property name and corresponding value are delimited with a colon (:), such as filter=Year:2018, and multiple compatible vehicle property name/value pairs are delimited with a comma (,). For example, if you wanted to retrieve all vehicle trims for a 2018 Toyota Camry, you would set the compatibility_property filter as follows: compatibility_property=Trim; and then include the following three name/value filters through one filter parameter: filter=Year:2018,Make:Toyota,Model:Camry. So, putting this all together, your URI would look something like this: GET https://api.ebay.com/commerce/ taxonomy/v1_beta/category_tree/100/ get_compatibility_property_values? category_id=6016&amp;compatibility_property=Trim &amp;filter=filter=Year:2018,Make:Toyota,Model:Camry For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/taxonomy/types/ConstraintFilter.html</param>
 		/// <returns>Success</returns>
-		public GetCompatibilityPropertyValuesResponse GetCompatibilityPropertyValues(string category_tree_id, string compatibility_property, string category_id, string filter)
+		public GetCompatibilityPropertyValuesResponse GetCompatibilityPropertyValues(string category_tree_id, string compatibility_property, string category_id, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "category_tree/"+Uri.EscapeDataString(category_tree_id)+"/get_compatibility_property_values?compatibility_property=" + Uri.EscapeDataString(compatibility_property)+"&category_id=" + Uri.EscapeDataString(category_id)+"&filter=" + Uri.EscapeDataString(filter);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -854,6 +965,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

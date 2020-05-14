@@ -73,10 +73,17 @@ namespace MyNS
 		/// ListDataSets 
 		/// </summary>
 		/// <returns>Returns a list of data sets</returns>
-		public async Task<DataSetList> ListDataSetsAsync()
+		public async Task<DataSetList> ListDataSetsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "";
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -91,6 +98,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -101,10 +109,17 @@ namespace MyNS
 		/// <param name="dataset">Name of the dataset.</param>
 		/// <param name="version">Version of the dataset.</param>
 		/// <returns>The dataset API for the given version is found and it is accessible to consume.</returns>
-		public async Task<string> ListSearchableFieldsAsync(string dataset, string version)
+		public async Task<string> ListSearchableFieldsAsync(string dataset, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+Uri.EscapeDataString(dataset)+"/"+Uri.EscapeDataString(version)+"/fields";
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -117,6 +132,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

@@ -695,15 +695,23 @@ namespace MyNS
 		/// CreateFromShippingQuote shipment/create_from_shipping_quote
 		/// </summary>
 		/// <param name="requestBody">The create shipment from quote request.</param>
-		public async Task CreateFromShippingQuoteAsync(CreateShipmentFromQuoteRequest requestBody)
+		public async Task CreateFromShippingQuoteAsync(CreateShipmentFromQuoteRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipment/create_from_shipping_quote";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -711,6 +719,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -720,15 +729,23 @@ namespace MyNS
 		/// CreateFromShippingQuote shipment/create_from_shipping_quote
 		/// </summary>
 		/// <param name="requestBody">The create shipment from quote request.</param>
-		public void CreateFromShippingQuote(CreateShipmentFromQuoteRequest requestBody)
+		public void CreateFromShippingQuote(CreateShipmentFromQuoteRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipment/create_from_shipping_quote";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -736,6 +753,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -746,10 +764,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="shipmentId">This path parameter specifies the unique eBay-assigned ID of the shipment you want to retrieve. The shipmentId value is generated and returned by a call to createFromShippingQuote.</param>
 		/// <returns>Success</returns>
-		public async Task<Shipment> GetShipmentAsync(string shipmentId)
+		public async Task<Shipment> GetShipmentAsync(string shipmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipment/"+Uri.EscapeDataString(shipmentId);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -764,6 +789,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -772,10 +798,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="shipmentId">This path parameter specifies the unique eBay-assigned ID of the shipment you want to retrieve. The shipmentId value is generated and returned by a call to createFromShippingQuote.</param>
 		/// <returns>Success</returns>
-		public Shipment GetShipment(string shipmentId)
+		public Shipment GetShipment(string shipmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipment/"+Uri.EscapeDataString(shipmentId);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -790,25 +823,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-		}
-		
-		/// <summary>
-		/// This method returns the shipping label file that was generated for the shipmentId value specified in the request. Call createFromShippingQuote to generate a shipment ID. Use the Accept HTTP header to specify the format of the returned file. The default file format is a PDF file.
-		/// DownloadLabelFile shipment/{shipmentId}/download_label_file
-		/// </summary>
-		/// <param name="shipmentId">This path parameter specifies the unique eBay-assigned ID of the shipment associated with the shipping label you want to download. The shipmentId value is generated and returned by a call to createFromShippingQuote.</param>
-		/// <returns>Success</returns>
-		public async Task DownloadLabelFileAsync(string shipmentId)
-		{
-			var requestUri = "shipment/"+Uri.EscapeDataString(shipmentId)+"/download_label_file";
-			var responseMessage = await client.GetAsync(requestUri);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -818,10 +832,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="shipmentId">This path parameter specifies the unique eBay-assigned ID of the shipment associated with the shipping label you want to download. The shipmentId value is generated and returned by a call to createFromShippingQuote.</param>
 		/// <returns>Success</returns>
-		public void DownloadLabelFile(string shipmentId)
+		public async Task DownloadLabelFileAsync(string shipmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipment/"+Uri.EscapeDataString(shipmentId)+"/download_label_file";
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -829,6 +850,35 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This method returns the shipping label file that was generated for the shipmentId value specified in the request. Call createFromShippingQuote to generate a shipment ID. Use the Accept HTTP header to specify the format of the returned file. The default file format is a PDF file.
+		/// DownloadLabelFile shipment/{shipmentId}/download_label_file
+		/// </summary>
+		/// <param name="shipmentId">This path parameter specifies the unique eBay-assigned ID of the shipment associated with the shipping label you want to download. The shipmentId value is generated and returned by a call to createFromShippingQuote.</param>
+		/// <returns>Success</returns>
+		public void DownloadLabelFile(string shipmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "shipment/"+Uri.EscapeDataString(shipmentId)+"/download_label_file";
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -838,10 +888,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="shipmentId">This path parameter specifies the unique eBay-assigned ID of the shipment to be canceled. The shipmentId value is generated and returned by a call to createFromShippingQuote.</param>
 		/// <returns>Success</returns>
-		public async Task<Shipment> CancelShipmentAsync(string shipmentId)
+		public async Task<Shipment> CancelShipmentAsync(string shipmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipment/"+Uri.EscapeDataString(shipmentId)+"/cancel";
-			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -856,6 +908,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -864,10 +917,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="shipmentId">This path parameter specifies the unique eBay-assigned ID of the shipment to be canceled. The shipmentId value is generated and returned by a call to createFromShippingQuote.</param>
 		/// <returns>Success</returns>
-		public Shipment CancelShipment(string shipmentId)
+		public Shipment CancelShipment(string shipmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipment/"+Uri.EscapeDataString(shipmentId)+"/cancel";
-			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -881,6 +936,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -909,15 +965,23 @@ namespace MyNS
 		/// CreateShippingQuote shipping_quote
 		/// </summary>
 		/// <param name="requestBody">The request object for createShippingQuote.</param>
-		public async Task CreateShippingQuoteAsync(ShippingQuoteRequest requestBody)
+		public async Task CreateShippingQuoteAsync(ShippingQuoteRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipping_quote";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -925,6 +989,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -934,15 +999,23 @@ namespace MyNS
 		/// CreateShippingQuote shipping_quote
 		/// </summary>
 		/// <param name="requestBody">The request object for createShippingQuote.</param>
-		public void CreateShippingQuote(ShippingQuoteRequest requestBody)
+		public void CreateShippingQuote(ShippingQuoteRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipping_quote";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -950,6 +1023,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -960,10 +1034,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="shippingQuoteId">This path parameter specifies the unique eBay-assigned ID of the shipping quote you want to retrieve. The shippingQuoteId value is generated and returned by a call to createShippingQuote.</param>
 		/// <returns>Success</returns>
-		public async Task<ShippingQuote> GetShippingQuoteAsync(string shippingQuoteId)
+		public async Task<ShippingQuote> GetShippingQuoteAsync(string shippingQuoteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipping_quote/"+Uri.EscapeDataString(shippingQuoteId);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -978,6 +1059,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -986,10 +1068,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="shippingQuoteId">This path parameter specifies the unique eBay-assigned ID of the shipping quote you want to retrieve. The shippingQuoteId value is generated and returned by a call to createShippingQuote.</param>
 		/// <returns>Success</returns>
-		public ShippingQuote GetShippingQuote(string shippingQuoteId)
+		public ShippingQuote GetShippingQuote(string shippingQuoteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "shipping_quote/"+Uri.EscapeDataString(shippingQuoteId);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1003,6 +1092,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

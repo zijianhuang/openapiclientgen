@@ -42,10 +42,17 @@ namespace MyNS
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public async Task DeletePetAsync(long petId)
+		public async Task DeletePetAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pet/"+petId;
-			var responseMessage = await client.DeleteAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -53,6 +60,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -61,10 +69,17 @@ namespace MyNS
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public void DeletePet(long petId)
+		public void DeletePet(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pet/"+petId;
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -72,6 +87,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}

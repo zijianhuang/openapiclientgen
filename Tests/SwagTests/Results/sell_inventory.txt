@@ -2197,10 +2197,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in at the end of the call URI to specify the inventory location to retrieve. Max length: 36</param>
 		/// <returns>Success</returns>
-		public async Task<InventoryLocationResponse> GetInventoryLocationAsync(string merchantLocationKey)
+		public async Task<InventoryLocationResponse> GetInventoryLocationAsync(string merchantLocationKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2214,6 +2221,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -2223,10 +2231,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in at the end of the call URI to specify the inventory location to retrieve. Max length: 36</param>
 		/// <returns>Success</returns>
-		public InventoryLocationResponse GetInventoryLocation(string merchantLocationKey)
+		public InventoryLocationResponse GetInventoryLocation(string merchantLocationKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2241,6 +2256,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2249,15 +2265,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique, merchant-defined key (ID) for an inventory location. This unique identifier, or key, is used in other Inventory API calls to identify an inventory location. Max length: 36</param>
 		/// <param name="requestBody">Inventory Location details</param>
-		public async Task CreateInventoryLocationAsync(string merchantLocationKey, InventoryLocationFull requestBody)
+		public async Task CreateInventoryLocationAsync(string merchantLocationKey, InventoryLocationFull requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey);
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2267,6 +2291,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2275,15 +2300,51 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique, merchant-defined key (ID) for an inventory location. This unique identifier, or key, is used in other Inventory API calls to identify an inventory location. Max length: 36</param>
 		/// <param name="requestBody">Inventory Location details</param>
-		public void CreateInventoryLocation(string merchantLocationKey, InventoryLocationFull requestBody)
+		public void CreateInventoryLocation(string merchantLocationKey, InventoryLocationFull requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey);
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This call deletes the inventory location that is specified in the merchantLocationKey path parameter. Note that deleting a location will not affect any active eBay listings associated with the deleted location, but the seller will not be able modify the offers associated with the inventory location once it is deleted. The authorization HTTP header is the only required request header for this call. Unless one or more errors and/or warnings occur with the call, there is no response payload for this call. A successful call will return an HTTP status value of 200 OK.
+		/// DeleteInventoryLocation location/{merchantLocationKey}
+		/// </summary>
+		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in at the end of the call URI to indicate the inventory location to be deleted. Max length: 36</param>
+		public async Task DeleteInventoryLocationAsync(string merchantLocationKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2300,10 +2361,17 @@ namespace MyNS
 		/// DeleteInventoryLocation location/{merchantLocationKey}
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in at the end of the call URI to indicate the inventory location to be deleted. Max length: 36</param>
-		public async Task DeleteInventoryLocationAsync(string merchantLocationKey)
+		public void DeleteInventoryLocation(string merchantLocationKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey);
-			var responseMessage = await client.DeleteAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2312,24 +2380,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-		}
-		
-		/// <summary>
-		/// This call deletes the inventory location that is specified in the merchantLocationKey path parameter. Note that deleting a location will not affect any active eBay listings associated with the deleted location, but the seller will not be able modify the offers associated with the inventory location once it is deleted. The authorization HTTP header is the only required request header for this call. Unless one or more errors and/or warnings occur with the call, there is no response payload for this call. A successful call will return an HTTP status value of 200 OK.
-		/// DeleteInventoryLocation location/{merchantLocationKey}
-		/// </summary>
-		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in at the end of the call URI to indicate the inventory location to be deleted. Max length: 36</param>
-		public void DeleteInventoryLocation(string merchantLocationKey)
-		{
-			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey);
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -2339,10 +2389,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in through the call URI to disable the specified inventory location. Max length: 36</param>
 		/// <returns>Success</returns>
-		public async Task<string> DisableInventoryLocationAsync(string merchantLocationKey)
+		public async Task<string> DisableInventoryLocationAsync(string merchantLocationKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey)+"/disable";
-			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2356,6 +2408,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2364,10 +2417,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in through the call URI to disable the specified inventory location. Max length: 36</param>
 		/// <returns>Success</returns>
-		public string DisableInventoryLocation(string merchantLocationKey)
+		public string DisableInventoryLocation(string merchantLocationKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey)+"/disable";
-			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2381,6 +2436,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2389,10 +2445,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in through the call URI to specify the disabled inventory location to enable. Max length: 36</param>
 		/// <returns>Success</returns>
-		public async Task<string> EnableInventoryLocationAsync(string merchantLocationKey)
+		public async Task<string> EnableInventoryLocationAsync(string merchantLocationKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey)+"/enable";
-			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2406,6 +2464,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2414,10 +2473,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in through the call URI to specify the disabled inventory location to enable. Max length: 36</param>
 		/// <returns>Success</returns>
-		public string EnableInventoryLocation(string merchantLocationKey)
+		public string EnableInventoryLocation(string merchantLocationKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey)+"/enable";
-			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2430,6 +2491,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -2440,10 +2502,17 @@ namespace MyNS
 		/// <param name="limit">The value passed in this query parameter sets the maximum number of records to return per page of data. Although this field is a string, the value passed in this field should be a positive integer value. If this query parameter is not set, up to 100 records will be returned on each page of results. Min: 1</param>
 		/// <param name="offset">Specifies the number of locations to skip in the result set before returning the first location in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 items from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0</param>
 		/// <returns>Success</returns>
-		public async Task<LocationResponse> GetInventoryLocationsAsync(string limit, string offset)
+		public async Task<LocationResponse> GetInventoryLocationsAsync(string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2458,6 +2527,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2467,10 +2537,17 @@ namespace MyNS
 		/// <param name="limit">The value passed in this query parameter sets the maximum number of records to return per page of data. Although this field is a string, the value passed in this field should be a positive integer value. If this query parameter is not set, up to 100 records will be returned on each page of results. Min: 1</param>
 		/// <param name="offset">Specifies the number of locations to skip in the result set before returning the first location in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 items from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0</param>
 		/// <returns>Success</returns>
-		public LocationResponse GetInventoryLocations(string limit, string offset)
+		public LocationResponse GetInventoryLocations(string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2485,31 +2562,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-		}
-		
-		/// <summary>
-		/// Use this call to update non-physical location details for an existing inventory location. Specify the inventory location you want to update using the merchantLocationKey path parameter. You can update the following text-based fields: name, phone, locationWebUrl, locationInstructions and locationAdditionalInformation. Whatever text is passed in for these fields in an updateInventoryLocation call will replace the current text strings defined for these fields. For store inventory locations, the operating hours and/or the special hours can also be updated. The merchant location key, the physical location of the store, and its geo-location coordinates can not be updated with an updateInventoryLocation call In addition to the authorization header, which is required for all eBay REST API calls, the following table includes another request header that is mandatory for the updateInventoryLocation call, and two other request headers that are optional: Header Description Required? Applicable Values Accept Describes the response encoding, as required by the caller. Currently, the interfaces require payloads formatted in JSON, and JSON is the default. No application/json Content-Language Use this header to control the language that is used for any returned errors or warnings in the call response. No en-US Content-Type The MIME type of the body of the request. Must be JSON. Yes application/json Unless one or more errors and/or warnings occurs with the call, there is no response payload for this call. A successful call will return an HTTP status value of 204 No Content.
-		/// UpdateInventoryLocation location/{merchantLocationKey}/update_location_details
-		/// </summary>
-		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in the call URI to indicate the inventory location to be updated. Max length: 36</param>
-		/// <param name="requestBody">The inventory location details to be updated (other than the address and geo co-ordinates).</param>
-		public async Task UpdateInventoryLocationAsync(string merchantLocationKey, InventoryLocation requestBody)
-		{
-			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey)+"/update_location_details";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
 			}
 		}
 		
@@ -2519,15 +2571,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in the call URI to indicate the inventory location to be updated. Max length: 36</param>
 		/// <param name="requestBody">The inventory location details to be updated (other than the address and geo co-ordinates).</param>
-		public void UpdateInventoryLocation(string merchantLocationKey, InventoryLocation requestBody)
+		public async Task UpdateInventoryLocationAsync(string merchantLocationKey, InventoryLocation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey)+"/update_location_details";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2535,6 +2595,42 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Use this call to update non-physical location details for an existing inventory location. Specify the inventory location you want to update using the merchantLocationKey path parameter. You can update the following text-based fields: name, phone, locationWebUrl, locationInstructions and locationAdditionalInformation. Whatever text is passed in for these fields in an updateInventoryLocation call will replace the current text strings defined for these fields. For store inventory locations, the operating hours and/or the special hours can also be updated. The merchant location key, the physical location of the store, and its geo-location coordinates can not be updated with an updateInventoryLocation call In addition to the authorization header, which is required for all eBay REST API calls, the following table includes another request header that is mandatory for the updateInventoryLocation call, and two other request headers that are optional: Header Description Required? Applicable Values Accept Describes the response encoding, as required by the caller. Currently, the interfaces require payloads formatted in JSON, and JSON is the default. No application/json Content-Language Use this header to control the language that is used for any returned errors or warnings in the call response. No en-US Content-Type The MIME type of the body of the request. Must be JSON. Yes application/json Unless one or more errors and/or warnings occurs with the call, there is no response payload for this call. A successful call will return an HTTP status value of 204 No Content.
+		/// UpdateInventoryLocation location/{merchantLocationKey}/update_location_details
+		/// </summary>
+		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in the call URI to indicate the inventory location to be updated. Max length: 36</param>
+		/// <param name="requestBody">The inventory location details to be updated (other than the address and geo co-ordinates).</param>
+		public void UpdateInventoryLocation(string merchantLocationKey, InventoryLocation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "location/"+Uri.EscapeDataString(merchantLocationKey)+"/update_location_details";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2565,10 +2661,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="sku">This is the seller-defined SKU value of the product whose inventory item record you wish to retrieve. Max length: 50.</param>
 		/// <returns>Success</returns>
-		public async Task<InventoryItemWithSkuLocaleGroupid> GetInventoryItemAsync(string sku)
+		public async Task<InventoryItemWithSkuLocaleGroupid> GetInventoryItemAsync(string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2582,6 +2685,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -2591,10 +2695,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="sku">This is the seller-defined SKU value of the product whose inventory item record you wish to retrieve. Max length: 50.</param>
 		/// <returns>Success</returns>
-		public InventoryItemWithSkuLocaleGroupid GetInventoryItem(string sku)
+		public InventoryItemWithSkuLocaleGroupid GetInventoryItem(string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2609,6 +2720,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2618,15 +2730,23 @@ namespace MyNS
 		/// <param name="sku">The seller-defined SKU value for the inventory item is required whether the seller is creating a new inventory item, or updating an existing inventory item. This SKU value is passed in at the end of the call URI. SKU values must be unique across the seller's inventory. Max length: 50.</param>
 		/// <param name="requestBody">Details of the inventory item record.</param>
 		/// <returns>Success</returns>
-		public async Task<BaseResponse> CreateOrReplaceInventoryItemAsync(string sku, InventoryItem requestBody)
+		public async Task<BaseResponse> CreateOrReplaceInventoryItemAsync(string sku, InventoryItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2642,6 +2762,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2651,15 +2772,23 @@ namespace MyNS
 		/// <param name="sku">The seller-defined SKU value for the inventory item is required whether the seller is creating a new inventory item, or updating an existing inventory item. This SKU value is passed in at the end of the call URI. SKU values must be unique across the seller's inventory. Max length: 50.</param>
 		/// <param name="requestBody">Details of the inventory item record.</param>
 		/// <returns>Success</returns>
-		public BaseResponse CreateOrReplaceInventoryItem(string sku, InventoryItem requestBody)
+		public BaseResponse CreateOrReplaceInventoryItem(string sku, InventoryItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2675,24 +2804,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-		
-		/// <summary>
-		/// This call is used to delete an inventory item record associated with a specified SKU. A successful call will not only delete that inventory item record, but will also have the following effects: Delete any and all unpublished offers associated with that SKU; Delete any and all single-variation eBay listings associated with that SKU; Automatically remove that SKU from a multiple-variation listing and remove that SKU from any and all inventory item groups in which that SKU was a member. The authorization header is the only required HTTP header for this call. See the HTTP request headers section for more information.
-		/// DeleteInventoryItem inventory_item/{sku}
-		/// </summary>
-		/// <param name="sku">This is the seller-defined SKU value of the product whose inventory item record you wish to delete. Max length: 50.</param>
-		public async Task DeleteInventoryItemAsync(string sku)
-		{
-			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku);
-			var responseMessage = await client.DeleteAsync(requestUri);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -2701,10 +2812,17 @@ namespace MyNS
 		/// DeleteInventoryItem inventory_item/{sku}
 		/// </summary>
 		/// <param name="sku">This is the seller-defined SKU value of the product whose inventory item record you wish to delete. Max length: 50.</param>
-		public void DeleteInventoryItem(string sku)
+		public async Task DeleteInventoryItemAsync(string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku);
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2712,6 +2830,34 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This call is used to delete an inventory item record associated with a specified SKU. A successful call will not only delete that inventory item record, but will also have the following effects: Delete any and all unpublished offers associated with that SKU; Delete any and all single-variation eBay listings associated with that SKU; Automatically remove that SKU from a multiple-variation listing and remove that SKU from any and all inventory item groups in which that SKU was a member. The authorization header is the only required HTTP header for this call. See the HTTP request headers section for more information.
+		/// DeleteInventoryItem inventory_item/{sku}
+		/// </summary>
+		/// <param name="sku">This is the seller-defined SKU value of the product whose inventory item record you wish to delete. Max length: 50.</param>
+		public void DeleteInventoryItem(string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -2722,10 +2868,17 @@ namespace MyNS
 		/// <param name="limit">The value passed in this query parameter sets the maximum number of records to return per page of data. Although this field is a string, the value passed in this field should be an integer from 1 to 100. If this query parameter is not set, up to 100 records will be returned on each page of results. Min: 1, Max: 100</param>
 		/// <param name="offset">The value passed in this query parameter sets the page number to retrieve. The first page of records has a value of 0, the second page of records has a value of 1, and so on. If this query parameter is not set, its value defaults to 0, and the first page of records is returned.</param>
 		/// <returns>Success</returns>
-		public async Task<InventoryItems> GetInventoryItemsAsync(string limit, string offset)
+		public async Task<InventoryItems> GetInventoryItemsAsync(string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2740,6 +2893,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2749,10 +2903,17 @@ namespace MyNS
 		/// <param name="limit">The value passed in this query parameter sets the maximum number of records to return per page of data. Although this field is a string, the value passed in this field should be an integer from 1 to 100. If this query parameter is not set, up to 100 records will be returned on each page of results. Min: 1, Max: 100</param>
 		/// <param name="offset">The value passed in this query parameter sets the page number to retrieve. The first page of records has a value of 0, the second page of records has a value of 1, and so on. If this query parameter is not set, its value defaults to 0, and the first page of records is returned.</param>
 		/// <returns>Success</returns>
-		public InventoryItems GetInventoryItems(string limit, string offset)
+		public InventoryItems GetInventoryItems(string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2767,6 +2928,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2775,15 +2937,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Price and allocation details for the given SKU and Marketplace</param>
 		/// <returns>Success</returns>
-		public async Task<BulkPriceQuantityResponse> BulkUpdatePriceQuantityAsync(BulkPriceQuantity requestBody)
+		public async Task<BulkPriceQuantityResponse> BulkUpdatePriceQuantityAsync(BulkPriceQuantity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_update_price_quantity";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2799,6 +2969,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2807,15 +2978,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Price and allocation details for the given SKU and Marketplace</param>
 		/// <returns>Success</returns>
-		public BulkPriceQuantityResponse BulkUpdatePriceQuantity(BulkPriceQuantity requestBody)
+		public BulkPriceQuantityResponse BulkUpdatePriceQuantity(BulkPriceQuantity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_update_price_quantity";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2831,6 +3010,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2839,15 +3019,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Details of the inventories with sku and locale</param>
 		/// <returns>Success</returns>
-		public async Task<BulkInventoryItemResponse> BulkCreateOrReplaceInventoryItemAsync(BulkInventoryItem requestBody)
+		public async Task<BulkInventoryItemResponse> BulkCreateOrReplaceInventoryItemAsync(BulkInventoryItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_create_or_replace_inventory_item";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2863,6 +3051,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2871,15 +3060,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Details of the inventories with sku and locale</param>
 		/// <returns>Success</returns>
-		public BulkInventoryItemResponse BulkCreateOrReplaceInventoryItem(BulkInventoryItem requestBody)
+		public BulkInventoryItemResponse BulkCreateOrReplaceInventoryItem(BulkInventoryItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_create_or_replace_inventory_item";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2895,6 +3092,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2903,15 +3101,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Details of the inventories with sku and locale</param>
 		/// <returns>Success</returns>
-		public async Task<BulkGetInventoryItemResponse> BulkGetInventoryItemAsync(BulkGetInventoryItem requestBody)
+		public async Task<BulkGetInventoryItemResponse> BulkGetInventoryItemAsync(BulkGetInventoryItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_get_inventory_item";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2927,6 +3133,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -2935,15 +3142,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Details of the inventories with sku and locale</param>
 		/// <returns>Success</returns>
-		public BulkGetInventoryItemResponse BulkGetInventoryItem(BulkGetInventoryItem requestBody)
+		public BulkGetInventoryItemResponse BulkGetInventoryItem(BulkGetInventoryItem requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_get_inventory_item";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2957,6 +3172,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2987,10 +3203,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
 		/// <returns>Success</returns>
-		public async Task<Compatibility> GetProductCompatibilityAsync(string sku)
+		public async Task<Compatibility> GetProductCompatibilityAsync(string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku)+"/product_compatibility";
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3004,6 +3227,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -3013,10 +3237,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
 		/// <returns>Success</returns>
-		public Compatibility GetProductCompatibility(string sku)
+		public Compatibility GetProductCompatibility(string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku)+"/product_compatibility";
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3031,6 +3262,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3040,15 +3272,23 @@ namespace MyNS
 		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
 		/// <param name="requestBody">Details of the compatibility</param>
 		/// <returns>Success</returns>
-		public async Task<BaseResponse> CreateOrReplaceProductCompatibilityAsync(string sku, Compatibility requestBody)
+		public async Task<BaseResponse> CreateOrReplaceProductCompatibilityAsync(string sku, Compatibility requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku)+"/product_compatibility";
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3064,6 +3304,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3073,15 +3314,23 @@ namespace MyNS
 		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
 		/// <param name="requestBody">Details of the compatibility</param>
 		/// <returns>Success</returns>
-		public BaseResponse CreateOrReplaceProductCompatibility(string sku, Compatibility requestBody)
+		public BaseResponse CreateOrReplaceProductCompatibility(string sku, Compatibility requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku)+"/product_compatibility";
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3097,24 +3346,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-		
-		/// <summary>
-		/// This call is used by the seller to delete the list of products that are compatible with the inventory item that is associated with the compatible product list. The inventory item is identified with a SKU value in the URI. Product compatibility is currently only applicable to motor vehicle parts and accessory categories, but more categories may be supported in the future.
-		/// DeleteProductCompatibility inventory_item/{sku}/product_compatibility
-		/// </summary>
-		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
-		public async Task DeleteProductCompatibilityAsync(string sku)
-		{
-			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku)+"/product_compatibility";
-			var responseMessage = await client.DeleteAsync(requestUri);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -3123,10 +3354,17 @@ namespace MyNS
 		/// DeleteProductCompatibility inventory_item/{sku}/product_compatibility
 		/// </summary>
 		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
-		public void DeleteProductCompatibility(string sku)
+		public async Task DeleteProductCompatibilityAsync(string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku)+"/product_compatibility";
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3134,6 +3372,34 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This call is used by the seller to delete the list of products that are compatible with the inventory item that is associated with the compatible product list. The inventory item is identified with a SKU value in the URI. Product compatibility is currently only applicable to motor vehicle parts and accessory categories, but more categories may be supported in the future.
+		/// DeleteProductCompatibility inventory_item/{sku}/product_compatibility
+		/// </summary>
+		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
+		public void DeleteProductCompatibility(string sku, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "inventory_item/"+Uri.EscapeDataString(sku)+"/product_compatibility";
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -3167,10 +3433,17 @@ namespace MyNS
 		/// <param name="limit">The value passed in this query parameter sets the maximum number of records to return per page of data. Although this field is a string, the value passed in this field should be a positive integer value. If this query parameter is not set, up to 100 records will be returned on each page of results.</param>
 		/// <param name="offset">The value passed in this query parameter sets the page number to retrieve. Although this field is a string, the value passed in this field should be a integer value equal to or greater than 0. The first page of records has a value of 0, the second page of records has a value of 1, and so on. If this query parameter is not set, its value defaults to 0, and the first page of records is returned.</param>
 		/// <returns>Success</returns>
-		public async Task<Offers> GetOffersAsync(string sku, string marketplace_id, string format, string limit, string offset)
+		public async Task<Offers> GetOffersAsync(string sku, string marketplace_id, string format, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer?sku=" + Uri.EscapeDataString(sku)+"&marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&format=" + Uri.EscapeDataString(format)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3184,6 +3457,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -3197,10 +3471,17 @@ namespace MyNS
 		/// <param name="limit">The value passed in this query parameter sets the maximum number of records to return per page of data. Although this field is a string, the value passed in this field should be a positive integer value. If this query parameter is not set, up to 100 records will be returned on each page of results.</param>
 		/// <param name="offset">The value passed in this query parameter sets the page number to retrieve. Although this field is a string, the value passed in this field should be a integer value equal to or greater than 0. The first page of records has a value of 0, the second page of records has a value of 1, and so on. If this query parameter is not set, its value defaults to 0, and the first page of records is returned.</param>
 		/// <returns>Success</returns>
-		public Offers GetOffers(string sku, string marketplace_id, string format, string limit, string offset)
+		public Offers GetOffers(string sku, string marketplace_id, string format, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer?sku=" + Uri.EscapeDataString(sku)+"&marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&format=" + Uri.EscapeDataString(format)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3215,6 +3496,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3222,15 +3504,23 @@ namespace MyNS
 		/// CreateOffer offer
 		/// </summary>
 		/// <param name="requestBody">Details of the offer for the channel</param>
-		public async Task CreateOfferAsync(EbayOfferDetailsWithKeys requestBody)
+		public async Task CreateOfferAsync(EbayOfferDetailsWithKeys requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3240,6 +3530,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3247,15 +3538,23 @@ namespace MyNS
 		/// CreateOffer offer
 		/// </summary>
 		/// <param name="requestBody">Details of the offer for the channel</param>
-		public void CreateOffer(EbayOfferDetailsWithKeys requestBody)
+		public void CreateOffer(EbayOfferDetailsWithKeys requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3263,6 +3562,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -3273,10 +3573,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="offerId">The unique identifier of the offer that is to be retrieved.</param>
 		/// <returns>Success</returns>
-		public async Task<EbayOfferDetailsWithAll> GetOfferAsync(string offerId)
+		public async Task<EbayOfferDetailsWithAll> GetOfferAsync(string offerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3291,6 +3598,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3299,10 +3607,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="offerId">The unique identifier of the offer that is to be retrieved.</param>
 		/// <returns>Success</returns>
-		public EbayOfferDetailsWithAll GetOffer(string offerId)
+		public EbayOfferDetailsWithAll GetOffer(string offerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3317,6 +3632,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3326,15 +3642,23 @@ namespace MyNS
 		/// <param name="offerId">The unique identifier of the offer that is being updated. This identifier is passed in at the end of the call URI.</param>
 		/// <param name="requestBody">Details of the offer for the channel</param>
 		/// <returns>Success</returns>
-		public async Task<OfferResponse> UpdateOfferAsync(string offerId, EbayOfferDetailsWithId requestBody)
+		public async Task<OfferResponse> UpdateOfferAsync(string offerId, EbayOfferDetailsWithId requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3350,6 +3674,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3359,15 +3684,23 @@ namespace MyNS
 		/// <param name="offerId">The unique identifier of the offer that is being updated. This identifier is passed in at the end of the call URI.</param>
 		/// <param name="requestBody">Details of the offer for the channel</param>
 		/// <returns>Success</returns>
-		public OfferResponse UpdateOffer(string offerId, EbayOfferDetailsWithId requestBody)
+		public OfferResponse UpdateOffer(string offerId, EbayOfferDetailsWithId requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3383,24 +3716,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-		
-		/// <summary>
-		/// If used against an unpublished offer, this call will permanently delete that offer. In the case of a published offer (or live eBay listing), a successful call will either end the single-variation listing associated with the offer, or it will remove that product variation from the eBay listing and also automatically remove that product variation from the inventory item group. In the case of a multiple-variation listing, the deleteOffer will not remove the product variation from the listing if that variation has one or more sales. If that product variation has one or more sales, the seller can alternately just set the available quantity of that product variation to 0, so it is not available in the eBay search or View Item page, and then the seller can remove that product variation from the inventory item group at a later time.
-		/// DeleteOffer offer/{offerId}
-		/// </summary>
-		/// <param name="offerId">The unique identifier of the offer to delete. The unique identifier of the offer (offerId) is passed in at the end of the call URI.</param>
-		public async Task DeleteOfferAsync(string offerId)
-		{
-			var requestUri = "offer/"+Uri.EscapeDataString(offerId);
-			var responseMessage = await client.DeleteAsync(requestUri);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -3409,10 +3724,17 @@ namespace MyNS
 		/// DeleteOffer offer/{offerId}
 		/// </summary>
 		/// <param name="offerId">The unique identifier of the offer to delete. The unique identifier of the offer (offerId) is passed in at the end of the call URI.</param>
-		public void DeleteOffer(string offerId)
+		public async Task DeleteOfferAsync(string offerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId);
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3420,6 +3742,34 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// If used against an unpublished offer, this call will permanently delete that offer. In the case of a published offer (or live eBay listing), a successful call will either end the single-variation listing associated with the offer, or it will remove that product variation from the eBay listing and also automatically remove that product variation from the inventory item group. In the case of a multiple-variation listing, the deleteOffer will not remove the product variation from the listing if that variation has one or more sales. If that product variation has one or more sales, the seller can alternately just set the available quantity of that product variation to 0, so it is not available in the eBay search or View Item page, and then the seller can remove that product variation from the inventory item group at a later time.
+		/// DeleteOffer offer/{offerId}
+		/// </summary>
+		/// <param name="offerId">The unique identifier of the offer to delete. The unique identifier of the offer (offerId) is passed in at the end of the call URI.</param>
+		public void DeleteOffer(string offerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "offer/"+Uri.EscapeDataString(offerId);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -3429,10 +3779,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="offerId">The unique identifier of the offer that is to be published.</param>
 		/// <returns>Success</returns>
-		public async Task<PublishResponse> PublishOfferAsync(string offerId)
+		public async Task<PublishResponse> PublishOfferAsync(string offerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId)+"/publish/";
-			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3447,6 +3799,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3455,45 +3808,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="offerId">The unique identifier of the offer that is to be published.</param>
 		/// <returns>Success</returns>
-		public PublishResponse PublishOffer(string offerId)
+		public PublishResponse PublishOffer(string offerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId)+"/publish/";
-			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = new JsonSerializer();
-				return serializer.Deserialize<PublishResponse>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-		}
-		
-		/// <summary>
-		/// Note: Please note that any eBay listing created using the Inventory API cannot be revised or relisted using the Trading API calls. This call is used to convert all unpublished offers associated with an inventory item group into an active, multiple-variation listing. The unique identifier of the inventory item group (inventoryItemGroupKey) is passed in the request payload. All inventory items and their corresponding offers in the inventory item group must be valid (meet all requirements) for the publishOfferByInventoryItemGroup call to be completely successful. For any inventory items in the group that are missing required data or have no corresponding offers, the publishOfferByInventoryItemGroup will create a new multiple-variation listing, but any inventory items with missing required data/offers will not be in the newly-created listing. If any inventory items in the group to be published have invalid data, or one or more of the inventory items have conflicting data with one another, the publishOfferByInventoryItemGroup call will fail. Be sure to check for any error or warning messages in the call response for any applicable information about one or more inventory items/offers having issues.
-		/// PublishOfferByInventoryItemGroup offer/publish_by_inventory_item_group/
-		/// </summary>
-		/// <param name="requestBody">The identifier of the inventory item group to publish and the eBay marketplace where the listing will be published is needed in the request payload.</param>
-		/// <returns>Success</returns>
-		public async Task<PublishResponse> PublishOfferByInventoryItemGroupAsync(PublishByInventoryItemGroupRequest requestBody)
-		{
-			var requestUri = "offer/publish_by_inventory_item_group/";
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = new JsonSerializer();
@@ -3513,15 +3837,64 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The identifier of the inventory item group to publish and the eBay marketplace where the listing will be published is needed in the request payload.</param>
 		/// <returns>Success</returns>
-		public PublishResponse PublishOfferByInventoryItemGroup(PublishByInventoryItemGroupRequest requestBody)
+		public async Task<PublishResponse> PublishOfferByInventoryItemGroupAsync(PublishByInventoryItemGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/publish_by_inventory_item_group/";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<PublishResponse>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Note: Please note that any eBay listing created using the Inventory API cannot be revised or relisted using the Trading API calls. This call is used to convert all unpublished offers associated with an inventory item group into an active, multiple-variation listing. The unique identifier of the inventory item group (inventoryItemGroupKey) is passed in the request payload. All inventory items and their corresponding offers in the inventory item group must be valid (meet all requirements) for the publishOfferByInventoryItemGroup call to be completely successful. For any inventory items in the group that are missing required data or have no corresponding offers, the publishOfferByInventoryItemGroup will create a new multiple-variation listing, but any inventory items with missing required data/offers will not be in the newly-created listing. If any inventory items in the group to be published have invalid data, or one or more of the inventory items have conflicting data with one another, the publishOfferByInventoryItemGroup call will fail. Be sure to check for any error or warning messages in the call response for any applicable information about one or more inventory items/offers having issues.
+		/// PublishOfferByInventoryItemGroup offer/publish_by_inventory_item_group/
+		/// </summary>
+		/// <param name="requestBody">The identifier of the inventory item group to publish and the eBay marketplace where the listing will be published is needed in the request payload.</param>
+		/// <returns>Success</returns>
+		public PublishResponse PublishOfferByInventoryItemGroup(PublishByInventoryItemGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "offer/publish_by_inventory_item_group/";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3537,6 +3910,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3544,15 +3918,23 @@ namespace MyNS
 		/// WithdrawOfferByInventoryItemGroup offer/withdraw_by_inventory_item_group
 		/// </summary>
 		/// <param name="requestBody">The base request of the withdrawOfferByInventoryItemGroup call.</param>
-		public async Task WithdrawOfferByInventoryItemGroupAsync(WithdrawByInventoryItemGroupRequest requestBody)
+		public async Task WithdrawOfferByInventoryItemGroupAsync(WithdrawByInventoryItemGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/withdraw_by_inventory_item_group";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3562,6 +3944,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3569,15 +3952,23 @@ namespace MyNS
 		/// WithdrawOfferByInventoryItemGroup offer/withdraw_by_inventory_item_group
 		/// </summary>
 		/// <param name="requestBody">The base request of the withdrawOfferByInventoryItemGroup call.</param>
-		public void WithdrawOfferByInventoryItemGroup(WithdrawByInventoryItemGroupRequest requestBody)
+		public void WithdrawOfferByInventoryItemGroup(WithdrawByInventoryItemGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/withdraw_by_inventory_item_group";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3585,6 +3976,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -3595,15 +3987,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">List of offers that needs fee information</param>
 		/// <returns>Success</returns>
-		public async Task<FeesSummaryResponse> GetListingFeesAsync(OfferKeysWithId requestBody)
+		public async Task<FeesSummaryResponse> GetListingFeesAsync(OfferKeysWithId requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/get_listing_fees";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3619,6 +4019,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3627,15 +4028,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">List of offers that needs fee information</param>
 		/// <returns>Success</returns>
-		public FeesSummaryResponse GetListingFees(OfferKeysWithId requestBody)
+		public FeesSummaryResponse GetListingFees(OfferKeysWithId requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/get_listing_fees";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3651,6 +4060,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3659,15 +4069,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Details of the offer for the channel</param>
 		/// <returns>Success</returns>
-		public async Task<BulkOfferResponse> BulkCreateOfferAsync(BulkEbayOfferDetailsWithKeys requestBody)
+		public async Task<BulkOfferResponse> BulkCreateOfferAsync(BulkEbayOfferDetailsWithKeys requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_create_offer";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3683,6 +4101,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3691,15 +4110,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Details of the offer for the channel</param>
 		/// <returns>Success</returns>
-		public BulkOfferResponse BulkCreateOffer(BulkEbayOfferDetailsWithKeys requestBody)
+		public BulkOfferResponse BulkCreateOffer(BulkEbayOfferDetailsWithKeys requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_create_offer";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3715,6 +4142,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3723,15 +4151,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The base request of the bulkPublishOffer method.</param>
 		/// <returns>Success</returns>
-		public async Task<BulkPublishResponse> BulkPublishOfferAsync(BulkOffer requestBody)
+		public async Task<BulkPublishResponse> BulkPublishOfferAsync(BulkOffer requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_publish_offer";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3747,6 +4183,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3755,15 +4192,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The base request of the bulkPublishOffer method.</param>
 		/// <returns>Success</returns>
-		public BulkPublishResponse BulkPublishOffer(BulkOffer requestBody)
+		public BulkPublishResponse BulkPublishOffer(BulkOffer requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_publish_offer";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3779,6 +4224,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3787,10 +4233,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="offerId">The unique identifier of the offer that is to be withdrawn. This value is passed into the path of the call URI.</param>
 		/// <returns>Success</returns>
-		public async Task<WithdrawResponse> WithdrawOfferAsync(string offerId)
+		public async Task<WithdrawResponse> WithdrawOfferAsync(string offerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId)+"/withdraw";
-			var responseMessage = await client.PostAsync(requestUri, new StringContent(String.Empty));
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3805,6 +4253,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3813,10 +4262,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="offerId">The unique identifier of the offer that is to be withdrawn. This value is passed into the path of the call URI.</param>
 		/// <returns>Success</returns>
-		public WithdrawResponse WithdrawOffer(string offerId)
+		public WithdrawResponse WithdrawOffer(string offerId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "offer/"+Uri.EscapeDataString(offerId)+"/withdraw";
-			var responseMessage = this.client.PostAsync(requestUri, new StringContent(String.Empty)).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3830,6 +4281,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -3859,10 +4311,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="inventoryItemGroupKey">The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The inventoryItemGroupKey value for the inventory item group to retrieve is passed in at the end of the call URI.</param>
 		/// <returns>Success</returns>
-		public async Task<InventoryItemGroup> GetInventoryItemGroupAsync(string inventoryItemGroupKey)
+		public async Task<InventoryItemGroup> GetInventoryItemGroupAsync(string inventoryItemGroupKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item_group/"+Uri.EscapeDataString(inventoryItemGroupKey);
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3876,6 +4335,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 		
@@ -3885,10 +4345,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="inventoryItemGroupKey">The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The inventoryItemGroupKey value for the inventory item group to retrieve is passed in at the end of the call URI.</param>
 		/// <returns>Success</returns>
-		public InventoryItemGroup GetInventoryItemGroup(string inventoryItemGroupKey)
+		public InventoryItemGroup GetInventoryItemGroup(string inventoryItemGroupKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item_group/"+Uri.EscapeDataString(inventoryItemGroupKey);
-			var responseMessage = this.client.GetAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3903,6 +4370,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3912,15 +4380,23 @@ namespace MyNS
 		/// <param name="inventoryItemGroupKey">Unique identifier of the inventory item group. This identifier is supplied by the seller. The inventoryItemGroupKey value for the inventory item group to create/update is passed in at the end of the call URI. This value cannot be changed once it is set.</param>
 		/// <param name="requestBody">Details of the inventory Item Group</param>
 		/// <returns>Success</returns>
-		public async Task<BaseResponse> CreateOrReplaceInventoryItemGroupAsync(string inventoryItemGroupKey, InventoryItemGroup requestBody)
+		public async Task<BaseResponse> CreateOrReplaceInventoryItemGroupAsync(string inventoryItemGroupKey, InventoryItemGroup requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item_group/"+Uri.EscapeDataString(inventoryItemGroupKey);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3936,6 +4412,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -3945,15 +4422,23 @@ namespace MyNS
 		/// <param name="inventoryItemGroupKey">Unique identifier of the inventory item group. This identifier is supplied by the seller. The inventoryItemGroupKey value for the inventory item group to create/update is passed in at the end of the call URI. This value cannot be changed once it is set.</param>
 		/// <param name="requestBody">Details of the inventory Item Group</param>
 		/// <returns>Success</returns>
-		public BaseResponse CreateOrReplaceInventoryItemGroup(string inventoryItemGroupKey, InventoryItemGroup requestBody)
+		public BaseResponse CreateOrReplaceInventoryItemGroup(string inventoryItemGroupKey, InventoryItemGroup requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item_group/"+Uri.EscapeDataString(inventoryItemGroupKey);
+			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PutAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3969,24 +4454,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-		
-		/// <summary>
-		/// This call deletes the inventory item group for a given inventoryItemGroupKey value.
-		/// DeleteInventoryItemGroup inventory_item_group/{inventoryItemGroupKey}
-		/// </summary>
-		/// <param name="inventoryItemGroupKey">The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The inventoryItemGroupKey value for the inventory item group to delete is passed in at the end of the call URI.</param>
-		public async Task DeleteInventoryItemGroupAsync(string inventoryItemGroupKey)
-		{
-			var requestUri = "inventory_item_group/"+Uri.EscapeDataString(inventoryItemGroupKey);
-			var responseMessage = await client.DeleteAsync(requestUri);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 		}
 		
@@ -3995,10 +4462,17 @@ namespace MyNS
 		/// DeleteInventoryItemGroup inventory_item_group/{inventoryItemGroupKey}
 		/// </summary>
 		/// <param name="inventoryItemGroupKey">The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The inventoryItemGroupKey value for the inventory item group to delete is passed in at the end of the call URI.</param>
-		public void DeleteInventoryItemGroup(string inventoryItemGroupKey)
+		public async Task DeleteInventoryItemGroupAsync(string inventoryItemGroupKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "inventory_item_group/"+Uri.EscapeDataString(inventoryItemGroupKey);
-			var responseMessage = this.client.DeleteAsync(requestUri).Result;
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4006,6 +4480,34 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// This call deletes the inventory item group for a given inventoryItemGroupKey value.
+		/// DeleteInventoryItemGroup inventory_item_group/{inventoryItemGroupKey}
+		/// </summary>
+		/// <param name="inventoryItemGroupKey">The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The inventoryItemGroupKey value for the inventory item group to delete is passed in at the end of the call URI.</param>
+		public void DeleteInventoryItemGroup(string inventoryItemGroupKey, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "inventory_item_group/"+Uri.EscapeDataString(inventoryItemGroupKey);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 	}
@@ -4035,15 +4537,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Details of the listings that needs to be migrated into Inventory</param>
 		/// <returns>Success</returns>
-		public async Task<BulkMigrateListingResponse> BulkMigrateListingAsync(BulkMigrateListing requestBody)
+		public async Task<BulkMigrateListingResponse> BulkMigrateListingAsync(BulkMigrateListing requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_migrate_listing";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4059,6 +4569,7 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
+			}
 		}
 		
 		/// <summary>
@@ -4067,15 +4578,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Details of the listings that needs to be migrated into Inventory</param>
 		/// <returns>Success</returns>
-		public BulkMigrateListingResponse BulkMigrateListing(BulkMigrateListing requestBody)
+		public BulkMigrateListingResponse BulkMigrateListing(BulkMigrateListing requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bulk_migrate_listing";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = this.client.PostAsync(requestUri, content).Result;
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4089,6 +4608,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}

@@ -73,10 +73,17 @@ namespace MyNS
 		/// <param name="tags">tags to filter by</param>
 		/// <param name="limit">maximum number of results to return</param>
 		/// <returns>pet response</returns>
-		public async Task<Pet[]> FindPetsAsync(string[] tags, int limit)
+		public async Task<Pet[]> FindPetsAsync(string[] tags, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit;
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -91,6 +98,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -99,15 +107,23 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">Pet to add to the store</param>
 		/// <returns>pet response</returns>
-		public async Task<Pet> AddPetAsync(NewPet requestBody)
+		public async Task<Pet> AddPetAsync(NewPet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets";
+			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync(requestUri, content);
+			request.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -121,6 +137,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -131,10 +148,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">ID of pet to fetch</param>
 		/// <returns>pet response</returns>
-		public async Task<Pet> FindPetByIdAsync(long id)
+		public async Task<Pet> FindPetByIdAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets/"+id;
-			var responseMessage = await client.GetAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -149,6 +173,7 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
 		}
 		
 		/// <summary>
@@ -156,10 +181,17 @@ namespace MyNS
 		/// DeletePet pets/{id}
 		/// </summary>
 		/// <param name="id">ID of pet to delete</param>
-		public async Task DeletePetAsync(long id)
+		public async Task DeletePetAsync(long id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets/"+id;
-			var responseMessage = await client.DeleteAsync(requestUri);
+			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(request.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(request);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
@@ -167,6 +199,7 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 		}
 	}
