@@ -234,348 +234,7 @@ namespace MyNamespace
 
     }
 
-    /// <summary>A representation of a cat</summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class Cat : Pet
-    {
-        /// <summary>The measured skill for hunting</summary>
-        [Newtonsoft.Json.JsonProperty("huntingSkill", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public CatHuntingSkill HuntingSkill { get; set; } = MyNamespace.CatHuntingSkill.Lazy;
 
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class Category
-    {
-        /// <summary>Category ID</summary>
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long Id { get; set; }
-
-        /// <summary>Category name</summary>
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
-        public string Name { get; set; }
-
-        /// <summary>Test Sub Category</summary>
-        [Newtonsoft.Json.JsonProperty("sub", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public Sub Sub { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    /// <summary>A representation of a dog</summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class Dog : Pet
-    {
-        /// <summary>The size of the pack the dog is from</summary>
-        [Newtonsoft.Json.JsonProperty("packSize", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Range(1, int.MaxValue)]
-        public int PackSize { get; set; } = 1;
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    /// <summary>A representation of a honey bee</summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class HoneyBee : Pet
-    {
-        /// <summary>Average amount of honey produced per day in ounces</summary>
-        [Newtonsoft.Json.JsonProperty("honeyPerDay", Required = Newtonsoft.Json.Required.Always)]
-        public double HoneyPerDay { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class Order
-    {
-        /// <summary>Order ID</summary>
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long Id { get; set; }
-
-        /// <summary>Pet ID</summary>
-        [Newtonsoft.Json.JsonProperty("petId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long PetId { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("quantity", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.Range(1, int.MaxValue)]
-        public int Quantity { get; set; } = 1;
-
-        /// <summary>Estimated ship date</summary>
-        [Newtonsoft.Json.JsonProperty("shipDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.DateTimeOffset ShipDate { get; set; }
-
-        /// <summary>Order Status</summary>
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public OrderStatus Status { get; set; }
-
-        /// <summary>Indicates whenever order was completed or not</summary>
-        [Newtonsoft.Json.JsonProperty("complete", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool Complete { get; set; } = false;
-
-        /// <summary>Unique Request Id</summary>
-        [Newtonsoft.Json.JsonProperty("requestId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string RequestId { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    [Newtonsoft.Json.JsonConverter(typeof(JsonInheritanceConverter), "petType")]
-    [JsonInheritanceAttribute("cat", typeof(Cat))]
-    [JsonInheritanceAttribute("dog", typeof(Dog))]
-    [JsonInheritanceAttribute("bee", typeof(HoneyBee))]
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class Pet
-    {
-        /// <summary>Pet ID</summary>
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long Id { get; set; }
-
-        /// <summary>Categories this pet belongs to</summary>
-        [Newtonsoft.Json.JsonProperty("category", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public Category Category { get; set; }
-
-        /// <summary>The name given to a pet</summary>
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>The list of URL to a cute photos featuring pet</summary>
-        [Newtonsoft.Json.JsonProperty("photoUrls", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required]
-        [System.ComponentModel.DataAnnotations.MaxLength(20)]
-        public System.Collections.Generic.List<string> PhotoUrls { get; set; } = new System.Collections.Generic.List<string>();
-
-        [Newtonsoft.Json.JsonProperty("friend", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public Pet Friend { get; set; }
-
-        /// <summary>Tags attached to the pet</summary>
-        [Newtonsoft.Json.JsonProperty("tags", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.MinLength(1)]
-        public System.Collections.Generic.List<Tag> Tags { get; set; }
-
-        /// <summary>Pet status in the store</summary>
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public PetStatus Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class Tag
-    {
-        /// <summary>Tag ID</summary>
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long Id { get; set; }
-
-        /// <summary>Tag name</summary>
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
-        public string Name { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class User
-    {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long Id { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("pet", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public Pet Pet { get; set; }
-
-        /// <summary>User supplied username</summary>
-        [Newtonsoft.Json.JsonProperty("username", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 4)]
-        public string Username { get; set; }
-
-        /// <summary>User first name</summary>
-        [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
-        public string FirstName { get; set; }
-
-        /// <summary>User last name</summary>
-        [Newtonsoft.Json.JsonProperty("lastName", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
-        public string LastName { get; set; }
-
-        /// <summary>User email address</summary>
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Email { get; set; }
-
-        /// <summary>User password, MUST contain a mix of upper and lower case letters, as well as digits</summary>
-        [Newtonsoft.Json.JsonProperty("password", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 8)]
-        [System.ComponentModel.DataAnnotations.RegularExpression(@"/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/")]
-        public string Password { get; set; }
-
-        /// <summary>User phone number in international format</summary>
-        [Newtonsoft.Json.JsonProperty("phone", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [System.ComponentModel.DataAnnotations.RegularExpression(@"/^\+(?:[0-9]-?){6,14}[0-9]$/")]
-        public string Phone { get; set; }
-
-        /// <summary>User status</summary>
-        [Newtonsoft.Json.JsonProperty("userStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int UserStatus { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public enum Anonymous
-    {
-        [System.Runtime.Serialization.EnumMember(Value = @"available")]
-        Available = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"pending")]
-        Pending = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"sold")]
-        Sold = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public enum CatHuntingSkill
-    {
-        [System.Runtime.Serialization.EnumMember(Value = @"clueless")]
-        Clueless = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"lazy")]
-        Lazy = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"adventurous")]
-        Adventurous = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"aggressive")]
-        Aggressive = 3,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class Sub
-    {
-        /// <summary>Dumb Property</summary>
-        [Newtonsoft.Json.JsonProperty("prop1", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Prop1 { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public enum OrderStatus
-    {
-        [System.Runtime.Serialization.EnumMember(Value = @"placed")]
-        Placed = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"approved")]
-        Approved = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"delivered")]
-        Delivered = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
-    public enum PetStatus
-    {
-        [System.Runtime.Serialization.EnumMember(Value = @"available")]
-        Available = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"pending")]
-        Pending = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"sold")]
-        Sold = 2,
-
-    }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.11.0 (Newtonsoft.Json v12.0.0.0)")]
     [System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple = true)]
@@ -711,6 +370,256 @@ namespace MyNamespace
         }
     }
 
+    /// <summary>
+    /// A representation of a cat
+    /// </summary>
+    public class Cat : Pet
+    {
+
+        /// <summary>
+        /// The measured skill for hunting
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.Required()]
+        public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
+    }
+
+    public enum CatHuntingSkill
+    {
+
+        clueless = 0,
+
+        lazy = 1,
+
+        adventurous = 2,
+
+        aggressive = 3,
+    }
+
+    public class Category
+    {
+
+        /// <summary>
+        /// Category ID
+        /// </summary>
+        public System.Nullable<System.Int64> Id { get; set; }
+
+        /// <summary>
+        /// Category name
+        /// Min length: 1
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Test Sub Category
+        /// </summary>
+        public string Sub { get; set; }
+    }
+
+    /// <summary>
+    /// A representation of a dog
+    /// </summary>
+    public class Dog : Pet
+    {
+
+        /// <summary>
+        /// The size of the pack the dog is from
+        /// Minimum: 1
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.Required()]
+        [System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+        public int PackSize { get; set; } = 1;
+    }
+
+    /// <summary>
+    /// A representation of a honey bee
+    /// </summary>
+    public class HoneyBee : Pet
+    {
+
+        /// <summary>
+        /// Average amount of honey produced per day in ounces
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.Required()]
+        public float HoneyPerDay { get; set; }
+    }
+
+    public class Order
+    {
+
+        /// <summary>
+        /// Order ID
+        /// </summary>
+        public System.Nullable<System.Int64> Id { get; set; }
+
+        /// <summary>
+        /// Pet ID
+        /// </summary>
+        public System.Nullable<System.Int64> PetId { get; set; }
+
+        /// <summary>
+        /// Minimum: 1
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+        public System.Nullable<System.Int32> Quantity { get; set; }
+
+        /// <summary>
+        /// Estimated ship date
+        /// </summary>
+        public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
+
+        /// <summary>
+        /// Order Status
+        /// </summary>
+        public OrderStatus Status { get; set; }
+
+        /// <summary>
+        /// Indicates whenever order was completed or not
+        /// </summary>
+        public System.Nullable<System.Boolean> Complete { get; set; }
+
+        /// <summary>
+        /// Unique Request Id
+        /// </summary>
+        public string RequestId { get; set; }
+    }
+
+    public enum OrderStatus
+    {
+
+        placed = 0,
+
+        approved = 1,
+
+        delivered = 2,
+    }
+
+    public class Pet
+    {
+
+        /// <summary>
+        /// Pet ID
+        /// </summary>
+        public System.Nullable<System.Int64> Id { get; set; }
+
+        /// <summary>
+        /// Categories this pet belongs to
+        /// </summary>
+        public string Category { get; set; }
+
+        /// <summary>
+        /// The name given to a pet
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.Required()]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// The list of URL to a cute photos featuring pet
+        /// Maximum items: 20
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.Required()]
+        [System.ComponentModel.DataAnnotations.MaxLength(20)]
+        public string[] PhotoUrls { get; set; }
+
+        public string Friend { get; set; }
+
+        /// <summary>
+        /// Tags attached to the pet
+        /// Minimum items: 1
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.MinLength(1)]
+        public Tag[] Tags { get; set; }
+
+        /// <summary>
+        /// Pet status in the store
+        /// </summary>
+        public PetStatus Status { get; set; }
+
+        /// <summary>
+        /// Type of a pet
+        /// </summary>
+        public string PetType { get; set; }
+    }
+
+    public enum PetStatus
+    {
+
+        available = 0,
+
+        pending = 1,
+
+        sold = 2,
+    }
+
+    public class Tag
+    {
+
+        /// <summary>
+        /// Tag ID
+        /// </summary>
+        public System.Nullable<System.Int64> Id { get; set; }
+
+        /// <summary>
+        /// Tag name
+        /// Min length: 1
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
+        public string Name { get; set; }
+    }
+
+    public class User
+    {
+
+        public System.Nullable<System.Int64> Id { get; set; }
+
+        public string Pet { get; set; }
+
+        /// <summary>
+        /// User supplied username
+        /// Min length: 4
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 4)]
+        public string Username { get; set; }
+
+        /// <summary>
+        /// User first name
+        /// Min length: 1
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
+        public string FirstName { get; set; }
+
+        /// <summary>
+        /// User last name
+        /// Min length: 1
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 1)]
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// User email address
+        /// </summary>
+        public string Email { get; set; }
+
+        /// <summary>
+        /// User password, MUST contain a mix of upper and lower case letters, as well as digits
+        /// Min length: 8
+        /// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
+        /// </summary>
+        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 8)]
+        public string Password { get; set; }
+
+        /// <summary>
+        /// User phone number in international format
+        /// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
+        /// </summary>
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// User status
+        /// </summary>
+        public System.Nullable<System.Int32> UserStatus { get; set; }
+    }
+
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.3.0.0 (NJsonSchema v10.1.11.0 (Newtonsoft.Json v12.0.0.0))")]
     public partial class FileParameter
     {
@@ -749,13 +658,13 @@ namespace MyNamespace
         {
             Dic = new ConcurrentDictionary<long, Pet>(new KeyValuePair<long, Pet>[] {
                 new KeyValuePair<long, Pet>(11, new Pet {Id=11, Name="Nice" }),
-                new KeyValuePair<long, Pet>(12, new Pet {Id=12, Name="Narco", Status= PetStatus.Sold }),
+                new KeyValuePair<long, Pet>(12, new Pet {Id=12, Name="Narco", Status= PetStatus.sold }),
                 new KeyValuePair<long, Pet>(13, new Pet {Id=13, Name="Bombasto" }),
                 new KeyValuePair<long, Pet>(14, new Pet {Id=14, Name="Celeritas" }),
-                new KeyValuePair<long, Pet>(15, new Pet {Id=15, Name="Magneta", Status= PetStatus.Sold }),
+                new KeyValuePair<long, Pet>(15, new Pet {Id=15, Name="Magneta", Status= PetStatus.sold }),
                 new KeyValuePair<long, Pet>(16, new Pet {Id=16, Name="RubberMan" }),
                 new KeyValuePair<long, Pet>(17, new Pet {Id=17, Name="Dynama" }),
-                new KeyValuePair<long, Pet>(18, new Pet {Id=18, Name="IQ", Status= PetStatus.Pending }),
+                new KeyValuePair<long, Pet>(18, new Pet {Id=18, Name="IQ", Status= PetStatus.sold}),
                 new KeyValuePair<long, Pet>(19, new Pet {Id=19, Name="Magma" }),
                 new KeyValuePair<long, Pet>(20, new Pet {Id=29, Name="Tornado" }),
 

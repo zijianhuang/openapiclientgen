@@ -79,7 +79,16 @@ namespace IntegrationTests
 		{
 			await api.AddPetAsync(new Pet()
 			{
-				Name="KKK"
+				//Id=339,
+				Name = "KKK",
+				PhotoUrls = new string[] { "http://somewhere.com/mydog.jpg" }, //required,
+				Tags = new Tag[] { //not required. However, when presented, it must contain at least one item.
+					new Tag()
+					{
+						//Id=3,
+						Name="Hey"
+					}
+				},
 			});
 		}
 
@@ -87,7 +96,7 @@ namespace IntegrationTests
 		[Fact]
 		public async Task TestPetsDelete()
 		{
-			var ex = await Assert.ThrowsAsync<WebApiRequestException>(()=> api.DeletePetAsync(9));
+			var ex = await Assert.ThrowsAsync<WebApiRequestException>(() => api.DeletePetAsync(9));
 			Assert.Equal("NoSuchPet", ex.Response);
 		}
 
