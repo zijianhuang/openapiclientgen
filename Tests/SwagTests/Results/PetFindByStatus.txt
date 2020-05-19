@@ -180,16 +180,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -215,16 +210,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Pet[] FindPetsByStatus(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -250,16 +240,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatus2Async(PetStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet[]> FindPetsByStatus2Async(PetStatus status)
 		{
 			var requestUri = "pet/findByStatus2?status=" + status;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -285,16 +270,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus2(PetStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Pet[] FindPetsByStatus2(PetStatus status)
 		{
 			var requestUri = "pet/findByStatus2?status=" + status;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -320,16 +300,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatus3Async(PetStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet[]> FindPetsByStatus3Async(PetStatus status)
 		{
 			var requestUri = "pet/findByStatus3?status=" + status;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -355,16 +330,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus3(PetStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Pet[] FindPetsByStatus3(PetStatus status)
 		{
 			var requestUri = "pet/findByStatus3?status=" + status;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{

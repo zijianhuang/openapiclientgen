@@ -1530,7 +1530,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to apply a coupon to a checkout session.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> ApplyCouponAsync(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> ApplyCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1540,12 +1540,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1572,7 +1566,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to apply a coupon to a checkout session.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse ApplyCoupon(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse ApplyCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1582,12 +1576,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1613,16 +1601,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> GetCheckoutSessionAsync(string checkoutSessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> GetCheckoutSessionAsync(string checkoutSessionId)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1647,16 +1630,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse GetCheckoutSession(string checkoutSessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse GetCheckoutSession(string checkoutSessionId)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1681,7 +1659,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The container for the fields used by the initiateCheckoutSession method.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> InitiateCheckoutSessionAsync(CreateSignInCheckoutSessionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> InitiateCheckoutSessionAsync(CreateSignInCheckoutSessionRequest requestBody)
 		{
 			var requestUri = "checkout_session/initiate";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1691,12 +1669,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1722,7 +1694,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The container for the fields used by the initiateCheckoutSession method.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse InitiateCheckoutSession(CreateSignInCheckoutSessionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse InitiateCheckoutSession(CreateSignInCheckoutSessionRequest requestBody)
 		{
 			var requestUri = "checkout_session/initiate";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1732,12 +1704,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1763,7 +1729,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created.</param>
 		/// <returns>OK</returns>
-		public async Task<PurchaseOrderSummary> PlaceOrderAsync(string checkoutSessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PurchaseOrderSummary> PlaceOrderAsync(string checkoutSessionId)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1792,7 +1758,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created.</param>
 		/// <returns>OK</returns>
-		public PurchaseOrderSummary PlaceOrder(string checkoutSessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public PurchaseOrderSummary PlaceOrder(string checkoutSessionId)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1822,7 +1788,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to remove a coupon from a checkout session.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> RemoveCouponAsync(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> RemoveCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1832,12 +1798,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1864,7 +1824,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to remove a coupon from a checkout session.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse RemoveCoupon(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse RemoveCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1874,12 +1834,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1906,7 +1860,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updatePaymentInfo method.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> UpdatePaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> UpdatePaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1916,12 +1870,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1948,7 +1896,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updatePaymentInfo method.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse UpdatePaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse UpdatePaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1958,12 +1906,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1990,7 +1932,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateQuantity method.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> UpdateQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> UpdateQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2000,12 +1942,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2032,7 +1968,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateQuantity method.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse UpdateQuantity(string checkoutSessionId, UpdateQuantity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse UpdateQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2042,12 +1978,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2074,7 +2004,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateShippingAddress method.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> UpdateShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> UpdateShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2084,12 +2014,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2116,7 +2040,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateShippingAddress method.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse UpdateShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse UpdateShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2126,12 +2050,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2158,7 +2076,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned checkout session ID, for a specific eBay marketplace, that is returned by initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateShippingOption method.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> UpdateShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> UpdateShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2168,12 +2086,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2200,7 +2112,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned checkout session ID, for a specific eBay marketplace, that is returned by initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateShippingOption method.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse UpdateShippingOption(string checkoutSessionId, UpdateShippingOption requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse UpdateShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2210,12 +2122,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2262,7 +2168,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to apply a coupon to a checkout session.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> ApplyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> ApplyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2272,12 +2178,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2304,7 +2204,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to apply a coupon to a checkout session.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse ApplyGuestCoupon(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse ApplyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2314,12 +2214,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2345,16 +2239,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> GetGuestCheckoutSessionAsync(string checkoutSessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> GetGuestCheckoutSessionAsync(string checkoutSessionId)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2379,16 +2268,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse GetGuestCheckoutSession(string checkoutSessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse GetGuestCheckoutSession(string checkoutSessionId)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2413,7 +2297,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The container for the fields used by the initiateGuestCheckoutSession method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> InitiateGuestCheckoutSessionAsync(CreateGuestCheckoutSessionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> InitiateGuestCheckoutSessionAsync(CreateGuestCheckoutSessionRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/initiate";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2423,12 +2307,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2454,7 +2332,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The container for the fields used by the initiateGuestCheckoutSession method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse InitiateGuestCheckoutSession(CreateGuestCheckoutSessionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse InitiateGuestCheckoutSession(CreateGuestCheckoutSessionRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/initiate";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2464,12 +2342,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2496,7 +2368,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the initiateGuestPayment method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> InitiateGuestPaymentAsync(string checkoutSessionId, InitiatePaymentRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> InitiateGuestPaymentAsync(string checkoutSessionId, InitiatePaymentRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/initiate_payment";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2506,12 +2378,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2538,7 +2404,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the initiateGuestPayment method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse InitiateGuestPayment(string checkoutSessionId, InitiatePaymentRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse InitiateGuestPayment(string checkoutSessionId, InitiatePaymentRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/initiate_payment";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2548,12 +2414,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2580,7 +2440,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific, eBay marketplace that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the placeGuestOrder method.</param>
 		/// <returns>OK</returns>
-		public async Task<PurchaseOrderSummary> PlaceGuestOrderAsync(string checkoutSessionId, GuestPlaceOrderRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PurchaseOrderSummary> PlaceGuestOrderAsync(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2590,12 +2450,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2622,7 +2476,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific, eBay marketplace that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the placeGuestOrder method.</param>
 		/// <returns>OK</returns>
-		public PurchaseOrderSummary PlaceGuestOrder(string checkoutSessionId, GuestPlaceOrderRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public PurchaseOrderSummary PlaceGuestOrder(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2632,12 +2486,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2664,7 +2512,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to remove a coupon from a checkout session.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> RemoveGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> RemoveGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2674,12 +2522,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2706,7 +2548,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to remove a coupon from a checkout session.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse RemoveGuestCoupon(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse RemoveGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2716,12 +2558,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2748,7 +2584,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateGuestPaymentInfo method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> UpdateGuestPaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> UpdateGuestPaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2758,12 +2594,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2790,7 +2620,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateGuestPaymentInfo method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse UpdateGuestPaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse UpdateGuestPaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2800,12 +2630,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2832,7 +2656,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateGuestQuantity method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> UpdateGuestQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> UpdateGuestQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2842,12 +2666,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2874,7 +2692,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateGuestQuantity method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse UpdateGuestQuantity(string checkoutSessionId, UpdateQuantity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse UpdateGuestQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2884,12 +2702,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -2916,7 +2728,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateGuestShippingAddress method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> UpdateGuestShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> UpdateGuestShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2926,12 +2738,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -2958,7 +2764,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateGuestShippingAddress method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse UpdateGuestShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse UpdateGuestShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -2968,12 +2774,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3000,7 +2800,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateGuestShippingOption method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> UpdateGuestShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> UpdateGuestShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3010,12 +2810,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3042,7 +2836,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateGuestShippingOption method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse UpdateGuestShippingOption(string checkoutSessionId, UpdateShippingOption requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse UpdateGuestShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3052,12 +2846,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3104,7 +2892,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to apply a coupon to a checkout session.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> ApplyProxyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> ApplyProxyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3114,12 +2902,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3146,7 +2928,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to apply a coupon to a checkout session.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse ApplyProxyGuestCoupon(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse ApplyProxyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3156,12 +2938,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3187,16 +2963,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> GetProxyGuestCheckoutSessionAsync(string checkoutSessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> GetProxyGuestCheckoutSessionAsync(string checkoutSessionId)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3221,16 +2992,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse GetProxyGuestCheckoutSession(string checkoutSessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse GetProxyGuestCheckoutSession(string checkoutSessionId)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3255,7 +3021,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The container for the fields used by the initiateProxyGuestCheckoutSession method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> InitiateProxyGuestCheckoutSessionAsync(CheckoutSessionRequestWithoutPayment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> InitiateProxyGuestCheckoutSessionAsync(CheckoutSessionRequestWithoutPayment requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/initiate";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3265,12 +3031,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3296,7 +3056,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">The container for the fields used by the initiateProxyGuestCheckoutSession method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse InitiateProxyGuestCheckoutSession(CheckoutSessionRequestWithoutPayment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse InitiateProxyGuestCheckoutSession(CheckoutSessionRequestWithoutPayment requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/initiate";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3306,12 +3066,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3338,7 +3092,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the placeProxyGuestOrder method.</param>
 		/// <returns>OK</returns>
-		public async Task<PurchaseOrderSummary> PlaceProxyGuestOrderAsync(string checkoutSessionId, GuestPlaceOrderRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PurchaseOrderSummary> PlaceProxyGuestOrderAsync(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3348,12 +3102,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3380,7 +3128,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the placeProxyGuestOrder method.</param>
 		/// <returns>OK</returns>
-		public PurchaseOrderSummary PlaceProxyGuestOrder(string checkoutSessionId, GuestPlaceOrderRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public PurchaseOrderSummary PlaceProxyGuestOrder(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3390,12 +3138,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3422,7 +3164,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to remove a coupon from a checkout session.</param>
 		/// <returns>OK</returns>
-		public async Task<CheckoutSessionResponse> RemoveProxyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CheckoutSessionResponse> RemoveProxyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3432,12 +3174,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3464,7 +3200,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used to remove a coupon from a checkout session.</param>
 		/// <returns>OK</returns>
-		public CheckoutSessionResponse RemoveProxyGuestCoupon(string checkoutSessionId, CouponRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public CheckoutSessionResponse RemoveProxyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3474,12 +3210,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3506,7 +3236,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateProxyGuestPaymentInfo method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestPaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestPaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3516,12 +3246,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3548,7 +3272,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateProxyGuestPaymentInfo method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse UpdateProxyGuestPaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse UpdateProxyGuestPaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3558,12 +3282,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3590,7 +3308,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateProxyGuestQuantity method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3600,12 +3318,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3632,7 +3344,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateProxyGuestQuantity method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse UpdateProxyGuestQuantity(string checkoutSessionId, UpdateQuantity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse UpdateProxyGuestQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3642,12 +3354,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3674,7 +3380,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateProxyGuestShippingAddress method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3684,12 +3390,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3716,7 +3416,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateProxyGuestShippingAddress method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse UpdateProxyGuestShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse UpdateProxyGuestShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3726,12 +3426,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3758,7 +3452,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateProxyGuestShippingOption method.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3768,12 +3462,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3800,7 +3488,7 @@ namespace MyNS
 		/// <param name="checkoutSessionId">The eBay-assigned session ID, for a specific eBay marketplace, that is returned by the initiateProxyGuestCheckoutSession method. Note: When using this ID, the X-EBAY-C-MARKETPLACE-ID value and developer App ID must be the same as what was used when this checkout session was created. See Checkout session restrictions in the Buy Integration Guide.</param>
 		/// <param name="requestBody">The container for the fields used by the updateProxyGuestShippingOption method.</param>
 		/// <returns>OK</returns>
-		public GuestCheckoutSessionResponse UpdateProxyGuestShippingOption(string checkoutSessionId, UpdateShippingOption requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestCheckoutSessionResponse UpdateProxyGuestShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3810,12 +3498,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3861,16 +3543,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="purchaseOrderId">The unique identifier of a purchase order made by a guest buyer, for which details are to be retrieved. This value is returned by the placeGuestOrder method in the purchaseOrderId field. The purchaseOrderId is passed in as a URI parameter and is required.</param>
 		/// <returns>OK</returns>
-		public async Task<GuestPurchaseOrder> GetGuestPurchaseOrderAsync(string purchaseOrderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GuestPurchaseOrder> GetGuestPurchaseOrderAsync(string purchaseOrderId)
 		{
 			var requestUri = "guest_purchase_order/"+Uri.EscapeDataString(purchaseOrderId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3895,16 +3572,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="purchaseOrderId">The unique identifier of a purchase order made by a guest buyer, for which details are to be retrieved. This value is returned by the placeGuestOrder method in the purchaseOrderId field. The purchaseOrderId is passed in as a URI parameter and is required.</param>
 		/// <returns>OK</returns>
-		public GuestPurchaseOrder GetGuestPurchaseOrder(string purchaseOrderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GuestPurchaseOrder GetGuestPurchaseOrder(string purchaseOrderId)
 		{
 			var requestUri = "guest_purchase_order/"+Uri.EscapeDataString(purchaseOrderId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -3949,16 +3621,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="purchaseOrderId">The unique identifier of a purchase order made by an eBay member, for which details are to be retrieved. This value is returned by the placeOrder method in the purchaseOrderId field. The purchaseOrderId is passed in as a URI parameter and is required.</param>
 		/// <returns>OK</returns>
-		public async Task<PurchaseOrder> GetPurchaseOrderAsync(string purchaseOrderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PurchaseOrder> GetPurchaseOrderAsync(string purchaseOrderId)
 		{
 			var requestUri = "purchase_order/"+Uri.EscapeDataString(purchaseOrderId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -3983,16 +3650,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="purchaseOrderId">The unique identifier of a purchase order made by an eBay member, for which details are to be retrieved. This value is returned by the placeOrder method in the purchaseOrderId field. The purchaseOrderId is passed in as a URI parameter and is required.</param>
 		/// <returns>OK</returns>
-		public PurchaseOrder GetPurchaseOrder(string purchaseOrderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public PurchaseOrder GetPurchaseOrder(string purchaseOrderId)
 		{
 			var requestUri = "purchase_order/"+Uri.EscapeDataString(purchaseOrderId);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{

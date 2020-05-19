@@ -303,7 +303,7 @@ namespace MyNS
 		/// AddPet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task AddPetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task AddPetAsync(Pet requestBody)
 		{
 			var requestUri = "pet";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -313,12 +313,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -338,7 +332,7 @@ namespace MyNS
 		/// AddPet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public void AddPet(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void AddPet(Pet requestBody)
 		{
 			var requestUri = "pet";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -348,12 +342,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -372,7 +360,7 @@ namespace MyNS
 		/// UpdatePet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task UpdatePetAsync(Pet requestBody)
 		{
 			var requestUri = "pet";
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -382,12 +370,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -406,7 +388,7 @@ namespace MyNS
 		/// UpdatePet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public void UpdatePet(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void UpdatePet(Pet requestBody)
 		{
 			var requestUri = "pet";
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -416,12 +398,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -442,16 +418,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="petId">ID of pet to return</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet> GetPetByIdAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet> GetPetByIdAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -477,16 +448,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="petId">ID of pet to return</param>
 		/// <returns>successful operation</returns>
-		public Pet GetPetById(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Pet GetPetById(long petId)
 		{
 			var requestUri = "pet/"+petId;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -510,16 +476,11 @@ namespace MyNS
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public async Task DeletePetAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task DeletePetAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -537,16 +498,11 @@ namespace MyNS
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public void DeletePet(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void DeletePet(long petId)
 		{
 			var requestUri = "pet/"+petId;
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -566,16 +522,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -601,16 +552,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Pet[] FindPetsByStatus(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -636,16 +582,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags)
 		{
 			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -671,16 +612,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByTags(string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Pet[] FindPetsByTags(string[] tags)
 		{
 			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -725,16 +661,11 @@ namespace MyNS
 		/// GetInventory store/inventory
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<string> GetInventoryAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> GetInventoryAsync()
 		{
 			var requestUri = "store/inventory";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -758,16 +689,11 @@ namespace MyNS
 		/// GetInventory store/inventory
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public string GetInventory(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public string GetInventory()
 		{
 			var requestUri = "store/inventory";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -791,7 +717,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">order placed for purchasing the pet</param>
 		/// <returns>successful operation</returns>
-		public async Task<Order> PlaceOrderAsync(Order requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Order> PlaceOrderAsync(Order requestBody)
 		{
 			var requestUri = "store/order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -801,12 +727,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -832,7 +752,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">order placed for purchasing the pet</param>
 		/// <returns>successful operation</returns>
-		public Order PlaceOrder(Order requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Order PlaceOrder(Order requestBody)
 		{
 			var requestUri = "store/order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -842,12 +762,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -874,16 +788,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="orderId">ID of pet that needs to be fetched</param>
 		/// <returns>successful operation</returns>
-		public async Task<Order> GetOrderByIdAsync(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Order> GetOrderByIdAsync(long orderId)
 		{
 			var requestUri = "store/order/"+orderId;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -909,16 +818,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="orderId">ID of pet that needs to be fetched</param>
 		/// <returns>successful operation</returns>
-		public Order GetOrderById(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Order GetOrderById(long orderId)
 		{
 			var requestUri = "store/order/"+orderId;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -943,16 +847,11 @@ namespace MyNS
 		/// DeleteOrder store/order/{orderId}
 		/// </summary>
 		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public async Task DeleteOrderAsync(string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task DeleteOrderAsync(string orderId)
 		{
 			var requestUri = "store/order/"+Uri.EscapeDataString(orderId);
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -971,16 +870,11 @@ namespace MyNS
 		/// DeleteOrder store/order/{orderId}
 		/// </summary>
 		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public void DeleteOrder(string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void DeleteOrder(string orderId)
 		{
 			var requestUri = "store/order/"+Uri.EscapeDataString(orderId);
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1019,7 +913,7 @@ namespace MyNS
 		/// CreateUser user
 		/// </summary>
 		/// <param name="requestBody">Created user object</param>
-		public async Task CreateUserAsync(User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task CreateUserAsync(User requestBody)
 		{
 			var requestUri = "user";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1029,12 +923,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1054,7 +942,7 @@ namespace MyNS
 		/// CreateUser user
 		/// </summary>
 		/// <param name="requestBody">Created user object</param>
-		public void CreateUser(User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void CreateUser(User requestBody)
 		{
 			var requestUri = "user";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1064,12 +952,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1089,16 +971,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
 		/// <returns>successful operation</returns>
-		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<User> GetUserByNameAsync(string username)
 		{
 			var requestUri = "user/"+Uri.EscapeDataString(username);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1123,16 +1000,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
 		/// <returns>successful operation</returns>
-		public User GetUserByName(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public User GetUserByName(string username)
 		{
 			var requestUri = "user/"+Uri.EscapeDataString(username);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1158,7 +1030,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="username">name that need to be deleted</param>
 		/// <param name="requestBody">Updated user object</param>
-		public async Task UpdateUserAsync(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task UpdateUserAsync(string username, User requestBody)
 		{
 			var requestUri = "user/"+Uri.EscapeDataString(username);
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -1168,12 +1040,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1194,7 +1060,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="username">name that need to be deleted</param>
 		/// <param name="requestBody">Updated user object</param>
-		public void UpdateUser(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void UpdateUser(string username, User requestBody)
 		{
 			var requestUri = "user/"+Uri.EscapeDataString(username);
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -1204,12 +1070,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1229,16 +1089,11 @@ namespace MyNS
 		/// DeleteUser user/{username}
 		/// </summary>
 		/// <param name="username">The name that needs to be deleted</param>
-		public async Task DeleteUserAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task DeleteUserAsync(string username)
 		{
 			var requestUri = "user/"+Uri.EscapeDataString(username);
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1257,16 +1112,11 @@ namespace MyNS
 		/// DeleteUser user/{username}
 		/// </summary>
 		/// <param name="username">The name that needs to be deleted</param>
-		public void DeleteUser(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void DeleteUser(string username)
 		{
 			var requestUri = "user/"+Uri.EscapeDataString(username);
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1284,7 +1134,7 @@ namespace MyNS
 		/// CreateUsersWithArrayInput user/createWithArray
 		/// </summary>
 		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithArrayInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task CreateUsersWithArrayInputAsync(User[] requestBody)
 		{
 			var requestUri = "user/createWithArray";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1294,12 +1144,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1318,7 +1162,7 @@ namespace MyNS
 		/// CreateUsersWithArrayInput user/createWithArray
 		/// </summary>
 		/// <param name="requestBody">List of user object</param>
-		public void CreateUsersWithArrayInput(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void CreateUsersWithArrayInput(User[] requestBody)
 		{
 			var requestUri = "user/createWithArray";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1328,12 +1172,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1352,7 +1190,7 @@ namespace MyNS
 		/// CreateUsersWithListInput user/createWithList
 		/// </summary>
 		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithListInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task CreateUsersWithListInputAsync(User[] requestBody)
 		{
 			var requestUri = "user/createWithList";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1362,12 +1200,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1386,7 +1218,7 @@ namespace MyNS
 		/// CreateUsersWithListInput user/createWithList
 		/// </summary>
 		/// <param name="requestBody">List of user object</param>
-		public void CreateUsersWithListInput(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void CreateUsersWithListInput(User[] requestBody)
 		{
 			var requestUri = "user/createWithList";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1396,12 +1228,6 @@ namespace MyNS
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			request.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1422,16 +1248,11 @@ namespace MyNS
 		/// <param name="username">The user name for login</param>
 		/// <param name="password">The password for login in clear text</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> LoginUserAsync(string username, string password, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> LoginUserAsync(string username, string password)
 		{
 			var requestUri = "user/login?username=" + Uri.EscapeDataString(username)+"&password=" + Uri.EscapeDataString(password);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1456,16 +1277,11 @@ namespace MyNS
 		/// <param name="username">The user name for login</param>
 		/// <param name="password">The password for login in clear text</param>
 		/// <returns>successful operation</returns>
-		public string LoginUser(string username, string password, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public string LoginUser(string username, string password)
 		{
 			var requestUri = "user/login?username=" + Uri.EscapeDataString(username)+"&password=" + Uri.EscapeDataString(password);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -1487,16 +1303,11 @@ namespace MyNS
 		/// Logs out current logged in user session
 		/// LogoutUser user/logout
 		/// </summary>
-		public async Task LogoutUserAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task LogoutUserAsync()
 		{
 			var requestUri = "user/logout";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -1513,16 +1324,11 @@ namespace MyNS
 		/// Logs out current logged in user session
 		/// LogoutUser user/logout
 		/// </summary>
-		public void LogoutUser(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void LogoutUser()
 		{
 			var requestUri = "user/logout";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{

@@ -10,6 +10,12 @@
 	"HandleHttpRequestHeaders": true,
 
 	"Plugins": [
+		{
+			"AssemblyName": "Fonlow.OpenApiClientGen.NG2",
+			"TargetDir": "clientapi",
+			"TSFile": "ClientApiAuto.ts",
+			"ContentType": "application/json;charset=UTF-8"
+		}
 
 	]
 

@@ -57,8 +57,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeGenException(string message, Exception innerException) : base(message, innerException) { }
 
-		public string Description { get; set; }
-
 		public override void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
 			base.GetObjectData(info, context);

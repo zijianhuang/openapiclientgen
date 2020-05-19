@@ -193,16 +193,11 @@ namespace MyNS
 		/// <param name="api_context">This optional query parameter filters the result to include only the specified API context. Acceptable values for the parameter are buy, sell, commerce, and developer.</param>
 		/// <param name="api_name">This optional query parameter filters the result to include only the APIs specified. Example values are browse for the Buy APIs context, inventory for the Sell APIs context, and taxonomy for the Commerce APIs context.</param>
 		/// <returns>OK</returns>
-		public async Task<RateLimitsResponse> GetRateLimitsAsync(string api_context, string api_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<RateLimitsResponse> GetRateLimitsAsync(string api_context, string api_name)
 		{
 			var requestUri = "rate_limit/?api_context=" + Uri.EscapeDataString(api_context)+"&api_name=" + Uri.EscapeDataString(api_name);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -228,16 +223,11 @@ namespace MyNS
 		/// <param name="api_context">This optional query parameter filters the result to include only the specified API context. Acceptable values for the parameter are buy, sell, commerce, and developer.</param>
 		/// <param name="api_name">This optional query parameter filters the result to include only the APIs specified. Example values are browse for the Buy APIs context, inventory for the Sell APIs context, and taxonomy for the Commerce APIs context.</param>
 		/// <returns>OK</returns>
-		public RateLimitsResponse GetRateLimits(string api_context, string api_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public RateLimitsResponse GetRateLimits(string api_context, string api_name)
 		{
 			var requestUri = "rate_limit/?api_context=" + Uri.EscapeDataString(api_context)+"&api_name=" + Uri.EscapeDataString(api_name);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -283,16 +273,11 @@ namespace MyNS
 		/// <param name="api_context">This optional query parameter filters the result to include only the specified API context. Acceptable values for the parameter are buy, sell, commerce, and developer.</param>
 		/// <param name="api_name">This optional query parameter filters the result to include only the APIs specified. Example values are browse for the Buy APIs context, inventory for the Sell APIs context, and taxonomy for the Commerce APIs context.</param>
 		/// <returns>OK</returns>
-		public async Task<RateLimitsResponse> GetUserRateLimitsAsync(string api_context, string api_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<RateLimitsResponse> GetUserRateLimitsAsync(string api_context, string api_name)
 		{
 			var requestUri = "user_rate_limit/?api_context=" + Uri.EscapeDataString(api_context)+"&api_name=" + Uri.EscapeDataString(api_name);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -318,16 +303,11 @@ namespace MyNS
 		/// <param name="api_context">This optional query parameter filters the result to include only the specified API context. Acceptable values for the parameter are buy, sell, commerce, and developer.</param>
 		/// <param name="api_name">This optional query parameter filters the result to include only the APIs specified. Example values are browse for the Buy APIs context, inventory for the Sell APIs context, and taxonomy for the Commerce APIs context.</param>
 		/// <returns>OK</returns>
-		public RateLimitsResponse GetUserRateLimits(string api_context, string api_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public RateLimitsResponse GetUserRateLimits(string api_context, string api_name)
 		{
 			var requestUri = "user_rate_limit/?api_context=" + Uri.EscapeDataString(api_context)+"&api_name=" + Uri.EscapeDataString(api_name);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{

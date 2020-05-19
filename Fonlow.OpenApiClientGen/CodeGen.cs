@@ -15,11 +15,10 @@ namespace Fonlow.CodeDom.Web
 					settings.ClientLibraryProjectFolderName : System.IO.Path.Combine(outputBasePath, settings.ClientLibraryProjectFolderName);
 
 				if (!System.IO.Directory.Exists(csharpClientProjectDir))
-					throw new CodeGenException("Client Library Project Folder Not Exist")
-					{
-						Description = $"{csharpClientProjectDir} not exist while current directory is {currentDir}"
-					};
-
+				{
+					var msg = $"{csharpClientProjectDir} not exist while current directory is {currentDir}";
+					throw new CodeGenException(msg);
+				}
 				var path = System.IO.Path.Combine(csharpClientProjectDir, settings.ClientLibraryFileName);
 				var gen = new Fonlow.OpenApiClientGen.Cs.ControllersClientApiGen(settings);
 				gen.CreateCodeDom(paths, components);
@@ -41,18 +40,14 @@ namespace Fonlow.CodeDom.Web
 					catch (ArgumentException e)
 					{
 						System.Diagnostics.Trace.TraceWarning(e.Message);
-						throw new CodeGenException("Invalid TypeScript Folder")
-						{
-							Description = $"Invalid TypeScriptFolder {folder} while current directory is {currentDir}"
-						};
+						var msg = $"Invalid TypeScriptFolder {folder} while current directory is {currentDir}";
+						throw new CodeGenException(msg);
 					}
 
 					if (!System.IO.Directory.Exists(theFolder))
 					{
-						throw new CodeGenException("TypeScript Folder Not Exist")
-						{
-							Description = $"TypeScriptFolder {theFolder} not exist while current directory is {currentDir}"
-						};
+						var msg = $"TypeScriptFolder {theFolder} not exist while current directory is {currentDir}";
+						throw new CodeGenException(msg);
 					}
 					return System.IO.Path.Combine(theFolder, fileName);
 				};

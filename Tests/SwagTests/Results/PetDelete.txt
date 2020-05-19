@@ -42,16 +42,11 @@ namespace MyNS
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public async Task DeletePetAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task DeletePetAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -69,16 +64,11 @@ namespace MyNS
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public void DeletePet(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public void DeletePet(long petId)
 		{
 			var requestUri = "pet/"+petId;
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{

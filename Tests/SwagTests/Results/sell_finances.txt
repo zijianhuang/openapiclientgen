@@ -479,16 +479,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="payout_Id">The unique identfier of the payout is passed in as a path parameter at the end of the call URI. The getPayouts method can be used to retrieve the unique identifier of a payout, or the user can check Seller Hub to get the payout ID.</param>
 		/// <returns>Success</returns>
-		public async Task<Payout> GetPayoutAsync(string payout_Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Payout> GetPayoutAsync(string payout_Id)
 		{
 			var requestUri = "payout/"+Uri.EscapeDataString(payout_Id);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -513,16 +508,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="payout_Id">The unique identfier of the payout is passed in as a path parameter at the end of the call URI. The getPayouts method can be used to retrieve the unique identifier of a payout, or the user can check Seller Hub to get the payout ID.</param>
 		/// <returns>Success</returns>
-		public Payout GetPayout(string payout_Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Payout GetPayout(string payout_Id)
 		{
 			var requestUri = "payout/"+Uri.EscapeDataString(payout_Id);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -550,16 +540,11 @@ namespace MyNS
 		/// <param name="limit">The number of payouts to return per page of the result set. Use this parameter in conjunction with the offset parameter to control the pagination of the output. For example, if offset is set to 10 and limit is set to 10, the method retrieves payouts 11 thru 20 from the result set. Note: This feature employs a zero-based list, where the first payout in the results set has an offset value of 0. Maximum: 200 Default: 20</param>
 		/// <param name="offset">This integer value indicates the actual position that the first payout returned on the current page has in the results set. So, if you wanted to view the 11th payout of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves payouts 31 thru 40 from the resulting collection of payouts. Note: This feature employs a zero-based list, where the first payout in the results set has an offset value of 0. Default: 0 (zero)</param>
 		/// <returns>Success</returns>
-		public async Task<Payouts> GetPayoutsAsync(string filter, string sort, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Payouts> GetPayoutsAsync(string filter, string sort, string limit, string offset)
 		{
 			var requestUri = "payout?filter=" + Uri.EscapeDataString(filter)+"&sort=" + Uri.EscapeDataString(sort)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -587,16 +572,11 @@ namespace MyNS
 		/// <param name="limit">The number of payouts to return per page of the result set. Use this parameter in conjunction with the offset parameter to control the pagination of the output. For example, if offset is set to 10 and limit is set to 10, the method retrieves payouts 11 thru 20 from the result set. Note: This feature employs a zero-based list, where the first payout in the results set has an offset value of 0. Maximum: 200 Default: 20</param>
 		/// <param name="offset">This integer value indicates the actual position that the first payout returned on the current page has in the results set. So, if you wanted to view the 11th payout of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves payouts 31 thru 40 from the resulting collection of payouts. Note: This feature employs a zero-based list, where the first payout in the results set has an offset value of 0. Default: 0 (zero)</param>
 		/// <returns>Success</returns>
-		public Payouts GetPayouts(string filter, string sort, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Payouts GetPayouts(string filter, string sort, string limit, string offset)
 		{
 			var requestUri = "payout?filter=" + Uri.EscapeDataString(filter)+"&sort=" + Uri.EscapeDataString(sort)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -621,16 +601,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter">The two filter types that can be used here are discussed below. One or both of these filter types can be used. If none of these filters are used, the data returned in the response will reflect payouts, in all states, processed within the last 90 days. payoutDate: consider payouts processed within a specific range of dates. The date format to use is YYYY-MM-DDTHH:MM:SS.SSSZ. Below is the proper syntax to use if filtering by a date range: https://apiz.ebay.com/sell/finances/v1/payout_summary?filter=payoutDate:[2018-12-17T00:00:01.000Z..2018-12-24T00:00:01.000Z] Alternatively, the user could omit the ending date, and the date range would include the starting date and up to 90 days past that date, or the current date if the starting date is less than 90 days in the past. payoutStatus: consider only the payouts in a particular state. Only one payout state can be specified with this filter. The supported payoutStatus values are as follows: INITIATED: search for payouts that have been initiated but not processed. SUCCEEDED: consider only successful payouts. RETRYABLE_FAILED: consider only payouts that failed, but ones which will be tried again. TERMINAL_FAILED: consider only payouts that failed, and ones that will not be tried again. REVERSED: consider only payouts that were reversed. Below is the proper syntax to use if filtering by payout status: https://apiz.ebay.com/sell/finances/v1/payout_summary?filter=payoutStatus:{SUCCEEDED} If both the payoutDate and payoutStatus filters are used, only the payouts that satisfy both criteria are considered in the results. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/finances/types/FilterField.html</param>
 		/// <returns>Success</returns>
-		public async Task<PayoutSummaryResponse> GetPayoutSummaryAsync(string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayoutSummaryResponse> GetPayoutSummaryAsync(string filter)
 		{
 			var requestUri = "payout_summary?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -655,16 +630,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter">The two filter types that can be used here are discussed below. One or both of these filter types can be used. If none of these filters are used, the data returned in the response will reflect payouts, in all states, processed within the last 90 days. payoutDate: consider payouts processed within a specific range of dates. The date format to use is YYYY-MM-DDTHH:MM:SS.SSSZ. Below is the proper syntax to use if filtering by a date range: https://apiz.ebay.com/sell/finances/v1/payout_summary?filter=payoutDate:[2018-12-17T00:00:01.000Z..2018-12-24T00:00:01.000Z] Alternatively, the user could omit the ending date, and the date range would include the starting date and up to 90 days past that date, or the current date if the starting date is less than 90 days in the past. payoutStatus: consider only the payouts in a particular state. Only one payout state can be specified with this filter. The supported payoutStatus values are as follows: INITIATED: search for payouts that have been initiated but not processed. SUCCEEDED: consider only successful payouts. RETRYABLE_FAILED: consider only payouts that failed, but ones which will be tried again. TERMINAL_FAILED: consider only payouts that failed, and ones that will not be tried again. REVERSED: consider only payouts that were reversed. Below is the proper syntax to use if filtering by payout status: https://apiz.ebay.com/sell/finances/v1/payout_summary?filter=payoutStatus:{SUCCEEDED} If both the payoutDate and payoutStatus filters are used, only the payouts that satisfy both criteria are considered in the results. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/finances/types/FilterField.html</param>
 		/// <returns>Success</returns>
-		public PayoutSummaryResponse GetPayoutSummary(string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public PayoutSummaryResponse GetPayoutSummary(string filter)
 		{
 			var requestUri = "payout_summary?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -712,16 +682,11 @@ namespace MyNS
 		/// <param name="limit">The number of monetary transactions to return per page of the result set. Use this parameter in conjunction with the offset parameter to control the pagination of the output. For example, if offset is set to 10 and limit is set to 10, the method retrieves monetary transactions 11 thru 20 from the result set. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. If an orderId, transactionId, or payoutId filter is included in the request, any limit value will be ignored. Maximum: 200 Default: 20</param>
 		/// <param name="offset">This integer value indicates the actual position that the first monetary transaction returned on the current page has in the results set. So, if you wanted to view the 11th monetary transaction of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves transactions 31 thru 40 from the resulting collection of transactions. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero)</param>
 		/// <returns>Success</returns>
-		public async Task<Transactions> GetTransactionsAsync(string filter, string sort, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Transactions> GetTransactionsAsync(string filter, string sort, string limit, string offset)
 		{
 			var requestUri = "transaction?filter=" + Uri.EscapeDataString(filter)+"&sort=" + Uri.EscapeDataString(sort)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -749,16 +714,11 @@ namespace MyNS
 		/// <param name="limit">The number of monetary transactions to return per page of the result set. Use this parameter in conjunction with the offset parameter to control the pagination of the output. For example, if offset is set to 10 and limit is set to 10, the method retrieves monetary transactions 11 thru 20 from the result set. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. If an orderId, transactionId, or payoutId filter is included in the request, any limit value will be ignored. Maximum: 200 Default: 20</param>
 		/// <param name="offset">This integer value indicates the actual position that the first monetary transaction returned on the current page has in the results set. So, if you wanted to view the 11th monetary transaction of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves transactions 31 thru 40 from the resulting collection of transactions. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero)</param>
 		/// <returns>Success</returns>
-		public Transactions GetTransactions(string filter, string sort, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Transactions GetTransactions(string filter, string sort, string limit, string offset)
 		{
 			var requestUri = "transaction?filter=" + Uri.EscapeDataString(filter)+"&sort=" + Uri.EscapeDataString(sort)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -783,16 +743,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter">Numerous filters are available for the getTransactionSummary method, and these filters are discussed below. One or more of these filter types can be used. The transactionStatus filter must be used. All other filters are optional. transactionStatus: the data returned in the response will only pertain to the seller payout status set here. The supported transactionStatus values are as follows: PAYOUT: only consider monetary transactions where the proceeds from the sales order(s) have been paid out to the seller's bank account. FUNDS_PROCESSING: only consider monetary transactions where the proceeds from the sales order(s) are currently being processed. FUNDS_AVAILABLE_FOR_PAYOUT: only consider monetary transactions where the proceeds from the sales order(s) are available for a seller payout, but processing has not yet begun. FUNDS_ON_HOLD: only consider monetary transactions where the proceeds from the sales order(s) are currently being held by eBay, and are not yet available for a seller payout.Below is the proper syntax to use when setting up the transactionStatus filter: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=transactionStatus:{PAYOUT} transactionDate: only consider monetary transactions that occurred within a specific range of dates. The date format to use is YYYY-MM-DDTHH:MM:SS.SSSZ. Below is the proper syntax to use if filtering by a date range: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=transactionDate:[2018-10-23T00:00:01.000Z..2018-11-09T00:00:01.000Z] Alternatively, the user could omit the ending date, and the date range would include the starting date and up to 90 days past that date, or the current date if the starting date is less than 90 days in the past. transactionType: only consider a specific type of monetary transaction. The supported transactionType values are as follows: SALE: a sales order. REFUND: a refund to the buyer after an order cancellation or return. CREDIT: a credit issued by eBay to the seller's account. DISPUTE: a monetary transaction associated with a payment dispute between buyer and seller. SHIPPING_LABEL: a monetary transaction where eBay is billing the seller for an eBay shipping label. Note that the shipping label functionality will initially only be available to a select number of sellers.Below is the proper syntax to use if filtering by a monetary transaction type: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=transactionType:{SALE} buyerUsername: only consider monetary transactions involving a specific buyer (specified with the buyer's eBay user ID). Below is the proper syntax to use if filtering by a specific eBay buyer: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=buyerUsername:{buyer1234} salesRecordReference: only consider monetary transactions corresponding to a specific order (identified with a Selling Manager order identifier). Below is the proper syntax to use if filtering by a specific Selling Manager Sales Record ID: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=salesRecordReference:{123} Note: For all orders originating after February 1, 2020, a value of 0 will be returned in the salesRecordReference field. So, this filter will only be useful to retrieve orders than occurred before this date.. payoutId: only consider monetary transactions related to a specific seller payout (identified with a Payout ID). This value is auto-generated by eBay once the seller payout is set to be processed. Below is the proper syntax to use if filtering by a specific Payout ID: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=payoutId:{5000106638} transactionId: the unique identifier of a monetary transaction. For a sales order, the orderId filter should be used instead. Only the monetary transaction(s) associated with this transactionId value are returned. Below is the proper syntax to use if filtering by a specific transaction ID: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=transactionId:{03-03620-33763} orderId: the unique identifier of a sales order. For any other monetary transaction, the, the transactionId filter should be used instead. Only the monetary transaction(s) associated with this orderId value are returned. Below is the proper syntax to use if filtering by a specific order ID: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=orderId:{03-03620-33763} For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/finances/types/FilterField.html</param>
 		/// <returns>Success</returns>
-		public async Task<TransactionSummaryResponse> GetTransactionSummaryAsync(string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<TransactionSummaryResponse> GetTransactionSummaryAsync(string filter)
 		{
 			var requestUri = "transaction_summary?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -817,16 +772,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter">Numerous filters are available for the getTransactionSummary method, and these filters are discussed below. One or more of these filter types can be used. The transactionStatus filter must be used. All other filters are optional. transactionStatus: the data returned in the response will only pertain to the seller payout status set here. The supported transactionStatus values are as follows: PAYOUT: only consider monetary transactions where the proceeds from the sales order(s) have been paid out to the seller's bank account. FUNDS_PROCESSING: only consider monetary transactions where the proceeds from the sales order(s) are currently being processed. FUNDS_AVAILABLE_FOR_PAYOUT: only consider monetary transactions where the proceeds from the sales order(s) are available for a seller payout, but processing has not yet begun. FUNDS_ON_HOLD: only consider monetary transactions where the proceeds from the sales order(s) are currently being held by eBay, and are not yet available for a seller payout.Below is the proper syntax to use when setting up the transactionStatus filter: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=transactionStatus:{PAYOUT} transactionDate: only consider monetary transactions that occurred within a specific range of dates. The date format to use is YYYY-MM-DDTHH:MM:SS.SSSZ. Below is the proper syntax to use if filtering by a date range: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=transactionDate:[2018-10-23T00:00:01.000Z..2018-11-09T00:00:01.000Z] Alternatively, the user could omit the ending date, and the date range would include the starting date and up to 90 days past that date, or the current date if the starting date is less than 90 days in the past. transactionType: only consider a specific type of monetary transaction. The supported transactionType values are as follows: SALE: a sales order. REFUND: a refund to the buyer after an order cancellation or return. CREDIT: a credit issued by eBay to the seller's account. DISPUTE: a monetary transaction associated with a payment dispute between buyer and seller. SHIPPING_LABEL: a monetary transaction where eBay is billing the seller for an eBay shipping label. Note that the shipping label functionality will initially only be available to a select number of sellers.Below is the proper syntax to use if filtering by a monetary transaction type: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=transactionType:{SALE} buyerUsername: only consider monetary transactions involving a specific buyer (specified with the buyer's eBay user ID). Below is the proper syntax to use if filtering by a specific eBay buyer: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=buyerUsername:{buyer1234} salesRecordReference: only consider monetary transactions corresponding to a specific order (identified with a Selling Manager order identifier). Below is the proper syntax to use if filtering by a specific Selling Manager Sales Record ID: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=salesRecordReference:{123} Note: For all orders originating after February 1, 2020, a value of 0 will be returned in the salesRecordReference field. So, this filter will only be useful to retrieve orders than occurred before this date.. payoutId: only consider monetary transactions related to a specific seller payout (identified with a Payout ID). This value is auto-generated by eBay once the seller payout is set to be processed. Below is the proper syntax to use if filtering by a specific Payout ID: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=payoutId:{5000106638} transactionId: the unique identifier of a monetary transaction. For a sales order, the orderId filter should be used instead. Only the monetary transaction(s) associated with this transactionId value are returned. Below is the proper syntax to use if filtering by a specific transaction ID: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=transactionId:{03-03620-33763} orderId: the unique identifier of a sales order. For any other monetary transaction, the, the transactionId filter should be used instead. Only the monetary transaction(s) associated with this orderId value are returned. Below is the proper syntax to use if filtering by a specific order ID: https://apiz.ebay.com/sell/finances/v1/transaction_summary?filter=orderId:{03-03620-33763} For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/finances/types/FilterField.html</param>
 		/// <returns>Success</returns>
-		public TransactionSummaryResponse GetTransactionSummary(string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public TransactionSummaryResponse GetTransactionSummary(string filter)
 		{
 			var requestUri = "transaction_summary?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -870,16 +820,11 @@ namespace MyNS
 		/// GetSellerFundsSummary seller_funds_summary
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<SellerFundsSummaryResponse> GetSellerFundsSummaryAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SellerFundsSummaryResponse> GetSellerFundsSummaryAsync()
 		{
 			var requestUri = "seller_funds_summary";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -903,16 +848,11 @@ namespace MyNS
 		/// GetSellerFundsSummary seller_funds_summary
 		/// </summary>
 		/// <returns>Success</returns>
-		public SellerFundsSummaryResponse GetSellerFundsSummary(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public SellerFundsSummaryResponse GetSellerFundsSummary()
 		{
 			var requestUri = "seller_funds_summary";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{

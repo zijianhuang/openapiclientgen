@@ -162,8 +162,8 @@ namespace SwagTests
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
 				//RegexForNormalizedOperationId = @"\w*",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
-				GenerateBothAsyncAndSync = false
-
+				GenerateBothAsyncAndSync = false,
+				HandleHttpRequestHeaders=true,
 			});
 		}
 
@@ -179,8 +179,8 @@ namespace SwagTests
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
-				GenerateBothAsyncAndSync = false
-
+				GenerateBothAsyncAndSync = false,
+				HandleHttpRequestHeaders=true,
 			});
 		}
 
@@ -198,6 +198,7 @@ namespace SwagTests
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
 				PathPrefixToRemove = "/mcp",
+				HandleHttpRequestHeaders=true,
 			});
 		}
 

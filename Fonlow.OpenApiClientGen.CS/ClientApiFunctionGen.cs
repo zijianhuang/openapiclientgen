@@ -285,8 +285,11 @@ namespace Fonlow.OpenApiClientGen.Cs
 				method.Parameters.Add(p);
 			}
 
-			method.Parameters.Add(new CodeParameterDeclarationExpression(
+			if (settings.HandleHttpRequestHeaders)
+			{
+				method.Parameters.Add(new CodeParameterDeclarationExpression(
 				"Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
+			}
 
 			var uriQueryParameters = parameterDescriptions.Where(d =>
 				(d.ParameterDescriptor.ParameterBinder != ParameterBinder.FromBody && d.ParameterDescriptor.ParameterBinder != ParameterBinder.FromForm && TypeHelper.IsSimpleType(d.ParameterDescriptor.ParameterType))
@@ -340,12 +343,16 @@ namespace Fonlow.OpenApiClientGen.Cs
 @"			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, ""application/json"");"
 					));
 
-				method.Statements.Add(new CodeSnippetStatement(@"			request.Content = content;
+				if (settings.HandleHttpRequestHeaders)
+				{
+					method.Statements.Add(new CodeSnippetStatement(@"			request.Content = content;
 			if (handleHeaders != null)
 			{
 				handleHeaders(request.Headers);
 			}
 "));
+				}
+
 				method.Statements.Add(new CodeVariableDeclarationStatement(
 					new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(request)") : new CodeSnippetExpression("client.SendAsync(request).Result")));
 

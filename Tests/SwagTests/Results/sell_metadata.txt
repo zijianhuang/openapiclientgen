@@ -460,16 +460,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 country code for the country whose jurisdictions you want to retrieve. eBay provides sales tax jurisdiction information for Canada, India, and the United States.Valid values for this path parameter are CA, IN, and US.</param>
 		/// <returns>Success</returns>
-		public async Task<SalesTaxJurisdictions> GetSalesTaxJurisdictionsAsync(string countryCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SalesTaxJurisdictions> GetSalesTaxJurisdictionsAsync(string countryCode)
 		{
 			var requestUri = "country/"+Uri.EscapeDataString(countryCode)+"/sales_tax_jurisdiction";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -494,16 +489,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="countryCode">This path parameter specifies the two-letter ISO 3166-1 Alpha-2 country code for the country whose jurisdictions you want to retrieve. eBay provides sales tax jurisdiction information for Canada, India, and the United States.Valid values for this path parameter are CA, IN, and US.</param>
 		/// <returns>Success</returns>
-		public SalesTaxJurisdictions GetSalesTaxJurisdictions(string countryCode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public SalesTaxJurisdictions GetSalesTaxJurisdictions(string countryCode)
 		{
 			var requestUri = "country/"+Uri.EscapeDataString(countryCode)+"/sales_tax_jurisdiction";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -549,16 +539,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. &gt;Note: Only the following eBay marketplaces support automotive parts compatibility: EBAY_US EBAY_AU EBAY_CA EBAY_DE EBAY_ES EBAY_FR EBAY_GB EBAY_IT</param>
 		/// <returns>Success</returns>
-		public async Task<AutomotivePartsCompatibilityPolicyResponse> GetAutomotivePartsCompatibilityPoliciesAsync(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<AutomotivePartsCompatibilityPolicyResponse> GetAutomotivePartsCompatibilityPoliciesAsync(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_automotive_parts_compatibility_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -584,16 +569,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. &gt;Note: Only the following eBay marketplaces support automotive parts compatibility: EBAY_US EBAY_AU EBAY_CA EBAY_DE EBAY_ES EBAY_FR EBAY_GB EBAY_IT</param>
 		/// <returns>Success</returns>
-		public AutomotivePartsCompatibilityPolicyResponse GetAutomotivePartsCompatibilityPolicies(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public AutomotivePartsCompatibilityPolicyResponse GetAutomotivePartsCompatibilityPolicies(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_automotive_parts_compatibility_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -619,16 +599,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public async Task<ItemConditionPolicyResponse> GetItemConditionPoliciesAsync(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ItemConditionPolicyResponse> GetItemConditionPoliciesAsync(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_item_condition_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -654,16 +629,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public ItemConditionPolicyResponse GetItemConditionPolicies(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public ItemConditionPolicyResponse GetItemConditionPolicies(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_item_condition_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -689,16 +659,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public async Task<ListingStructurePolicyResponse> GetListingStructurePoliciesAsync(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListingStructurePolicyResponse> GetListingStructurePoliciesAsync(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_listing_structure_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -724,16 +689,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public ListingStructurePolicyResponse GetListingStructurePolicies(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public ListingStructurePolicyResponse GetListingStructurePolicies(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_listing_structure_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -759,16 +719,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public async Task<NegotiatedPricePolicyResponse> GetNegotiatedPricePoliciesAsync(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<NegotiatedPricePolicyResponse> GetNegotiatedPricePoliciesAsync(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_negotiated_price_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -794,16 +749,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public NegotiatedPricePolicyResponse GetNegotiatedPricePolicies(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public NegotiatedPricePolicyResponse GetNegotiatedPricePolicies(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_negotiated_price_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -829,16 +779,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public async Task<ProductAdoptionPolicyResponse> GetProductAdoptionPoliciesAsync(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ProductAdoptionPolicyResponse> GetProductAdoptionPoliciesAsync(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_product_adoption_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -864,16 +809,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public ProductAdoptionPolicyResponse GetProductAdoptionPolicies(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public ProductAdoptionPolicyResponse GetProductAdoptionPolicies(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_product_adoption_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -899,16 +839,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public async Task<ReturnPolicyResponse> GetReturnPoliciesAsync(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ReturnPolicyResponse> GetReturnPoliciesAsync(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_return_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -934,16 +869,11 @@ namespace MyNS
 		/// <param name="filter">This query parameter limits the response by returning eBay policy information for only the leaf categories specified by this parameter. Set filter to a list of categoryId values. You can specify up to 50 category IDs by separating each with a pipe character ('|'). If you specify more than 50 categoryId values, eBay returns a warning along with the results for the first 50 IDs. If you specify a category ID that has child nodes, eBay returns policy information for all the leaf categories of that parent node. Example: filter=categoryIds:{100|101|102} Note that you must URL-encode the list of category ID values, which results in the following filter for the above example: &nbsp;&nbsp;filter=categoryIds%3A%7B100%7C101%7C102%7D</param>
 		/// <param name="marketplace_id">This path parameter specifies the eBay marketplace for which policy information is retrieved. See the following page for a list of valid eBay marketplace IDs: Request components.</param>
 		/// <returns>Success</returns>
-		public ReturnPolicyResponse GetReturnPolicies(string filter, string marketplace_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public ReturnPolicyResponse GetReturnPolicies(string filter, string marketplace_id)
 		{
 			var requestUri = "marketplace/"+Uri.EscapeDataString(marketplace_id)+"/get_return_policies?filter=" + Uri.EscapeDataString(filter);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{

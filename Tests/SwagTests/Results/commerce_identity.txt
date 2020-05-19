@@ -315,16 +315,11 @@ namespace MyNS
 		/// GetUser user/
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<UserResponse> GetUserAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UserResponse> GetUserAsync()
 		{
 			var requestUri = "user/";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -348,16 +343,11 @@ namespace MyNS
 		/// GetUser user/
 		/// </summary>
 		/// <returns>OK</returns>
-		public UserResponse GetUser(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public UserResponse GetUser()
 		{
 			var requestUri = "user/";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{

@@ -539,16 +539,11 @@ namespace MyNS
 		/// <param name="evaluation_marketplace_id">Use this query parameter to specify the Marketplace ID to evaluate for the customer service metrics and benchmark data. For the list of supported marketplaces, see Analytics API requirements and restrictions. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/analytics/types/MarketplaceIdEnum.html</param>
 		/// <param name="evaluation_type">Use this path parameter to specify the type of the seller evaluation you want returned, either: CURRENT &ndash; A monthly evaluation that occurs on the 20th of every month. PROJECTED &ndash; A daily evaluation that provides a projection of how the seller is currently performing with regards to the upcoming evaluation period.</param>
 		/// <returns>Success</returns>
-		public async Task<GetCustomerServiceMetricResponse> GetCustomerServiceMetricAsync(string customer_service_metric_type, string evaluation_marketplace_id, string evaluation_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetCustomerServiceMetricResponse> GetCustomerServiceMetricAsync(string customer_service_metric_type, string evaluation_marketplace_id, string evaluation_type)
 		{
 			var requestUri = "customer_service_metric/"+Uri.EscapeDataString(customer_service_metric_type)+"/"+Uri.EscapeDataString(evaluation_type)+"?evaluation_marketplace_id=" + Uri.EscapeDataString(evaluation_marketplace_id);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -575,16 +570,11 @@ namespace MyNS
 		/// <param name="evaluation_marketplace_id">Use this query parameter to specify the Marketplace ID to evaluate for the customer service metrics and benchmark data. For the list of supported marketplaces, see Analytics API requirements and restrictions. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/analytics/types/MarketplaceIdEnum.html</param>
 		/// <param name="evaluation_type">Use this path parameter to specify the type of the seller evaluation you want returned, either: CURRENT &ndash; A monthly evaluation that occurs on the 20th of every month. PROJECTED &ndash; A daily evaluation that provides a projection of how the seller is currently performing with regards to the upcoming evaluation period.</param>
 		/// <returns>Success</returns>
-		public GetCustomerServiceMetricResponse GetCustomerServiceMetric(string customer_service_metric_type, string evaluation_marketplace_id, string evaluation_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public GetCustomerServiceMetricResponse GetCustomerServiceMetric(string customer_service_metric_type, string evaluation_marketplace_id, string evaluation_type)
 		{
 			var requestUri = "customer_service_metric/"+Uri.EscapeDataString(customer_service_metric_type)+"/"+Uri.EscapeDataString(evaluation_type)+"?evaluation_marketplace_id=" + Uri.EscapeDataString(evaluation_marketplace_id);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -628,16 +618,11 @@ namespace MyNS
 		/// FindSellerStandardsProfiles seller_standards_profile
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<FindSellerStandardsProfilesResponse> FindSellerStandardsProfilesAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<FindSellerStandardsProfilesResponse> FindSellerStandardsProfilesAsync()
 		{
 			var requestUri = "seller_standards_profile";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -661,16 +646,11 @@ namespace MyNS
 		/// FindSellerStandardsProfiles seller_standards_profile
 		/// </summary>
 		/// <returns>Success</returns>
-		public FindSellerStandardsProfilesResponse FindSellerStandardsProfiles(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public FindSellerStandardsProfilesResponse FindSellerStandardsProfiles()
 		{
 			var requestUri = "seller_standards_profile";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -696,16 +676,11 @@ namespace MyNS
 		/// <param name="cycle">The period covered by the returned standards profile evaluation. Supply one of two values, CURRENT means the response reflects eBay's most recent monthly standards evaluation and PROJECTED means the response reflect the seller's projected monthly evaluation, as calculated at the time of the request.</param>
 		/// <param name="program">This input value specifies the region used to determine the seller's standards profile. Supply one of the four following values, PROGRAM_DE, PROGRAM_UK, PROGRAM_US, or PROGRAM_GLOBAL.</param>
 		/// <returns>Success</returns>
-		public async Task<StandardsProfile> GetSellerStandardsProfileAsync(string cycle, string program, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<StandardsProfile> GetSellerStandardsProfileAsync(string cycle, string program)
 		{
 			var requestUri = "seller_standards_profile/"+Uri.EscapeDataString(program)+"/"+Uri.EscapeDataString(cycle);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -731,16 +706,11 @@ namespace MyNS
 		/// <param name="cycle">The period covered by the returned standards profile evaluation. Supply one of two values, CURRENT means the response reflects eBay's most recent monthly standards evaluation and PROJECTED means the response reflect the seller's projected monthly evaluation, as calculated at the time of the request.</param>
 		/// <param name="program">This input value specifies the region used to determine the seller's standards profile. Supply one of the four following values, PROGRAM_DE, PROGRAM_UK, PROGRAM_US, or PROGRAM_GLOBAL.</param>
 		/// <returns>Success</returns>
-		public StandardsProfile GetSellerStandardsProfile(string cycle, string program, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public StandardsProfile GetSellerStandardsProfile(string cycle, string program)
 		{
 			var requestUri = "seller_standards_profile/"+Uri.EscapeDataString(program)+"/"+Uri.EscapeDataString(cycle);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
@@ -788,16 +758,11 @@ namespace MyNS
 		/// <param name="metric">This query parameter specifies the metrics you want covered in the report. Specify a comma-separated list of the metrics you want included in the report. Valid values: CLICK_THROUGH_RATE The number of times an item displays on the search results page divided by the number of times buyers clicked through to its View Item page. Localized name: Click through rate LISTING_IMPRESSION_SEARCH_RESULTS_PAGE The number of times the seller's listings displayed on the search results page. Note, the listing might not have been visible to the buyer due to its position on the page. Localized name: Listing impressions from the search results page LISTING_IMPRESSION_STORE The number of times the seller's listings displayed on the seller's store. Note, the listing might not have been visible to the buyer due to its position on the page. Localized name: Listing impressions from your Store LISTING_IMPRESSION_TOTAL The total number of times the seller's listings displayed on the search results page OR in the seller's store. The item is counted each time it displays on either page. However, the listing might not have been visible to the buyer due to its position on the page. This is a combination of: LISTING_IMPRESSION_SEARCH_RESULTS_PAGE + LISTING_IMPRESSION_STORE. Localized name: Total listing impressions LISTING_VIEWS_SOURCE_DIRECT The number of times a View Item page was directly accessed, such as when a buyer navigates to the page using a bookmark. Localized name: Direct views LISTING_VIEWS_SOURCE_OFF_EBAY The number of times a View Item page was accessed via a site other than eBay, such as when a buyer clicks on a link to the listing from a search engine page. Localized name: Off eBay views LISTING_VIEWS_SOURCE_OTHER_EBAY The number of times a View Item page was accessed from an eBay page that is not either the search results page or the seller's store. Localized name: Views from non-search and non-store pages within eBay LISTING_VIEWS_SOURCE_SEARCH_RESULTS_PAGE The number of times the item displayed on the search results page. Localized name: Views on the search results page LISTING_VIEWS_SOURCE_STORE The number of times a View Item page was accessed via the seller's store. Localized name: Views from your Store LISTING_VIEWS_TOTAL Total number of listings viewed. This number sums: LISTING_VIEWS_SOURCE_DIRECT LISTING_VIEWS_SOURCE_OFF_EBAY LISTING_VIEWS_SOURCE_OTHER_EBAY LISTING_VIEWS_SOURCE_SEARCH_RESULTS_PAGE LISTING_VIEWS_SOURCE_STORE. Localized name: Total views SALES_CONVERSION_RATE The number of completed transactions divided by the number of View Item page views. Equals: TRANSACTION / LISTING_VIEWS_TOTAL Localized name: Sales conversion rate TRANSACTION The total number of completed transactions. Localized name: Transaction count</param>
 		/// <param name="sort">This query parameter sorts the report on the specified metric. The metric you specify must be included in the configuration of the report's metric parameter. Sorting is helpful when you want to review how a specific metric is performing, such as the CLICK_THROUGH_RATE. Reports can be sorted in ascending or descending order. Precede the value of a descending-order request with a minus sign (&quot;-&quot;), for example: sort=-CLICK_THROUGH_RATE. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/analytics/types/SortField.html</param>
 		/// <returns>Success</returns>
-		public async Task<Report> GetTrafficReportAsync(string dimension, string filter, string metric, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Report> GetTrafficReportAsync(string dimension, string filter, string metric, string sort)
 		{
 			var requestUri = "traffic_report?dimension=" + Uri.EscapeDataString(dimension)+"&filter=" + Uri.EscapeDataString(filter)+"&metric=" + Uri.EscapeDataString(metric)+"&sort=" + Uri.EscapeDataString(sort);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = await client.SendAsync(request);
 			try
 			{
@@ -825,16 +790,11 @@ namespace MyNS
 		/// <param name="metric">This query parameter specifies the metrics you want covered in the report. Specify a comma-separated list of the metrics you want included in the report. Valid values: CLICK_THROUGH_RATE The number of times an item displays on the search results page divided by the number of times buyers clicked through to its View Item page. Localized name: Click through rate LISTING_IMPRESSION_SEARCH_RESULTS_PAGE The number of times the seller's listings displayed on the search results page. Note, the listing might not have been visible to the buyer due to its position on the page. Localized name: Listing impressions from the search results page LISTING_IMPRESSION_STORE The number of times the seller's listings displayed on the seller's store. Note, the listing might not have been visible to the buyer due to its position on the page. Localized name: Listing impressions from your Store LISTING_IMPRESSION_TOTAL The total number of times the seller's listings displayed on the search results page OR in the seller's store. The item is counted each time it displays on either page. However, the listing might not have been visible to the buyer due to its position on the page. This is a combination of: LISTING_IMPRESSION_SEARCH_RESULTS_PAGE + LISTING_IMPRESSION_STORE. Localized name: Total listing impressions LISTING_VIEWS_SOURCE_DIRECT The number of times a View Item page was directly accessed, such as when a buyer navigates to the page using a bookmark. Localized name: Direct views LISTING_VIEWS_SOURCE_OFF_EBAY The number of times a View Item page was accessed via a site other than eBay, such as when a buyer clicks on a link to the listing from a search engine page. Localized name: Off eBay views LISTING_VIEWS_SOURCE_OTHER_EBAY The number of times a View Item page was accessed from an eBay page that is not either the search results page or the seller's store. Localized name: Views from non-search and non-store pages within eBay LISTING_VIEWS_SOURCE_SEARCH_RESULTS_PAGE The number of times the item displayed on the search results page. Localized name: Views on the search results page LISTING_VIEWS_SOURCE_STORE The number of times a View Item page was accessed via the seller's store. Localized name: Views from your Store LISTING_VIEWS_TOTAL Total number of listings viewed. This number sums: LISTING_VIEWS_SOURCE_DIRECT LISTING_VIEWS_SOURCE_OFF_EBAY LISTING_VIEWS_SOURCE_OTHER_EBAY LISTING_VIEWS_SOURCE_SEARCH_RESULTS_PAGE LISTING_VIEWS_SOURCE_STORE. Localized name: Total views SALES_CONVERSION_RATE The number of completed transactions divided by the number of View Item page views. Equals: TRANSACTION / LISTING_VIEWS_TOTAL Localized name: Sales conversion rate TRANSACTION The total number of completed transactions. Localized name: Transaction count</param>
 		/// <param name="sort">This query parameter sorts the report on the specified metric. The metric you specify must be included in the configuration of the report's metric parameter. Sorting is helpful when you want to review how a specific metric is performing, such as the CLICK_THROUGH_RATE. Reports can be sorted in ascending or descending order. Precede the value of a descending-order request with a minus sign (&quot;-&quot;), for example: sort=-CLICK_THROUGH_RATE. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/analytics/types/SortField.html</param>
 		/// <returns>Success</returns>
-		public Report GetTrafficReport(string dimension, string filter, string metric, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public Report GetTrafficReport(string dimension, string filter, string metric, string sort)
 		{
 			var requestUri = "traffic_report?dimension=" + Uri.EscapeDataString(dimension)+"&filter=" + Uri.EscapeDataString(filter)+"&metric=" + Uri.EscapeDataString(metric)+"&sort=" + Uri.EscapeDataString(sort);
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(request.Headers);
-			}
-
 			var responseMessage = client.SendAsync(request).Result;
 			try
 			{
