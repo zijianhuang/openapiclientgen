@@ -1,22 +1,14 @@
 {
-	"ClientNamespace": "DemoPet.Client",
+	"ClientNamespace": "My.Pet.Client",
 	"ClientLibraryProjectFolderName": "",
 	"ContainerClassName": "PetClient",
 	"ClientLibraryFileName": "PetAuto.cs",
 	"ActionNameStrategy": 4,
 	"UseEnsureSuccessStatusCodeEx": true,
+	"DecorateDataModelWithDataContract": true,
+	"DataContractNamespace": "http://pet.domain/2020/03",
 	"DataAnnotationsEnabled": true,
 	"DataAnnotationsToComments": true,
-	"HandleHttpRequestHeaders": true,
-
-	"Plugins": [
-		{
-			"AssemblyName": "Fonlow.OpenApiClientGen.NG2",
-			"TargetDir": "clientapi",
-			"TSFile": "ClientApiAuto.ts",
-			"ContentType": "application/json;charset=UTF-8"
-		}
-
-	]
+	"HandleHttpRequestHeaders": true
 
 }

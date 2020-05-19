@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoPet.Client
+namespace My.Pet.Client
 {
 	using System;
 	using System.Linq;
@@ -18,19 +18,24 @@ namespace DemoPet.Client
 	using Fonlow.Net.Http;
 	
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class ApiResponse
 	{
 		
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int32> Code { get; set; }
 		
+		[System.Runtime.Serialization.DataMember()]
 		public string Type { get; set; }
 		
+		[System.Runtime.Serialization.DataMember()]
 		public string Message { get; set; }
 	}
 	
 	/// <summary>
 	/// A representation of a cat
 	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class Cat : Pet
 	{
 		
@@ -38,45 +43,56 @@ namespace DemoPet.Client
 		/// The measured skill for hunting
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
 	}
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public enum CatHuntingSkill
 	{
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		clueless = 0,
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		lazy = 1,
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		adventurous = 2,
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		aggressive = 3,
 	}
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class Category
 	{
 		
 		/// <summary>
 		/// Category ID
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Category name
 		/// Min length: 1
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Test Sub Category
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public string Sub { get; set; }
 	}
 	
 	/// <summary>
 	/// A representation of a dog
 	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class Dog : Pet
 	{
 		
@@ -85,6 +101,7 @@ namespace DemoPet.Client
 		/// Minimum: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
 		public int PackSize { get; set; } = 1;
 	}
@@ -92,6 +109,7 @@ namespace DemoPet.Client
 	/// <summary>
 	/// A representation of a honey bee
 	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class HoneyBee : Pet
 	{
 		
@@ -99,76 +117,93 @@ namespace DemoPet.Client
 		/// Average amount of honey produced per day in ounces
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		public float HoneyPerDay { get; set; }
 	}
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class Order
 	{
 		
 		/// <summary>
 		/// Order ID
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> PetId { get; set; }
 		
 		/// <summary>
 		/// Minimum: 1
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
 		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
 		/// Estimated ship date
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
 		
 		/// <summary>
 		/// Order Status
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public OrderStatus Status { get; set; }
 		
 		/// <summary>
 		/// Indicates whenever order was completed or not
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Boolean> Complete { get; set; }
 		
 		/// <summary>
 		/// Unique Request Id
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public string RequestId { get; set; }
 	}
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public enum OrderStatus
 	{
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		placed = 0,
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		approved = 1,
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		delivered = 2,
 	}
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class Pet
 	{
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Categories this pet belongs to
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public string Category { get; set; }
 		
 		/// <summary>
 		/// The name given to a pet
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -176,66 +211,82 @@ namespace DemoPet.Client
 		/// Maximum items: 20
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MaxLength(20)]
 		public string[] PhotoUrls { get; set; }
 		
+		[System.Runtime.Serialization.DataMember()]
 		public string Friend { get; set; }
 		
 		/// <summary>
 		/// Tags attached to the pet
 		/// Minimum items: 1
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public Tag[] Tags { get; set; }
 		
 		/// <summary>
 		/// Pet status in the store
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public PetStatus Status { get; set; }
 		
 		/// <summary>
 		/// Type of a pet
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public string PetType { get; set; }
 	}
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public enum PetStatus
 	{
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		available = 0,
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		pending = 1,
 		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
 		sold = 2,
 	}
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class Tag
 	{
 		
 		/// <summary>
 		/// Tag ID
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Tag name
 		/// Min length: 1
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
 	}
 	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
 	public class User
 	{
 		
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
+		[System.Runtime.Serialization.DataMember()]
 		public string Pet { get; set; }
 		
 		/// <summary>
 		/// User supplied username
 		/// Min length: 4
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=4)]
 		public string Username { get; set; }
 		
@@ -243,6 +294,7 @@ namespace DemoPet.Client
 		/// User first name
 		/// Min length: 1
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string FirstName { get; set; }
 		
@@ -250,12 +302,14 @@ namespace DemoPet.Client
 		/// User last name
 		/// Min length: 1
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string LastName { get; set; }
 		
 		/// <summary>
 		/// User email address
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public string Email { get; set; }
 		
 		/// <summary>
@@ -263,6 +317,7 @@ namespace DemoPet.Client
 		/// Min length: 8
 		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=8)]
 		public string Password { get; set; }
 		
@@ -270,11 +325,13 @@ namespace DemoPet.Client
 		/// User phone number in international format
 		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public string Phone { get; set; }
 		
 		/// <summary>
 		/// User status
 		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
 	

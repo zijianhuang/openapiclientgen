@@ -1,2 +1,0 @@
-const SITE_CONFIG = {
-}

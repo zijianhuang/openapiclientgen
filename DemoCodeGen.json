@@ -7,20 +7,15 @@
     "UseEnsureSuccessStatusCodeEx": true,
     "DecorateDataModelWithDataContract": true,
     "DataContractNamespace": "http://pet.domain/2020/03",
+    "DataAnnotationsEnabled": true,
+    "DataAnnotationsToComments": true,
+    "HandleHttpRequestHeaders": true,
 
     "Plugins": [
-{
-            "AssemblyName": "Fonlow.OpenApiClientGen.NG2",
-            "TargetDir": "./DemoNGCli/NGSource/src/clientapi",
-            "TSFile": "WebApiCoreNg2ClientAuto.ts",
-            "AsModule": true,
-            "ContentType": "application/json;charset=UTF-8"
-        },
-
         {
-            "AssemblyName": "Fonlow.OpenApiClientGen.Axios",
-            "TargetDir": "./axios/src/clientapi",
-            "TSFile": "WebApiAxiosClientAuto.ts",
+            "AssemblyName": "Fonlow.OpenApiClientGen.NG2",
+            "TargetDir": "./ng2/src/clientapi",
+            "TSFile": "ClientApiAuto.ts",
             "AsModule": true,
             "ContentType": "application/json;charset=UTF-8"
         }

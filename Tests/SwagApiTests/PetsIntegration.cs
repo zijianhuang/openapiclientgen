@@ -1,10 +1,8 @@
-﻿using System.Linq;
+﻿using Fonlow.Net.Http;
+using My.Pet.Client;
 using System;
-using Xunit;
 using System.Threading.Tasks;
-using MyNS;
-using DemoPet.Client;
-using Fonlow.Net.Http;
+using Xunit;
 
 namespace IntegrationTests
 {
