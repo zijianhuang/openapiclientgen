@@ -177,9 +177,10 @@ export namespace My_Pet_Client {
 		 */
 		AddPet(requestBody: Pet, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
-			if (headersHandler){
+			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.post<Response>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headers });
 		}
 
@@ -191,9 +192,10 @@ export namespace My_Pet_Client {
 		 */
 		UpdatePet(requestBody: Pet, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
-			if (headersHandler){
+			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.put<Response>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headers });
 		}
 
@@ -209,6 +211,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, { headers: headers });
 		}
 
@@ -223,6 +226,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.delete<Response>(this.baseUri + 'pet/' + petId, { headers: headers });
 		}
 
@@ -238,6 +242,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${z}`).join('&'), { headers: headers });
 		}
 
@@ -253,6 +258,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?'+tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headers });
 		}
 
@@ -267,7 +273,8 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
-			return this.http.get(this.baseUri + 'store/inventory', {headers: headers, responseType: 'text' });
+			
+			return this.http.get(this.baseUri + 'store/inventory', { headers: headers, responseType: 'text' });
 		}
 
 		/**
@@ -278,9 +285,10 @@ export namespace My_Pet_Client {
 		 */
 		PlaceOrder(requestBody: Order, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Order> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
-			if (headersHandler){
+			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: headers });
 		}
 
@@ -296,6 +304,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headers });
 		}
 
@@ -311,6 +320,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.delete<Response>(this.baseUri + 'store/order/' + encodeURIComponent(orderId), { headers: headers });
 		}
 
@@ -323,9 +333,10 @@ export namespace My_Pet_Client {
 		 */
 		CreateUser(requestBody: User, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
-			if (headersHandler){
+			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.post<Response>(this.baseUri + 'user', JSON.stringify(requestBody), { headers: headers });
 		}
 
@@ -340,6 +351,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.get<User>(this.baseUri + 'user/' + encodeURIComponent(username), { headers: headers });
 		}
 
@@ -353,9 +365,10 @@ export namespace My_Pet_Client {
 		 */
 		UpdateUser(username: string, requestBody: User, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
-			if (headersHandler){
+			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.put<Response>(this.baseUri + 'user/' + encodeURIComponent(username), JSON.stringify(requestBody), { headers: headers });
 		}
 
@@ -371,6 +384,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.delete<Response>(this.baseUri + 'user/' + encodeURIComponent(username), { headers: headers });
 		}
 
@@ -382,9 +396,10 @@ export namespace My_Pet_Client {
 		 */
 		CreateUsersWithArrayInput(requestBody: Array<User>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
-			if (headersHandler){
+			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.post<Response>(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: headers });
 		}
 
@@ -396,9 +411,10 @@ export namespace My_Pet_Client {
 		 */
 		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
-			if (headersHandler){
+			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.post<Response>(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: headers });
 		}
 
@@ -414,7 +430,8 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
-			return this.http.get(this.baseUri + 'user/login?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), {headers: headers, responseType: 'text' });
+			
+			return this.http.get(this.baseUri + 'user/login?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), { headers: headers, responseType: 'text' });
 		}
 
 		/**
@@ -427,6 +444,7 @@ export namespace My_Pet_Client {
 			if (headersHandler) {
 				headersHandler(headers);
 			}
+			
 			return this.http.get<Response>(this.baseUri + 'user/logout', { headers: headers });
 		}
 	}

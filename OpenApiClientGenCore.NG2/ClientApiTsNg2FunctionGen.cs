@@ -82,22 +82,38 @@ namespace Fonlow.CodeDom.Web.Ts
 			var uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" :
 				RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
 
+			Action CreateEmptyHeadersStatement = () =>
+			 {
+				 Method.Statements.Add(new CodeSnippetStatement(
+					 $@"let headers: HttpHeaders = new HttpHeaders();"));
+			 };
+
+			Action CreateConditionalHeadersHandling = () =>
+			 {
+				 if (settings.HandleHttpRequestHeaders)
+				 {
+					 Method.Statements.Add(new CodeSnippetStatement(
+ $@"if (headersHandler) {{
+	headersHandler(headers);
+}}
+"));
+				 }
+			 };
+
+			Action CreateContentTypeHeadersStatement = () =>
+			{
+				Method.Statements.Add(new CodeSnippetStatement(
+$@"let headers: HttpHeaders = new HttpHeaders({{ 'Content-Type': '{contentType}' }});"));
+			};
+
 			if (ReturnTypeReference != null && ReturnTypeReference.BaseType == "System.String" && ReturnTypeReference.ArrayElementType == null)//stringAsString is for .NET Core Web API
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement(
-					$@"let headers: HttpHeaders = new HttpHeaders();"));
+					CreateEmptyHeadersStatement();
+					CreateConditionalHeadersHandling();
 
-					if (settings.HandleHttpRequestHeaders)
-					{
-						Method.Statements.Add(new CodeSnippetStatement(
-$@"if (headersHandler) {{
-	headersHandler(headers);
-}}"));
-					}
-
-					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {{headers: headers, responseType: 'text' }});"));
+					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {{ headers: headers, responseType: 'text' }});"));
 					return;
 				}
 
@@ -108,24 +124,16 @@ $@"if (headersHandler) {{
 						contentType = "application/json;charset=UTF-8";
 					}
 
-					Method.Statements.Add(new CodeSnippetStatement(
-					$@"let headers: HttpHeaders = new HttpHeaders({{ 'Content-Type': '{contentType}' }});"));
-
-					if (settings.HandleHttpRequestHeaders)
-					{
-						Method.Statements.Add(new CodeSnippetStatement(
-	$@"if (headersHandler){{
-	headersHandler(headers);
-}}"));
-					}
+					CreateContentTypeHeadersStatement();
+					CreateConditionalHeadersHandling();
 
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {{headers: headers, responseType: 'text' }});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {{ headers: headers, responseType: 'text' }});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{headers, responseType: 'text' }});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{ headers: headers, responseType: 'text' }});"));
 					}
 
 					return;
@@ -138,16 +146,8 @@ $@"if (headersHandler) {{
 
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement(
-					$@"let headers: HttpHeaders = new HttpHeaders();"));
-
-					if (settings.HandleHttpRequestHeaders)
-					{
-						Method.Statements.Add(new CodeSnippetStatement(
-$@"if (headersHandler) {{
-	headersHandler(headers);
-}}"));
-					}
+					CreateEmptyHeadersStatement();
+					CreateConditionalHeadersHandling();
 
 					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {optionForStream});"));
 					return;
@@ -155,16 +155,8 @@ $@"if (headersHandler) {{
 
 				if (httpMethodName == "post" || httpMethodName == "put")
 				{
-					Method.Statements.Add(new CodeSnippetStatement(
-					$@"let headers: HttpHeaders = new HttpHeaders();"));
-
-					if (settings.HandleHttpRequestHeaders)
-					{
-						Method.Statements.Add(new CodeSnippetStatement(
-	$@"if (headersHandler){{
-	headersHandler(headers);
-}}"));
-					}
+					CreateEmptyHeadersStatement();
+					CreateConditionalHeadersHandling();
 
 					if (RequestBodyCodeTypeReference == null)
 					{
@@ -185,16 +177,8 @@ $@"if (headersHandler) {{
 
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement(
-					$@"let headers: HttpHeaders = new HttpHeaders();"));
-
-					if (settings.HandleHttpRequestHeaders)
-					{
-						Method.Statements.Add(new CodeSnippetStatement(
-$@"if (headersHandler) {{
-	headersHandler(headers);
-}}"));
-					}
+					CreateEmptyHeadersStatement();
+					CreateConditionalHeadersHandling();
 
 					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {optionForActionResult});"));
 					return;
@@ -204,31 +188,15 @@ $@"if (headersHandler) {{
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement(
-						$@"let headers: HttpHeaders = new HttpHeaders();"));
-
-						if (settings.HandleHttpRequestHeaders)
-						{
-							Method.Statements.Add(new CodeSnippetStatement(
-		$@"if (headersHandler){{
-	headersHandler(headers);
-}}"));
-						}
+						CreateEmptyHeadersStatement();
+						CreateConditionalHeadersHandling();
 
 						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {optionForActionResult});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement(
-						$@"let headers: HttpHeaders = new HttpHeaders({{ 'Content-Type': '{contentType}' }});"));
-
-						if (settings.HandleHttpRequestHeaders)
-						{
-							Method.Statements.Add(new CodeSnippetStatement(
-		$@"if (headersHandler){{
-	headersHandler(headers);
-}}"));
-						}
+						CreateEmptyHeadersStatement();
+						CreateConditionalHeadersHandling();
 
 						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForActionResult});"));
 					}
@@ -242,16 +210,8 @@ $@"if (headersHandler) {{
 				var typeCast = returnTypeText == null ? "<Response>" : $"<{returnTypeText}>";
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement(
-					$@"let headers: HttpHeaders = new HttpHeaders();"));
-
-					if (settings.HandleHttpRequestHeaders)
-					{
-						Method.Statements.Add(new CodeSnippetStatement(
-$@"if (headersHandler) {{
-	headersHandler(headers);
-}}"));
-					}
+					CreateEmptyHeadersStatement();
+					CreateConditionalHeadersHandling();
 
 					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText}, {{ headers: headers }});"));
 					return;
@@ -266,31 +226,15 @@ $@"if (headersHandler) {{
 
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement(
-						$@"let headers: HttpHeaders = new HttpHeaders();"));
-
-						if (settings.HandleHttpRequestHeaders)
-						{
-							Method.Statements.Add(new CodeSnippetStatement(
-		$@"if (headersHandler){{
-	headersHandler(headers);
-}}"));
-						}
+						CreateEmptyHeadersStatement();
+						CreateConditionalHeadersHandling();
 
 						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText}, null, {{ headers: headers }});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement(
-						$@"let headers: HttpHeaders = new HttpHeaders({{ 'Content-Type': '{contentType}' }});"));
-
-						if (settings.HandleHttpRequestHeaders)
-						{
-							Method.Statements.Add(new CodeSnippetStatement(
-		$@"if (headersHandler){{
-	headersHandler(headers);
-}}"));
-						}
+						CreateContentTypeHeadersStatement();
+						CreateConditionalHeadersHandling();
 
 						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText}, JSON.stringify(requestBody), {{ headers: headers }});"));
 					}
