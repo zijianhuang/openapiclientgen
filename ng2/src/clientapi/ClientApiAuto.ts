@@ -175,8 +175,12 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		AddPet(requestBody: Pet): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		AddPet(requestBody: Pet, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+			if (headersHandler){
+				headersHandler(headers);
+			}
+			return this.http.post<Response>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headers });
 		}
 
 		/**
@@ -185,8 +189,12 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		UpdatePet(requestBody: Pet): Observable<Response> {
-			return this.http.put<Response>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		UpdatePet(requestBody: Pet, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+			if (headersHandler){
+				headersHandler(headers);
+			}
+			return this.http.put<Response>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headers });
 		}
 
 		/**
@@ -196,8 +204,12 @@ export namespace My_Pet_Client {
 		 * @param {number} petId ID of pet to return
 		 * @return {Pet} successful operation
 		 */
-		GetPetById(petId: number): Observable<Pet> {
-			return this.http.get<Pet>(this.baseUri + 'pet/' + petId);
+		GetPetById(petId: number, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Pet> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, { headers: headers });
 		}
 
 		/**
@@ -206,8 +218,12 @@ export namespace My_Pet_Client {
 		 * @param {number} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'pet/' + petId);
+		DeletePet(petId: number, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.delete<Response>(this.baseUri + 'pet/' + petId, { headers: headers });
 		}
 
 		/**
@@ -217,8 +233,12 @@ export namespace My_Pet_Client {
 		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByStatus(status: Array<PetStatus>): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${z}`).join('&'));
+		FindPetsByStatus(status: Array<PetStatus>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Array<Pet>> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${z}`).join('&'), { headers: headers });
 		}
 
 		/**
@@ -228,8 +248,12 @@ export namespace My_Pet_Client {
 		 * @param {Array<string>} tags Tags to filter by
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByTags(tags: Array<string>): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?'+tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'));
+		FindPetsByTags(tags: Array<string>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Array<Pet>> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?'+tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headers });
 		}
 
 		/**
@@ -238,8 +262,12 @@ export namespace My_Pet_Client {
 		 * Get store/inventory
 		 * @return {string} successful operation
 		 */
-		GetInventory(): Observable<string> {
-			return this.http.get(this.baseUri + 'store/inventory', { responseType: 'text' });
+		GetInventory(headersHandler?: (headers: HttpHeaders)=>{}): Observable<string> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.get(this.baseUri + 'store/inventory', {headers: headers, responseType: 'text' });
 		}
 
 		/**
@@ -248,8 +276,12 @@ export namespace My_Pet_Client {
 		 * @param {Order} requestBody order placed for purchasing the pet
 		 * @return {Order} successful operation
 		 */
-		PlaceOrder(requestBody: Order): Observable<Order> {
-			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		PlaceOrder(requestBody: Order, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Order> {
+			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+			if (headersHandler){
+				headersHandler(headers);
+			}
+			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: headers });
 		}
 
 		/**
@@ -259,8 +291,12 @@ export namespace My_Pet_Client {
 		 * @param {number} orderId ID of pet that needs to be fetched
 		 * @return {Order} successful operation
 		 */
-		GetOrderById(orderId: number): Observable<Order> {
-			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId);
+		GetOrderById(orderId: number, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Order> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headers });
 		}
 
 		/**
@@ -270,8 +306,12 @@ export namespace My_Pet_Client {
 		 * @param {string} orderId ID of the order that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteOrder(orderId: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'store/order/' + encodeURIComponent(orderId));
+		DeleteOrder(orderId: string, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.delete<Response>(this.baseUri + 'store/order/' + encodeURIComponent(orderId), { headers: headers });
 		}
 
 		/**
@@ -281,8 +321,12 @@ export namespace My_Pet_Client {
 		 * @param {User} requestBody Created user object
 		 * @return {void} 
 		 */
-		CreateUser(requestBody: User): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateUser(requestBody: User, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+			if (headersHandler){
+				headersHandler(headers);
+			}
+			return this.http.post<Response>(this.baseUri + 'user', JSON.stringify(requestBody), { headers: headers });
 		}
 
 		/**
@@ -291,8 +335,12 @@ export namespace My_Pet_Client {
 		 * @param {string} username The name that needs to be fetched. Use user1 for testing. 
 		 * @return {User} successful operation
 		 */
-		GetUserByName(username: string): Observable<User> {
-			return this.http.get<User>(this.baseUri + 'user/' + encodeURIComponent(username));
+		GetUserByName(username: string, headersHandler?: (headers: HttpHeaders)=>{}): Observable<User> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.get<User>(this.baseUri + 'user/' + encodeURIComponent(username), { headers: headers });
 		}
 
 		/**
@@ -303,8 +351,12 @@ export namespace My_Pet_Client {
 		 * @param {User} requestBody Updated user object
 		 * @return {void} 
 		 */
-		UpdateUser(username: string, requestBody: User): Observable<Response> {
-			return this.http.put<Response>(this.baseUri + 'user/' + encodeURIComponent(username), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		UpdateUser(username: string, requestBody: User, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+			if (headersHandler){
+				headersHandler(headers);
+			}
+			return this.http.put<Response>(this.baseUri + 'user/' + encodeURIComponent(username), JSON.stringify(requestBody), { headers: headers });
 		}
 
 		/**
@@ -314,8 +366,12 @@ export namespace My_Pet_Client {
 		 * @param {string} username The name that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteUser(username: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'user/' + encodeURIComponent(username));
+		DeleteUser(username: string, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.delete<Response>(this.baseUri + 'user/' + encodeURIComponent(username), { headers: headers });
 		}
 
 		/**
@@ -324,8 +380,12 @@ export namespace My_Pet_Client {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithArrayInput(requestBody: Array<User>): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateUsersWithArrayInput(requestBody: Array<User>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+			if (headersHandler){
+				headersHandler(headers);
+			}
+			return this.http.post<Response>(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: headers });
 		}
 
 		/**
@@ -334,8 +394,12 @@ export namespace My_Pet_Client {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithListInput(requestBody: Array<User>): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
+			if (headersHandler){
+				headersHandler(headers);
+			}
+			return this.http.post<Response>(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: headers });
 		}
 
 		/**
@@ -345,8 +409,12 @@ export namespace My_Pet_Client {
 		 * @param {string} password The password for login in clear text
 		 * @return {string} successful operation
 		 */
-		LoginUser(username: string, password: string): Observable<string> {
-			return this.http.get(this.baseUri + 'user/login?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), { responseType: 'text' });
+		LoginUser(username: string, password: string, headersHandler?: (headers: HttpHeaders)=>{}): Observable<string> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.get(this.baseUri + 'user/login?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), {headers: headers, responseType: 'text' });
 		}
 
 		/**
@@ -354,8 +422,12 @@ export namespace My_Pet_Client {
 		 * Get user/logout
 		 * @return {void} 
 		 */
-		LogoutUser(): Observable<Response> {
-			return this.http.get<Response>(this.baseUri + 'user/logout');
+		LogoutUser(headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+			let headers: HttpHeaders = new HttpHeaders();
+			if (headersHandler) {
+				headersHandler(headers);
+			}
+			return this.http.get<Response>(this.baseUri + 'user/logout', { headers: headers });
 		}
 	}
 

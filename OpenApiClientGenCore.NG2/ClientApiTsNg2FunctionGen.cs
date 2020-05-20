@@ -3,6 +3,7 @@ using System;
 using System.CodeDom;
 using System.Diagnostics;
 using System.Linq;
+using Fonlow.OpenApiClientGen.ClientTypes;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -17,10 +18,12 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		string returnTypeText = null;
 		string contentType;
+		Settings settings;
 
-		public ClientApiTsNG2FunctionGen(string contentType) : base()
+		public ClientApiTsNG2FunctionGen(Settings settings, JSOutput jsOutput) : base()
 		{
-			this.contentType = contentType;
+			this.contentType = jsOutput.ContentType;
+			this.settings = settings;
 		}
 
 		protected override CodeMemberMethod CreateMethodName()
@@ -63,11 +66,16 @@ namespace Fonlow.CodeDom.Web.Ts
 				.ToArray();
 
 			Method.Parameters.AddRange(parameters);
-
 			if (RequestBodyCodeTypeReference != null)
 			{
 				var p = new CodeParameterDeclarationExpression(RequestBodyCodeTypeReference, "requestBody");
 				Method.Parameters.Add(p);
+			}
+
+			if (settings.HandleHttpRequestHeaders)
+			{
+				Method.Parameters.Add(new CodeParameterDeclarationExpression(
+					"(headers: HttpHeaders)=>{}", "headersHandler?"));
 			}
 
 			var jsUriQuery = UriQueryHelper.CreateUriQueryForTs(RelativePath, ParameterDescriptions);
@@ -78,7 +86,18 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {{ responseType: 'text' }});"));
+					Method.Statements.Add(new CodeSnippetStatement(
+					$@"let headers: HttpHeaders = new HttpHeaders();"));
+
+					if (settings.HandleHttpRequestHeaders)
+					{
+						Method.Statements.Add(new CodeSnippetStatement(
+$@"if (headersHandler) {{
+	headersHandler(headers);
+}}"));
+					}
+
+					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {{headers: headers, responseType: 'text' }});"));
 					return;
 				}
 
@@ -89,13 +108,24 @@ namespace Fonlow.CodeDom.Web.Ts
 						contentType = "application/json;charset=UTF-8";
 					}
 
+					Method.Statements.Add(new CodeSnippetStatement(
+					$@"let headers: HttpHeaders = new HttpHeaders({{ 'Content-Type': '{contentType}' }});"));
+
+					if (settings.HandleHttpRequestHeaders)
+					{
+						Method.Statements.Add(new CodeSnippetStatement(
+	$@"if (headersHandler){{
+	headersHandler(headers);
+}}"));
+					}
+
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {{headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {{headers: headers, responseType: 'text' }});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{ headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{headers, responseType: 'text' }});"));
 					}
 
 					return;
@@ -104,16 +134,38 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 			else if (returnTypeText == NG2HttpBlobResponse)//translated from blobresponse to this
 			{
-				const string optionForStream = "{ observe: 'response', responseType: 'blob' }";
+				const string optionForStream = "{ headers: headers, observe: 'response', responseType: 'blob' }";
 
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
+					Method.Statements.Add(new CodeSnippetStatement(
+					$@"let headers: HttpHeaders = new HttpHeaders();"));
+
+					if (settings.HandleHttpRequestHeaders)
+					{
+						Method.Statements.Add(new CodeSnippetStatement(
+$@"if (headersHandler) {{
+	headersHandler(headers);
+}}"));
+					}
+
 					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {optionForStream});"));
 					return;
 				}
 
 				if (httpMethodName == "post" || httpMethodName == "put")
 				{
+					Method.Statements.Add(new CodeSnippetStatement(
+					$@"let headers: HttpHeaders = new HttpHeaders();"));
+
+					if (settings.HandleHttpRequestHeaders)
+					{
+						Method.Statements.Add(new CodeSnippetStatement(
+	$@"if (headersHandler){{
+	headersHandler(headers);
+}}"));
+					}
+
 					if (RequestBodyCodeTypeReference == null)
 					{
 						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {optionForStream});"));
@@ -129,10 +181,21 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 			else if (returnTypeText == NG2HttpStringResponse)//translated from response to this
 			{
-				const string optionForActionResult = "{ observe: 'response', responseType: 'text' }";
+				const string optionForActionResult = "{ headers: headers, observe: 'response', responseType: 'text' }";
 
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
+					Method.Statements.Add(new CodeSnippetStatement(
+					$@"let headers: HttpHeaders = new HttpHeaders();"));
+
+					if (settings.HandleHttpRequestHeaders)
+					{
+						Method.Statements.Add(new CodeSnippetStatement(
+$@"if (headersHandler) {{
+	headersHandler(headers);
+}}"));
+					}
+
 					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {optionForActionResult});"));
 					return;
 				}
@@ -141,11 +204,33 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
+						Method.Statements.Add(new CodeSnippetStatement(
+						$@"let headers: HttpHeaders = new HttpHeaders();"));
+
+						if (settings.HandleHttpRequestHeaders)
+						{
+							Method.Statements.Add(new CodeSnippetStatement(
+		$@"if (headersHandler){{
+	headersHandler(headers);
+}}"));
+						}
+
 						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {optionForActionResult});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{ headers: {{ 'Content-Type': '{contentType}' }}, observe: 'response', responseType: 'text' }});"));
+						Method.Statements.Add(new CodeSnippetStatement(
+						$@"let headers: HttpHeaders = new HttpHeaders({{ 'Content-Type': '{contentType}' }});"));
+
+						if (settings.HandleHttpRequestHeaders)
+						{
+							Method.Statements.Add(new CodeSnippetStatement(
+		$@"if (headersHandler){{
+	headersHandler(headers);
+}}"));
+						}
+
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForActionResult});"));
 					}
 
 					return;
@@ -157,7 +242,18 @@ namespace Fonlow.CodeDom.Web.Ts
 				var typeCast = returnTypeText == null ? "<Response>" : $"<{returnTypeText}>";
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText});"));
+					Method.Statements.Add(new CodeSnippetStatement(
+					$@"let headers: HttpHeaders = new HttpHeaders();"));
+
+					if (settings.HandleHttpRequestHeaders)
+					{
+						Method.Statements.Add(new CodeSnippetStatement(
+$@"if (headersHandler) {{
+	headersHandler(headers);
+}}"));
+					}
+
+					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText}, {{ headers: headers }});"));
 					return;
 				}
 
@@ -170,11 +266,33 @@ namespace Fonlow.CodeDom.Web.Ts
 
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText}, null, {{ headers: {{ 'Content-Type': '{contentType}' }} }});"));
+						Method.Statements.Add(new CodeSnippetStatement(
+						$@"let headers: HttpHeaders = new HttpHeaders();"));
+
+						if (settings.HandleHttpRequestHeaders)
+						{
+							Method.Statements.Add(new CodeSnippetStatement(
+		$@"if (headersHandler){{
+	headersHandler(headers);
+}}"));
+						}
+
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText}, null, {{ headers: headers }});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText}, JSON.stringify(requestBody), {{ headers: {{ 'Content-Type': '{contentType}' }} }});"));
+						Method.Statements.Add(new CodeSnippetStatement(
+						$@"let headers: HttpHeaders = new HttpHeaders({{ 'Content-Type': '{contentType}' }});"));
+
+						if (settings.HandleHttpRequestHeaders)
+						{
+							Method.Statements.Add(new CodeSnippetStatement(
+		$@"if (headersHandler){{
+	headersHandler(headers);
+}}"));
+						}
+
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{typeCast}({uriText}, JSON.stringify(requestBody), {{ headers: headers }});"));
 					}
 
 					return;
