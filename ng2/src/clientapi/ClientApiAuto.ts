@@ -175,7 +175,7 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		AddPet(requestBody: Pet, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		AddPet(requestBody: Pet, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
 			if (headersHandler) {
 				headersHandler(headers);
@@ -190,7 +190,7 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		UpdatePet(requestBody: Pet, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		UpdatePet(requestBody: Pet, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
 			if (headersHandler) {
 				headersHandler(headers);
@@ -206,7 +206,7 @@ export namespace My_Pet_Client {
 		 * @param {number} petId ID of pet to return
 		 * @return {Pet} successful operation
 		 */
-		GetPetById(petId: number, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Pet> {
+		GetPetById(petId: number, headersHandler?: (headers: HttpHeaders) => any): Observable<Pet> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -221,7 +221,7 @@ export namespace My_Pet_Client {
 		 * @param {number} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		DeletePet(petId: number, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -237,7 +237,7 @@ export namespace My_Pet_Client {
 		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByStatus(status: Array<PetStatus>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Array<Pet>> {
+		FindPetsByStatus(status: Array<PetStatus>, headersHandler?: (headers: HttpHeaders) => any): Observable<Array<Pet>> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -253,7 +253,7 @@ export namespace My_Pet_Client {
 		 * @param {Array<string>} tags Tags to filter by
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByTags(tags: Array<string>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Array<Pet>> {
+		FindPetsByTags(tags: Array<string>, headersHandler?: (headers: HttpHeaders) => any): Observable<Array<Pet>> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -268,7 +268,7 @@ export namespace My_Pet_Client {
 		 * Get store/inventory
 		 * @return {string} successful operation
 		 */
-		GetInventory(headersHandler?: (headers: HttpHeaders)=>{}): Observable<string> {
+		GetInventory(headersHandler?: (headers: HttpHeaders) => any): Observable<string> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -283,7 +283,7 @@ export namespace My_Pet_Client {
 		 * @param {Order} requestBody order placed for purchasing the pet
 		 * @return {Order} successful operation
 		 */
-		PlaceOrder(requestBody: Order, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Order> {
+		PlaceOrder(requestBody: Order, headersHandler?: (headers: HttpHeaders) => any): Observable<Order> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
 			if (headersHandler) {
 				headersHandler(headers);
@@ -299,7 +299,7 @@ export namespace My_Pet_Client {
 		 * @param {number} orderId ID of pet that needs to be fetched
 		 * @return {Order} successful operation
 		 */
-		GetOrderById(orderId: number, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Order> {
+		GetOrderById(orderId: number, headersHandler?: (headers: HttpHeaders) => any): Observable<Order> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -315,7 +315,7 @@ export namespace My_Pet_Client {
 		 * @param {string} orderId ID of the order that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteOrder(orderId: string, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		DeleteOrder(orderId: string, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -331,7 +331,7 @@ export namespace My_Pet_Client {
 		 * @param {User} requestBody Created user object
 		 * @return {void} 
 		 */
-		CreateUser(requestBody: User, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		CreateUser(requestBody: User, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
 			if (headersHandler) {
 				headersHandler(headers);
@@ -346,7 +346,7 @@ export namespace My_Pet_Client {
 		 * @param {string} username The name that needs to be fetched. Use user1 for testing. 
 		 * @return {User} successful operation
 		 */
-		GetUserByName(username: string, headersHandler?: (headers: HttpHeaders)=>{}): Observable<User> {
+		GetUserByName(username: string, headersHandler?: (headers: HttpHeaders) => any): Observable<User> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -363,7 +363,7 @@ export namespace My_Pet_Client {
 		 * @param {User} requestBody Updated user object
 		 * @return {void} 
 		 */
-		UpdateUser(username: string, requestBody: User, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		UpdateUser(username: string, requestBody: User, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
 			if (headersHandler) {
 				headersHandler(headers);
@@ -379,7 +379,7 @@ export namespace My_Pet_Client {
 		 * @param {string} username The name that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteUser(username: string, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		DeleteUser(username: string, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -394,7 +394,7 @@ export namespace My_Pet_Client {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithArrayInput(requestBody: Array<User>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		CreateUsersWithArrayInput(requestBody: Array<User>, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
 			if (headersHandler) {
 				headersHandler(headers);
@@ -409,7 +409,7 @@ export namespace My_Pet_Client {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' });
 			if (headersHandler) {
 				headersHandler(headers);
@@ -425,7 +425,7 @@ export namespace My_Pet_Client {
 		 * @param {string} password The password for login in clear text
 		 * @return {string} successful operation
 		 */
-		LoginUser(username: string, password: string, headersHandler?: (headers: HttpHeaders)=>{}): Observable<string> {
+		LoginUser(username: string, password: string, headersHandler?: (headers: HttpHeaders) => any): Observable<string> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);
@@ -439,7 +439,7 @@ export namespace My_Pet_Client {
 		 * Get user/logout
 		 * @return {void} 
 		 */
-		LogoutUser(headersHandler?: (headers: HttpHeaders)=>{}): Observable<Response> {
+		LogoutUser(headersHandler?: (headers: HttpHeaders) => any): Observable<Response> {
 			let headers: HttpHeaders = new HttpHeaders();
 			if (headersHandler) {
 				headersHandler(headers);

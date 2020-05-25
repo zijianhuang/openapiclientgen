@@ -75,7 +75,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			if (settings.HandleHttpRequestHeaders)
 			{
 				Method.Parameters.Add(new CodeParameterDeclarationExpression(
-					"(headers: HttpHeaders)=>{}", "headersHandler?"));
+					"(headers: HttpHeaders) => any", "headersHandler?"));
 			}
 
 			var jsUriQuery = UriQueryHelper.CreateUriQueryForTs(RelativePath, ParameterDescriptions);
