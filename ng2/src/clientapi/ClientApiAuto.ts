@@ -243,7 +243,7 @@ export namespace My_Pet_Client {
 				headersHandler(headers);
 			}
 			
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${z}`).join('&'), { headers: headers });
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headers });
 		}
 
 		/**
@@ -259,7 +259,7 @@ export namespace My_Pet_Client {
 				headersHandler(headers);
 			}
 			
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?'+tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headers });
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headers });
 		}
 
 		/**
