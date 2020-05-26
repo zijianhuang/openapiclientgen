@@ -33,7 +33,7 @@ export namespace MyNS {
 		 * @return {DataSetList} Returns a list of data sets
 		 */
 		ListDataSets(): Observable<DataSetList> {
-			return this.http.get<DataSetList>(this.baseUri + '');
+			return this.http.get<DataSetList>(this.baseUri + '', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -45,7 +45,7 @@ export namespace MyNS {
 		 * @return {string} The dataset API for the given version is found and it is accessible to consume.
 		 */
 		ListSearchableFields(dataset: string, version: string): Observable<string> {
-			return this.http.get(this.baseUri + encodeURIComponent(dataset) + '/' + encodeURIComponent(version) + '/fields', { responseType: 'text' });
+			return this.http.get(this.baseUri + encodeURIComponent(dataset) + '/' + encodeURIComponent(version) + '/fields', { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
 		}
 	}
 

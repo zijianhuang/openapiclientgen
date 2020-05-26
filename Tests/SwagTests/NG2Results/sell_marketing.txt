@@ -1130,7 +1130,7 @@ export namespace MyNS {
 		 * @return {BulkCreateAdsByInventoryReferenceResponse} Success
 		 */
 		BulkCreateAdsByInventoryReference(campaign_id: string, requestBody: BulkCreateAdsByInventoryReferenceRequest): Observable<BulkCreateAdsByInventoryReferenceResponse> {
-			return this.http.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1141,7 +1141,7 @@ export namespace MyNS {
 		 * @return {BulkAdResponse} Success
 		 */
 		BulkCreateAdsByListingId(campaign_id: string, requestBody: BulkCreateAdRequest): Observable<BulkAdResponse> {
-			return this.http.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_create_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_create_ads_by_listing_id', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1152,7 +1152,7 @@ export namespace MyNS {
 		 * @return {BulkDeleteAdsByInventoryReferenceResponse} Success
 		 */
 		BulkDeleteAdsByInventoryReference(campaign_id: string, requestBody: BulkDeleteAdsByInventoryReferenceRequest): Observable<BulkDeleteAdsByInventoryReferenceResponse> {
-			return this.http.post<BulkDeleteAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkDeleteAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1163,7 +1163,7 @@ export namespace MyNS {
 		 * @return {BulkDeleteAdResponse} Success
 		 */
 		BulkDeleteAdsByListingId(campaign_id: string, requestBody: BulkDeleteAdRequest): Observable<BulkDeleteAdResponse> {
-			return this.http.post<BulkDeleteAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_delete_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkDeleteAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_delete_ads_by_listing_id', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1174,7 +1174,7 @@ export namespace MyNS {
 		 * @return {BulkCreateAdsByInventoryReferenceResponse} Success
 		 */
 		BulkUpdateAdsBidByInventoryReference(campaign_id: string, requestBody: BulkCreateAdsByInventoryReferenceRequest): Observable<BulkCreateAdsByInventoryReferenceResponse> {
-			return this.http.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_update_ads_bid_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_update_ads_bid_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1185,7 +1185,7 @@ export namespace MyNS {
 		 * @return {BulkAdResponse} Success
 		 */
 		BulkUpdateAdsBidByListingId(campaign_id: string, requestBody: BulkCreateAdRequest): Observable<BulkAdResponse> {
-			return this.http.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_update_ads_bid_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_update_ads_bid_by_listing_id', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1198,7 +1198,7 @@ export namespace MyNS {
 		 * @return {AdPagedCollection} Success
 		 */
 		GetAds(campaign_id: string, limit: string, listing_ids: string, offset: string): Observable<AdPagedCollection> {
-			return this.http.get<AdPagedCollection>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad?limit=' + encodeURIComponent(limit) + '&listing_ids=' + encodeURIComponent(listing_ids) + '&offset=' + encodeURIComponent(offset));
+			return this.http.get<AdPagedCollection>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad?limit=' + encodeURIComponent(limit) + '&listing_ids=' + encodeURIComponent(listing_ids) + '&offset=' + encodeURIComponent(offset), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1208,8 +1208,8 @@ export namespace MyNS {
 		 * @param {CreateAdRequest} requestBody This type defines the fields for the createAd request.
 		 * @return {void} 
 		 */
-		CreateAdByListingId(campaign_id: string, requestBody: CreateAdRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateAdByListingId(campaign_id: string, requestBody: CreateAdRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1219,8 +1219,8 @@ export namespace MyNS {
 		 * @param {CreateAdsByInventoryReferenceRequest} requestBody This type defines the fields for the createAdsByInventoryReference request.
 		 * @return {void} 
 		 */
-		CreateAdsByInventoryReference(campaign_id: string, requestBody: CreateAdsByInventoryReferenceRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateAdsByInventoryReference(campaign_id: string, requestBody: CreateAdsByInventoryReferenceRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1231,7 +1231,7 @@ export namespace MyNS {
 		 * @return {Ad} Success
 		 */
 		GetAd(ad_id: string, campaign_id: string): Observable<Ad> {
-			return this.http.get<Ad>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id));
+			return this.http.get<Ad>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1241,8 +1241,8 @@ export namespace MyNS {
 		 * @param {string} campaign_id A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.
 		 * @return {void} 
 		 */
-		DeleteAd(ad_id: string, campaign_id: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id));
+		DeleteAd(ad_id: string, campaign_id: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1253,7 +1253,7 @@ export namespace MyNS {
 		 * @return {AdIds} Success
 		 */
 		DeleteAdsByInventoryReference(campaign_id: string, requestBody: DeleteAdsByInventoryReferenceRequest): Observable<AdIds> {
-			return this.http.post<AdIds>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<AdIds>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1265,7 +1265,7 @@ export namespace MyNS {
 		 * @return {Ads} Success
 		 */
 		GetAdsByInventoryReference(campaign_id: string, inventory_reference_id: string, inventory_reference_type: string): Observable<Ads> {
-			return this.http.get<Ads>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/get_ads_by_inventory_reference?inventory_reference_id=' + encodeURIComponent(inventory_reference_id) + '&inventory_reference_type=' + encodeURIComponent(inventory_reference_type));
+			return this.http.get<Ads>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/get_ads_by_inventory_reference?inventory_reference_id=' + encodeURIComponent(inventory_reference_id) + '&inventory_reference_type=' + encodeURIComponent(inventory_reference_type), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1276,8 +1276,8 @@ export namespace MyNS {
 		 * @param {UpdateBidPercentageRequest} requestBody This type defines the fields for the updateBid request.
 		 * @return {void} 
 		 */
-		UpdateBid(ad_id: string, campaign_id: string, requestBody: UpdateBidPercentageRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id) + '/update_bid', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		UpdateBid(ad_id: string, campaign_id: string, requestBody: UpdateBidPercentageRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id) + '/update_bid', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1293,8 +1293,8 @@ export namespace MyNS {
 		 * @param {CloneCampaignRequest} requestBody This type defines the fields for a clone campaign request.
 		 * @return {void} 
 		 */
-		CloneCampaign(campaign_id: string, requestBody: CloneCampaignRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/clone', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CloneCampaign(campaign_id: string, requestBody: CloneCampaignRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/clone', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1309,7 +1309,7 @@ export namespace MyNS {
 		 * @return {CampaignPagedCollection} Success
 		 */
 		GetCampaigns(campaign_name: string, campaign_status: string, end_date_range: string, limit: string, offset: string, start_date_range: string): Observable<CampaignPagedCollection> {
-			return this.http.get<CampaignPagedCollection>(this.baseUri + 'ad_campaign?campaign_name=' + encodeURIComponent(campaign_name) + '&campaign_status=' + encodeURIComponent(campaign_status) + '&end_date_range=' + encodeURIComponent(end_date_range) + '&limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&start_date_range=' + encodeURIComponent(start_date_range));
+			return this.http.get<CampaignPagedCollection>(this.baseUri + 'ad_campaign?campaign_name=' + encodeURIComponent(campaign_name) + '&campaign_status=' + encodeURIComponent(campaign_status) + '&end_date_range=' + encodeURIComponent(end_date_range) + '&limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&start_date_range=' + encodeURIComponent(start_date_range), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1318,8 +1318,8 @@ export namespace MyNS {
 		 * @param {CreateCampaignRequest} requestBody This type defines the fields for the create campaign request.
 		 * @return {void} 
 		 */
-		CreateCampaign(requestBody: CreateCampaignRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateCampaign(requestBody: CreateCampaignRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1329,7 +1329,7 @@ export namespace MyNS {
 		 * @return {Campaign} Success
 		 */
 		GetCampaign(campaign_id: string): Observable<Campaign> {
-			return this.http.get<Campaign>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id));
+			return this.http.get<Campaign>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1338,8 +1338,8 @@ export namespace MyNS {
 		 * @param {string} campaign_id A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.
 		 * @return {void} 
 		 */
-		DeleteCampaign(campaign_id: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id));
+		DeleteCampaign(campaign_id: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1348,8 +1348,8 @@ export namespace MyNS {
 		 * @param {string} campaign_id A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.
 		 * @return {void} 
 		 */
-		EndCampaign(campaign_id: string): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/end', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		EndCampaign(campaign_id: string): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/end', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1361,7 +1361,7 @@ export namespace MyNS {
 		 * @return {Campaigns} Success
 		 */
 		FindCampaignByAdReference(inventory_reference_id: string, inventory_reference_type: string, listing_id: string): Observable<Campaigns> {
-			return this.http.get<Campaigns>(this.baseUri + 'ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + encodeURIComponent(inventory_reference_id) + '&inventory_reference_type=' + encodeURIComponent(inventory_reference_type) + '&listing_id=' + encodeURIComponent(listing_id));
+			return this.http.get<Campaigns>(this.baseUri + 'ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + encodeURIComponent(inventory_reference_id) + '&inventory_reference_type=' + encodeURIComponent(inventory_reference_type) + '&listing_id=' + encodeURIComponent(listing_id), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 		 * @return {Campaign} Success
 		 */
 		GetCampaignByName(campaign_name: string): Observable<Campaign> {
-			return this.http.get<Campaign>(this.baseUri + 'ad_campaign/get_campaign_by_name?campaign_name=' + encodeURIComponent(campaign_name));
+			return this.http.get<Campaign>(this.baseUri + 'ad_campaign/get_campaign_by_name?campaign_name=' + encodeURIComponent(campaign_name), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1380,8 +1380,8 @@ export namespace MyNS {
 		 * @param {string} campaign_id A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.
 		 * @return {void} 
 		 */
-		PauseCampaign(campaign_id: string): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/pause', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		PauseCampaign(campaign_id: string): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/pause', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1390,8 +1390,8 @@ export namespace MyNS {
 		 * @param {string} campaign_id A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.
 		 * @return {void} 
 		 */
-		ResumeCampaign(campaign_id: string): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/resume', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		ResumeCampaign(campaign_id: string): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/resume', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1401,8 +1401,8 @@ export namespace MyNS {
 		 * @param {UpdateCampaignIdentificationRequest} requestBody This type defines the fields to updated the campaign name and start and end dates.
 		 * @return {void} 
 		 */
-		UpdateCampaignIdentification(campaign_id: string, requestBody: UpdateCampaignIdentificationRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/update_campaign_identification', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		UpdateCampaignIdentification(campaign_id: string, requestBody: UpdateCampaignIdentificationRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/update_campaign_identification', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1417,8 +1417,8 @@ export namespace MyNS {
 		 * @param {string} report_id The unique ID of the Promoted Listings report you want to get. This ID is generated by eBay when you run a report task with a call to createReportTask. Get all the seller's report IDs by calling getReportTasks.
 		 * @return {void} Success
 		 */
-		GetReport(report_id: string): Observable<Response> {
-			return this.http.get<Response>(this.baseUri + 'ad_report/' + encodeURIComponent(report_id));
+		GetReport(report_id: string): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'ad_report/' + encodeURIComponent(report_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1433,7 +1433,7 @@ export namespace MyNS {
 		 * @return {ReportMetadatas} Success
 		 */
 		GetReportMetadata(): Observable<ReportMetadatas> {
-			return this.http.get<ReportMetadatas>(this.baseUri + 'ad_report_metadata');
+			return this.http.get<ReportMetadatas>(this.baseUri + 'ad_report_metadata', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 		 * @return {ReportMetadata} Success
 		 */
 		GetReportMetadataForReportType(report_type: string): Observable<ReportMetadata> {
-			return this.http.get<ReportMetadata>(this.baseUri + 'ad_report_metadata/' + encodeURIComponent(report_type));
+			return this.http.get<ReportMetadata>(this.baseUri + 'ad_report_metadata/' + encodeURIComponent(report_type), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 		 * @return {ReportTaskPagedCollection} Success
 		 */
 		GetReportTasks(limit: string, offset: string, report_task_statuses: string): Observable<ReportTaskPagedCollection> {
-			return this.http.get<ReportTaskPagedCollection>(this.baseUri + 'ad_report_task?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&report_task_statuses=' + encodeURIComponent(report_task_statuses));
+			return this.http.get<ReportTaskPagedCollection>(this.baseUri + 'ad_report_task?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&report_task_statuses=' + encodeURIComponent(report_task_statuses), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1470,8 +1470,8 @@ export namespace MyNS {
 		 * @param {CreateReportTask} requestBody The container for the fields that define the report task.
 		 * @return {void} 
 		 */
-		CreateReportTask(requestBody: CreateReportTask): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'ad_report_task', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateReportTask(requestBody: CreateReportTask): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'ad_report_task', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1481,7 +1481,7 @@ export namespace MyNS {
 		 * @return {ReportTask} Success
 		 */
 		GetReportTask(report_task_id: string): Observable<ReportTask> {
-			return this.http.get<ReportTask>(this.baseUri + 'ad_report_task/' + encodeURIComponent(report_task_id));
+			return this.http.get<ReportTask>(this.baseUri + 'ad_report_task/' + encodeURIComponent(report_task_id), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1490,8 +1490,8 @@ export namespace MyNS {
 		 * @param {string} report_task_id A unique eBay-assigned ID for the report task that's generated when the report task is created by a call to createReportTask.
 		 * @return {void} 
 		 */
-		DeleteReportTask(report_task_id: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'ad_report_task/' + encodeURIComponent(report_task_id));
+		DeleteReportTask(report_task_id: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'ad_report_task/' + encodeURIComponent(report_task_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1506,8 +1506,8 @@ export namespace MyNS {
 		 * @param {ItemPriceMarkdown} requestBody This type defines the fields that describe an item price markdown promotion.
 		 * @return {void} 
 		 */
-		CreateItemPriceMarkdownPromotion(requestBody: ItemPriceMarkdown): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'item_price_markdown', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateItemPriceMarkdownPromotion(requestBody: ItemPriceMarkdown): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'item_price_markdown', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1517,7 +1517,7 @@ export namespace MyNS {
 		 * @return {ItemPriceMarkdown} Success
 		 */
 		GetItemPriceMarkdownPromotion(promotion_id: string): Observable<ItemPriceMarkdown> {
-			return this.http.get<ItemPriceMarkdown>(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id));
+			return this.http.get<ItemPriceMarkdown>(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1528,7 +1528,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		UpdateItemPriceMarkdownPromotion(promotion_id: string, requestBody: ItemPriceMarkdown): Observable<string> {
-			return this.http.put(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+			return this.http.put(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1537,8 +1537,8 @@ export namespace MyNS {
 		 * @param {string} promotion_id The ID of the promotion you want to delete. The promotion ID is a unique eBay-assigned value that's generated when the promotion is created.
 		 * @return {void} 
 		 */
-		DeleteItemPriceMarkdownPromotion(promotion_id: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id));
+		DeleteItemPriceMarkdownPromotion(promotion_id: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1553,8 +1553,8 @@ export namespace MyNS {
 		 * @param {ItemPromotion} requestBody This type defines the fields that describe an item promotion.
 		 * @return {void} 
 		 */
-		CreateItemPromotion(requestBody: ItemPromotion): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'item_promotion', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateItemPromotion(requestBody: ItemPromotion): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'item_promotion', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1564,7 +1564,7 @@ export namespace MyNS {
 		 * @return {ItemPromotionResponse} Success
 		 */
 		GetItemPromotion(promotion_id: string): Observable<ItemPromotionResponse> {
-			return this.http.get<ItemPromotionResponse>(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id));
+			return this.http.get<ItemPromotionResponse>(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1575,7 +1575,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		UpdateItemPromotion(promotion_id: string, requestBody: ItemPromotion): Observable<BaseResponse> {
-			return this.http.put<BaseResponse>(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.put<BaseResponse>(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1584,8 +1584,8 @@ export namespace MyNS {
 		 * @param {string} promotion_id The ID of the promotion you want to delete. The promotion ID is a unique eBay-assigned value that's generated when the promotion is created.
 		 * @return {void} 
 		 */
-		DeleteItemPromotion(promotion_id: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id));
+		DeleteItemPromotion(promotion_id: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1605,8 +1605,8 @@ export namespace MyNS {
 		 * @param {string} status This query parameter applies only to markdown promotions. It filters the response based on the indicated status of the promotion. Currently, the only supported value for this parameter is MARKED_DOWN, which indicates active markdown promotions. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/marketing/types/ItemMarkdownStatusEnum.html
 		 * @return {void} 
 		 */
-		GetListingSet(limit: string, offset: string, promotion_id: string, q: string, sort: string, status: string): Observable<Response> {
-			return this.http.get<Response>(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/get_listing_set?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&q=' + encodeURIComponent(q) + '&sort=' + encodeURIComponent(sort) + '&status=' + encodeURIComponent(status));
+		GetListingSet(limit: string, offset: string, promotion_id: string, q: string, sort: string, status: string): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/get_listing_set?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&q=' + encodeURIComponent(q) + '&sort=' + encodeURIComponent(sort) + '&status=' + encodeURIComponent(status), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 		 * @return {PromotionsPagedCollection} Success
 		 */
 		GetPromotions(limit: string, marketplace_id: string, offset: string, promotion_status: string, promotion_type: string, q: string, sort: string): Observable<PromotionsPagedCollection> {
-			return this.http.get<PromotionsPagedCollection>(this.baseUri + 'promotion?limit=' + encodeURIComponent(limit) + '&marketplace_id=' + encodeURIComponent(marketplace_id) + '&offset=' + encodeURIComponent(offset) + '&promotion_status=' + encodeURIComponent(promotion_status) + '&promotion_type=' + encodeURIComponent(promotion_type) + '&q=' + encodeURIComponent(q) + '&sort=' + encodeURIComponent(sort));
+			return this.http.get<PromotionsPagedCollection>(this.baseUri + 'promotion?limit=' + encodeURIComponent(limit) + '&marketplace_id=' + encodeURIComponent(marketplace_id) + '&offset=' + encodeURIComponent(offset) + '&promotion_status=' + encodeURIComponent(promotion_status) + '&promotion_type=' + encodeURIComponent(promotion_type) + '&q=' + encodeURIComponent(q) + '&sort=' + encodeURIComponent(sort), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1631,8 +1631,8 @@ export namespace MyNS {
 		 * @param {string} promotion_id Identifier of the promotion you want to pause. The ID is a unique eBay-assigned value that's generated when the promotion is created.
 		 * @return {void} 
 		 */
-		PausePromotion(promotion_id: string): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/pause', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		PausePromotion(promotion_id: string): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/pause', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1641,8 +1641,8 @@ export namespace MyNS {
 		 * @param {string} promotion_id Identifier of the promotion you want to make active. The ID is a unique eBay-assigned value that's generated when the promotion is created.
 		 * @return {void} 
 		 */
-		ResumePromotion(promotion_id: string): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/resume', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		ResumePromotion(promotion_id: string): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/resume', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1663,7 +1663,7 @@ export namespace MyNS {
 		 * @return {PromotionsReportPagedCollection} Success
 		 */
 		GetPromotionReports(limit: string, marketplace_id: string, offset: string, promotion_status: string, promotion_type: string, q: string): Observable<PromotionsReportPagedCollection> {
-			return this.http.get<PromotionsReportPagedCollection>(this.baseUri + 'promotion_report?limit=' + encodeURIComponent(limit) + '&marketplace_id=' + encodeURIComponent(marketplace_id) + '&offset=' + encodeURIComponent(offset) + '&promotion_status=' + encodeURIComponent(promotion_status) + '&promotion_type=' + encodeURIComponent(promotion_type) + '&q=' + encodeURIComponent(q));
+			return this.http.get<PromotionsReportPagedCollection>(this.baseUri + 'promotion_report?limit=' + encodeURIComponent(limit) + '&marketplace_id=' + encodeURIComponent(marketplace_id) + '&offset=' + encodeURIComponent(offset) + '&promotion_status=' + encodeURIComponent(promotion_status) + '&promotion_type=' + encodeURIComponent(promotion_type) + '&q=' + encodeURIComponent(q), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -1679,7 +1679,7 @@ export namespace MyNS {
 		 * @return {SummaryReportResponse} Success
 		 */
 		GetPromotionSummaryReport(marketplace_id: string): Observable<SummaryReportResponse> {
-			return this.http.get<SummaryReportResponse>(this.baseUri + 'promotion_summary_report?marketplace_id=' + encodeURIComponent(marketplace_id));
+			return this.http.get<SummaryReportResponse>(this.baseUri + 'promotion_summary_report?marketplace_id=' + encodeURIComponent(marketplace_id), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 

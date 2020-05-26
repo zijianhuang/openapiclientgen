@@ -1371,7 +1371,7 @@ export namespace MyNS {
 		 * @return {InventoryLocationResponse} Success
 		 */
 		GetInventoryLocation(merchantLocationKey: string): Observable<InventoryLocationResponse> {
-			return this.http.get<InventoryLocationResponse>(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey));
+			return this.http.get<InventoryLocationResponse>(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1381,8 +1381,8 @@ export namespace MyNS {
 		 * @param {InventoryLocationFull} requestBody Inventory Location details
 		 * @return {void} 
 		 */
-		CreateInventoryLocation(merchantLocationKey: string, requestBody: InventoryLocationFull): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateInventoryLocation(merchantLocationKey: string, requestBody: InventoryLocationFull): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1391,8 +1391,8 @@ export namespace MyNS {
 		 * @param {string} merchantLocationKey A unique merchant-defined key (ID) for an inventory location. This value is passed in at the end of the call URI to indicate the inventory location to be deleted. Max length: 36
 		 * @return {void} 
 		 */
-		DeleteInventoryLocation(merchantLocationKey: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey));
+		DeleteInventoryLocation(merchantLocationKey: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1402,7 +1402,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		DisableInventoryLocation(merchantLocationKey: string): Observable<string> {
-			return this.http.post(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey) + '/disable', null, {headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+			return this.http.post(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey) + '/disable', null, { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1412,7 +1412,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		EnableInventoryLocation(merchantLocationKey: string): Observable<string> {
-			return this.http.post(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey) + '/enable', null, {headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+			return this.http.post(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey) + '/enable', null, { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1423,7 +1423,7 @@ export namespace MyNS {
 		 * @return {LocationResponse} Success
 		 */
 		GetInventoryLocations(limit: string, offset: string): Observable<LocationResponse> {
-			return this.http.get<LocationResponse>(this.baseUri + 'location?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset));
+			return this.http.get<LocationResponse>(this.baseUri + 'location?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1433,8 +1433,8 @@ export namespace MyNS {
 		 * @param {InventoryLocation} requestBody The inventory location details to be updated (other than the address and geo co-ordinates).
 		 * @return {void} 
 		 */
-		UpdateInventoryLocation(merchantLocationKey: string, requestBody: InventoryLocation): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey) + '/update_location_details', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		UpdateInventoryLocation(merchantLocationKey: string, requestBody: InventoryLocation): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'location/' + encodeURIComponent(merchantLocationKey) + '/update_location_details', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1450,7 +1450,7 @@ export namespace MyNS {
 		 * @return {InventoryItemWithSkuLocaleGroupid} Success
 		 */
 		GetInventoryItem(sku: string): Observable<InventoryItemWithSkuLocaleGroupid> {
-			return this.http.get<InventoryItemWithSkuLocaleGroupid>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku));
+			return this.http.get<InventoryItemWithSkuLocaleGroupid>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceInventoryItem(sku: string, requestBody: InventoryItem): Observable<BaseResponse> {
-			return this.http.put<BaseResponse>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.put<BaseResponse>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1470,8 +1470,8 @@ export namespace MyNS {
 		 * @param {string} sku This is the seller-defined SKU value of the product whose inventory item record you wish to delete. Max length: 50.
 		 * @return {void} 
 		 */
-		DeleteInventoryItem(sku: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku));
+		DeleteInventoryItem(sku: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'inventory_item/' + encodeURIComponent(sku), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1482,7 +1482,7 @@ export namespace MyNS {
 		 * @return {InventoryItems} Success
 		 */
 		GetInventoryItems(limit: string, offset: string): Observable<InventoryItems> {
-			return this.http.get<InventoryItems>(this.baseUri + 'inventory_item?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset));
+			return this.http.get<InventoryItems>(this.baseUri + 'inventory_item?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1492,7 +1492,7 @@ export namespace MyNS {
 		 * @return {BulkPriceQuantityResponse} Success
 		 */
 		BulkUpdatePriceQuantity(requestBody: BulkPriceQuantity): Observable<BulkPriceQuantityResponse> {
-			return this.http.post<BulkPriceQuantityResponse>(this.baseUri + 'bulk_update_price_quantity', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkPriceQuantityResponse>(this.baseUri + 'bulk_update_price_quantity', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1502,7 +1502,7 @@ export namespace MyNS {
 		 * @return {BulkInventoryItemResponse} Success
 		 */
 		BulkCreateOrReplaceInventoryItem(requestBody: BulkInventoryItem): Observable<BulkInventoryItemResponse> {
-			return this.http.post<BulkInventoryItemResponse>(this.baseUri + 'bulk_create_or_replace_inventory_item', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkInventoryItemResponse>(this.baseUri + 'bulk_create_or_replace_inventory_item', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1512,7 +1512,7 @@ export namespace MyNS {
 		 * @return {BulkGetInventoryItemResponse} Success
 		 */
 		BulkGetInventoryItem(requestBody: BulkGetInventoryItem): Observable<BulkGetInventoryItemResponse> {
-			return this.http.post<BulkGetInventoryItemResponse>(this.baseUri + 'bulk_get_inventory_item', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkGetInventoryItemResponse>(this.baseUri + 'bulk_get_inventory_item', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 	}
 
@@ -1528,7 +1528,7 @@ export namespace MyNS {
 		 * @return {Compatibility} Success
 		 */
 		GetProductCompatibility(sku: string): Observable<Compatibility> {
-			return this.http.get<Compatibility>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku) + '/product_compatibility');
+			return this.http.get<Compatibility>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku) + '/product_compatibility', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1539,7 +1539,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceProductCompatibility(sku: string, requestBody: Compatibility): Observable<BaseResponse> {
-			return this.http.put<BaseResponse>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku) + '/product_compatibility', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.put<BaseResponse>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku) + '/product_compatibility', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1548,8 +1548,8 @@ export namespace MyNS {
 		 * @param {string} sku A SKU (stock keeping unit) is an unique identifier defined by a seller for a product
 		 * @return {void} 
 		 */
-		DeleteProductCompatibility(sku: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'inventory_item/' + encodeURIComponent(sku) + '/product_compatibility');
+		DeleteProductCompatibility(sku: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'inventory_item/' + encodeURIComponent(sku) + '/product_compatibility', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1569,7 +1569,7 @@ export namespace MyNS {
 		 * @return {Offers} Success
 		 */
 		GetOffers(sku: string, marketplace_id: string, format: string, limit: string, offset: string): Observable<Offers> {
-			return this.http.get<Offers>(this.baseUri + 'offer?sku=' + encodeURIComponent(sku) + '&marketplace_id=' + encodeURIComponent(marketplace_id) + '&format=' + encodeURIComponent(format) + '&limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset));
+			return this.http.get<Offers>(this.baseUri + 'offer?sku=' + encodeURIComponent(sku) + '&marketplace_id=' + encodeURIComponent(marketplace_id) + '&format=' + encodeURIComponent(format) + '&limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1578,8 +1578,8 @@ export namespace MyNS {
 		 * @param {EbayOfferDetailsWithKeys} requestBody Details of the offer for the channel
 		 * @return {void} 
 		 */
-		CreateOffer(requestBody: EbayOfferDetailsWithKeys): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'offer', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateOffer(requestBody: EbayOfferDetailsWithKeys): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'offer', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1589,7 +1589,7 @@ export namespace MyNS {
 		 * @return {EbayOfferDetailsWithAll} Success
 		 */
 		GetOffer(offerId: string): Observable<EbayOfferDetailsWithAll> {
-			return this.http.get<EbayOfferDetailsWithAll>(this.baseUri + 'offer/' + encodeURIComponent(offerId));
+			return this.http.get<EbayOfferDetailsWithAll>(this.baseUri + 'offer/' + encodeURIComponent(offerId), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1600,7 +1600,7 @@ export namespace MyNS {
 		 * @return {OfferResponse} Success
 		 */
 		UpdateOffer(offerId: string, requestBody: EbayOfferDetailsWithId): Observable<OfferResponse> {
-			return this.http.put<OfferResponse>(this.baseUri + 'offer/' + encodeURIComponent(offerId), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.put<OfferResponse>(this.baseUri + 'offer/' + encodeURIComponent(offerId), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1609,8 +1609,8 @@ export namespace MyNS {
 		 * @param {string} offerId The unique identifier of the offer to delete. The unique identifier of the offer (offerId) is passed in at the end of the call URI.
 		 * @return {void} 
 		 */
-		DeleteOffer(offerId: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'offer/' + encodeURIComponent(offerId));
+		DeleteOffer(offerId: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'offer/' + encodeURIComponent(offerId), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 		 * @return {PublishResponse} Success
 		 */
 		PublishOffer(offerId: string): Observable<PublishResponse> {
-			return this.http.post<PublishResponse>(this.baseUri + 'offer/' + encodeURIComponent(offerId) + '/publish/', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<PublishResponse>(this.baseUri + 'offer/' + encodeURIComponent(offerId) + '/publish/', null, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1630,7 +1630,7 @@ export namespace MyNS {
 		 * @return {PublishResponse} Success
 		 */
 		PublishOfferByInventoryItemGroup(requestBody: PublishByInventoryItemGroupRequest): Observable<PublishResponse> {
-			return this.http.post<PublishResponse>(this.baseUri + 'offer/publish_by_inventory_item_group/', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<PublishResponse>(this.baseUri + 'offer/publish_by_inventory_item_group/', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1639,8 +1639,8 @@ export namespace MyNS {
 		 * @param {WithdrawByInventoryItemGroupRequest} requestBody The base request of the withdrawOfferByInventoryItemGroup call.
 		 * @return {void} 
 		 */
-		WithdrawOfferByInventoryItemGroup(requestBody: WithdrawByInventoryItemGroupRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'offer/withdraw_by_inventory_item_group', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		WithdrawOfferByInventoryItemGroup(requestBody: WithdrawByInventoryItemGroupRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'offer/withdraw_by_inventory_item_group', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1650,7 +1650,7 @@ export namespace MyNS {
 		 * @return {FeesSummaryResponse} Success
 		 */
 		GetListingFees(requestBody: OfferKeysWithId): Observable<FeesSummaryResponse> {
-			return this.http.post<FeesSummaryResponse>(this.baseUri + 'offer/get_listing_fees', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<FeesSummaryResponse>(this.baseUri + 'offer/get_listing_fees', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1660,7 +1660,7 @@ export namespace MyNS {
 		 * @return {BulkOfferResponse} Success
 		 */
 		BulkCreateOffer(requestBody: BulkEbayOfferDetailsWithKeys): Observable<BulkOfferResponse> {
-			return this.http.post<BulkOfferResponse>(this.baseUri + 'bulk_create_offer', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkOfferResponse>(this.baseUri + 'bulk_create_offer', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1670,7 +1670,7 @@ export namespace MyNS {
 		 * @return {BulkPublishResponse} Success
 		 */
 		BulkPublishOffer(requestBody: BulkOffer): Observable<BulkPublishResponse> {
-			return this.http.post<BulkPublishResponse>(this.baseUri + 'bulk_publish_offer', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkPublishResponse>(this.baseUri + 'bulk_publish_offer', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1680,7 +1680,7 @@ export namespace MyNS {
 		 * @return {WithdrawResponse} Success
 		 */
 		WithdrawOffer(offerId: string): Observable<WithdrawResponse> {
-			return this.http.post<WithdrawResponse>(this.baseUri + 'offer/' + encodeURIComponent(offerId) + '/withdraw', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<WithdrawResponse>(this.baseUri + 'offer/' + encodeURIComponent(offerId) + '/withdraw', null, { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -1696,7 +1696,7 @@ export namespace MyNS {
 		 * @return {InventoryItemGroup} Success
 		 */
 		GetInventoryItemGroup(inventoryItemGroupKey: string): Observable<InventoryItemGroup> {
-			return this.http.get<InventoryItemGroup>(this.baseUri + 'inventory_item_group/' + encodeURIComponent(inventoryItemGroupKey));
+			return this.http.get<InventoryItemGroup>(this.baseUri + 'inventory_item_group/' + encodeURIComponent(inventoryItemGroupKey), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1707,7 +1707,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceInventoryItemGroup(inventoryItemGroupKey: string, requestBody: InventoryItemGroup): Observable<BaseResponse> {
-			return this.http.put<BaseResponse>(this.baseUri + 'inventory_item_group/' + encodeURIComponent(inventoryItemGroupKey), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.put<BaseResponse>(this.baseUri + 'inventory_item_group/' + encodeURIComponent(inventoryItemGroupKey), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -1716,8 +1716,8 @@ export namespace MyNS {
 		 * @param {string} inventoryItemGroupKey The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The inventoryItemGroupKey value for the inventory item group to delete is passed in at the end of the call URI.
 		 * @return {void} 
 		 */
-		DeleteInventoryItemGroup(inventoryItemGroupKey: string): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'inventory_item_group/' + encodeURIComponent(inventoryItemGroupKey));
+		DeleteInventoryItemGroup(inventoryItemGroupKey: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'inventory_item_group/' + encodeURIComponent(inventoryItemGroupKey), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1733,7 +1733,7 @@ export namespace MyNS {
 		 * @return {BulkMigrateListingResponse} Success
 		 */
 		BulkMigrateListing(requestBody: BulkMigrateListing): Observable<BulkMigrateListingResponse> {
-			return this.http.post<BulkMigrateListingResponse>(this.baseUri + 'bulk_migrate_listing', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<BulkMigrateListingResponse>(this.baseUri + 'bulk_migrate_listing', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 	}
 

@@ -25,7 +25,7 @@ namespace MyNamespace
             var key = PetData.Instance.GetCurrentMax();
             body.Id = key;
             PetData.Instance.Dic.TryAdd(key, body);
-            return Ok();
+            return Ok(body.Name);
         }
 
         /// <summary>Update an existing pet</summary>
@@ -67,7 +67,7 @@ namespace MyNamespace
         [HttpDelete, Route("pet/{petId}")]
         public async Task<IActionResult> DeletePet(long petId)
         {
-            if (PetData.Instance.Dic.TryRemove(petId, out _))
+            if (PetData.Instance.Dic.TryGetValue(petId, out _)) //not to TryRemove for testing
             {
                 return Ok();
             }

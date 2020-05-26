@@ -1,10 +1,9 @@
-﻿using Fonlow.Reflection;
-using Fonlow.TypeScriptCodeDom;
-using Fonlow.Web.Meta;
+﻿using Fonlow.TypeScriptCodeDom;
 using System;
 using System.CodeDom;
 using System.Diagnostics;
 using System.Linq;
+using Fonlow.OpenApiClientGen.ClientTypes;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -59,7 +58,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			var httpMethodName = HttpMethod.ToString().ToLower(); //Method is always uppercase.
 																  //deal with parameters
 			var parameters = ParameterDescriptions.Select(d =>
-				new CodeParameterDeclarationExpression(Poco2TsGen.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType), d.Name))
+				new CodeParameterDeclarationExpression(TypeMapper.MapCodeTypeReferenceToTsText(d.ParameterTypeReference), d.Name))
 				.ToArray();
 
 			Method.Parameters.AddRange(parameters);

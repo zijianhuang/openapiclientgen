@@ -146,8 +146,8 @@ export namespace MyNS {
 		 * @param {string} offset Specifies the number of ads to skip in the result set before returning the first ad in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 items from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0
 		 * @return {void} Success
 		 */
-		FindListingRecommendations(filter: string, limit: string, offset: string, requestBody: FindListingRecommendationRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'find?filter=' + encodeURIComponent(filter) + '&limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		FindListingRecommendations(filter: string, limit: string, offset: string, requestBody: FindListingRecommendationRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'find?filter=' + encodeURIComponent(filter) + '&limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 	}
 

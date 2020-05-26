@@ -31,7 +31,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} pet response
 		 */
 		FindPets(tags: Array<string>, limit: number): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pets?'+tags.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit);
+			return this.http.get<Array<Pet>>(this.baseUri + 'pets?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -41,7 +41,7 @@ export namespace MyNS {
 		 * @return {Pet} pet response
 		 */
 		AddPet(requestBody: NewPet): Observable<Pet> {
-			return this.http.post<Pet>(this.baseUri + 'pets', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<Pet>(this.baseUri + 'pets', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
@@ -51,7 +51,7 @@ export namespace MyNS {
 		 * @return {Pet} pet response
 		 */
 		FindPetById(id: number): Observable<Pet> {
-			return this.http.get<Pet>(this.baseUri + 'pets/' + id);
+			return this.http.get<Pet>(this.baseUri + 'pets/' + id, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -60,8 +60,8 @@ export namespace MyNS {
 		 * @param {number} id ID of pet to delete
 		 * @return {void} 
 		 */
-		DeletePet(id: number): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'pets/' + id);
+		DeletePet(id: number): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'pets/' + id, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 

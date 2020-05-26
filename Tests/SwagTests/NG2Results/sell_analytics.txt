@@ -330,7 +330,7 @@ export namespace MyNS {
 		 * @return {GetCustomerServiceMetricResponse} Success
 		 */
 		GetCustomerServiceMetric(customer_service_metric_type: string, evaluation_marketplace_id: string, evaluation_type: string): Observable<GetCustomerServiceMetricResponse> {
-			return this.http.get<GetCustomerServiceMetricResponse>(this.baseUri + 'customer_service_metric/' + encodeURIComponent(customer_service_metric_type) + '/' + encodeURIComponent(evaluation_type) + '?evaluation_marketplace_id=' + encodeURIComponent(evaluation_marketplace_id));
+			return this.http.get<GetCustomerServiceMetricResponse>(this.baseUri + 'customer_service_metric/' + encodeURIComponent(customer_service_metric_type) + '/' + encodeURIComponent(evaluation_type) + '?evaluation_marketplace_id=' + encodeURIComponent(evaluation_marketplace_id), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -345,7 +345,7 @@ export namespace MyNS {
 		 * @return {FindSellerStandardsProfilesResponse} Success
 		 */
 		FindSellerStandardsProfiles(): Observable<FindSellerStandardsProfilesResponse> {
-			return this.http.get<FindSellerStandardsProfilesResponse>(this.baseUri + 'seller_standards_profile');
+			return this.http.get<FindSellerStandardsProfilesResponse>(this.baseUri + 'seller_standards_profile', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -356,7 +356,7 @@ export namespace MyNS {
 		 * @return {StandardsProfile} Success
 		 */
 		GetSellerStandardsProfile(cycle: string, program: string): Observable<StandardsProfile> {
-			return this.http.get<StandardsProfile>(this.baseUri + 'seller_standards_profile/' + encodeURIComponent(program) + '/' + encodeURIComponent(cycle));
+			return this.http.get<StandardsProfile>(this.baseUri + 'seller_standards_profile/' + encodeURIComponent(program) + '/' + encodeURIComponent(cycle), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -375,7 +375,7 @@ export namespace MyNS {
 		 * @return {Report} Success
 		 */
 		GetTrafficReport(dimension: string, filter: string, metric: string, sort: string): Observable<Report> {
-			return this.http.get<Report>(this.baseUri + 'traffic_report?dimension=' + encodeURIComponent(dimension) + '&filter=' + encodeURIComponent(filter) + '&metric=' + encodeURIComponent(metric) + '&sort=' + encodeURIComponent(sort));
+			return this.http.get<Report>(this.baseUri + 'traffic_report?dimension=' + encodeURIComponent(dimension) + '&filter=' + encodeURIComponent(filter) + '&metric=' + encodeURIComponent(metric) + '&sort=' + encodeURIComponent(sort), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 

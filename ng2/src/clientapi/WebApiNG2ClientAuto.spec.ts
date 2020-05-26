@@ -98,7 +98,7 @@ describe('Pet API', () => {
 	}
 	);
 
-	it('DeletePet', (done) => {
+	it('DeletePetNotFound', (done) => {
 		service.DeletePet(9).subscribe(
 			data => {
 				fail("Not good.")
@@ -108,6 +108,37 @@ describe('Pet API', () => {
 				const msg = errorResponseToString(error);
 				console.debug('DeletePet: ' + msg);
 				expect(msg).toContain("NoSuchPet");
+				done();
+			}
+		);
+	}
+	);
+
+	it('DeletePet', (done) => {
+		service.DeletePet(13).subscribe(
+			data => {
+				expect(data.status).toBe(200);
+				done();
+			},
+			error => {
+				const msg = errorResponseToString(error);
+				console.debug('DeletePet: ' + msg);
+				expect(msg).toContain("NoSuchPet");
+				done();
+			}
+		);
+	}
+	);
+
+	it('AddPetWithHeaders', (done) => {
+		service.AddPet({name: 'Pet'+Date.now().toString(), photoUrls: []}, () => new HttpHeaders({ 'transaction-id': '01234567' })).subscribe(
+			response => {
+				console.info('Response is '+JSON.stringify(response));
+				expect(response.status).toBe(200);
+				done();
+			},
+			error => {
+				fail(errorResponseToString(error));
 				done();
 			}
 		);

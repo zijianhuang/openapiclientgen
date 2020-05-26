@@ -12,7 +12,7 @@ export namespace MyNS {
 		 * @return {Array<string>} Success
 		 */
 		ValuesGet(): Observable<Array<string>> {
-			return this.http.get<Array<string>>(this.baseUri + 'api/Values');
+			return this.http.get<Array<string>>(this.baseUri + 'api/Values', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -20,7 +20,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		ValuesPost(requestBody: string): Observable<string> {
-			return this.http.post(this.baseUri + 'api/Values', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+			return this.http.post(this.baseUri + 'api/Values', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -28,23 +28,23 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		ValuesGetById(id: number): Observable<string> {
-			return this.http.get(this.baseUri + 'api/Values/' + id, { responseType: 'text' });
+			return this.http.get(this.baseUri + 'api/Values/' + id, { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
 		}
 
 		/**
 		 * Put api/Values/{id}
 		 * @return {void} Success
 		 */
-		ValuesPutById(id: number, requestBody: string): Observable<Response> {
-			return this.http.put<Response>(this.baseUri + 'api/Values/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		ValuesPutById(id: number, requestBody: string): Observable<HttpResponse<string>> {
+			return this.http.put(this.baseUri + 'api/Values/' + id, JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Delete api/Values/{id}
 		 * @return {void} Success
 		 */
-		ValuesDeleteById(id: number): Observable<Response> {
-			return this.http.delete<Response>(this.baseUri + 'api/Values/' + id);
+		ValuesDeleteById(id: number): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'api/Values/' + id, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 

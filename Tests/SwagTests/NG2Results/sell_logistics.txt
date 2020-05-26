@@ -420,8 +420,8 @@ export namespace MyNS {
 		 * @param {CreateShipmentFromQuoteRequest} requestBody The create shipment from quote request.
 		 * @return {void} 
 		 */
-		CreateFromShippingQuote(requestBody: CreateShipmentFromQuoteRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'shipment/create_from_shipping_quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateFromShippingQuote(requestBody: CreateShipmentFromQuoteRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'shipment/create_from_shipping_quote', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -431,7 +431,7 @@ export namespace MyNS {
 		 * @return {Shipment} Success
 		 */
 		GetShipment(shipmentId: string): Observable<Shipment> {
-			return this.http.get<Shipment>(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId));
+			return this.http.get<Shipment>(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -440,8 +440,8 @@ export namespace MyNS {
 		 * @param {string} shipmentId This path parameter specifies the unique eBay-assigned ID of the shipment associated with the shipping label you want to download. The shipmentId value is generated and returned by a call to createFromShippingQuote.
 		 * @return {void} Success
 		 */
-		DownloadLabelFile(shipmentId: string): Observable<Response> {
-			return this.http.get<Response>(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId) + '/download_label_file');
+		DownloadLabelFile(shipmentId: string): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId) + '/download_label_file', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -451,7 +451,7 @@ export namespace MyNS {
 		 * @return {Shipment} Success
 		 */
 		CancelShipment(shipmentId: string): Observable<Shipment> {
-			return this.http.post<Shipment>(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId) + '/cancel', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+			return this.http.post<Shipment>(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId) + '/cancel', null, { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -466,8 +466,8 @@ export namespace MyNS {
 		 * @param {ShippingQuoteRequest} requestBody The request object for createShippingQuote.
 		 * @return {void} 
 		 */
-		CreateShippingQuote(requestBody: ShippingQuoteRequest): Observable<Response> {
-			return this.http.post<Response>(this.baseUri + 'shipping_quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		CreateShippingQuote(requestBody: ShippingQuoteRequest): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'shipping_quote', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -477,7 +477,7 @@ export namespace MyNS {
 		 * @return {ShippingQuote} Success
 		 */
 		GetShippingQuote(shippingQuoteId: string): Observable<ShippingQuote> {
-			return this.http.get<ShippingQuote>(this.baseUri + 'shipping_quote/' + encodeURIComponent(shippingQuoteId));
+			return this.http.get<ShippingQuote>(this.baseUri + 'shipping_quote/' + encodeURIComponent(shippingQuoteId), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 

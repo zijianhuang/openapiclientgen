@@ -89,7 +89,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?'+status.map(z => `status=${z}`).join('&'));
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -100,7 +100,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus2(status: PetStatus): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus2?status=' + status);
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus2?status=' + status, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -111,7 +111,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus3(status: PetStatus): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus3?status=' + status);
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus3?status=' + status, { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
