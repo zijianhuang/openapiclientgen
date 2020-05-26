@@ -15,18 +15,27 @@ namespace Fonlow.CodeDom.Web.Ts
 		//const string NG2HttpResponse = "Response";
 		const string NG2HttpBlobResponse = "HttpResponse<Blob>";
 		const string NG2HttpStringResponse = "HttpResponse<string>";
-		const string ContentOptionsForResponse = "{ headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' }";
 		const string OptionsForResponse = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' }";
 		const string GeneralHeaderHandler = "{ headers: headersHandler ? headersHandler() : undefined }";
-		const string GeneralHeaderHandlerWithContent = "{ headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) }";
+		readonly string ContentOptionsForResponse;
+		readonly string GeneralHeaderHandlerWithContent;
 		string returnTypeText = null;
-		string contentType;
+
 		readonly Settings settings;
 
 		public ClientApiTsNG2FunctionGen(Settings settings, JSOutput jsOutput) : base()
 		{
-			this.contentType = jsOutput.ContentType;
 			this.settings = settings;
+
+			var contentType = jsOutput.ContentType;
+			if (String.IsNullOrEmpty(contentType))
+			{
+				contentType = "application/json;charset=UTF-8";
+			}
+
+			ContentOptionsForResponse = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}), observe: 'response', responseType: 'text' }}";
+			GeneralHeaderHandlerWithContent = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}) }}";
+
 		}
 
 		protected override CodeMemberMethod CreateMethodName()
@@ -95,11 +104,6 @@ namespace Fonlow.CodeDom.Web.Ts
 
 				if (httpMethodName == "post" || httpMethodName == "put")
 				{
-					if (String.IsNullOrEmpty(contentType))
-					{
-						contentType = "application/json;charset=UTF-8";
-					}
-
 					if (RequestBodyCodeTypeReference == null)
 					{
 						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {ContentOptionsForResponse});"));
