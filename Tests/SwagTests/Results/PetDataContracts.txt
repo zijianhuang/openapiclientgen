@@ -893,7 +893,7 @@ namespace MyNS
 		/// <param name="orderId">ID of the order that needs to be deleted</param>
 		public async Task DeleteOrderAsync(string orderId)
 		{
-			var requestUri = "store/order/"+Uri.EscapeDataString(orderId);
+			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -916,7 +916,7 @@ namespace MyNS
 		/// <param name="orderId">ID of the order that needs to be deleted</param>
 		public void DeleteOrder(string orderId)
 		{
-			var requestUri = "store/order/"+Uri.EscapeDataString(orderId);
+			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1017,7 +1017,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<User> GetUserByNameAsync(string username)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1046,7 +1046,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public User GetUserByName(string username)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1076,7 +1076,7 @@ namespace MyNS
 		/// <param name="requestBody">Updated user object</param>
 		public async Task UpdateUserAsync(string username, User requestBody)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1106,7 +1106,7 @@ namespace MyNS
 		/// <param name="requestBody">Updated user object</param>
 		public void UpdateUser(string username, User requestBody)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1135,7 +1135,7 @@ namespace MyNS
 		/// <param name="username">The name that needs to be deleted</param>
 		public async Task DeleteUserAsync(string username)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1158,7 +1158,7 @@ namespace MyNS
 		/// <param name="username">The name that needs to be deleted</param>
 		public void DeleteUser(string username)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1294,7 +1294,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> LoginUserAsync(string username, string password)
 		{
-			var requestUri = "user/login?username=" + Uri.EscapeDataString(username)+"&password=" + Uri.EscapeDataString(password);
+			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1323,7 +1323,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public string LoginUser(string username, string password)
 		{
-			var requestUri = "user/login?username=" + Uri.EscapeDataString(username)+"&password=" + Uri.EscapeDataString(password);
+			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;

@@ -1823,7 +1823,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BulkCreateAdsByInventoryReferenceResponse> BulkCreateAdsByInventoryReferenceAsync(string campaign_id, BulkCreateAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_create_ads_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_create_ads_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1859,7 +1859,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BulkCreateAdsByInventoryReferenceResponse BulkCreateAdsByInventoryReference(string campaign_id, BulkCreateAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_create_ads_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_create_ads_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1895,7 +1895,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BulkAdResponse> BulkCreateAdsByListingIdAsync(string campaign_id, BulkCreateAdRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_create_ads_by_listing_id";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_create_ads_by_listing_id";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1931,7 +1931,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BulkAdResponse BulkCreateAdsByListingId(string campaign_id, BulkCreateAdRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_create_ads_by_listing_id";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_create_ads_by_listing_id";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1967,7 +1967,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BulkDeleteAdsByInventoryReferenceResponse> BulkDeleteAdsByInventoryReferenceAsync(string campaign_id, BulkDeleteAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_delete_ads_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_delete_ads_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2003,7 +2003,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BulkDeleteAdsByInventoryReferenceResponse BulkDeleteAdsByInventoryReference(string campaign_id, BulkDeleteAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_delete_ads_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_delete_ads_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2039,7 +2039,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BulkDeleteAdResponse> BulkDeleteAdsByListingIdAsync(string campaign_id, BulkDeleteAdRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_delete_ads_by_listing_id";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_delete_ads_by_listing_id";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2075,7 +2075,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BulkDeleteAdResponse BulkDeleteAdsByListingId(string campaign_id, BulkDeleteAdRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_delete_ads_by_listing_id";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_delete_ads_by_listing_id";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2111,7 +2111,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BulkCreateAdsByInventoryReferenceResponse> BulkUpdateAdsBidByInventoryReferenceAsync(string campaign_id, BulkCreateAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_update_ads_bid_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_update_ads_bid_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2147,7 +2147,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BulkCreateAdsByInventoryReferenceResponse BulkUpdateAdsBidByInventoryReference(string campaign_id, BulkCreateAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_update_ads_bid_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_update_ads_bid_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2183,7 +2183,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BulkAdResponse> BulkUpdateAdsBidByListingIdAsync(string campaign_id, BulkCreateAdRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_update_ads_bid_by_listing_id";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_update_ads_bid_by_listing_id";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2219,7 +2219,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BulkAdResponse BulkUpdateAdsBidByListingId(string campaign_id, BulkCreateAdRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/bulk_update_ads_bid_by_listing_id";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/bulk_update_ads_bid_by_listing_id";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2257,7 +2257,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<AdPagedCollection> GetAdsAsync(string campaign_id, string limit, string listing_ids, string offset)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad?limit=" + Uri.EscapeDataString(limit)+"&listing_ids=" + Uri.EscapeDataString(listing_ids)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&listing_ids=" + (listing_ids==null? "" : Uri.EscapeDataString(listing_ids))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2289,7 +2289,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public AdPagedCollection GetAds(string campaign_id, string limit, string listing_ids, string offset)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad?limit=" + Uri.EscapeDataString(limit)+"&listing_ids=" + Uri.EscapeDataString(listing_ids)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&listing_ids=" + (listing_ids==null? "" : Uri.EscapeDataString(listing_ids))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2318,7 +2318,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields for the createAd request.</param>
 		public async Task CreateAdByListingIdAsync(string campaign_id, CreateAdRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2347,7 +2347,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields for the createAd request.</param>
 		public void CreateAdByListingId(string campaign_id, CreateAdRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2376,7 +2376,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields for the createAdsByInventoryReference request.</param>
 		public async Task CreateAdsByInventoryReferenceAsync(string campaign_id, CreateAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/create_ads_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/create_ads_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2405,7 +2405,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields for the createAdsByInventoryReference request.</param>
 		public void CreateAdsByInventoryReference(string campaign_id, CreateAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/create_ads_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/create_ads_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2435,7 +2435,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Ad> GetAdAsync(string ad_id, string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad/"+Uri.EscapeDataString(ad_id);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad/"+ (ad_id==null? "" : Uri.EscapeDataString(ad_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2465,7 +2465,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Ad GetAd(string ad_id, string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad/"+Uri.EscapeDataString(ad_id);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad/"+ (ad_id==null? "" : Uri.EscapeDataString(ad_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2494,7 +2494,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public async Task DeleteAdAsync(string ad_id, string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad/"+Uri.EscapeDataString(ad_id);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad/"+ (ad_id==null? "" : Uri.EscapeDataString(ad_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2517,7 +2517,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public void DeleteAd(string ad_id, string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad/"+Uri.EscapeDataString(ad_id);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad/"+ (ad_id==null? "" : Uri.EscapeDataString(ad_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2541,7 +2541,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<AdIds> DeleteAdsByInventoryReferenceAsync(string campaign_id, DeleteAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/delete_ads_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/delete_ads_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2577,7 +2577,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public AdIds DeleteAdsByInventoryReference(string campaign_id, DeleteAdsByInventoryReferenceRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/delete_ads_by_inventory_reference";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/delete_ads_by_inventory_reference";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2614,7 +2614,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Ads> GetAdsByInventoryReferenceAsync(string campaign_id, string inventory_reference_id, string inventory_reference_type)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/get_ads_by_inventory_reference?inventory_reference_id=" + Uri.EscapeDataString(inventory_reference_id)+"&inventory_reference_type=" + Uri.EscapeDataString(inventory_reference_type);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/get_ads_by_inventory_reference&inventory_reference_id=" + (inventory_reference_id==null? "" : Uri.EscapeDataString(inventory_reference_id))+"&inventory_reference_type=" + (inventory_reference_type==null? "" : Uri.EscapeDataString(inventory_reference_type));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2645,7 +2645,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Ads GetAdsByInventoryReference(string campaign_id, string inventory_reference_id, string inventory_reference_type)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/get_ads_by_inventory_reference?inventory_reference_id=" + Uri.EscapeDataString(inventory_reference_id)+"&inventory_reference_type=" + Uri.EscapeDataString(inventory_reference_type);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/get_ads_by_inventory_reference&inventory_reference_id=" + (inventory_reference_id==null? "" : Uri.EscapeDataString(inventory_reference_id))+"&inventory_reference_type=" + (inventory_reference_type==null? "" : Uri.EscapeDataString(inventory_reference_type));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2675,7 +2675,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields for the updateBid request.</param>
 		public async Task UpdateBidAsync(string ad_id, string campaign_id, UpdateBidPercentageRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad/"+Uri.EscapeDataString(ad_id)+"/update_bid";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad/"+ (ad_id==null? "" : Uri.EscapeDataString(ad_id))+"/update_bid";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2705,7 +2705,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields for the updateBid request.</param>
 		public void UpdateBid(string ad_id, string campaign_id, UpdateBidPercentageRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/ad/"+Uri.EscapeDataString(ad_id)+"/update_bid";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/ad/"+ (ad_id==null? "" : Uri.EscapeDataString(ad_id))+"/update_bid";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2754,7 +2754,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields for a clone campaign request.</param>
 		public async Task CloneCampaignAsync(string campaign_id, CloneCampaignRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/clone";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/clone";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2783,7 +2783,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields for a clone campaign request.</param>
 		public void CloneCampaign(string campaign_id, CloneCampaignRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/clone";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/clone";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2817,7 +2817,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<CampaignPagedCollection> GetCampaignsAsync(string campaign_name, string campaign_status, string end_date_range, string limit, string offset, string start_date_range)
 		{
-			var requestUri = "ad_campaign?campaign_name=" + Uri.EscapeDataString(campaign_name)+"&campaign_status=" + Uri.EscapeDataString(campaign_status)+"&end_date_range=" + Uri.EscapeDataString(end_date_range)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&start_date_range=" + Uri.EscapeDataString(start_date_range);
+			var requestUri = "ad_campaign?campaign_name=" + (campaign_name==null? "" : Uri.EscapeDataString(campaign_name))+"&campaign_status=" + (campaign_status==null? "" : Uri.EscapeDataString(campaign_status))+"&end_date_range=" + (end_date_range==null? "" : Uri.EscapeDataString(end_date_range))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&start_date_range=" + (start_date_range==null? "" : Uri.EscapeDataString(start_date_range));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2851,7 +2851,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public CampaignPagedCollection GetCampaigns(string campaign_name, string campaign_status, string end_date_range, string limit, string offset, string start_date_range)
 		{
-			var requestUri = "ad_campaign?campaign_name=" + Uri.EscapeDataString(campaign_name)+"&campaign_status=" + Uri.EscapeDataString(campaign_status)+"&end_date_range=" + Uri.EscapeDataString(end_date_range)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&start_date_range=" + Uri.EscapeDataString(start_date_range);
+			var requestUri = "ad_campaign?campaign_name=" + (campaign_name==null? "" : Uri.EscapeDataString(campaign_name))+"&campaign_status=" + (campaign_status==null? "" : Uri.EscapeDataString(campaign_status))+"&end_date_range=" + (end_date_range==null? "" : Uri.EscapeDataString(end_date_range))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&start_date_range=" + (start_date_range==null? "" : Uri.EscapeDataString(start_date_range));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2936,7 +2936,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Campaign> GetCampaignAsync(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2965,7 +2965,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Campaign GetCampaign(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2993,7 +2993,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public async Task DeleteCampaignAsync(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3015,7 +3015,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public void DeleteCampaign(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id);
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3037,7 +3037,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public async Task EndCampaignAsync(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/end";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/end";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3059,7 +3059,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public void EndCampaign(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/end";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/end";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3084,7 +3084,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Campaigns> FindCampaignByAdReferenceAsync(string inventory_reference_id, string inventory_reference_type, string listing_id)
 		{
-			var requestUri = "ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=" + Uri.EscapeDataString(inventory_reference_id)+"&inventory_reference_type=" + Uri.EscapeDataString(inventory_reference_type)+"&listing_id=" + Uri.EscapeDataString(listing_id);
+			var requestUri = "ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=" + (inventory_reference_id==null? "" : Uri.EscapeDataString(inventory_reference_id))+"&inventory_reference_type=" + (inventory_reference_type==null? "" : Uri.EscapeDataString(inventory_reference_type))+"&listing_id=" + (listing_id==null? "" : Uri.EscapeDataString(listing_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3115,7 +3115,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Campaigns FindCampaignByAdReference(string inventory_reference_id, string inventory_reference_type, string listing_id)
 		{
-			var requestUri = "ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=" + Uri.EscapeDataString(inventory_reference_id)+"&inventory_reference_type=" + Uri.EscapeDataString(inventory_reference_type)+"&listing_id=" + Uri.EscapeDataString(listing_id);
+			var requestUri = "ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=" + (inventory_reference_id==null? "" : Uri.EscapeDataString(inventory_reference_id))+"&inventory_reference_type=" + (inventory_reference_type==null? "" : Uri.EscapeDataString(inventory_reference_type))+"&listing_id=" + (listing_id==null? "" : Uri.EscapeDataString(listing_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3144,7 +3144,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Campaign> GetCampaignByNameAsync(string campaign_name)
 		{
-			var requestUri = "ad_campaign/get_campaign_by_name?campaign_name=" + Uri.EscapeDataString(campaign_name);
+			var requestUri = "ad_campaign/get_campaign_by_name?campaign_name=" + (campaign_name==null? "" : Uri.EscapeDataString(campaign_name));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3173,7 +3173,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Campaign GetCampaignByName(string campaign_name)
 		{
-			var requestUri = "ad_campaign/get_campaign_by_name?campaign_name=" + Uri.EscapeDataString(campaign_name);
+			var requestUri = "ad_campaign/get_campaign_by_name?campaign_name=" + (campaign_name==null? "" : Uri.EscapeDataString(campaign_name));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3201,7 +3201,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public async Task PauseCampaignAsync(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/pause";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/pause";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3223,7 +3223,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public void PauseCampaign(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/pause";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/pause";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3245,7 +3245,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public async Task ResumeCampaignAsync(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/resume";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/resume";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3267,7 +3267,7 @@ namespace MyNS
 		/// <param name="campaign_id">A unique eBay-assigned ID for an ad campaign that's generated when a campaign is created. Get a seller's campaign IDs by calling getCampaigns.</param>
 		public void ResumeCampaign(string campaign_id)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/resume";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/resume";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3290,7 +3290,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields to updated the campaign name and start and end dates.</param>
 		public async Task UpdateCampaignIdentificationAsync(string campaign_id, UpdateCampaignIdentificationRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/update_campaign_identification";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/update_campaign_identification";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3319,7 +3319,7 @@ namespace MyNS
 		/// <param name="requestBody">This type defines the fields to updated the campaign name and start and end dates.</param>
 		public void UpdateCampaignIdentification(string campaign_id, UpdateCampaignIdentificationRequest requestBody)
 		{
-			var requestUri = "ad_campaign/"+Uri.EscapeDataString(campaign_id)+"/update_campaign_identification";
+			var requestUri = "ad_campaign/"+ (campaign_id==null? "" : Uri.EscapeDataString(campaign_id))+"/update_campaign_identification";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3368,7 +3368,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task GetReportAsync(string report_id)
 		{
-			var requestUri = "ad_report/"+Uri.EscapeDataString(report_id);
+			var requestUri = "ad_report/"+ (report_id==null? "" : Uri.EscapeDataString(report_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3391,7 +3391,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public void GetReport(string report_id)
 		{
-			var requestUri = "ad_report/"+Uri.EscapeDataString(report_id);
+			var requestUri = "ad_report/"+ (report_id==null? "" : Uri.EscapeDataString(report_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3490,7 +3490,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ReportMetadata> GetReportMetadataForReportTypeAsync(string report_type)
 		{
-			var requestUri = "ad_report_metadata/"+Uri.EscapeDataString(report_type);
+			var requestUri = "ad_report_metadata/"+ (report_type==null? "" : Uri.EscapeDataString(report_type));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3519,7 +3519,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ReportMetadata GetReportMetadataForReportType(string report_type)
 		{
-			var requestUri = "ad_report_metadata/"+Uri.EscapeDataString(report_type);
+			var requestUri = "ad_report_metadata/"+ (report_type==null? "" : Uri.EscapeDataString(report_type));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3570,7 +3570,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ReportTaskPagedCollection> GetReportTasksAsync(string limit, string offset, string report_task_statuses)
 		{
-			var requestUri = "ad_report_task?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&report_task_statuses=" + Uri.EscapeDataString(report_task_statuses);
+			var requestUri = "ad_report_task?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&report_task_statuses=" + (report_task_statuses==null? "" : Uri.EscapeDataString(report_task_statuses));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3601,7 +3601,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ReportTaskPagedCollection GetReportTasks(string limit, string offset, string report_task_statuses)
 		{
-			var requestUri = "ad_report_task?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&report_task_statuses=" + Uri.EscapeDataString(report_task_statuses);
+			var requestUri = "ad_report_task?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&report_task_statuses=" + (report_task_statuses==null? "" : Uri.EscapeDataString(report_task_statuses));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3686,7 +3686,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ReportTask> GetReportTaskAsync(string report_task_id)
 		{
-			var requestUri = "ad_report_task/"+Uri.EscapeDataString(report_task_id);
+			var requestUri = "ad_report_task/"+ (report_task_id==null? "" : Uri.EscapeDataString(report_task_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3715,7 +3715,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ReportTask GetReportTask(string report_task_id)
 		{
-			var requestUri = "ad_report_task/"+Uri.EscapeDataString(report_task_id);
+			var requestUri = "ad_report_task/"+ (report_task_id==null? "" : Uri.EscapeDataString(report_task_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3743,7 +3743,7 @@ namespace MyNS
 		/// <param name="report_task_id">A unique eBay-assigned ID for the report task that's generated when the report task is created by a call to createReportTask.</param>
 		public async Task DeleteReportTaskAsync(string report_task_id)
 		{
-			var requestUri = "ad_report_task/"+Uri.EscapeDataString(report_task_id);
+			var requestUri = "ad_report_task/"+ (report_task_id==null? "" : Uri.EscapeDataString(report_task_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3765,7 +3765,7 @@ namespace MyNS
 		/// <param name="report_task_id">A unique eBay-assigned ID for the report task that's generated when the report task is created by a call to createReportTask.</param>
 		public void DeleteReportTask(string report_task_id)
 		{
-			var requestUri = "ad_report_task/"+Uri.EscapeDataString(report_task_id);
+			var requestUri = "ad_report_task/"+ (report_task_id==null? "" : Uri.EscapeDataString(report_task_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3864,7 +3864,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ItemPriceMarkdown> GetItemPriceMarkdownPromotionAsync(string promotion_id)
 		{
-			var requestUri = "item_price_markdown/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_price_markdown/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3893,7 +3893,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ItemPriceMarkdown GetItemPriceMarkdownPromotion(string promotion_id)
 		{
-			var requestUri = "item_price_markdown/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_price_markdown/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3923,7 +3923,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<string> UpdateItemPriceMarkdownPromotionAsync(string promotion_id, ItemPriceMarkdown requestBody)
 		{
-			var requestUri = "item_price_markdown/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_price_markdown/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3958,7 +3958,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public string UpdateItemPriceMarkdownPromotion(string promotion_id, ItemPriceMarkdown requestBody)
 		{
-			var requestUri = "item_price_markdown/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_price_markdown/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3991,7 +3991,7 @@ namespace MyNS
 		/// <param name="promotion_id">The ID of the promotion you want to delete. The promotion ID is a unique eBay-assigned value that's generated when the promotion is created.</param>
 		public async Task DeleteItemPriceMarkdownPromotionAsync(string promotion_id)
 		{
-			var requestUri = "item_price_markdown/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_price_markdown/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4013,7 +4013,7 @@ namespace MyNS
 		/// <param name="promotion_id">The ID of the promotion you want to delete. The promotion ID is a unique eBay-assigned value that's generated when the promotion is created.</param>
 		public void DeleteItemPriceMarkdownPromotion(string promotion_id)
 		{
-			var requestUri = "item_price_markdown/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_price_markdown/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -4112,7 +4112,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ItemPromotionResponse> GetItemPromotionAsync(string promotion_id)
 		{
-			var requestUri = "item_promotion/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4141,7 +4141,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ItemPromotionResponse GetItemPromotion(string promotion_id)
 		{
-			var requestUri = "item_promotion/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -4171,7 +4171,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BaseResponse> UpdateItemPromotionAsync(string promotion_id, ItemPromotion requestBody)
 		{
-			var requestUri = "item_promotion/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4207,7 +4207,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BaseResponse UpdateItemPromotion(string promotion_id, ItemPromotion requestBody)
 		{
-			var requestUri = "item_promotion/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4241,7 +4241,7 @@ namespace MyNS
 		/// <param name="promotion_id">The ID of the promotion you want to delete. The promotion ID is a unique eBay-assigned value that's generated when the promotion is created.</param>
 		public async Task DeleteItemPromotionAsync(string promotion_id)
 		{
-			var requestUri = "item_promotion/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4263,7 +4263,7 @@ namespace MyNS
 		/// <param name="promotion_id">The ID of the promotion you want to delete. The promotion ID is a unique eBay-assigned value that's generated when the promotion is created.</param>
 		public void DeleteItemPromotion(string promotion_id)
 		{
-			var requestUri = "item_promotion/"+Uri.EscapeDataString(promotion_id);
+			var requestUri = "item_promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -4310,7 +4310,7 @@ namespace MyNS
 		/// <param name="status">This query parameter applies only to markdown promotions. It filters the response based on the indicated status of the promotion. Currently, the only supported value for this parameter is MARKED_DOWN, which indicates active markdown promotions. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/marketing/types/ItemMarkdownStatusEnum.html</param>
 		public async Task GetListingSetAsync(string limit, string offset, string promotion_id, string q, string sort, string status)
 		{
-			var requestUri = "promotion/"+Uri.EscapeDataString(promotion_id)+"/get_listing_set?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&q=" + Uri.EscapeDataString(q)+"&sort=" + Uri.EscapeDataString(sort)+"&status=" + Uri.EscapeDataString(status);
+			var requestUri = "promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id))+"/get_listing_set?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort))+"&status=" + (status==null? "" : Uri.EscapeDataString(status));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4337,7 +4337,7 @@ namespace MyNS
 		/// <param name="status">This query parameter applies only to markdown promotions. It filters the response based on the indicated status of the promotion. Currently, the only supported value for this parameter is MARKED_DOWN, which indicates active markdown promotions. For implementation help, refer to eBay API documentation at https://developer.ebay.com/devzone/rest/api-ref/marketing/types/ItemMarkdownStatusEnum.html</param>
 		public void GetListingSet(string limit, string offset, string promotion_id, string q, string sort, string status)
 		{
-			var requestUri = "promotion/"+Uri.EscapeDataString(promotion_id)+"/get_listing_set?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&q=" + Uri.EscapeDataString(q)+"&sort=" + Uri.EscapeDataString(sort)+"&status=" + Uri.EscapeDataString(status);
+			var requestUri = "promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id))+"/get_listing_set?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort))+"&status=" + (status==null? "" : Uri.EscapeDataString(status));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -4366,7 +4366,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PromotionsPagedCollection> GetPromotionsAsync(string limit, string marketplace_id, string offset, string promotion_status, string promotion_type, string q, string sort)
 		{
-			var requestUri = "promotion?limit=" + Uri.EscapeDataString(limit)+"&marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&offset=" + Uri.EscapeDataString(offset)+"&promotion_status=" + Uri.EscapeDataString(promotion_status)+"&promotion_type=" + Uri.EscapeDataString(promotion_type)+"&q=" + Uri.EscapeDataString(q)+"&sort=" + Uri.EscapeDataString(sort);
+			var requestUri = "promotion?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&promotion_status=" + (promotion_status==null? "" : Uri.EscapeDataString(promotion_status))+"&promotion_type=" + (promotion_type==null? "" : Uri.EscapeDataString(promotion_type))+"&q=" + (q==null? "" : Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4401,7 +4401,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PromotionsPagedCollection GetPromotions(string limit, string marketplace_id, string offset, string promotion_status, string promotion_type, string q, string sort)
 		{
-			var requestUri = "promotion?limit=" + Uri.EscapeDataString(limit)+"&marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&offset=" + Uri.EscapeDataString(offset)+"&promotion_status=" + Uri.EscapeDataString(promotion_status)+"&promotion_type=" + Uri.EscapeDataString(promotion_type)+"&q=" + Uri.EscapeDataString(q)+"&sort=" + Uri.EscapeDataString(sort);
+			var requestUri = "promotion?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&promotion_status=" + (promotion_status==null? "" : Uri.EscapeDataString(promotion_status))+"&promotion_type=" + (promotion_type==null? "" : Uri.EscapeDataString(promotion_type))+"&q=" + (q==null? "" : Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -4429,7 +4429,7 @@ namespace MyNS
 		/// <param name="promotion_id">Identifier of the promotion you want to pause. The ID is a unique eBay-assigned value that's generated when the promotion is created.</param>
 		public async Task PausePromotionAsync(string promotion_id)
 		{
-			var requestUri = "promotion/"+Uri.EscapeDataString(promotion_id)+"/pause";
+			var requestUri = "promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id))+"/pause";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4451,7 +4451,7 @@ namespace MyNS
 		/// <param name="promotion_id">Identifier of the promotion you want to pause. The ID is a unique eBay-assigned value that's generated when the promotion is created.</param>
 		public void PausePromotion(string promotion_id)
 		{
-			var requestUri = "promotion/"+Uri.EscapeDataString(promotion_id)+"/pause";
+			var requestUri = "promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id))+"/pause";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -4473,7 +4473,7 @@ namespace MyNS
 		/// <param name="promotion_id">Identifier of the promotion you want to make active. The ID is a unique eBay-assigned value that's generated when the promotion is created.</param>
 		public async Task ResumePromotionAsync(string promotion_id)
 		{
-			var requestUri = "promotion/"+Uri.EscapeDataString(promotion_id)+"/resume";
+			var requestUri = "promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id))+"/resume";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4495,7 +4495,7 @@ namespace MyNS
 		/// <param name="promotion_id">Identifier of the promotion you want to make active. The ID is a unique eBay-assigned value that's generated when the promotion is created.</param>
 		public void ResumePromotion(string promotion_id)
 		{
-			var requestUri = "promotion/"+Uri.EscapeDataString(promotion_id)+"/resume";
+			var requestUri = "promotion/"+ (promotion_id==null? "" : Uri.EscapeDataString(promotion_id))+"/resume";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -4543,7 +4543,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PromotionsReportPagedCollection> GetPromotionReportsAsync(string limit, string marketplace_id, string offset, string promotion_status, string promotion_type, string q)
 		{
-			var requestUri = "promotion_report?limit=" + Uri.EscapeDataString(limit)+"&marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&offset=" + Uri.EscapeDataString(offset)+"&promotion_status=" + Uri.EscapeDataString(promotion_status)+"&promotion_type=" + Uri.EscapeDataString(promotion_type)+"&q=" + Uri.EscapeDataString(q);
+			var requestUri = "promotion_report?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&promotion_status=" + (promotion_status==null? "" : Uri.EscapeDataString(promotion_status))+"&promotion_type=" + (promotion_type==null? "" : Uri.EscapeDataString(promotion_type))+"&q=" + (q==null? "" : Uri.EscapeDataString(q));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4577,7 +4577,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PromotionsReportPagedCollection GetPromotionReports(string limit, string marketplace_id, string offset, string promotion_status, string promotion_type, string q)
 		{
-			var requestUri = "promotion_report?limit=" + Uri.EscapeDataString(limit)+"&marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&offset=" + Uri.EscapeDataString(offset)+"&promotion_status=" + Uri.EscapeDataString(promotion_status)+"&promotion_type=" + Uri.EscapeDataString(promotion_type)+"&q=" + Uri.EscapeDataString(q);
+			var requestUri = "promotion_report?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&promotion_status=" + (promotion_status==null? "" : Uri.EscapeDataString(promotion_status))+"&promotion_type=" + (promotion_type==null? "" : Uri.EscapeDataString(promotion_type))+"&q=" + (q==null? "" : Uri.EscapeDataString(q));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -4626,7 +4626,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<SummaryReportResponse> GetPromotionSummaryReportAsync(string marketplace_id)
 		{
-			var requestUri = "promotion_summary_report?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
+			var requestUri = "promotion_summary_report?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -4655,7 +4655,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public SummaryReportResponse GetPromotionSummaryReport(string marketplace_id)
 		{
-			var requestUri = "promotion_summary_report?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
+			var requestUri = "promotion_summary_report?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;

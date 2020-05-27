@@ -55,7 +55,7 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						return newUriText += $"{d.Name}=\" + Uri.EscapeDataString({d.Name})+\"";
+						return newUriText += $"{d.Name}=\" + ({d.Name}==null? \"\" : Uri.EscapeDataString({d.Name}))+\"";
 					}
 					else
 					{
@@ -110,7 +110,7 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						return newUriText.Replace($"{{{d.Name}}}", $"\"+Uri.EscapeDataString({d.Name})+\"");
+						return newUriText.Replace($"{{{d.Name}}}", $"\"+ ({d.Name}==null? \"\" : Uri.EscapeDataString({d.Name}))+\"");
 					}
 					else
 					{

@@ -353,7 +353,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task GetListingViolationsSummaryAsync(string compliance_type)
 		{
-			var requestUri = "listing_violation_summary?compliance_type=" + Uri.EscapeDataString(compliance_type);
+			var requestUri = "listing_violation_summary?compliance_type=" + (compliance_type==null? "" : Uri.EscapeDataString(compliance_type));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -376,7 +376,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public void GetListingViolationsSummary(string compliance_type)
 		{
-			var requestUri = "listing_violation_summary?compliance_type=" + Uri.EscapeDataString(compliance_type);
+			var requestUri = "listing_violation_summary?compliance_type=" + (compliance_type==null? "" : Uri.EscapeDataString(compliance_type));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -423,7 +423,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task GetListingViolationsAsync(string compliance_type, string offset, string listing_id, string limit, string filter)
 		{
-			var requestUri = "listing_violation?compliance_type=" + Uri.EscapeDataString(compliance_type)+"&offset=" + Uri.EscapeDataString(offset)+"&listing_id=" + Uri.EscapeDataString(listing_id)+"&limit=" + Uri.EscapeDataString(limit)+"&filter=" + Uri.EscapeDataString(filter);
+			var requestUri = "listing_violation?compliance_type=" + (compliance_type==null? "" : Uri.EscapeDataString(compliance_type))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&listing_id=" + (listing_id==null? "" : Uri.EscapeDataString(listing_id))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -450,7 +450,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public void GetListingViolations(string compliance_type, string offset, string listing_id, string limit, string filter)
 		{
-			var requestUri = "listing_violation?compliance_type=" + Uri.EscapeDataString(compliance_type)+"&offset=" + Uri.EscapeDataString(offset)+"&listing_id=" + Uri.EscapeDataString(listing_id)+"&limit=" + Uri.EscapeDataString(limit)+"&filter=" + Uri.EscapeDataString(filter);
+			var requestUri = "listing_violation?compliance_type=" + (compliance_type==null? "" : Uri.EscapeDataString(compliance_type))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&listing_id=" + (listing_id==null? "" : Uri.EscapeDataString(listing_id))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;

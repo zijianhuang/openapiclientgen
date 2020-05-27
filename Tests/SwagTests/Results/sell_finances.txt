@@ -481,7 +481,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Payout> GetPayoutAsync(string payout_Id)
 		{
-			var requestUri = "payout/"+Uri.EscapeDataString(payout_Id);
+			var requestUri = "payout/"+ (payout_Id==null? "" : Uri.EscapeDataString(payout_Id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -510,7 +510,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Payout GetPayout(string payout_Id)
 		{
-			var requestUri = "payout/"+Uri.EscapeDataString(payout_Id);
+			var requestUri = "payout/"+ (payout_Id==null? "" : Uri.EscapeDataString(payout_Id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -542,7 +542,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Payouts> GetPayoutsAsync(string filter, string sort, string limit, string offset)
 		{
-			var requestUri = "payout?filter=" + Uri.EscapeDataString(filter)+"&sort=" + Uri.EscapeDataString(sort)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "payout?filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -574,7 +574,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Payouts GetPayouts(string filter, string sort, string limit, string offset)
 		{
-			var requestUri = "payout?filter=" + Uri.EscapeDataString(filter)+"&sort=" + Uri.EscapeDataString(sort)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "payout?filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -603,7 +603,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PayoutSummaryResponse> GetPayoutSummaryAsync(string filter)
 		{
-			var requestUri = "payout_summary?filter=" + Uri.EscapeDataString(filter);
+			var requestUri = "payout_summary?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -632,7 +632,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PayoutSummaryResponse GetPayoutSummary(string filter)
 		{
-			var requestUri = "payout_summary?filter=" + Uri.EscapeDataString(filter);
+			var requestUri = "payout_summary?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -684,7 +684,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Transactions> GetTransactionsAsync(string filter, string sort, string limit, string offset)
 		{
-			var requestUri = "transaction?filter=" + Uri.EscapeDataString(filter)+"&sort=" + Uri.EscapeDataString(sort)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "transaction?filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -716,7 +716,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Transactions GetTransactions(string filter, string sort, string limit, string offset)
 		{
-			var requestUri = "transaction?filter=" + Uri.EscapeDataString(filter)+"&sort=" + Uri.EscapeDataString(sort)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "transaction?filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -745,7 +745,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<TransactionSummaryResponse> GetTransactionSummaryAsync(string filter)
 		{
-			var requestUri = "transaction_summary?filter=" + Uri.EscapeDataString(filter);
+			var requestUri = "transaction_summary?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -774,7 +774,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public TransactionSummaryResponse GetTransactionSummary(string filter)
 		{
-			var requestUri = "transaction_summary?filter=" + Uri.EscapeDataString(filter);
+			var requestUri = "transaction_summary?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;

@@ -111,7 +111,7 @@ namespace MyNS
 		/// <returns>The dataset API for the given version is found and it is accessible to consume.</returns>
 		public async Task<string> ListSearchableFieldsAsync(string dataset, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = ""+Uri.EscapeDataString(dataset)+"/"+Uri.EscapeDataString(version)+"/fields";
+			var requestUri = ""+ (dataset==null? "" : Uri.EscapeDataString(dataset))+"/"+ (version==null? "" : Uri.EscapeDataString(version))+"/fields";
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)

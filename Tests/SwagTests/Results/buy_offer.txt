@@ -238,7 +238,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<Bidding> GetBiddingAsync(string item_id)
 		{
-			var requestUri = "bidding/"+Uri.EscapeDataString(item_id);
+			var requestUri = "bidding/"+ (item_id==null? "" : Uri.EscapeDataString(item_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -267,7 +267,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public Bidding GetBidding(string item_id)
 		{
-			var requestUri = "bidding/"+Uri.EscapeDataString(item_id);
+			var requestUri = "bidding/"+ (item_id==null? "" : Uri.EscapeDataString(item_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -296,7 +296,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<PlaceProxyBidResponse> PlaceProxyBidAsync(string item_id, PlaceProxyBidRequest requestBody)
 		{
-			var requestUri = "bidding/"+Uri.EscapeDataString(item_id)+"/place_proxy_bid";
+			var requestUri = "bidding/"+ (item_id==null? "" : Uri.EscapeDataString(item_id))+"/place_proxy_bid";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -331,7 +331,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public PlaceProxyBidResponse PlaceProxyBid(string item_id, PlaceProxyBidRequest requestBody)
 		{
-			var requestUri = "bidding/"+Uri.EscapeDataString(item_id)+"/place_proxy_bid";
+			var requestUri = "bidding/"+ (item_id==null? "" : Uri.EscapeDataString(item_id))+"/place_proxy_bid";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

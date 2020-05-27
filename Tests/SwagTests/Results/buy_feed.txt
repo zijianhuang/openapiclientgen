@@ -845,7 +845,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task GetItemFeedAsync(string feed_scope, string category_id, string date)
 		{
-			var requestUri = "item?feed_scope=" + Uri.EscapeDataString(feed_scope)+"&category_id=" + Uri.EscapeDataString(category_id)+"&date=" + Uri.EscapeDataString(date);
+			var requestUri = "item?feed_scope=" + (feed_scope==null? "" : Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : Uri.EscapeDataString(date));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -870,7 +870,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public void GetItemFeed(string feed_scope, string category_id, string date)
 		{
-			var requestUri = "item?feed_scope=" + Uri.EscapeDataString(feed_scope)+"&category_id=" + Uri.EscapeDataString(category_id)+"&date=" + Uri.EscapeDataString(date);
+			var requestUri = "item?feed_scope=" + (feed_scope==null? "" : Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : Uri.EscapeDataString(date));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -915,7 +915,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task GetItemGroupFeedAsync(string feed_scope, string category_id, string date)
 		{
-			var requestUri = "item_group?feed_scope=" + Uri.EscapeDataString(feed_scope)+"&category_id=" + Uri.EscapeDataString(category_id)+"&date=" + Uri.EscapeDataString(date);
+			var requestUri = "item_group?feed_scope=" + (feed_scope==null? "" : Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : Uri.EscapeDataString(date));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -940,7 +940,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public void GetItemGroupFeed(string feed_scope, string category_id, string date)
 		{
-			var requestUri = "item_group?feed_scope=" + Uri.EscapeDataString(feed_scope)+"&category_id=" + Uri.EscapeDataString(category_id)+"&date=" + Uri.EscapeDataString(date);
+			var requestUri = "item_group?feed_scope=" + (feed_scope==null? "" : Uri.EscapeDataString(feed_scope))+"&category_id=" + (category_id==null? "" : Uri.EscapeDataString(category_id))+"&date=" + (date==null? "" : Uri.EscapeDataString(date));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -984,7 +984,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task GetItemSnapshotFeedAsync(string category_id, string snapshot_date)
 		{
-			var requestUri = "item_snapshot?category_id=" + Uri.EscapeDataString(category_id)+"&snapshot_date=" + Uri.EscapeDataString(snapshot_date);
+			var requestUri = "item_snapshot?category_id=" + (category_id==null? "" : Uri.EscapeDataString(category_id))+"&snapshot_date=" + (snapshot_date==null? "" : Uri.EscapeDataString(snapshot_date));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1008,7 +1008,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public void GetItemSnapshotFeed(string category_id, string snapshot_date)
 		{
-			var requestUri = "item_snapshot?category_id=" + Uri.EscapeDataString(category_id)+"&snapshot_date=" + Uri.EscapeDataString(snapshot_date);
+			var requestUri = "item_snapshot?category_id=" + (category_id==null? "" : Uri.EscapeDataString(category_id))+"&snapshot_date=" + (snapshot_date==null? "" : Uri.EscapeDataString(snapshot_date));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;

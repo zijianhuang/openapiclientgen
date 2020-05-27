@@ -672,7 +672,7 @@ namespace My.Pet.Client
 		/// <param name="orderId">ID of the order that needs to be deleted</param>
 		public async Task DeleteOrderAsync(string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "store/order/"+Uri.EscapeDataString(orderId);
+			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -735,7 +735,7 @@ namespace My.Pet.Client
 		/// <returns>successful operation</returns>
 		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -770,7 +770,7 @@ namespace My.Pet.Client
 		/// <param name="requestBody">Updated user object</param>
 		public async Task UpdateUserAsync(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -805,7 +805,7 @@ namespace My.Pet.Client
 		/// <param name="username">The name that needs to be deleted</param>
 		public async Task DeleteUserAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user/"+Uri.EscapeDataString(username);
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -902,7 +902,7 @@ namespace My.Pet.Client
 		/// <returns>successful operation</returns>
 		public async Task<string> LoginUserAsync(string username, string password, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user/login?username=" + Uri.EscapeDataString(username)+"&password=" + Uri.EscapeDataString(password);
+			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)

@@ -269,7 +269,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task FindListingRecommendationsAsync(string filter, string limit, string offset, FindListingRecommendationRequest requestBody)
 		{
-			var requestUri = "find?filter=" + Uri.EscapeDataString(filter)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "find?filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -300,7 +300,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public void FindListingRecommendations(string filter, string limit, string offset, FindListingRecommendationRequest requestBody)
 		{
-			var requestUri = "find?filter=" + Uri.EscapeDataString(filter)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "find?filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

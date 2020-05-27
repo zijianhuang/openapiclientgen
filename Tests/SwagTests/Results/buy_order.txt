@@ -1532,7 +1532,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> ApplyCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1568,7 +1568,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse ApplyCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1603,7 +1603,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> GetCheckoutSessionAsync(string checkoutSessionId)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1632,7 +1632,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse GetCheckoutSession(string checkoutSessionId)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1731,7 +1731,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<PurchaseOrderSummary> PlaceOrderAsync(string checkoutSessionId)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1760,7 +1760,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public PurchaseOrderSummary PlaceOrder(string checkoutSessionId)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1790,7 +1790,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> RemoveCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1826,7 +1826,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse RemoveCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1862,7 +1862,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> UpdatePaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1898,7 +1898,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse UpdatePaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1934,7 +1934,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> UpdateQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1970,7 +1970,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse UpdateQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2006,7 +2006,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> UpdateShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2042,7 +2042,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse UpdateShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2078,7 +2078,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> UpdateShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2114,7 +2114,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse UpdateShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
-			var requestUri = "checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
+			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2170,7 +2170,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> ApplyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2206,7 +2206,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse ApplyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2241,7 +2241,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> GetGuestCheckoutSessionAsync(string checkoutSessionId)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2270,7 +2270,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse GetGuestCheckoutSession(string checkoutSessionId)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2370,7 +2370,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> InitiateGuestPaymentAsync(string checkoutSessionId, InitiatePaymentRequest requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/initiate_payment";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/initiate_payment";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2406,7 +2406,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse InitiateGuestPayment(string checkoutSessionId, InitiatePaymentRequest requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/initiate_payment";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/initiate_payment";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2442,7 +2442,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<PurchaseOrderSummary> PlaceGuestOrderAsync(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2478,7 +2478,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public PurchaseOrderSummary PlaceGuestOrder(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2514,7 +2514,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> RemoveGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2550,7 +2550,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse RemoveGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2586,7 +2586,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> UpdateGuestPaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2622,7 +2622,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse UpdateGuestPaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2658,7 +2658,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> UpdateGuestQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2694,7 +2694,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse UpdateGuestQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2730,7 +2730,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> UpdateGuestShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2766,7 +2766,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse UpdateGuestShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2802,7 +2802,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> UpdateGuestShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2838,7 +2838,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse UpdateGuestShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
-			var requestUri = "guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
+			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2894,7 +2894,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> ApplyProxyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2930,7 +2930,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse ApplyProxyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/apply_coupon";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2965,7 +2965,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> GetProxyGuestCheckoutSessionAsync(string checkoutSessionId)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2994,7 +2994,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse GetProxyGuestCheckoutSession(string checkoutSessionId)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId);
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3094,7 +3094,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<PurchaseOrderSummary> PlaceProxyGuestOrderAsync(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3130,7 +3130,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public PurchaseOrderSummary PlaceProxyGuestOrder(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/place_order";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3166,7 +3166,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CheckoutSessionResponse> RemoveProxyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3202,7 +3202,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CheckoutSessionResponse RemoveProxyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/remove_coupon";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3238,7 +3238,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestPaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3274,7 +3274,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse UpdateProxyGuestPaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_payment_info";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3310,7 +3310,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3346,7 +3346,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse UpdateProxyGuestQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_quantity";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3382,7 +3382,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3418,7 +3418,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse UpdateProxyGuestShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_address";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3454,7 +3454,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3490,7 +3490,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestCheckoutSessionResponse UpdateProxyGuestShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
-			var requestUri = "proxy_guest_checkout_session/"+Uri.EscapeDataString(checkoutSessionId)+"/update_shipping_option";
+			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3545,7 +3545,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<GuestPurchaseOrder> GetGuestPurchaseOrderAsync(string purchaseOrderId)
 		{
-			var requestUri = "guest_purchase_order/"+Uri.EscapeDataString(purchaseOrderId);
+			var requestUri = "guest_purchase_order/"+ (purchaseOrderId==null? "" : Uri.EscapeDataString(purchaseOrderId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3574,7 +3574,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public GuestPurchaseOrder GetGuestPurchaseOrder(string purchaseOrderId)
 		{
-			var requestUri = "guest_purchase_order/"+Uri.EscapeDataString(purchaseOrderId);
+			var requestUri = "guest_purchase_order/"+ (purchaseOrderId==null? "" : Uri.EscapeDataString(purchaseOrderId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3623,7 +3623,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<PurchaseOrder> GetPurchaseOrderAsync(string purchaseOrderId)
 		{
-			var requestUri = "purchase_order/"+Uri.EscapeDataString(purchaseOrderId);
+			var requestUri = "purchase_order/"+ (purchaseOrderId==null? "" : Uri.EscapeDataString(purchaseOrderId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3652,7 +3652,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public PurchaseOrder GetPurchaseOrder(string purchaseOrderId)
 		{
-			var requestUri = "purchase_order/"+Uri.EscapeDataString(purchaseOrderId);
+			var requestUri = "purchase_order/"+ (purchaseOrderId==null? "" : Uri.EscapeDataString(purchaseOrderId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;

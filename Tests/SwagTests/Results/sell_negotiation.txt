@@ -345,7 +345,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PagedEligibleItemCollection> FindEligibleItemsAsync(string limit, string offset)
 		{
-			var requestUri = "find_eligible_items?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "find_eligible_items?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -375,7 +375,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PagedEligibleItemCollection FindEligibleItems(string limit, string offset)
 		{
-			var requestUri = "find_eligible_items?limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset);
+			var requestUri = "find_eligible_items?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;

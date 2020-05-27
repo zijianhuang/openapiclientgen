@@ -1300,7 +1300,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<FulfillmentPolicyResponse> GetFulfillmentPoliciesAsync(string marketplace_id)
 		{
-			var requestUri = "fulfillment_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
+			var requestUri = "fulfillment_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1329,7 +1329,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public FulfillmentPolicyResponse GetFulfillmentPolicies(string marketplace_id)
 		{
-			var requestUri = "fulfillment_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
+			var requestUri = "fulfillment_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1414,7 +1414,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<FulfillmentPolicy> GetFulfillmentPolicyAsync(string fulfillmentPolicyId)
 		{
-			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1443,7 +1443,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public FulfillmentPolicy GetFulfillmentPolicy(string fulfillmentPolicyId)
 		{
-			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1473,7 +1473,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<SetFulfillmentPolicyResponse> UpdateFulfillmentPolicyAsync(string fulfillmentPolicyId, FulfillmentPolicyRequest requestBody)
 		{
-			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1509,7 +1509,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public SetFulfillmentPolicyResponse UpdateFulfillmentPolicy(string fulfillmentPolicyId, FulfillmentPolicyRequest requestBody)
 		{
-			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1543,7 +1543,7 @@ namespace MyNS
 		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy to delete.</param>
 		public async Task DeleteFulfillmentPolicyAsync(string fulfillmentPolicyId)
 		{
-			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1565,7 +1565,7 @@ namespace MyNS
 		/// <param name="fulfillmentPolicyId">This path parameter specifies the ID of the fulfillment policy to delete.</param>
 		public void DeleteFulfillmentPolicy(string fulfillmentPolicyId)
 		{
-			var requestUri = "fulfillment_policy/"+Uri.EscapeDataString(fulfillmentPolicyId);
+			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1589,7 +1589,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<FulfillmentPolicy> GetFulfillmentPolicyByNameAsync(string marketplace_id, string name)
 		{
-			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
+			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1619,7 +1619,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public FulfillmentPolicy GetFulfillmentPolicyByName(string marketplace_id, string name)
 		{
-			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
+			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1668,7 +1668,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PaymentPolicyResponse> GetPaymentPoliciesAsync(string marketplace_id)
 		{
-			var requestUri = "payment_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
+			var requestUri = "payment_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1697,7 +1697,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PaymentPolicyResponse GetPaymentPolicies(string marketplace_id)
 		{
-			var requestUri = "payment_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
+			var requestUri = "payment_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1782,7 +1782,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PaymentPolicy> GetPaymentPolicyAsync(string payment_policy_id)
 		{
-			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1811,7 +1811,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PaymentPolicy GetPaymentPolicy(string payment_policy_id)
 		{
-			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1841,7 +1841,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<SetPaymentPolicyResponse> UpdatePaymentPolicyAsync(string payment_policy_id, PaymentPolicyRequest requestBody)
 		{
-			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1877,7 +1877,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public SetPaymentPolicyResponse UpdatePaymentPolicy(string payment_policy_id, PaymentPolicyRequest requestBody)
 		{
-			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1911,7 +1911,7 @@ namespace MyNS
 		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to delete.</param>
 		public async Task DeletePaymentPolicyAsync(string payment_policy_id)
 		{
-			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1933,7 +1933,7 @@ namespace MyNS
 		/// <param name="payment_policy_id">This path parameter specifies the ID of the payment policy you want to delete.</param>
 		public void DeletePaymentPolicy(string payment_policy_id)
 		{
-			var requestUri = "payment_policy/"+Uri.EscapeDataString(payment_policy_id);
+			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -1957,7 +1957,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PaymentPolicy> GetPaymentPolicyByNameAsync(string marketplace_id, string name)
 		{
-			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
+			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -1987,7 +1987,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PaymentPolicy GetPaymentPolicyByName(string marketplace_id, string name)
 		{
-			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
+			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2037,7 +2037,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PaymentsProgramResponse> GetPaymentsProgramAsync(string marketplace_id, string payments_program_type)
 		{
-			var requestUri = "payments_program/"+Uri.EscapeDataString(marketplace_id)+"/"+Uri.EscapeDataString(payments_program_type);
+			var requestUri = "payments_program/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/"+ (payments_program_type==null? "" : Uri.EscapeDataString(payments_program_type));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2067,7 +2067,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PaymentsProgramResponse GetPaymentsProgram(string marketplace_id, string payments_program_type)
 		{
-			var requestUri = "payments_program/"+Uri.EscapeDataString(marketplace_id)+"/"+Uri.EscapeDataString(payments_program_type);
+			var requestUri = "payments_program/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/"+ (payments_program_type==null? "" : Uri.EscapeDataString(payments_program_type));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2404,7 +2404,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<RateTableResponse> GetRateTablesAsync(string country_code)
 		{
-			var requestUri = "rate_table/?country_code=" + Uri.EscapeDataString(country_code);
+			var requestUri = "rate_table/?country_code=" + (country_code==null? "" : Uri.EscapeDataString(country_code));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2433,7 +2433,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public RateTableResponse GetRateTables(string country_code)
 		{
-			var requestUri = "rate_table/?country_code=" + Uri.EscapeDataString(country_code);
+			var requestUri = "rate_table/?country_code=" + (country_code==null? "" : Uri.EscapeDataString(country_code));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2482,7 +2482,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ReturnPolicyResponse> GetReturnPoliciesAsync(string marketplace_id)
 		{
-			var requestUri = "return_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
+			var requestUri = "return_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2511,7 +2511,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ReturnPolicyResponse GetReturnPolicies(string marketplace_id)
 		{
-			var requestUri = "return_policy/?marketplace_id=" + Uri.EscapeDataString(marketplace_id);
+			var requestUri = "return_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2596,7 +2596,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ReturnPolicy> GetReturnPolicyAsync(string return_policy_id)
 		{
-			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2625,7 +2625,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ReturnPolicy GetReturnPolicy(string return_policy_id)
 		{
-			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2655,7 +2655,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<SetReturnPolicyResponse> UpdateReturnPolicyAsync(string return_policy_id, ReturnPolicyRequest requestBody)
 		{
-			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2691,7 +2691,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public SetReturnPolicyResponse UpdateReturnPolicy(string return_policy_id, ReturnPolicyRequest requestBody)
 		{
-			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2725,7 +2725,7 @@ namespace MyNS
 		/// <param name="return_policy_id">This path parameter specifies the ID of the return policy you want to delete.</param>
 		public async Task DeleteReturnPolicyAsync(string return_policy_id)
 		{
-			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2747,7 +2747,7 @@ namespace MyNS
 		/// <param name="return_policy_id">This path parameter specifies the ID of the return policy you want to delete.</param>
 		public void DeleteReturnPolicy(string return_policy_id)
 		{
-			var requestUri = "return_policy/"+Uri.EscapeDataString(return_policy_id);
+			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2771,7 +2771,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ReturnPolicy> GetReturnPolicyByNameAsync(string marketplace_id, string name)
 		{
-			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
+			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2801,7 +2801,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ReturnPolicy GetReturnPolicyByName(string marketplace_id, string name)
 		{
-			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + Uri.EscapeDataString(marketplace_id)+"&name=" + Uri.EscapeDataString(name);
+			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2851,7 +2851,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<SalesTax> GetSalesTaxAsync(string countryCode, string jurisdictionId)
 		{
-			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2881,7 +2881,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public SalesTax GetSalesTax(string countryCode, string jurisdictionId)
 		{
-			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2911,7 +2911,7 @@ namespace MyNS
 		/// <param name="requestBody">A container that describes the how the sales tax is calculated.</param>
 		public async Task CreateOrReplaceSalesTaxAsync(string countryCode, string jurisdictionId, SalesTaxBase requestBody)
 		{
-			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2941,7 +2941,7 @@ namespace MyNS
 		/// <param name="requestBody">A container that describes the how the sales tax is calculated.</param>
 		public void CreateOrReplaceSalesTax(string countryCode, string jurisdictionId, SalesTaxBase requestBody)
 		{
-			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2970,7 +2970,7 @@ namespace MyNS
 		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales tax jurisdiction whose table entry you want to delete.</param>
 		public async Task DeleteSalesTaxAsync(string countryCode, string jurisdictionId)
 		{
-			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2993,7 +2993,7 @@ namespace MyNS
 		/// <param name="jurisdictionId">This path parameter specifies the ID of the sales tax jurisdiction whose table entry you want to delete.</param>
 		public void DeleteSalesTax(string countryCode, string jurisdictionId)
 		{
-			var requestUri = "sales_tax/"+Uri.EscapeDataString(countryCode)+"/"+Uri.EscapeDataString(jurisdictionId);
+			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
 			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -3016,7 +3016,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<SalesTaxes> GetSalesTaxesAsync(string country_code)
 		{
-			var requestUri = "sales_tax/?country_code=" + Uri.EscapeDataString(country_code);
+			var requestUri = "sales_tax/?country_code=" + (country_code==null? "" : Uri.EscapeDataString(country_code));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -3045,7 +3045,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public SalesTaxes GetSalesTaxes(string country_code)
 		{
-			var requestUri = "sales_tax/?country_code=" + Uri.EscapeDataString(country_code);
+			var requestUri = "sales_tax/?country_code=" + (country_code==null? "" : Uri.EscapeDataString(country_code));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;

@@ -1999,7 +1999,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<SearchPagedCollection> SearchAsync(string aspect_filter, string category_ids, string charity_ids, string compatibility_filter, string epid, string fieldgroups, string filter, string gtin, string limit, string offset, string q, string sort)
 		{
-			var requestUri = "item_summary/search?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_ids=" + Uri.EscapeDataString(category_ids)+"&charity_ids=" + Uri.EscapeDataString(charity_ids)+"&compatibility_filter=" + Uri.EscapeDataString(compatibility_filter)+"&epid=" + Uri.EscapeDataString(epid)+"&fieldgroups=" + Uri.EscapeDataString(fieldgroups)+"&filter=" + Uri.EscapeDataString(filter)+"&gtin=" + Uri.EscapeDataString(gtin)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&q=" + Uri.EscapeDataString(q)+"&sort=" + Uri.EscapeDataString(sort);
+			var requestUri = "item_summary/search?aspect_filter=" + (aspect_filter==null? "" : Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : Uri.EscapeDataString(category_ids))+"&charity_ids=" + (charity_ids==null? "" : Uri.EscapeDataString(charity_ids))+"&compatibility_filter=" + (compatibility_filter==null? "" : Uri.EscapeDataString(compatibility_filter))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&fieldgroups=" + (fieldgroups==null? "" : Uri.EscapeDataString(fieldgroups))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&gtin=" + (gtin==null? "" : Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2039,7 +2039,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public SearchPagedCollection Search(string aspect_filter, string category_ids, string charity_ids, string compatibility_filter, string epid, string fieldgroups, string filter, string gtin, string limit, string offset, string q, string sort)
 		{
-			var requestUri = "item_summary/search?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_ids=" + Uri.EscapeDataString(category_ids)+"&charity_ids=" + Uri.EscapeDataString(charity_ids)+"&compatibility_filter=" + Uri.EscapeDataString(compatibility_filter)+"&epid=" + Uri.EscapeDataString(epid)+"&fieldgroups=" + Uri.EscapeDataString(fieldgroups)+"&filter=" + Uri.EscapeDataString(filter)+"&gtin=" + Uri.EscapeDataString(gtin)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&q=" + Uri.EscapeDataString(q)+"&sort=" + Uri.EscapeDataString(sort);
+			var requestUri = "item_summary/search?aspect_filter=" + (aspect_filter==null? "" : Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : Uri.EscapeDataString(category_ids))+"&charity_ids=" + (charity_ids==null? "" : Uri.EscapeDataString(charity_ids))+"&compatibility_filter=" + (compatibility_filter==null? "" : Uri.EscapeDataString(compatibility_filter))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&fieldgroups=" + (fieldgroups==null? "" : Uri.EscapeDataString(fieldgroups))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&gtin=" + (gtin==null? "" : Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2095,7 +2095,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<SearchPagedCollection> SearchByImageAsync(string aspect_filter, string category_ids, string epid, string filter, string limit, string offset, string sort, SearchByImageRequest requestBody)
 		{
-			var requestUri = "item_summary/search_by_image?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_ids=" + Uri.EscapeDataString(category_ids)+"&epid=" + Uri.EscapeDataString(epid)+"&filter=" + Uri.EscapeDataString(filter)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&sort=" + Uri.EscapeDataString(sort);
+			var requestUri = "item_summary/search_by_image?aspect_filter=" + (aspect_filter==null? "" : Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : Uri.EscapeDataString(category_ids))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2137,7 +2137,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public SearchPagedCollection SearchByImage(string aspect_filter, string category_ids, string epid, string filter, string limit, string offset, string sort, SearchByImageRequest requestBody)
 		{
-			var requestUri = "item_summary/search_by_image?aspect_filter=" + Uri.EscapeDataString(aspect_filter)+"&category_ids=" + Uri.EscapeDataString(category_ids)+"&epid=" + Uri.EscapeDataString(epid)+"&filter=" + Uri.EscapeDataString(filter)+"&limit=" + Uri.EscapeDataString(limit)+"&offset=" + Uri.EscapeDataString(offset)+"&sort=" + Uri.EscapeDataString(sort);
+			var requestUri = "item_summary/search_by_image?aspect_filter=" + (aspect_filter==null? "" : Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : Uri.EscapeDataString(category_ids))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2193,7 +2193,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Item> GetItemAsync(string fieldgroups, string item_id)
 		{
-			var requestUri = "item/"+Uri.EscapeDataString(item_id)+"?fieldgroups=" + Uri.EscapeDataString(fieldgroups);
+			var requestUri = "item/"+ (item_id==null? "" : Uri.EscapeDataString(item_id))+"?fieldgroups=" + (fieldgroups==null? "" : Uri.EscapeDataString(fieldgroups));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2223,7 +2223,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Item GetItem(string fieldgroups, string item_id)
 		{
-			var requestUri = "item/"+Uri.EscapeDataString(item_id)+"?fieldgroups=" + Uri.EscapeDataString(fieldgroups);
+			var requestUri = "item/"+ (item_id==null? "" : Uri.EscapeDataString(item_id))+"?fieldgroups=" + (fieldgroups==null? "" : Uri.EscapeDataString(fieldgroups));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2255,7 +2255,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<Item> GetItemByLegacyIdAsync(string fieldgroups, string legacy_item_id, string legacy_variation_id, string legacy_variation_sku)
 		{
-			var requestUri = "item/get_item_by_legacy_id?fieldgroups=" + Uri.EscapeDataString(fieldgroups)+"&legacy_item_id=" + Uri.EscapeDataString(legacy_item_id)+"&legacy_variation_id=" + Uri.EscapeDataString(legacy_variation_id)+"&legacy_variation_sku=" + Uri.EscapeDataString(legacy_variation_sku);
+			var requestUri = "item/get_item_by_legacy_id?fieldgroups=" + (fieldgroups==null? "" : Uri.EscapeDataString(fieldgroups))+"&legacy_item_id=" + (legacy_item_id==null? "" : Uri.EscapeDataString(legacy_item_id))+"&legacy_variation_id=" + (legacy_variation_id==null? "" : Uri.EscapeDataString(legacy_variation_id))+"&legacy_variation_sku=" + (legacy_variation_sku==null? "" : Uri.EscapeDataString(legacy_variation_sku));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2287,7 +2287,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public Item GetItemByLegacyId(string fieldgroups, string legacy_item_id, string legacy_variation_id, string legacy_variation_sku)
 		{
-			var requestUri = "item/get_item_by_legacy_id?fieldgroups=" + Uri.EscapeDataString(fieldgroups)+"&legacy_item_id=" + Uri.EscapeDataString(legacy_item_id)+"&legacy_variation_id=" + Uri.EscapeDataString(legacy_variation_id)+"&legacy_variation_sku=" + Uri.EscapeDataString(legacy_variation_sku);
+			var requestUri = "item/get_item_by_legacy_id?fieldgroups=" + (fieldgroups==null? "" : Uri.EscapeDataString(fieldgroups))+"&legacy_item_id=" + (legacy_item_id==null? "" : Uri.EscapeDataString(legacy_item_id))+"&legacy_variation_id=" + (legacy_variation_id==null? "" : Uri.EscapeDataString(legacy_variation_id))+"&legacy_variation_sku=" + (legacy_variation_sku==null? "" : Uri.EscapeDataString(legacy_variation_sku));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2316,7 +2316,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<Items> GetItemsByItemGroupAsync(string item_group_id)
 		{
-			var requestUri = "item/get_items_by_item_group?item_group_id=" + Uri.EscapeDataString(item_group_id);
+			var requestUri = "item/get_items_by_item_group?item_group_id=" + (item_group_id==null? "" : Uri.EscapeDataString(item_group_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(request);
@@ -2345,7 +2345,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public Items GetItemsByItemGroup(string item_group_id)
 		{
-			var requestUri = "item/get_items_by_item_group?item_group_id=" + Uri.EscapeDataString(item_group_id);
+			var requestUri = "item/get_items_by_item_group?item_group_id=" + (item_group_id==null? "" : Uri.EscapeDataString(item_group_id));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(request).Result;
@@ -2374,7 +2374,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<CompatibilityResponse> CheckCompatibilityAsync(string item_id, CompatibilityPayload requestBody)
 		{
-			var requestUri = "item/"+Uri.EscapeDataString(item_id)+"/check_compatibility";
+			var requestUri = "item/"+ (item_id==null? "" : Uri.EscapeDataString(item_id))+"/check_compatibility";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2409,7 +2409,7 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public CompatibilityResponse CheckCompatibility(string item_id, CompatibilityPayload requestBody)
 		{
-			var requestUri = "item/"+Uri.EscapeDataString(item_id)+"/check_compatibility";
+			var requestUri = "item/"+ (item_id==null? "" : Uri.EscapeDataString(item_id))+"/check_compatibility";
 			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
