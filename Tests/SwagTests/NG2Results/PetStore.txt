@@ -34,7 +34,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreatePets(): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'pets', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'pets', null, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -44,7 +44,7 @@ export namespace MyNS {
 		 * @return {Pet} Expected response to a valid request
 		 */
 		ShowPetById(petId: string): Observable<Pet> {
-			return this.http.get<Pet>(this.baseUri + 'pets/' + encodeURIComponent(petId), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Pet>(this.baseUri + 'pets/' + (petId == null ? '' : encodeURIComponent(petId)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 

@@ -203,7 +203,7 @@ export namespace MyNS {
 		 * @return {PagedEligibleItemCollection} Success
 		 */
 		FindEligibleItems(limit: string, offset: string): Observable<PagedEligibleItemCollection> {
-			return this.http.get<PagedEligibleItemCollection>(this.baseUri + 'find_eligible_items?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<PagedEligibleItemCollection>(this.baseUri + 'find_eligible_items?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -213,7 +213,7 @@ export namespace MyNS {
 		 * @return {SendOfferToInterestedBuyersCollectionResponse} Success
 		 */
 		SendOfferToInterestedBuyers(requestBody: CreateOffersRequest): Observable<SendOfferToInterestedBuyersCollectionResponse> {
-			return this.http.post<SendOfferToInterestedBuyersCollectionResponse>(this.baseUri + 'send_offer_to_interested_buyers', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<SendOfferToInterestedBuyersCollectionResponse>(this.baseUri + 'send_offer_to_interested_buyers', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 	}
 

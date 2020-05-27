@@ -1130,7 +1130,7 @@ export namespace MyNS {
 		 * @return {BulkCreateAdsByInventoryReferenceResponse} Success
 		 */
 		BulkCreateAdsByInventoryReference(campaign_id: string, requestBody: BulkCreateAdsByInventoryReferenceRequest): Observable<BulkCreateAdsByInventoryReferenceResponse> {
-			return this.http.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1141,7 +1141,7 @@ export namespace MyNS {
 		 * @return {BulkAdResponse} Success
 		 */
 		BulkCreateAdsByListingId(campaign_id: string, requestBody: BulkCreateAdRequest): Observable<BulkAdResponse> {
-			return this.http.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_create_ads_by_listing_id', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1152,7 +1152,7 @@ export namespace MyNS {
 		 * @return {BulkDeleteAdsByInventoryReferenceResponse} Success
 		 */
 		BulkDeleteAdsByInventoryReference(campaign_id: string, requestBody: BulkDeleteAdsByInventoryReferenceRequest): Observable<BulkDeleteAdsByInventoryReferenceResponse> {
-			return this.http.post<BulkDeleteAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<BulkDeleteAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1163,7 +1163,7 @@ export namespace MyNS {
 		 * @return {BulkDeleteAdResponse} Success
 		 */
 		BulkDeleteAdsByListingId(campaign_id: string, requestBody: BulkDeleteAdRequest): Observable<BulkDeleteAdResponse> {
-			return this.http.post<BulkDeleteAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_delete_ads_by_listing_id', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<BulkDeleteAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1174,7 +1174,7 @@ export namespace MyNS {
 		 * @return {BulkCreateAdsByInventoryReferenceResponse} Success
 		 */
 		BulkUpdateAdsBidByInventoryReference(campaign_id: string, requestBody: BulkCreateAdsByInventoryReferenceRequest): Observable<BulkCreateAdsByInventoryReferenceResponse> {
-			return this.http.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_update_ads_bid_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1185,7 +1185,7 @@ export namespace MyNS {
 		 * @return {BulkAdResponse} Success
 		 */
 		BulkUpdateAdsBidByListingId(campaign_id: string, requestBody: BulkCreateAdRequest): Observable<BulkAdResponse> {
-			return this.http.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/bulk_update_ads_bid_by_listing_id', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1198,7 +1198,7 @@ export namespace MyNS {
 		 * @return {AdPagedCollection} Success
 		 */
 		GetAds(campaign_id: string, limit: string, listing_ids: string, offset: string): Observable<AdPagedCollection> {
-			return this.http.get<AdPagedCollection>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad?limit=' + encodeURIComponent(limit) + '&listing_ids=' + encodeURIComponent(listing_ids) + '&offset=' + encodeURIComponent(offset), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<AdPagedCollection>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&listing_ids=' + (listing_ids == null ? '' : encodeURIComponent(listing_ids)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1209,7 +1209,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateAdByListingId(campaign_id: string, requestBody: CreateAdRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1220,7 +1220,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateAdsByInventoryReference(campaign_id: string, requestBody: CreateAdsByInventoryReferenceRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1231,7 +1231,7 @@ export namespace MyNS {
 		 * @return {Ad} Success
 		 */
 		GetAd(ad_id: string, campaign_id: string): Observable<Ad> {
-			return this.http.get<Ad>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Ad>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1242,7 +1242,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteAd(ad_id: string, campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1253,7 +1253,7 @@ export namespace MyNS {
 		 * @return {AdIds} Success
 		 */
 		DeleteAdsByInventoryReference(campaign_id: string, requestBody: DeleteAdsByInventoryReferenceRequest): Observable<AdIds> {
-			return this.http.post<AdIds>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<AdIds>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1265,7 +1265,7 @@ export namespace MyNS {
 		 * @return {Ads} Success
 		 */
 		GetAdsByInventoryReference(campaign_id: string, inventory_reference_id: string, inventory_reference_type: string): Observable<Ads> {
-			return this.http.get<Ads>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/get_ads_by_inventory_reference?inventory_reference_id=' + encodeURIComponent(inventory_reference_id) + '&inventory_reference_type=' + encodeURIComponent(inventory_reference_type), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Ads>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/get_ads_by_inventory_reference&inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1277,7 +1277,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		UpdateBid(ad_id: string, campaign_id: string, requestBody: UpdateBidPercentageRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/ad/' + encodeURIComponent(ad_id) + '/update_bid', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)) + '/update_bid', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1294,7 +1294,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CloneCampaign(campaign_id: string, requestBody: CloneCampaignRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/clone', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/clone', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1309,7 +1309,7 @@ export namespace MyNS {
 		 * @return {CampaignPagedCollection} Success
 		 */
 		GetCampaigns(campaign_name: string, campaign_status: string, end_date_range: string, limit: string, offset: string, start_date_range: string): Observable<CampaignPagedCollection> {
-			return this.http.get<CampaignPagedCollection>(this.baseUri + 'ad_campaign?campaign_name=' + encodeURIComponent(campaign_name) + '&campaign_status=' + encodeURIComponent(campaign_status) + '&end_date_range=' + encodeURIComponent(end_date_range) + '&limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&start_date_range=' + encodeURIComponent(start_date_range), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<CampaignPagedCollection>(this.baseUri + 'ad_campaign?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)) + '&campaign_status=' + (campaign_status == null ? '' : encodeURIComponent(campaign_status)) + '&end_date_range=' + (end_date_range == null ? '' : encodeURIComponent(end_date_range)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&start_date_range=' + (start_date_range == null ? '' : encodeURIComponent(start_date_range)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateCampaign(requestBody: CreateCampaignRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1329,7 +1329,7 @@ export namespace MyNS {
 		 * @return {Campaign} Success
 		 */
 		GetCampaign(campaign_id: string): Observable<Campaign> {
-			return this.http.get<Campaign>(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Campaign>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1339,7 +1339,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteCampaign(campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1349,7 +1349,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		EndCampaign(campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/end', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/end', null, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1361,7 +1361,7 @@ export namespace MyNS {
 		 * @return {Campaigns} Success
 		 */
 		FindCampaignByAdReference(inventory_reference_id: string, inventory_reference_type: string, listing_id: string): Observable<Campaigns> {
-			return this.http.get<Campaigns>(this.baseUri + 'ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + encodeURIComponent(inventory_reference_id) + '&inventory_reference_type=' + encodeURIComponent(inventory_reference_type) + '&listing_id=' + encodeURIComponent(listing_id), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Campaigns>(this.baseUri + 'ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 		 * @return {Campaign} Success
 		 */
 		GetCampaignByName(campaign_name: string): Observable<Campaign> {
-			return this.http.get<Campaign>(this.baseUri + 'ad_campaign/get_campaign_by_name?campaign_name=' + encodeURIComponent(campaign_name), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Campaign>(this.baseUri + 'ad_campaign/get_campaign_by_name?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1381,7 +1381,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		PauseCampaign(campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/pause', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/pause', null, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1391,7 +1391,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		ResumeCampaign(campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/resume', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/resume', null, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1402,7 +1402,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		UpdateCampaignIdentification(campaign_id: string, requestBody: UpdateCampaignIdentificationRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + encodeURIComponent(campaign_id) + '/update_campaign_identification', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/update_campaign_identification', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1418,7 +1418,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GetReport(report_id: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'ad_report/' + encodeURIComponent(report_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'ad_report/' + (report_id == null ? '' : encodeURIComponent(report_id)), { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 		 * @return {ReportMetadata} Success
 		 */
 		GetReportMetadataForReportType(report_type: string): Observable<ReportMetadata> {
-			return this.http.get<ReportMetadata>(this.baseUri + 'ad_report_metadata/' + encodeURIComponent(report_type), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ReportMetadata>(this.baseUri + 'ad_report_metadata/' + (report_type == null ? '' : encodeURIComponent(report_type)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 		 * @return {ReportTaskPagedCollection} Success
 		 */
 		GetReportTasks(limit: string, offset: string, report_task_statuses: string): Observable<ReportTaskPagedCollection> {
-			return this.http.get<ReportTaskPagedCollection>(this.baseUri + 'ad_report_task?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&report_task_statuses=' + encodeURIComponent(report_task_statuses), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ReportTaskPagedCollection>(this.baseUri + 'ad_report_task?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&report_task_statuses=' + (report_task_statuses == null ? '' : encodeURIComponent(report_task_statuses)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1471,7 +1471,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateReportTask(requestBody: CreateReportTask): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_report_task', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_report_task', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1481,7 +1481,7 @@ export namespace MyNS {
 		 * @return {ReportTask} Success
 		 */
 		GetReportTask(report_task_id: string): Observable<ReportTask> {
-			return this.http.get<ReportTask>(this.baseUri + 'ad_report_task/' + encodeURIComponent(report_task_id), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ReportTask>(this.baseUri + 'ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1491,7 +1491,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteReportTask(report_task_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'ad_report_task/' + encodeURIComponent(report_task_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1507,7 +1507,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateItemPriceMarkdownPromotion(requestBody: ItemPriceMarkdown): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'item_price_markdown', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'item_price_markdown', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1517,7 +1517,7 @@ export namespace MyNS {
 		 * @return {ItemPriceMarkdown} Success
 		 */
 		GetItemPriceMarkdownPromotion(promotion_id: string): Observable<ItemPriceMarkdown> {
-			return this.http.get<ItemPriceMarkdown>(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ItemPriceMarkdown>(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1528,7 +1528,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		UpdateItemPriceMarkdownPromotion(promotion_id: string, requestBody: ItemPriceMarkdown): Observable<string> {
-			return this.http.put(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.put(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1538,7 +1538,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteItemPriceMarkdownPromotion(promotion_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'item_price_markdown/' + encodeURIComponent(promotion_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1554,7 +1554,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateItemPromotion(requestBody: ItemPromotion): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'item_promotion', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'item_promotion', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1564,7 +1564,7 @@ export namespace MyNS {
 		 * @return {ItemPromotionResponse} Success
 		 */
 		GetItemPromotion(promotion_id: string): Observable<ItemPromotionResponse> {
-			return this.http.get<ItemPromotionResponse>(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ItemPromotionResponse>(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1575,7 +1575,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		UpdateItemPromotion(promotion_id: string, requestBody: ItemPromotion): Observable<BaseResponse> {
-			return this.http.put<BaseResponse>(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.put<BaseResponse>(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1585,7 +1585,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteItemPromotion(promotion_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'item_promotion/' + encodeURIComponent(promotion_id), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1606,7 +1606,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		GetListingSet(limit: string, offset: string, promotion_id: string, q: string, sort: string, status: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/get_listing_set?limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset) + '&q=' + encodeURIComponent(q) + '&sort=' + encodeURIComponent(sort) + '&status=' + encodeURIComponent(status), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/get_listing_set?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&status=' + (status == null ? '' : encodeURIComponent(status)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 		 * @return {PromotionsPagedCollection} Success
 		 */
 		GetPromotions(limit: string, marketplace_id: string, offset: string, promotion_status: string, promotion_type: string, q: string, sort: string): Observable<PromotionsPagedCollection> {
-			return this.http.get<PromotionsPagedCollection>(this.baseUri + 'promotion?limit=' + encodeURIComponent(limit) + '&marketplace_id=' + encodeURIComponent(marketplace_id) + '&offset=' + encodeURIComponent(offset) + '&promotion_status=' + encodeURIComponent(promotion_status) + '&promotion_type=' + encodeURIComponent(promotion_type) + '&q=' + encodeURIComponent(q) + '&sort=' + encodeURIComponent(sort), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<PromotionsPagedCollection>(this.baseUri + 'promotion?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1632,7 +1632,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		PausePromotion(promotion_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/pause', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/pause', null, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1642,7 +1642,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		ResumePromotion(promotion_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'promotion/' + encodeURIComponent(promotion_id) + '/resume', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/resume', null, { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1663,7 +1663,7 @@ export namespace MyNS {
 		 * @return {PromotionsReportPagedCollection} Success
 		 */
 		GetPromotionReports(limit: string, marketplace_id: string, offset: string, promotion_status: string, promotion_type: string, q: string): Observable<PromotionsReportPagedCollection> {
-			return this.http.get<PromotionsReportPagedCollection>(this.baseUri + 'promotion_report?limit=' + encodeURIComponent(limit) + '&marketplace_id=' + encodeURIComponent(marketplace_id) + '&offset=' + encodeURIComponent(offset) + '&promotion_status=' + encodeURIComponent(promotion_status) + '&promotion_type=' + encodeURIComponent(promotion_type) + '&q=' + encodeURIComponent(q), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<PromotionsReportPagedCollection>(this.baseUri + 'promotion_report?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -1679,7 +1679,7 @@ export namespace MyNS {
 		 * @return {SummaryReportResponse} Success
 		 */
 		GetPromotionSummaryReport(marketplace_id: string): Observable<SummaryReportResponse> {
-			return this.http.get<SummaryReportResponse>(this.baseUri + 'promotion_summary_report?marketplace_id=' + encodeURIComponent(marketplace_id), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<SummaryReportResponse>(this.baseUri + 'promotion_summary_report?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 

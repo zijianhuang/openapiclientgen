@@ -172,7 +172,7 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						return newUriText += $"{d.Name}=' + encodeURIComponent({d.Name}) + '";
+						return newUriText += $"{d.Name}=' + ({d.Name} == null ? '' : encodeURIComponent({d.Name})) + '";
 					}
 					else
 					{
@@ -207,7 +207,7 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						return newUriText.Replace($"{{{d.Name}}}", $"' + encodeURIComponent({d.Name}) + '");
+						return newUriText.Replace($"{{{d.Name}}}", $"' + ({d.Name} == null ? '' : encodeURIComponent({d.Name})) + '");
 					}
 					else
 					{

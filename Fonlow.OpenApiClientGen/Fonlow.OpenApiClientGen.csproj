@@ -11,9 +11,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
     <Copyright>Copyright © Zijian Huang 2020</Copyright>
-    <Version>1.2</Version>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <FileVersion>1.2.0.0</FileVersion>
+    <Version>1.3</Version>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <FileVersion>1.3.0.0</FileVersion>
     <PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
   </PropertyGroup>
 

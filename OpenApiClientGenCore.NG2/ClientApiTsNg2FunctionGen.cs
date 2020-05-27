@@ -15,10 +15,15 @@ namespace Fonlow.CodeDom.Web.Ts
 		//const string NG2HttpResponse = "Response";
 		const string NG2HttpBlobResponse = "HttpResponse<Blob>";
 		const string NG2HttpStringResponse = "HttpResponse<string>";
-		const string OptionsForResponse = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' }";
-		const string GeneralHeaderHandler = "{ headers: headersHandler ? headersHandler() : undefined }";
+
+		readonly string OptionsForResponse;
+
+		readonly string Options;
+
 		readonly string ContentOptionsForResponse;
-		readonly string GeneralHeaderHandlerWithContent;
+
+		readonly string OptionsWithContent;
+
 		string returnTypeText = null;
 
 		readonly Settings settings;
@@ -33,9 +38,17 @@ namespace Fonlow.CodeDom.Web.Ts
 				contentType = "application/json;charset=UTF-8";
 			}
 
-			ContentOptionsForResponse = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}), observe: 'response', responseType: 'text' }}";
-			GeneralHeaderHandlerWithContent = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}) }}";
+			var contentOptionsWithHeadersHandlerForResponse = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}), observe: 'response', responseType: 'text' }}";
+			ContentOptionsForResponse = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForResponse : $"{{ headers: {{ 'Content-Type': '{contentType}' }}, observe: 'response', responseType: 'text' }}";
 
+			var optionsWithHeadersHandlerAndContent = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}) }}";
+			OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ headers: {{ 'Content-Type': '{contentType}' }} }}";
+
+			const string optionsWithHeadersHandlerForResponse = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' }";
+			OptionsForResponse = settings.HandleHttpRequestHeaders ? "{ observe: 'response', responseType: 'text' }" : optionsWithHeadersHandlerForResponse;
+
+			var optionsWithHeadersHandler = "{ headers: headersHandler ? headersHandler() : undefined }";
+			Options = settings.HandleHttpRequestHeaders ? "{}" : optionsWithHeadersHandler;
 		}
 
 		protected override CodeMemberMethod CreateMethodName()
@@ -177,7 +190,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{returnTypeCast}({uriText}, {GeneralHeaderHandler});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{returnTypeCast}({uriText}, {Options});"));
 					}
 				}
 				else if (httpMethodName == "post" || httpMethodName == "put")
@@ -195,13 +208,13 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else // type is returned
 					{
-						if (RequestBodyCodeTypeReference == null)
+						if (RequestBodyCodeTypeReference == null) // no body
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{returnTypeCast}({uriText}, null, {GeneralHeaderHandler});"));
+							Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{returnTypeCast}({uriText}, null, {Options});"));
 						}
 						else
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{returnTypeCast}({uriText}, JSON.stringify(requestBody), {GeneralHeaderHandlerWithContent});"));
+							Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{returnTypeCast}({uriText}, JSON.stringify(requestBody), {OptionsWithContent});"));
 						}
 					}
 				}

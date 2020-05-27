@@ -161,7 +161,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateItemDraft(requestBody: ItemDraft): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'item_draft/', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'item_draft/', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}
 

@@ -278,7 +278,7 @@ export namespace MyNS {
 		 * @return {SalesTaxJurisdictions} Success
 		 */
 		GetSalesTaxJurisdictions(countryCode: string): Observable<SalesTaxJurisdictions> {
-			return this.http.get<SalesTaxJurisdictions>(this.baseUri + 'country/' + encodeURIComponent(countryCode) + '/sales_tax_jurisdiction', { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<SalesTaxJurisdictions>(this.baseUri + 'country/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/sales_tax_jurisdiction', { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -295,7 +295,7 @@ export namespace MyNS {
 		 * @return {AutomotivePartsCompatibilityPolicyResponse} Success
 		 */
 		GetAutomotivePartsCompatibilityPolicies(filter: string, marketplace_id: string): Observable<AutomotivePartsCompatibilityPolicyResponse> {
-			return this.http.get<AutomotivePartsCompatibilityPolicyResponse>(this.baseUri + 'marketplace/' + encodeURIComponent(marketplace_id) + '/get_automotive_parts_compatibility_policies?filter=' + encodeURIComponent(filter), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<AutomotivePartsCompatibilityPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_automotive_parts_compatibility_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -306,7 +306,7 @@ export namespace MyNS {
 		 * @return {ItemConditionPolicyResponse} Success
 		 */
 		GetItemConditionPolicies(filter: string, marketplace_id: string): Observable<ItemConditionPolicyResponse> {
-			return this.http.get<ItemConditionPolicyResponse>(this.baseUri + 'marketplace/' + encodeURIComponent(marketplace_id) + '/get_item_condition_policies?filter=' + encodeURIComponent(filter), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ItemConditionPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_item_condition_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -317,7 +317,7 @@ export namespace MyNS {
 		 * @return {ListingStructurePolicyResponse} Success
 		 */
 		GetListingStructurePolicies(filter: string, marketplace_id: string): Observable<ListingStructurePolicyResponse> {
-			return this.http.get<ListingStructurePolicyResponse>(this.baseUri + 'marketplace/' + encodeURIComponent(marketplace_id) + '/get_listing_structure_policies?filter=' + encodeURIComponent(filter), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ListingStructurePolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_listing_structure_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * @return {NegotiatedPricePolicyResponse} Success
 		 */
 		GetNegotiatedPricePolicies(filter: string, marketplace_id: string): Observable<NegotiatedPricePolicyResponse> {
-			return this.http.get<NegotiatedPricePolicyResponse>(this.baseUri + 'marketplace/' + encodeURIComponent(marketplace_id) + '/get_negotiated_price_policies?filter=' + encodeURIComponent(filter), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<NegotiatedPricePolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_negotiated_price_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -339,7 +339,7 @@ export namespace MyNS {
 		 * @return {ProductAdoptionPolicyResponse} Success
 		 */
 		GetProductAdoptionPolicies(filter: string, marketplace_id: string): Observable<ProductAdoptionPolicyResponse> {
-			return this.http.get<ProductAdoptionPolicyResponse>(this.baseUri + 'marketplace/' + encodeURIComponent(marketplace_id) + '/get_product_adoption_policies?filter=' + encodeURIComponent(filter), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ProductAdoptionPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_product_adoption_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -350,7 +350,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicyResponse} Success
 		 */
 		GetReturnPolicies(filter: string, marketplace_id: string): Observable<ReturnPolicyResponse> {
-			return this.http.get<ReturnPolicyResponse>(this.baseUri + 'marketplace/' + encodeURIComponent(marketplace_id) + '/get_return_policies?filter=' + encodeURIComponent(filter), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ReturnPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_return_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 

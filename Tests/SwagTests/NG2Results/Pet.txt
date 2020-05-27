@@ -176,7 +176,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		AddPet(requestBody: Pet): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -186,7 +186,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		UpdatePet(requestBody: Pet): Observable<HttpResponse<string>> {
-			return this.http.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -207,7 +207,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeletePet(petId: number): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -255,7 +255,7 @@ export namespace MyNS {
 		 * @return {Order} successful operation
 		 */
 		PlaceOrder(requestBody: Order): Observable<Order> {
-			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -277,7 +277,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteOrder(orderId: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'store/order/' + encodeURIComponent(orderId), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -294,7 +294,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateUser(requestBody: User): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -304,7 +304,7 @@ export namespace MyNS {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string): Observable<User> {
-			return this.http.get<User>(this.baseUri + 'user/' + encodeURIComponent(username), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -316,7 +316,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		UpdateUser(username: string, requestBody: User): Observable<HttpResponse<string>> {
-			return this.http.put(this.baseUri + 'user/' + encodeURIComponent(username), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -327,7 +327,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteUser(username: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'user/' + encodeURIComponent(username), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -337,7 +337,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateUsersWithArrayInput(requestBody: Array<User>): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -347,7 +347,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateUsersWithListInput(requestBody: Array<User>): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -358,7 +358,7 @@ export namespace MyNS {
 		 * @return {string} successful operation
 		 */
 		LoginUser(username: string, password: string): Observable<string> {
-			return this.http.get(this.baseUri + 'user/login?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
+			return this.http.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
 		}
 
 		/**
@@ -367,7 +367,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		LogoutUser(): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'user/logout', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'user/logout', { observe: 'response', responseType: 'text' });
 		}
 	}
 

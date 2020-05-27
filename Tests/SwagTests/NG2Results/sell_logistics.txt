@@ -421,7 +421,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateFromShippingQuote(requestBody: CreateShipmentFromQuoteRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'shipment/create_from_shipping_quote', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'shipment/create_from_shipping_quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -431,7 +431,7 @@ export namespace MyNS {
 		 * @return {Shipment} Success
 		 */
 		GetShipment(shipmentId: string): Observable<Shipment> {
-			return this.http.get<Shipment>(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -441,7 +441,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		DownloadLabelFile(shipmentId: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId) + '/download_label_file', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/download_label_file', { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -451,7 +451,7 @@ export namespace MyNS {
 		 * @return {Shipment} Success
 		 */
 		CancelShipment(shipmentId: string): Observable<Shipment> {
-			return this.http.post<Shipment>(this.baseUri + 'shipment/' + encodeURIComponent(shipmentId) + '/cancel', null, { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.post<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/cancel', null, { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
@@ -467,7 +467,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateShippingQuote(requestBody: ShippingQuoteRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'shipping_quote', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'shipping_quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -477,7 +477,7 @@ export namespace MyNS {
 		 * @return {ShippingQuote} Success
 		 */
 		GetShippingQuote(shippingQuoteId: string): Observable<ShippingQuote> {
-			return this.http.get<ShippingQuote>(this.baseUri + 'shipping_quote/' + encodeURIComponent(shippingQuoteId), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ShippingQuote>(this.baseUri + 'shipping_quote/' + (shippingQuoteId == null ? '' : encodeURIComponent(shippingQuoteId)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 

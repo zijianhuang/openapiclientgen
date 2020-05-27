@@ -147,7 +147,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		FindListingRecommendations(filter: string, limit: string, offset: string, requestBody: FindListingRecommendationRequest): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'find?filter=' + encodeURIComponent(filter) + '&limit=' + encodeURIComponent(limit) + '&offset=' + encodeURIComponent(offset), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'find?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}
 
