@@ -209,7 +209,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GetListingViolationsSummary(compliance_type: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'listing_violation_summary?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'listing_violation_summary?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)), { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -229,7 +229,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GetListingViolations(compliance_type: string, offset: string, listing_id: string, limit: string, filter: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'listing_violation?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'listing_violation?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

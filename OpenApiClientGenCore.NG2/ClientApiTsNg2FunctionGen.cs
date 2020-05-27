@@ -16,10 +16,12 @@ namespace Fonlow.CodeDom.Web.Ts
 		const string NG2HttpBlobResponse = "HttpResponse<Blob>";
 		const string NG2HttpStringResponse = "HttpResponse<string>";
 
+		readonly string OptionsForString;
 		readonly string OptionsForResponse;
 
 		readonly string Options;
 
+		readonly string ContentOptionsForString;
 		readonly string ContentOptionsForResponse;
 
 		readonly string OptionsWithContent;
@@ -38,11 +40,17 @@ namespace Fonlow.CodeDom.Web.Ts
 				contentType = "application/json;charset=UTF-8";
 			}
 
+			var contentOptionsWithHeadersHandlerForString = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}),  responseType: 'text' }}";
+			ContentOptionsForString = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForString : $"{{ headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }}";
+
 			var contentOptionsWithHeadersHandlerForResponse = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}), observe: 'response', responseType: 'text' }}";
 			ContentOptionsForResponse = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForResponse : $"{{ headers: {{ 'Content-Type': '{contentType}' }}, observe: 'response', responseType: 'text' }}";
 
 			var optionsWithHeadersHandlerAndContent = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}) }}";
 			OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ headers: {{ 'Content-Type': '{contentType}' }} }}";
+
+			const string optionsWithHeadersHandlerForString = "{ headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }";
+			OptionsForString = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForString : "{ responseType: 'text' }";
 
 			const string optionsWithHeadersHandlerForResponse = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' }";
 			OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : "{ observe: 'response', responseType: 'text' }";
@@ -111,7 +119,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {{ headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }});"));
+					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {OptionsForString});"));
 					return;
 				}
 
@@ -119,42 +127,42 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {ContentOptionsForResponse});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {ContentOptionsForString});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForString});"));
 					}
 
 					return;
 				}
 
 			}
-			else if (returnTypeText == NG2HttpBlobResponse)//translated from blobresponse to this
-			{
-				const string optionForStream = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'blob' }";
+			//else if (returnTypeText == NG2HttpBlobResponse)//translated from blobresponse to this
+			//{
+			//	const string optionForStream = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'blob' }";
 
-				if (httpMethodName == "get" || httpMethodName == "delete")
-				{
-					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {optionForStream});"));
-					return;
-				}
+			//	if (httpMethodName == "get" || httpMethodName == "delete")
+			//	{
+			//		Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {optionForStream});"));
+			//		return;
+			//	}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
-				{
-					if (RequestBodyCodeTypeReference == null)
-					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {optionForStream});"));
-					}
-					else
-					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForStream});"));
-					}
+			//	if (httpMethodName == "post" || httpMethodName == "put")
+			//	{
+			//		if (RequestBodyCodeTypeReference == null)
+			//		{
+			//			Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {optionForStream});"));
+			//		}
+			//		else
+			//		{
+			//			Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForStream});"));
+			//		}
 
-					return;
-				}
+			//		return;
+			//	}
 
-			}
+			//}
 			else if (returnTypeText == NG2HttpStringResponse)//translated from response to this
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")

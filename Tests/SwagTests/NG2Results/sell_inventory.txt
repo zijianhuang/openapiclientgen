@@ -1371,7 +1371,7 @@ export namespace MyNS {
 		 * @return {InventoryLocationResponse} Success
 		 */
 		GetInventoryLocation(merchantLocationKey: string): Observable<InventoryLocationResponse> {
-			return this.http.get<InventoryLocationResponse>(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<InventoryLocationResponse>(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)), {});
 		}
 
 		/**
@@ -1392,7 +1392,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteInventoryLocation(merchantLocationKey: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1402,7 +1402,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		DisableInventoryLocation(merchantLocationKey: string): Observable<string> {
-			return this.http.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/disable', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/disable', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
@@ -1412,7 +1412,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		EnableInventoryLocation(merchantLocationKey: string): Observable<string> {
-			return this.http.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/enable', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/enable', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
@@ -1423,7 +1423,7 @@ export namespace MyNS {
 		 * @return {LocationResponse} Success
 		 */
 		GetInventoryLocations(limit: string, offset: string): Observable<LocationResponse> {
-			return this.http.get<LocationResponse>(this.baseUri + 'location?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<LocationResponse>(this.baseUri + 'location?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {});
 		}
 
 		/**
@@ -1450,7 +1450,7 @@ export namespace MyNS {
 		 * @return {InventoryItemWithSkuLocaleGroupid} Success
 		 */
 		GetInventoryItem(sku: string): Observable<InventoryItemWithSkuLocaleGroupid> {
-			return this.http.get<InventoryItemWithSkuLocaleGroupid>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<InventoryItemWithSkuLocaleGroupid>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), {});
 		}
 
 		/**
@@ -1471,7 +1471,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteInventoryItem(sku: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1482,7 +1482,7 @@ export namespace MyNS {
 		 * @return {InventoryItems} Success
 		 */
 		GetInventoryItems(limit: string, offset: string): Observable<InventoryItems> {
-			return this.http.get<InventoryItems>(this.baseUri + 'inventory_item?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<InventoryItems>(this.baseUri + 'inventory_item?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {});
 		}
 
 		/**
@@ -1528,7 +1528,7 @@ export namespace MyNS {
 		 * @return {Compatibility} Success
 		 */
 		GetProductCompatibility(sku: string): Observable<Compatibility> {
-			return this.http.get<Compatibility>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Compatibility>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', {});
 		}
 
 		/**
@@ -1549,7 +1549,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteProductCompatibility(sku: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1569,7 +1569,7 @@ export namespace MyNS {
 		 * @return {Offers} Success
 		 */
 		GetOffers(sku: string, marketplace_id: string, format: string, limit: string, offset: string): Observable<Offers> {
-			return this.http.get<Offers>(this.baseUri + 'offer?sku=' + (sku == null ? '' : encodeURIComponent(sku)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Offers>(this.baseUri + 'offer?sku=' + (sku == null ? '' : encodeURIComponent(sku)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {});
 		}
 
 		/**
@@ -1589,7 +1589,7 @@ export namespace MyNS {
 		 * @return {EbayOfferDetailsWithAll} Success
 		 */
 		GetOffer(offerId: string): Observable<EbayOfferDetailsWithAll> {
-			return this.http.get<EbayOfferDetailsWithAll>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<EbayOfferDetailsWithAll>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), {});
 		}
 
 		/**
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteOffer(offerId: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 		 * @return {PublishResponse} Success
 		 */
 		PublishOffer(offerId: string): Observable<PublishResponse> {
-			return this.http.post<PublishResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/publish/', null, { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.post<PublishResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/publish/', null, {});
 		}
 
 		/**
@@ -1680,7 +1680,7 @@ export namespace MyNS {
 		 * @return {WithdrawResponse} Success
 		 */
 		WithdrawOffer(offerId: string): Observable<WithdrawResponse> {
-			return this.http.post<WithdrawResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/withdraw', null, { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.post<WithdrawResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/withdraw', null, {});
 		}
 	}
 
@@ -1696,7 +1696,7 @@ export namespace MyNS {
 		 * @return {InventoryItemGroup} Success
 		 */
 		GetInventoryItemGroup(inventoryItemGroupKey: string): Observable<InventoryItemGroup> {
-			return this.http.get<InventoryItemGroup>(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<InventoryItemGroup>(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), {});
 		}
 
 		/**
@@ -1717,7 +1717,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteInventoryItemGroup(inventoryItemGroupKey: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), { observe: 'response', responseType: 'text' });
 		}
 	}
 

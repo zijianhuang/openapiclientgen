@@ -795,7 +795,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicyResponse} Success
 		 */
 		GetFulfillmentPolicies(marketplace_id: string): Observable<FulfillmentPolicyResponse> {
-			return this.http.get<FulfillmentPolicyResponse>(this.baseUri + 'fulfillment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<FulfillmentPolicyResponse>(this.baseUri + 'fulfillment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {});
 		}
 
 		/**
@@ -815,7 +815,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicy} Success
 		 */
 		GetFulfillmentPolicy(fulfillmentPolicyId: string): Observable<FulfillmentPolicy> {
-			return this.http.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), {});
 		}
 
 		/**
@@ -836,7 +836,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteFulfillmentPolicy(fulfillmentPolicyId: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -847,7 +847,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicy} Success
 		 */
 		GetFulfillmentPolicyByName(marketplace_id: string, name: string): Observable<FulfillmentPolicy> {
-			return this.http.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
 		}
 	}
 
@@ -863,7 +863,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicyResponse} Success
 		 */
 		GetPaymentPolicies(marketplace_id: string): Observable<PaymentPolicyResponse> {
-			return this.http.get<PaymentPolicyResponse>(this.baseUri + 'payment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<PaymentPolicyResponse>(this.baseUri + 'payment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {});
 		}
 
 		/**
@@ -883,7 +883,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicy} Success
 		 */
 		GetPaymentPolicy(payment_policy_id: string): Observable<PaymentPolicy> {
-			return this.http.get<PaymentPolicy>(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<PaymentPolicy>(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), {});
 		}
 
 		/**
@@ -904,7 +904,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeletePaymentPolicy(payment_policy_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -915,7 +915,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicy} Success
 		 */
 		GetPaymentPolicyByName(marketplace_id: string, name: string): Observable<PaymentPolicy> {
-			return this.http.get<PaymentPolicy>(this.baseUri + 'payment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<PaymentPolicy>(this.baseUri + 'payment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
 		}
 	}
 
@@ -932,7 +932,7 @@ export namespace MyNS {
 		 * @return {PaymentsProgramResponse} Success
 		 */
 		GetPaymentsProgram(marketplace_id: string, payments_program_type: string): Observable<PaymentsProgramResponse> {
-			return this.http.get<PaymentsProgramResponse>(this.baseUri + 'payments_program/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/' + (payments_program_type == null ? '' : encodeURIComponent(payments_program_type)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<PaymentsProgramResponse>(this.baseUri + 'payments_program/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/' + (payments_program_type == null ? '' : encodeURIComponent(payments_program_type)), {});
 		}
 	}
 
@@ -947,7 +947,7 @@ export namespace MyNS {
 		 * @return {SellingPrivileges} Success
 		 */
 		GetPrivileges(): Observable<SellingPrivileges> {
-			return this.http.get<SellingPrivileges>(this.baseUri + 'privilege/', { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<SellingPrivileges>(this.baseUri + 'privilege/', {});
 		}
 	}
 
@@ -962,7 +962,7 @@ export namespace MyNS {
 		 * @return {Programs} Success
 		 */
 		GetOptedInPrograms(): Observable<Programs> {
-			return this.http.get<Programs>(this.baseUri + 'program/get_opted_in_programs', { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Programs>(this.baseUri + 'program/get_opted_in_programs', {});
 		}
 
 		/**
@@ -972,7 +972,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		OptInToProgram(requestBody: Program): Observable<string> {
-			return this.http.post(this.baseUri + 'program/opt_in', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'program/opt_in', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
@@ -982,7 +982,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		OptOutOfProgram(requestBody: Program): Observable<string> {
-			return this.http.post(this.baseUri + 'program/opt_out', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'program/opt_out', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 	}
 
@@ -998,7 +998,7 @@ export namespace MyNS {
 		 * @return {RateTableResponse} Success
 		 */
 		GetRateTables(country_code: string): Observable<RateTableResponse> {
-			return this.http.get<RateTableResponse>(this.baseUri + 'rate_table/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<RateTableResponse>(this.baseUri + 'rate_table/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {});
 		}
 	}
 
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicyResponse} Success
 		 */
 		GetReturnPolicies(marketplace_id: string): Observable<ReturnPolicyResponse> {
-			return this.http.get<ReturnPolicyResponse>(this.baseUri + 'return_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ReturnPolicyResponse>(this.baseUri + 'return_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {});
 		}
 
 		/**
@@ -1034,7 +1034,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicy} Success
 		 */
 		GetReturnPolicy(return_policy_id: string): Observable<ReturnPolicy> {
-			return this.http.get<ReturnPolicy>(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ReturnPolicy>(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), {});
 		}
 
 		/**
@@ -1055,7 +1055,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteReturnPolicy(return_policy_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1066,7 +1066,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicy} Success
 		 */
 		GetReturnPolicyByName(marketplace_id: string, name: string): Observable<ReturnPolicy> {
-			return this.http.get<ReturnPolicy>(this.baseUri + 'return_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<ReturnPolicy>(this.baseUri + 'return_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {});
 		}
 	}
 
@@ -1083,7 +1083,7 @@ export namespace MyNS {
 		 * @return {SalesTax} Success
 		 */
 		GetSalesTax(countryCode: string, jurisdictionId: string): Observable<SalesTax> {
-			return this.http.get<SalesTax>(this.baseUri + 'sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<SalesTax>(this.baseUri + 'sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), {});
 		}
 
 		/**
@@ -1106,7 +1106,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteSalesTax(countryCode: string, jurisdictionId: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1116,7 +1116,7 @@ export namespace MyNS {
 		 * @return {SalesTaxes} Success
 		 */
 		GetSalesTaxes(country_code: string): Observable<SalesTaxes> {
-			return this.http.get<SalesTaxes>(this.baseUri + 'sales_tax/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<SalesTaxes>(this.baseUri + 'sales_tax/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {});
 		}
 	}
 

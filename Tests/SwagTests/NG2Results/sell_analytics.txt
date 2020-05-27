@@ -330,7 +330,7 @@ export namespace MyNS {
 		 * @return {GetCustomerServiceMetricResponse} Success
 		 */
 		GetCustomerServiceMetric(customer_service_metric_type: string, evaluation_marketplace_id: string, evaluation_type: string): Observable<GetCustomerServiceMetricResponse> {
-			return this.http.get<GetCustomerServiceMetricResponse>(this.baseUri + 'customer_service_metric/' + (customer_service_metric_type == null ? '' : encodeURIComponent(customer_service_metric_type)) + '/' + (evaluation_type == null ? '' : encodeURIComponent(evaluation_type)) + '&evaluation_marketplace_id=' + (evaluation_marketplace_id == null ? '' : encodeURIComponent(evaluation_marketplace_id)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<GetCustomerServiceMetricResponse>(this.baseUri + 'customer_service_metric/' + (customer_service_metric_type == null ? '' : encodeURIComponent(customer_service_metric_type)) + '/' + (evaluation_type == null ? '' : encodeURIComponent(evaluation_type)) + '&evaluation_marketplace_id=' + (evaluation_marketplace_id == null ? '' : encodeURIComponent(evaluation_marketplace_id)), {});
 		}
 	}
 
@@ -345,7 +345,7 @@ export namespace MyNS {
 		 * @return {FindSellerStandardsProfilesResponse} Success
 		 */
 		FindSellerStandardsProfiles(): Observable<FindSellerStandardsProfilesResponse> {
-			return this.http.get<FindSellerStandardsProfilesResponse>(this.baseUri + 'seller_standards_profile', { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<FindSellerStandardsProfilesResponse>(this.baseUri + 'seller_standards_profile', {});
 		}
 
 		/**
@@ -356,7 +356,7 @@ export namespace MyNS {
 		 * @return {StandardsProfile} Success
 		 */
 		GetSellerStandardsProfile(cycle: string, program: string): Observable<StandardsProfile> {
-			return this.http.get<StandardsProfile>(this.baseUri + 'seller_standards_profile/' + (program == null ? '' : encodeURIComponent(program)) + '/' + (cycle == null ? '' : encodeURIComponent(cycle)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<StandardsProfile>(this.baseUri + 'seller_standards_profile/' + (program == null ? '' : encodeURIComponent(program)) + '/' + (cycle == null ? '' : encodeURIComponent(cycle)), {});
 		}
 	}
 
@@ -375,7 +375,7 @@ export namespace MyNS {
 		 * @return {Report} Success
 		 */
 		GetTrafficReport(dimension: string, filter: string, metric: string, sort: string): Observable<Report> {
-			return this.http.get<Report>(this.baseUri + 'traffic_report?dimension=' + (dimension == null ? '' : encodeURIComponent(dimension)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&metric=' + (metric == null ? '' : encodeURIComponent(metric)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Report>(this.baseUri + 'traffic_report?dimension=' + (dimension == null ? '' : encodeURIComponent(dimension)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&metric=' + (metric == null ? '' : encodeURIComponent(metric)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 	}
 

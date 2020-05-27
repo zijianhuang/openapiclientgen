@@ -285,7 +285,7 @@ export namespace MyNS {
 		 * @return {Payout} Success
 		 */
 		GetPayout(payout_Id: string): Observable<Payout> {
-			return this.http.get<Payout>(this.baseUri + 'payout/' + (payout_Id == null ? '' : encodeURIComponent(payout_Id)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Payout>(this.baseUri + 'payout/' + (payout_Id == null ? '' : encodeURIComponent(payout_Id)), {});
 		}
 
 		/**
@@ -298,7 +298,7 @@ export namespace MyNS {
 		 * @return {Payouts} Success
 		 */
 		GetPayouts(filter: string, sort: string, limit: string, offset: string): Observable<Payouts> {
-			return this.http.get<Payouts>(this.baseUri + 'payout?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Payouts>(this.baseUri + 'payout?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {});
 		}
 
 		/**
@@ -308,7 +308,7 @@ export namespace MyNS {
 		 * @return {PayoutSummaryResponse} Success
 		 */
 		GetPayoutSummary(filter: string): Observable<PayoutSummaryResponse> {
-			return this.http.get<PayoutSummaryResponse>(this.baseUri + 'payout_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<PayoutSummaryResponse>(this.baseUri + 'payout_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
 		}
 	}
 
@@ -327,7 +327,7 @@ export namespace MyNS {
 		 * @return {Transactions} Success
 		 */
 		GetTransactions(filter: string, sort: string, limit: string, offset: string): Observable<Transactions> {
-			return this.http.get<Transactions>(this.baseUri + 'transaction?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Transactions>(this.baseUri + 'transaction?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {});
 		}
 
 		/**
@@ -337,7 +337,7 @@ export namespace MyNS {
 		 * @return {TransactionSummaryResponse} Success
 		 */
 		GetTransactionSummary(filter: string): Observable<TransactionSummaryResponse> {
-			return this.http.get<TransactionSummaryResponse>(this.baseUri + 'transaction_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<TransactionSummaryResponse>(this.baseUri + 'transaction_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {});
 		}
 	}
 
@@ -352,7 +352,7 @@ export namespace MyNS {
 		 * @return {SellerFundsSummaryResponse} Success
 		 */
 		GetSellerFundsSummary(): Observable<SellerFundsSummaryResponse> {
-			return this.http.get<SellerFundsSummaryResponse>(this.baseUri + 'seller_funds_summary', { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<SellerFundsSummaryResponse>(this.baseUri + 'seller_funds_summary', {});
 		}
 	}
 

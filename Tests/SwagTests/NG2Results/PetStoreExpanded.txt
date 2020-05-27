@@ -31,7 +31,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} pet response
 		 */
 		FindPets(tags: Array<string>, limit: number): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pets?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Array<Pet>>(this.baseUri + 'pets?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, {});
 		}
 
 		/**
@@ -51,7 +51,7 @@ export namespace MyNS {
 		 * @return {Pet} pet response
 		 */
 		FindPetById(id: number): Observable<Pet> {
-			return this.http.get<Pet>(this.baseUri + 'pets/' + id, { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Pet>(this.baseUri + 'pets/' + id, {});
 		}
 
 		/**
@@ -61,7 +61,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeletePet(id: number): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'pets/' + id, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'pets/' + id, { observe: 'response', responseType: 'text' });
 		}
 	}
 

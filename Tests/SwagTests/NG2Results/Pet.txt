@@ -197,7 +197,7 @@ export namespace MyNS {
 		 * @return {Pet} successful operation
 		 */
 		GetPetById(petId: number): Observable<Pet> {
-			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, {});
 		}
 
 		/**
@@ -207,7 +207,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeletePet(petId: number): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -218,7 +218,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {});
 		}
 
 		/**
@@ -229,7 +229,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByTags(tags: Array<string>): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {});
 		}
 	}
 
@@ -245,7 +245,7 @@ export namespace MyNS {
 		 * @return {string} successful operation
 		 */
 		GetInventory(): Observable<string> {
-			return this.http.get(this.baseUri + 'store/inventory', { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
+			return this.http.get(this.baseUri + 'store/inventory', { responseType: 'text' });
 		}
 
 		/**
@@ -266,7 +266,7 @@ export namespace MyNS {
 		 * @return {Order} successful operation
 		 */
 		GetOrderById(orderId: number): Observable<Order> {
-			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, {});
 		}
 
 		/**
@@ -277,7 +277,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteOrder(orderId: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -304,7 +304,7 @@ export namespace MyNS {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string): Observable<User> {
-			return this.http.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined });
+			return this.http.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), {});
 		}
 
 		/**
@@ -327,7 +327,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteUser(username: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -358,7 +358,7 @@ export namespace MyNS {
 		 * @return {string} successful operation
 		 */
 		LoginUser(username: string, password: string): Observable<string> {
-			return this.http.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
+			return this.http.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { responseType: 'text' });
 		}
 
 		/**
@@ -367,7 +367,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		LogoutUser(): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'user/logout', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'user/logout', { observe: 'response', responseType: 'text' });
 		}
 	}
 
