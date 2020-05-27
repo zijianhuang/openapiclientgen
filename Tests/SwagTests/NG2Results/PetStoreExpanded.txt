@@ -61,7 +61,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeletePet(id: number): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'pets/' + id, { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'pets/' + id, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 

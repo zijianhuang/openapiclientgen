@@ -836,7 +836,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteFulfillmentPolicy(fulfillmentPolicyId: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -904,7 +904,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeletePaymentPolicy(payment_policy_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1055,7 +1055,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteReturnPolicy(return_policy_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1106,7 +1106,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteSalesTax(countryCode: string, jurisdictionId: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**

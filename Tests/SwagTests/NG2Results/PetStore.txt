@@ -34,7 +34,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreatePets(): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'pets', null, { observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'pets', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**

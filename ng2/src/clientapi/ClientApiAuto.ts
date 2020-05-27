@@ -197,7 +197,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} successful operation
 		 */
 		GetPetById(petId: number, headersHandler?: () => HttpHeaders): Observable<Pet> {
-			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, {});
+			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -207,7 +207,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		DeletePet(petId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -218,7 +218,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>, headersHandler?: () => HttpHeaders): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {});
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -229,7 +229,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByTags(tags: Array<string>, headersHandler?: () => HttpHeaders): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {});
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -260,7 +260,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		GetOrderById(orderId: number, headersHandler?: () => HttpHeaders): Observable<Order> {
-			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, {});
+			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -271,7 +271,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		DeleteOrder(orderId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -292,7 +292,7 @@ export namespace My_Pet_Client {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string, headersHandler?: () => HttpHeaders): Observable<User> {
-			return this.http.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), {});
+			return this.http.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -315,7 +315,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		DeleteUser(username: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -355,7 +355,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		LogoutUser(headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'user/logout', { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'user/logout', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 

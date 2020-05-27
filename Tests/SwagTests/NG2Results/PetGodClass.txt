@@ -176,7 +176,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		PetDeleteByPetId(petId: number): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -240,7 +240,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		StoreOrderDeleteByOrderId(orderId: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -284,7 +284,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		UserDeleteByUsername(username: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -324,7 +324,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		UserLogoutGet(): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'user/logout', { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'user/logout', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 

@@ -441,7 +441,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		DownloadLabelFile(shipmentId: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/download_label_file', { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/download_label_file', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**

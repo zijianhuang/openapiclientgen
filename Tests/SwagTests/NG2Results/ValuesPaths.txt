@@ -44,7 +44,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		ValuesDeleteById(id: number): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'api/Values/' + id, { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'api/Values/' + id, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 

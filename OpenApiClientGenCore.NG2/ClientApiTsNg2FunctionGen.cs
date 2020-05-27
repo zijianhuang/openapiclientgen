@@ -45,10 +45,10 @@ namespace Fonlow.CodeDom.Web.Ts
 			OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ headers: {{ 'Content-Type': '{contentType}' }} }}";
 
 			const string optionsWithHeadersHandlerForResponse = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' }";
-			OptionsForResponse = settings.HandleHttpRequestHeaders ? "{ observe: 'response', responseType: 'text' }" : optionsWithHeadersHandlerForResponse;
+			OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : "{ observe: 'response', responseType: 'text' }";
 
 			var optionsWithHeadersHandler = "{ headers: headersHandler ? headersHandler() : undefined }";
-			Options = settings.HandleHttpRequestHeaders ? "{}" : optionsWithHeadersHandler;
+			Options = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandler : "{}";
 		}
 
 		protected override CodeMemberMethod CreateMethodName()

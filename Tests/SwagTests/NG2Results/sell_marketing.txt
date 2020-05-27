@@ -1242,7 +1242,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteAd(ad_id: string, campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1339,7 +1339,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteCampaign(campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1349,7 +1349,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		EndCampaign(campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/end', null, { observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/end', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1381,7 +1381,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		PauseCampaign(campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/pause', null, { observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/pause', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1391,7 +1391,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		ResumeCampaign(campaign_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/resume', null, { observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/resume', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1418,7 +1418,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GetReport(report_id: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'ad_report/' + (report_id == null ? '' : encodeURIComponent(report_id)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'ad_report/' + (report_id == null ? '' : encodeURIComponent(report_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1491,7 +1491,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteReportTask(report_task_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1538,7 +1538,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteItemPriceMarkdownPromotion(promotion_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1585,7 +1585,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeleteItemPromotion(promotion_id: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { observe: 'response', responseType: 'text' });
+			return this.http.delete(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
@@ -1606,7 +1606,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		GetListingSet(limit: string, offset: string, promotion_id: string, q: string, sort: string, status: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/get_listing_set?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&status=' + (status == null ? '' : encodeURIComponent(status)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/get_listing_set?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&status=' + (status == null ? '' : encodeURIComponent(status)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1632,7 +1632,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		PausePromotion(promotion_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/pause', null, { observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/pause', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1642,7 +1642,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		ResumePromotion(promotion_id: string): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/resume', null, { observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)) + '/resume', null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}
 
