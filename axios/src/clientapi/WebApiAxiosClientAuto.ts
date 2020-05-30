@@ -173,8 +173,8 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		AddPet(requestBody: Pet, headersHandler?: ()=>{[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }}).then(d => d.data as AxiosResponse<string>);
+		AddPet(requestBody: Pet): Promise<AxiosResponse<string>> {
+			return Axios.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -184,7 +184,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		UpdatePet(requestBody: Pet): Promise<AxiosResponse<string>> {
-			return Axios.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
+			return Axios.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -195,7 +195,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} successful operation
 		 */
 		GetPetById(petId: number): Promise<Pet> {
-			return Axios.get(this.baseUri + 'pet/' + petId).then(d => d.data as Pet);
+			return Axios.get(this.baseUri + 'pet/' + petId).then(d => d.data);
 		}
 
 		/**
@@ -216,7 +216,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>): Promise<Array<Pet>> {
-			return Axios.get(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&')).then(d => d.data as Array<Pet>);
+			return Axios.get(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&')).then(d => d.data);
 		}
 
 		/**
@@ -237,7 +237,7 @@ export namespace My_Pet_Client {
 		 * @return {string} successful operation
 		 */
 		GetInventory(): Promise<string> {
-			return Axios.get(this.baseUri + 'store/inventory', { responseType: 'text' }).then(d => d.data as string);
+			return Axios.get(this.baseUri + 'store/inventory', { responseType: 'text' }).then(d => d.data);
 		}
 
 		/**
@@ -247,7 +247,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		PlaceOrder(requestBody: Order): Promise<Order> {
-			return Axios.post(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as Order);
+			return Axios.post(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -258,7 +258,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		GetOrderById(orderId: number): Promise<Order> {
-			return Axios.get(this.baseUri + 'store/order/' + orderId).then(d => d.data as Order);
+			return Axios.get(this.baseUri + 'store/order/' + orderId).then(d => d.data);
 		}
 
 		/**
@@ -269,7 +269,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		DeleteOrder(orderId: string): Promise<AxiosResponse<string>> {
-			return Axios.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId))).then(d => d.data as AxiosResponse<string>);
+			return Axios.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId))).then(d => d.data);
 		}
 
 		/**
@@ -280,7 +280,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		CreateUser(requestBody: User): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
+			return Axios.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -290,7 +290,7 @@ export namespace My_Pet_Client {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string): Promise<User> {
-			return Axios.get(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username))).then(d => d.data as User);
+			return Axios.get(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username))).then(d => d.data);
 		}
 
 		/**
@@ -302,7 +302,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		UpdateUser(username: string, requestBody: User): Promise<AxiosResponse<string>> {
-			return Axios.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
+			return Axios.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -313,7 +313,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		DeleteUser(username: string): Promise<AxiosResponse<string>> {
-			return Axios.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username))).then(d => d.data as AxiosResponse<string>);
+			return Axios.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username))).then(d => d.data);
 		}
 
 		/**
@@ -323,7 +323,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		CreateUsersWithArrayInput(requestBody: Array<User>): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
+			return Axios.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -333,7 +333,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		CreateUsersWithListInput(requestBody: Array<User>): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
+			return Axios.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -344,7 +344,7 @@ export namespace My_Pet_Client {
 		 * @return {string} successful operation
 		 */
 		LoginUser(username: string, password: string): Promise<string> {
-			return Axios.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { responseType: 'text' }).then(d => d.data as string);
+			return Axios.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { responseType: 'text' }).then(d => d.data);
 		}
 
 		/**
@@ -353,7 +353,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		LogoutUser(): Promise<AxiosResponse<string>> {
-			return Axios.get(this.baseUri + 'user/logout').then(d => d.data as AxiosResponse<string>);
+			return Axios.get(this.baseUri + 'user/logout').then(d => d.data);
 		}
 	}
 
