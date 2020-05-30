@@ -115,6 +115,7 @@ describe('Pet API', () => {
 			response => {
 				console.info('Response is ' + JSON.stringify(response));
 				expect(response).toContain('Pet');
+				expect(response).toContain('01234567');
 				done();
 			},
 			error => {

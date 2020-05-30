@@ -137,6 +137,8 @@ describe('Pet API', () => {
 				expect(response.status).toBe(200);
 				console.debug('headers: '+ response.headers.keys().join(', '));
 				//expect(response.headers.get('transaction-id')).toBe('01234567');//https://stackoverflow.com/questions/52443706/angular-httpclient-missing-response-headers
+				expect(response.body).toContain('Pet');
+				expect(response.body).toContain('01234567');
 				done();
 			},
 			error => {

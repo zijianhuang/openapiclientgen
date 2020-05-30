@@ -44,17 +44,17 @@ namespace Fonlow.CodeDom.Web.Ts
 			var contentOptionsWithHeadersHandlerForString = $"{{ headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }},  responseType: 'text' }}";
 			ContentOptionsForString = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForString : $"{{ headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }}";
 
-			var contentOptionsWithHeadersHandlerForResponse = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}), observe: 'response', responseType: 'text' }}";
+			var contentOptionsWithHeadersHandlerForResponse = $"{{ headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, observe: 'response', responseType: 'text' }}";
 			ContentOptionsForResponse = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForResponse : $"{{ headers: {{ 'Content-Type': '{contentType}' }}, observe: 'response', responseType: 'text' }}";
 
-			var optionsWithHeadersHandlerAndContent = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}) }}";
+			var optionsWithHeadersHandlerAndContent = $"{{ headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }} }}";
 			OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ headers: {{ 'Content-Type': '{contentType}' }} }}";
 
 			const string optionsWithHeadersHandlerForString = "{ headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }";
 			OptionsForString = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForString : "{ responseType: 'text' }";
 
-			const string optionsWithHeadersHandlerForResponse = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' }";
-			OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : "{ observe: 'response', responseType: 'text' }";
+			const string optionsWithHeadersHandlerForResponse = "{ headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }";
+			OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : "{ responseType: 'text' }";
 
 			var optionsWithHeadersHandler = "{ headers: headersHandler ? headersHandler() : undefined }";
 			Options = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandler : "{}";
@@ -107,6 +107,12 @@ namespace Fonlow.CodeDom.Web.Ts
 				Method.Parameters.Add(p);
 			}
 
+			if (settings.HandleHttpRequestHeaders)
+			{
+				Method.Parameters.Add(new CodeParameterDeclarationExpression(
+					"() => {[header: string]: string}", "headersHandler?"));
+			}
+
 			var jsUriQuery = UriQueryHelper.CreateUriQueryForTs(RelativePath, ParameterDescriptions);
 			var uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" :
 				RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
@@ -115,7 +121,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {{ responseType: 'text' }}).then(d => d.data);")); //todo: type cast is not really needed.
+					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {OptionsForString}).then(d => d.data);")); //todo: type cast is not really needed.
 					return;
 				}
 
@@ -123,47 +129,45 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {{headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {ContentOptionsForString}).then(d => d.data);"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{ headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForString}).then(d => d.data);"));
 					}
 
 					return;
 				}
 			}
-			else if (returnTypeText == AxiostHttpBlobResponse)//translated from blobresponse to this
-			{
-				const string optionForStream = "{ responseType: 'blob' }";
+			//else if (returnTypeText == AxiostHttpBlobResponse)//translated from blobresponse to this
+			//{
+			//	const string optionForStream = "{ responseType: 'blob' }";
 
-				if (httpMethodName == "get" || httpMethodName == "delete")
-				{
-					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {optionForStream}).then(d => d.data);"));
-					return;
-				}
+			//	if (httpMethodName == "get" || httpMethodName == "delete")
+			//	{
+			//		Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {optionForStream}).then(d => d.data);"));
+			//		return;
+			//	}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
-				{
-					if (RequestBodyCodeTypeReference == null)
-					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {optionForStream}).then(d => d.data);"));
-					}
-					else
-					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForStream}).then(d => d.data);"));
-					}
+			//	if (httpMethodName == "post" || httpMethodName == "put")
+			//	{
+			//		if (RequestBodyCodeTypeReference == null)
+			//		{
+			//			Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {optionForStream}).then(d => d.data);"));
+			//		}
+			//		else
+			//		{
+			//			Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForStream}).then(d => d.data);"));
+			//		}
 
-					return;
-				}
-			}
+			//		return;
+			//	}
+			//}
 			else if (returnTypeText == AxiosHttpStringResponse)//translated from response to this
 			{
-				const string optionForActionResult = "{ responseType: 'text' }";
-
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {optionForActionResult}).then(d => d.data);"));
+					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {OptionsForResponse}).then(d => d.data);"));
 					return;
 				}
 
@@ -171,11 +175,11 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {optionForActionResult}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {OptionsForResponse}).then(d => d.data);"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{ headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {OptionsForResponse});"));
 					}
 
 					return;
@@ -184,11 +188,9 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 			else if (returnTypeText == AxiosHttpResponse) // client should care about only status
 			{
-				const string optionForActionResult = "{ responseType: 'text' }";
-
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {optionForActionResult});"));
+					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {Options});"));
 					return;
 				}
 
@@ -196,11 +198,11 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {optionForActionResult});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {Options});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{ headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForString});"));
 					}
 
 					return;
@@ -224,11 +226,11 @@ namespace Fonlow.CodeDom.Web.Ts
 
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {{ headers: {{ 'Content-Type': '{contentType}' }} }}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {Options}).then(d => d.data);"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {{ headers: {{ 'Content-Type': '{contentType}' }} }}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {OptionsWithContent}).then(d => d.data);"));
 					}
 
 					return;

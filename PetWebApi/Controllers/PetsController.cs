@@ -27,7 +27,7 @@ namespace MyNamespace
             body.Id = key;
             PetData.Instance.Dic.TryAdd(key, body);
             Response.Headers.Add("transaction-id", Request.Headers["transaction-id"]);
-            return Ok(body.Name);
+            return Ok(body.Name + " " + Request.Headers["transaction-id"]);
         }
 
         /// <summary>Update an existing pet</summary>
