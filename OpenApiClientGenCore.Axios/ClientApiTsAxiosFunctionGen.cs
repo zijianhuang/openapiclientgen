@@ -80,7 +80,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {{ responseType: 'text' }}).then(d => d.data as {typeCast});"));
+					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {{ responseType: 'text' }}).then(d => d.data as {typeCast});")); //todo: type cast is not really needed.
 					return;
 				}
 

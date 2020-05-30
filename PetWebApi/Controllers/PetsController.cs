@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
+using System.Net.Http;
 
 namespace MyNamespace
 {
@@ -25,6 +26,7 @@ namespace MyNamespace
             var key = PetData.Instance.GetCurrentMax();
             body.Id = key;
             PetData.Instance.Dic.TryAdd(key, body);
+            Response.Headers.Add("transaction-id", Request.Headers["transaction-id"]);
             return Ok(body.Name);
         }
 

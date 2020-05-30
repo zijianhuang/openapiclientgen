@@ -173,8 +173,8 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		AddPet(requestBody: Pet): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
+		AddPet(requestBody: Pet, headersHandler?: ()=>{[header: string]: string}): Promise<AxiosResponse<string>> {
+			return Axios.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }}).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -205,7 +205,7 @@ export namespace My_Pet_Client {
 		 * @return {void} 
 		 */
 		DeletePet(petId: number): Promise<AxiosResponse<string>> {
-			return Axios.delete(this.baseUri + 'pet/' + petId).then(d => d.data as AxiosResponse<string>);
+			return Axios.delete(this.baseUri + 'pet/' + petId).then(d => d.data);
 		}
 
 		/**
@@ -227,7 +227,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByTags(tags: Array<string>): Promise<Array<Pet>> {
-			return Axios.get(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&')).then(d => d.data as Array<Pet>);
+			return Axios.get(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&')).then(d => d.data);
 		}
 
 		/**

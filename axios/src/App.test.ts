@@ -97,7 +97,7 @@ describe('Pet API', () => {
 	it('DeletePet', (done) => {
 		service.DeletePet(13).then(
 			data => {
-				expect(data).toBe('');
+				expect(data).toBe(''); // when ok, data is string of body, rather than a response structure.
 				done();
 			},
 			error => {
@@ -111,10 +111,10 @@ describe('Pet API', () => {
 	);
 
 	it('AddPetWithHeaders', (done) => {
-		service.AddPet({ name: 'Pet' + Date.now().toString(), photoUrls: [] }).then(
+		service.AddPet({ name: 'Pet' + Date.now().toString(), photoUrls: [] }, ()=>{return { 'transaction-id': '01234567' }}).then(
 			response => {
 				console.info('Response is ' + JSON.stringify(response));
-				expect(response.status).toBe(200);
+				expect(response).toContain('Pet');
 				done();
 			},
 			error => {
