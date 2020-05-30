@@ -1,0 +1,50 @@
+import Axios from 'axios';
+import { AxiosResponse } from 'axios';
+export namespace MyNS {
+	export interface Pet {
+		id: number;
+		name: string;
+		tag?: string;
+	}
+
+	export interface Error {
+		code: number;
+		message: string;
+	}
+
+	export class PetsClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
+
+		/**
+		 * List all pets
+		 * Get pets
+		 * @param {number} limit How many items to return at one time (max 100)
+		 * @return {Array<Pet>} A paged array of pets
+		 */
+		ListPets(limit: number): Promise<Array<Pet>> {
+			return Axios.get(this.baseUri + 'pets?limit=' + limit).then(d => d.data);
+		}
+
+		/**
+		 * Create a pet
+		 * Post pets
+		 * @return {void} 
+		 */
+		CreatePets(): Promise<AxiosResponse<string>> {
+			return Axios.post(this.baseUri + 'pets', null, {}).then(d => d.data);
+		}
+
+		/**
+		 * Info for a specific pet
+		 * Get pets/{petId}
+		 * @param {string} petId The id of the pet to retrieve
+		 * @return {Pet} Expected response to a valid request
+		 */
+		ShowPetById(petId: string): Promise<Pet> {
+			return Axios.get(this.baseUri + 'pets/' + (petId == null ? '' : encodeURIComponent(petId))).then(d => d.data);
+		}
+	}
+
+}
+

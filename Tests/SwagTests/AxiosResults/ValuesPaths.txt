@@ -1,0 +1,50 @@
+import Axios from 'axios';
+import { AxiosResponse } from 'axios';
+export namespace MyNS {
+	export class ValuesClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
+
+		/**
+		 * Get api/Values
+		 * @return {Array<string>} Success
+		 */
+		ValuesGet(): Promise<Array<string>> {
+			return Axios.get(this.baseUri + 'api/Values').then(d => d.data);
+		}
+
+		/**
+		 * Post api/Values
+		 * @return {string} Success
+		 */
+		ValuesPost(requestBody: string): Promise<string> {
+			return Axios.post(this.baseUri + 'api/Values', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => d.data);
+		}
+
+		/**
+		 * Get api/Values/{id}
+		 * @return {string} Success
+		 */
+		ValuesGetById(id: number): Promise<string> {
+			return Axios.get(this.baseUri + 'api/Values/' + id, { responseType: 'text' }).then(d => d.data);
+		}
+
+		/**
+		 * Put api/Values/{id}
+		 * @return {void} Success
+		 */
+		ValuesPutById(id: number, requestBody: string): Promise<AxiosResponse<string>> {
+			return Axios.put(this.baseUri + 'api/Values/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+		}
+
+		/**
+		 * Delete api/Values/{id}
+		 * @return {void} Success
+		 */
+		ValuesDeleteById(id: number): Promise<AxiosResponse<string>> {
+			return Axios.delete(this.baseUri + 'api/Values/' + id).then(d => d.data);
+		}
+	}
+
+}
+
