@@ -18,6 +18,14 @@
             "TSFile": "ClientApiAuto.ts",
             "AsModule": true,
             "ContentType": "application/json;charset=UTF-8"
+        },
+
+        {
+            "AssemblyName": "Fonlow.OpenApiClientGen.Axios",
+            "TargetDir": "./axios/src/clientapi",
+            "TSFile": "WebApiAxiosClientAuto.ts",
+            "AsModule": true,
+            "ContentType": "application/json;charset=UTF-8"
         }
     ]
 

@@ -22,7 +22,10 @@ export namespace My_Pet_Client {
 		/**Category ID */
 		id?: number;
 
-		/**Category name */
+		/**
+		 * Category name
+		 * Min length: 1
+		 */
 		name?: string;
 
 		/**Test Sub Category */
@@ -33,7 +36,10 @@ export namespace My_Pet_Client {
 	/**A representation of a dog */
 	export interface Dog extends Pet {
 
-		/**The size of the pack the dog is from */
+		/**
+		 * The size of the pack the dog is from
+		 * Minimum: 1
+		 */
 		packSize: number;
 	}
 
@@ -80,11 +86,17 @@ export namespace My_Pet_Client {
 		/**The name given to a pet */
 		name: string;
 
-		/**The list of URL to a cute photos featuring pet */
+		/**
+		 * The list of URL to a cute photos featuring pet
+		 * Maximum items: 20
+		 */
 		photoUrls: Array<string>;
 		friend?: string;
 
-		/**Tags attached to the pet */
+		/**
+		 * Tags attached to the pet
+		 * Minimum items: 1
+		 */
 		tags?: Array<Tag>;
 
 		/**Pet status in the store */
@@ -101,7 +113,10 @@ export namespace My_Pet_Client {
 		/**Tag ID */
 		id?: number;
 
-		/**Tag name */
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
 		name?: string;
 	}
 
@@ -109,22 +124,38 @@ export namespace My_Pet_Client {
 		id?: number;
 		pet?: string;
 
-		/**User supplied username */
+		/**
+		 * User supplied username
+		 * Min length: 4
+		 */
 		username?: string;
 
-		/**User first name */
+		/**
+		 * User first name
+		 * Min length: 1
+		 */
 		firstName?: string;
 
-		/**User last name */
+		/**
+		 * User last name
+		 * Min length: 1
+		 */
 		lastName?: string;
 
 		/**User email address */
 		email?: string;
 
-		/**User password, MUST contain a mix of upper and lower case letters, as well as digits */
+		/**
+		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
+		 * Min length: 8
+		 * Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
+		 */
 		password?: string;
 
-		/**User phone number in international format */
+		/**
+		 * User phone number in international format
+		 * Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
+		 */
 		phone?: string;
 
 		/**User status */
@@ -142,8 +173,8 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		AddPet(requestBody: Pet): Promise<> {
-			return Axios.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as );
+		AddPet(requestBody: Pet): Promise<AxiosResponse<string>> {
+			return Axios.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -152,8 +183,8 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		UpdatePet(requestBody: Pet): Promise<> {
-			return Axios.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as );
+		UpdatePet(requestBody: Pet): Promise<AxiosResponse<string>> {
+			return Axios.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -173,30 +204,30 @@ export namespace My_Pet_Client {
 		 * @param {number} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number): Promise<> {
-			return Axios.delete(this.baseUri + 'pet/' + petId).then(d => d.data as );
+		DeletePet(petId: number): Promise<AxiosResponse<string>> {
+			return Axios.delete(this.baseUri + 'pet/' + petId).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
 		 * Finds Pets by status
 		 * Multiple status values can be provided with comma separated strings
 		 * Get pet/findByStatus
-		 * @param {string} status Status values that need to be considered for filter
+		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByStatus(status: string): Promise<Array<Pet>> {
-			return Axios.get(this.baseUri + 'pet/findByStatus?status=' + encodeURIComponent(status)).then(d => d.data as Array<Pet>);
+		FindPetsByStatus(status: Array<PetStatus>): Promise<Array<Pet>> {
+			return Axios.get(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&')).then(d => d.data as Array<Pet>);
 		}
 
 		/**
 		 * Finds Pets by tags
 		 * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
 		 * Get pet/findByTags
-		 * @param {string} tags Tags to filter by
+		 * @param {Array<string>} tags Tags to filter by
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByTags(tags: string): Promise<Array<Pet>> {
-			return Axios.get(this.baseUri + 'pet/findByTags?tags=' + encodeURIComponent(tags)).then(d => d.data as Array<Pet>);
+		FindPetsByTags(tags: Array<string>): Promise<Array<Pet>> {
+			return Axios.get(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&')).then(d => d.data as Array<Pet>);
 		}
 
 		/**
@@ -237,8 +268,8 @@ export namespace My_Pet_Client {
 		 * @param {string} orderId ID of the order that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteOrder(orderId: string): Promise<> {
-			return Axios.delete(this.baseUri + 'store/order/' + encodeURIComponent(orderId)).then(d => d.data as );
+		DeleteOrder(orderId: string): Promise<AxiosResponse<string>> {
+			return Axios.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId))).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -248,8 +279,8 @@ export namespace My_Pet_Client {
 		 * @param {User} requestBody Created user object
 		 * @return {void} 
 		 */
-		CreateUser(requestBody: User): Promise<> {
-			return Axios.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as );
+		CreateUser(requestBody: User): Promise<AxiosResponse<string>> {
+			return Axios.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -259,7 +290,7 @@ export namespace My_Pet_Client {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string): Promise<User> {
-			return Axios.get(this.baseUri + 'user/' + encodeURIComponent(username)).then(d => d.data as User);
+			return Axios.get(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username))).then(d => d.data as User);
 		}
 
 		/**
@@ -270,8 +301,8 @@ export namespace My_Pet_Client {
 		 * @param {User} requestBody Updated user object
 		 * @return {void} 
 		 */
-		UpdateUser(username: string, requestBody: User): Promise<> {
-			return Axios.put(this.baseUri + 'user/' + encodeURIComponent(username), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as );
+		UpdateUser(username: string, requestBody: User): Promise<AxiosResponse<string>> {
+			return Axios.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -281,8 +312,8 @@ export namespace My_Pet_Client {
 		 * @param {string} username The name that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteUser(username: string): Promise<> {
-			return Axios.delete(this.baseUri + 'user/' + encodeURIComponent(username)).then(d => d.data as );
+		DeleteUser(username: string): Promise<AxiosResponse<string>> {
+			return Axios.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username))).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -291,8 +322,8 @@ export namespace My_Pet_Client {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithArrayInput(requestBody: Array<User>): Promise<> {
-			return Axios.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as );
+		CreateUsersWithArrayInput(requestBody: Array<User>): Promise<AxiosResponse<string>> {
+			return Axios.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -301,8 +332,8 @@ export namespace My_Pet_Client {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithListInput(requestBody: Array<User>): Promise<> {
-			return Axios.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as );
+		CreateUsersWithListInput(requestBody: Array<User>): Promise<AxiosResponse<string>> {
+			return Axios.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data as AxiosResponse<string>);
 		}
 
 		/**
@@ -313,7 +344,7 @@ export namespace My_Pet_Client {
 		 * @return {string} successful operation
 		 */
 		LoginUser(username: string, password: string): Promise<string> {
-			return Axios.get(this.baseUri + 'user/login?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password), { responseType: 'text' }).then(d => d.data as string);
+			return Axios.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { responseType: 'text' }).then(d => d.data as string);
 		}
 
 		/**
@@ -321,8 +352,8 @@ export namespace My_Pet_Client {
 		 * Get user/logout
 		 * @return {void} 
 		 */
-		LogoutUser(): Promise<> {
-			return Axios.get(this.baseUri + 'user/logout').then(d => d.data as );
+		LogoutUser(): Promise<AxiosResponse<string>> {
+			return Axios.get(this.baseUri + 'user/logout').then(d => d.data as AxiosResponse<string>);
 		}
 	}
 

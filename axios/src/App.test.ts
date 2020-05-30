@@ -1,63 +1,128 @@
-import AXIOS from 'axios';
+import { AxiosAdapter, AxiosResponse, AxiosError } from 'axios';
 import * as namespaces from './clientapi/WebApiAxiosClientAuto';
-//import * as namespaces from './clientapi/WebApiCoreAxiosClientAuto';
 
-const DemoWebApi_Controllers_Client = namespaces.DemoWebApi_Controllers_Client;
-const apiBaseUri = 'http://localhost:10965/';
+// JEST provides a few ways of handling async code. This test suite use callbacks, 
+// since it is a simple hack from the test suite initially written for Angular 2.
 
-it('simple axios', async () => {
-	const data = await AXIOS.get('https://fonlow.com');
-	expect(data).toBeDefined();
-});
+const My_Pet_Client = namespaces.My_Pet_Client;
+const apiBaseUri = 'http://localhost:5000/';
 
-it('simple axios not reachable', async () => {
-	try {
-		const data = await AXIOS.get('https://fonlowkkkk.com');
-		expect(true).toBeFalsy();
-	} catch (e) {
-		//do nothing
+function instanceOfAxiosError(obj: any): obj is AxiosError {
+	return 'isAxiosError' in obj;
+}
+
+export function errorResponseToString(error: AxiosError | any, ): string {
+	let errMsg: string;
+	if (instanceOfAxiosError(error)) {
+		if (error.response.status === 0) {
+			errMsg = 'No response from backend. Connection is unavailable.';
+		} else {
+			if (error.message) {
+				errMsg = `${error.response.status} - ${error.response.statusText}: ${error.message}`;
+			} else {
+				errMsg = `${error.response.status} - ${error.response.statusText}`;
+			}
+		}
+
+		errMsg += error.message ? (' ' + JSON.stringify(error.message)) : '';
+		return errMsg;
+	} else {
+		errMsg = error.message ? error.message : error.toString();
+		return errMsg;
 	}
+}
+
+describe('Pet API', () => {
+	const service = new namespaces.My_Pet_Client.PetClient(apiBaseUri);
+
+	it('getPetById', (done) => {
+		service.GetPetById(12).then(
+			data => {
+				expect(data.name).toBe('Narco');
+				done();
+			},
+			error => {
+				fail(errorResponseToString(error));
+				done();
+			}
+		);
+	}
+	);
+
+	it('getPetByIdWithHeaders', (done) => {
+		service.GetPetById(13).then(
+			data => {
+				expect(data.name).toBe('Bombasto');
+				done();
+			},
+			error => {
+				fail(errorResponseToString(error));
+				done();
+			}
+		);
+	}
+	);
+
+	it('FindPetsByStatus', (done) => {
+		service.FindPetsByStatus([My_Pet_Client.PetStatus.sold, My_Pet_Client.PetStatus.pending]).then(
+			data => {
+				expect(data.length).toBe(3);
+				done();
+			},
+			error => {
+				fail(errorResponseToString(error));
+				done();
+			}
+		);
+	}
+	);
+
+	it('DeletePetNotFound', (done) => {
+		service.DeletePet(9).then(
+			data => {
+				fail("Not good.")
+				done();
+			},
+			error => {
+				const msg = errorResponseToString(error);
+				console.debug('DeletePet: ' + msg);
+				expect(error.response.status).toBe(404);
+				expect(error.response.data).toContain("NoSuchPet");
+				done();
+			}
+		);
+	}
+	);
+
+	it('DeletePet', (done) => {
+		service.DeletePet(13).then(
+			data => {
+				expect(data).toBe('');
+				done();
+			},
+			error => {
+				const msg = errorResponseToString(error);
+				console.debug('DeletePet: ' + msg);
+				expect(msg).toContain("NoSuchPet");
+				done();
+			}
+		);
+	}
+	);
+
+	it('AddPetWithHeaders', (done) => {
+		service.AddPet({ name: 'Pet' + Date.now().toString(), photoUrls: [] }).then(
+			response => {
+				console.info('Response is ' + JSON.stringify(response));
+				expect(response.status).toBe(200);
+				done();
+			},
+			error => {
+				fail(errorResponseToString(error));
+				done();
+			}
+		);
+	}
+	);
+
 });
-
-describe("values api", () => {
-	const valuesApi = new DemoWebApi_Controllers_Client.Values(apiBaseUri);
-	console.debug('created');
-	it('get', async () => {
-		const data = await AXIOS.get('http://localhost:10965/api/values')
-		const v: Array<string> = data.data;
-		expect(v[1]).toEqual('value2');
-	});
-
-	test('get2', async () => {
-		const data = await AXIOS.get('http://localhost:10965/api/values').then(d => d.data as Array<string>);
-		expect(data[1]).toEqual('value2');
-	});
-
-	test('get3', async () => {
-		const data = await valuesApi.get();
-		expect(data[1]).toEqual('value2');
-	});
-
-	it('getByIdAndName', async () => {
-		const data = await valuesApi.getByIdAndName(1, 'Abc');
-		expect(data).toBe('Abc1');		
-	});
-
-	it('post', async () => {
-		const data = await valuesApi.post('Abc');
-		expect(data).toBe('ABC');
-	});
-
-	it('put', async () => {
-		const response = await valuesApi.put(1, 'Efg');
-		expect(response.status).toBeLessThan(250);//200 or 204
-	});
-
-	it('delete', async () => {
-		const response = await valuesApi.delete(999);
-		expect(response.status).toBeLessThan(250);
-	});
-
-
-})
-
