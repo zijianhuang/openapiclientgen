@@ -21,6 +21,14 @@
         },
 
         {
+            "AssemblyName": "Fonlow.OpenApiClientGen.Aurelia",
+            "TargetDir": "./aurelia/src/clientapi",
+            "TSFile": "WebApiAureliaClientAuto.ts",
+            "AsModule": true,
+            "ContentType": "application/json;charset=UTF-8"
+        },
+
+        {
             "AssemblyName": "Fonlow.OpenApiClientGen.Axios",
             "TargetDir": "./axios/src/clientapi",
             "TSFile": "WebApiAxiosClientAuto.ts",

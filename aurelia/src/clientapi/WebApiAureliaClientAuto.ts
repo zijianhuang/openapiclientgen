@@ -1,5 +1,5 @@
-import Axios from 'axios';
-import { AxiosResponse } from 'axios';
+import {HttpClient} from 'aurelia-fetch-client';
+import {autoinject} from 'aurelia-framework';
 export namespace My_Pet_Client {
 	export interface ApiResponse {
 		code?: number;
@@ -162,8 +162,9 @@ export namespace My_Pet_Client {
 		userStatus?: number;
 	}
 
+	@autoinject()
 	export class PetClient {
-		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		constructor(private http: HttpClient) {
 		}
 
 		/**
@@ -173,8 +174,8 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		AddPet(requestBody: Pet, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+		AddPet(requestBody: Pet, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.post('pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -183,8 +184,8 @@ export namespace My_Pet_Client {
 		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		UpdatePet(requestBody: Pet, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+		UpdatePet(requestBody: Pet, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.put('pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -195,7 +196,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} successful operation
 		 */
 		GetPetById(petId: number, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
-			return Axios.get<Pet>(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
+			return this.http.get('pet/' + petId, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
 		}
 
 		/**
@@ -204,8 +205,8 @@ export namespace My_Pet_Client {
 		 * @param {number} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.delete(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
+		DeletePet(petId: number, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.delete('pet/' + petId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -216,7 +217,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>, headersHandler?: () => {[header: string]: string}): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
+			return this.http.get('pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
 		}
 
 		/**
@@ -227,7 +228,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByTags(tags: Array<string>, headersHandler?: () => {[header: string]: string}): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
+			return this.http.get('pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
 		}
 
 		/**
@@ -237,7 +238,7 @@ export namespace My_Pet_Client {
 		 * @return {string} successful operation
 		 */
 		GetInventory(headersHandler?: () => {[header: string]: string}): Promise<string> {
-			return Axios.get(this.baseUri + 'store/inventory', { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }).then(d => d.data);
+			return this.http.get('store/inventory', { headers: headersHandler ? headersHandler() : undefined }).then(d => d.text());
 		}
 
 		/**
@@ -247,7 +248,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		PlaceOrder(requestBody: Order, headersHandler?: () => {[header: string]: string}): Promise<Order> {
-			return Axios.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return this.http.post('store/order', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
 		}
 
 		/**
@@ -258,7 +259,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		GetOrderById(orderId: number, headersHandler?: () => {[header: string]: string}): Promise<Order> {
-			return Axios.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
+			return this.http.get('store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
 		}
 
 		/**
@@ -268,8 +269,8 @@ export namespace My_Pet_Client {
 		 * @param {string} orderId ID of the order that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteOrder(orderId: string, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
+		DeleteOrder(orderId: string, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.delete('store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -279,8 +280,8 @@ export namespace My_Pet_Client {
 		 * @param {User} requestBody Created user object
 		 * @return {void} 
 		 */
-		CreateUser(requestBody: User, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+		CreateUser(requestBody: User, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.post('user', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -290,7 +291,7 @@ export namespace My_Pet_Client {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string, headersHandler?: () => {[header: string]: string}): Promise<User> {
-			return Axios.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
+			return this.http.get('user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
 		}
 
 		/**
@@ -301,8 +302,8 @@ export namespace My_Pet_Client {
 		 * @param {User} requestBody Updated user object
 		 * @return {void} 
 		 */
-		UpdateUser(username: string, requestBody: User, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+		UpdateUser(username: string, requestBody: User, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.put('user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -312,8 +313,8 @@ export namespace My_Pet_Client {
 		 * @param {string} username The name that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteUser(username: string, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
+		DeleteUser(username: string, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.delete('user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -322,8 +323,8 @@ export namespace My_Pet_Client {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithArrayInput(requestBody: Array<User>, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+		CreateUsersWithArrayInput(requestBody: Array<User>, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.post('user/createWithArray', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -332,8 +333,8 @@ export namespace My_Pet_Client {
 		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.post('user/createWithList', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -344,7 +345,7 @@ export namespace My_Pet_Client {
 		 * @return {string} successful operation
 		 */
 		LoginUser(username: string, password: string, headersHandler?: () => {[header: string]: string}): Promise<string> {
-			return Axios.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }).then(d => d.data);
+			return this.http.get('user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.text());
 		}
 
 		/**
@@ -352,8 +353,8 @@ export namespace My_Pet_Client {
 		 * Get user/logout
 		 * @return {void} 
 		 */
-		LogoutUser(headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse<string>> {
-			return Axios.get(this.baseUri + 'user/logout', { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
+		LogoutUser(headersHandler?: () => {[header: string]: string}): Promise<Response> {
+			return this.http.get('user/logout', { headers: headersHandler ? headersHandler() : undefined });
 		}
 	}
 
