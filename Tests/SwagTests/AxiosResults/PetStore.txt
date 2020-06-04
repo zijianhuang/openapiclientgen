@@ -23,7 +23,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} A paged array of pets
 		 */
 		ListPets(limit: number): Promise<Array<Pet>> {
-			return Axios.get(this.baseUri + 'pets?limit=' + limit).then(d => d.data);
+			return Axios.get<Array<Pet>>(this.baseUri + 'pets?limit=' + limit, {}).then(d => d.data);
 		}
 
 		/**
@@ -32,7 +32,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreatePets(): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'pets', null, {}).then(d => d.data);
+			return Axios.post(this.baseUri + 'pets', null, { responseType: 'text' });
 		}
 
 		/**
@@ -42,7 +42,7 @@ export namespace MyNS {
 		 * @return {Pet} Expected response to a valid request
 		 */
 		ShowPetById(petId: string): Promise<Pet> {
-			return Axios.get(this.baseUri + 'pets/' + (petId == null ? '' : encodeURIComponent(petId))).then(d => d.data);
+			return Axios.get<Pet>(this.baseUri + 'pets/' + (petId == null ? '' : encodeURIComponent(petId)), {}).then(d => d.data);
 		}
 	}
 

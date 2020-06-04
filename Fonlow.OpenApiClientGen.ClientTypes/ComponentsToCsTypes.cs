@@ -21,7 +21,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			this.codeCompileUnit = codeCompileUnit;
 			this.settings = settings;
-			this.nameComposer = new NameComposer(settings);
 			this.ClientNamespace = clientNamespace;
 		}
 
@@ -30,8 +29,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly CodeCompileUnit codeCompileUnit;
 
 		readonly Settings settings;
-
-		readonly NameComposer nameComposer;
 
 		/// <summary>
 		/// Save TypeScript codes generated into a file.
@@ -44,19 +41,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			try
 			{
-				using (var stream = new MemoryStream())
-				using (StreamWriter writer = new StreamWriter(stream))
-				{
-					WriteCode(writer);
-					writer.Flush();
-					stream.Position = 0;
-					using (var stringReader = new StreamReader(stream))
-					using (var fileWriter = new StreamWriter(fileName))
-					{
-						var s = stringReader.ReadToEnd();
-						fileWriter.Write(s.Replace("//;", ""));
-					}
-				}
+				using MemoryStream stream = new MemoryStream();
+				using StreamWriter writer = new StreamWriter(stream);
+				WriteCode(writer);
+				writer.Flush();
+				stream.Position = 0;
+				using StreamReader stringReader = new StreamReader(stream);
+				using StreamWriter fileWriter = new StreamWriter(fileName);
+				string s = stringReader.ReadToEnd();
+				fileWriter.Write(s.Replace("//;", ""));
 			}
 			catch (IOException e)
 			{
@@ -77,20 +70,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//if (writer == null)
 			//	throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
 
-			using (CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp"))
-			{
-				CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
-				provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
-			}
+			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
+			CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
+			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
 		public string WriteToText()
 		{
-			using (var writer = new StringWriter())
-			{
-				WriteCode(writer);
-				return writer.ToString();
-			}
+			using StringWriter writer = new StringWriter();
+			WriteCode(writer);
+			return writer.ToString();
 		}
 
 		public void CreateCodeDom(OpenApiComponents components)
@@ -100,7 +89,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			foreach (var item in components.Schemas)
+			foreach (KeyValuePair<string, OpenApiSchema> item in components.Schemas)
 			{
 				AddTypeToClientNamespace(item);
 			}
@@ -111,13 +100,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			currentTypeName = ToTitleCase(item.Key);
 			Debug.WriteLine("clientClass: " + currentTypeName);
-			var schema = item.Value;
+			OpenApiSchema schema = item.Value;
 
-			var type = schema.Type;
-			var allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
-			var enumTypeList = schema.Enum; //maybe empty
+			string type = schema.Type;
+			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
+			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
-			var schemaProperties = schema.Properties;
+			//IDictionary<string, OpenApiSchema> schemaProperties = schema.Properties;
 			CodeTypeDeclaration typeDeclaration;
 			if (isForClass)
 			{
@@ -126,11 +115,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
 					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 					{
-						var allOfRef = allOfBaseTypeSchemaList[0];
-						var baseTypeName = allOfRef.Reference.Id; //pointing to parent class
+						OpenApiSchema allOfRef = allOfBaseTypeSchemaList[0];
+						string baseTypeName = allOfRef.Reference.Id; //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
-						var allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
+						OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
 						AddProperties(typeDeclaration, allOfProperteisSchema);
 					}
 
@@ -150,7 +139,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (type == "array") // wrapper of array. Microsoft OpenApi library could not intepret this as type alias, so I have to register the alias myself.
 				{
-					var itemsRef = schema.Items.Reference;
+					OpenApiReference itemsRef = schema.Items.Reference;
 					TypeAliasDic.Instance.Add(currentTypeName, $"{itemsRef.Id}[]");
 				}
 				else
@@ -180,14 +169,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
 			int k = 0;
-			foreach (var enumMember in enumTypeList)
+			foreach (IOpenApiAny enumMember in enumTypeList)
 			{
-				var stringMember = enumMember as OpenApiString;
-				if (stringMember != null)
+				if (enumMember is OpenApiString stringMember)
 				{
-					var memberName = stringMember.Value;
-					var intValue = k;
-					var clientField = new CodeMemberField()
+					string memberName = stringMember.Value;
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),
@@ -203,10 +191,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else
 				{
-					var intMember = enumMember as OpenApiInteger;
-					var memberName = "_" + intMember.Value.ToString();
-					var intValue = k;
-					var clientField = new CodeMemberField()
+					OpenApiInteger intMember = enumMember as OpenApiInteger;
+					string memberName = "_" + intMember.Value.ToString();
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),
@@ -220,24 +208,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		string currentTypeName;
 
-		static readonly Type nullableDateTimeOffset = typeof(DateTimeOffset?);
-		static readonly Type typeofDateTimeOffset = typeof(DateTimeOffset);
-
 		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema)
 		{
-			foreach (var p in schema.Properties)
+			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
-				var propertyName = ToTitleCase(p.Key);
+				string propertyName = ToTitleCase(p.Key);
 				if (propertyName == currentTypeName)
 				{
 					propertyName += "1";
 				}
 
-				var propertySchema = p.Value;
-				var primitivePropertyType = propertySchema.Type;
-				var isPrimitiveType = TypeRefBuilder.IsPrimitiveType(primitivePropertyType);
-				var isRequired = schema.Required.Contains(p.Key); //compare with the original key
-				var defaultValue = GetDefaultValue(propertySchema);
+				OpenApiSchema propertySchema = p.Value;
+				string primitivePropertyType = propertySchema.Type;
+				bool isPrimitiveType = TypeRefBuilder.IsPrimitiveType(primitivePropertyType);
+				bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
+				string defaultValue = GetDefaultValue(propertySchema);
 				//Debug.Assert(propertyName != "HuntingSkill");
 				CodeMemberField clientProperty;
 				if (String.IsNullOrEmpty(primitivePropertyType)) // for custom type, pointing to a custom time "$ref": "#/components/schemas/PhoneType"
@@ -245,7 +230,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					OpenApiSchema refToType = null;
 					if (propertySchema.Reference != null)
 					{
-						var typeId = propertySchema.Reference.Id;
+						string typeId = propertySchema.Reference.Id;
 						clientProperty = CreateProperty(propertyName, typeId, defaultValue);
 					}
 					else
@@ -263,9 +248,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							refToType = propertySchema.AnyOf[0];
 						}
 
-						var customPropertyType = refToType.Type;
-						var customPropertyFormat = refToType.Format;
-						var customType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
+						string customPropertyType = refToType.Type;
+						string customPropertyFormat = refToType.Format;
+						Type customType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
 						if (!customType.IsClass && !isRequired)
 						{
 							clientProperty = CreateNullableProperty(propertyName, customType);
@@ -280,40 +265,40 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Type == "array") // for array
 					{
-						var arrayItemsSchema = propertySchema.Items;
+						OpenApiSchema arrayItemsSchema = propertySchema.Items;
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
-							var arrayTypeName = arrayItemsSchema.Reference.Id;
-							var arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
+							string arrayTypeName = arrayItemsSchema.Reference.Id;
+							CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
 							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 						}
 						else
 						{
-							var arrayType = arrayItemsSchema.Type;
+							string arrayType = arrayItemsSchema.Type;
 							if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 							{
-								var casualTypeName = typeDeclaration.Name + ToTitleCase(propertyName);
-								var casualTypeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, casualTypeName);
+								string casualTypeName = typeDeclaration.Name + ToTitleCase(propertyName);
+								CodeTypeDeclaration casualTypeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, casualTypeName);
 								AddProperties(casualTypeDeclaration, arrayItemsSchema);
-								var arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, defaultValue);
 							}
 							else
 							{
-								var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
-								var arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
+								Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
+								CodeTypeReference arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
 					}
 					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
-						var complexType = propertySchema.Reference.Id;
+						string complexType = propertySchema.Reference.Id;
 						clientProperty = CreateProperty(propertyName, complexType, defaultValue);
 					}
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{
-						var simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
+						Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 						if (!simpleType.IsClass && !isRequired)
 						{
 							clientProperty = CreateNullableProperty(propertyName, simpleType);
@@ -325,8 +310,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else // for casual enum
 					{
-						var casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
-						var casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
+						string casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
+						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
 						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
 						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
 
@@ -383,39 +368,39 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (fieldSchema.MaxLength.HasValue)
 					{
-						var max = new CodeSnippetExpression(fieldSchema.MaxLength.Value.ToString());
+						CodeSnippetExpression max = new CodeSnippetExpression(fieldSchema.MaxLength.Value.ToString());
 						attributeParams.Add(new CodeAttributeArgument(max));
 					}
 					else
 					{
-						var max = new CodeSnippetExpression("int.MaxValue");
+						CodeSnippetExpression max = new CodeSnippetExpression("int.MaxValue");
 						attributeParams.Add(new CodeAttributeArgument(max));
 					}
 
 					if (fieldSchema.MinLength.HasValue)
 					{
-						var min = new CodeSnippetExpression(fieldSchema.MinLength.Value.ToString());
+						CodeSnippetExpression min = new CodeSnippetExpression(fieldSchema.MinLength.Value.ToString());
 						attributeParams.Add(new CodeAttributeArgument("MinimumLength", min));
 					}
 
-					var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.StringLength", attributeParams.ToArray());
+					CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.StringLength", attributeParams.ToArray());
 					memberField.CustomAttributes.Add(cad);
 				}
 				else
 				{
 					if (fieldSchema.MinLength.HasValue)
 					{
-						var len = new CodeSnippetExpression(fieldSchema.MinLength.Value.ToString());
-						var attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-						var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
+						CodeSnippetExpression len = new CodeSnippetExpression(fieldSchema.MinLength.Value.ToString());
+						CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+						CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
 						memberField.CustomAttributes.Add(cad);
 					}
 
 					if (fieldSchema.MaxLength.HasValue)
 					{
-						var len = new CodeSnippetExpression(fieldSchema.MaxLength.Value.ToString());
-						var attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-						var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
+						CodeSnippetExpression len = new CodeSnippetExpression(fieldSchema.MaxLength.Value.ToString());
+						CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+						CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
 						memberField.CustomAttributes.Add(cad);
 					}
 
@@ -424,48 +409,48 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (fieldSchema.Maximum.HasValue || fieldSchema.Minimum.HasValue)
 			{
-				var type = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(fieldSchema.Type, fieldSchema.Format);
+				Type type = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(fieldSchema.Type, fieldSchema.Format);
 				List<CodeAttributeArgument> attributeParams = new List<CodeAttributeArgument>();
 
 				if (fieldSchema.Minimum.HasValue)
 				{
-					var min = new CodeSnippetExpression($"{fieldSchema.Minimum.Value}");
+					CodeSnippetExpression min = new CodeSnippetExpression($"{fieldSchema.Minimum.Value}");
 					attributeParams.Add(new CodeAttributeArgument(min));
 				}
 				else
 				{
-					var min = new CodeSnippetExpression($"{type.FullName}.MinValue");
+					CodeSnippetExpression min = new CodeSnippetExpression($"{type.FullName}.MinValue");
 					attributeParams.Add(new CodeAttributeArgument(min));
 				}
 
 				if (fieldSchema.Maximum.HasValue)
 				{
-					var max = new CodeSnippetExpression($"{fieldSchema.Maximum.Value}");
+					CodeSnippetExpression max = new CodeSnippetExpression($"{fieldSchema.Maximum.Value}");
 					attributeParams.Add(new CodeAttributeArgument(max));
 				}
 				else
 				{
-					var max = new CodeSnippetExpression($"{type.FullName}.MaxValue");
+					CodeSnippetExpression max = new CodeSnippetExpression($"{type.FullName}.MaxValue");
 					attributeParams.Add(new CodeAttributeArgument(max));
 				}
 
-				var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Range", attributeParams.ToArray());
+				CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Range", attributeParams.ToArray());
 				memberField.CustomAttributes.Add(cad);
 			}
 
 			if (fieldSchema.MinItems.HasValue)
 			{
-				var len = new CodeSnippetExpression(fieldSchema.MinItems.Value.ToString());
-				var attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-				var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
+				CodeSnippetExpression len = new CodeSnippetExpression(fieldSchema.MinItems.Value.ToString());
+				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+				CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
 				memberField.CustomAttributes.Add(cad);
 			}
 
 			if (fieldSchema.MaxItems.HasValue)
 			{
-				var len = new CodeSnippetExpression(fieldSchema.MaxItems.Value.ToString());
-				var attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-				var cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
+				CodeSnippetExpression len = new CodeSnippetExpression(fieldSchema.MaxItems.Value.ToString());
+				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+				CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
 				memberField.CustomAttributes.Add(cad);
 			}
 
@@ -478,8 +463,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return null;
 			}
 
-			var stringValue = s.Default as OpenApiString;
-			if (stringValue != null)
+			if (s.Default is OpenApiString stringValue)
 			{
 				if (s.Enum == null || s.Enum.Count == 0)
 				{
@@ -494,26 +478,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			var integerValue = s.Default as OpenApiInteger;
-			if (integerValue != null)
+			if (s.Default is OpenApiInteger integerValue)
 			{
 				return integerValue.Value.ToString();
 			}
 
-			var boolValue = s.Default as OpenApiBoolean;
-			if (boolValue != null)
+			if (s.Default is OpenApiBoolean boolValue)
 			{
 				return boolValue.Value.ToString();
 			}
 
-			var floatValue = s.Default as OpenApiFloat;
-			if (floatValue != null)
+			if (s.Default is OpenApiFloat floatValue)
 			{
 				return floatValue.Value.ToString();
 			}
 
-			var doubleValue = s.Default as OpenApiDouble;
-			if (doubleValue != null)
+			if (s.Default is OpenApiDouble doubleValue)
 			{
 				return doubleValue.Value.ToString();
 			}
@@ -529,17 +509,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration)
 		{
-			var typeComment = item.Value.Description;
+			string typeComment = item.Value.Description;
 			AddDocComments(typeComment, typeDeclaration.Comments);
 
 		}
 
 		void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property)
 		{
-			var typeComment = item.Value.Description;
+			string typeComment = item.Value.Description;
 			if (settings.DataAnnotationsToComments)
 			{
-				var ss = CommentsHelper.GetCommentsFromAnnotations(item.Value);
+				List<string> ss = CommentsHelper.GetCommentsFromAnnotations(item.Value);
 				if (!String.IsNullOrEmpty(typeComment))
 				{
 					ss.Insert(0, typeComment);
@@ -596,8 +576,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + " { get; set; }//";
 
-			CodeMemberField result = new CodeMemberField($"System.Nullable<{type.FullName}>", memberName);
-			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
+			CodeMemberField result = new CodeMemberField($"System.Nullable<{type.FullName}>", memberName)
+			{
+				Attributes = MemberAttributes.Public | MemberAttributes.Final
+			};
 			return result;
 		}
 
@@ -614,8 +596,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
-			CodeMemberField result = new CodeMemberField(codeTypeReference, memberName);
-			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
+			CodeMemberField result = new CodeMemberField(codeTypeReference, memberName)
+			{
+				Attributes = MemberAttributes.Public | MemberAttributes.Final
+			};
 			return result;
 		}
 
@@ -626,8 +610,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (type.IsArray)
 			{
 				Debug.Assert(type.Name.EndsWith("]"));
-				var elementType = type.GetElementType();
-				var arrayRank = type.GetArrayRank();
+				Type elementType = type.GetElementType();
+				int arrayRank = type.GetArrayRank();
 				return CreateArrayTypeReference(elementType, arrayRank);
 			}
 
@@ -646,7 +630,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
 		{
-			var otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
+			CodeTypeReference otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
 			{
 				ArrayElementType = TranslateToClientTypeReference(elementType),
 			};
@@ -655,8 +639,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
 		{
-			var elementTypeReference = new CodeTypeReference(typeName);
-			var typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
+			CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
+			CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
 			{
 				ArrayElementType = elementTypeReference,
 			};

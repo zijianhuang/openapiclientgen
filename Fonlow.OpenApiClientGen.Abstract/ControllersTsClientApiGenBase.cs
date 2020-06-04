@@ -19,11 +19,10 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		CodeNamespace clientNamespace;
 		protected Settings settings;
-		JSOutput jsOutput;
+		readonly JSOutput jsOutput;
 
 		readonly NameComposer nameComposer;
-
-		Func<ClientApiTsFunctionGenAbstract> apiFunctionGenFactory; //to be injected in ctor of derived class.
+		readonly Func<ClientApiTsFunctionGenAbstract> apiFunctionGenFactory; //to be injected in ctor of derived class.
 
 		/// <summary>
 		/// 
@@ -51,10 +50,8 @@ namespace Fonlow.CodeDom.Web.Ts
 		/// </summary>
 		public void Save()
 		{
-			using (StreamWriter writer = new StreamWriter(jsOutput.JSPath))
-			{
-				WriteCode(writer);
-			}
+			using StreamWriter writer = new StreamWriter(jsOutput.JSPath);
+			WriteCode(writer);
 		}
 
 		/// <summary>
@@ -66,10 +63,8 @@ namespace Fonlow.CodeDom.Web.Ts
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
 
-			using (var provider = new TypeScriptCodeProvider(jsOutput.AsModule))
-			{
-				provider.GenerateCodeFromCompileUnit(CodeCompileUnit, writer, TsCodeGenerationOptions.Instance);
-			}
+			using TypeScriptCodeProvider provider = new TypeScriptCodeProvider(jsOutput.AsModule);
+			provider.GenerateCodeFromCompileUnit(CodeCompileUnit, writer, TsCodeGenerationOptions.Instance);
 		}
 
 		/// <summary>
@@ -78,11 +73,9 @@ namespace Fonlow.CodeDom.Web.Ts
 		/// <returns></returns>
 		public string WriteToText()
 		{
-			using (var writer = new StringWriter())
-			{
-				WriteCode(writer);
-				return writer.ToString();
-			}
+			using StringWriter writer = new StringWriter();
+			WriteCode(writer);
+			return writer.ToString();
 		}
 
 		/// <summary>
@@ -99,7 +92,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			clientNamespace = new CodeNamespace(settings.ClientNamespace);
 			CodeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
-			var componentsToTsTypes = new ComponentsToTsTypes(settings, CodeCompileUnit, clientNamespace);
+			ComponentsToTsTypes componentsToTsTypes = new ComponentsToTsTypes(settings, CodeCompileUnit, clientNamespace);
 			componentsToTsTypes.CreateCodeDom(components);
 
 			if (paths == null)
@@ -107,31 +100,31 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			AddBasicReferences();
 
-			var containerClassNames = GetContainerClassNames(paths);
+			string[] containerClassNames = GetContainerClassNames(paths);
 
-			var newClassesCreated = containerClassNames.Select(d => CreateControllerClientClass(clientNamespace, d)).ToArray();
+			CodeTypeDeclaration[] newClassesCreated = containerClassNames.Select(d => CreateControllerClientClass(clientNamespace, d)).ToArray();
 
-			foreach (var p in paths)
+			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
 			{
-				var relativePath = p.Key;
-				foreach (var op in p.Value.Operations)
+				string relativePath = p.Key;
+				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
 				{
-					var apiFunctionGen = apiFunctionGenFactory();
-					var apiFunction = apiFunctionGen.CreateApiFunction(settings, relativePath, op.Key, op.Value, new ComponentsToTsTypes(settings, CodeCompileUnit, clientNamespace) );
+					ClientApiTsFunctionGenAbstract apiFunctionGen = apiFunctionGenFactory();
+					CodeMemberMethod apiFunction = apiFunctionGen.CreateApiFunction(settings, relativePath, op.Key, op.Value, new ComponentsToTsTypes(settings, CodeCompileUnit, clientNamespace) );
 					if (apiFunction == null)
 					{
 						System.Diagnostics.Trace.TraceWarning($"Not to generate for {p.Key} {op.Key}.");
 						continue;
 					}
 
-					var containerClassName = nameComposer.GetContainerName(op.Value, p.Key);
-					var existingClass = LookupExistingClass(containerClassName);
+					string containerClassName = nameComposer.GetContainerName(op.Value, p.Key);
+					CodeTypeDeclaration existingClass = LookupExistingClass(containerClassName);
 					existingClass.Members.Add(apiFunction);
 				}
 			}
 
 
-			foreach (var c in newClassesCreated)
+			foreach (CodeTypeDeclaration c in newClassesCreated)
 			{
 				AddHelperFunctionsInClass(c);
 			}
@@ -146,12 +139,12 @@ namespace Fonlow.CodeDom.Web.Ts
 		{
 			for (int i = 0; i < CodeCompileUnit.Namespaces.Count; i++)
 			{
-				var ns = CodeCompileUnit.Namespaces[i];
+				CodeNamespace ns = CodeCompileUnit.Namespaces[i];
 				if (ns.Name == settings.ClientNamespace)
 				{
 					for (int k = 0; k < ns.Types.Count; k++)
 					{
-						var c = ns.Types[k];
+						CodeTypeDeclaration c = ns.Types[k];
 						if (c.Name == controllerName)
 							return c;
 					}
@@ -171,11 +164,11 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			List<string> names = new List<string>();
 
-			foreach (var p in paths)
+			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
 			{
-				foreach (var op in p.Value.Operations)
+				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
 				{
-					var name = nameComposer.GetContainerName(op.Value, p.Key);
+					string name = nameComposer.GetContainerName(op.Value, p.Key);
 					names.Add(name);
 				}
 			}
@@ -183,68 +176,68 @@ namespace Fonlow.CodeDom.Web.Ts
 			return names.Distinct().ToArray();
 		}
 
-		void RefineOverloadingFunctions()
-		{
-			for (int i = 0; i < CodeCompileUnit.Namespaces.Count; i++)
-			{
-				var ns = CodeCompileUnit.Namespaces[i];
-				for (int k = 0; k < ns.Types.Count; k++)
-				{
-					var c = ns.Types[k];
-					List<CodeMemberMethod> methods = new List<CodeMemberMethod>();
-					for (int m = 0; m < c.Members.Count; m++)
-					{
-						var method = c.Members[m] as CodeMemberMethod;
-						if (method != null)
-						{
-							methods.Add(method);
-						}
-					}
+		//void RefineOverloadingFunctions()
+		//{
+		//	for (int i = 0; i < CodeCompileUnit.Namespaces.Count; i++)
+		//	{
+		//		var ns = CodeCompileUnit.Namespaces[i];
+		//		for (int k = 0; k < ns.Types.Count; k++)
+		//		{
+		//			var c = ns.Types[k];
+		//			List<CodeMemberMethod> methods = new List<CodeMemberMethod>();
+		//			for (int m = 0; m < c.Members.Count; m++)
+		//			{
+		//				var method = c.Members[m] as CodeMemberMethod;
+		//				if (method != null)
+		//				{
+		//					methods.Add(method);
+		//				}
+		//			}
 
-					if (methods.Count > 1)//worth of checking overloading
-					{
-						var candidates = from m in methods group m by m.Name into grp where grp.Count() > 1 select grp.Key;
-						foreach (var candidateName in candidates)
-						{
-							var overloadingMethods = methods.Where(d => d.Name == candidateName).ToArray();
-							System.Diagnostics.Debug.Assert(overloadingMethods.Length > 1);
-							foreach (var item in overloadingMethods) //Wow, 5 nested loops, plus 2 linq expressions
-							{
-								RenameCodeMemberMethodWithParameterNames(item);
-							}
-						}
-					}
-				}
-			}
+		//			if (methods.Count > 1)//worth of checking overloading
+		//			{
+		//				var candidates = from m in methods group m by m.Name into grp where grp.Count() > 1 select grp.Key;
+		//				foreach (var candidateName in candidates)
+		//				{
+		//					var overloadingMethods = methods.Where(d => d.Name == candidateName).ToArray();
+		//					System.Diagnostics.Debug.Assert(overloadingMethods.Length > 1);
+		//					foreach (var item in overloadingMethods) //Wow, 5 nested loops, plus 2 linq expressions
+		//					{
+		//						RenameCodeMemberMethodWithParameterNames(item);
+		//					}
+		//				}
+		//			}
+		//		}
+		//	}
 
-		}
+		//}
 
-		static string ToTitleCase(string s)
-		{
-			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
-		}
+		//static string ToTitleCase(string s)
+		//{
+		//	return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
+		//}
 
-		static void RenameCodeMemberMethodWithParameterNames(CodeMemberMethod method)
-		{
-			if (method.Parameters.Count == 0)
-				return;
+		//static void RenameCodeMemberMethodWithParameterNames(CodeMemberMethod method)
+		//{
+		//	if (method.Parameters.Count == 0)
+		//		return;
 
-			var parameterNamesInTitleCase = method.Parameters.OfType<CodeParameterDeclarationExpression>().Select(d => ToTitleCase(d.Name)).ToList();
-			var lastParameter = parameterNamesInTitleCase[parameterNamesInTitleCase.Count - 1];
-			if ("callback".Equals(lastParameter, StringComparison.CurrentCultureIgnoreCase))//for JQ output
-			{
-				parameterNamesInTitleCase.RemoveAt(parameterNamesInTitleCase.Count - 1);
-			}
+		//	var parameterNamesInTitleCase = method.Parameters.OfType<CodeParameterDeclarationExpression>().Select(d => ToTitleCase(d.Name)).ToList();
+		//	var lastParameter = parameterNamesInTitleCase[parameterNamesInTitleCase.Count - 1];
+		//	if ("callback".Equals(lastParameter, StringComparison.CurrentCultureIgnoreCase))//for JQ output
+		//	{
+		//		parameterNamesInTitleCase.RemoveAt(parameterNamesInTitleCase.Count - 1);
+		//	}
 
-			if (parameterNamesInTitleCase.Count > 0)
-			{
-				method.Name += $"By{String.Join("And", parameterNamesInTitleCase)}";
-			}
-		}
+		//	if (parameterNamesInTitleCase.Count > 0)
+		//	{
+		//		method.Name += $"By{String.Join("And", parameterNamesInTitleCase)}";
+		//	}
+		//}
 
 		CodeTypeDeclaration CreateControllerClientClass(CodeNamespace ns, string className)
 		{
-			var targetClass = new CodeTypeDeclaration(className)
+			CodeTypeDeclaration targetClass = new CodeTypeDeclaration(className)
 			{
 				IsClass = true,
 				IsPartial = true,

@@ -419,7 +419,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateFromShippingQuote(requestBody: CreateShipmentFromQuoteRequest): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'shipment/create_from_shipping_quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post(this.baseUri + 'shipment/create_from_shipping_quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
@@ -429,7 +429,7 @@ export namespace MyNS {
 		 * @return {Shipment} Success
 		 */
 		GetShipment(shipmentId: string): Promise<Shipment> {
-			return Axios.get(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId))).then(d => d.data);
+			return Axios.get<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)), {}).then(d => d.data);
 		}
 
 		/**
@@ -439,7 +439,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		DownloadLabelFile(shipmentId: string): Promise<AxiosResponse<string>> {
-			return Axios.get(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/download_label_file').then(d => d.data);
+			return Axios.get(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/download_label_file', { responseType: 'text' });
 		}
 
 		/**
@@ -449,7 +449,7 @@ export namespace MyNS {
 		 * @return {Shipment} Success
 		 */
 		CancelShipment(shipmentId: string): Promise<Shipment> {
-			return Axios.post(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/cancel', null, {}).then(d => d.data);
+			return Axios.post<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/cancel', null, {}).then(d => d.data);
 		}
 	}
 
@@ -464,7 +464,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateShippingQuote(requestBody: ShippingQuoteRequest): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'shipping_quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post(this.baseUri + 'shipping_quote', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
@@ -474,7 +474,7 @@ export namespace MyNS {
 		 * @return {ShippingQuote} Success
 		 */
 		GetShippingQuote(shippingQuoteId: string): Promise<ShippingQuote> {
-			return Axios.get(this.baseUri + 'shipping_quote/' + (shippingQuoteId == null ? '' : encodeURIComponent(shippingQuoteId))).then(d => d.data);
+			return Axios.get<ShippingQuote>(this.baseUri + 'shipping_quote/' + (shippingQuoteId == null ? '' : encodeURIComponent(shippingQuoteId)), {}).then(d => d.data);
 		}
 	}
 

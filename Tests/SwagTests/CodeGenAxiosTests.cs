@@ -10,15 +10,13 @@ namespace SwagTests
 	{
 		static OpenApiDocument ReadJson(string filePath)
 		{
-			using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-			{
-				return new OpenApiStreamReader().Read(stream, out var diagnostic);
-			}
+			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
 		static string TranslateJsonToCode(string filePath, Settings mySettings=null)
 		{
-			Func<string, string, string> CreateTsPath = (folder, fileName) =>
+			static string CreateTsPath(string folder, string fileName)
 			{
 				if (!string.IsNullOrEmpty(folder))
 				{
@@ -43,7 +41,7 @@ namespace SwagTests
 				};
 
 				return null;
-			};
+			}
 
 			OpenApiDocument doc = ReadJson(filePath);
 
@@ -56,17 +54,17 @@ namespace SwagTests
 				DataAnnotationsToComments = true,
 			};
 
-			var codeCompileUnit = new System.CodeDom.CodeCompileUnit();
-			var clientNamespace = new System.CodeDom.CodeNamespace(settings.ClientNamespace);
+			System.CodeDom.CodeCompileUnit codeCompileUnit = new System.CodeDom.CodeCompileUnit();
+			System.CodeDom.CodeNamespace clientNamespace = new System.CodeDom.CodeNamespace(settings.ClientNamespace);
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
-			var jsOutput = new JSOutput
+			JSOutput jsOutput = new JSOutput
 			{
 				JSPath = CreateTsPath("Results", filePath),
 				AsModule = true,
 				ContentType = "application/json;charset=UTF-8",
 			};
 
-			var gen = new Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen(settings, jsOutput);
+			Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen gen = new Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen(settings, jsOutput);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
 		}
@@ -78,9 +76,9 @@ namespace SwagTests
 
 		static void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
-			var s = TranslateJsonToCode(openApiFile, mySettings);
-			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
-			var expected = ReadFromResults(expectedFile);
+			string s = TranslateJsonToCode(openApiFile, mySettings);
+			File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 		}
 
@@ -102,7 +100,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\SimplePet.json");
+			string s = TranslateJsonToCode("SwagMock\\SimplePet.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -131,7 +129,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\SimplePetCat.json");
+			string s = TranslateJsonToCode("SwagMock\\SimplePetCat.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -146,7 +144,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\Enum.json");
+			string s = TranslateJsonToCode("SwagMock\\Enum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -161,7 +159,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\IntEnum.json");
+			string s = TranslateJsonToCode("SwagMock\\IntEnum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -187,7 +185,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\CasualEnum.json");
+			string s = TranslateJsonToCode("SwagMock\\CasualEnum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -213,7 +211,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\StringArray.json");
+			string s = TranslateJsonToCode("SwagMock\\StringArray.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -251,7 +249,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\CustomTypeArray.json");
+			string s = TranslateJsonToCode("SwagMock\\CustomTypeArray.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -280,7 +278,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\SimpleOrder.json");
+			string s = TranslateJsonToCode("SwagMock\\SimpleOrder.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -303,7 +301,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\TypeAlias.json");
+			string s = TranslateJsonToCode("SwagMock\\TypeAlias.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -331,7 +329,7 @@ namespace SwagTests
 }
 
 ";
-			var s = TranslateJsonToCode("SwagMock\\Required.json");
+			string s = TranslateJsonToCode("SwagMock\\Required.json");
 			Assert.Equal(expected, s);
 		}
 

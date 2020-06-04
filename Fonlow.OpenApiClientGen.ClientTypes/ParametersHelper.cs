@@ -14,14 +14,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class ParametersHelper
 	{
-		public ParametersHelper(NameComposer nameComposer, CodeNamespace clientNamespace)
+		public ParametersHelper(CodeNamespace clientNamespace)
 		{
-			this.nameComposer = nameComposer;
 			this.clientNamespace = clientNamespace;
 		}
 
-		NameComposer nameComposer;
-		CodeNamespace clientNamespace;
+		readonly CodeNamespace clientNamespace;
 
 		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
@@ -45,29 +43,29 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter content)
 		{
-			var schemaType = content.Schema.Type;
+			string schemaType = content.Schema.Type;
 			if (schemaType != null)
 			{
 				if (schemaType == "array") // for array
 				{
-					var arrayItemsSchema = content.Schema.Items;
+					OpenApiSchema arrayItemsSchema = content.Schema.Items;
 					if (arrayItemsSchema.Reference != null) //array of custom type
 					{
-						var arrayTypeName = arrayItemsSchema.Reference.Id;
-						var arrayCodeTypeReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(arrayTypeName, 1);
+						string arrayTypeName = arrayItemsSchema.Reference.Id;
+						CodeTypeReference arrayCodeTypeReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(arrayTypeName, 1);
 						return arrayCodeTypeReference;
 					}
 					else
 					{
-						var arrayType = arrayItemsSchema.Type;
+						string arrayType = arrayItemsSchema.Type;
 						if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
 						{
-							var enumMemberNames = arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
-							var existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
+							string[] enumMemberNames = arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+							CodeTypeDeclaration existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
 							if (existingDeclaration != null)
 							{
-								var existingTypeName = existingDeclaration.Name;
-								var enumArrayReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(existingTypeName, 1);
+								string existingTypeName = existingDeclaration.Name;
+								CodeTypeReference enumArrayReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(existingTypeName, 1);
 								return enumArrayReference;
 							}
 
@@ -75,25 +73,25 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							Trace.TraceWarning($"Parameter {content.Name} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 						}
 
-						var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
-						var arrayCodeTypeReference = TypeRefBuilder.CreateArrayTypeReference(clrType, 1);
+						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
+						CodeTypeReference arrayCodeTypeReference = TypeRefBuilder.CreateArrayTypeReference(clrType, 1);
 						return arrayCodeTypeReference;
 					}
 				}
 				else if (content.Schema.Enum.Count > 0) // for enum
 				{
-					var enumMemberNames = content.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
-					var existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
+					string[] enumMemberNames = content.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+					CodeTypeDeclaration existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
 					if (existingDeclaration != null)
 					{
-						var existingTypeName = existingDeclaration.Name;
-						var enumReference = TypeRefBuilder.TranslateToClientTypeReference(existingTypeName);
+						string existingTypeName = existingDeclaration.Name;
+						CodeTypeReference enumReference = TypeRefBuilder.TranslateToClientTypeReference(existingTypeName);
 						return enumReference;
 					}
 				}
 
-				var simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
-				var codeTypeReference = new CodeTypeReference(simpleType);
+				Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
+				CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
 				return codeTypeReference;
 
 				//var schemaFormat = content.Schema.Format;
@@ -110,15 +108,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				throw new System.IO.InvalidDataException("ParameterLocation is REQUIRED");
 			}
 
-			switch (lo)
+			return lo switch
 			{
-				case ParameterLocation.Query:
-					return ParameterBinder.FromQuery;
-				case ParameterLocation.Path:
-					return ParameterBinder.FromUri;
-				default:
-					return ParameterBinder.None; //so to be skiped/ignored
-			}
+				ParameterLocation.Query => ParameterBinder.FromQuery,
+				ParameterLocation.Path => ParameterBinder.FromUri,
+				_ => ParameterBinder.None,//so to be skiped/ignored
+			};
 		}
 	}
 

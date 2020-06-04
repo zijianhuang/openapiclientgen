@@ -11,10 +11,8 @@ namespace SwagTests
 	{
 		static OpenApiDocument ReadJson(string filePath)
 		{
-			using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-			{
-				return new OpenApiStreamReader().Read(stream, out var diagnostic);
-			}
+			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
 		static string TranslateJsonToCode(string filePath, Settings mySettings = null)
@@ -32,7 +30,7 @@ namespace SwagTests
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
 			};
-			var gen = new ControllersClientApiGen(settings);
+			ControllersClientApiGen gen = new ControllersClientApiGen(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
 		}
@@ -44,9 +42,9 @@ namespace SwagTests
 
 		static void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
-			var s = TranslateJsonToCode(openApiFile, mySettings);
+			string s = TranslateJsonToCode(openApiFile, mySettings);
 			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
-			var expected = ReadFromResults(expectedFile);
+			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 		}
 

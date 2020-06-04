@@ -18,23 +18,23 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns>Item3 indicate whether to be complex type.</returns>
 		public static Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op)
 		{
-			var complexTypeName = GetOperationReturnComplexTypeReference(op);
+			string complexTypeName = GetOperationReturnComplexTypeReference(op);
 			bool stringAsString = false;
 			if (complexTypeName == null)
 			{
-				var r = GetOperationReturnSimpleTypeReference(op);
-				var primitiveTypeReference = r.Item1;
+				Tuple<CodeTypeReference, bool> r = GetOperationReturnSimpleTypeReference(op);
+				CodeTypeReference primitiveTypeReference = r.Item1;
 				stringAsString = r.Item2;
-				return Tuple.Create(primitiveTypeReference == null ? null : primitiveTypeReference, stringAsString, false);
+				return Tuple.Create(primitiveTypeReference ?? null, stringAsString, false);
 			}
 
-			string typeAlias;
-			if (TypeAliasDic.Instance.TryGet(complexTypeName, out typeAlias))
+			if (TypeAliasDic.Instance.TryGet(complexTypeName, out string typeAlias))
 			{
 				return Tuple.Create(new CodeTypeReference(typeAlias), stringAsString, true);
-			} else if (Char.IsLower(complexTypeName[0])) //uspto.yaml has component names in camelCase.
+			}
+			else if (Char.IsLower(complexTypeName[0])) //uspto.yaml has component names in camelCase.
 			{
-				var adjustedTypeName = ToTitleCase(complexTypeName);
+				string adjustedTypeName = ToTitleCase(complexTypeName);
 				return Tuple.Create(new CodeTypeReference(adjustedTypeName), stringAsString, true);
 			}
 
@@ -54,34 +54,34 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public static CodeTypeReference OpenApiMediaTypeToCodeTypeReference(OpenApiMediaType content)
 		{
-			var schemaType = content.Schema.Type;
+			string schemaType = content.Schema.Type;
 			if (schemaType != null)
 			{
 				if (schemaType == "array") // for array
 				{
-					var arrayItemsSchema = content.Schema.Items;
+					OpenApiSchema arrayItemsSchema = content.Schema.Items;
 					if (arrayItemsSchema.Reference != null) //array of custom type
 					{
-						var arrayTypeName = arrayItemsSchema.Reference.Id;
-						var arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
+						string arrayTypeName = arrayItemsSchema.Reference.Id;
+						CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
 						return arrayCodeTypeReference;
 					}
 					else
 					{
-						var arrayType = arrayItemsSchema.Type;
-						var clrType = PrimitiveSwaggerTypeToClrType(arrayType, null);
-						var arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
+						string arrayType = arrayItemsSchema.Type;
+						Type clrType = PrimitiveSwaggerTypeToClrType(arrayType, null);
+						CodeTypeReference arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
 						return arrayCodeTypeReference;
 					}
 				}
 				else if (content.Schema.Enum.Count == 0) // for primitive type
 				{
-					var simpleType = PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
-					var codeTypeReference = new CodeTypeReference(simpleType);
+					Type simpleType = PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
+					CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
 					return codeTypeReference;
 				}
 
-				var schemaFormat = content.Schema.Format;
+				string schemaFormat = content.Schema.Format;
 				return new CodeTypeReference(PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat));
 			}
 
@@ -95,13 +95,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns>CodeTypeReference of the return type, and StringAsString generally with text/plain</returns>
 		public static Tuple<CodeTypeReference, bool> GetOperationReturnSimpleTypeReference(OpenApiOperation op)
 		{
-			OpenApiResponse goodResponse;
-			if (op.Responses.TryGetValue("200", out goodResponse))
+			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
 			{
-				OpenApiMediaType content;
 				CodeTypeReference codeTypeReference;
 
-				if (goodResponse.Content.TryGetValue("application/json", out content)) // application/json has better to be first.
+				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content)) // application/json has better to be first.
 				{
 					codeTypeReference = OpenApiMediaTypeToCodeTypeReference(content);
 					return Tuple.Create(codeTypeReference, false);
@@ -111,11 +109,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (content.Schema != null)
 					{
-						var schemaType = content.Schema.Type;
+						string schemaType = content.Schema.Type;
 						if (schemaType != null)
 						{
-							var schemaFormat = content.Schema.Format;
-							var type = PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat);
+							string schemaFormat = content.Schema.Format;
+							Type type = PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat);
 							return Tuple.Create(new CodeTypeReference(type), type == typeOfString);
 						}
 					}
@@ -135,9 +133,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public static Type PrimitiveSwaggerTypeToClrType(string type, string format)
 		{
-			var key = type + (String.IsNullOrEmpty(format) ? String.Empty : ("_" + format));
-			Type t;
-			if (basicClrTypeDic.TryGetValue(key, out t))
+			string key = type + (String.IsNullOrEmpty(format) ? String.Empty : ("_" + format));
+			if (basicClrTypeDic.TryGetValue(key, out Type t))
 			{
 				return t;
 			}
@@ -149,9 +146,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static string PrimitiveSwaggerTypeToTsType(string type, string format)
 		{
-			var key = type + (String.IsNullOrEmpty(format) ? String.Empty : ("_" + format));
-			string t;
-			if (basicTsTypeDic.TryGetValue(key, out t))
+			string key = type + (String.IsNullOrEmpty(format) ? String.Empty : ("_" + format));
+			if (basicTsTypeDic.TryGetValue(key, out string t))
 			{
 				return t;
 			}
@@ -167,8 +163,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return null;// new CodeTypeReference("void");
 			if (type.IsArray)
 			{
-				var elementType = type.GetElementType();
-				var arrayRank = type.GetArrayRank();
+				Type elementType = type.GetElementType();
+				int arrayRank = type.GetArrayRank();
 				return CreateArrayTypeReference(elementType, arrayRank);
 			}
 
@@ -187,7 +183,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
 		{
-			var otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
+			CodeTypeReference otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
 			{
 				ArrayElementType = TranslateToClientTypeReference(elementType),
 			};
@@ -196,8 +192,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
 		{
-			var elementTypeReference = new CodeTypeReference(typeName);
-			var typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
+			CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
+			CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
 			{
 				ArrayElementType = elementTypeReference,
 			};
@@ -243,11 +239,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static string GetOperationReturnComplexTypeReference(OpenApiOperation op)
 		{
-			OpenApiResponse goodResponse;
-			if (op.Responses.TryGetValue("200", out goodResponse))
+			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
 			{
-				OpenApiMediaType content;
-				if (goodResponse.Content.TryGetValue("application/json", out content) && content.Schema != null && content.Schema.Reference != null)
+				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content) && content.Schema != null && content.Schema.Reference != null)
 				{
 					return content.Schema.Reference.Id;
 				}

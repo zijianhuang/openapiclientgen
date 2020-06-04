@@ -201,7 +201,7 @@ export namespace MyNS {
 		 * @return {PagedEligibleItemCollection} Success
 		 */
 		FindEligibleItems(limit: string, offset: string): Promise<PagedEligibleItemCollection> {
-			return Axios.get(this.baseUri + 'find_eligible_items?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset))).then(d => d.data);
+			return Axios.get<PagedEligibleItemCollection>(this.baseUri + 'find_eligible_items?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.data);
 		}
 
 		/**
@@ -211,7 +211,7 @@ export namespace MyNS {
 		 * @return {SendOfferToInterestedBuyersCollectionResponse} Success
 		 */
 		SendOfferToInterestedBuyers(requestBody: CreateOffersRequest): Promise<SendOfferToInterestedBuyersCollectionResponse> {
-			return Axios.post(this.baseUri + 'send_offer_to_interested_buyers', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<SendOfferToInterestedBuyersCollectionResponse>(this.baseUri + 'send_offer_to_interested_buyers', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 	}
 

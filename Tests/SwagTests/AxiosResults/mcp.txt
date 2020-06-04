@@ -611,7 +611,7 @@ export namespace MyNS {
 		 * @return {BBSPaymentReportResponseType} successful operation
 		 */
 		McpBulkBillPaymentReport1Eigw(requestBody: BBSReportRequestType): Promise<BBSPaymentReportResponseType> {
-			return Axios.post(this.baseUri + 'mcp/bulkbillpaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BBSPaymentReportResponseType>(this.baseUri + 'mcp/bulkbillpaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -620,7 +620,7 @@ export namespace MyNS {
 		 * @return {BBSProcessingReportResponseType} successful operation
 		 */
 		McpBulkBillProcessingReport1Eigw(requestBody: BBSReportRequestType): Promise<BBSProcessingReportResponseType> {
-			return Axios.post(this.baseUri + 'mcp/bulkbillprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BBSProcessingReportResponseType>(this.baseUri + 'mcp/bulkbillprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -629,7 +629,7 @@ export namespace MyNS {
 		 * @return {BulkBillStoreForwardResponseType} successful operation
 		 */
 		McpBulkBillStoreForwardGeneral1Eigw(requestBody: BulkBillStoreForwardRequestType): Promise<BulkBillStoreForwardResponseType> {
-			return Axios.post(this.baseUri + 'mcp/bulkbillstoreforward/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkBillStoreForwardResponseType>(this.baseUri + 'mcp/bulkbillstoreforward/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -638,7 +638,7 @@ export namespace MyNS {
 		 * @return {BulkBillStoreForwardResponseType} successful operation
 		 */
 		McpBulkBillStoreForwardPathology1Eigw(requestBody: BulkBillStoreForwardRequestType): Promise<BulkBillStoreForwardResponseType> {
-			return Axios.post(this.baseUri + 'mcp/bulkbillstoreforward/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkBillStoreForwardResponseType>(this.baseUri + 'mcp/bulkbillstoreforward/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -647,7 +647,7 @@ export namespace MyNS {
 		 * @return {BulkBillStoreForwardResponseType} successful operation
 		 */
 		McpBulkBillStoreForwardSpecialist1Eigw(requestBody: BulkBillStoreForwardRequestType): Promise<BulkBillStoreForwardResponseType> {
-			return Axios.post(this.baseUri + 'mcp/bulkbillstoreforward/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkBillStoreForwardResponseType>(this.baseUri + 'mcp/bulkbillstoreforward/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -656,7 +656,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthAllied1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaalliedhealth/allied/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/allied/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -665,7 +665,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthCommunityNursing1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaalliedhealth/communitynursing/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/communitynursing/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -674,7 +674,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthDental1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaalliedhealth/dental/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/dental/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -683,7 +683,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthOptical1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaalliedhealth/optical/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/optical/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -692,7 +692,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthPsych1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaalliedhealth/psych/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/psych/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -701,7 +701,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthSpeechPathology1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaalliedhealth/speechpathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/speechpathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -710,7 +710,7 @@ export namespace MyNS {
 		 * @return {DVAClaimResponseType} successful operation
 		 */
 		McpDvaClaimGeneral1Eigw(requestBody: DVAClaimRequestType): Promise<DVAClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaclaim/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<DVAClaimResponseType>(this.baseUri + 'mcp/dvaclaim/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -719,7 +719,7 @@ export namespace MyNS {
 		 * @return {DVAClaimResponseType} successful operation
 		 */
 		McpDvaClaimPathology1Eigw(requestBody: DVAClaimRequestType): Promise<DVAClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaclaim/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<DVAClaimResponseType>(this.baseUri + 'mcp/dvaclaim/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -728,7 +728,7 @@ export namespace MyNS {
 		 * @return {DVAClaimResponseType} successful operation
 		 */
 		McpDvaClaimSpecialist1Eigw(requestBody: DVAClaimRequestType): Promise<DVAClaimResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaclaim/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<DVAClaimResponseType>(this.baseUri + 'mcp/dvaclaim/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -737,7 +737,7 @@ export namespace MyNS {
 		 * @return {DVAPaymentReportResponseType} successful operation
 		 */
 		McpDvaPaymentReport1Eigw(requestBody: DVAReportRequestType): Promise<DVAPaymentReportResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvapaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<DVAPaymentReportResponseType>(this.baseUri + 'mcp/dvapaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * @return {DVAProcessingReportResponseType} successful operation
 		 */
 		McpDvaProcessingReport1Eigw(requestBody: DVAReportRequestType): Promise<DVAProcessingReportResponseType> {
-			return Axios.post(this.baseUri + 'mcp/dvaprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<DVAProcessingReportResponseType>(this.baseUri + 'mcp/dvaprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -755,7 +755,7 @@ export namespace MyNS {
 		 * @return {EnterpriseConcessionVerificationResponseType} successful operation
 		 */
 		McpEnterpriseConcessionVerification1Eigw(requestBody: EnterpriseConcessionVerificationRequestType): Promise<EnterpriseConcessionVerificationResponseType> {
-			return Axios.post(this.baseUri + 'mcp/enterpriseconcessionverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<EnterpriseConcessionVerificationResponseType>(this.baseUri + 'mcp/enterpriseconcessionverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -764,7 +764,7 @@ export namespace MyNS {
 		 * @return {EnterprisePatientVerificationResponseType} successful operation
 		 */
 		McpEnterprisePatientVerification1Eigw(requestBody: EnterprisePatientVerificationRequestType): Promise<EnterprisePatientVerificationResponseType> {
-			return Axios.post(this.baseUri + 'mcp/enterprisepatientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<EnterprisePatientVerificationResponseType>(this.baseUri + 'mcp/enterprisepatientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -773,7 +773,7 @@ export namespace MyNS {
 		 * @return {EnterpriseVeteranVerificationResponseType} successful operation
 		 */
 		McpEnterpriseVeteranVerification1Eigw(requestBody: EnterpriseVeteranVerificationRequestType): Promise<EnterpriseVeteranVerificationResponseType> {
-			return Axios.post(this.baseUri + 'mcp/enterpriseveteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<EnterpriseVeteranVerificationResponseType>(this.baseUri + 'mcp/enterpriseveteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -782,7 +782,7 @@ export namespace MyNS {
 		 * @return {PatientClaimInteractiveResponseType} successful operation
 		 */
 		McpPatientClaimInteractiveGeneral1Eigw(requestBody: PatientClaimInteractiveRequestType): Promise<PatientClaimInteractiveResponseType> {
-			return Axios.post(this.baseUri + 'mcp/patientclaiminteractive/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<PatientClaimInteractiveResponseType>(this.baseUri + 'mcp/patientclaiminteractive/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -791,7 +791,7 @@ export namespace MyNS {
 		 * @return {PatientClaimInteractiveResponseType} successful operation
 		 */
 		McpPatientClaimInteractivePathology1Eigw(requestBody: PatientClaimInteractiveRequestType): Promise<PatientClaimInteractiveResponseType> {
-			return Axios.post(this.baseUri + 'mcp/patientclaiminteractive/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<PatientClaimInteractiveResponseType>(this.baseUri + 'mcp/patientclaiminteractive/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -800,7 +800,7 @@ export namespace MyNS {
 		 * @return {PatientClaimInteractiveResponseType} successful operation
 		 */
 		McpPatientClaimInteractiveSpecialist1Eigw(requestBody: PatientClaimInteractiveRequestType): Promise<PatientClaimInteractiveResponseType> {
-			return Axios.post(this.baseUri + 'mcp/patientclaiminteractive/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<PatientClaimInteractiveResponseType>(this.baseUri + 'mcp/patientclaiminteractive/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -809,7 +809,7 @@ export namespace MyNS {
 		 * @return {PatientVerificationResponseType} successful operation
 		 */
 		McpPatientVerification1Eigw(requestBody: PatientVerificationRequestType): Promise<PatientVerificationResponseType> {
-			return Axios.post(this.baseUri + 'mcp/patientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<PatientVerificationResponseType>(this.baseUri + 'mcp/patientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -818,7 +818,7 @@ export namespace MyNS {
 		 * @return {PatientVerificationResponseType} successful operation
 		 */
 		McpPatientVerificationHf1Eigw(requestBody: PatientVerificationRequestType): Promise<PatientVerificationResponseType> {
-			return Axios.post(this.baseUri + 'mcp/patientverification/hf/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<PatientVerificationResponseType>(this.baseUri + 'mcp/patientverification/hf/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -827,7 +827,7 @@ export namespace MyNS {
 		 * @return {PatientVerificationResponseType} successful operation
 		 */
 		McpPatientVerificationMedicare1Eigw(requestBody: PatientVerificationRequestType): Promise<PatientVerificationResponseType> {
-			return Axios.post(this.baseUri + 'mcp/patientverification/medicare/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<PatientVerificationResponseType>(this.baseUri + 'mcp/patientverification/medicare/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -836,7 +836,7 @@ export namespace MyNS {
 		 * @return {RetrieveReportResponseType} successful operation
 		 */
 		McpRetrieveReportEcv1Eigw(requestBody: RetrieveReportRequestType): Promise<RetrieveReportResponseType> {
-			return Axios.post(this.baseUri + 'mcp/enterpriseconcessionverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<RetrieveReportResponseType>(this.baseUri + 'mcp/enterpriseconcessionverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -845,7 +845,7 @@ export namespace MyNS {
 		 * @return {RetrieveReportResponseType} successful operation
 		 */
 		McpRetrieveReportEpv1Eigw(requestBody: RetrieveReportRequestType): Promise<RetrieveReportResponseType> {
-			return Axios.post(this.baseUri + 'mcp/enterprisepatientverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<RetrieveReportResponseType>(this.baseUri + 'mcp/enterprisepatientverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -854,7 +854,7 @@ export namespace MyNS {
 		 * @return {RetrieveReportResponseType} successful operation
 		 */
 		McpRetrieveReportEvv1Eigw(requestBody: RetrieveReportRequestType): Promise<RetrieveReportResponseType> {
-			return Axios.post(this.baseUri + 'mcp/enterpriseveteranverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<RetrieveReportResponseType>(this.baseUri + 'mcp/enterpriseveteranverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -863,7 +863,7 @@ export namespace MyNS {
 		 * @return {SameDayDeleteResponseType} successful operation
 		 */
 		McpSameDayDelete1Eigw(requestBody: SameDayDeleteRequestType): Promise<SameDayDeleteResponseType> {
-			return Axios.post(this.baseUri + 'mcp/samedaydelete/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<SameDayDeleteResponseType>(this.baseUri + 'mcp/samedaydelete/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -872,7 +872,7 @@ export namespace MyNS {
 		 * @return {StatusReportResponseType} successful operation
 		 */
 		McpStatusReport1Eigw(requestBody: StatusReportRequestType): Promise<StatusReportResponseType> {
-			return Axios.post(this.baseUri + 'mcp/statusreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<StatusReportResponseType>(this.baseUri + 'mcp/statusreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 
 		/**
@@ -881,7 +881,7 @@ export namespace MyNS {
 		 * @return {VeteranVerificationResponseType} successful operation
 		 */
 		McpVeteranVerification1Eigw(requestBody: VeteranVerificationRequestType): Promise<VeteranVerificationResponseType> {
-			return Axios.post(this.baseUri + 'mcp/veteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<VeteranVerificationResponseType>(this.baseUri + 'mcp/veteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
 	}
 

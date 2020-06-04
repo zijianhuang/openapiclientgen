@@ -10,10 +10,12 @@ namespace IntegrationTests
 	{
 		public PetsFixture()
 		{
-			var baseUri = new Uri("http://localhost:5000/");
+			Uri baseUri = new Uri("http://localhost:5000/");
 
-			httpClient = new System.Net.Http.HttpClient();
-			httpClient.BaseAddress = baseUri;
+			httpClient = new System.Net.Http.HttpClient
+			{
+				BaseAddress = baseUri
+			};
 			//httpClient.DefaultRequestHeaders
 			//  .Accept
 			//  .Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderPet("application/json"));//.net core has different behavior as described at https://github.com/zijianhuang/webapiclientgen/issues/26
@@ -23,7 +25,7 @@ namespace IntegrationTests
 
 		public PetClient Api { get; private set; }
 
-		System.Net.Http.HttpClient httpClient;
+		readonly System.Net.Http.HttpClient httpClient;
 
 		#region IDisposable pattern
 		bool disposed;
@@ -56,19 +58,19 @@ namespace IntegrationTests
 			api = fixture.Api;
 		}
 
-		PetClient api;
+		readonly PetClient api;
 
 		[Fact]
 		public async Task TestFindPets()
 		{
-			var aa = await api.FindPetsByStatusAsync(new PetStatus[] { PetStatus.sold, PetStatus.pending });
+			Pet[] aa = await api.FindPetsByStatusAsync(new PetStatus[] { PetStatus.sold, PetStatus.pending });
 			Assert.Equal(3, aa.Length);
 		}
 
 		[Fact]
 		public async Task TestGetPet()
 		{
-			var d = await api.GetPetByIdAsync(12);
+			Pet d = await api.GetPetByIdAsync(12);
 			Assert.Equal("Narco", d.Name);
 		}
 
@@ -94,7 +96,7 @@ namespace IntegrationTests
 		[Fact]
 		public async Task TestPetsDelete()
 		{
-			var ex = await Assert.ThrowsAsync<WebApiRequestException>(() => api.DeletePetAsync(9));
+			WebApiRequestException ex = await Assert.ThrowsAsync<WebApiRequestException>(() => api.DeletePetAsync(9));
 			Assert.Equal("NoSuchPet", ex.Response);
 		}
 

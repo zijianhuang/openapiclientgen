@@ -30,27 +30,27 @@ namespace Fonlow.OpenApiClientGen
 				return;
 			}
 
-			var defFile = args[0];
+			string defFile = args[0];
 			if (!File.Exists(defFile))
 			{
 				Console.WriteLine($"{defFile} not exist.");
 				return;
 			}
 
-			var settingsFile = args[1];
+			string settingsFile = args[1];
 			if (!File.Exists(settingsFile))
 			{
 				Console.WriteLine($"{settingsFile} not exist.");
 				return;
 			}
 
-			var configuration = new ConfigurationBuilder()
+			IConfigurationRoot configuration = new ConfigurationBuilder()
 					.AddJsonFile("appsettings.json", false, true)
 					.Build();
 
 			ILogger logger;
 
-			using (var serviceProvider = new ServiceCollection()
+			using (ServiceProvider serviceProvider = new ServiceCollection()
 				.AddLogging(cfg =>
 				{
 					cfg.AddConfiguration(configuration.GetSection("Logging"));
@@ -63,26 +63,24 @@ namespace Fonlow.OpenApiClientGen
 
 			logger.LogInformation("Program logger loaded");
 
-			using (var listener = new Fonlow.Diagnostics.LoggerTraceListener(logger))
+			using Diagnostics.LoggerTraceListener listener = new Fonlow.Diagnostics.LoggerTraceListener(logger);
+			System.Diagnostics.Trace.Listeners.Add(listener);
+
+			string settingsString = File.ReadAllText(settingsFile);
+			ClientTypes.Settings settings = System.Text.Json.JsonSerializer.Deserialize<ClientTypes.Settings>(settingsString);
+
+			OpenApiDocument doc;
+			using (FileStream stream = new FileStream(defFile, FileMode.Open, FileAccess.Read))
 			{
-				System.Diagnostics.Trace.Listeners.Add(listener);
-
-				var settingsString = File.ReadAllText(settingsFile);
-				var settings = System.Text.Json.JsonSerializer.Deserialize<ClientTypes.Settings>(settingsString);
-
-				OpenApiDocument doc;
-				using (var stream = new FileStream(defFile, FileMode.Open, FileAccess.Read))
-				{
-					doc = new OpenApiStreamReader().Read(stream, out var diagnostic);
-				}
-
-				Console.WriteLine("Processing...");
-				Trace.TraceInformation(doc.Info.FormatOpenApiInfo());
-
-				Fonlow.CodeDom.Web.CodeGen.GenerateClientAPIs(settings, doc.Paths, doc.Components, Directory.GetCurrentDirectory());
-
-				Console.WriteLine("Done");
+				doc = new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 			}
+
+			Console.WriteLine("Processing...");
+			Trace.TraceInformation(doc.Info.FormatOpenApiInfo());
+
+			Fonlow.CodeDom.Web.CodeGen.GenerateClientAPIs(settings, doc.Paths, doc.Components, Directory.GetCurrentDirectory());
+
+			Console.WriteLine("Done");
 		}
 
 		static void ShowHelp()
@@ -107,7 +105,7 @@ For classes decorated by SerializableAttribute:
 	{
 		public static string FormatOpenApiInfo(this OpenApiInfo info)
 		{
-			var builder = new StringBuilder();
+			StringBuilder builder = new StringBuilder();
 			builder.AppendLine(info.Title);
 			builder.AppendLine("V " + info.Version);
 			builder.AppendLine(info.Description);

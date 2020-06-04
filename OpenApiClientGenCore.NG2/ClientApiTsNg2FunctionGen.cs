@@ -34,19 +34,19 @@ namespace Fonlow.CodeDom.Web.Ts
 		{
 			this.settings = settings;
 
-			var contentType = jsOutput.ContentType;
+			string contentType = jsOutput.ContentType;
 			if (String.IsNullOrEmpty(contentType))
 			{
 				contentType = "application/json;charset=UTF-8";
 			}
 
-			var contentOptionsWithHeadersHandlerForString = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}),  responseType: 'text' }}";
+			string contentOptionsWithHeadersHandlerForString = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}),  responseType: 'text' }}";
 			ContentOptionsForString = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForString : $"{{ headers: {{ 'Content-Type': '{contentType}' }}, responseType: 'text' }}";
 
-			var contentOptionsWithHeadersHandlerForResponse = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}), observe: 'response', responseType: 'text' }}";
+			string contentOptionsWithHeadersHandlerForResponse = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}), observe: 'response', responseType: 'text' }}";
 			ContentOptionsForResponse = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForResponse : $"{{ headers: {{ 'Content-Type': '{contentType}' }}, observe: 'response', responseType: 'text' }}";
 
-			var optionsWithHeadersHandlerAndContent = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}) }}";
+			string optionsWithHeadersHandlerAndContent = $"{{ headers: headersHandler ? headersHandler().append('Content-Type', '{contentType}') : new HttpHeaders({{ 'Content-Type': '{contentType}' }}) }}";
 			OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ headers: {{ 'Content-Type': '{contentType}' }} }}";
 
 			const string optionsWithHeadersHandlerForString = "{ headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }";
@@ -55,7 +55,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			const string optionsWithHeadersHandlerForResponse = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' }";
 			OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : "{ observe: 'response', responseType: 'text' }";
 
-			var optionsWithHeadersHandler = "{ headers: headersHandler ? headersHandler() : undefined }";
+			string optionsWithHeadersHandler = "{ headers: headersHandler ? headersHandler() : undefined }";
 			Options = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandler : "{}";
 		}
 
@@ -75,11 +75,11 @@ namespace Fonlow.CodeDom.Web.Ts
 				returnTypeText = NG2HttpBlobResponse;
 			}
 
-			var typeCast = returnTypeText == null ? "<HttpResponse<string>>" : $"<{returnTypeText}>";
+			string typeCast = returnTypeText == null ? "<HttpResponse<string>>" : $"<{returnTypeText}>";
 
-			var callbackTypeText = $"Observable{typeCast}";
+			string callbackTypeText = $"Observable{typeCast}";
 			Debug.WriteLine("callback: " + callbackTypeText);
-			var returnTypeReferenceWithObservable = new CodeSnipetTypeReference(callbackTypeText);
+			CodeSnipetTypeReference returnTypeReferenceWithObservable = new CodeSnipetTypeReference(callbackTypeText);
 
 			return new CodeMemberMethod()
 			{
@@ -92,16 +92,16 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected override void RenderImplementation()
 		{
-			var httpMethodName = HttpMethod.ToString().ToLower(); //Method is always uppercase.
-																  //deal with parameters
-			var parameters = ParameterDescriptions.Select(d =>
+			string httpMethodName = HttpMethod.ToString().ToLower(); //Method is always uppercase.
+																	 //deal with parameters
+			CodeParameterDeclarationExpression[] parameters = ParameterDescriptions.Select(d =>
 				new CodeParameterDeclarationExpression(TypeMapper.MapCodeTypeReferenceToTsText(d.ParameterTypeReference), d.Name))
 				.ToArray();
 
 			Method.Parameters.AddRange(parameters);
 			if (RequestBodyCodeTypeReference != null)
 			{
-				var p = new CodeParameterDeclarationExpression(RequestBodyCodeTypeReference, "requestBody");
+				CodeParameterDeclarationExpression p = new CodeParameterDeclarationExpression(RequestBodyCodeTypeReference, "requestBody");
 				Method.Parameters.Add(p);
 			}
 
@@ -111,8 +111,8 @@ namespace Fonlow.CodeDom.Web.Ts
 					"() => HttpHeaders", "headersHandler?"));
 			}
 
-			var jsUriQuery = UriQueryHelper.CreateUriQueryForTs(RelativePath, ParameterDescriptions);
-			var uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" :
+			string jsUriQuery = UriQueryHelper.CreateUriQueryForTs(RelativePath, ParameterDescriptions);
+			string uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" :
 				RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
 
 			if (ReturnTypeReference != null && ReturnTypeReference.BaseType == "System.String" && ReturnTypeReference.ArrayElementType == null)//stringAsString is for .NET Core Web API
@@ -188,7 +188,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 			else
 			{
-				var returnTypeCast = returnTypeText==null? String.Empty : $"<{returnTypeText}>";
+				string returnTypeCast = returnTypeText==null? String.Empty : $"<{returnTypeText}>";
 
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{

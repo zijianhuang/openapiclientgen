@@ -72,7 +72,7 @@ namespace Fonlow.Diagnostics
         public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string format, params object[] args)
         {
 
-            var message = args == null ? format : String.Format(format, args);
+			string message = args == null ? format : String.Format(format, args);
 
             switch (eventType)
             {

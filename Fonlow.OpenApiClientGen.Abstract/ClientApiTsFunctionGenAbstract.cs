@@ -27,29 +27,24 @@ namespace Fonlow.CodeDom.Web.Ts
 		NameComposer nameComposer;
 		ParametersHelper parametersHelper;
 		BodyContentRefBuilder bodyContentRefBuilder;
-		Settings settings;
 		protected string ActionName { get; private set; }
 		protected OperationType HttpMethod { get; private set; }
-		bool stringAsString;
 
 		protected ClientApiTsFunctionGenAbstract()
 		{
 		}
 
-		static readonly Type typeOfChar = typeof(char);
-
 		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes com2TsTypes)
 		{
-			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(nameComposer, com2TsTypes.ClientNamespace);
+			this.parametersHelper = new ParametersHelper(com2TsTypes.ClientNamespace);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
 			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
-				var kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
+				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
 				if (kc != null)
 				{
 					this.RequestBodyCodeTypeReference = kc.Item1;
@@ -66,11 +61,10 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			this.RelativePath = RemovePrefixSlash(relativePath);
 			if (ActionName.EndsWith("Async"))
-				ActionName = ActionName.Substring(0, ActionName.Length - 5);
+				ActionName = ActionName[0..^5];
 
-			var r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
+			Tuple<CodeTypeReference, bool, bool> r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
 			ReturnTypeReference = r.Item1;
-			stringAsString = r.Item2;
 
 			//todo: stream, byte and ActionResult later.
 			//returnTypeIsStream = returnType!=null && ( (returnType.FullName == typeNameOfHttpResponseMessage) 
@@ -116,22 +110,22 @@ namespace Fonlow.CodeDom.Web.Ts
 		void CreateDocComments()
 		{
 			StringBuilder builder = new StringBuilder();
-			var noIndent = Fonlow.DocComment.StringFunctions.TrimIndentedMultiLineTextToArray(
+			string[] noIndent = Fonlow.DocComment.StringFunctions.TrimIndentedMultiLineTextToArray(
 				apiOperation.Summary
 				+ ((String.IsNullOrEmpty(apiOperation.Summary) || string.IsNullOrEmpty(apiOperation.Description)) ? String.Empty : "\n")
 				+ apiOperation.Description);
 			if (noIndent != null)
 			{
-				foreach (var item in noIndent)
+				foreach (string item in noIndent)
 				{
 					builder.AppendLine(item);
 				}
 			}
 
 			builder.AppendLine(HttpMethod + " " + RelativePath);
-			foreach (var item in ParameterDescriptions)
+			foreach (ParameterDescriptionEx item in ParameterDescriptions)
 			{
-				var tsParameterType = item.ParameterTypeReference;// Poco2TsGen.TranslateToClientTypeReference(item.ParameterDescriptor.ParameterType);
+				CodeTypeReference tsParameterType = item.ParameterTypeReference;// Poco2TsGen.TranslateToClientTypeReference(item.ParameterDescriptor.ParameterType);
 				if (!String.IsNullOrEmpty(item.Documentation))
 				{
 					builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {item.Documentation}");
@@ -144,7 +138,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 
-			var returnTypeOfResponse = ReturnTypeReference == null ? "void" : TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
+			string returnTypeOfResponse = ReturnTypeReference == null ? "void" : TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
 			builder.AppendLine($"@return {{{returnTypeOfResponse}}} {nameComposer.GetOperationReturnComment(apiOperation)}");
 
 			Method.Comments.Add(new CodeCommentStatement(builder.ToString(), true));
@@ -152,14 +146,14 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected static string RemoveTrialEmptyString(string s)
 		{
-			var p = s.IndexOf(" + ''");
+			int p = s.IndexOf(" + ''");
 			//Debug.Assert(p > -1, "Must match the end string in RemoveTrialEmptyString");
 			if (p > -1)
 			{
 				return s.Remove(p, 5);
 			}
 
-			var p2 = s.IndexOf(")'");
+			int p2 = s.IndexOf(")'");
 			if (p2 > -1)
 			{
 				return s.Remove(p2 + 1, 1);

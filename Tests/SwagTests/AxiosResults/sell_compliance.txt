@@ -207,7 +207,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GetListingViolationsSummary(compliance_type: string): Promise<AxiosResponse<string>> {
-			return Axios.get(this.baseUri + 'listing_violation_summary?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type))).then(d => d.data);
+			return Axios.get(this.baseUri + 'listing_violation_summary?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)), { responseType: 'text' });
 		}
 	}
 
@@ -226,7 +226,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GetListingViolations(compliance_type: string, offset: string, listing_id: string, limit: string, filter: string): Promise<AxiosResponse<string>> {
-			return Axios.get(this.baseUri + 'listing_violation?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter))).then(d => d.data);
+			return Axios.get(this.baseUri + 'listing_violation?compliance_type=' + (compliance_type == null ? '' : encodeURIComponent(compliance_type)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)), { responseType: 'text' });
 		}
 
 		/**
@@ -236,7 +236,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		SuppressViolation(requestBody: SuppressViolationRequest): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'suppress_listing_violation', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post(this.baseUri + 'suppress_listing_violation', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 	}
 

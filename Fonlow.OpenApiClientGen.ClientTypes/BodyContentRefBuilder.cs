@@ -29,7 +29,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (op.RequestBody != null && op.RequestBody.Content != null)
 			{
 				OpenApiMediaType content;
-				var description = op.RequestBody.Description;
+				string description = op.RequestBody.Description;
 
 				if (op.RequestBody.Reference != null)
 				{
@@ -38,28 +38,28 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return Tuple.Create(TypeRefBuilder.OpenApiMediaTypeToCodeTypeReference(content), description, true);
 					}
 
-					var typeName = op.RequestBody.Reference.Id;
-					var codeTypeReference = new CodeTypeReference(typeName);
+					string typeName = op.RequestBody.Reference.Id;
+					CodeTypeReference codeTypeReference = new CodeTypeReference(typeName);
 					return Tuple.Create(codeTypeReference, description, true);
 				}
 				else if (op.RequestBody.Content.TryGetValue("application/json", out content))
 				{
 					if (content.Schema != null && content.Schema.Reference != null)
 					{
-						var typeName = content.Schema.Reference.Id;
-						var codeTypeReference = new CodeTypeReference(typeName);
+						string typeName = content.Schema.Reference.Id;
+						CodeTypeReference codeTypeReference = new CodeTypeReference(typeName);
 						return Tuple.Create(codeTypeReference, description, true);
 					}
 					else if (content.Schema.Type == "object") // Casual type like what defined in /store/subscribe
 					{
-						var newTypeName = nameComposer.GetActionName(op, httpMethod, path) + "Body";
-						var existingType = componentsToCodeDom.FindTypeDeclaration(newTypeName);
+						string newTypeName = nameComposer.GetActionName(op, httpMethod, path) + "Body";
+						CodeTypeDeclaration existingType = componentsToCodeDom.FindTypeDeclaration(newTypeName);
 						if (existingType == null)
 						{
 							componentsToCodeDom.AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema));
 						}
 
-						var codeTypeReference = new CodeTypeReference(newTypeName);
+						CodeTypeReference codeTypeReference = new CodeTypeReference(newTypeName);
 						return Tuple.Create(codeTypeReference, description, true);
 					}
 

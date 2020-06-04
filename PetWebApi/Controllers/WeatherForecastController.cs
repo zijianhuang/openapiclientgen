@@ -16,17 +16,14 @@ namespace PetWebApi.Controllers
 			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 		};
 
-		private readonly ILogger<WeatherForecastController> _logger;
-
-		public WeatherForecastController(ILogger<WeatherForecastController> logger)
+		public WeatherForecastController()
 		{
-			_logger = logger;
 		}
 
 		[HttpGet]
 		public IEnumerable<WeatherForecast> Get()
 		{
-			var rng = new Random();
+			Random rng = new Random();
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
 			{
 				Date = DateTime.Now.AddDays(index),

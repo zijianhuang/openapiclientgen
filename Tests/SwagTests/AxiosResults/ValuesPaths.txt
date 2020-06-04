@@ -10,7 +10,7 @@ export namespace MyNS {
 		 * @return {Array<string>} Success
 		 */
 		ValuesGet(): Promise<Array<string>> {
-			return Axios.get(this.baseUri + 'api/Values').then(d => d.data);
+			return Axios.get<Array<string>>(this.baseUri + 'api/Values', {}).then(d => d.data);
 		}
 
 		/**
@@ -34,7 +34,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		ValuesPutById(id: number, requestBody: string): Promise<AxiosResponse<string>> {
-			return Axios.put(this.baseUri + 'api/Values/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put(this.baseUri + 'api/Values/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
@@ -42,7 +42,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		ValuesDeleteById(id: number): Promise<AxiosResponse<string>> {
-			return Axios.delete(this.baseUri + 'api/Values/' + id).then(d => d.data);
+			return Axios.delete(this.baseUri + 'api/Values/' + id, { responseType: 'text' });
 		}
 	}
 

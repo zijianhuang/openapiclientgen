@@ -23,7 +23,7 @@ namespace MyNamespace
         [HttpPost, Route("pet")]
         public async Task<IActionResult> AddPet([FromBody] Pet body)//, [FromHeader(Name = "Accept-Language")] string accept_Language, long cookieParam)
         {
-            var key = PetData.Instance.GetCurrentMax();
+			long key = PetData.Instance.GetCurrentMax();
             body.Id = key;
             PetData.Instance.Dic.TryAdd(key, body);
             Response.Headers.Add("transaction-id", Request.Headers["transaction-id"]);
@@ -45,16 +45,15 @@ namespace MyNamespace
         [HttpGet, Route("pet/{petId}")]
         public async Task<ActionResult<Pet>> GetPetById(long petId)
         {
-            Pet p;
-            if (PetData.Instance.Dic.TryGetValue(petId, out p))
-            {
-                return p;
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
+			if (PetData.Instance.Dic.TryGetValue(petId, out Pet p))
+			{
+				return p;
+			}
+			else
+			{
+				return NotFound();
+			}
+		}
 
         /// <summary>Updates a pet in the store with form data</summary>
         /// <param name="petId">ID of pet that needs to be updated</param>

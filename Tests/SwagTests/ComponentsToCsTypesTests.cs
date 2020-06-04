@@ -10,11 +10,9 @@ namespace SwagTests
     {
         static OpenApiDocument ReadJson(string filePath)
         {
-            using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-            {
-                return new OpenApiStreamReader().Read(stream, out var diagnostic);
-            }
-        }
+			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
+		}
 
         static string TranslateJsonToCode(string filePath)
         {
@@ -25,11 +23,11 @@ namespace SwagTests
                 ClientNamespace = "MyNS",
             };
 
-            var codeCompileUnit = new System.CodeDom.CodeCompileUnit();
-            var clientNamespace = new System.CodeDom.CodeNamespace(settings.ClientNamespace);
+			System.CodeDom.CodeCompileUnit codeCompileUnit = new System.CodeDom.CodeCompileUnit();
+			System.CodeDom.CodeNamespace clientNamespace = new System.CodeDom.CodeNamespace(settings.ClientNamespace);
             codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
-            var gen = new ComponentsToCsTypes(settings, codeCompileUnit, clientNamespace);
+			ComponentsToCsTypes gen = new ComponentsToCsTypes(settings, codeCompileUnit, clientNamespace);
             gen.CreateCodeDom(doc.Components);
 			return gen.WriteToText();
         }
@@ -67,7 +65,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\SimplePet.json");
+			string s = TranslateJsonToCode("SwagMock\\SimplePet.json");
             Assert.Equal(expected, s);
         }
 
@@ -115,7 +113,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\SimplePetCat.json");
+			string s = TranslateJsonToCode("SwagMock\\SimplePetCat.json");
             Assert.Equal(expected, s);
         }
 
@@ -151,7 +149,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\Enum.json");
+			string s = TranslateJsonToCode("SwagMock\\Enum.json");
             Assert.Equal(expected, s);
         }
 
@@ -187,7 +185,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\IntEnum.json");
+			string s = TranslateJsonToCode("SwagMock\\IntEnum.json");
             Assert.Equal(expected, s);
         }
 
@@ -238,7 +236,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\CasualEnum.json");
+			string s = TranslateJsonToCode("SwagMock\\CasualEnum.json");
             Assert.Equal(expected, s);
         }
 
@@ -278,7 +276,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\StringArray.json");
+			string s = TranslateJsonToCode("SwagMock\\StringArray.json");
             Assert.Equal(expected, s);
         }
 
@@ -332,7 +330,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\CustomTypeArray.json");
+			string s = TranslateJsonToCode("SwagMock\\CustomTypeArray.json");
             Assert.Equal(expected, s);
         }
 
@@ -389,7 +387,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\SimpleOrder.json");
+			string s = TranslateJsonToCode("SwagMock\\SimpleOrder.json");
             Assert.Equal(expected, s);
         }
 
@@ -424,7 +422,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\TypeAlias.json");
+			string s = TranslateJsonToCode("SwagMock\\TypeAlias.json");
             Assert.Equal(expected, s);
         }
 
@@ -484,7 +482,7 @@ namespace MyNS
 	}
 }
 ";
-            var s = TranslateJsonToCode("SwagMock\\Required.json");
+			string s = TranslateJsonToCode("SwagMock\\Required.json");
             Assert.Equal(expected, s);
         }
 

@@ -23,7 +23,7 @@ namespace Fonlow.CodeDom.Web
 		/// <returns>ICommand object. Null if not found</returns>
 		public static ControllersTsClientApiGenBase CreateImplementationsFromAssembly(string assemblyFilePath, Settings settings, JSOutput jsOutput)
 		{
-			Assembly assembly = null;
+			Assembly assembly;
 			try
 			{
 				assembly = Assembly.LoadFile(assemblyFilePath); // the main program does not generally has the plugin assembly registered in deps.json, so it is better to load file.

@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * @return {GetCustomerServiceMetricResponse} Success
 		 */
 		GetCustomerServiceMetric(customer_service_metric_type: string, evaluation_marketplace_id: string, evaluation_type: string): Promise<GetCustomerServiceMetricResponse> {
-			return Axios.get(this.baseUri + 'customer_service_metric/' + (customer_service_metric_type == null ? '' : encodeURIComponent(customer_service_metric_type)) + '/' + (evaluation_type == null ? '' : encodeURIComponent(evaluation_type)) + '&evaluation_marketplace_id=' + (evaluation_marketplace_id == null ? '' : encodeURIComponent(evaluation_marketplace_id))).then(d => d.data);
+			return Axios.get<GetCustomerServiceMetricResponse>(this.baseUri + 'customer_service_metric/' + (customer_service_metric_type == null ? '' : encodeURIComponent(customer_service_metric_type)) + '/' + (evaluation_type == null ? '' : encodeURIComponent(evaluation_type)) + '&evaluation_marketplace_id=' + (evaluation_marketplace_id == null ? '' : encodeURIComponent(evaluation_marketplace_id)), {}).then(d => d.data);
 		}
 	}
 
@@ -342,7 +342,7 @@ export namespace MyNS {
 		 * @return {FindSellerStandardsProfilesResponse} Success
 		 */
 		FindSellerStandardsProfiles(): Promise<FindSellerStandardsProfilesResponse> {
-			return Axios.get(this.baseUri + 'seller_standards_profile').then(d => d.data);
+			return Axios.get<FindSellerStandardsProfilesResponse>(this.baseUri + 'seller_standards_profile', {}).then(d => d.data);
 		}
 
 		/**
@@ -353,7 +353,7 @@ export namespace MyNS {
 		 * @return {StandardsProfile} Success
 		 */
 		GetSellerStandardsProfile(cycle: string, program: string): Promise<StandardsProfile> {
-			return Axios.get(this.baseUri + 'seller_standards_profile/' + (program == null ? '' : encodeURIComponent(program)) + '/' + (cycle == null ? '' : encodeURIComponent(cycle))).then(d => d.data);
+			return Axios.get<StandardsProfile>(this.baseUri + 'seller_standards_profile/' + (program == null ? '' : encodeURIComponent(program)) + '/' + (cycle == null ? '' : encodeURIComponent(cycle)), {}).then(d => d.data);
 		}
 	}
 
@@ -371,7 +371,7 @@ export namespace MyNS {
 		 * @return {Report} Success
 		 */
 		GetTrafficReport(dimension: string, filter: string, metric: string, sort: string): Promise<Report> {
-			return Axios.get(this.baseUri + 'traffic_report?dimension=' + (dimension == null ? '' : encodeURIComponent(dimension)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&metric=' + (metric == null ? '' : encodeURIComponent(metric)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort))).then(d => d.data);
+			return Axios.get<Report>(this.baseUri + 'traffic_report?dimension=' + (dimension == null ? '' : encodeURIComponent(dimension)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&metric=' + (metric == null ? '' : encodeURIComponent(metric)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {}).then(d => d.data);
 		}
 	}
 

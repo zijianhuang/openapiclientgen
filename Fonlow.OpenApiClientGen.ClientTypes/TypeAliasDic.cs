@@ -6,7 +6,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class TypeAliasDic
 	{
-		Dictionary<string, string> dic = new Dictionary<string, string>();
+		readonly Dictionary<string, string> dic = new Dictionary<string, string>();
 
 		private static readonly Lazy<TypeAliasDic>
 		lazy =

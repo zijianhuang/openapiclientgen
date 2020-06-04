@@ -276,7 +276,7 @@ export namespace MyNS {
 		 * @return {SalesTaxJurisdictions} Success
 		 */
 		GetSalesTaxJurisdictions(countryCode: string): Promise<SalesTaxJurisdictions> {
-			return Axios.get(this.baseUri + 'country/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/sales_tax_jurisdiction').then(d => d.data);
+			return Axios.get<SalesTaxJurisdictions>(this.baseUri + 'country/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/sales_tax_jurisdiction', {}).then(d => d.data);
 		}
 	}
 
@@ -292,7 +292,7 @@ export namespace MyNS {
 		 * @return {AutomotivePartsCompatibilityPolicyResponse} Success
 		 */
 		GetAutomotivePartsCompatibilityPolicies(filter: string, marketplace_id: string): Promise<AutomotivePartsCompatibilityPolicyResponse> {
-			return Axios.get(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_automotive_parts_compatibility_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter))).then(d => d.data);
+			return Axios.get<AutomotivePartsCompatibilityPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_automotive_parts_compatibility_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
 		/**
@@ -303,7 +303,7 @@ export namespace MyNS {
 		 * @return {ItemConditionPolicyResponse} Success
 		 */
 		GetItemConditionPolicies(filter: string, marketplace_id: string): Promise<ItemConditionPolicyResponse> {
-			return Axios.get(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_item_condition_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter))).then(d => d.data);
+			return Axios.get<ItemConditionPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_item_condition_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
 		/**
@@ -314,7 +314,7 @@ export namespace MyNS {
 		 * @return {ListingStructurePolicyResponse} Success
 		 */
 		GetListingStructurePolicies(filter: string, marketplace_id: string): Promise<ListingStructurePolicyResponse> {
-			return Axios.get(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_listing_structure_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter))).then(d => d.data);
+			return Axios.get<ListingStructurePolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_listing_structure_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
 		/**
@@ -325,7 +325,7 @@ export namespace MyNS {
 		 * @return {NegotiatedPricePolicyResponse} Success
 		 */
 		GetNegotiatedPricePolicies(filter: string, marketplace_id: string): Promise<NegotiatedPricePolicyResponse> {
-			return Axios.get(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_negotiated_price_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter))).then(d => d.data);
+			return Axios.get<NegotiatedPricePolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_negotiated_price_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
 		/**
@@ -336,7 +336,7 @@ export namespace MyNS {
 		 * @return {ProductAdoptionPolicyResponse} Success
 		 */
 		GetProductAdoptionPolicies(filter: string, marketplace_id: string): Promise<ProductAdoptionPolicyResponse> {
-			return Axios.get(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_product_adoption_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter))).then(d => d.data);
+			return Axios.get<ProductAdoptionPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_product_adoption_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 
 		/**
@@ -347,7 +347,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicyResponse} Success
 		 */
 		GetReturnPolicies(filter: string, marketplace_id: string): Promise<ReturnPolicyResponse> {
-			return Axios.get(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_return_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter))).then(d => d.data);
+			return Axios.get<ReturnPolicyResponse>(this.baseUri + 'marketplace/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/get_return_policies?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
 		}
 	}
 

@@ -159,7 +159,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		CreateItemDraft(requestBody: ItemDraft): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'item_draft/', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post(this.baseUri + 'item_draft/', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 	}
 

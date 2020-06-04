@@ -145,7 +145,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		FindListingRecommendations(filter: string, limit: string, offset: string, requestBody: FindListingRecommendationRequest): Promise<AxiosResponse<string>> {
-			return Axios.post(this.baseUri + 'find?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post(this.baseUri + 'find?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 	}
 

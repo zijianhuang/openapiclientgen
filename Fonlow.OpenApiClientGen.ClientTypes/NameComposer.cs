@@ -27,7 +27,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		Settings settings;
+		readonly Settings settings;
 
 		/// <summary>
 		/// Construct action name according to OpenApiOperaton, httpMethod and ActionNameStrategy.
@@ -37,31 +37,25 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public string GetActionName(OpenApiOperation op, string httpMethod, string path)
 		{
-			switch (settings.ActionNameStrategy)
+			return settings.ActionNameStrategy switch
 			{
-				case ActionNameStrategy.Default:
-					return String.IsNullOrEmpty(op.OperationId) ? ComposeActionName(op, httpMethod) : ToTitleCase(op.OperationId);
-				case ActionNameStrategy.OperationId:
-					return ToTitleCase(op.OperationId);
-				case ActionNameStrategy.MethodQueryParameters:
-					return ComposeActionNameForPathAsContainer(op, httpMethod);
-				case ActionNameStrategy.PathMethodQueryParameters:
-					return ComposeActionNameWithPath(op, httpMethod, path);
-				case ActionNameStrategy.NormalizedOperationId:
-					return NormalizeOperationId(op.OperationId);
-				default:
-					throw new InvalidDataException("Impossible");
-			}
+				ActionNameStrategy.Default => String.IsNullOrEmpty(op.OperationId) ? ComposeActionName(op, httpMethod) : ToTitleCase(op.OperationId),
+				ActionNameStrategy.OperationId => ToTitleCase(op.OperationId),
+				ActionNameStrategy.MethodQueryParameters => ComposeActionNameForPathAsContainer(op, httpMethod),
+				ActionNameStrategy.PathMethodQueryParameters => ComposeActionNameWithPath(op, httpMethod, path),
+				ActionNameStrategy.NormalizedOperationId => NormalizeOperationId(op.OperationId),
+				_ => throw new InvalidDataException("Impossible"),
+			};
 		}
 
 		public string NormalizeOperationId(string s)
 		{
-			var matches = regex.Matches(s);
-			var r = String.Join(String.Empty, matches.Select(m => ToTitleCase(m.Value)));
+			MatchCollection matches = regex.Matches(s);
+			string r = String.Join(String.Empty, matches.Select(m => ToTitleCase(m.Value)));
 			return r;
 		}
 
-		Regex regex;
+		readonly Regex regex;
 
 		/// <summary>
 		/// Compose action name according to tags, httpMethod and Parameters.
@@ -76,7 +70,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				throw new ArgumentException("OpenApiOperation does not contain tags for composing action name.");
 			}
 
-			var byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => ToTitleCase(p.Name)));
+			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => ToTitleCase(p.Name)));
 			return ToTitleCase(op.Tags[0].Name) + httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
 		}
 
@@ -88,7 +82,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		string ComposeActionNameForPathAsContainer(OpenApiOperation op, string httpMethod)
 		{
-			var byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => ToTitleCase(p.Name)));
+			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => ToTitleCase(p.Name)));
 			return httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
 		}
 
@@ -101,7 +95,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		string ComposeActionNameWithPath(OpenApiOperation op, string httpMethod, string path)
 		{
-			var byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => ToTitleCase(p.Name)));
+			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => ToTitleCase(p.Name)));
 			return PathToActionOrContainerName(path) + httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
 		}
 
@@ -143,9 +137,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public string PathToActionOrContainerName(string path)
 		{
-			var uri = new Uri("http://dummy.net" + path);
-			var pathSegments = uri.Segments.Where(s => !s.Contains("%7B"));
-			var localPath = String.Join(String.Empty, pathSegments);
+			Uri uri = new Uri("http://dummy.net" + path);
+			IEnumerable<string> pathSegments = uri.Segments.Where(s => !s.Contains("%7B"));
+			string localPath = String.Join(String.Empty, pathSegments);
 
 			if (!String.IsNullOrEmpty(settings.PathPrefixToRemove))
 			{
@@ -158,14 +152,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				localPath = "/" + localPath;
 			}
 
-			var uriWithPaths = new Uri("http://dummy.net" + localPath);
+			Uri uriWithPaths = new Uri("http://dummy.net" + localPath);
 			return String.Join(String.Empty, uriWithPaths.Segments.Select(p => ToTitleCase(p.Replace("/", String.Empty))));
 		}
 
 		public string GetOperationReturnComment(OpenApiOperation op)
 		{
-			OpenApiResponse goodResponse;
-			if (op.Responses.TryGetValue("200", out goodResponse))
+			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
 			{
 				return goodResponse.Description;
 			}

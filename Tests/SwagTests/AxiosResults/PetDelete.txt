@@ -12,7 +12,7 @@ export namespace MyNS {
 		 * @return {void} 
 		 */
 		DeletePet(petId: number): Promise<AxiosResponse<string>> {
-			return Axios.delete(this.baseUri + 'pet/' + petId).then(d => d.data);
+			return Axios.delete(this.baseUri + 'pet/' + petId, { responseType: 'text' });
 		}
 	}
 

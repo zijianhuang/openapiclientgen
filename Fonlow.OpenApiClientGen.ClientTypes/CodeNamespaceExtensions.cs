@@ -17,10 +17,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			for (int i = 0; i < clientNamespace.Types.Count; i++)
 			{
-				var tc = clientNamespace.Types[i];
+				CodeTypeDeclaration tc = clientNamespace.Types[i];
 				if (tc.IsEnum)
 				{
-					var memberCount = tc.Members.Count;
+					int memberCount = tc.Members.Count;
 					if (memberCount != ms.Length)
 					{
 						continue;
@@ -28,7 +28,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					for (int k = 0; k < memberCount; k++)
 					{
-						var tem = tc.Members[k];
+						CodeTypeMember tem = tc.Members[k];
 						if (tem.Name != ms[k])
 						{
 							break;
@@ -49,7 +49,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			for (int i = 0; i < clientNamespace.Types.Count; i++)
 			{
-				var tc = clientNamespace.Types[i];
+				CodeTypeDeclaration tc = clientNamespace.Types[i];
 				if (tc.Name == typeName)
 				{
 					return tc;

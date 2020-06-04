@@ -15,9 +15,9 @@ namespace Fonlow.OpenApiClientGen.Cs
 	/// </summary>
 	internal class SharedContext
 	{
-		internal CodeFieldReferenceExpression clientReference { get; set; }
-		internal CodeFieldReferenceExpression baseUriReference { get; set; }
-		internal CodeFieldReferenceExpression jsonSettingsReference { get; set; }
+		internal CodeFieldReferenceExpression ClientReference { get; set; }
+		internal CodeFieldReferenceExpression BaseUriReference { get; set; }
+		internal CodeFieldReferenceExpression JsonSettingsReference { get; set; }
 	}
 
 
@@ -26,8 +26,8 @@ namespace Fonlow.OpenApiClientGen.Cs
 	/// </summary>
 	public class ControllersClientApiGen
 	{
-		CodeCompileUnit codeCompileUnit;
-		SharedContext sharedContext;
+		readonly CodeCompileUnit codeCompileUnit;
+		readonly SharedContext sharedContext;
 		CodeNamespace clientNamespace;
 		/// <summary>
 		/// 
@@ -53,25 +53,21 @@ namespace Fonlow.OpenApiClientGen.Cs
 		// hack inspired by https://csharpcodewhisperer.blogspot.com/2014/10/create-c-class-code-from-datatable.html
 		public void Save(string fileName)
 		{
-			using (var stream = new MemoryStream())
-			using (StreamWriter writer = new StreamWriter(stream))
+			using MemoryStream stream = new MemoryStream();
+			using StreamWriter writer = new StreamWriter(stream);
+			WriteCode(writer);
+			writer.Flush();
+			stream.Position = 0;
+			using StreamReader stringReader = new StreamReader(stream);
+			using StreamWriter fileWriter = new StreamWriter(fileName);
+			string s = stringReader.ReadToEnd();
+			if (settings.UseEnsureSuccessStatusCodeEx)
 			{
-				WriteCode(writer);
-				writer.Flush();
-				stream.Position = 0;
-				using (var stringReader = new StreamReader(stream))
-				using (var fileWriter = new StreamWriter(fileName))
-				{
-					var s = stringReader.ReadToEnd();
-					if (settings.UseEnsureSuccessStatusCodeEx)
-					{
-						fileWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
-					}
-					else
-					{
-						fileWriter.Write(s.Replace("//;", ""));
-					}
-				}
+				fileWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
+			}
+			else
+			{
+				fileWriter.Write(s.Replace("//;", ""));
 			}
 		}
 
@@ -84,11 +80,9 @@ namespace Fonlow.OpenApiClientGen.Cs
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
 
-			using (CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp"))
-			{
-				CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
-				provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
-			}
+			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
+			CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
+			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
 		/// <summary>
@@ -97,28 +91,24 @@ namespace Fonlow.OpenApiClientGen.Cs
 		/// <returns></returns>
 		public string WriteToText()
 		{
-			using (var stream = new MemoryStream())
-			using (StreamWriter writer = new StreamWriter(stream))
+			using MemoryStream stream = new MemoryStream();
+			using StreamWriter writer = new StreamWriter(stream);
+			WriteCode(writer);
+			writer.Flush();
+			stream.Position = 0;
+			using StreamReader stringReader = new StreamReader(stream);
+			using StringWriter stringWriter = new StringWriter();
+			string s = stringReader.ReadToEnd();
+			if (settings.UseEnsureSuccessStatusCodeEx)
 			{
-				WriteCode(writer);
-				writer.Flush();
-				stream.Position = 0;
-				using (var stringReader = new StreamReader(stream))
-				using (var stringWriter = new StringWriter())
-				{
-					var s = stringReader.ReadToEnd();
-					if (settings.UseEnsureSuccessStatusCodeEx)
-					{
-						stringWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
-					}
-					else
-					{
-						stringWriter.Write(s.Replace("//;", ""));
-					}
-
-					return stringWriter.ToString();
-				}
+				stringWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
 			}
+			else
+			{
+				stringWriter.Write(s.Replace("//;", ""));
+			}
+
+			return stringWriter.ToString();
 		}
 
 		/// <summary>
@@ -135,7 +125,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 			clientNamespace = new CodeNamespace(settings.ClientNamespace);
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
-			var componentsToCsTypes = new ComponentsToCsTypes(settings, codeCompileUnit, clientNamespace);
+			ComponentsToCsTypes componentsToCsTypes = new ComponentsToCsTypes(settings, codeCompileUnit, clientNamespace);
 			componentsToCsTypes.CreateCodeDom(components);
 
 			if (paths == null)
@@ -155,30 +145,30 @@ namespace Fonlow.OpenApiClientGen.Cs
 				clientNamespace.Imports.Add(new CodeNamespaceImport("Fonlow.Net.Http"));
 			}
 
-			var containerClassNames = GetContainerClassNames(paths);
+			string[] containerClassNames = GetContainerClassNames(paths);
 
-			var newClassesCreated = containerClassNames.Select(d => CreateControllerClientClass(clientNamespace, d)).ToArray();
+			CodeTypeDeclaration[] newClassesCreated = containerClassNames.Select(d => CreateControllerClientClass(clientNamespace, d)).ToArray();
 
-			foreach (var p in paths)
+			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
 			{
-				foreach (var op in p.Value.Operations)
+				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
 				{
 					ClientApiFunctionGen functionGen = new ClientApiFunctionGen();
-					var apiFunction = functionGen.CreateApiFunction(sharedContext, settings, p.Key, op.Key, op.Value, componentsToCsTypes, true, settings.UseEnsureSuccessStatusCodeEx);
+					CodeMemberMethod apiFunction = functionGen.CreateApiFunction(settings, p.Key, op.Key, op.Value, componentsToCsTypes, true, settings.UseEnsureSuccessStatusCodeEx);
 					if (apiFunction == null)
 					{
 						System.Diagnostics.Trace.TraceWarning($"Not to generate for {p.Key} {op.Key}.");
 						continue;
 					}
 
-					var containerClassName = nameComposer.GetContainerName(op.Value, p.Key);
-					var existingClass = LookupExistingClass(containerClassName);
+					string containerClassName = nameComposer.GetContainerName(op.Value, p.Key);
+					CodeTypeDeclaration existingClass = LookupExistingClass(containerClassName);
 
 					existingClass.Members.Add(apiFunction);
 					if (settings.GenerateBothAsyncAndSync)
 					{
 						ClientApiFunctionGen functionGen2 = new ClientApiFunctionGen();
-						existingClass.Members.Add(functionGen2.CreateApiFunction(sharedContext, settings, p.Key, op.Key, op.Value, componentsToCsTypes, false, settings.UseEnsureSuccessStatusCodeEx));
+						existingClass.Members.Add(functionGen2.CreateApiFunction(settings, p.Key, op.Key, op.Value, componentsToCsTypes, false, settings.UseEnsureSuccessStatusCodeEx));
 					}
 				}
 			}
@@ -198,11 +188,11 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 			List<string> names = new List<string>();
 
-			foreach (var p in paths)
+			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
 			{
-				foreach (var op in p.Value.Operations)
+				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
 				{
-					var name = nameComposer.GetContainerName(op.Value, p.Key);
+					string name = nameComposer.GetContainerName(op.Value, p.Key);
 					names.Add(name);
 				}
 			}
@@ -219,12 +209,12 @@ namespace Fonlow.OpenApiClientGen.Cs
 		{
 			for (int i = 0; i < codeCompileUnit.Namespaces.Count; i++)
 			{
-				var ns = codeCompileUnit.Namespaces[i];
+				CodeNamespace ns = codeCompileUnit.Namespaces[i];
 				if (ns.Name == settings.ClientNamespace)
 				{
 					for (int k = 0; k < ns.Types.Count; k++)
 					{
-						var c = ns.Types[k];
+						CodeTypeDeclaration c = ns.Types[k];
 						if (c.Name == controllerName)
 							return c;
 					}
@@ -236,7 +226,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 		CodeTypeDeclaration CreateControllerClientClass(CodeNamespace ns, string className)
 		{
-			var targetClass = new CodeTypeDeclaration(className)
+			CodeTypeDeclaration targetClass = new CodeTypeDeclaration(className)
 			{
 				IsClass = true,
 				IsPartial = true,
@@ -253,16 +243,20 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 		static void AddLocalFields(CodeTypeDeclaration targetClass)
 		{
-			CodeMemberField clientField = new CodeMemberField();
-			clientField.Attributes = MemberAttributes.Private;
-			clientField.Name = "client";
-			clientField.Type = new CodeTypeReference("System.Net.Http.HttpClient");
+			CodeMemberField clientField = new CodeMemberField
+			{
+				Attributes = MemberAttributes.Private,
+				Name = "client",
+				Type = new CodeTypeReference("System.Net.Http.HttpClient")
+			};
 			targetClass.Members.Add(clientField);
 
-			CodeMemberField jsonSettingsField = new CodeMemberField();
-			jsonSettingsField.Attributes = MemberAttributes.Private;
-			jsonSettingsField.Name = "jsonSerializerSettings";
-			jsonSettingsField.Type = new CodeTypeReference("JsonSerializerSettings");
+			CodeMemberField jsonSettingsField = new CodeMemberField
+			{
+				Attributes = MemberAttributes.Private,
+				Name = "jsonSerializerSettings",
+				Type = new CodeTypeReference("JsonSerializerSettings")
+			};
 			targetClass.Members.Add(jsonSettingsField);
 
 			//CodeMemberField baseUriField = new CodeMemberField();
@@ -275,9 +269,11 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 		void AddConstructorWithHttpClient(CodeTypeDeclaration targetClass)
 		{
-			CodeConstructor constructor = new CodeConstructor();
-			constructor.Attributes =
-				MemberAttributes.Public | MemberAttributes.Final;
+			CodeConstructor constructor = new CodeConstructor
+			{
+				Attributes =
+				MemberAttributes.Public | MemberAttributes.Final
+			};
 
 			// Add parameters.
 			constructor.Parameters.Add(new CodeParameterDeclarationExpression(
@@ -293,11 +289,11 @@ namespace Fonlow.OpenApiClientGen.Cs
 				throw new ArgumentNullException(""HttpClient has no BaseAddress"", ""client"");
 "));
 			// Add field initialization logic
-			sharedContext.clientReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "client");
-			constructor.Statements.Add(new CodeAssignStatement(sharedContext.clientReference, new CodeArgumentReferenceExpression("client")));
+			sharedContext.ClientReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "client");
+			constructor.Statements.Add(new CodeAssignStatement(sharedContext.ClientReference, new CodeArgumentReferenceExpression("client")));
 
-			sharedContext.jsonSettingsReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "jsonSerializerSettings");
-			constructor.Statements.Add(new CodeAssignStatement(sharedContext.jsonSettingsReference, new CodeArgumentReferenceExpression("jsonSerializerSettings")));
+			sharedContext.JsonSettingsReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "jsonSerializerSettings");
+			constructor.Statements.Add(new CodeAssignStatement(sharedContext.JsonSettingsReference, new CodeArgumentReferenceExpression("jsonSerializerSettings")));
 
 			targetClass.Members.Add(constructor);
 		}

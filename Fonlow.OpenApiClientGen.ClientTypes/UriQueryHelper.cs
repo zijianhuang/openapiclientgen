@@ -13,14 +13,14 @@ namespace Fonlow.CodeDom.Web
 	{
 		public static string CreateUriQuery(string uriText, ParameterDescriptionEx[] parameterDescriptions)
 		{
-			var template = new UriTemplate(uriText);
-			var parameterNames = template.GetParameterNames().ToArray();
+			UriTemplate template = new UriTemplate(uriText);
+			string[] parameterNames = template.GetParameterNames().ToArray();
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
 				return null;
 
 			string newUriText = uriText;
 
-			foreach (var d in parameterDescriptions)
+			foreach (ParameterDescriptionEx d in parameterDescriptions)
 			{
 				if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromBody || d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromForm)
 				{
@@ -35,14 +35,14 @@ namespace Fonlow.CodeDom.Web
 
 		public static string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions)
 		{
-			var template = new UriTemplate(uriText);
-			var parameterNames = template.GetParameterNames().ToArray();
+			UriTemplate template = new UriTemplate(uriText);
+			string[] parameterNames = template.GetParameterNames().ToArray();
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
 				return null;
 
 			string newUriText = uriText;
 
-			foreach (var d in parameterDescriptions)
+			foreach (ParameterDescriptionEx d in parameterDescriptions)
 			{
 				if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromBody || d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromForm)
 				{
