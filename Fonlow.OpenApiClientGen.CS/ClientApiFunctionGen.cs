@@ -182,7 +182,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 				CreateParamDocComment("requestBody", requestBodyComment);
 			}
 
-			CreateDocComment("returns", nameComposer.GetOperationReturnComment(apiOperation));
+			CreateDocComment("returns", NameComposer.GetOperationReturnComment(apiOperation));
 		}
 
 		void RenderGetOrDeleteImplementation(OperationType httpMethod, bool forAsync)

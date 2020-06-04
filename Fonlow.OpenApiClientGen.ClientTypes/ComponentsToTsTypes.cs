@@ -36,7 +36,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public void SaveCodeToFile(string fileName)
 		{
 			if (String.IsNullOrEmpty(fileName))
-				throw new ArgumentException("A valid fileName is not defined.", "fileName");
+				throw new ArgumentException("A valid fileName is not defined.", nameof(fileName));
 
 			try
 			{
@@ -143,7 +143,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
+		static void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
 			int k = 0;
 			foreach (IOpenApiAny enumMember in enumTypeList)
@@ -279,7 +279,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
+		static void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
 		{
 			if (String.IsNullOrEmpty(item.Value.Description))
 				return;
@@ -318,7 +318,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		CodeMemberField CreateProperty(string propertyName, string typeName, bool isRequired)
+		static CodeMemberField CreateProperty(string propertyName, string typeName, bool isRequired)
 		{
 			string memberName = propertyName + (isRequired ? String.Empty : "?");
 			CodeMemberField result = new CodeMemberField() { Type = TranslateToClientTypeReference(typeName), Name = memberName };
@@ -326,7 +326,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		CodeMemberField CreateProperty(CodeTypeReference codeTypeReference, string propertyName, bool isRequired)
+		static CodeMemberField CreateProperty(CodeTypeReference codeTypeReference, string propertyName, bool isRequired)
 		{
 			string memberName = propertyName + (isRequired ? String.Empty : "?");
 			CodeMemberField result = new CodeMemberField(codeTypeReference, memberName)
@@ -377,7 +377,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return new CodeTypeReference("any");
 		}
 
-		public CodeTypeReference TranslateToClientTypeReference(string typeName)
+		public static CodeTypeReference TranslateToClientTypeReference(string typeName)
 		{
 			if (typeName == null)
 				return null;// new CodeTypeReference("void");
@@ -405,7 +405,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return otherArrayType;
 		}
 
-		CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
+		static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
 		{
 			CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
 			CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)

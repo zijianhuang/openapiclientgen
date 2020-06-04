@@ -63,7 +63,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="op"></param>
 		/// <param name="httpMethod"></param>
 		/// <returns></returns>
-		public string ComposeActionName(OpenApiOperation op, string httpMethod)
+		public static string ComposeActionName(OpenApiOperation op, string httpMethod)
 		{
 			if (op.Tags == null || op.Tags.Count == 0)
 			{
@@ -80,7 +80,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="op"></param>
 		/// <param name="httpMethod"></param>
 		/// <returns></returns>
-		string ComposeActionNameForPathAsContainer(OpenApiOperation op, string httpMethod)
+		static string ComposeActionNameForPathAsContainer(OpenApiOperation op, string httpMethod)
 		{
 			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => ToTitleCase(p.Name)));
 			return httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
@@ -156,7 +156,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return String.Join(String.Empty, uriWithPaths.Segments.Select(p => ToTitleCase(p.Replace("/", String.Empty))));
 		}
 
-		public string GetOperationReturnComment(OpenApiOperation op)
+		public static string GetOperationReturnComment(OpenApiOperation op)
 		{
 			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
 			{

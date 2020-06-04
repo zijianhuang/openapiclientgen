@@ -101,7 +101,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		ParameterBinder ParameterLocationToParameterBinder(ParameterLocation? lo)
+		static ParameterBinder ParameterLocationToParameterBinder(ParameterLocation? lo)
 		{
 			if (!lo.HasValue)
 			{

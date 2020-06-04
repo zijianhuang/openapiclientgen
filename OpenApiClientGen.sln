@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{C6D5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC372E94-AF86-4792-B47E-B0A76957D63A}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		CodeGen.bat = CodeGen.bat
 		DemoCodeGen.json = DemoCodeGen.json
 		README.md = README.md
@@ -34,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiClientGenCore.Axios"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetWebApi", "PetWebApi\PetWebApi.csproj", "{A81494AC-903F-42EE-94DA-5A8C48D935FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiClientGenCore.Aurelia", "OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj", "{D4BBF0EA-B45B-4EB3-93A3-E4F91408F0A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiClientGenCore.Aurelia", "OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj", "{D4BBF0EA-B45B-4EB3-93A3-E4F91408F0A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

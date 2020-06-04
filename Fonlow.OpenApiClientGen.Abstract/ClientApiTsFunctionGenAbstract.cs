@@ -139,7 +139,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 
 			string returnTypeOfResponse = ReturnTypeReference == null ? "void" : TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
-			builder.AppendLine($"@return {{{returnTypeOfResponse}}} {nameComposer.GetOperationReturnComment(apiOperation)}");
+			builder.AppendLine($"@return {{{returnTypeOfResponse}}} {NameComposer.GetOperationReturnComment(apiOperation)}");
 
 			Method.Comments.Add(new CodeCommentStatement(builder.ToString(), true));
 		}

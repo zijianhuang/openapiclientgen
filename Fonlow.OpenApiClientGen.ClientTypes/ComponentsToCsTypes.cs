@@ -358,7 +358,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
+		static void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
 		{
 			if (fieldSchema.MaxLength.HasValue || fieldSchema.MinLength.HasValue)
 			{
@@ -456,7 +456,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		string GetDefaultValue(OpenApiSchema s)
+		static string GetDefaultValue(OpenApiSchema s)
 		{
 			if (s.Default == null)
 			{
@@ -507,7 +507,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
 		}
 
-		void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration)
+		static void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration)
 		{
 			string typeComment = item.Value.Description;
 			AddDocComments(typeComment, typeDeclaration.Comments);
@@ -567,7 +567,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		CodeMemberField CreateNullableProperty(string propertyName, Type type)
+		static CodeMemberField CreateNullableProperty(string propertyName, Type type)
 		{
 			Debug.Assert(type.IsValueType);
 			// This is a little hack. Since you cant create auto properties in CodeDOM,
@@ -619,7 +619,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		public CodeTypeReference TranslateToClientTypeReference(string typeName)
+		public static CodeTypeReference TranslateToClientTypeReference(string typeName)
 		{
 			if (typeName == null)
 				return null;// new CodeTypeReference("void");
@@ -637,7 +637,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return otherArrayType;
 		}
 
-		CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
+		static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
 		{
 			CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
 			CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
