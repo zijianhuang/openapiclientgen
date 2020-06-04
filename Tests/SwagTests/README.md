@@ -1,0 +1,1 @@
+This test suite hosts multiple plugins and the executions of these plugins are made in sequence, not in concurrency, since respective host class is not thread safe.

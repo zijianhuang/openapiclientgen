@@ -41,7 +41,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				contentType = "application/json;charset=UTF-8";
 			}
 
-			string contentOptionsWithHeadersHandlerForString = $"{{ headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }},  responseType: 'text' }}";
+			string contentOptionsWithHeadersHandlerForString = $"{{ headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }} }}";
 			ContentOptionsForString = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForString : $"{{ headers: {{ 'Content-Type': '{contentType}' }} }}";
 
 			string contentOptionsWithHeadersHandlerForResponse = $"{{ headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }} }}";
@@ -51,10 +51,10 @@ namespace Fonlow.CodeDom.Web.Ts
 			OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ headers: {{ 'Content-Type': '{contentType}' }} }}";
 
 			const string optionsWithHeadersHandlerForString = "{ headers: headersHandler ? headersHandler() : undefined }";
-			OptionsForString = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForString : "{ responseType: 'text' }";
+			OptionsForString = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForString : "{}";
 
 			const string optionsWithHeadersHandlerForResponse = "{ headers: headersHandler ? headersHandler() : undefined }";
-			OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : "{ responseType: 'text' }";
+			OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : "{}";
 
 			string optionsWithHeadersHandler = "{ headers: headersHandler ? headersHandler() : undefined }";
 			Options = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandler : "{}";
@@ -69,7 +69,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 			else if (returnTypeText == "response")
 			{
-				returnTypeText = AureliaHttpStringResponse;
+				returnTypeText = AureliaHttpResponse;
 			}
 			else if (returnTypeText == "blobresponse")
 			{
@@ -202,7 +202,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForString});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {OptionsWithContent});"));
 					}
 
 					return;

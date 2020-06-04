@@ -7,7 +7,7 @@ using Xunit;
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")]
-	public class CodeGenNG2Tests
+	public class CodeGenAureliaTests
 	{
 		static OpenApiDocument ReadJson(string filePath)
 		{
@@ -65,7 +65,7 @@ namespace SwagTests
 				ContentType = "application/json;charset=UTF-8",
 			};
 
-			Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen gen = new Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen(settings, jsOutput);
+			Fonlow.CodeDom.Web.Ts.ControllersTsAureliaClientApiGen gen = new Fonlow.CodeDom.Web.Ts.ControllersTsAureliaClientApiGen(settings, jsOutput);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
 		}
@@ -337,26 +337,26 @@ namespace SwagTests
 		[Fact]
 		public void TestValuesPaths()
 		{
-			GenerateAndAssert("SwagMock\\ValuesPaths.json", "NG2Results\\ValuesPaths.txt");
+			GenerateAndAssert("SwagMock\\ValuesPaths.json", "AureliaResults\\ValuesPaths.txt");
 		}
 
 
 		[Fact]
 		public void TestPetDelete()
 		{
-			GenerateAndAssert("SwagMock\\PetDelete.json", "NG2Results\\PetDelete.txt");
+			GenerateAndAssert("SwagMock\\PetDelete.json", "AureliaResults\\PetDelete.txt");
 		}
 
 		[Fact]
 		public void TestPet()
 		{
-			GenerateAndAssert("SwagMock\\pet.yaml", "NG2Results\\Pet.txt");
+			GenerateAndAssert("SwagMock\\pet.yaml", "AureliaResults\\Pet.txt");
 		}
 
 		[Fact]
 		public void TestPetWithPathAsContainerName()
 		{
-			GenerateAndAssert("SwagMock\\pet.yaml", "NG2Results\\PetPathAsContainer.txt", new Settings()
+			GenerateAndAssert("SwagMock\\pet.yaml", "AureliaResults\\PetPathAsContainer.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "Misc",
@@ -369,7 +369,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetWithGodContainerAndPathAction()
 		{
-			GenerateAndAssert("SwagMock\\pet.yaml" , "NG2Results\\PetGodClass.txt", new Settings()
+			GenerateAndAssert("SwagMock\\pet.yaml" , "AureliaResults\\PetGodClass.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.PathMethodQueryParameters,
@@ -381,7 +381,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetFindByStatus()
 		{
-			GenerateAndAssert("SwagMock\\petByStatus.yaml", "NG2Results\\PetFindByStatus.txt", new Settings()
+			GenerateAndAssert("SwagMock\\petByStatus.yaml", "AureliaResults\\PetFindByStatus.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
@@ -394,13 +394,13 @@ namespace SwagTests
 		[Fact]
 		public void TestPetStore()
 		{
-			GenerateAndAssert("SwagMock\\petStore.yaml", "NG2Results\\PetStore.txt");
+			GenerateAndAssert("SwagMock\\petStore.yaml", "AureliaResults\\PetStore.txt");
 		}
 
 		[Fact]
 		public void TestPetStoreExpanded()
 		{
-			GenerateAndAssert("SwagMock\\petStoreExpanded.yaml" , "NG2Results\\PetStoreExpanded.txt", new Settings()
+			GenerateAndAssert("SwagMock\\petStoreExpanded.yaml" , "AureliaResults\\PetStoreExpanded.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
@@ -411,7 +411,7 @@ namespace SwagTests
 		[Fact]
 		public void TestUspto()
 		{
-			GenerateAndAssert("SwagMock\\uspto.yaml" , "NG2Results\\Uspto.txt", new Settings()
+			GenerateAndAssert("SwagMock\\uspto.yaml" , "AureliaResults\\Uspto.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
@@ -424,7 +424,7 @@ namespace SwagTests
 		[Fact]
 		public void TestMcp()
 		{
-			GenerateAndAssert("SwagMock\\mcp.yaml", "NG2Results\\mcp.txt", new Settings()
+			GenerateAndAssert("SwagMock\\mcp.yaml", "AureliaResults\\mcp.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "McpClient",
@@ -438,73 +438,73 @@ namespace SwagTests
 		[Fact]
 		public void TestEBaySellAccount()
 		{
-			GenerateAndAssert("SwagMock\\sell_account_v1_oas3.json", "NG2Results\\sell_account.txt");
+			GenerateAndAssert("SwagMock\\sell_account_v1_oas3.json", "AureliaResults\\sell_account.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_analytics()
 		{
-			GenerateAndAssert("SwagMock\\sell_analytics_v1_oas3.yaml", "NG2Results\\sell_analytics.txt");
+			GenerateAndAssert("SwagMock\\sell_analytics_v1_oas3.yaml", "AureliaResults\\sell_analytics.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_compliance()
 		{
-			GenerateAndAssert("SwagMock\\sell_compliance_v1_oas3.yaml", "NG2Results\\sell_compliance.txt");
+			GenerateAndAssert("SwagMock\\sell_compliance_v1_oas3.yaml", "AureliaResults\\sell_compliance.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_finances()
 		{
-			GenerateAndAssert("SwagMock\\sell_finances_v1_oas3.yaml", "NG2Results\\sell_finances.txt");
+			GenerateAndAssert("SwagMock\\sell_finances_v1_oas3.yaml", "AureliaResults\\sell_finances.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_inventory()
 		{
-			GenerateAndAssert("SwagMock\\sell_inventory_v1_oas3.yaml", "NG2Results\\sell_inventory.txt");
+			GenerateAndAssert("SwagMock\\sell_inventory_v1_oas3.yaml", "AureliaResults\\sell_inventory.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_listing()
 		{
-			GenerateAndAssert("SwagMock\\sell_listing_v1_beta_oas3.yaml", "NG2Results\\sell_listing.txt");
+			GenerateAndAssert("SwagMock\\sell_listing_v1_beta_oas3.yaml", "AureliaResults\\sell_listing.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_logistics()
 		{
-			GenerateAndAssert("SwagMock\\sell_logistics_v1_oas3.json", "NG2Results\\sell_logistics.txt");
+			GenerateAndAssert("SwagMock\\sell_logistics_v1_oas3.json", "AureliaResults\\sell_logistics.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_negotiation()
 		{
-			GenerateAndAssert("SwagMock\\sell_negotiation_v1_oas3.yaml", "NG2Results\\sell_negotiation.txt");
+			GenerateAndAssert("SwagMock\\sell_negotiation_v1_oas3.yaml", "AureliaResults\\sell_negotiation.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_marketing()
 		{
-			GenerateAndAssert("SwagMock\\sell_marketing_v1_oas3.json", "NG2Results\\sell_marketing.txt");
+			GenerateAndAssert("SwagMock\\sell_marketing_v1_oas3.json", "AureliaResults\\sell_marketing.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_metadata()
 		{
-			GenerateAndAssert("SwagMock\\sell_metadata_v1_oas3.json", "NG2Results\\sell_metadata.txt");
+			GenerateAndAssert("SwagMock\\sell_metadata_v1_oas3.json", "AureliaResults\\sell_metadata.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_recommendation()
 		{
-			GenerateAndAssert("SwagMock\\sell_recommendation_v1_oas3.yaml", "NG2Results\\sell_recommendation.txt");
+			GenerateAndAssert("SwagMock\\sell_recommendation_v1_oas3.yaml", "AureliaResults\\sell_recommendation.txt");
 		}
 
 		[Fact]
 		public void TestRedocOpenApi()
 		{
-			GenerateAndAssert("SwagMock\\redocOpenApi200501.json", "NG2Results\\redocOpenApi200501.txt");
+			GenerateAndAssert("SwagMock\\redocOpenApi200501.json", "AureliaResults\\redocOpenApi200501.txt");
 		}
 	}
 

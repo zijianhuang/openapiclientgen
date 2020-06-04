@@ -7,6 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AureliaResults\mcp.txt" />
+    <None Remove="AureliaResults\Pet.txt" />
+    <None Remove="AureliaResults\PetDelete.txt" />
+    <None Remove="AureliaResults\PetFindByStatus.txt" />
+    <None Remove="AureliaResults\PetGodClass.txt" />
+    <None Remove="AureliaResults\PetPathAsContainer.txt" />
+    <None Remove="AureliaResults\PetStore.txt" />
+    <None Remove="AureliaResults\PetStoreExpanded.txt" />
+    <None Remove="AureliaResults\redocOpenApi200501.txt" />
+    <None Remove="AureliaResults\sell_account.txt" />
+    <None Remove="AureliaResults\sell_analytics.txt" />
+    <None Remove="AureliaResults\sell_compliance.txt" />
+    <None Remove="AureliaResults\sell_finances.txt" />
+    <None Remove="AureliaResults\sell_inventory.txt" />
+    <None Remove="AureliaResults\sell_listing.txt" />
+    <None Remove="AureliaResults\sell_logistics.txt" />
+    <None Remove="AureliaResults\sell_marketing.txt" />
+    <None Remove="AureliaResults\sell_metadata.txt" />
+    <None Remove="AureliaResults\sell_negotiation.txt" />
+    <None Remove="AureliaResults\sell_recommendation.txt" />
+    <None Remove="AureliaResults\Uspto.txt" />
+    <None Remove="AureliaResults\ValuesPaths.txt" />
     <None Remove="AxiosResults\mcp.txt" />
     <None Remove="AxiosResults\Pet.txt" />
     <None Remove="AxiosResults\PetDelete.txt" />
@@ -15,6 +37,7 @@
     <None Remove="AxiosResults\PetPathAsContainer.txt" />
     <None Remove="AxiosResults\PetStore.txt" />
     <None Remove="AxiosResults\PetStoreExpanded.txt" />
+    <None Remove="AxiosResults\redocOpenApi200501.txt" />
     <None Remove="AxiosResults\sell_account.txt" />
     <None Remove="AxiosResults\sell_analytics.txt" />
     <None Remove="AxiosResults\sell_compliance.txt" />
@@ -25,6 +48,7 @@
     <None Remove="AxiosResults\sell_marketing.txt" />
     <None Remove="AxiosResults\sell_metadata.txt" />
     <None Remove="AxiosResults\sell_negotiation.txt" />
+    <None Remove="AxiosResults\sell_recommendation.txt" />
     <None Remove="AxiosResults\Uspto.txt" />
     <None Remove="AxiosResults\ValuesPaths.txt" />
     <None Remove="NG2Results\mcp.txt" />
@@ -35,6 +59,7 @@
     <None Remove="NG2Results\PetPathAsContainer.txt" />
     <None Remove="NG2Results\PetStore.txt" />
     <None Remove="NG2Results\PetStoreExpanded.txt" />
+    <None Remove="NG2Results\redocOpenApi200501.txt" />
     <None Remove="NG2Results\sell_account.txt" />
     <None Remove="NG2Results\sell_analytics.txt" />
     <None Remove="NG2Results\sell_compliance.txt" />
@@ -45,6 +70,7 @@
     <None Remove="NG2Results\sell_marketing.txt" />
     <None Remove="NG2Results\sell_metadata.txt" />
     <None Remove="NG2Results\sell_negotiation.txt" />
+    <None Remove="NG2Results\sell_recommendation.txt" />
     <None Remove="NG2Results\Uspto.txt" />
     <None Remove="NG2Results\ValuesPaths.txt" />
     <None Remove="Results\buy_browse.txt" />
@@ -136,6 +162,72 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="AureliaResults\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\Pet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetDelete.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetFindByStatus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetGodClass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetPathAsContainer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetStore.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\redocOpenApi200501.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_account.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_analytics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_compliance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_finances.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_inventory.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_listing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_logistics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_marketing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_metadata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_recommendation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\Uspto.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\ValuesPaths.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="AxiosResults\mcp.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -158,6 +250,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AxiosResults\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\redocOpenApi200501.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AxiosResults\sell_account.txt">
@@ -190,6 +285,9 @@
     <Content Include="AxiosResults\sell_negotiation.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="AxiosResults\sell_recommendation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="AxiosResults\Uspto.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -197,6 +295,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NG2Results\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\redocOpenApi200501.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NG2Results\sell_account.txt">
@@ -227,6 +328,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NG2Results\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_recommendation.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NG2Results\Uspto.txt">
@@ -538,6 +642,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Fonlow.OpenApiClientGen.ClientTypes\Fonlow.OpenApiClientGen.ClientTypes.csproj" />
     <ProjectReference Include="..\..\Fonlow.OpenApiClientGen.CS\Fonlow.OpenApiClientGen.CS.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
   </ItemGroup>

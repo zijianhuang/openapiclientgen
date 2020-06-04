@@ -1,0 +1,51 @@
+import {HttpClient} from 'aurelia-fetch-client';
+import {autoinject} from 'aurelia-framework';
+export namespace MyNS {
+	@autoinject()
+	export class ValuesClient {
+		constructor(private http: HttpClient) {
+		}
+
+		/**
+		 * Get api/Values
+		 * @return {Array<string>} Success
+		 */
+		ValuesGet(): Promise<Array<string>> {
+			return this.http.get('api/Values', {}).then(d => d.json());
+		}
+
+		/**
+		 * Post api/Values
+		 * @return {string} Success
+		 */
+		ValuesPost(requestBody: string): Promise<string> {
+			return this.http.post('api/Values', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.text());
+		}
+
+		/**
+		 * Get api/Values/{id}
+		 * @return {string} Success
+		 */
+		ValuesGetById(id: number): Promise<string> {
+			return this.http.get('api/Values/' + id, {}).then(d => d.text());
+		}
+
+		/**
+		 * Put api/Values/{id}
+		 * @return {void} Success
+		 */
+		ValuesPutById(id: number, requestBody: string): Promise<Response> {
+			return this.http.put('api/Values/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Delete api/Values/{id}
+		 * @return {void} Success
+		 */
+		ValuesDeleteById(id: number): Promise<Response> {
+			return this.http.delete('api/Values/' + id, {});
+		}
+	}
+
+}
+
