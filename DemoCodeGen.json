@@ -29,6 +29,14 @@
         },
 
         {
+            "AssemblyName": "Fonlow.OpenApiClientGen.Fetch",
+            "TargetDir": "./fetchapi/src/clientapi",
+            "TSFile": "WebApiFetchClientAuto.ts",
+            "AsModule": true,
+            "ContentType": "application/json;charset=UTF-8"
+        },
+
+        {
             "AssemblyName": "Fonlow.OpenApiClientGen.Axios",
             "TargetDir": "./axios/src/clientapi",
             "TSFile": "WebApiAxiosClientAuto.ts",

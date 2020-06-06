@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetWebApi", "PetWebApi\PetW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiClientGenCore.Aurelia", "OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj", "{D4BBF0EA-B45B-4EB3-93A3-E4F91408F0A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiClientGenCore.Fetch", "OpenApiClientGenCore.Fetch\OpenApiClientGenCore.Fetch.csproj", "{741BB21F-9B74-4088-B9BF-4EC83860DD66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{D4BBF0EA-B45B-4EB3-93A3-E4F91408F0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4BBF0EA-B45B-4EB3-93A3-E4F91408F0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4BBF0EA-B45B-4EB3-93A3-E4F91408F0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{741BB21F-9B74-4088-B9BF-4EC83860DD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741BB21F-9B74-4088-B9BF-4EC83860DD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741BB21F-9B74-4088-B9BF-4EC83860DD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741BB21F-9B74-4088-B9BF-4EC83860DD66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{72565E5F-CFAE-4E59-8AEA-89D55B0E5C30} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{B66919B1-86F7-4F44-B339-2BA9ABACC94B} = {C6D5C60F-4996-4F2B-80DD-BBE5FA1906C6}
 		{D4BBF0EA-B45B-4EB3-93A3-E4F91408F0A7} = {C6D5C60F-4996-4F2B-80DD-BBE5FA1906C6}
+		{741BB21F-9B74-4088-B9BF-4EC83860DD66} = {C6D5C60F-4996-4F2B-80DD-BBE5FA1906C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BEA7BD1-2BD3-4E85-8E05-D98DE5C44574}
