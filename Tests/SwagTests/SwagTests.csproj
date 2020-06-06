@@ -7,6 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FetchResults\mcp.txt" />
+    <None Remove="FetchResults\Pet.txt" />
+    <None Remove="FetchResults\PetDelete.txt" />
+    <None Remove="FetchResults\PetFindByStatus.txt" />
+    <None Remove="FetchResults\PetGodClass.txt" />
+    <None Remove="FetchResults\PetPathAsContainer.txt" />
+    <None Remove="FetchResults\PetStore.txt" />
+    <None Remove="FetchResults\PetStoreExpanded.txt" />
+    <None Remove="FetchResults\redocOpenApi200501.txt" />
+    <None Remove="FetchResults\sell_account.txt" />
+    <None Remove="FetchResults\sell_analytics.txt" />
+    <None Remove="FetchResults\sell_compliance.txt" />
+    <None Remove="FetchResults\sell_finances.txt" />
+    <None Remove="FetchResults\sell_inventory.txt" />
+    <None Remove="FetchResults\sell_listing.txt" />
+    <None Remove="FetchResults\sell_logistics.txt" />
+    <None Remove="FetchResults\sell_marketing.txt" />
+    <None Remove="FetchResults\sell_metadata.txt" />
+    <None Remove="FetchResults\sell_negotiation.txt" />
+    <None Remove="FetchResults\sell_recommendation.txt" />
+    <None Remove="FetchResults\Uspto.txt" />
+    <None Remove="FetchResults\ValuesPaths.txt" />
     <None Remove="AureliaResults\mcp.txt" />
     <None Remove="AureliaResults\Pet.txt" />
     <None Remove="AureliaResults\PetDelete.txt" />
@@ -162,6 +184,72 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="FetchResults\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\Pet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetDelete.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetFindByStatus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetGodClass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetPathAsContainer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetStore.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\redocOpenApi200501.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_account.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_analytics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_compliance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_finances.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_inventory.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_listing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_logistics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_marketing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_metadata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_recommendation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\Uspto.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\ValuesPaths.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="AureliaResults\mcp.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -644,6 +732,7 @@
     <ProjectReference Include="..\..\Fonlow.OpenApiClientGen.CS\Fonlow.OpenApiClientGen.CS.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.Fetch\OpenApiClientGenCore.Fetch.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
   </ItemGroup>
 

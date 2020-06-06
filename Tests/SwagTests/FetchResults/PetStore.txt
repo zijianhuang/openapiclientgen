@@ -1,0 +1,48 @@
+export namespace MyNS {
+	export interface Pet {
+		id: number;
+		name: string;
+		tag?: string;
+	}
+
+	export interface Error {
+		code: number;
+		message: string;
+	}
+
+	export class PetsClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
+
+		/**
+		 * List all pets
+		 * Get pets
+		 * @param {number} limit How many items to return at one time (max 100)
+		 * @return {Array<Pet>} A paged array of pets
+		 */
+		ListPets(limit: number): Promise<Array<Pet>> {
+			return fetch(this.baseUri + 'pets?limit=' + limit, { method: 'get' }).then(d => d.json());
+		}
+
+		/**
+		 * Create a pet
+		 * Post pets
+		 * @return {void} 
+		 */
+		CreatePets(): Promise<Response> {
+			return fetch(this.baseUri + 'pets', { method: 'post' });
+		}
+
+		/**
+		 * Info for a specific pet
+		 * Get pets/{petId}
+		 * @param {string} petId The id of the pet to retrieve
+		 * @return {Pet} Expected response to a valid request
+		 */
+		ShowPetById(petId: string): Promise<Pet> {
+			return fetch(this.baseUri + 'pets/' + (petId == null ? '' : encodeURIComponent(petId)), { method: 'get' }).then(d => d.json());
+		}
+	}
+
+}
+

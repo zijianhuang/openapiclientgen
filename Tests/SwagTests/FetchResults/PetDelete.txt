@@ -1,0 +1,18 @@
+export namespace MyNS {
+	export class PetClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
+
+		/**
+		 * Deletes a pet
+		 * Delete pet/{petId}
+		 * @param {number} petId Pet id to delete
+		 * @return {void} 
+		 */
+		DeletePet(petId: number): Promise<Response> {
+			return fetch(this.baseUri + 'pet/' + petId, { method: 'delete' });
+		}
+	}
+
+}
+

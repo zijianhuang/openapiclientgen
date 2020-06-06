@@ -1,0 +1,48 @@
+export namespace MyNS {
+	export class ValuesClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
+
+		/**
+		 * Get api/Values
+		 * @return {Array<string>} Success
+		 */
+		ValuesGet(): Promise<Array<string>> {
+			return fetch(this.baseUri + 'api/Values', { method: 'get' }).then(d => d.json());
+		}
+
+		/**
+		 * Post api/Values
+		 * @return {string} Success
+		 */
+		ValuesPost(requestBody: string): Promise<string> {
+			return fetch(this.baseUri + 'api/Values', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.text());
+		}
+
+		/**
+		 * Get api/Values/{id}
+		 * @return {string} Success
+		 */
+		ValuesGetById(id: number): Promise<string> {
+			return fetch(this.baseUri + 'api/Values/' + id, { method: 'get' }).then(d => d.text());
+		}
+
+		/**
+		 * Put api/Values/{id}
+		 * @return {void} Success
+		 */
+		ValuesPutById(id: number, requestBody: string): Promise<Response> {
+			return fetch(this.baseUri + 'api/Values/' + id, { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) });
+		}
+
+		/**
+		 * Delete api/Values/{id}
+		 * @return {void} Success
+		 */
+		ValuesDeleteById(id: number): Promise<Response> {
+			return fetch(this.baseUri + 'api/Values/' + id, { method: 'delete' });
+		}
+	}
+
+}
+

@@ -80,7 +80,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			var OptionsForString = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForString : $"{{ method: '{httpMethodName}' }}";
 
 			string optionsWithHeadersHandlerForResponse = $"{{ method: '{httpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
-			var OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : "{ method: '{httpMethodName}' }";
+			var OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : $"{{ method: '{httpMethodName}' }}";
 
 			string optionsWithHeadersHandler = $"{{ method: '{httpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
 			var Options = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandler : $"{{ method: '{httpMethodName}' }}";
@@ -119,7 +119,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {ContentOptionsForString}).then(d => d.text());"));
+						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForString}).then(d => d.text());"));
 					}
 					else
 					{
