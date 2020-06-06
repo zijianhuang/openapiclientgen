@@ -127,7 +127,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {ContentOptionsForString});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {OptionsForString});"));
 					}
 					else
 					{
@@ -179,7 +179,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {OptionsForResponse});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse});"));
 					}
 
 					return;

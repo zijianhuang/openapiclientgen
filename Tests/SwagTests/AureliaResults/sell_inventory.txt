@@ -1401,7 +1401,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		DisableInventoryLocation(merchantLocationKey: string): Promise<string> {
-			return this.http.post('location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/disable', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.text());
+			return this.http.post('location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/disable', null, {}).then(d => d.text());
 		}
 
 		/**
@@ -1411,7 +1411,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		EnableInventoryLocation(merchantLocationKey: string): Promise<string> {
-			return this.http.post('location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/enable', null, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.text());
+			return this.http.post('location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/enable', null, {}).then(d => d.text());
 		}
 
 		/**

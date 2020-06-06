@@ -129,6 +129,7 @@
     <None Remove="Results\sell_marketing.txt" />
     <None Remove="Results\sell_metadata.txt" />
     <None Remove="Results\sell_negotiation.txt" />
+    <None Remove="Results\sell_recommendation.txt" />
     <None Remove="Results\SimplePet.txt" />
     <None Remove="Results\Uspto.txt" />
     <None Remove="Results\ValuesPaths.txt" />
@@ -524,6 +525,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Results\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\sell_recommendation.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Results\SimplePet.txt">

@@ -129,7 +129,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {ContentOptionsForString}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {OptionsForString}).then(d => d.data);"));
 					}
 					else
 					{
@@ -139,30 +139,6 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 			}
-			//else if (returnTypeText == AxiostHttpBlobResponse)//translated from blobresponse to this
-			//{
-			//	const string optionForStream = "{ responseType: 'blob' }";
-
-			//	if (httpMethodName == "get" || httpMethodName == "delete")
-			//	{
-			//		Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {optionForStream}).then(d => d.data);"));
-			//		return;
-			//	}
-
-			//	if (httpMethodName == "post" || httpMethodName == "put")
-			//	{
-			//		if (RequestBodyCodeTypeReference == null)
-			//		{
-			//			Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {optionForStream}).then(d => d.data);"));
-			//		}
-			//		else
-			//		{
-			//			Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForStream}).then(d => d.data);"));
-			//		}
-
-			//		return;
-			//	}
-			//}
 			else if (returnTypeText == AxiosHttpStringResponse)//translated from response to this
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
@@ -179,7 +155,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {OptionsForResponse});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse});"));
 					}
 
 					return;

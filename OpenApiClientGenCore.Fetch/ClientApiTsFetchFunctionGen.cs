@@ -8,17 +8,17 @@ using Fonlow.OpenApiClientGen.ClientTypes;
 namespace Fonlow.CodeDom.Web.Ts
 {
 	/// <summary>
-	/// Generate a client function upon ApiDescription for Aurelia
+	/// Generate a client function upon ApiDescription for Fetch
 	/// </summary>
 	public class ClientApiTsFetchFunctionGen : ClientApiTsFunctionGenBase
 	{
-		const string AureliaHttpResponse = "Response";
-		const string AureliatHttpBlobResponse = "Blob";
-		const string AureliaHttpStringResponse = "string";
+		const string FetchHttpResponse = "Response";
+		const string FetchtHttpBlobResponse = "Blob";
+		const string FetchHttpStringResponse = "string";
 	
 		string returnTypeText = null;
 		string typeCast = null;
-		string contentType;
+		readonly string contentType;
 		readonly Settings settings;
 
 		public ClientApiTsFetchFunctionGen(Settings settings, JSOutput jsOutput) : base()
@@ -37,15 +37,15 @@ namespace Fonlow.CodeDom.Web.Ts
 			returnTypeText = TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
 			if (returnTypeText == "any" || returnTypeText == "void")
 			{
-				returnTypeText = AureliaHttpResponse;
+				returnTypeText = FetchHttpResponse;
 			}
 			else if (returnTypeText == "response")
 			{
-				returnTypeText = AureliaHttpResponse;
+				returnTypeText = FetchHttpResponse;
 			}
 			else if (returnTypeText == "blobresponse")
 			{
-				returnTypeText = AureliatHttpBlobResponse;
+				returnTypeText = FetchtHttpBlobResponse;
 			}
 
 			typeCast = returnTypeText == null ? "Response" : $"{returnTypeText}";
@@ -129,7 +129,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 			}
-			else if (returnTypeText == AureliaHttpStringResponse)//translated from response to this
+			else if (returnTypeText == FetchHttpStringResponse)//translated from response to this
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
@@ -145,14 +145,14 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, JSON.stringify(requestBody), {OptionsForResponse});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse});"));
 					}
 
 					return;
 				}
 
 			}
-			else if (returnTypeText == AureliaHttpResponse) // client should care about only status
+			else if (returnTypeText == FetchHttpResponse) // client should care about only status
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
