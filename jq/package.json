@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "@types/jasmine": "^3.5.10",
+    "@types/jquery": "^3.3.38",
+    "@types/qunit": "^2.9.1",
+    "jasmine": "^3.5.0",
+    "karma": "^5.0.9",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^3.3.1",
+    "karma-jasmine-html-reporter": "^1.5.4",
+    "karma-qunit": "^4.1.1",
+    "karma-typescript": "^5.0.3",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "3.7.5"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "qunit": "^2.10.0"
+  }
+}

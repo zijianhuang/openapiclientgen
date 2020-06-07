@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Fonlow.OpenApiClientGen.JQ</AssemblyName>
+    <RootNamespace>Fonlow.OpenApiClientGen.JQ</RootNamespace>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" />
+  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fonlow.OpenApiClientGen.Abstract\Fonlow.OpenApiClientGen.Abstract.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"sourceMap": true,
+		"declaration": false,
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"types": ["jquery", "qunit"],
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"target": "ES2015",
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"lib": [
+			"ES2020", "DOM"
+		],
+		"skipLibCheck": true
+	}
+}

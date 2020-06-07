@@ -42,7 +42,16 @@
             "TSFile": "WebApiAxiosClientAuto.ts",
             "AsModule": true,
             "ContentType": "application/json;charset=UTF-8"
+        },
+
+        {
+            "AssemblyName": "Fonlow.OpenApiClientGen.JQ",
+            "TargetDir": "./jq/src/clientapi",
+            "TSFile": "WebApiJqClientAuto.ts",
+            "AsModule": false,
+            "ContentType": "application/json;charset=UTF-8"
         }
+
     ]
 
 }
