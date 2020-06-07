@@ -44,3 +44,4 @@ coverage
 /aurelia/node_modules
 node_modules
 /fetchapi/coverage
+/jq/_reports

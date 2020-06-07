@@ -6,6 +6,7 @@
     "jasmine": "^3.5.0",
     "karma": "^5.0.9",
     "karma-chrome-launcher": "^3.1.0",
+    "karma-html-detailed-reporter": "^2.1.0",
     "karma-jasmine": "^3.3.1",
     "karma-jasmine-html-reporter": "^1.5.4",
     "karma-qunit": "^4.1.1",

@@ -13,7 +13,8 @@ module.exports = function (config) {
         karmaTypescriptConfig: {
             tsconfig: './tsconfig.json'
         },
-        reporters: ["karma-typescript"],
+        reporters: ['progress', 'htmlDetailed'],
+
         client: {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
         },

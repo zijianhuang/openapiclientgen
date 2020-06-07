@@ -46,7 +46,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			var returnTypeText = TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
 			if (returnTypeText == "any" || String.IsNullOrEmpty(returnTypeText) || returnTypeText == "response")
 			{
-				returnTypeText = "Response";
+				returnTypeText = "void";
 			}
 			var callbackTypeText = String.Format("(data : {0}) => any", returnTypeText);
 
