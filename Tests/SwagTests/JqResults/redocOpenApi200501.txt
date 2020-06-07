@@ -1,5 +1,5 @@
 ///<reference path="HttpClient.ts" />
-namespace My_Pet_Client {
+export namespace MyNS {
 	export interface ApiResponse {
 		code?: number;
 		type?: string;
@@ -37,7 +37,7 @@ namespace My_Pet_Client {
 
 		/**
 		 * The size of the pack the dog is from
-		 * Minimum: 1
+		 * Minimum: 1.0
 		 */
 		packSize: number;
 	}
@@ -169,21 +169,19 @@ namespace My_Pet_Client {
 		 * Add a new pet to the store
 		 * Add new pet to the store inventory.
 		 * Post pet
-		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		AddPet(callback: (data : void) => any, requestBody: Pet, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'pet', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		AddPet(callback: (data : void) => any) {
+			this.httpClient.post(this.baseUri + 'pet', null, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
 
 		/**
 		 * Update an existing pet
 		 * Put pet
-		 * @param {Pet} requestBody Pet object that needs to be added to the store
 		 * @return {void} 
 		 */
-		UpdatePet(callback: (data : void) => any, requestBody: Pet, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.put(this.baseUri + 'pet', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		UpdatePet(callback: (data : void) => any) {
+			this.httpClient.put(this.baseUri + 'pet', null, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
 
 		/**
@@ -193,8 +191,8 @@ namespace My_Pet_Client {
 		 * @param {number} petId ID of pet to return
 		 * @return {Pet} successful operation
 		 */
-		GetPetById(petId: number, callback: (data : Pet) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode, headersHandler);
+		GetPetById(petId: number, callback: (data : Pet) => any) {
+			this.httpClient.get(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode);
 		}
 
 		/**
@@ -203,8 +201,8 @@ namespace My_Pet_Client {
 		 * @param {number} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number, callback: (data : Response) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode, headersHandler);
+		DeletePet(petId: number, callback: (data : void) => any) {
+			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode);
 		}
 
 		/**
@@ -214,8 +212,8 @@ namespace My_Pet_Client {
 		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByStatus(status: Array<PetStatus>, callback: (data : Array<Pet>) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), callback, this.error, this.statusCode, headersHandler);
+		FindPetsByStatus(status: Array<PetStatus>, callback: (data : Array<Pet>) => any) {
+			this.httpClient.get(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), callback, this.error, this.statusCode);
 		}
 
 		/**
@@ -225,8 +223,13 @@ namespace My_Pet_Client {
 		 * @param {Array<string>} tags Tags to filter by
 		 * @return {Array<Pet>} successful operation
 		 */
-		FindPetsByTags(tags: Array<string>, callback: (data : Array<Pet>) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), callback, this.error, this.statusCode, headersHandler);
+		FindPetsByTags(tags: Array<string>, callback: (data : Array<Pet>) => any) {
+			this.httpClient.get(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), callback, this.error, this.statusCode);
+		}
+	}
+
+	export class StoreClient {
+		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
 		}
 
 		/**
@@ -235,8 +238,8 @@ namespace My_Pet_Client {
 		 * Get store/inventory
 		 * @return {string} successful operation
 		 */
-		GetInventory(callback: (data : string) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'store/inventory', callback, this.error, this.statusCode, headersHandler);
+		GetInventory(callback: (data : string) => any) {
+			this.httpClient.get(this.baseUri + 'store/inventory', callback, this.error, this.statusCode);
 		}
 
 		/**
@@ -245,8 +248,8 @@ namespace My_Pet_Client {
 		 * @param {Order} requestBody order placed for purchasing the pet
 		 * @return {Order} successful operation
 		 */
-		PlaceOrder(callback: (data : Order) => any, requestBody: Order, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'store/order', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		PlaceOrder(callback: (data : Order) => any, requestBody: Order) {
+			this.httpClient.post(this.baseUri + 'store/order', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
 
 		/**
@@ -256,8 +259,8 @@ namespace My_Pet_Client {
 		 * @param {number} orderId ID of pet that needs to be fetched
 		 * @return {Order} successful operation
 		 */
-		GetOrderById(orderId: number, callback: (data : Order) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'store/order/' + orderId, callback, this.error, this.statusCode, headersHandler);
+		GetOrderById(orderId: number, callback: (data : Order) => any) {
+			this.httpClient.get(this.baseUri + 'store/order/' + orderId, callback, this.error, this.statusCode);
 		}
 
 		/**
@@ -267,8 +270,23 @@ namespace My_Pet_Client {
 		 * @param {string} orderId ID of the order that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteOrder(orderId: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), callback, this.error, this.statusCode, headersHandler);
+		DeleteOrder(orderId: string, callback: (data : void) => any) {
+			this.httpClient.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), callback, this.error, this.statusCode);
+		}
+
+		/**
+		 * Subscribe to the Store events
+		 * Add subscription for a store events
+		 * Post store/subscribe
+		 * @return {void} 
+		 */
+		Subscribe(callback: (data : void) => any, requestBody: SubscribeBody) {
+			this.httpClient.post(this.baseUri + 'store/subscribe', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
+		}
+	}
+
+	export class UserClient {
+		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
 		}
 
 		/**
@@ -278,8 +296,8 @@ namespace My_Pet_Client {
 		 * @param {User} requestBody Created user object
 		 * @return {void} 
 		 */
-		CreateUser(callback: (data : void) => any, requestBody: User, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'user', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		CreateUser(callback: (data : void) => any, requestBody: User) {
+			this.httpClient.post(this.baseUri + 'user', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
 
 		/**
@@ -288,8 +306,8 @@ namespace My_Pet_Client {
 		 * @param {string} username The name that needs to be fetched. Use user1 for testing. 
 		 * @return {User} successful operation
 		 */
-		GetUserByName(username: string, callback: (data : User) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), callback, this.error, this.statusCode, headersHandler);
+		GetUserByName(username: string, callback: (data : User) => any) {
+			this.httpClient.get(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), callback, this.error, this.statusCode);
 		}
 
 		/**
@@ -300,8 +318,8 @@ namespace My_Pet_Client {
 		 * @param {User} requestBody Updated user object
 		 * @return {void} 
 		 */
-		UpdateUser(username: string, callback: (data : void) => any, requestBody: User, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		UpdateUser(username: string, callback: (data : void) => any, requestBody: User) {
+			this.httpClient.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
 
 		/**
@@ -311,28 +329,26 @@ namespace My_Pet_Client {
 		 * @param {string} username The name that needs to be deleted
 		 * @return {void} 
 		 */
-		DeleteUser(username: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), callback, this.error, this.statusCode, headersHandler);
+		DeleteUser(username: string, callback: (data : void) => any) {
+			this.httpClient.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), callback, this.error, this.statusCode);
 		}
 
 		/**
 		 * Creates list of users with given input array
 		 * Post user/createWithArray
-		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithArrayInput(callback: (data : void) => any, requestBody: Array<User>, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'user/createWithArray', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		CreateUsersWithArrayInput(callback: (data : void) => any) {
+			this.httpClient.post(this.baseUri + 'user/createWithArray', null, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
 
 		/**
 		 * Creates list of users with given input array
 		 * Post user/createWithList
-		 * @param {Array<User>} requestBody List of user object
 		 * @return {void} 
 		 */
-		CreateUsersWithListInput(callback: (data : void) => any, requestBody: Array<User>, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'user/createWithList', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		CreateUsersWithListInput(callback: (data : void) => any) {
+			this.httpClient.post(this.baseUri + 'user/createWithList', null, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
 
 		/**
@@ -342,8 +358,8 @@ namespace My_Pet_Client {
 		 * @param {string} password The password for login in clear text
 		 * @return {string} successful operation
 		 */
-		LoginUser(username: string, password: string, callback: (data : string) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), callback, this.error, this.statusCode, headersHandler);
+		LoginUser(username: string, password: string, callback: (data : string) => any) {
+			this.httpClient.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), callback, this.error, this.statusCode);
 		}
 
 		/**
@@ -351,10 +367,21 @@ namespace My_Pet_Client {
 		 * Get user/logout
 		 * @return {void} 
 		 */
-		LogoutUser(callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'user/logout', callback, this.error, this.statusCode, headersHandler);
+		LogoutUser(callback: (data : void) => any) {
+			this.httpClient.get(this.baseUri + 'user/logout', callback, this.error, this.statusCode);
 		}
 	}
+
+	export interface SubscribeBody {
+
+		/**This URL will be called by the server when the desired event will occur */
+		callbackUrl: string;
+
+		/**Event name for the subscription */
+		eventName: SubscribeBodyEventName;
+	}
+
+	export enum SubscribeBodyEventName { orderInProgress = 0, orderShipped = 1, orderDelivered = 2 }
 
 }
 

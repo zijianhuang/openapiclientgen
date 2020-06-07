@@ -1,0 +1,19 @@
+///<reference path="HttpClient.ts" />
+export namespace MyNS {
+	export class PetClient {
+		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
+		}
+
+		/**
+		 * Deletes a pet
+		 * Delete pet/{petId}
+		 * @param {number} petId Pet id to delete
+		 * @return {void} 
+		 */
+		DeletePet(petId: number, callback: (data : void) => any) {
+			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode);
+		}
+	}
+
+}
+

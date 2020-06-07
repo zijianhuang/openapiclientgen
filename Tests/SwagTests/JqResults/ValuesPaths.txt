@@ -1,0 +1,49 @@
+///<reference path="HttpClient.ts" />
+export namespace MyNS {
+	export class ValuesClient {
+		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
+		}
+
+		/**
+		 * Get api/Values
+		 * @return {Array<string>} Success
+		 */
+		ValuesGet(callback: (data : Array<string>) => any) {
+			this.httpClient.get(this.baseUri + 'api/Values', callback, this.error, this.statusCode);
+		}
+
+		/**
+		 * Post api/Values
+		 * @return {string} Success
+		 */
+		ValuesPost(callback: (data : string) => any, requestBody: string) {
+			this.httpClient.post(this.baseUri + 'api/Values', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
+		}
+
+		/**
+		 * Get api/Values/{id}
+		 * @return {string} Success
+		 */
+		ValuesGetById(id: number, callback: (data : string) => any) {
+			this.httpClient.get(this.baseUri + 'api/Values/' + id, callback, this.error, this.statusCode);
+		}
+
+		/**
+		 * Put api/Values/{id}
+		 * @return {void} Success
+		 */
+		ValuesPutById(id: number, callback: (data : void) => any, requestBody: string) {
+			this.httpClient.put(this.baseUri + 'api/Values/' + id, requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
+		}
+
+		/**
+		 * Delete api/Values/{id}
+		 * @return {void} Success
+		 */
+		ValuesDeleteById(id: number, callback: (data : void) => any) {
+			this.httpClient.delete(this.baseUri + 'api/Values/' + id, callback, this.error, this.statusCode);
+		}
+	}
+
+}
+

@@ -54,6 +54,7 @@ module CommonCases {
 		QUnit.test("DeletePet", function (assert) {
 			let done = assert.async();
 			petApi.DeletePet(13, data => {
+				console.info('Response is: ' + JSON.stringify(data));
 				assert.ok(true);
 				done();
 			});

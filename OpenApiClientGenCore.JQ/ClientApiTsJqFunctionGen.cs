@@ -74,19 +74,28 @@ namespace Fonlow.CodeDom.Web.Ts
 			string uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" :
 				RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
 
+			string headerHandlerCall = settings.HandleHttpRequestHeaders ? ", headersHandler" : String.Empty;
+
 			if (httpMethodName == "get" || httpMethodName == "delete")
 			{
-				Method.Statements.Add(new CodeSnippetStatement($"this.httpClient.{httpMethodName}({uriText}, callback, this.error, this.statusCode, headersHandler);"));
-				return;
+				Method.Statements.Add(new CodeSnippetStatement($"this.httpClient.{httpMethodName}({uriText}, callback, this.error, this.statusCode{headerHandlerCall});"));
 			}
-
-			if (httpMethodName == "post" || httpMethodName == "put")
+			else if (httpMethodName == "post" || httpMethodName == "put")
 			{
-				Method.Statements.Add(new CodeSnippetStatement($"this.httpClient.{httpMethodName}({uriText}, requestBody, callback, this.error, this.statusCode, '{contentType}', headersHandler);"));
-				return;
-			}
+				if (RequestBodyCodeTypeReference == null) // no body
+				{
+					Method.Statements.Add(new CodeSnippetStatement($"this.httpClient.{httpMethodName}({uriText}, null, callback, this.error, this.statusCode, '{contentType}'{headerHandlerCall});"));
+				}
+				else
+				{
+					Method.Statements.Add(new CodeSnippetStatement($"this.httpClient.{httpMethodName}({uriText}, requestBody, callback, this.error, this.statusCode, '{contentType}'{headerHandlerCall});"));
+				}
 
-			Debug.Assert(false, "How come?");
+			}
+			else
+			{
+				Debug.Assert(false, "How come?");
+			}
 		}
 
 	}

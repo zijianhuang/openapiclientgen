@@ -1,0 +1,49 @@
+///<reference path="HttpClient.ts" />
+export namespace MyNS {
+	export interface Pet {
+		id: number;
+		name: string;
+		tag?: string;
+	}
+
+	export interface Error {
+		code: number;
+		message: string;
+	}
+
+	export class PetsClient {
+		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
+		}
+
+		/**
+		 * List all pets
+		 * Get pets
+		 * @param {number} limit How many items to return at one time (max 100)
+		 * @return {Array<Pet>} A paged array of pets
+		 */
+		ListPets(limit: number, callback: (data : Array<Pet>) => any) {
+			this.httpClient.get(this.baseUri + 'pets?limit=' + limit, callback, this.error, this.statusCode);
+		}
+
+		/**
+		 * Create a pet
+		 * Post pets
+		 * @return {void} 
+		 */
+		CreatePets(callback: (data : void) => any) {
+			this.httpClient.post(this.baseUri + 'pets', null, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
+		}
+
+		/**
+		 * Info for a specific pet
+		 * Get pets/{petId}
+		 * @param {string} petId The id of the pet to retrieve
+		 * @return {Pet} Expected response to a valid request
+		 */
+		ShowPetById(petId: string, callback: (data : Pet) => any) {
+			this.httpClient.get(this.baseUri + 'pets/' + (petId == null ? '' : encodeURIComponent(petId)), callback, this.error, this.statusCode);
+		}
+	}
+
+}
+

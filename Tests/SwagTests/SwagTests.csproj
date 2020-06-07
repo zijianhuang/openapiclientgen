@@ -7,6 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="JqResults\mcp.txt" />
+    <None Remove="JqResults\Pet.txt" />
+    <None Remove="JqResults\PetDelete.txt" />
+    <None Remove="JqResults\PetFindByStatus.txt" />
+    <None Remove="JqResults\PetGodClass.txt" />
+    <None Remove="JqResults\PetPathAsContainer.txt" />
+    <None Remove="JqResults\PetStore.txt" />
+    <None Remove="JqResults\PetStoreExpanded.txt" />
+    <None Remove="JqResults\redocOpenApi200501.txt" />
+    <None Remove="JqResults\sell_account.txt" />
+    <None Remove="JqResults\sell_analytics.txt" />
+    <None Remove="JqResults\sell_compliance.txt" />
+    <None Remove="JqResults\sell_finances.txt" />
+    <None Remove="JqResults\sell_inventory.txt" />
+    <None Remove="JqResults\sell_listing.txt" />
+    <None Remove="JqResults\sell_logistics.txt" />
+    <None Remove="JqResults\sell_marketing.txt" />
+    <None Remove="JqResults\sell_metadata.txt" />
+    <None Remove="JqResults\sell_negotiation.txt" />
+    <None Remove="JqResults\sell_recommendation.txt" />
+    <None Remove="JqResults\Uspto.txt" />
+    <None Remove="JqResults\ValuesPaths.txt" />
     <None Remove="FetchResults\mcp.txt" />
     <None Remove="FetchResults\Pet.txt" />
     <None Remove="FetchResults\PetDelete.txt" />
@@ -185,6 +207,72 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="JqResults\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\Pet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetDelete.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetFindByStatus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetGodClass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetPathAsContainer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetStore.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\redocOpenApi200501.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_account.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_analytics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_compliance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_finances.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_inventory.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_listing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_logistics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_marketing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_metadata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_recommendation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\Uspto.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\ValuesPaths.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="FetchResults\mcp.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -737,6 +825,7 @@
     <ProjectReference Include="..\..\OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.Fetch\OpenApiClientGenCore.Fetch.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.JQ\OpenApiClientGenCore.JQ.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
   </ItemGroup>
 
