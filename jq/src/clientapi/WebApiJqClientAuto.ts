@@ -203,7 +203,7 @@ namespace My_Pet_Client {
 		 * @param {number} petId Pet id to delete
 		 * @return {void} 
 		 */
-		DeletePet(petId: number, callback: (data : Response) => any, headersHandler?: () => {[header: string]: string}) {
+		DeletePet(petId: number, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
 			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode, headersHandler);
 		}
 
