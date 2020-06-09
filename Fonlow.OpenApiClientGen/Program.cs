@@ -89,11 +89,8 @@ namespace Fonlow.OpenApiClientGen
 Parameter 1: Open API YAML/JSON definition file
 Parameter 2: Settings file in JSON format.
 Example:  
-For classes decorated by DataContractAttribute:
   Fonlow.OpenApiClientGen.exe my.yaml
-For classes decorated by Newtonsoft.Json.JsonObjectAttribute:
   Fonlow.OpenApiClientGen.exe my.yaml myproj.json
-For classes decorated by SerializableAttribute:
   Fonlow.OpenApiClientGen.exe my.yaml ..\myproj.json
 
 ");

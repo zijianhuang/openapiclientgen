@@ -6,7 +6,7 @@
     <RootNamespace>Fonlow.OpenApiClientGen</RootNamespace>
     <AssemblyName>Fonlow.OpenApiClientGen</AssemblyName>
     <Authors>Zijian Huang</Authors>
-    <Description>Generates C# and TypeScript client codes according to an Open API YAML/JSON file.</Description>
+    <Description>Generates C# and TypeScript client codes according to an Open API YAML/JSON file. Plugins are available for Angular, jQuery, Fetch, Axios and Aurelia.</Description>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
@@ -42,8 +42,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.4" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.5" />
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.1.4" />
   </ItemGroup>
 

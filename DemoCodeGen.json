@@ -1,57 +1,57 @@
 {
-    "ClientNamespace": "My.Pet.Client",
-    "ClientLibraryProjectFolderName": "./Tests/DemoClientApi",
-    "ContainerClassName": "PetClient",
-    "ClientLibraryFileName": "PetAuto.cs",
-    "ActionNameStrategy": 4,
-    "UseEnsureSuccessStatusCodeEx": true,
-    "DecorateDataModelWithDataContract": true,
-    "DataContractNamespace": "http://pet.domain/2020/03",
-    "DataAnnotationsEnabled": true,
-    "DataAnnotationsToComments": true,
-    "HandleHttpRequestHeaders": true,
+	"ClientNamespace": "My.Pet.Client",
+	"ClientLibraryProjectFolderName": "./Tests/DemoClientApi",
+	"ContainerClassName": "PetClient",
+	"ClientLibraryFileName": "PetAuto.cs",
+	"ActionNameStrategy": 4,
+	"UseEnsureSuccessStatusCodeEx": true,
+	"DecorateDataModelWithDataContract": true,
+	"DataContractNamespace": "http://pet.domain/2020/03",
+	"DataAnnotationsEnabled": true,
+	"DataAnnotationsToComments": true,
+	"HandleHttpRequestHeaders": true,
 
-    "Plugins": [
-        {
-            "AssemblyName": "Fonlow.OpenApiClientGen.NG2",
-            "TargetDir": "./ng2/src/clientapi",
-            "TSFile": "ClientApiAuto.ts",
-            "AsModule": true,
-            "ContentType": "application/json;charset=UTF-8"
-        },
+	"Plugins": [
+		{
+			"AssemblyName": "Fonlow.OpenApiClientGen.NG2",
+			"TargetDir": "./ng2/src/clientapi",
+			"TSFile": "ClientApiAuto.ts",
+			"AsModule": true,
+			"ContentType": "application/json;charset=UTF-8"
+		},
 
-        {
-            "AssemblyName": "Fonlow.OpenApiClientGen.Aurelia",
-            "TargetDir": "./aurelia/src/clientapi",
-            "TSFile": "WebApiAureliaClientAuto.ts",
-            "AsModule": true,
-            "ContentType": "application/json;charset=UTF-8"
-        },
+		{
+			"AssemblyName": "Fonlow.OpenApiClientGen.Aurelia",
+			"TargetDir": "./aurelia/src/clientapi",
+			"TSFile": "WebApiAureliaClientAuto.ts",
+			"AsModule": true,
+			"ContentType": "application/json;charset=UTF-8"
+		},
 
-        {
-            "AssemblyName": "Fonlow.OpenApiClientGen.Fetch",
-            "TargetDir": "./fetchapi/src/clientapi",
-            "TSFile": "WebApiFetchClientAuto.ts",
-            "AsModule": true,
-            "ContentType": "application/json;charset=UTF-8"
-        },
+		{
+			"AssemblyName": "Fonlow.OpenApiClientGen.Fetch",
+			"TargetDir": "./fetchapi/src/clientapi",
+			"TSFile": "WebApiFetchClientAuto.ts",
+			"AsModule": true,
+			"ContentType": "application/json;charset=UTF-8"
+		},
 
-        {
-            "AssemblyName": "Fonlow.OpenApiClientGen.Axios",
-            "TargetDir": "./axios/src/clientapi",
-            "TSFile": "WebApiAxiosClientAuto.ts",
-            "AsModule": true,
-            "ContentType": "application/json;charset=UTF-8"
-        },
+		{
+			"AssemblyName": "Fonlow.OpenApiClientGen.Axios",
+			"TargetDir": "./axios/src/clientapi",
+			"TSFile": "WebApiAxiosClientAuto.ts",
+			"AsModule": true,
+			"ContentType": "application/json;charset=UTF-8"
+		},
 
-        {
-            "AssemblyName": "Fonlow.OpenApiClientGen.JQ",
-            "TargetDir": "./jq/src/clientapi",
-            "TSFile": "WebApiJqClientAuto.ts",
-            "AsModule": false,
-            "ContentType": "application/json;charset=UTF-8"
-        }
+		{
+			"AssemblyName": "Fonlow.OpenApiClientGen.JQ",
+			"TargetDir": "./jq/src/clientapi",
+			"TSFile": "WebApiJqClientAuto.ts",
+			"AsModule": false,
+			"ContentType": "application/json;charset=UTF-8"
+		}
 
-    ]
+	]
 
 }
