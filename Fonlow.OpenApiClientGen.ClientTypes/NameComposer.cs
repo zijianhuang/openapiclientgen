@@ -37,19 +37,32 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public string GetActionName(OpenApiOperation op, string httpMethod, string path)
 		{
-			return settings.ActionNameStrategy switch
+			switch (settings.ActionNameStrategy)
 			{
-				ActionNameStrategy.Default => String.IsNullOrEmpty(op.OperationId) ? ComposeActionName(op, httpMethod) : ToTitleCase(op.OperationId),
-				ActionNameStrategy.OperationId => ToTitleCase(op.OperationId),
-				ActionNameStrategy.MethodQueryParameters => ComposeActionNameForPathAsContainer(op, httpMethod),
-				ActionNameStrategy.PathMethodQueryParameters => ComposeActionNameWithPath(op, httpMethod, path),
-				ActionNameStrategy.NormalizedOperationId => NormalizeOperationId(op.OperationId),
-				_ => throw new InvalidDataException("Impossible"),
+				case ActionNameStrategy.Default: return String.IsNullOrEmpty(op.OperationId) ? ComposeActionName(op, httpMethod) : ToTitleCase(op.OperationId);
+				case ActionNameStrategy.OperationId: return ToTitleCase(op.OperationId);
+				case ActionNameStrategy.MethodQueryParameters: return ComposeActionNameForPathAsContainer(op, httpMethod);
+				case ActionNameStrategy.PathMethodQueryParameters: return ComposeActionNameWithPath(op, httpMethod, path);
+				case ActionNameStrategy.NormalizedOperationId:
+					try
+					{
+						return NormalizeOperationId(op.OperationId);
+					}
+					catch (ArgumentNullException)
+					{
+						throw new CodeGenException($"Definition {path}=>{httpMethod} does not contain OperationId");
+					}
+				default: throw new InvalidDataException("Impossible");
 			};
 		}
 
 		public string NormalizeOperationId(string s)
 		{
+			if (String.IsNullOrEmpty(s))
+			{
+				throw new ArgumentNullException(nameof(s));
+			}
+
 			MatchCollection matches = regex.Matches(s);
 			string r = String.Join(String.Empty, matches.Select(m => ToTitleCase(m.Value)));
 			return r;

@@ -36,6 +36,12 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes com2TsTypes)
 		{
+			if (httpMethod > OperationType.Delete)
+			{
+				Trace.TraceWarning("This HTTP method {0} is not yet supported", httpMethod);
+				return null;
+			}
+
 			this.nameComposer = new NameComposer(settings);
 			this.parametersHelper = new ParametersHelper(com2TsTypes.ClientNamespace);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
@@ -60,10 +66,26 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.ComToTsTypes = com2TsTypes;
 
 			this.RelativePath = RemovePrefixSlash(relativePath);
+			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(relativePath);
 			if (ActionName.EndsWith("Async"))
 				ActionName = ActionName[0..^5];
 
-			Tuple<CodeTypeReference, bool, bool> r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
+			Tuple<CodeTypeReference, bool, bool> r;
+			try
+			{
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
+
+			}
+			catch (CodeGenException ex)
+			{
+				if (ex.Pending)
+				{
+					throw new CodeGenException($"When generating TS scripts, definition {relativePath}=>{httpMethod} triggers error {ex.Message}");
+				}
+
+				throw;
+			}
+
 			ReturnTypeReference = r.Item1;
 
 			//todo: stream, byte and ActionResult later.
@@ -90,7 +112,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					RenderImplementation();
 					break;
 				default:
-					Trace.TraceWarning("This HTTP method {0} is not yet supported", HttpMethod);
+					Trace.TraceWarning("This HTTP method {0} is not yet supported in TS gen", HttpMethod);
 					break;
 			}
 

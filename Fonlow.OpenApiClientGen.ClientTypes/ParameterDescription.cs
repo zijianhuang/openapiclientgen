@@ -53,6 +53,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
+		/// <summary>
+		/// The thrower has no enough info to report, and the catcher with enough info should throw a new one with the info to be displayed in console.
+		/// </summary>
+		public bool Pending { get; set; }
+
 		public CodeGenException(string message) : base(message) { }
 
 		public CodeGenException(string message, Exception innerException) : base(message, innerException) { }

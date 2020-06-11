@@ -189,9 +189,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					typeDeclaration.Members.Add(clientField);
 					k++;
 				}
-				else
+				else if (enumMember is OpenApiInteger intMember)
 				{
-					OpenApiInteger intMember = enumMember as OpenApiInteger;
 					string memberName = "_" + intMember.Value.ToString();
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
@@ -200,8 +199,53 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						InitExpression = new CodePrimitiveExpression(intValue),
 					};
 
+					if (settings.DecorateDataModelWithDataContract)
+					{
+						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+					}
+
 					typeDeclaration.Members.Add(clientField);
 					k++;
+				}
+				else if (enumMember is OpenApiLong longMember)
+				{
+					string memberName = "_" + longMember.Value.ToString();
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					if (settings.DecorateDataModelWithDataContract)
+					{
+						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+					}
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
+				{
+					string memberName = passwordMember.Value;
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					if (settings.DecorateDataModelWithDataContract)
+					{
+						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+					}
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else
+				{
+					throw new ArgumentException($"Not yet supported enumMember of {enumMember.GetType()} with {typeDeclaration.Name}");
 				}
 			}
 		}
@@ -498,7 +542,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return doubleValue.Value.ToString();
 			}
 
-			Trace.TraceWarning($"Default as {s.GetType().FullName} is not yet supported.");
+			Trace.TraceWarning($"Default as {s.Default.GetType().FullName} is not yet supported.");
 			return null;
 		}
 

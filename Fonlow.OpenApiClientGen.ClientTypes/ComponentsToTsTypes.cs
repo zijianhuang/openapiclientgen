@@ -161,9 +161,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					typeDeclaration.Members.Add(clientField);
 					k++;
 				}
-				else
+				else if (enumMember is OpenApiInteger intMember)
 				{
-					OpenApiInteger intMember = enumMember as OpenApiInteger;
 					string memberName = "_" + intMember.Value.ToString();
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
@@ -174,6 +173,36 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					typeDeclaration.Members.Add(clientField);
 					k++;
+				}
+				else if (enumMember is OpenApiInteger longMember)
+				{
+					string memberName = "_" + longMember.Value.ToString();
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
+				{
+					string memberName = passwordMember.Value;
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else
+				{
+					throw new ArgumentException($"Not yet supported enumMember of {enumMember.GetType()} with {typeDeclaration.Name}");
 				}
 			}
 		}

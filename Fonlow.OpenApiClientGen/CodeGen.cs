@@ -16,8 +16,15 @@ namespace Fonlow.CodeDom.Web
 
 				if (!System.IO.Directory.Exists(csharpClientProjectDir))
 				{
-					string msg = $"{csharpClientProjectDir} not exist while current directory is {currentDir}";
-					throw new CodeGenException(msg);
+					if (settings.CreateFolder)
+					{
+						System.IO.Directory.CreateDirectory(csharpClientProjectDir);
+					}
+					else
+					{
+						string msg = $"{csharpClientProjectDir} not exist while current directory is {currentDir}";
+						throw new CodeGenException(msg);
+					}
 				}
 				string path = System.IO.Path.Combine(csharpClientProjectDir, settings.ClientLibraryFileName);
 				OpenApiClientGen.Cs.ControllersClientApiGen gen = new Fonlow.OpenApiClientGen.Cs.ControllersClientApiGen(settings);
@@ -35,6 +42,19 @@ namespace Fonlow.CodeDom.Web
 					{
 						theFolder = System.IO.Path.IsPathRooted(folder) ?
 							folder : System.IO.Path.Combine(outputBasePath, folder);
+
+						if (!System.IO.Directory.Exists(theFolder))
+						{
+							if (settings.CreateFolder)
+							{
+								System.IO.Directory.CreateDirectory(theFolder);
+							}
+							else
+							{
+								string msg = $"{theFolder} not exist while current directory is {currentDir}";
+								throw new CodeGenException(msg);
+							}
+						}
 
 					}
 					catch (ArgumentException e)

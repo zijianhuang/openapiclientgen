@@ -35,7 +35,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (op.RequestBody.Content.TryGetValue("application/json", out content) && (content.Schema.Type != null && content.Schema.Type != "object"))
 					{
-						return Tuple.Create(TypeRefBuilder.OpenApiMediaTypeToCodeTypeReference(content), description, true);
+						try
+						{
+							return Tuple.Create(TypeRefBuilder.OpenApiMediaTypeToCodeTypeReference(content), description, true);
+
+						}
+						catch (ArgumentException ex)
+						{
+							throw new CodeGenException($"Definition {path}=>{httpMethod} for op.RequestBody.Reference triggers error: {ex.Message}");
+						}
 					}
 
 					string typeName = op.RequestBody.Reference.Id;
@@ -63,7 +71,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return Tuple.Create(codeTypeReference, description, true);
 					}
 
-					return Tuple.Create(TypeRefBuilder.OpenApiMediaTypeToCodeTypeReference(content), description, true);
+					try
+					{
+						return Tuple.Create(TypeRefBuilder.OpenApiMediaTypeToCodeTypeReference(content), description, true);
+
+					}
+					catch (ArgumentException ex)
+					{
+						throw new CodeGenException($"Definition {path}=>{httpMethod} for op.RequestBody.Content triggers error: {ex.Message}");
+					}
+
 				}
 				else if (op.RequestBody.Content.Count > 0) // with content but not supported
 				{

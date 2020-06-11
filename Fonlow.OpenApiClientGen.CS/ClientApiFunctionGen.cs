@@ -38,9 +38,15 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 		string statementOfEnsureSuccessStatusCode;
 
-		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod, 
+		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod,
 			OpenApiOperation apiOperation, ComponentsToCsTypes poco2CsGen, bool forAsync, bool useEnsureSuccessStatusCodeEx)
 		{
+			if (httpMethod > OperationType.Delete)
+			{
+				Trace.TraceWarning("This HTTP method {0} is not yet supported", httpMethod);
+				return null;
+			}
+
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
 			this.parametersHelper = new ParametersHelper(poco2CsGen.ClientNamespace);
@@ -68,10 +74,27 @@ namespace Fonlow.OpenApiClientGen.Cs
 
 
 			this.relativePath = RemovePrefixSlash(relativePath);
+			this.relativePath = RegexFunctions.RefineUrlWithHyphenInParameters(relativePath);
+
 			if (actionName.EndsWith("Async"))
 				actionName = actionName[0..^5];
 
-			Tuple<CodeTypeReference, bool, bool> r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
+			Tuple<CodeTypeReference, bool, bool> r;
+			try
+			{
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
+
+			}
+			catch (CodeGenException ex)
+			{
+				if (ex.Pending)
+				{
+					throw new CodeGenException($"Definition {relativePath}=>{httpMethod} triggers error pending {ex.Message}");
+				}
+
+				throw;
+			}
+
 			returnTypeReference = r.Item1;
 			stringAsString = r.Item2;
 
@@ -192,7 +215,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 				.Select(d =>
 				new CodeParameterDeclarationExpression()
 				{
-					Name = d.Name,
+					Name = d.Name.Replace('-', '_'),
 					Type = parametersHelper.OpenApiParameterToCodeTypeReference(d),
 
 				})
@@ -216,7 +239,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 			$@"			using (var request = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
 			{{"
 			));
-			
+
 			if (settings.HandleHttpRequestHeaders)
 			{
 				method.Statements.Add(new CodeSnippetStatement(
@@ -229,7 +252,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 			}
 
 			method.Statements.Add(new CodeVariableDeclarationStatement(
-				new CodeTypeReference("var"), "responseMessage", forAsync?new CodeSnippetExpression("await client.SendAsync(request)"): new CodeSnippetExpression("client.SendAsync(request).Result")));
+				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(request)") : new CodeSnippetExpression("client.SendAsync(request).Result")));
 
 
 			CodeVariableReferenceExpression resultReference = new CodeVariableReferenceExpression("responseMessage");

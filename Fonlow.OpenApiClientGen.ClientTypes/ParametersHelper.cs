@@ -26,12 +26,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ps.Select(p =>
 				new ParameterDescriptionEx()
 				{
-					Name = p.Name,
+					Name = p.Name.Replace('-', '_'),
 					Documentation = p.Description,
 					ParameterDescriptor = new ParameterDescriptor()
 					{
 						IsOptional = !p.Required,
-						ParameterName = p.Name,
+						ParameterName = p.Name.Replace('-', '_'),
 						ParameterType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
@@ -70,7 +70,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 
 							//warning about bad yaml design.
-							Trace.TraceWarning($"Parameter {content.Name} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
+							Trace.TraceWarning($"Parameter {content.Name.Replace('-', '_')} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 						}
 
 						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);

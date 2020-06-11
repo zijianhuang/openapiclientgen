@@ -14,7 +14,17 @@ namespace Fonlow.CodeDom.Web
 		public static string CreateUriQuery(string uriText, ParameterDescriptionEx[] parameterDescriptions)
 		{
 			UriTemplate template = new UriTemplate(uriText);
-			string[] parameterNames = template.GetParameterNames().ToArray();
+			string[] parameterNames;
+			try
+			{
+				parameterNames = template.GetParameterNames().ToArray();
+
+			}
+			catch (ArgumentException ex)
+			{
+				throw new CodeGenException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
+			}
+
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
 				return null;
 
@@ -36,7 +46,17 @@ namespace Fonlow.CodeDom.Web
 		public static string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions)
 		{
 			UriTemplate template = new UriTemplate(uriText);
-			string[] parameterNames = template.GetParameterNames().ToArray();
+			string[] parameterNames;
+			try
+			{
+				parameterNames = template.GetParameterNames().ToArray();
+
+			}
+			catch (ArgumentException ex)
+			{
+				throw new CodeGenException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
+			}
+
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
 				return null;
 

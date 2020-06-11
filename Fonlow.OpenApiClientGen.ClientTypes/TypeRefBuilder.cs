@@ -54,6 +54,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public static CodeTypeReference OpenApiMediaTypeToCodeTypeReference(OpenApiMediaType content)
 		{
+			if (content.Schema == null)
+			{
+				throw new ArgumentException("Content has no Schema", nameof(content));
+			}
+
 			string schemaType = content.Schema.Type;
 			if (schemaType != null)
 			{
@@ -101,7 +106,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content)) // application/json has better to be first.
 				{
-					codeTypeReference = OpenApiMediaTypeToCodeTypeReference(content);
+					try
+					{
+						codeTypeReference = OpenApiMediaTypeToCodeTypeReference(content);
+
+					}
+					catch (ArgumentException ex)
+					{
+						throw new CodeGenException(ex.Message) { Pending = true };
+					}
+
 					return Tuple.Create(codeTypeReference, false);
 				}
 

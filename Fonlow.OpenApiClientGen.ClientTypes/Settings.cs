@@ -123,9 +123,14 @@
 		public bool DataAnnotationsToComments { get; set; }
 
 		/// <summary>
-		/// C# function parameters contain a callback to handle HTTP request headers
+		/// Function parameters contain a callback to handle HTTP request headers
 		/// </summary>
 		public bool HandleHttpRequestHeaders { get; set; }
+
+		/// <summary>
+		/// Create destination folder if not exists. Applied to both CS and TS.
+		/// </summary>
+		public bool CreateFolder { get; set; }
 
 		public JSPlugin[] Plugins { get; set; }
 
