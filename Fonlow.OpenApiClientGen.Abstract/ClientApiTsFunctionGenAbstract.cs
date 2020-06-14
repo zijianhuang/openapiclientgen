@@ -66,7 +66,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.ComToTsTypes = com2TsTypes;
 
 			this.RelativePath = RemovePrefixSlash(relativePath);
-			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(relativePath);
+			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
 			if (ActionName.EndsWith("Async"))
 				ActionName = ActionName[0..^5];
 

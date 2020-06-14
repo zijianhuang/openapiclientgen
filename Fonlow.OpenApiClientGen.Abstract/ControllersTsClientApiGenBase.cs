@@ -113,7 +113,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					CodeMemberMethod apiFunction = apiFunctionGen.CreateApiFunction(settings, relativePath, op.Key, op.Value, new ComponentsToTsTypes(settings, CodeCompileUnit, clientNamespace) );
 					if (apiFunction == null)
 					{
-						System.Diagnostics.Trace.TraceWarning($"Not to generate for {p.Key} {op.Key}.");
+						System.Diagnostics.Trace.TraceWarning($"Not to generate TS for {p.Key} {op.Key}.");
 						continue;
 					}
 

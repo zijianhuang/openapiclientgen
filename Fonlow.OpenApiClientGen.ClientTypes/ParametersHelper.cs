@@ -78,9 +78,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return arrayCodeTypeReference;
 					}
 				}
-				else if (content.Schema.Enum.Count > 0) // for enum
+				else if (content.Schema.Enum.Count > 0 && schemaType == "string" ) // for enum
 				{
-					string[] enumMemberNames = content.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+					string[] enumMemberNames;
+					try
+					{
+						enumMemberNames = content.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+
+					}
+					catch (InvalidCastException ex)
+					{
+						throw new CodeGenException($"When dealing with {content.Name} of {schemaType}, error: {ex.Message}");
+					}
+
 					CodeTypeDeclaration existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
 					if (existingDeclaration != null)
 					{
@@ -90,7 +100,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 				}
 
-				Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
+				Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(schemaType, content.Schema.Format);
 				CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
 				return codeTypeReference;
 

@@ -26,6 +26,9 @@
 				"format": "int64",
 				"readOnly": "true"
 			},
+			"SecurityGroupId": {
+				"type": "string"
+			},
 			"Tag": {
 				"type": "object",
 				"xml": {

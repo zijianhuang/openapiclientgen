@@ -173,7 +173,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = stringMember.Value;
+					string memberName = stringMember.Value.Replace('.', '_').Replace('-', '_');//amazon ec2 api , enum with dot and hyphen in enum members
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -227,7 +227,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 				{
-					string memberName = passwordMember.Value;
+					string memberName = passwordMember.Value.Replace('.', '_').Replace('-', '_');
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{

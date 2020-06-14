@@ -19,7 +19,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 		CodeTypeReference requestBodyCodeTypeReference; // for post and put
 		string requestBodyComment;
 
-		string relativePath;
+		string RelativePath;
 		protected CodeTypeReference returnTypeReference;
 		//bool returnTypeIsStream;
 		CodeMemberMethod method;
@@ -73,8 +73,8 @@ namespace Fonlow.OpenApiClientGen.Cs
 			this.forAsync = forAsync;
 
 
-			this.relativePath = RemovePrefixSlash(relativePath);
-			this.relativePath = RegexFunctions.RefineUrlWithHyphenInParameters(relativePath);
+			this.RelativePath = RemovePrefixSlash(relativePath);
+			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
 
 			if (actionName.EndsWith("Async"))
 				actionName = actionName[0..^5];
@@ -193,7 +193,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 				}
 			}
 
-			method.Comments.Add(new CodeCommentStatement(actionName + " " + relativePath, true));
+			method.Comments.Add(new CodeCommentStatement(actionName + " " + RelativePath, true));
 			method.Comments.Add(new CodeCommentStatement("</summary>", true));
 			foreach (ParameterDescriptionEx item in parameterDescriptions)
 			{
@@ -228,8 +228,8 @@ namespace Fonlow.OpenApiClientGen.Cs
 					"Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
 			}
 
-			string jsUriQuery = UriQueryHelper.CreateUriQuery(relativePath, parameterDescriptions);
-			string uriText = jsUriQuery == null ? $"\"{relativePath}\"" : RemoveTrialEmptyString($"\"{jsUriQuery}\"");
+			string jsUriQuery = UriQueryHelper.CreateUriQuery(RelativePath, parameterDescriptions);
+			string uriText = jsUriQuery == null ? $"\"{RelativePath}\"" : RemoveTrialEmptyString($"\"{jsUriQuery}\"");
 
 			method.Statements.Add(new CodeVariableDeclarationStatement(
 				new CodeTypeReference("var"), "requestUri",
@@ -306,8 +306,8 @@ namespace Fonlow.OpenApiClientGen.Cs
 			void AddRequestUriWithQueryAssignmentStatement()
 			{
 
-				string jsUriQuery = UriQueryHelper.CreateUriQuery(relativePath, parameterDescriptions);
-				string uriText = jsUriQuery == null ? $"\"{relativePath}\"" :
+				string jsUriQuery = UriQueryHelper.CreateUriQuery(RelativePath, parameterDescriptions);
+				string uriText = jsUriQuery == null ? $"\"{RelativePath}\"" :
 				RemoveTrialEmptyString($"\"{jsUriQuery}\"");
 
 				method.Statements.Add(new CodeVariableDeclarationStatement(

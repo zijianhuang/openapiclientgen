@@ -157,7 +157,7 @@ namespace Fonlow.OpenApiClientGen.Cs
 					CodeMemberMethod apiFunction = functionGen.CreateApiFunction(settings, p.Key, op.Key, op.Value, componentsToCsTypes, true, settings.UseEnsureSuccessStatusCodeEx);
 					if (apiFunction == null)
 					{
-						System.Diagnostics.Trace.TraceWarning($"Not to generate for {p.Key} {op.Key}.");
+						System.Diagnostics.Trace.TraceWarning($"Not to generate C# for {p.Key} {op.Key}.");
 						continue;
 					}
 
