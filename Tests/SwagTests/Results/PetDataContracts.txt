@@ -32,40 +32,6 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
-	[System.SerializableAttribute()]
-	public class Cat : Pet
-	{
-		
-		/// <summary>
-		/// The measured skill for hunting
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember()]
-		public CatHuntingSkill HuntingSkill { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
-	[System.SerializableAttribute()]
-	public enum CatHuntingSkill
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		clueless = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		lazy = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		adventurous = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		aggressive = 3,
-	}
-	
 	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
 	[System.SerializableAttribute()]
 	public class Category
@@ -88,38 +54,6 @@ namespace MyNS
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		public string Sub { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
-	[System.SerializableAttribute()]
-	public class Dog : Pet
-	{
-		
-		/// <summary>
-		/// The size of the pack the dog is from
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember()]
-		public int PackSize { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
-	[System.SerializableAttribute()]
-	public class HoneyBee : Pet
-	{
-		
-		/// <summary>
-		/// Average amount of honey produced per day in ounces
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember()]
-		public float HoneyPerDay { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
@@ -320,6 +254,72 @@ namespace MyNS
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		public System.Nullable<System.Int32> UserStatus { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a cat
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
+	[System.SerializableAttribute()]
+	public class Cat : Pet
+	{
+		
+		/// <summary>
+		/// The measured skill for hunting
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public CatHuntingSkill HuntingSkill { get; set; }
+	}
+	
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
+	[System.SerializableAttribute()]
+	public enum CatHuntingSkill
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		clueless = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		lazy = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		adventurous = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		aggressive = 3,
+	}
+	
+	/// <summary>
+	/// A representation of a dog
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
+	[System.SerializableAttribute()]
+	public class Dog : Pet
+	{
+		
+		/// <summary>
+		/// The size of the pack the dog is from
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public int PackSize { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a honey bee
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://openapidemo.com/09/2019")]
+	[System.SerializableAttribute()]
+	public class HoneyBee : Pet
+	{
+		
+		/// <summary>
+		/// Average amount of honey produced per day in ounces
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public float HoneyPerDay { get; set; }
 	}
 	
 	public partial class PetClient

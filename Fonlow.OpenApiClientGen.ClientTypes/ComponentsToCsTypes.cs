@@ -89,7 +89,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			foreach (KeyValuePair<string, OpenApiSchema> item in components.Schemas)
+			var schemas = components.Schemas.OrderBy(d => d.Value.Reference !=null).OrderBy(k=>k.Value.Properties.Count>0).OrderBy(g=>g.Value.AllOf.Count>0); //so simple complex types will be handled first to be referenced by more complex ones.
+
+			foreach (KeyValuePair<string, OpenApiSchema> item in schemas)
 			{
 				AddTypeToClientNamespace(item);
 			}
@@ -151,9 +153,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						TypeAliasDic.Instance.Add(currentTypeName, $"{itemsRef.Id}[]");
 					}
 				}
-				else if (type == "string")
+				else if (type != "object" && !String.IsNullOrEmpty(type))
 				{
-					TypeAliasDic.Instance.Add(currentTypeName, "string");
+					TypeAliasDic.Instance.Add(currentTypeName, type);
 				}
 				else
 				{
@@ -186,7 +188,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = stringMember.Value.Replace('.', '_').Replace('-', '_');//amazon ec2 api , enum with dot and hyphen in enum members
+					string memberName = stringMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_').Replace("(", "").Replace(")", "");//amazon ec2 api , enum with dot and hyphen in enum members
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -240,7 +242,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 				{
-					string memberName = passwordMember.Value.Replace('.', '_').Replace('-', '_');
+					string memberName = passwordMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_').Replace("(", "").Replace(")", "");
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{

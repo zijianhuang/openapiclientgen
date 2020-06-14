@@ -27,31 +27,6 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	public class Cat : Pet
-	{
-		
-		/// <summary>
-		/// The measured skill for hunting
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public CatHuntingSkill HuntingSkill { get; set; }
-	}
-	
-	public enum CatHuntingSkill
-	{
-		
-		clueless = 0,
-		
-		lazy = 1,
-		
-		adventurous = 2,
-		
-		aggressive = 3,
-	}
-	
 	public class Category
 	{
 		
@@ -69,32 +44,6 @@ namespace MyNS
 		/// Test Sub Category
 		/// </summary>
 		public string Sub { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
-	public class Dog : Pet
-	{
-		
-		/// <summary>
-		/// The size of the pack the dog is from
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public int PackSize { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	public class HoneyBee : Pet
-	{
-		
-		/// <summary>
-		/// Average amount of honey produced per day in ounces
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public float HoneyPerDay { get; set; }
 	}
 	
 	public class Order
@@ -251,6 +200,57 @@ namespace MyNS
 		/// User status
 		/// </summary>
 		public System.Nullable<System.Int32> UserStatus { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a cat
+	/// </summary>
+	public class Cat : Pet
+	{
+		
+		/// <summary>
+		/// The measured skill for hunting
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public CatHuntingSkill HuntingSkill { get; set; }
+	}
+	
+	public enum CatHuntingSkill
+	{
+		
+		clueless = 0,
+		
+		lazy = 1,
+		
+		adventurous = 2,
+		
+		aggressive = 3,
+	}
+	
+	/// <summary>
+	/// A representation of a dog
+	/// </summary>
+	public class Dog : Pet
+	{
+		
+		/// <summary>
+		/// The size of the pack the dog is from
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public int PackSize { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a honey bee
+	/// </summary>
+	public class HoneyBee : Pet
+	{
+		
+		/// <summary>
+		/// Average amount of honey produced per day in ounces
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public float HoneyPerDay { get; set; }
 	}
 	
 	public partial class Misc

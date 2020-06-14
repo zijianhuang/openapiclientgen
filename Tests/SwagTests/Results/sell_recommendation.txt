@@ -19,6 +19,26 @@ namespace MyNS
 	
 	
 	/// <summary>
+	/// An enum that describes the different ways, or the basis, by which the bid percentage value is calculated. Currently, TRENDING is the only valid basis.
+	/// </summary>
+	public enum Basis
+	{
+		
+		TRENDING = 0,
+	}
+	
+	/// <summary>
+	/// An enum that describes whether or not eBay recommends placing the associated listing in a Promoted Listings ad campaign.
+	/// </summary>
+	public enum PromoteWithAd
+	{
+		
+		RECOMMENDED = 0,
+		
+		UNDETERMINED = 1,
+	}
+	
+	/// <summary>
 	/// A complex type that contains recommendations and information on how to configure Promoted Listings ad campaigns.
 	/// </summary>
 	public class Ad
@@ -41,15 +61,6 @@ namespace MyNS
 		RECOMMENDED = 0,
 		
 		UNDETERMINED = 1,
-	}
-	
-	/// <summary>
-	/// An enum that describes the different ways, or the basis, by which the bid percentage value is calculated. Currently, TRENDING is the only valid basis.
-	/// </summary>
-	public enum Basis
-	{
-		
-		TRENDING = 0,
 	}
 	
 	/// <summary>
@@ -227,17 +238,6 @@ namespace MyNS
 		/// The total number of items in the result set.
 		/// </summary>
 		public System.Nullable<System.Int32> Total { get; set; }
-	}
-	
-	/// <summary>
-	/// An enum that describes whether or not eBay recommends placing the associated listing in a Promoted Listings ad campaign.
-	/// </summary>
-	public enum PromoteWithAd
-	{
-		
-		RECOMMENDED = 0,
-		
-		UNDETERMINED = 1,
 	}
 	
 	public partial class Listing_recommendationClient

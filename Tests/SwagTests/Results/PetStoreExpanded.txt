@@ -17,13 +17,6 @@ namespace MyNS
 	using Newtonsoft.Json;
 	
 	
-	public class Pet : NewPet
-	{
-		
-		[System.ComponentModel.DataAnnotations.Required()]
-		public long Id { get; set; }
-	}
-	
 	public class NewPet
 	{
 		
@@ -41,6 +34,13 @@ namespace MyNS
 		
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Message { get; set; }
+	}
+	
+	public class Pet : NewPet
+	{
+		
+		[System.ComponentModel.DataAnnotations.Required()]
+		public long Id { get; set; }
 	}
 	
 	public partial class Misc
