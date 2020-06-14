@@ -202,6 +202,7 @@
     <None Remove="SwagMock\SimplePetCat.json" />
     <None Remove="SwagMock\StringArray.json" />
     <None Remove="SwagMock\TypeAlias.json" />
+    <None Remove="SwagMock\TypeAlias2.json" />
     <None Remove="SwagMock\uspto.yaml" />
     <None Remove="SwagMock\ValuesPaths.json" />
   </ItemGroup>
@@ -739,6 +740,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\sell_recommendation_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\TypeAlias2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\uspto.yaml">

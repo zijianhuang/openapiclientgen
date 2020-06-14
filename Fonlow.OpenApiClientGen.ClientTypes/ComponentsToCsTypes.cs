@@ -140,7 +140,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (type == "array") // wrapper of array. Microsoft OpenApi library could not intepret this as type alias, so I have to register the alias myself.
 				{
 					OpenApiReference itemsRef = schema.Items.Reference;
-					TypeAliasDic.Instance.Add(currentTypeName, $"{itemsRef.Id}[]");
+					if (TypeAliasDic.Instance.TryGet(itemsRef.Id, out string arrayTypeAlias))
+					{
+						Debug.WriteLine(arrayTypeAlias);
+						//typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
+						//typeDeclaration.BaseTypes.Add($"System.Collections.ObjectModel.Collection<{arrayTypeAlias}>");
+					}
+					else
+					{
+						TypeAliasDic.Instance.Add(currentTypeName, $"{itemsRef.Id}[]");
+					}
+				}
+				else if (type == "string")
+				{
+					TypeAliasDic.Instance.Add(currentTypeName, "string");
 				}
 				else
 				{
@@ -310,11 +323,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (propertySchema.Type == "array") // for array
 					{
 						OpenApiSchema arrayItemsSchema = propertySchema.Items;
+						
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
 							string arrayTypeName = arrayItemsSchema.Reference.Id;
-							CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+							if (TypeAliasDic.Instance.TryGet(arrayTypeName, out string arrayTypeNameAlias))
+							{
+								var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(clrType.FullName, 1);
+								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+							}
+							else
+							{
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
+								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+							}
 						}
 						else
 						{
