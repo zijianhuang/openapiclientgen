@@ -89,7 +89,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			var schemas = components.Schemas.OrderBy(d => d.Value.Reference !=null).OrderBy(k=>k.Value.Properties.Count>0).OrderBy(g=>g.Value.AllOf.Count>0); //so simple complex types will be handled first to be referenced by more complex ones.
+			var schemas = components.Schemas;//.OrderBy(d => d.Value.Reference !=null).OrderBy(k=>k.Value.Properties.Count>0).OrderBy(g=>g.Value.AllOf.Count>0).OrderBy(d=>d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
 
 			foreach (KeyValuePair<string, OpenApiSchema> item in schemas)
 			{
@@ -144,22 +144,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					OpenApiReference itemsRef = schema.Items.Reference;
 					if (TypeAliasDic.Instance.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
-						Debug.WriteLine(arrayTypeAlias);
+						Trace.TraceInformation("arrayTypeAlias: " + arrayTypeAlias);
+						TypeAliasDic.Instance.Add(item.Key, $"{arrayTypeAlias}[]");
+
 						//typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
 						//typeDeclaration.BaseTypes.Add($"System.Collections.ObjectModel.Collection<{arrayTypeAlias}>");
 					}
 					else
 					{
-						TypeAliasDic.Instance.Add(currentTypeName, $"{itemsRef.Id}[]");
+						TypeAliasDic.Instance.Add(item.Key, $"{itemsRef.Id}[]");
 					}
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
 				{
-					TypeAliasDic.Instance.Add(currentTypeName, type);
+					var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(type, null);
+					TypeAliasDic.Instance.Add(item.Key, clrType.FullName);
+					Trace.TraceInformation($"TypeAlias {item.Key} for {clrType.FullName} added.");
 				}
 				else
 				{
-					Trace.TraceInformation($"Type Alias {currentTypeName} is skipped:.");
+					Trace.TraceInformation($"Type Alias {item.Key} is skipped:.");
 				}
 			}
 			else
@@ -402,6 +406,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						CreateMemberDocComment(p, clientProperty);
 						typeDeclaration.Members.Add(clientProperty);
+						Trace.TraceInformation($"Casual enum {casualEnumName} added.");
 						continue;
 					}
 				}
