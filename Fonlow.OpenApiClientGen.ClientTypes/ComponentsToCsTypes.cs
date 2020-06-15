@@ -89,11 +89,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			var schemas = components.Schemas;//.OrderBy(d => d.Value.Reference !=null).OrderBy(k=>k.Value.Properties.Count>0).OrderBy(g=>g.Value.AllOf.Count>0).OrderBy(d=>d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
+			var schemas = components.Schemas.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
 
 			foreach (KeyValuePair<string, OpenApiSchema> item in schemas)
 			{
-				AddTypeToClientNamespace(item);
+				var existingType = FindTypeDeclaration(ToTitleCase(item.Key));
+				if (existingType == null)
+				{
+					AddTypeToClientNamespace(item);
+				}
 			}
 
 		}
@@ -143,8 +147,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					OpenApiReference itemsRef = schema.Items.Reference;
 					if (TypeAliasDic.Instance.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
-						Trace.TraceInformation("arrayTypeAlias: " + arrayTypeAlias);
 						TypeAliasDic.Instance.Add(item.Key, $"{arrayTypeAlias}[]");
+						Trace.TraceInformation($"arrayTypeAlias: {arrayTypeAlias} for {item.Key} added.");
 
 						//typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
 						//typeDeclaration.BaseTypes.Add($"System.Collections.ObjectModel.Collection<{arrayTypeAlias}>");
@@ -152,6 +156,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else
 					{
 						TypeAliasDic.Instance.Add(item.Key, $"{itemsRef.Id}[]");
+						Trace.TraceInformation($"arrayTypeAlias: {itemsRef.Id}[] for {item.Key} added.");
 					}
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
@@ -292,12 +297,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				string defaultValue = GetDefaultValue(propertySchema);
 				//Debug.Assert(propertyName != "HuntingSkill");
 				CodeMemberField clientProperty;
-				if (String.IsNullOrEmpty(primitivePropertyType)) // for custom type, pointing to a custom time "$ref": "#/components/schemas/PhoneType"
+				if (String.IsNullOrEmpty(primitivePropertyType))
 				{
 					OpenApiSchema refToType = null;
 					if (propertySchema.Reference != null)
 					{
-						string typeId = propertySchema.Reference.Id;
+						string typeId = ToTitleCase(propertySchema.Reference.Id);
 						clientProperty = CreateProperty(propertyName, typeId, defaultValue);
 					}
 					else
@@ -370,7 +375,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
-						string complexType = propertySchema.Reference.Id;
+						string complexType = ToTitleCase(propertySchema.Reference.Id);
+						var existingType = FindTypeDeclaration(complexType);
+						if (existingType == null) // Referencing to a type not yet added to namespace
+						{
+							AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
+							complexType = ToTitleCase(complexType);
+						}
+
 						clientProperty = CreateProperty(propertyName, complexType, defaultValue);
 					}
 					else if (propertySchema.Enum.Count == 0) // for primitive type
@@ -390,12 +402,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						string complexType = propertySchema.Reference == null ? null : propertySchema.Reference.Id;
 						if (complexType != null)
 						{
+							complexType = ToTitleCase(complexType);
+							var existingType = FindTypeDeclaration(complexType);
+							if (existingType == null) // Referencing to a type not yet added to namespace
+							{
+								AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
+							}
+
 							clientProperty = CreateProperty(propertyName, complexType, defaultValue);
 						}
 						else //for casual enum
 						{
 							string casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
-							CodeTypeDeclaration existingType = FindTypeDeclaration(casualEnumName);
+							CodeTypeDeclaration existingType = FindTypeDeclaration(ToTitleCase(casualEnumName));
 							if (existingType == null)
 							{
 								CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
