@@ -97,7 +97,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
 			string typeName = ToTitleCase(item.Key);
-			Debug.WriteLine("clientClass: " + typeName);
 			OpenApiSchema schema = item.Value;
 			string type = schema.Type;
 			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
@@ -132,14 +131,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else
 				{
-					Trace.TraceInformation($"Type Alias {typeName} is skipped:.");
+					Trace.TraceInformation($"TS Type Alias {typeName} is skipped:.");
+					return;
 				}
+
+				Trace.TraceInformation("TS client class: " + typeName);
 			}
 			else
 			{
 				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, typeName);
 				CreateTypeDocComment(item, typeDeclaration);
 				AddEnumMembers(typeDeclaration, enumTypeList);
+				Trace.TraceInformation("TS client enum: " + typeName);
 			}
 		}
 

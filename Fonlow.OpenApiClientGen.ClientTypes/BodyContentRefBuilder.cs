@@ -65,6 +65,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (existingType == null)
 						{
 							componentsToCodeDom.AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema));
+							System.Diagnostics.Trace.TraceInformation($"Casual type {newTypeName} created.");
 						}
 
 						CodeTypeReference codeTypeReference = new CodeTypeReference(newTypeName);

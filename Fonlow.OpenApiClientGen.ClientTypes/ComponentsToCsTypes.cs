@@ -101,7 +101,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
 			currentTypeName = ToTitleCase(item.Key);
-			Debug.WriteLine("clientClass: " + currentTypeName);
 			OpenApiSchema schema = item.Value;
 
 			string type = schema.Type;
@@ -164,7 +163,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else
 				{
 					Trace.TraceInformation($"Type Alias {item.Key} is skipped:.");
+					return;
 				}
+
+				Trace.TraceInformation("clientClass: " + currentTypeName);
 			}
 			else
 			{
@@ -181,6 +183,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
 				}
+
+				Trace.TraceInformation("client enum: " + currentTypeName);
 			}
 
 		}
@@ -329,7 +333,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (propertySchema.Type == "array") // for array
 					{
 						OpenApiSchema arrayItemsSchema = propertySchema.Items;
-						
+
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
 							string arrayTypeName = arrayItemsSchema.Reference.Id;
@@ -381,32 +385,50 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							clientProperty = CreateProperty(propertyName, simpleType, defaultValue);
 						}
 					}
-					else // for casual enum
+					else // for enum
 					{
-						string casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
-						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
-						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
+						string complexType = propertySchema.Reference == null ? null : propertySchema.Reference.Id;
+						if (complexType != null)
+						{
+							clientProperty = CreateProperty(propertyName, complexType, defaultValue);
+						}
+						else //for casual enum
+						{
+							string casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
+							CodeTypeDeclaration existingType = FindTypeDeclaration(casualEnumName);
+							if (existingType == null)
+							{
+								CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
+								AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
+
+								if (settings.DecorateDataModelWithSerializable)
+								{
+									casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
+								}
+
+								clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
+
+								if (settings.DecorateDataModelWithDataContract)
+								{
+									casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+									clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
+								}
+
+								Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
+							}
+							else
+							{
+								clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
+							}
+						}
 
 						if (isRequired)
 						{
 							clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
 						}
 
-						if (settings.DecorateDataModelWithDataContract)
-						{
-							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
-							clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
-						}
-
-						if (settings.DecorateDataModelWithSerializable)
-						{
-							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
-						}
-
 						CreateMemberDocComment(p, clientProperty);
 						typeDeclaration.Members.Add(clientProperty);
-						Trace.TraceInformation($"Casual enum {casualEnumName} added.");
 						continue;
 					}
 				}
