@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Globalization;
+using System.Data;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -29,6 +30,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly CodeCompileUnit codeCompileUnit;
 
 		readonly Settings settings;
+
+		IDictionary<string, OpenApiSchema> ComponentsSchemas;
 
 		/// <summary>
 		/// Save TypeScript codes generated into a file.
@@ -89,9 +92,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			var schemas = components.Schemas;//.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
+			ComponentsSchemas = components.Schemas;//.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
 
-			foreach (KeyValuePair<string, OpenApiSchema> item in schemas)
+			foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
 			{
 				var existingType = FindTypeDeclaration(ToTitleCase(item.Key));
 				if (existingType == null)
@@ -102,9 +105,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
+		OpenApiSchema FindSchema(string key)
+		{
+			if (ComponentsSchemas.TryGetValue(key, out OpenApiSchema v))
+			{
+				return v;
+			}
+
+			return null;
+		}
+
+
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
-			currentTypeName = ToTitleCase(item.Key);
+			var currentTypeName = ToTitleCase(item.Key);
 			OpenApiSchema schema = item.Value;
 
 			string type = schema.Type;
@@ -125,12 +139,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
 						OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
-						AddProperties(typeDeclaration, allOfProperteisSchema);
+						AddProperties(typeDeclaration, allOfProperteisSchema, currentTypeName);
 					}
 
 					CreateTypeDocComment(item, typeDeclaration);
 
-					AddProperties(typeDeclaration, schema);
+					AddProperties(typeDeclaration, schema, currentTypeName);
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
@@ -278,16 +292,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		string currentTypeName;
+		//string currentTypeName;
 
-		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema)
+		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName)
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
 				string propertyName = ToTitleCase(p.Key);
+				bool propertyNameAdjusted = false;
 				if (propertyName == currentTypeName)
 				{
+					Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
 					propertyName += "1";
+					propertyNameAdjusted = true;
 				}
 
 				OpenApiSchema propertySchema = p.Value;
@@ -342,6 +359,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
 							string arrayTypeName = arrayItemsSchema.Reference.Id;
+							var existingType = FindTypeDeclaration(arrayTypeName);
+							if (existingType == null) // Referencing to a type not yet added to namespace
+							{
+								var existingSchema = FindSchema(arrayTypeName);
+								if (existingSchema != null)
+								{
+									AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(arrayTypeName, existingSchema));
+								}
+							}
+
 							if (TypeAliasDic.Instance.TryGet(arrayTypeName, out string arrayTypeNameAlias))
 							{
 								var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
@@ -361,7 +388,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							{
 								string casualTypeName = typeDeclaration.Name + ToTitleCase(propertyName);
 								CodeTypeDeclaration casualTypeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, casualTypeName);
-								AddProperties(casualTypeDeclaration, arrayItemsSchema);
+								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName);
 								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, defaultValue);
 							}
@@ -459,7 +486,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (settings.DecorateDataModelWithDataContract)
 				{
-					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
+					if (propertyNameAdjusted)
+					{
+						var originalPropertyName = ToTitleCase(p.Key);
+						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{originalPropertyName}\""))));
+					}
+					else
+					{
+						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
+					}
 				}
 
 				CreateMemberDocComment(p, clientProperty);

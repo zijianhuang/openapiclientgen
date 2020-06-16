@@ -337,6 +337,25 @@ namespace SwagTests
 		{
 			GenerateAndAssert("SwagMock\\developer_analytics_v1_beta_oas3.json", "Results\\developer_analytics.txt");
 		}
+
+		[Fact]
+		public void TestEC2()
+		{
+			GenerateAndAssert("SwagMock\\ec2.yaml", "Results\\ec2.txt", new Settings()
+			{
+				ClientNamespace = "My.Demo.Client",
+				ContainerClassName = "DemoClient",
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				DecorateDataModelWithDataContract = true,
+				DataContractNamespace = "http://demo.domain/2020/03",
+				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
+				HandleHttpRequestHeaders = true,
+				UseEnsureSuccessStatusCodeEx = true
+			});
+		}
+
+
 		//[Fact]
 		//public void TestEBay_()
 		//{
