@@ -41,17 +41,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			).Where(k => k.ParameterDescriptor.ParameterBinder != ParameterBinder.None).ToArray();
 		}
 
-		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter content)
+		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter apiParameter)
 		{
-			string schemaType = content.Schema.Type;
+			string schemaType = apiParameter.Schema.Type;
 			if (schemaType != null)
 			{
 				if (schemaType == "array") // for array
 				{
-					OpenApiSchema arrayItemsSchema = content.Schema.Items;
+					OpenApiSchema arrayItemsSchema = apiParameter.Schema.Items;
 					if (arrayItemsSchema.Reference != null) //array of custom type
 					{
 						string arrayTypeName = arrayItemsSchema.Reference.Id;
+						if (TypeAliasDic.Instance.TryGet(arrayTypeName, out string aliasTypeName))
+						{
+							return TypeRefBuilder.CreateArrayOfCustomTypeReference(aliasTypeName, 1);
+						}
+
 						CodeTypeReference arrayCodeTypeReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(arrayTypeName, 1);
 						return arrayCodeTypeReference;
 					}
@@ -70,7 +75,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 
 							//warning about bad yaml design.
-							Trace.TraceWarning($"Parameter {content.Name.Replace('-', '_')} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
+							Trace.TraceWarning($"Parameter {apiParameter.Name.Replace('-', '_')} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 						}
 
 						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
@@ -78,17 +83,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return arrayCodeTypeReference;
 					}
 				}
-				else if (content.Schema.Enum.Count > 0 && schemaType == "string" ) // for enum
+				else if (apiParameter.Schema.Enum.Count > 0 && schemaType == "string") // for enum
 				{
 					string[] enumMemberNames;
 					try
 					{
-						enumMemberNames = content.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+						enumMemberNames = apiParameter.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
 
 					}
 					catch (InvalidCastException ex)
 					{
-						throw new CodeGenException($"When dealing with {content.Name} of {schemaType}, error: {ex.Message}");
+						throw new CodeGenException($"When dealing with {apiParameter.Name} of {schemaType}, error: {ex.Message}");
 					}
 
 					CodeTypeDeclaration existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
@@ -99,8 +104,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return enumReference;
 					}
 				}
+				else if (TypeAliasDic.Instance.TryGet(schemaType, out string aliasTypeName))
+				{
+					return new CodeTypeReference(aliasTypeName);
+				}
 
-				Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(schemaType, content.Schema.Format);
+				Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(schemaType, apiParameter.Schema.Format);
 				CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
 				return codeTypeReference;
 

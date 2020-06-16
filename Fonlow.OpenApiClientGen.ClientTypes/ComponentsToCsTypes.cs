@@ -89,7 +89,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			var schemas = components.Schemas.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
+			var schemas = components.Schemas;//.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
 
 			foreach (KeyValuePair<string, OpenApiSchema> item in schemas)
 			{
