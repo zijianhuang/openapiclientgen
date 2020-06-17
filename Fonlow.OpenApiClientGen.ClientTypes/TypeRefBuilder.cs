@@ -106,6 +106,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content)) // application/json has better to be first.
 				{
+					if (content.Schema == null)
+					{
+						return Tuple.Create<CodeTypeReference, bool>(null, false);
+					}
+
 					try
 					{
 						codeTypeReference = OpenApiMediaTypeToCodeTypeReference(content);

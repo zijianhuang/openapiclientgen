@@ -112,6 +112,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 					{
 						OpenApiSchema allOfRef = allOfBaseTypeSchemaList[0];
+						if (allOfRef.Reference == null)
+						{
+							Trace.TraceWarning($"Not yet support Type {item.Key} having allOf[0] without Reference. Skipped TS gen.");
+							return;
+						}
+
 						string baseTypeName = allOfRef.Reference.Id; //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
@@ -127,6 +133,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (type == "array") // wrapper of array
 				{
 					OpenApiReference itemsRef = schema.Items.Reference;
+					if (itemsRef == null)
+					{
+						Trace.TraceWarning($"Not yet support array type with casual items type without reference: {item.Key}. Skipped TS gen.");
+						return;
+					}
+
 					TypeAliasDic.Instance.Add(typeName, $"{itemsRef.Id}[]");
 				}
 				else

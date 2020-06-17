@@ -135,6 +135,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 					{
 						OpenApiSchema allOfRef = allOfBaseTypeSchemaList[0];
+						if (allOfRef.Reference == null)
+						{
+							Trace.TraceWarning($"Not yet support Type {item.Key} having allOf[0] without Reference. Skipped.");
+							return;
+						}
+
 						string baseTypeName = allOfRef.Reference.Id; //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
@@ -159,6 +165,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (type == "array") // wrapper of array. Microsoft OpenApi library could not intepret this as type alias, so I have to register the alias myself.
 				{
 					OpenApiReference itemsRef = schema.Items.Reference;
+					if (itemsRef == null)
+					{
+						Trace.TraceWarning($"Not yet support array type with casual items type without reference: {item.Key}. Skipped.");
+						return;
+					}
+
 					if (TypeAliasDic.Instance.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
 						TypeAliasDic.Instance.Add(item.Key, $"{arrayTypeAlias}[]");
