@@ -26,6 +26,7 @@ namespace Fonlow.CodeDom.Web
 						throw new CodeGenException(msg);
 					}
 				}
+
 				string path = System.IO.Path.Combine(csharpClientProjectDir, settings.ClientLibraryFileName);
 				OpenApiClientGen.Cs.ControllersClientApiGen gen = new Fonlow.OpenApiClientGen.Cs.ControllersClientApiGen(settings);
 				gen.CreateCodeDom(paths, components);

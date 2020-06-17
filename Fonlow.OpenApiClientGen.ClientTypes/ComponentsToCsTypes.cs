@@ -324,11 +324,36 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				bool isPrimitiveType = TypeRefBuilder.IsPrimitiveType(primitivePropertyType);
 				bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
 				string defaultValue = GetDefaultValue(propertySchema);
-				//Debug.Assert(propertyName != "HuntingSkill");
 				CodeMemberField clientProperty;
+
+				void GenerateCasualEnum()
+				{
+					string casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
+					CodeTypeDeclaration existingType = FindTypeDeclaration(ToTitleCase(casualEnumName));
+					if (existingType == null)
+					{
+						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
+						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
+
+						if (settings.DecorateDataModelWithSerializable)
+						{
+							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
+						}
+
+						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
+
+						Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
+					}
+					else
+					{
+						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
+					}
+				}
+
 				if (String.IsNullOrEmpty(primitivePropertyType))
 				{
 					OpenApiSchema refToType = null;
+
 					if (propertySchema.Reference != null)
 					{
 						string typeId = ToTitleCase(propertySchema.Reference.Id);
@@ -336,29 +361,40 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						if (propertySchema.AllOf.Count > 0)
+						if (propertySchema.Enum.Count > 0) //for casual enum
 						{
-							refToType = propertySchema.AllOf[0];
-						}
-						else if (propertySchema.OneOf.Count > 0)
-						{
-							refToType = propertySchema.OneOf[0];
-						}
-						else if (propertySchema.AnyOf.Count > 0)
-						{
-							refToType = propertySchema.AnyOf[0];
-						}
-
-						string customPropertyType = refToType.Type;
-						string customPropertyFormat = refToType.Format;
-						Type customType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-						if (!customType.IsClass && !isRequired)
-						{
-							clientProperty = CreateNullableProperty(propertyName, customType);
+							GenerateCasualEnum();
 						}
 						else
 						{
-							clientProperty = CreateProperty(propertyName, customType, defaultValue);
+							if (propertySchema.AllOf.Count > 0)
+							{
+								refToType = propertySchema.AllOf[0];
+							}
+							else if (propertySchema.OneOf.Count > 0)
+							{
+								refToType = propertySchema.OneOf[0];
+							}
+							else if (propertySchema.AnyOf.Count > 0)
+							{
+								refToType = propertySchema.AnyOf[0];
+							}
+							else if (refToType == null)
+							{
+								Trace.TraceWarning($"Property '{p.Key}' of {currentTypeName} may be of type object.");
+							}
+
+							string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
+							string customPropertyFormat = refToType?.Format;
+							Type customType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
+							if (!customType.IsClass && !isRequired)
+							{
+								clientProperty = CreateNullableProperty(propertyName, customType);
+							}
+							else
+							{
+								clientProperty = CreateProperty(propertyName, customType, defaultValue);
+							}
 						}
 					}
 				}
@@ -438,7 +474,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else // for enum
 					{
-						string complexType = propertySchema.Reference == null ? null : propertySchema.Reference.Id;
+						string complexType = propertySchema.Reference?.Id;
 						if (complexType != null)
 						{
 							complexType = ToTitleCase(complexType);
@@ -452,32 +488,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else //for casual enum
 						{
-							string casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
-							CodeTypeDeclaration existingType = FindTypeDeclaration(ToTitleCase(casualEnumName));
-							if (existingType == null)
-							{
-								CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
-								AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-
-								if (settings.DecorateDataModelWithSerializable)
-								{
-									casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
-								}
-
-								clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
-
-								if (settings.DecorateDataModelWithDataContract)
-								{
-									casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
-									clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
-								}
-
-								Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
-							}
-							else
-							{
-								clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
-							}
+							GenerateCasualEnum();
 						}
 
 						if (isRequired)

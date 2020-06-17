@@ -53,7 +53,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="robocopy $(TargetDir) c:\Green\OpenApiClientGen /MIR" />
+    <Exec Command="xcopy $(TargetDir)*.* c:\Green\OpenApiClientGen /D /Y" />
   </Target>
 
 </Project>
