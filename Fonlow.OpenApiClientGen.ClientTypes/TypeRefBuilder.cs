@@ -68,7 +68,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (arrayItemsSchema.Reference != null) //array of custom type
 					{
 						string arrayTypeName = arrayItemsSchema.Reference.Id;
-						CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
+						CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(ToTitleCase(arrayTypeName), 1);
 						return arrayCodeTypeReference;
 					}
 					else

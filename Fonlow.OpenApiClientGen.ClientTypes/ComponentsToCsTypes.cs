@@ -230,6 +230,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string memberName = stringMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
 						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
 						.Replace(":", ""); //atlassian api has this.
+					if (!Char.IsLetter(memberName[0]) && memberName[0] != '_')
+					{
+						memberName = "_" + memberName;
+					}
+
 					bool hasFunkyMemberName = memberName != stringMember.Value;
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
@@ -424,7 +429,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
 							string arrayTypeName = arrayItemsSchema.Reference.Id;
-							var existingType = FindTypeDeclaration(arrayTypeName);
+							var existingType = FindTypeDeclaration(ToTitleCase(arrayTypeName.Replace('-', '_')));
 							if (existingType == null) // Referencing to a type not yet added to namespace
 							{
 								var existingSchema = FindSchema(arrayTypeName);
@@ -442,7 +447,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 							else
 							{
-								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(ToTitleCase(arrayTypeName.Replace('-', '_')), 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
@@ -472,7 +477,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (existingType == null) // Referencing to a type not yet added to namespace
 						{
 							AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
-							complexType = ToTitleCase(complexType);
 						}
 
 						clientProperty = CreateProperty(propertyName, complexType, defaultValue);
