@@ -227,7 +227,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = stringMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_').Replace("(", "").Replace(")", "");//amazon ec2 api , enum with dot and hyphen in enum members
+					string memberName = stringMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
+						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
+						.Replace(":", ""); //atlassian api has this.
+					bool hasFunkyMemberName = memberName != stringMember.Value;
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -237,7 +240,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
-						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						if (hasFunkyMemberName)
+						{
+							clientField.CustomAttributes.Add(new CodeAttributeDeclaration($"System.Runtime.Serialization.EnumMemberAttribute", new CodeAttributeArgument("Value", new CodeSnippetExpression($"\"{stringMember.Value}\""))));
+						}
+						else
+						{
+							clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+						}
 					}
 
 					typeDeclaration.Members.Add(clientField);

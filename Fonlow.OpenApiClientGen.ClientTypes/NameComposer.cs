@@ -150,7 +150,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public string PathToActionOrContainerName(string path)
 		{
-			Uri uri = new Uri("http://dummy.net" + path);
+			Uri uri = new Uri("http://dummy.net" + path.Replace('-', '_'));
 			IEnumerable<string> pathSegments = uri.Segments.Where(s => !s.Contains("%7B"));
 			string localPath = String.Join(String.Empty, pathSegments);
 
