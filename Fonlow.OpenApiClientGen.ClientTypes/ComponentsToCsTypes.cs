@@ -118,7 +118,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
-			var currentTypeName = ToTitleCase(item.Key);
+			var currentTypeName = ToTitleCase(item.Key).Replace('-', '_');
 			OpenApiSchema schema = item.Value;
 
 			string type = schema.Type;
@@ -291,7 +291,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 				{
-					string memberName = passwordMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_').Replace("(", "").Replace(")", "");
+					string memberName = passwordMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
+						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
+						.Replace(":", ""); //atlassian api has this.
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -320,7 +322,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
-				string propertyName = ToTitleCase(p.Key);
+				string propertyName = ToTitleCase(p.Key.Replace("$", ""));
 				bool propertyNameAdjusted = false;
 				if (propertyName == currentTypeName)
 				{
@@ -344,6 +346,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
 						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
+
+						if (settings.DecorateDataModelWithDataContract)
+						{
+							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+						}
 
 						if (settings.DecorateDataModelWithSerializable)
 						{

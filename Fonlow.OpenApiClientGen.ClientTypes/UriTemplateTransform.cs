@@ -55,33 +55,33 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						return newUriText += $"{d.Name}=\" + ({d.Name}==null? \"\" : Uri.EscapeDataString({d.Name}))+\"";
+						return newUriText += $"{d.QName}=\" + ({d.Name}==null? \"\" : Uri.EscapeDataString({d.Name}))+\"";
 					}
 					else
 					{
-						return newUriText += $"{d.Name}=\" + {d.Name}+\"";
+						return newUriText += $"{d.QName}=\" + {d.Name}+\"";
 					}
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset)
 				{
-					return newUriText += $"{d.Name}=\" + {d.Name}.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\")+\"";
+					return newUriText += $"{d.QName}=\" + {d.Name}.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\")+\"";
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTimeNullable || d.ParameterDescriptor.ParameterType == typeofDateTimeOffsetNullable)
 				{
-					string replaced = newUriText.Replace($"\"&{d.Name}={{{d.Name}}}", $"({d.Name}.HasValue?\"&{d.Name}=\"+{d.Name}.Value.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\"):String.Empty)+\"");
+					string replaced = newUriText.Replace($"\"&{d.QName}={{{d.Name}}}", $"({d.Name}.HasValue?\"&{d.QName}=\"+{d.Name}.Value.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\"):String.Empty)+\"");
 					if (replaced == newUriText)
 					{
-						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"\"+({d.Name}.HasValue?\"{d.Name}=\"+{d.Name}.Value.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\"):String.Empty)+\"");
+						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"\"+({d.Name}.HasValue?\"{d.QName}=\"+{d.Name}.Value.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\"):String.Empty)+\"");
 					}
 
 					return replaced;
 				}
 				else if (IsNullablePrimitive(d.ParameterDescriptor.ParameterType))
 				{
-					string replaced = newUriText.Replace($"\"&{d.Name}={{{d.Name}}}", $"({d.Name}.HasValue?\"&{d.Name}=\"+{d.Name}.Value.ToString():String.Empty)+\"");
+					string replaced = newUriText.Replace($"\"&{d.QName}={{{d.Name}}}", $"({d.Name}.HasValue?\"&{d.QName}=\"+{d.Name}.Value.ToString():String.Empty)+\"");
 					if (replaced == newUriText)
 					{
-						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"\"+({d.Name}.HasValue?\"{d.Name}=\"+{d.Name}.Value.ToString():String.Empty)+\"");
+						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"\"+({d.Name}.HasValue?\"{d.QName}=\"+{d.Name}.Value.ToString():String.Empty)+\"");
 					}
 
 					return replaced;
@@ -101,7 +101,7 @@ namespace Fonlow.CodeDom.Web
 				}
 				else
 				{
-					return newUriText += $"{d.Name}=\"+{d.Name}+\"";
+					return newUriText += $"{d.QName}=\"+{d.Name}+\"";
 				}
 			}
 			else
@@ -123,20 +123,20 @@ namespace Fonlow.CodeDom.Web
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTimeNullable || d.ParameterDescriptor.ParameterType == typeofDateTimeOffsetNullable)
 				{
-					string replaced = newUriText.Replace($"\"&{d.Name}={{{d.Name}}}", $"({d.Name}.HasValue?\"&{d.Name}=\"+{d.Name}.Value.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\"):String.Empty)+\"");
+					string replaced = newUriText.Replace($"\"&{d.QName}={{{d.Name}}}", $"({d.Name}.HasValue?\"&{d.QName}=\"+{d.Name}.Value.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\"):String.Empty)+\"");
 					if (replaced == newUriText)
 					{
-						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"\"+({d.Name}.HasValue?\"{d.Name}=\"+{d.Name}.Value.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\"):String.Empty)+\"");
+						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"\"+({d.Name}.HasValue?\"{d.QName}=\"+{d.Name}.Value.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\"):String.Empty)+\"");
 					}
 
 					return replaced;
 				}
 				else if (IsNullablePrimitive(d.ParameterDescriptor.ParameterType))
 				{
-					string replaced = newUriText.Replace($"\"&{d.Name}={{{d.Name}}}", $"({d.Name}.HasValue?\"&{d.Name}=\"+{d.Name}.Value.ToString():String.Empty)+\"");
+					string replaced = newUriText.Replace($"\"&{d.QName}={{{d.Name}}}", $"({d.Name}.HasValue?\"&{d.QName}=\"+{d.Name}.Value.ToString():String.Empty)+\"");
 					if (replaced == newUriText)
 					{
-						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"\"+({d.Name}.HasValue?\"{d.Name}=\"+{d.Name}.Value.ToString():String.Empty)+\"");
+						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"\"+({d.Name}.HasValue?\"{d.QName}=\"+{d.Name}.Value.ToString():String.Empty)+\"");
 					}
 
 					return replaced;
@@ -220,7 +220,7 @@ namespace Fonlow.CodeDom.Web
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTimeNullable || d.ParameterDescriptor.ParameterType == typeofDateTimeOffsetNullable)
 				{
-					string replaced = newUriText.Replace($"'&{d.Name}={{{d.Name}}}", $"({d.Name} ? '&{d.Name}=' + {d.Name}.toISOString() : '') + '");
+					string replaced = newUriText.Replace($"'&{d.QName}={{{d.Name}}}", $"({d.Name} ? '&{d.QName}=' + {d.Name}.toISOString() : '') + '");
 					if (replaced == newUriText)
 					{
 						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"' + ({d.Name} ? '{d.Name}=' + {d.Name}.toISOString() : '') + '");
@@ -230,7 +230,7 @@ namespace Fonlow.CodeDom.Web
 				}
 				else if (IsNullablePrimitive(d.ParameterDescriptor.ParameterType))
 				{
-					string replaced = newUriText.Replace($"'&{d.Name}={{{d.Name}}}", $"({d.Name} ? '&{d.Name}=' + {d.Name}.toString() : '') + '");
+					string replaced = newUriText.Replace($"'&{d.QName}={{{d.Name}}}", $"({d.Name} ? '&{d.QName}=' + {d.Name}.toString() : '') + '");
 					if (replaced == newUriText)
 					{
 						replaced = newUriText.Replace($"{d.Name}={{{d.Name}}}", $"' + ({d.Name} ? '{d.Name}=' + {d.Name}.toString() : '') + '");

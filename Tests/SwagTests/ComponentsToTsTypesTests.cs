@@ -269,7 +269,13 @@ namespace SwagTests
 			Assert.Equal(expected, s);
 		}
 
+		[Fact]
+		public void TestReplaceDollar()
+		{
+			Assert.Equal("filter", "$filter".Replace("$", ""));
+		}
 
 	}
+
 
 }

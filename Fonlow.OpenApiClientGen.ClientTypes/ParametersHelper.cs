@@ -1,14 +1,10 @@
-﻿using System;
+﻿using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
+using System;
 using System.CodeDom;
-using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Fonlow.Reflection;
-using Microsoft.OpenApi.Models;
-using Fonlow.CodeDom.Web;
-using Fonlow.OpenApiClientGen.ClientTypes;
-using Microsoft.OpenApi.Extensions;
-using Microsoft.OpenApi.Any;
+using System.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -26,12 +22,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ps.Select(p =>
 				new ParameterDescriptionEx()
 				{
-					Name = p.Name.Replace('-', '_'),
+					Name = p.Name.Replace('-', '_').Replace("$", ""), //azure.com\apimanagement-apimapis has $ in query parameter
+					QName=p.Name,
 					Documentation = p.Description,
 					ParameterDescriptor = new ParameterDescriptor()
 					{
 						IsOptional = !p.Required,
-						ParameterName = p.Name.Replace('-', '_'),
+						ParameterName = p.Name.Replace('-', '_').Replace("$", ""),
 						ParameterType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},

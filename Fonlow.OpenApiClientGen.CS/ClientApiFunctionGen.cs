@@ -211,14 +211,18 @@ namespace Fonlow.OpenApiClientGen.Cs
 		void RenderGetOrDeleteImplementation(OperationType httpMethod, bool forAsync)
 		{
 			//Create function parameters
-			CodeParameterDeclarationExpression[] parameters = apiOperation.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query)
-				.Select(d =>
-				new CodeParameterDeclarationExpression()
-				{
-					Name = d.Name.Replace('-', '_'),
-					Type = parametersHelper.OpenApiParameterToCodeTypeReference(d),
+			//CodeParameterDeclarationExpression[] parameters = apiOperation.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query)
+			//	.Select(d =>
+			//	new CodeParameterDeclarationExpression()
+			//	{
+			//		Name = d.Name.Replace('-', '_').Replace("$", ""),
+			//		Type = parametersHelper.OpenApiParameterToCodeTypeReference(d),
 
-				})
+			//	})
+			//	.ToArray();
+			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
+				.Select(d =>
+				new CodeParameterDeclarationExpression(coms2CsTypes.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType), d.Name))
 				.ToArray();
 			method.Parameters.AddRange(parameters);
 
@@ -276,7 +280,8 @@ namespace Fonlow.OpenApiClientGen.Cs
 		void RenderPostOrPutImplementation(OperationType httpMethod, bool forAsync)
 		{
 			//Create function parameters in prototype
-			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Select(d =>
+			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
+				.Select(d =>
 				new CodeParameterDeclarationExpression(coms2CsTypes.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType), d.Name))
 				.ToArray();
 			method.Parameters.AddRange(parameters);

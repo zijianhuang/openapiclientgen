@@ -14,6 +14,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public string Name
 		{ get; set; }
 
+		public string QName
+		{ get; set; }
+
 		public ParameterDescriptor ParameterDescriptor
 		{ get; set; }
 	}
