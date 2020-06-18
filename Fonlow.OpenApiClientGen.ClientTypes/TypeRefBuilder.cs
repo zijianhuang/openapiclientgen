@@ -106,7 +106,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content)) // application/json has better to be first.
 				{
-					if (content.Schema == null)
+					if (content == null || content.Schema == null)
 					{
 						return Tuple.Create<CodeTypeReference, bool>(null, false);
 					}
@@ -260,10 +260,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
 			{
-				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content) && content.Schema != null && content.Schema.Reference != null)
+				if (goodResponse.Content == null)
 				{
-					return content.Schema.Reference.Id;
+					throw new CodeGenException($"OpenApiOperation {op.OperationId} is having 200 response content null.");
 				}
+
+				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content))
+					if (content !=null && content.Schema != null && content.Schema.Reference != null)
+					{
+						return content.Schema.Reference.Id;
+					}
 			}
 
 			return null;
