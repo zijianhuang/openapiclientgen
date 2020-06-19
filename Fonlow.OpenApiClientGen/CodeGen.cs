@@ -1,6 +1,8 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Diagnostics;
+using System.Linq;
 
 namespace Fonlow.CodeDom.Web
 {
@@ -30,7 +32,25 @@ namespace Fonlow.CodeDom.Web
 				string path = System.IO.Path.Combine(csharpClientProjectDir, settings.ClientLibraryFileName);
 				OpenApiClientGen.Cs.ControllersClientApiGen gen = new Fonlow.OpenApiClientGen.Cs.ControllersClientApiGen(settings);
 				gen.CreateCodeDom(paths, components);
-				gen.Save(path);
+				if (settings.CompileToValidate)
+				{
+					var result = gen.CompileThenSave(path, settings.AssemblyPath);
+					if (result.Success)
+					{
+						Trace.TraceInformation("Generated codes pass compilation.");
+					}else
+					{
+						Trace.TraceInformation("Compile generated codes and found the following errors:");
+						foreach (var ms in result.Diagnostics)
+						{
+							Trace.TraceError(ms.ToString());
+						}
+					}
+				}
+				else
+				{
+					gen.Save(path);
+				}
 			}
 
 
