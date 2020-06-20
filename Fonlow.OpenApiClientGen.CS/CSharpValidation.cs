@@ -1,6 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Emit;
+using Microsoft.CodeAnalysis.Text;
 using System;
 using System.CodeDom.Compiler;
 using System.Diagnostics;
@@ -11,11 +12,40 @@ namespace Fonlow.OpenApiClientGen.CS
 {
 	public static class CSharpValidation
 	{
-		public static EmitResult CompileThenSave(string csharpCodes, string assemblyPath)//https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/may/net-core-cross-platform-code-generation-with-roslyn-and-net-core
+		/// <summary>
+		/// Compile and optional save to an assembly file if assemblyPath is defined.
+		/// </summary>
+		/// <param name="csharpCodes"></param>
+		/// <param name="assemblyPath"></param>
+		/// <returns></returns>
+		public static EmitResult CompileThenSave(string csharpCodes, string assemblyPath)
+		{
+			var tree = SyntaxFactory.ParseSyntaxTree(csharpCodes);
+			return CompileThenSave(tree, assemblyPath);
+		}
+
+		/// <summary>
+		/// Compile and optional save to an assembly file if assemblyPath is defined.
+		/// </summary>
+		/// <param name="stream">Containing C# codes</param>
+		/// <param name="assemblyPath"></param>
+		/// <returns></returns>
+		public static EmitResult CompileThenSave(Stream stream, string assemblyPath)
+		{
+			var tree = SyntaxFactory.ParseSyntaxTree(SourceText.From(stream));
+			return CompileThenSave(tree, assemblyPath);
+		}
+
+		/// <summary>
+		/// Compile and optional save to an assembly file if assemblyPath is defined.
+		/// </summary>
+		/// <param name="tree"></param>
+		/// <param name="assemblyPath"></param>
+		/// <returns></returns>
+		public static EmitResult CompileThenSave(SyntaxTree tree, string assemblyPath)
 		{
 			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
 			CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
-			var tree = SyntaxFactory.ParseSyntaxTree(csharpCodes);
 			var assemblyFileName = Path.GetFileName(assemblyPath);
 
 			static MetadataReference CreateFromName(string n)
@@ -48,6 +78,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				return compilation.Emit(assemblyPath);
 			}
+			//https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/may/net-core-cross-platform-code-generation-with-roslyn-and-net-core
 		}
 
 

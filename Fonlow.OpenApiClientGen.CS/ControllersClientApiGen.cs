@@ -48,10 +48,10 @@ namespace Fonlow.OpenApiClientGen.Cs
 		readonly NameComposer nameComposer;
 
 		/// <summary>
-		/// Write CodeDOM into C# codes to TextWriter
+		/// Write CodeDOM into C# codes to TextWriter. And the C# codes is a bit hacky.
 		/// </summary>
 		/// <param name="writer"></param>
-		void WriteCode(TextWriter writer)
+		void GenerateHackyCodesToWriter(TextWriter writer)
 		{
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
@@ -62,32 +62,37 @@ namespace Fonlow.OpenApiClientGen.Cs
 		}
 
 		/// <summary>
-		/// Save C# codes to a file, after CreateDom().
+		/// Save C# codes to a file.
 		/// </summary>
 		/// <param name="fileName"></param>
 		// hack inspired by https://csharpcodewhisperer.blogspot.com/2014/10/create-c-class-code-from-datatable.html
 		public void Save(string fileName)
 		{
 			using StreamWriter streamWriter = new StreamWriter(fileName);
-			Write(streamWriter);
+			GenerateCodesToWriter(streamWriter);
 		}
 
 		/// <summary>
 		/// Write CodeDOM into C# codes to text
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>C# codes</returns>
 		public string WriteToText()
 		{
 			using StringWriter stringWriter = new StringWriter();
-			Write(stringWriter);
+			GenerateCodesToWriter(stringWriter);
 			return stringWriter.ToString();
 		}
 
-		void Write(TextWriter textWriter)
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="textWriter">To receive refined codes</param>
+		void GenerateCodesToWriter(TextWriter textWriter)
 		{
 			using MemoryStream stream = new MemoryStream();
 			using StreamWriter writer = new StreamWriter(stream);
-			WriteCode(writer);
+			GenerateHackyCodesToWriter(writer);
+
 			writer.Flush();
 			stream.Position = 0;
 			using StreamReader streamReader = new StreamReader(stream);
