@@ -144,8 +144,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						string baseTypeName = allOfRef.Reference.Id; //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
-						OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
-						AddProperties(typeDeclaration, allOfProperteisSchema, currentTypeName);
+						if (allOfBaseTypeSchemaList.Count > 1)
+						{
+							OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
+							AddProperties(typeDeclaration, allOfProperteisSchema, currentTypeName);
+						}
 					}
 
 					CreateTypeDocComment(item, typeDeclaration);
