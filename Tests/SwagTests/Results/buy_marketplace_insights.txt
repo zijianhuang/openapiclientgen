@@ -411,6 +411,28 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// The type that defines the fields for basic information about the seller of the item.
+	/// </summary>
+	public class Seller
+	{
+		
+		/// <summary>
+		/// The percentage of the total positive feedback.
+		/// </summary>
+		public string FeedbackPercentage { get; set; }
+		
+		/// <summary>
+		/// The feedback score of the seller. This value is based on the ratings from eBay members that bought items from this seller.
+		/// </summary>
+		public System.Nullable<System.Int32> FeedbackScore { get; set; }
+		
+		/// <summary>
+		/// The username created by the seller for use on eBay.
+		/// </summary>
+		public string Username { get; set; }
+	}
+	
+	/// <summary>
 	/// This type defines the fields for the various refinements of an item. You can use the information in this container to create histograms, which help shoppers choose exactly what they want.
 	/// </summary>
 	public class Refinement
@@ -484,28 +506,6 @@ namespace MyNS
 		/// The total number of items retrieved in the result set.
 		/// </summary>
 		public System.Nullable<System.Int32> Total { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for basic information about the seller of the item.
-	/// </summary>
-	public class Seller
-	{
-		
-		/// <summary>
-		/// The percentage of the total positive feedback.
-		/// </summary>
-		public string FeedbackPercentage { get; set; }
-		
-		/// <summary>
-		/// The feedback score of the seller. This value is based on the ratings from eBay members that bought items from this seller.
-		/// </summary>
-		public System.Nullable<System.Int32> FeedbackScore { get; set; }
-		
-		/// <summary>
-		/// The username created by the seller for use on eBay.
-		/// </summary>
-		public string Username { get; set; }
 	}
 	
 	public partial class Item_salesClient

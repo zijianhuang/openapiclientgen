@@ -137,6 +137,75 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// The type that defines the fields for a line item.
+	/// </summary>
+	public class LineItemInput
+	{
+		
+		/// <summary>
+		/// The eBay identifier of an item. This ID is returned by the Browse and Feed API methods. The ID must be in RESTful item ID format. For example: v1|262446562346|561248611424 or v1|112330214619|0. For more information about item ID for RESTful APIs, see the Legacy API compatibility. Each itemId will become a single line item. You can have a maximum of 10 itemId(s) per checkout. Maximum: 10
+		/// </summary>
+		public string ItemId { get; set; }
+		
+		/// <summary>
+		/// The number of items ordered in this line item.
+		/// </summary>
+		public System.Nullable<System.Int32> Quantity { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
+	/// </summary>
+	public class ShippingAddress
+	{
+		
+		/// <summary>
+		/// The first line of the street address where the item is being shipped.
+		/// </summary>
+		public string AddressLine1 { get; set; }
+		
+		/// <summary>
+		/// The second line of the street address where the item is being shipped. This optional field can be used for information such as 'Suite Number' or 'Apt Number'.
+		/// </summary>
+		public string AddressLine2 { get; set; }
+		
+		/// <summary>
+		/// The city of the address where the item is being shipped.
+		/// </summary>
+		public string City { get; set; }
+		
+		/// <summary>
+		/// The two letter code representing the country of the address. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/CountryCodeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string Country { get; set; }
+		
+		/// <summary>
+		/// The county of the address where the item is being shipped.
+		/// </summary>
+		public string County { get; set; }
+		
+		/// <summary>
+		/// The phone number of the person receiving the package.
+		/// </summary>
+		public string PhoneNumber { get; set; }
+		
+		/// <summary>
+		/// The postal code of the address where the item is being shipped.
+		/// </summary>
+		public string PostalCode { get; set; }
+		
+		/// <summary>
+		/// Name of the person receiving the package.
+		/// </summary>
+		public string Recipient { get; set; }
+		
+		/// <summary>
+		/// The state or province of the address where the item is being shipped.
+		/// </summary>
+		public string StateOrProvince { get; set; }
+	}
+	
+	/// <summary>
 	/// Type that defines the fields for a checkout session.
 	/// </summary>
 	public class CheckoutSessionResponse
@@ -189,6 +258,104 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// The type that defines the fields for the payment method.
+	/// </summary>
+	public class PaymentMethod
+	{
+		
+		/// <summary>
+		/// Text indicating the payment type. For example, when paying by credit card, this value will be CC. When paying using PayPal Smart Button eBay guest payment flow the value will be WALLET.
+		/// </summary>
+		public string Label { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
+		/// </summary>
+		public Image LogoImage { get; set; }
+		
+		/// <summary>
+		/// An array of credit card brands that can be used as the payment method.
+		/// </summary>
+		public PaymentMethodBrand[] PaymentMethodBrands { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for legal messages and buyer consent verification.
+		/// </summary>
+		public PaymentMethodMessage[] PaymentMethodMessages { get; set; }
+		
+		/// <summary>
+		/// An enumeration value that indicates the method of payment, such as credit card. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string PaymentMethodType { get; set; }
+	}
+	
+	/// <summary>
+	/// The type the defines the fields for the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
+	/// </summary>
+	public class Image
+	{
+		
+		/// <summary>
+		/// Reserved for future use.
+		/// </summary>
+		public System.Nullable<System.Int32> Height { get; set; }
+		
+		/// <summary>
+		/// The URL of the image.
+		/// </summary>
+		public string ImageUrl { get; set; }
+		
+		/// <summary>
+		/// Reserved for future use.
+		/// </summary>
+		public System.Nullable<System.Int32> Width { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for the credit card company (brand), which can be used as the payment method.
+	/// </summary>
+	public class PaymentMethodBrand
+	{
+		
+		/// <summary>
+		/// The type the defines the fields for the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
+		/// </summary>
+		public Image LogoImage { get; set; }
+		
+		/// <summary>
+		/// An enumeration value that indicates the credit card company (brand). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodBrandEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string PaymentMethodBrandType { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for legal messages and buyer consent verification.
+	/// </summary>
+	public class PaymentMethodMessage
+	{
+		
+		/// <summary>
+		/// Information that eBay is legally obligated to show to the buyer. This field can be null, in which case do nothing. But if this field is not null, the value of this field must appear on the checkout page. Note: This field is not used for US purchases.
+		/// </summary>
+		public string LegalMessage { get; set; }
+		
+		/// <summary>
+		/// Reserved for future use.
+		/// </summary>
+		public string PrivacyPolicyWebUrl { get; set; }
+		
+		/// <summary>
+		/// Reserved for future use.
+		/// </summary>
+		public System.Nullable<System.Boolean> RequiredForUserConfirmation { get; set; }
+		
+		/// <summary>
+		/// Reserved for future use.
+		/// </summary>
+		public string UserAgreementWebUrl { get; set; }
+	}
+	
+	/// <summary>
 	/// The type the defines the fields for the coupon information.
 	/// </summary>
 	public class Coupon
@@ -201,116 +368,294 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// The type that defines the fields for the coupon information used in the request.
+	/// The type that defines the fields for an individual line item.
 	/// </summary>
-	public class CouponRequest
+	public class LineItem
 	{
 		
 		/// <summary>
-		/// The redemption code of the coupon. Maximum: one redemption code per order
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
 		/// </summary>
-		public string RedemptionCode { get; set; }
+		public Amount BaseUnitPrice { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
+		/// </summary>
+		public Image Image { get; set; }
+		
+		/// <summary>
+		/// The eBay identifier of an item. This ID is returned by the Browse and Feed API methods. The ID must be in RESTful item ID format. For example: v1|262446562346|561248611424 or v1|112330214619|0. For more information about item ID for RESTful APIs, see the Legacy API compatibility. Each itemId will become a single line item. You can have a maximum of 10 itemId(s) per checkout. Maximum: 10
+		/// </summary>
+		public string ItemId { get; set; }
+		
+		/// <summary>
+		/// A unique eBay-assigned ID value that identifies a line item in a checkout session.
+		/// </summary>
+		public string LineItemId { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount NetPrice { get; set; }
+		
+		/// <summary>
+		/// An array of promotions applied to the item of this line item.
+		/// </summary>
+		public Promotion[] Promotions { get; set; }
+		
+		/// <summary>
+		/// The number of individual items ordered for this line item.
+		/// </summary>
+		public System.Nullable<System.Int32> Quantity { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for the basic seller information.
+		/// </summary>
+		public Seller Seller { get; set; }
+		
+		/// <summary>
+		/// An array of the shipping methods that are available for the line item. By default, the first one will be selected.
+		/// </summary>
+		public ShippingOption[] ShippingOptions { get; set; }
+		
+		/// <summary>
+		/// This text string is derived from the item condition, item title, and the item aspects (such as size, color, capacity, model, brand, etc.).
+		/// </summary>
+		public string ShortDescription { get; set; }
+		
+		/// <summary>
+		/// The seller created title of the item.
+		/// </summary>
+		public string Title { get; set; }
 	}
 	
 	/// <summary>
-	/// The type that defines the fields used to create an eBay guest checkout session.
+	/// The type that defines the fields for the details of an item promotion.
 	/// </summary>
-	public class CreateGuestCheckoutSessionRequest
+	public class Promotion
 	{
 		
 		/// <summary>
-		/// The buyer's email address.
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
 		/// </summary>
-		public string ContactEmail { get; set; }
+		public Amount Discount { get; set; }
 		
 		/// <summary>
-		/// The buyer's first name.
+		/// Note: This field is not return in the purchase order methods response.
 		/// </summary>
-		public string ContactFirstName { get; set; }
+		public string DiscountPercentage { get; set; }
 		
 		/// <summary>
-		/// The buyer's last name.
+		/// The text for the promotion title, which describes the promotion. For example, Buy 1 Get 1.
 		/// </summary>
-		public string ContactLastName { get; set; }
+		public string Message { get; set; }
 		
 		/// <summary>
-		/// The type that defines the fields for the credit card that's used to pay for the items.
+		/// An identifier of the promotion that was generated by the system when the promotion was created.
 		/// </summary>
-		public CreditCard CreditCard { get; set; }
+		public string PromotionCode { get; set; }
 		
 		/// <summary>
-		/// The type that defines the fields for a line item in an eBay guest checkout session. Maximum number of line items: 10
+		/// Indicates the kind of promotion. Some examples are: SellerDiscountedPromotionalOffer and COUPON.
 		/// </summary>
-		public LineItemInput[] LineItemInputs { get; set; }
-		
-		/// <summary>
-		/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
-		/// </summary>
-		public ShippingAddress ShippingAddress { get; set; }
+		public string PromotionType { get; set; }
 	}
 	
 	/// <summary>
-	/// The type that defines the fields for creating an eBay member checkout session.
+	/// The type that defines the fields for the basic seller information.
 	/// </summary>
-	public class CreateSignInCheckoutSessionRequest
+	public class Seller
 	{
 		
 		/// <summary>
-		/// The type that defines the fields for the credit card that's used to pay for the items.
+		/// The percentage of the total positive feedback.
 		/// </summary>
-		public CreditCard CreditCard { get; set; }
+		public string FeedbackPercentage { get; set; }
 		
 		/// <summary>
-		/// The container for the line item information fields in an eBay member checkout session. Maximum number of line items: 10
+		/// The feedback score of the seller. This value is based on the ratings from eBay members that bought items from this seller.
 		/// </summary>
-		public LineItemInput[] LineItemInputs { get; set; }
+		public System.Nullable<System.Int32> FeedbackScore { get; set; }
 		
 		/// <summary>
-		/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
+		/// Indicates if the seller is a business or an individual. This is determined when the seller registers with eBay. If they register for a business account, this value will be BUSINESS. If they register for a private account, this value will be INDIVIDUAL. This designation is required by the tax laws in some countries. This field is returned only on the following sites. EBAY_AT, EBAY_BE, EBAY_CH, EBAY_DE, EBAY_ES, EBAY_FR, EBAY_GB, EBAY_IE, EBAY_IT, EBAY_PL Valid values: BUSINESS INDIVIDUALCode so that your app gracefully handles any future changes to this list.
 		/// </summary>
-		public ShippingAddress ShippingAddress { get; set; }
+		public string SellerAccountType { get; set; }
+		
+		/// <summary>
+		/// The user name created by the seller for use on eBay.
+		/// </summary>
+		public string Username { get; set; }
 	}
 	
 	/// <summary>
-	/// The type that defines the fields for the credit card that's used to pay for the items.
+	/// The type that defines the fields for the shipping options.
 	/// </summary>
-	public class CreditCard
+	public class ShippingOption
 	{
 		
 		/// <summary>
-		/// The name of the card holder under which the credit card was issued.
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
 		/// </summary>
-		public string AccountHolderName { get; set; }
+		public Amount BaseDeliveryCost { get; set; }
 		
 		/// <summary>
-		/// The type that defines the fields for an address.
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
 		/// </summary>
-		public BillingAddress BillingAddress { get; set; }
+		public Amount DeliveryDiscount { get; set; }
 		
 		/// <summary>
-		/// The type of the credit card, such as Visa or MasterCard.
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
 		/// </summary>
-		public string Brand { get; set; }
+		public Amount ImportCharges { get; set; }
 		
 		/// <summary>
-		/// The credit card number on the card.
+		/// The end of the date range in which the purchase order is expected to be delivered to the shipping address.
 		/// </summary>
-		public string CardNumber { get; set; }
+		public string MaxEstimatedDeliveryDate { get; set; }
 		
 		/// <summary>
-		/// The Card Verification Value of the credit card. This value is also known as the card verification code (CVC) or card security code (CSC). This is a three-digit number on VISA, MasterCard, and Discover branded credit and debit cards. On American Express branded cards, this is a four-digit numeric code. Note: This number is not the PIN associated with the card.
+		/// The beginning of the date range in which the purchase order is expected to be delivered to the shipping address.
 		/// </summary>
-		public string CvvNumber { get; set; }
+		public string MinEstimatedDeliveryDate { get; set; }
 		
 		/// <summary>
-		/// The month the credit card expires.
+		/// Indicates if the shipping method is selected.
 		/// </summary>
-		public System.Nullable<System.Int32> ExpireMonth { get; set; }
+		public System.Nullable<System.Boolean> Selected { get; set; }
 		
 		/// <summary>
-		/// The year the credit card expires.
+		/// The shipping provider, such as FedEx, or USPS for the line item.
 		/// </summary>
-		public System.Nullable<System.Int32> ExpireYear { get; set; }
+		public string ShippingCarrierCode { get; set; }
+		
+		/// <summary>
+		/// A unique ID for the selected shipping option/method.
+		/// </summary>
+		public string ShippingOptionId { get; set; }
+		
+		/// <summary>
+		/// A name of a shipping type. For example, Priority Mail Express (provided by USPS) or FedEx International Priority (Provided by FedEx).
+		/// </summary>
+		public string ShippingServiceCode { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for the costs, discounts, and seller fees and adjustments of all the line items.
+	/// </summary>
+	public class PricingSummary
+	{
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount AdditionalSavings { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for seller adjustments. An adjustment can be a credit or debit.
+		/// </summary>
+		public Adjustment Adjustment { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount DeliveryCost { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount DeliveryDiscount { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount Fee { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount ImportCharges { get; set; }
+		
+		/// <summary>
+		/// This type provides the type of import tax applicable to the order, and the total amount of tax for all line items in the order.
+		/// </summary>
+		public ImportTax ImportTax { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount PriceDiscount { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount PriceSubtotal { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount Tax { get; set; }
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount Total { get; set; }
+	}
+	
+	/// <summary>
+	/// This type provides the type of import tax applicable to the order, and the total amount of tax for all line items in the order.
+	/// </summary>
+	public class ImportTax
+	{
+		
+		/// <summary>
+		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// </summary>
+		public Amount Amount { get; set; }
+		
+		/// <summary>
+		/// This enumeration value indicates the type of import tax applicable to the order. Currently, the only applicable import tax is 'Goods and Services' tax (indicated with GST). 'Goods and Services' tax is only applicable to orders on the eBay Australia marketplace. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/ImportTaxTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string ImportTaxType { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for reference information about the payment method. This is returned only if you have used the updatePaymentInfo method to change the payment method.
+	/// </summary>
+	public class ProvidedPaymentInstrument
+	{
+		
+		/// <summary>
+		/// The type that defines the fields for the payment reference, such as last four digits of a credit card.
+		/// </summary>
+		public PaymentInstrumentReference PaymentInstrumentReference { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for the credit card company (brand), which can be used as the payment method.
+		/// </summary>
+		public PaymentMethodBrand PaymentMethodBrand { get; set; }
+		
+		/// <summary>
+		/// An enumeration value that indicates the method of payment, such as CREDIT_CARD. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string PaymentMethodType { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for the payment reference, such as last four digits of a credit card.
+	/// </summary>
+	public class PaymentInstrumentReference
+	{
+		
+		/// <summary>
+		/// The identifier of the buyer's PayPal cart, which is returned by the initiateGuestPayment method. This ID is generated by PayPal and required for the PayPal Smart Button eBay guest payment flow.
+		/// </summary>
+		public string ExternalReferenceId { get; set; }
+		
+		/// <summary>
+		/// The last four digits of the credit card number being used to pay for the items.
+		/// </summary>
+		public string LastFourDigitForCreditCard { get; set; }
 	}
 	
 	/// <summary>
@@ -380,6 +725,119 @@ namespace MyNS
 		/// The value of the object.
 		/// </summary>
 		public string Value { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for the coupon information used in the request.
+	/// </summary>
+	public class CouponRequest
+	{
+		
+		/// <summary>
+		/// The redemption code of the coupon. Maximum: one redemption code per order
+		/// </summary>
+		public string RedemptionCode { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields used to create an eBay guest checkout session.
+	/// </summary>
+	public class CreateGuestCheckoutSessionRequest
+	{
+		
+		/// <summary>
+		/// The buyer's email address.
+		/// </summary>
+		public string ContactEmail { get; set; }
+		
+		/// <summary>
+		/// The buyer's first name.
+		/// </summary>
+		public string ContactFirstName { get; set; }
+		
+		/// <summary>
+		/// The buyer's last name.
+		/// </summary>
+		public string ContactLastName { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for the credit card that's used to pay for the items.
+		/// </summary>
+		public CreditCard CreditCard { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for a line item in an eBay guest checkout session. Maximum number of line items: 10
+		/// </summary>
+		public LineItemInput[] LineItemInputs { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
+		/// </summary>
+		public ShippingAddress ShippingAddress { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for the credit card that's used to pay for the items.
+	/// </summary>
+	public class CreditCard
+	{
+		
+		/// <summary>
+		/// The name of the card holder under which the credit card was issued.
+		/// </summary>
+		public string AccountHolderName { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for an address.
+		/// </summary>
+		public BillingAddress BillingAddress { get; set; }
+		
+		/// <summary>
+		/// The type of the credit card, such as Visa or MasterCard.
+		/// </summary>
+		public string Brand { get; set; }
+		
+		/// <summary>
+		/// The credit card number on the card.
+		/// </summary>
+		public string CardNumber { get; set; }
+		
+		/// <summary>
+		/// The Card Verification Value of the credit card. This value is also known as the card verification code (CVC) or card security code (CSC). This is a three-digit number on VISA, MasterCard, and Discover branded credit and debit cards. On American Express branded cards, this is a four-digit numeric code. Note: This number is not the PIN associated with the card.
+		/// </summary>
+		public string CvvNumber { get; set; }
+		
+		/// <summary>
+		/// The month the credit card expires.
+		/// </summary>
+		public System.Nullable<System.Int32> ExpireMonth { get; set; }
+		
+		/// <summary>
+		/// The year the credit card expires.
+		/// </summary>
+		public System.Nullable<System.Int32> ExpireYear { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for creating an eBay member checkout session.
+	/// </summary>
+	public class CreateSignInCheckoutSessionRequest
+	{
+		
+		/// <summary>
+		/// The type that defines the fields for the credit card that's used to pay for the items.
+		/// </summary>
+		public CreditCard CreditCard { get; set; }
+		
+		/// <summary>
+		/// The container for the line item information fields in an eBay member checkout session. Maximum number of line items: 10
+		/// </summary>
+		public LineItemInput[] LineItemInputs { get; set; }
+		
+		/// <summary>
+		/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
+		/// </summary>
+		public ShippingAddress ShippingAddress { get; set; }
 	}
 	
 	/// <summary>
@@ -469,6 +927,28 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// The type that defines the marketing consent fields. These fields show the legal message to be shown to the buyer, and the marketing channels and marketing type the buyer can choose to receive. These fields are required for all marketplaces. See Marketing Consent Notice for details.
+	/// </summary>
+	public class MarketingMessage
+	{
+		
+		/// <summary>
+		/// This field returns the following legal marketing consent message. This message is to be shown to the buyer when they place the order. I agree to receive marketing offers, promotions, and surveys from eBay through emails.
+		/// </summary>
+		public string LegalMessage { get; set; }
+		
+		/// <summary>
+		/// A list of enumeration values representing the marketing channels, such as email, that the buyer can choose to receive. These are to be shown to the buyer when they place the order.
+		/// </summary>
+		public string[] MarketingChannels { get; set; }
+		
+		/// <summary>
+		/// A list of enumeration values representing the marketing types, such as OFFER, that the buyer can choose to receive. These are to be shown to the buyer when they place the order.
+		/// </summary>
+		public string[] MarketingTypes { get; set; }
+	}
+	
+	/// <summary>
 	/// The type that defines the fields that enables the buyer to give or withhold their permission to receive marketing messages.
 	/// </summary>
 	public class GuestPlaceOrderRequest
@@ -478,6 +958,28 @@ namespace MyNS
 		/// The container for the marketing channels, the types of messages the buyer can choose to receive and the field to indicate whether the buyer wants to receive marketing materials from eBay. These fields are required for all marketplaces. See Marketing Consent Notice for details.
 		/// </summary>
 		public MarketingTerms[] MarketingTerms { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields used to let the buyer opt-in or opt-out-of receiving marketing messages and the list of marketing channels and types. These fields are required for all marketplaces. See Marketing Consent Notice for details.
+	/// </summary>
+	public class MarketingTerms
+	{
+		
+		/// <summary>
+		/// An enumeration value representing the available marketing channels. Valid Values: EMAIL Required: You must always pass in all the values, even if marketingTermsAccepted is set to false. See the Samples for an example.
+		/// </summary>
+		public string[] MarketingChannels { get; set; }
+		
+		/// <summary>
+		/// A boolean that indicates whether the buyer wants to receive marketing messages.
+		/// </summary>
+		public System.Nullable<System.Boolean> MarketingTermsAccepted { get; set; }
+		
+		/// <summary>
+		/// An enumeration value representing the available types of marketing messages. Valid Values: OFFER PROMOTION SURVEY Required: You must always pass in all these values, even if marketingTermsAccepted is set to false. See the Samples for an example.
+		/// </summary>
+		public string[] MarketingTypes { get; set; }
 	}
 	
 	/// <summary>
@@ -530,224 +1032,6 @@ namespace MyNS
 		/// The container for any warning messages.
 		/// </summary>
 		public Error[] Warnings { get; set; }
-	}
-	
-	/// <summary>
-	/// The type the defines the fields for the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
-	/// </summary>
-	public class Image
-	{
-		
-		/// <summary>
-		/// Reserved for future use.
-		/// </summary>
-		public System.Nullable<System.Int32> Height { get; set; }
-		
-		/// <summary>
-		/// The URL of the image.
-		/// </summary>
-		public string ImageUrl { get; set; }
-		
-		/// <summary>
-		/// Reserved for future use.
-		/// </summary>
-		public System.Nullable<System.Int32> Width { get; set; }
-	}
-	
-	/// <summary>
-	/// This type provides the type of import tax applicable to the order, and the total amount of tax for all line items in the order.
-	/// </summary>
-	public class ImportTax
-	{
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount Amount { get; set; }
-		
-		/// <summary>
-		/// This enumeration value indicates the type of import tax applicable to the order. Currently, the only applicable import tax is 'Goods and Services' tax (indicated with GST). 'Goods and Services' tax is only applicable to orders on the eBay Australia marketplace. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/ImportTaxTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string ImportTaxType { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the initiateGuestPayment method.
-	/// </summary>
-	public class InitiatePaymentRequest
-	{
-		
-		/// <summary>
-		/// The enumeration value that specifies the payment method company. Note: The only value supported for the initiateGuestPayment method is PAYPAL_CHECKOUT. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodBrandEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string PaymentMethodBrandType { get; set; }
-		
-		/// <summary>
-		/// The enumeration value that specifies the payment method type. Note: The only value supported for the initiateGuestPayment method is WALLET. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string PaymentMethodType { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields to support using the Post Order API for returns and cancellations. Restriction: The Post Order API can be used only with eBay member checkouts.
-	/// </summary>
-	public class LegacyReference
-	{
-		
-		/// <summary>
-		/// The legacy ID used to identify an item. This is used by the Post Order API Create Return Request method. This call initiates the item return process. For more information on how to use this field in the Post Order API, see Create a return request in the Buy Integration Guide. Restriction: The Post Order API can be used only with eBay member checkouts.
-		/// </summary>
-		public string LegacyItemId { get; set; }
-		
-		/// <summary>
-		/// The legacy ID of the order. This is used by the Post Order API Submit Cancellation Request method. This method initiates the item cancellation process. For more information on how to use this field in the Post Order API, see Using the Post Order API. Restriction: The Post Order API can be used only with eBay member checkouts.
-		/// </summary>
-		public string LegacyOrderId { get; set; }
-		
-		/// <summary>
-		/// The legacy ID of the transaction. This is used by the Post Order API Create Return Request call. This call initiates the item return process. For more information on how to use this field in the Post Order API, see Using the Post Order API in the Buy Integration Guide. Restriction: The Post Order API can be used only with eBay member checkouts.
-		/// </summary>
-		public string LegacyTransactionId { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for an individual line item.
-	/// </summary>
-	public class LineItem
-	{
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount BaseUnitPrice { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
-		/// </summary>
-		public Image Image { get; set; }
-		
-		/// <summary>
-		/// The eBay identifier of an item. This ID is returned by the Browse and Feed API methods. The ID must be in RESTful item ID format. For example: v1|262446562346|561248611424 or v1|112330214619|0. For more information about item ID for RESTful APIs, see the Legacy API compatibility. Each itemId will become a single line item. You can have a maximum of 10 itemId(s) per checkout. Maximum: 10
-		/// </summary>
-		public string ItemId { get; set; }
-		
-		/// <summary>
-		/// A unique eBay-assigned ID value that identifies a line item in a checkout session.
-		/// </summary>
-		public string LineItemId { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount NetPrice { get; set; }
-		
-		/// <summary>
-		/// An array of promotions applied to the item of this line item.
-		/// </summary>
-		public Promotion[] Promotions { get; set; }
-		
-		/// <summary>
-		/// The number of individual items ordered for this line item.
-		/// </summary>
-		public System.Nullable<System.Int32> Quantity { get; set; }
-		
-		/// <summary>
-		/// The type that defines the fields for the basic seller information.
-		/// </summary>
-		public Seller Seller { get; set; }
-		
-		/// <summary>
-		/// An array of the shipping methods that are available for the line item. By default, the first one will be selected.
-		/// </summary>
-		public ShippingOption[] ShippingOptions { get; set; }
-		
-		/// <summary>
-		/// This text string is derived from the item condition, item title, and the item aspects (such as size, color, capacity, model, brand, etc.).
-		/// </summary>
-		public string ShortDescription { get; set; }
-		
-		/// <summary>
-		/// The seller created title of the item.
-		/// </summary>
-		public string Title { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for a line item.
-	/// </summary>
-	public class LineItemInput
-	{
-		
-		/// <summary>
-		/// The eBay identifier of an item. This ID is returned by the Browse and Feed API methods. The ID must be in RESTful item ID format. For example: v1|262446562346|561248611424 or v1|112330214619|0. For more information about item ID for RESTful APIs, see the Legacy API compatibility. Each itemId will become a single line item. You can have a maximum of 10 itemId(s) per checkout. Maximum: 10
-		/// </summary>
-		public string ItemId { get; set; }
-		
-		/// <summary>
-		/// The number of items ordered in this line item.
-		/// </summary>
-		public System.Nullable<System.Int32> Quantity { get; set; }
-	}
-	
-	/// <summary>
-	/// Type the defines the fields for the line item ID and the quantity.
-	/// </summary>
-	public class LineItemReference
-	{
-		
-		/// <summary>
-		/// A unique eBay-assigned ID value to identify the line item in a purchase order.
-		/// </summary>
-		public string LineItemId { get; set; }
-		
-		/// <summary>
-		/// The number of individual items ordered for this line item, as specified by the buyer.
-		/// </summary>
-		public System.Nullable<System.Int32> Quantity { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the marketing consent fields. These fields show the legal message to be shown to the buyer, and the marketing channels and marketing type the buyer can choose to receive. These fields are required for all marketplaces. See Marketing Consent Notice for details.
-	/// </summary>
-	public class MarketingMessage
-	{
-		
-		/// <summary>
-		/// This field returns the following legal marketing consent message. This message is to be shown to the buyer when they place the order. I agree to receive marketing offers, promotions, and surveys from eBay through emails.
-		/// </summary>
-		public string LegalMessage { get; set; }
-		
-		/// <summary>
-		/// A list of enumeration values representing the marketing channels, such as email, that the buyer can choose to receive. These are to be shown to the buyer when they place the order.
-		/// </summary>
-		public string[] MarketingChannels { get; set; }
-		
-		/// <summary>
-		/// A list of enumeration values representing the marketing types, such as OFFER, that the buyer can choose to receive. These are to be shown to the buyer when they place the order.
-		/// </summary>
-		public string[] MarketingTypes { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields used to let the buyer opt-in or opt-out-of receiving marketing messages and the list of marketing channels and types. These fields are required for all marketplaces. See Marketing Consent Notice for details.
-	/// </summary>
-	public class MarketingTerms
-	{
-		
-		/// <summary>
-		/// An enumeration value representing the available marketing channels. Valid Values: EMAIL Required: You must always pass in all the values, even if marketingTermsAccepted is set to false. See the Samples for an example.
-		/// </summary>
-		public string[] MarketingChannels { get; set; }
-		
-		/// <summary>
-		/// A boolean that indicates whether the buyer wants to receive marketing messages.
-		/// </summary>
-		public System.Nullable<System.Boolean> MarketingTermsAccepted { get; set; }
-		
-		/// <summary>
-		/// An enumeration value representing the available types of marketing messages. Valid Values: OFFER PROMOTION SURVEY Required: You must always pass in all these values, even if marketingTermsAccepted is set to false. See the Samples for an example.
-		/// </summary>
-		public string[] MarketingTypes { get; set; }
 	}
 	
 	/// <summary>
@@ -828,6 +1112,89 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// The type that defines the fields to support using the Post Order API for returns and cancellations. Restriction: The Post Order API can be used only with eBay member checkouts.
+	/// </summary>
+	public class LegacyReference
+	{
+		
+		/// <summary>
+		/// The legacy ID used to identify an item. This is used by the Post Order API Create Return Request method. This call initiates the item return process. For more information on how to use this field in the Post Order API, see Create a return request in the Buy Integration Guide. Restriction: The Post Order API can be used only with eBay member checkouts.
+		/// </summary>
+		public string LegacyItemId { get; set; }
+		
+		/// <summary>
+		/// The legacy ID of the order. This is used by the Post Order API Submit Cancellation Request method. This method initiates the item cancellation process. For more information on how to use this field in the Post Order API, see Using the Post Order API. Restriction: The Post Order API can be used only with eBay member checkouts.
+		/// </summary>
+		public string LegacyOrderId { get; set; }
+		
+		/// <summary>
+		/// The legacy ID of the transaction. This is used by the Post Order API Create Return Request call. This call initiates the item return process. For more information on how to use this field in the Post Order API, see Using the Post Order API in the Buy Integration Guide. Restriction: The Post Order API can be used only with eBay member checkouts.
+		/// </summary>
+		public string LegacyTransactionId { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for the shipping information, such as delivery date estimates and shipping provider.
+	/// </summary>
+	public class ShippingDetail
+	{
+		
+		/// <summary>
+		/// The end of the date range in which the purchase order is expected to be delivered to the shipping address (final destination).
+		/// </summary>
+		public string MaxEstimatedDeliveryDate { get; set; }
+		
+		/// <summary>
+		/// The beginning of the date range in which the purchase order is expected to be delivered to the shipping address (final destination).
+		/// </summary>
+		public string MinEstimatedDeliveryDate { get; set; }
+		
+		/// <summary>
+		/// The shipping provider, such as FedEx, or USPS for the line item.
+		/// </summary>
+		public string ShippingCarrierCode { get; set; }
+		
+		/// <summary>
+		/// A name of a shipping type. For example, Priority Mail Express (provided by USPS) or FedEx International Priority (Provided by FedEx).
+		/// </summary>
+		public string ShippingServiceCode { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for the initiateGuestPayment method.
+	/// </summary>
+	public class InitiatePaymentRequest
+	{
+		
+		/// <summary>
+		/// The enumeration value that specifies the payment method company. Note: The only value supported for the initiateGuestPayment method is PAYPAL_CHECKOUT. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodBrandEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string PaymentMethodBrandType { get; set; }
+		
+		/// <summary>
+		/// The enumeration value that specifies the payment method type. Note: The only value supported for the initiateGuestPayment method is WALLET. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string PaymentMethodType { get; set; }
+	}
+	
+	/// <summary>
+	/// Type the defines the fields for the line item ID and the quantity.
+	/// </summary>
+	public class LineItemReference
+	{
+		
+		/// <summary>
+		/// A unique eBay-assigned ID value to identify the line item in a purchase order.
+		/// </summary>
+		public string LineItemId { get; set; }
+		
+		/// <summary>
+		/// The number of individual items ordered for this line item, as specified by the buyer.
+		/// </summary>
+		public System.Nullable<System.Int32> Quantity { get; set; }
+	}
+	
+	/// <summary>
 	/// The type that defines the fields for the reference information about the payment method.
 	/// </summary>
 	public class PaymentInstrument
@@ -840,215 +1207,6 @@ namespace MyNS
 		
 		/// <summary>
 		/// An enumeration value that indicates the method of payment, such as credit card. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string PaymentMethodType { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the payment reference, such as last four digits of a credit card.
-	/// </summary>
-	public class PaymentInstrumentReference
-	{
-		
-		/// <summary>
-		/// The identifier of the buyer's PayPal cart, which is returned by the initiateGuestPayment method. This ID is generated by PayPal and required for the PayPal Smart Button eBay guest payment flow.
-		/// </summary>
-		public string ExternalReferenceId { get; set; }
-		
-		/// <summary>
-		/// The last four digits of the credit card number being used to pay for the items.
-		/// </summary>
-		public string LastFourDigitForCreditCard { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the payment method.
-	/// </summary>
-	public class PaymentMethod
-	{
-		
-		/// <summary>
-		/// Text indicating the payment type. For example, when paying by credit card, this value will be CC. When paying using PayPal Smart Button eBay guest payment flow the value will be WALLET.
-		/// </summary>
-		public string Label { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
-		/// </summary>
-		public Image LogoImage { get; set; }
-		
-		/// <summary>
-		/// An array of credit card brands that can be used as the payment method.
-		/// </summary>
-		public PaymentMethodBrand[] PaymentMethodBrands { get; set; }
-		
-		/// <summary>
-		/// The type that defines the fields for legal messages and buyer consent verification.
-		/// </summary>
-		public PaymentMethodMessage[] PaymentMethodMessages { get; set; }
-		
-		/// <summary>
-		/// An enumeration value that indicates the method of payment, such as credit card. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string PaymentMethodType { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the credit card company (brand), which can be used as the payment method.
-	/// </summary>
-	public class PaymentMethodBrand
-	{
-		
-		/// <summary>
-		/// The type the defines the fields for the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
-		/// </summary>
-		public Image LogoImage { get; set; }
-		
-		/// <summary>
-		/// An enumeration value that indicates the credit card company (brand). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodBrandEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string PaymentMethodBrandType { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for legal messages and buyer consent verification.
-	/// </summary>
-	public class PaymentMethodMessage
-	{
-		
-		/// <summary>
-		/// Information that eBay is legally obligated to show to the buyer. This field can be null, in which case do nothing. But if this field is not null, the value of this field must appear on the checkout page. Note: This field is not used for US purchases.
-		/// </summary>
-		public string LegalMessage { get; set; }
-		
-		/// <summary>
-		/// Reserved for future use.
-		/// </summary>
-		public string PrivacyPolicyWebUrl { get; set; }
-		
-		/// <summary>
-		/// Reserved for future use.
-		/// </summary>
-		public System.Nullable<System.Boolean> RequiredForUserConfirmation { get; set; }
-		
-		/// <summary>
-		/// Reserved for future use.
-		/// </summary>
-		public string UserAgreementWebUrl { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the costs, discounts, and seller fees and adjustments of all the line items.
-	/// </summary>
-	public class PricingSummary
-	{
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount AdditionalSavings { get; set; }
-		
-		/// <summary>
-		/// The type that defines the fields for seller adjustments. An adjustment can be a credit or debit.
-		/// </summary>
-		public Adjustment Adjustment { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount DeliveryCost { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount DeliveryDiscount { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount Fee { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount ImportCharges { get; set; }
-		
-		/// <summary>
-		/// This type provides the type of import tax applicable to the order, and the total amount of tax for all line items in the order.
-		/// </summary>
-		public ImportTax ImportTax { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount PriceDiscount { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount PriceSubtotal { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount Tax { get; set; }
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount Total { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the details of an item promotion.
-	/// </summary>
-	public class Promotion
-	{
-		
-		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
-		/// </summary>
-		public Amount Discount { get; set; }
-		
-		/// <summary>
-		/// Note: This field is not return in the purchase order methods response.
-		/// </summary>
-		public string DiscountPercentage { get; set; }
-		
-		/// <summary>
-		/// The text for the promotion title, which describes the promotion. For example, Buy 1 Get 1.
-		/// </summary>
-		public string Message { get; set; }
-		
-		/// <summary>
-		/// An identifier of the promotion that was generated by the system when the promotion was created.
-		/// </summary>
-		public string PromotionCode { get; set; }
-		
-		/// <summary>
-		/// Indicates the kind of promotion. Some examples are: SellerDiscountedPromotionalOffer and COUPON.
-		/// </summary>
-		public string PromotionType { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for reference information about the payment method. This is returned only if you have used the updatePaymentInfo method to change the payment method.
-	/// </summary>
-	public class ProvidedPaymentInstrument
-	{
-		
-		/// <summary>
-		/// The type that defines the fields for the payment reference, such as last four digits of a credit card.
-		/// </summary>
-		public PaymentInstrumentReference PaymentInstrumentReference { get; set; }
-		
-		/// <summary>
-		/// The type that defines the fields for the credit card company (brand), which can be used as the payment method.
-		/// </summary>
-		public PaymentMethodBrand PaymentMethodBrand { get; set; }
-		
-		/// <summary>
-		/// An enumeration value that indicates the method of payment, such as CREDIT_CARD. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodTypeEnum.html'>eBay API documentation</a>
 		/// </summary>
 		public string PaymentMethodType { get; set; }
 	}
@@ -1121,218 +1279,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// The type that defines the fields for the summary of a purchase order.
-	/// </summary>
-	public class PurchaseOrderSummary
-	{
-		
-		/// <summary>
-		/// The URI of the purchase order.
-		/// </summary>
-		public string PurchaseOrderHref { get; set; }
-		
-		/// <summary>
-		/// A unique identifier of the purchase order. When a checkout session completes, a purchase order ID is generated but this does not indicate that the item has been paid for. Note: If there is a problem with the payment information, the purchase order ID will be returned and the PurchaseOrderPaymentStatusEnum field will return FAILED.
-		/// </summary>
-		public string PurchaseOrderId { get; set; }
-		
-		/// <summary>
-		/// An enumeration value that indicates the payment status for the purchase order. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PurchaseOrderPaymentStatusEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string PurchaseOrderPaymentStatus { get; set; }
-		
-		/// <summary>
-		/// An array of warning messages.
-		/// </summary>
-		public Error[] Warnings { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the basic seller information.
-	/// </summary>
-	public class Seller
-	{
-		
-		/// <summary>
-		/// The percentage of the total positive feedback.
-		/// </summary>
-		public string FeedbackPercentage { get; set; }
-		
-		/// <summary>
-		/// The feedback score of the seller. This value is based on the ratings from eBay members that bought items from this seller.
-		/// </summary>
-		public System.Nullable<System.Int32> FeedbackScore { get; set; }
-		
-		/// <summary>
-		/// Indicates if the seller is a business or an individual. This is determined when the seller registers with eBay. If they register for a business account, this value will be BUSINESS. If they register for a private account, this value will be INDIVIDUAL. This designation is required by the tax laws in some countries. This field is returned only on the following sites. EBAY_AT, EBAY_BE, EBAY_CH, EBAY_DE, EBAY_ES, EBAY_FR, EBAY_GB, EBAY_IE, EBAY_IT, EBAY_PL Valid values: BUSINESS INDIVIDUALCode so that your app gracefully handles any future changes to this list.
-		/// </summary>
-		public string SellerAccountType { get; set; }
-		
-		/// <summary>
-		/// The user name created by the seller for use on eBay.
-		/// </summary>
-		public string Username { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the details of a shipping event, such as DELIVERED.
-	/// </summary>
-	public class ShipmentTrackingEvents
-	{
-		
-		/// <summary>
-		/// A string describing the tracking event. For example: On FedEx vehicle for delivery
-		/// </summary>
-		public string Description { get; set; }
-		
-		/// <summary>
-		/// The date of the shipment tracking event. UTC Format: yyyy-MM-ddThh:00:00.000Z For example: 2019-03-01T12:12:00.000Z
-		/// </summary>
-		public string EventDate { get; set; }
-		
-		/// <summary>
-		/// A normalized string for shipment tracking event. For example: OUT_FOR_DELIVERY
-		/// </summary>
-		public string EventType { get; set; }
-		
-		/// <summary>
-		/// The type that defines the fields for the location of a tracking event.
-		/// </summary>
-		public EventLocation Location { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
-	/// </summary>
-	public class ShippingAddress
-	{
-		
-		/// <summary>
-		/// The first line of the street address where the item is being shipped.
-		/// </summary>
-		public string AddressLine1 { get; set; }
-		
-		/// <summary>
-		/// The second line of the street address where the item is being shipped. This optional field can be used for information such as 'Suite Number' or 'Apt Number'.
-		/// </summary>
-		public string AddressLine2 { get; set; }
-		
-		/// <summary>
-		/// The city of the address where the item is being shipped.
-		/// </summary>
-		public string City { get; set; }
-		
-		/// <summary>
-		/// The two letter code representing the country of the address. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/CountryCodeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string Country { get; set; }
-		
-		/// <summary>
-		/// The county of the address where the item is being shipped.
-		/// </summary>
-		public string County { get; set; }
-		
-		/// <summary>
-		/// The phone number of the person receiving the package.
-		/// </summary>
-		public string PhoneNumber { get; set; }
-		
-		/// <summary>
-		/// The postal code of the address where the item is being shipped.
-		/// </summary>
-		public string PostalCode { get; set; }
-		
-		/// <summary>
-		/// Name of the person receiving the package.
-		/// </summary>
-		public string Recipient { get; set; }
-		
-		/// <summary>
-		/// The state or province of the address where the item is being shipped.
-		/// </summary>
-		public string StateOrProvince { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the shipping address fields. Note: If the address cannot be validated, a warning message is be returned along with the response.
-	/// </summary>
-	public class ShippingAddressImpl
-	{
-		
-		/// <summary>
-		/// The first line of the street address. Maximun characters: AU, CA, &amp; US: 40 DE &amp; GB: 35 All other marketplaces: 50
-		/// </summary>
-		public string AddressLine1 { get; set; }
-		
-		/// <summary>
-		/// The second line of the street address where the item is being shipped. This optional field can be used for information such as 'Suite Number' or 'Apt Number'.
-		/// </summary>
-		public string AddressLine2 { get; set; }
-		
-		/// <summary>
-		/// The city of the address.
-		/// </summary>
-		public string City { get; set; }
-		
-		/// <summary>
-		/// The two letter code representing the country of the address. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/CountryCodeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string Country { get; set; }
-		
-		/// <summary>
-		/// The county of the address.
-		/// </summary>
-		public string County { get; set; }
-		
-		/// <summary>
-		/// The phone number of the person receiving the package. Note: It is highly recommended that when entering the phone number you include the country code. For example, if a US phone number is 4081231234 you would enter +14081231234. If you do not include this code, the service will use the country specified in the country field. You can find the country code at https://countrycode.org.
-		/// </summary>
-		public string PhoneNumber { get; set; }
-		
-		/// <summary>
-		/// The postal code of the address.
-		/// </summary>
-		public string PostalCode { get; set; }
-		
-		/// <summary>
-		/// Full name of the person receiving the purchase order.
-		/// </summary>
-		public string Recipient { get; set; }
-		
-		/// <summary>
-		/// The state or province of the address. Note: For the US marketplace, this is a 2 character value. For a list of these, see US State and Canada Province Codes.
-		/// </summary>
-		public string StateOrProvince { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the shipping information, such as delivery date estimates and shipping provider.
-	/// </summary>
-	public class ShippingDetail
-	{
-		
-		/// <summary>
-		/// The end of the date range in which the purchase order is expected to be delivered to the shipping address (final destination).
-		/// </summary>
-		public string MaxEstimatedDeliveryDate { get; set; }
-		
-		/// <summary>
-		/// The beginning of the date range in which the purchase order is expected to be delivered to the shipping address (final destination).
-		/// </summary>
-		public string MinEstimatedDeliveryDate { get; set; }
-		
-		/// <summary>
-		/// The shipping provider, such as FedEx, or USPS for the line item.
-		/// </summary>
-		public string ShippingCarrierCode { get; set; }
-		
-		/// <summary>
-		/// A name of a shipping type. For example, Priority Mail Express (provided by USPS) or FedEx International Priority (Provided by FedEx).
-		/// </summary>
-		public string ShippingServiceCode { get; set; }
-	}
-	
-	/// <summary>
 	/// The type that defines the fields for the shipping details.
 	/// </summary>
 	public class ShippingFulfillment
@@ -1390,55 +1336,109 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// The type that defines the fields for the shipping options.
+	/// The type that defines the fields for the details of a shipping event, such as DELIVERED.
 	/// </summary>
-	public class ShippingOption
+	public class ShipmentTrackingEvents
 	{
 		
 		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// A string describing the tracking event. For example: On FedEx vehicle for delivery
 		/// </summary>
-		public Amount BaseDeliveryCost { get; set; }
+		public string Description { get; set; }
 		
 		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// The date of the shipment tracking event. UTC Format: yyyy-MM-ddThh:00:00.000Z For example: 2019-03-01T12:12:00.000Z
 		/// </summary>
-		public Amount DeliveryDiscount { get; set; }
+		public string EventDate { get; set; }
 		
 		/// <summary>
-		/// The type the defines the fields for the details of a monetary amount, in the currency used by the method and in the original currency, if the amount was converted between currencies.
+		/// A normalized string for shipment tracking event. For example: OUT_FOR_DELIVERY
 		/// </summary>
-		public Amount ImportCharges { get; set; }
+		public string EventType { get; set; }
 		
 		/// <summary>
-		/// The end of the date range in which the purchase order is expected to be delivered to the shipping address.
+		/// The type that defines the fields for the location of a tracking event.
 		/// </summary>
-		public string MaxEstimatedDeliveryDate { get; set; }
+		public EventLocation Location { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for the summary of a purchase order.
+	/// </summary>
+	public class PurchaseOrderSummary
+	{
 		
 		/// <summary>
-		/// The beginning of the date range in which the purchase order is expected to be delivered to the shipping address.
+		/// The URI of the purchase order.
 		/// </summary>
-		public string MinEstimatedDeliveryDate { get; set; }
+		public string PurchaseOrderHref { get; set; }
 		
 		/// <summary>
-		/// Indicates if the shipping method is selected.
+		/// A unique identifier of the purchase order. When a checkout session completes, a purchase order ID is generated but this does not indicate that the item has been paid for. Note: If there is a problem with the payment information, the purchase order ID will be returned and the PurchaseOrderPaymentStatusEnum field will return FAILED.
 		/// </summary>
-		public System.Nullable<System.Boolean> Selected { get; set; }
+		public string PurchaseOrderId { get; set; }
 		
 		/// <summary>
-		/// The shipping provider, such as FedEx, or USPS for the line item.
+		/// An enumeration value that indicates the payment status for the purchase order. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PurchaseOrderPaymentStatusEnum.html'>eBay API documentation</a>
 		/// </summary>
-		public string ShippingCarrierCode { get; set; }
+		public string PurchaseOrderPaymentStatus { get; set; }
 		
 		/// <summary>
-		/// A unique ID for the selected shipping option/method.
+		/// An array of warning messages.
 		/// </summary>
-		public string ShippingOptionId { get; set; }
+		public Error[] Warnings { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the shipping address fields. Note: If the address cannot be validated, a warning message is be returned along with the response.
+	/// </summary>
+	public class ShippingAddressImpl
+	{
 		
 		/// <summary>
-		/// A name of a shipping type. For example, Priority Mail Express (provided by USPS) or FedEx International Priority (Provided by FedEx).
+		/// The first line of the street address. Maximun characters: AU, CA, &amp; US: 40 DE &amp; GB: 35 All other marketplaces: 50
 		/// </summary>
-		public string ShippingServiceCode { get; set; }
+		public string AddressLine1 { get; set; }
+		
+		/// <summary>
+		/// The second line of the street address where the item is being shipped. This optional field can be used for information such as 'Suite Number' or 'Apt Number'.
+		/// </summary>
+		public string AddressLine2 { get; set; }
+		
+		/// <summary>
+		/// The city of the address.
+		/// </summary>
+		public string City { get; set; }
+		
+		/// <summary>
+		/// The two letter code representing the country of the address. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/CountryCodeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string Country { get; set; }
+		
+		/// <summary>
+		/// The county of the address.
+		/// </summary>
+		public string County { get; set; }
+		
+		/// <summary>
+		/// The phone number of the person receiving the package. Note: It is highly recommended that when entering the phone number you include the country code. For example, if a US phone number is 4081231234 you would enter +14081231234. If you do not include this code, the service will use the country specified in the country field. You can find the country code at https://countrycode.org.
+		/// </summary>
+		public string PhoneNumber { get; set; }
+		
+		/// <summary>
+		/// The postal code of the address.
+		/// </summary>
+		public string PostalCode { get; set; }
+		
+		/// <summary>
+		/// Full name of the person receiving the purchase order.
+		/// </summary>
+		public string Recipient { get; set; }
+		
+		/// <summary>
+		/// The state or province of the address. Note: For the US marketplace, this is a 2 character value. For a list of these, see US State and Canada Province Codes.
+		/// </summary>
+		public string StateOrProvince { get; set; }
 	}
 	
 	/// <summary>
@@ -1456,6 +1456,18 @@ namespace MyNS
 		/// The type that defines the fields for payment tokens. Note: This is supported only for eBay Guest checkouts.
 		/// </summary>
 		public Wallet Wallet { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for payment tokens. Note: This is supported only for eBay Guest checkouts.
+	/// </summary>
+	public class Wallet
+	{
+		
+		/// <summary>
+		/// This token is a payment nonce. A payment method nonce is a secure, one-time-use reference to payment information. It's the key element that allows your server to communicate sensitive payment information to the payment processor server without ever touching the raw data. The nonce is generated by the payment processor. Note: This is supported only for eBay Guest checkouts.
+		/// </summary>
+		public string PaymentToken { get; set; }
 	}
 	
 	/// <summary>
@@ -1490,18 +1502,6 @@ namespace MyNS
 		/// A unique ID for the selected shipping option/method.
 		/// </summary>
 		public string ShippingOptionId { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for payment tokens. Note: This is supported only for eBay Guest checkouts.
-	/// </summary>
-	public class Wallet
-	{
-		
-		/// <summary>
-		/// This token is a payment nonce. A payment method nonce is a secure, one-time-use reference to payment information. It's the key element that allows your server to communicate sensitive payment information to the payment processor server without ever touching the raw data. The nonce is generated by the payment processor. Note: This is supported only for eBay Guest checkouts.
-		/// </summary>
-		public string PaymentToken { get; set; }
 	}
 	
 	public partial class Checkout_sessionClient

@@ -28,6 +28,31 @@ namespace MyNS
 		public string Message { get; set; }
 	}
 	
+	/// <summary>
+	/// A representation of a cat
+	/// </summary>
+	public class Cat : Pet
+	{
+		
+		/// <summary>
+		/// The measured skill for hunting
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
+	}
+	
+	public enum CatHuntingSkill
+	{
+		
+		clueless = 0,
+		
+		lazy = 1,
+		
+		adventurous = 2,
+		
+		aggressive = 3,
+	}
+	
 	public class Category
 	{
 		
@@ -47,6 +72,34 @@ namespace MyNS
 		/// Test Sub Category
 		/// </summary>
 		public string Sub { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a dog
+	/// </summary>
+	public class Dog : Pet
+	{
+		
+		/// <summary>
+		/// The size of the pack the dog is from
+		/// Minimum: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public int PackSize { get; set; } = 1;
+	}
+	
+	/// <summary>
+	/// A representation of a honey bee
+	/// </summary>
+	public class HoneyBee : Pet
+	{
+		
+		/// <summary>
+		/// Average amount of honey produced per day in ounces
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public float HoneyPerDay { get; set; }
 	}
 	
 	public class Order
@@ -146,16 +199,6 @@ namespace MyNS
 		public string PetType { get; set; }
 	}
 	
-	public enum PetStatus
-	{
-		
-		available = 0,
-		
-		pending = 1,
-		
-		sold = 2,
-	}
-	
 	public class Tag
 	{
 		
@@ -170,6 +213,16 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
+	}
+	
+	public enum PetStatus
+	{
+		
+		available = 0,
+		
+		pending = 1,
+		
+		sold = 2,
 	}
 	
 	public class User
@@ -225,59 +278,6 @@ namespace MyNS
 		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
 	
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	public class Cat : Pet
-	{
-		
-		/// <summary>
-		/// The measured skill for hunting
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
-	}
-	
-	public enum CatHuntingSkill
-	{
-		
-		clueless = 0,
-		
-		lazy = 1,
-		
-		adventurous = 2,
-		
-		aggressive = 3,
-	}
-	
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
-	public class Dog : Pet
-	{
-		
-		/// <summary>
-		/// The size of the pack the dog is from
-		/// Minimum: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public int PackSize { get; set; } = 1;
-	}
-	
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	public class HoneyBee : Pet
-	{
-		
-		/// <summary>
-		/// Average amount of honey produced per day in ounces
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public float HoneyPerDay { get; set; }
-	}
-	
 	public partial class PetClient
 	{
 		
@@ -304,7 +304,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(float[] tags)
+		public async Task<Pet[]> FindPetsByTagsAsync(string tags)
 		{
 			var requestUri = "pet/findByNumbers?"+String.Join("&", tags.Select(z => $"tags={z}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -334,7 +334,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByTags(float[] tags)
+		public Pet[] FindPetsByTags(string tags)
 		{
 			var requestUri = "pet/findByNumbers?"+String.Join("&", tags.Select(z => $"tags={z}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))

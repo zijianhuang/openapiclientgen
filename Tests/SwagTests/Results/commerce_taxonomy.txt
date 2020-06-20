@@ -120,18 +120,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// This type is the container type for the response payload of the getItemAspectsForCategory call.
-	/// </summary>
-	public class AspectMetadata
-	{
-		
-		/// <summary>
-		/// A list of item aspects (for example, color) that are appropriate or necessary for accurately describing items in a particular leaf category. Each category has a different set of aspects and different requirements for aspect values. Sellers are required or encouraged to provide one or more acceptable values for each aspect when offering an item in that category on eBay.
-		/// </summary>
-		public Aspect[] Aspects { get; set; }
-	}
-	
-	/// <summary>
 	/// This type contains a valid value for an aspect, along with any constraints on the occurrence of that value.
 	/// </summary>
 	public class AspectValue
@@ -146,6 +134,35 @@ namespace MyNS
 		/// Not returned if the value of the localizedValue field can always be selected for this aspect of the specified category. Contains a list of the dependencies that identify when the value of the localizedValue field is available for the current aspect. Each dependency specifies the values of another aspect of the same category (a control aspect), for which the current value of the current aspect can also be selected by the seller. Example: A shirt is available in three sizes and three colors, but only the Small and Medium sizes come in Green. Thus for the Color aspect, the value Green is constrained by its dependency on Size (the control aspect). Only when the Size aspect value is Small or Medium, can the Color aspect value of Green be selected by the seller.
 		/// </summary>
 		public ValueConstraint[] ValueConstraints { get; set; }
+	}
+	
+	/// <summary>
+	/// This type contains a list of the dependencies that identify when a particular value is available for a given aspect of a given category. Each dependency specifies the values of another aspect of the same category (the control aspect), for which the given value of the given aspect can also be selected by the seller. This container consists of constraint information for the corresponding product aspect value.
+	/// </summary>
+	public class ValueConstraint
+	{
+		
+		/// <summary>
+		/// The name of the control aspect on which the current aspect value depends.
+		/// </summary>
+		public string ApplicableForLocalizedAspectName { get; set; }
+		
+		/// <summary>
+		/// Contains a list of the values of the control aspect on which this aspect's value depends. When the control aspect has any of the specified values, the current value of the current aspect will also be available.
+		/// </summary>
+		public string[] ApplicableForLocalizedAspectValues { get; set; }
+	}
+	
+	/// <summary>
+	/// This type is the container type for the response payload of the getItemAspectsForCategory call.
+	/// </summary>
+	public class AspectMetadata
+	{
+		
+		/// <summary>
+		/// A list of item aspects (for example, color) that are appropriate or necessary for accurately describing items in a particular leaf category. Each category has a different set of aspects and different requirements for aspect values. Sellers are required or encouraged to provide one or more acceptable values for each aspect when offering an item in that category on eBay.
+		/// </summary>
+		public Aspect[] Aspects { get; set; }
 	}
 	
 	/// <summary>
@@ -202,6 +219,38 @@ namespace MyNS
 		/// The version of the category tree identified by categoryTreeId. It's a good idea to cache this value for comparison so you can determine if this category tree has been modified in subsequent calls.
 		/// </summary>
 		public string CategoryTreeVersion { get; set; }
+	}
+	
+	/// <summary>
+	/// This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified Category, down to the leaf nodes. It is a recursive structure.
+	/// </summary>
+	public class CategoryTreeNode
+	{
+		
+		/// <summary>
+		/// This type contains information about a particular eBay category.
+		/// </summary>
+		public Category Category { get; set; }
+		
+		/// <summary>
+		/// The absolute level of the current category tree node in the hierarchy of its category tree. Note: The root node of any full category tree is always at level 0.
+		/// </summary>
+		public System.Nullable<System.Int32> CategoryTreeNodeLevel { get; set; }
+		
+		/// <summary>
+		/// An array of one or more category tree nodes that are the immediate children of the current category tree node, as well as their children, recursively down to the leaf nodes. Returned only if the the current category tree node is not a leaf node (the value of leafCategoryTreeNode is false).
+		/// </summary>
+		public CategoryTreeNode[] ChildCategoryTreeNodes { get; set; }
+		
+		/// <summary>
+		/// A value of true indicates that the current category tree node is a leaf node (it has no child nodes). A value of false indicates that the current node has one or more child nodes, which are identified by the childCategoryTreeNodes array. Returned only if the value of this field is true.
+		/// </summary>
+		public System.Nullable<System.Boolean> LeafCategoryTreeNode { get; set; }
+		
+		/// <summary>
+		/// The href portion of the getCategorySubtree call that retrieves the subtree below the parent of this category tree node. Not returned if the current category tree node is the root node of its tree.
+		/// </summary>
+		public string ParentCategoryTreeNodeHref { get; set; }
 	}
 	
 	/// <summary>
@@ -278,38 +327,6 @@ namespace MyNS
 		/// This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified Category, down to the leaf nodes. It is a recursive structure.
 		/// </summary>
 		public CategoryTreeNode RootCategoryNode { get; set; }
-	}
-	
-	/// <summary>
-	/// This type contains information about all nodes of a category tree or subtree hierarchy, including and below the specified Category, down to the leaf nodes. It is a recursive structure.
-	/// </summary>
-	public class CategoryTreeNode
-	{
-		
-		/// <summary>
-		/// This type contains information about a particular eBay category.
-		/// </summary>
-		public Category Category { get; set; }
-		
-		/// <summary>
-		/// The absolute level of the current category tree node in the hierarchy of its category tree. Note: The root node of any full category tree is always at level 0.
-		/// </summary>
-		public System.Nullable<System.Int32> CategoryTreeNodeLevel { get; set; }
-		
-		/// <summary>
-		/// An array of one or more category tree nodes that are the immediate children of the current category tree node, as well as their children, recursively down to the leaf nodes. Returned only if the the current category tree node is not a leaf node (the value of leafCategoryTreeNode is false).
-		/// </summary>
-		public CategoryTreeNode[] ChildCategoryTreeNodes { get; set; }
-		
-		/// <summary>
-		/// A value of true indicates that the current category tree node is a leaf node (it has no child nodes). A value of false indicates that the current node has one or more child nodes, which are identified by the childCategoryTreeNodes array. Returned only if the value of this field is true.
-		/// </summary>
-		public System.Nullable<System.Boolean> LeafCategoryTreeNode { get; set; }
-		
-		/// <summary>
-		/// The href portion of the getCategorySubtree call that retrieves the subtree below the parent of this category tree node. Not returned if the current category tree node is the root node of its tree.
-		/// </summary>
-		public string ParentCategoryTreeNodeHref { get; set; }
 	}
 	
 	/// <summary>
@@ -429,23 +446,6 @@ namespace MyNS
 		/// This array contains all compatible vehicle property values that match the specified eBay marketplace, specified eBay category, and filters in the request. If the compatibility_property parameter value in the request is 'Trim', each value returned in each value field will be a different vehicle trim, applicable to any filters that are set in the filter query parameter of the request, and also based on the eBay marketplace and category specified in the call request.
 		/// </summary>
 		public CompatibilityPropertyValue[] CompatibilityPropertyValues { get; set; }
-	}
-	
-	/// <summary>
-	/// This type contains a list of the dependencies that identify when a particular value is available for a given aspect of a given category. Each dependency specifies the values of another aspect of the same category (the control aspect), for which the given value of the given aspect can also be selected by the seller. This container consists of constraint information for the corresponding product aspect value.
-	/// </summary>
-	public class ValueConstraint
-	{
-		
-		/// <summary>
-		/// The name of the control aspect on which the current aspect value depends.
-		/// </summary>
-		public string ApplicableForLocalizedAspectName { get; set; }
-		
-		/// <summary>
-		/// Contains a list of the values of the control aspect on which this aspect's value depends. When the control aspect has any of the specified values, the current value of the current aspect will also be available.
-		/// </summary>
-		public string[] ApplicableForLocalizedAspectValues { get; set; }
 	}
 	
 	public partial class Category_treeClient

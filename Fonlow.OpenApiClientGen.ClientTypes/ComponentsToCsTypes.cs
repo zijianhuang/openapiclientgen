@@ -659,15 +659,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiString stringValue)
 			{
-				if (s.Enum == null || s.Enum.Count == 0)
+				if ((s.Enum == null || s.Enum.Count == 0) && s.Type == "string") //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
 				{
 					return "\"" + stringValue.Value + "\"";
 				}
 				else
 				{
-					//var enumMemberNames = s.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
-					//var existingEnumDeclaration = ClientNamespace.LocateEnumDeclaration(enumMemberNames);
-					//return existingEnumDeclaration.Name + "." + stringValue.Value;
 					return stringValue.Value;
 				}
 			}

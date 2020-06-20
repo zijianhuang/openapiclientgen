@@ -9,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Fonlow.OpenApiClientGen.Cs
+namespace Fonlow.OpenApiClientGen.CS
 {
 	/// <summary>
 	/// Store CodeDom references shared by all functions of the client API class.

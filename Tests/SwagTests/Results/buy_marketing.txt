@@ -122,50 +122,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// Type the defines the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
-	/// </summary>
-	public class Image
-	{
-		
-		/// <summary>
-		/// Reserved for future use.
-		/// </summary>
-		public System.Nullable<System.Int32> Height { get; set; }
-		
-		/// <summary>
-		/// The URL of the image.
-		/// </summary>
-		public string ImageUrl { get; set; }
-		
-		/// <summary>
-		/// Reserved for future use.
-		/// </summary>
-		public System.Nullable<System.Int32> Width { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for details about the product, such as condition and estimated start price.
-	/// </summary>
-	public class MarketPriceDetail
-	{
-		
-		/// <summary>
-		/// The name for the condition of the product. For example: NEW
-		/// </summary>
-		public string ConditionGroup { get; set; }
-		
-		/// <summary>
-		/// An array of condition identifiers for the product.
-		/// </summary>
-		public string[] ConditionIds { get; set; }
-		
-		/// <summary>
-		/// This type defines the monetary value of an amount and the currency used.
-		/// </summary>
-		public Amount EstimatedStartPrice { get; set; }
-	}
-	
-	/// <summary>
 	/// The type that defines the fields for product information, including price, condition, ratings, etc.
 	/// </summary>
 	public class MerchandisedProduct
@@ -210,6 +166,50 @@ namespace MyNS
 		/// The title of the product.
 		/// </summary>
 		public string Title { get; set; }
+	}
+	
+	/// <summary>
+	/// Type the defines the details of an image, such as size and URL. Currently only imageUrl is getting populated. The height and width were added for future use.
+	/// </summary>
+	public class Image
+	{
+		
+		/// <summary>
+		/// Reserved for future use.
+		/// </summary>
+		public System.Nullable<System.Int32> Height { get; set; }
+		
+		/// <summary>
+		/// The URL of the image.
+		/// </summary>
+		public string ImageUrl { get; set; }
+		
+		/// <summary>
+		/// Reserved for future use.
+		/// </summary>
+		public System.Nullable<System.Int32> Width { get; set; }
+	}
+	
+	/// <summary>
+	/// The type that defines the fields for details about the product, such as condition and estimated start price.
+	/// </summary>
+	public class MarketPriceDetail
+	{
+		
+		/// <summary>
+		/// The name for the condition of the product. For example: NEW
+		/// </summary>
+		public string ConditionGroup { get; set; }
+		
+		/// <summary>
+		/// An array of condition identifiers for the product.
+		/// </summary>
+		public string[] ConditionIds { get; set; }
+		
+		/// <summary>
+		/// This type defines the monetary value of an amount and the currency used.
+		/// </summary>
+		public Amount EstimatedStartPrice { get; set; }
 	}
 	
 	/// <summary>

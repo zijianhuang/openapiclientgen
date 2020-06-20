@@ -102,6 +102,43 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// This type contains information about the constraints for an aspect that's associated with a specific eBay category or eBay Catalog product.
+	/// </summary>
+	public class ProductAspectConstraint
+	{
+		
+		/// <summary>
+		/// The data type used to represent the aspect. See the AspectDataTypeEnum type for more information about each data type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/AspectDataTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string AspectDataType { get; set; }
+		
+		/// <summary>
+		/// Returned only if the value of aspectDataType is STRING or NUMBER. The required format for date or number values (e.g. a date value may be expressed as MMYYYY or MMYY).
+		/// </summary>
+		public string AspectFormat { get; set; }
+		
+		/// <summary>
+		/// Indicates whether the seller must select from a closed list of aspect values, or can input the aspect value manually. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/AspectModeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string AspectMode { get; set; }
+		
+		/// <summary>
+		/// A value of true indicates that the aspect is mandatory for products listed in this category.
+		/// </summary>
+		public System.Nullable<System.Boolean> AspectRequired { get; set; }
+		
+		/// <summary>
+		/// This value indicates the level of importance of the product identifier appearing in the catalog product. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/ImportanceEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string Importance { get; set; }
+		
+		/// <summary>
+		/// Indicates whether the aspect requires only one value, or can accept multiple values when listing in this category. An example of a product aspect that will often have numerous values is Features. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/ItemToAspectCardinalityEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string ProductToAspectCardinality { get; set; }
+	}
+	
+	/// <summary>
 	/// This type contains the supported values for a given category aspect name, as well as constraint information for specified category aspect values for a product.
 	/// </summary>
 	public class CategoryAspectValue
@@ -116,6 +153,23 @@ namespace MyNS
 		/// Not returned if the value of the value field can always be selected for this aspect of the specified category (that is, when no constraints apply to using the value). Contains a list of the dependencies that identify when the value of the value field is available for the current aspect. Each dependency specifies the values of another aspect of the same category (a control aspect), for which the current value of the current aspect can also be selected by the seller. Example: A shirt is available in three sizes and three colors, but only the Small and Medium sizes come in Green. Thus for the Color aspect, the value Green is constrained by its dependency on Size (the control aspect). Only when the Size aspect value is Small or Medium, can the Color aspect value of Green be selected by the seller.
 		/// </summary>
 		public ValueConstraint[] ValueConstraints { get; set; }
+	}
+	
+	/// <summary>
+	/// This type contains a list of the dependencies that identify when a particular value is available for a given aspect of a given category. Each dependency specifies the values of another aspect of the same category (the control aspect), for which the given value of the given aspect can also be selected by the seller. This container consists of constraint information for the corresponding product aspect value.
+	/// </summary>
+	public class ValueConstraint
+	{
+		
+		/// <summary>
+		/// The name of the control aspect on which the current aspect value depends.
+		/// </summary>
+		public string ApplicableForAspectName { get; set; }
+		
+		/// <summary>
+		/// Contains a list of the values of the control aspect on which this aspect's value depends. When the control aspect has any of the specified values, the current value of the current aspect will also be available.
+		/// </summary>
+		public string[] ApplicableForAspectValues { get; set; }
 	}
 	
 	/// <summary>
@@ -186,6 +240,38 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// This type provides details of conflicting products, corrections required, or violations that were discovered in a change request.
+	/// </summary>
+	public class ProcessResolution
+	{
+		
+		/// <summary>
+		/// Contains information about one or more existing products with identifying information that matches or instersects with the suggested product. For each conflicting product, the difference is in the presence or value of one or more product aspects. If the seller accepts the aspects and their values of the conflicting product (such as a color value of scarlet instead of crimson), that product can be adopted by the seller instead of the suggested product. If the seller does not accept any of the conflicting products as is, you can submit a change request to update one of them, or to create a new product for which identifying information doesn't overlap with an existing product enough to produce a conflict.
+		/// </summary>
+		public ConflictingProduct[] ConflictingProducts { get; set; }
+		
+		/// <summary>
+		/// Contains information about one or more corrections to this change request that eBay has applied to the new or updated product. Sellers can accept these corrections by adopting the product, which is identified by the epid field.
+		/// </summary>
+		public Correction[] Corrections { get; set; }
+		
+		/// <summary>
+		/// Returned only if the value of changeRequestStatus is APPROVED or APPROVED_WITH_MODIFICATIONS; this is the eBay identifier of the resulting product.
+		/// </summary>
+		public string Epid { get; set; }
+		
+		/// <summary>
+		/// The URI of the getProduct call request that retrieves this product's details. This field is returned under one of the following conditions: The value of changeRequestType is PRODUCT_UPDATE. The value of changeRequestType is PRODUCT_CREATION, and the value of changeRequestStatus is APPROVED or APPROVED_WITH_MODIFICATIONS.
+		/// </summary>
+		public string ProductHref { get; set; }
+		
+		/// <summary>
+		/// Contains information about one or more violations in the values of the suggested product's aspects or fixed attributes.
+		/// </summary>
+		public Violation[] Violations { get; set; }
+	}
+	
+	/// <summary>
 	/// This type contains information about an existing catalog product that presents a conflict with a seller's suggested product.
 	/// </summary>
 	public class ConflictingProduct
@@ -210,6 +296,23 @@ namespace MyNS
 		/// The reason for this conflict.
 		/// </summary>
 		public string Reason { get; set; }
+	}
+	
+	/// <summary>
+	/// This type contains the name and values of a category aspect that is associated with a particular product.
+	/// </summary>
+	public class ProductAspect
+	{
+		
+		/// <summary>
+		/// The name of the product aspect, such as Model Number, Size, or Color.
+		/// </summary>
+		public string Name { get; set; }
+		
+		/// <summary>
+		/// Required or returned if a value is provided for the name field. This is a list of one or more localized values of this product aspect.
+		/// </summary>
+		public string[] Values { get; set; }
 	}
 	
 	/// <summary>
@@ -240,23 +343,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// This type contains a value of a given eBay product aspect which must be corrected, along with the correct value.
-	/// </summary>
-	public class CorrectionAspectValue
-	{
-		
-		/// <summary>
-		/// The aspect's correct value
-		/// </summary>
-		public string NewValue { get; set; }
-		
-		/// <summary>
-		/// The aspect's current incorrect value.
-		/// </summary>
-		public string Value { get; set; }
-	}
-	
-	/// <summary>
 	/// This type identifies a product aspect that requires correction in a catalog change request, along with its aspect values that must be corrected.
 	/// </summary>
 	public class CorrectionAspectValues
@@ -271,6 +357,23 @@ namespace MyNS
 		/// A list of one or more values of this product aspect that must be corrected.
 		/// </summary>
 		public CorrectionAspectValue[] Values { get; set; }
+	}
+	
+	/// <summary>
+	/// This type contains a value of a given eBay product aspect which must be corrected, along with the correct value.
+	/// </summary>
+	public class CorrectionAspectValue
+	{
+		
+		/// <summary>
+		/// The aspect's correct value
+		/// </summary>
+		public string NewValue { get; set; }
+		
+		/// <summary>
+		/// The aspect's current incorrect value.
+		/// </summary>
+		public string Value { get; set; }
 	}
 	
 	/// <summary>
@@ -293,6 +396,144 @@ namespace MyNS
 		/// Not returned if the value of attributeName is ASPECT_NAME (see instead corrections.aspectValues). This is the named attribute's current incorrect value.
 		/// </summary>
 		public string Value { get; set; }
+	}
+	
+	/// <summary>
+	/// This type contains information about a violation of eBay standards in a change request.
+	/// </summary>
+	public class Violation
+	{
+		
+		/// <summary>
+		/// Contains the name of a product aspect that is in violation of eBay standards in a particular catalog change request, along with its values that produced the violation.
+		/// </summary>
+		public ViolationAspectValues AspectsValues { get; set; }
+		
+		/// <summary>
+		/// This type contains the name of a particular product attribute with a value in violation of eBay standards, and if the name is not ASPECT_NAME (a product aspect), the values of the attribute that are in violation.
+		/// </summary>
+		public ViolationProductAttribute ProductAttribute { get; set; }
+		
+		/// <summary>
+		/// An explanation of the reason for this violation.
+		/// </summary>
+		public string Reason { get; set; }
+		
+		/// <summary>
+		/// The eBay-assigned identifier of the violation type of this violation.
+		/// </summary>
+		public string ViolationCode { get; set; }
+	}
+	
+	/// <summary>
+	/// Contains the name of a product aspect that is in violation of eBay standards in a particular catalog change request, along with its values that produced the violation.
+	/// </summary>
+	public class ViolationAspectValues
+	{
+		
+		/// <summary>
+		/// The localized name of this product aspect that's in violation, such as Model Number, Size, or Color.
+		/// </summary>
+		public string AspectName { get; set; }
+		
+		/// <summary>
+		/// A list of one or more values of this product aspect that are in violation of eBay standards.
+		/// </summary>
+		public string[] Values { get; set; }
+	}
+	
+	/// <summary>
+	/// This type contains the name of a particular product attribute with a value in violation of eBay standards, and if the name is not ASPECT_NAME (a product aspect), the values of the attribute that are in violation.
+	/// </summary>
+	public class ViolationProductAttribute
+	{
+		
+		/// <summary>
+		/// The name of the product attribute type in the change request which is in violation, such as BRAND, CATEGORY, or TITLE. See the ProductAttributeName type for available values. Note: If the value of this field is ASPECT_NAME, see violations.aspectsValues for violation information. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/ProductAttributeName.html'>eBay API documentation</a>
+		/// </summary>
+		public string Name { get; set; }
+		
+		/// <summary>
+		/// Not returned if the value of name is ASPECT_NAME (see instead violations.aspectsValues). This is a list of the named attribute's values that are in violation.
+		/// </summary>
+		public string[] Values { get; set; }
+	}
+	
+	/// <summary>
+	/// This type contains the full details of a suggested product, including information about the product's identifiers, description, product images, categories, and aspects.
+	/// </summary>
+	public class SuggestedProduct
+	{
+		
+		/// <summary>
+		/// A list of URLs for additional images associated with the suggested product. For the URL of the primary image, see the imageUrl field.
+		/// </summary>
+		public string[] AdditionalImageUrls { get; set; }
+		
+		/// <summary>
+		/// Contains one or more category aspects and their values that are associated with the suggested product.
+		/// </summary>
+		public ProductAspect[] Aspects { get; set; }
+		
+		/// <summary>
+		/// The manufacturer's brand name for the suggested product.
+		/// </summary>
+		public string Brand { get; set; }
+		
+		/// <summary>
+		/// A rich description of the suggested product, which can contain HTML, including the following basic tags: Text formatting tags such as &lt;b&gt;, &lt;i&gt;, &lt;br&gt;, &lt;ol&gt;, &lt;ul&gt;, and &lt;li&gt; Table formatting tags such as &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt;, &lt;thead&gt;, &lt;tfoot&gt;, &lt;tbody&gt;, &lt;caption&gt;, &lt;col&gt;, and &lt;colgroup&gt; Note: Active content from sellers is prohibited on eBay, including animation or video via JavaScript, Flash, plug-ins, or form actions.
+		/// </summary>
+		public string Description { get; set; }
+		
+		/// <summary>
+		/// A list of all European Article Numbers (EANs) that identify the suggested product.
+		/// </summary>
+		public string[] Ean { get; set; }
+		
+		/// <summary>
+		/// Required or returned only if the value of the changeRequestType field is PRODUCT_UPDATE. This is the eBay product ID of the product record for which an update is being suggested.
+		/// </summary>
+		public string Epid { get; set; }
+		
+		/// <summary>
+		/// Required or returned if the value of the changeRequestType field is PRODUCT_CREATION. This is the URL of the primary image associated with the suggested product.
+		/// </summary>
+		public string ImageUrl { get; set; }
+		
+		/// <summary>
+		/// A list of all International Standard Book Numbers (ISBNs) that identify the suggested product.
+		/// </summary>
+		public string[] Isbn { get; set; }
+		
+		/// <summary>
+		/// A list of all Manufacturer Product Number (MPN) values that the manufacturer uses to identify the suggested product.
+		/// </summary>
+		public string[] Mpn { get; set; }
+		
+		/// <summary>
+		/// A list of category IDs (other than the value of primaryCategoryId) for all the leaf categories to which the suggested product might belong.
+		/// </summary>
+		public string[] OtherApplicableCategoryIds { get; set; }
+		
+		/// <summary>
+		/// The identifier of the category that eBay recommends using to list the suggested product, based on previous listings of similar products. Products in the eBay catalog are not automatically associated with any particular category, but using an inappropriate category can make it difficult for prospective buyers to find the product. For other possible categories that might be used, see otherApplicableCategoryIds.
+		/// </summary>
+		public string PrimaryCategoryId { get; set; }
+		
+		/// <summary>
+		/// The catalog title that will be used as the listing title for all item listings based on the suggested product.
+		/// </summary>
+		public string Title { get; set; }
+		
+		/// <summary>
+		/// A list of all Universal Product Codes (UPCs) that identify the suggested product.
+		/// </summary>
+		public string[] Upc { get; set; }
+		
+		/// <summary>
+		/// Required or returned only if the value of changeRequestType is PRODUCT_UPDATE. This is the current version number in the catalog of the product record for which an update is being suggested.
+		/// </summary>
+		public string Version { get; set; }
 	}
 	
 	/// <summary>
@@ -458,38 +699,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// This type provides details of conflicting products, corrections required, or violations that were discovered in a change request.
-	/// </summary>
-	public class ProcessResolution
-	{
-		
-		/// <summary>
-		/// Contains information about one or more existing products with identifying information that matches or instersects with the suggested product. For each conflicting product, the difference is in the presence or value of one or more product aspects. If the seller accepts the aspects and their values of the conflicting product (such as a color value of scarlet instead of crimson), that product can be adopted by the seller instead of the suggested product. If the seller does not accept any of the conflicting products as is, you can submit a change request to update one of them, or to create a new product for which identifying information doesn't overlap with an existing product enough to produce a conflict.
-		/// </summary>
-		public ConflictingProduct[] ConflictingProducts { get; set; }
-		
-		/// <summary>
-		/// Contains information about one or more corrections to this change request that eBay has applied to the new or updated product. Sellers can accept these corrections by adopting the product, which is identified by the epid field.
-		/// </summary>
-		public Correction[] Corrections { get; set; }
-		
-		/// <summary>
-		/// Returned only if the value of changeRequestStatus is APPROVED or APPROVED_WITH_MODIFICATIONS; this is the eBay identifier of the resulting product.
-		/// </summary>
-		public string Epid { get; set; }
-		
-		/// <summary>
-		/// The URI of the getProduct call request that retrieves this product's details. This field is returned under one of the following conditions: The value of changeRequestType is PRODUCT_UPDATE. The value of changeRequestType is PRODUCT_CREATION, and the value of changeRequestStatus is APPROVED or APPROVED_WITH_MODIFICATIONS.
-		/// </summary>
-		public string ProductHref { get; set; }
-		
-		/// <summary>
-		/// Contains information about one or more violations in the values of the suggested product's aspects or fixed attributes.
-		/// </summary>
-		public Violation[] Violations { get; set; }
-	}
-	
-	/// <summary>
 	/// This type contains the full details of a specified product, including information about the product's identifiers, product images, aspects, and categories.
 	/// </summary>
 	public class Product
@@ -574,60 +783,6 @@ namespace MyNS
 		/// The current version number of this product record in the catalog.
 		/// </summary>
 		public string Version { get; set; }
-	}
-	
-	/// <summary>
-	/// This type contains the name and values of a category aspect that is associated with a particular product.
-	/// </summary>
-	public class ProductAspect
-	{
-		
-		/// <summary>
-		/// The name of the product aspect, such as Model Number, Size, or Color.
-		/// </summary>
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// Required or returned if a value is provided for the name field. This is a list of one or more localized values of this product aspect.
-		/// </summary>
-		public string[] Values { get; set; }
-	}
-	
-	/// <summary>
-	/// This type contains information about the constraints for an aspect that's associated with a specific eBay category or eBay Catalog product.
-	/// </summary>
-	public class ProductAspectConstraint
-	{
-		
-		/// <summary>
-		/// The data type used to represent the aspect. See the AspectDataTypeEnum type for more information about each data type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/AspectDataTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string AspectDataType { get; set; }
-		
-		/// <summary>
-		/// Returned only if the value of aspectDataType is STRING or NUMBER. The required format for date or number values (e.g. a date value may be expressed as MMYYYY or MMYY).
-		/// </summary>
-		public string AspectFormat { get; set; }
-		
-		/// <summary>
-		/// Indicates whether the seller must select from a closed list of aspect values, or can input the aspect value manually. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/AspectModeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string AspectMode { get; set; }
-		
-		/// <summary>
-		/// A value of true indicates that the aspect is mandatory for products listed in this category.
-		/// </summary>
-		public System.Nullable<System.Boolean> AspectRequired { get; set; }
-		
-		/// <summary>
-		/// This value indicates the level of importance of the product identifier appearing in the catalog product. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/ImportanceEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string Importance { get; set; }
-		
-		/// <summary>
-		/// Indicates whether the aspect requires only one value, or can accept multiple values when listing in this category. An example of a product aspect that will often have numerous values is Features. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/ItemToAspectCardinalityEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string ProductToAspectCardinality { get; set; }
 	}
 	
 	/// <summary>
@@ -953,161 +1108,6 @@ namespace MyNS
 		/// The ID of the category that eBay determines is most likely to cover the products matching the search criteria.
 		/// </summary>
 		public string DominantCategoryId { get; set; }
-	}
-	
-	/// <summary>
-	/// This type contains the full details of a suggested product, including information about the product's identifiers, description, product images, categories, and aspects.
-	/// </summary>
-	public class SuggestedProduct
-	{
-		
-		/// <summary>
-		/// A list of URLs for additional images associated with the suggested product. For the URL of the primary image, see the imageUrl field.
-		/// </summary>
-		public string[] AdditionalImageUrls { get; set; }
-		
-		/// <summary>
-		/// Contains one or more category aspects and their values that are associated with the suggested product.
-		/// </summary>
-		public ProductAspect[] Aspects { get; set; }
-		
-		/// <summary>
-		/// The manufacturer's brand name for the suggested product.
-		/// </summary>
-		public string Brand { get; set; }
-		
-		/// <summary>
-		/// A rich description of the suggested product, which can contain HTML, including the following basic tags: Text formatting tags such as &lt;b&gt;, &lt;i&gt;, &lt;br&gt;, &lt;ol&gt;, &lt;ul&gt;, and &lt;li&gt; Table formatting tags such as &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt;, &lt;thead&gt;, &lt;tfoot&gt;, &lt;tbody&gt;, &lt;caption&gt;, &lt;col&gt;, and &lt;colgroup&gt; Note: Active content from sellers is prohibited on eBay, including animation or video via JavaScript, Flash, plug-ins, or form actions.
-		/// </summary>
-		public string Description { get; set; }
-		
-		/// <summary>
-		/// A list of all European Article Numbers (EANs) that identify the suggested product.
-		/// </summary>
-		public string[] Ean { get; set; }
-		
-		/// <summary>
-		/// Required or returned only if the value of the changeRequestType field is PRODUCT_UPDATE. This is the eBay product ID of the product record for which an update is being suggested.
-		/// </summary>
-		public string Epid { get; set; }
-		
-		/// <summary>
-		/// Required or returned if the value of the changeRequestType field is PRODUCT_CREATION. This is the URL of the primary image associated with the suggested product.
-		/// </summary>
-		public string ImageUrl { get; set; }
-		
-		/// <summary>
-		/// A list of all International Standard Book Numbers (ISBNs) that identify the suggested product.
-		/// </summary>
-		public string[] Isbn { get; set; }
-		
-		/// <summary>
-		/// A list of all Manufacturer Product Number (MPN) values that the manufacturer uses to identify the suggested product.
-		/// </summary>
-		public string[] Mpn { get; set; }
-		
-		/// <summary>
-		/// A list of category IDs (other than the value of primaryCategoryId) for all the leaf categories to which the suggested product might belong.
-		/// </summary>
-		public string[] OtherApplicableCategoryIds { get; set; }
-		
-		/// <summary>
-		/// The identifier of the category that eBay recommends using to list the suggested product, based on previous listings of similar products. Products in the eBay catalog are not automatically associated with any particular category, but using an inappropriate category can make it difficult for prospective buyers to find the product. For other possible categories that might be used, see otherApplicableCategoryIds.
-		/// </summary>
-		public string PrimaryCategoryId { get; set; }
-		
-		/// <summary>
-		/// The catalog title that will be used as the listing title for all item listings based on the suggested product.
-		/// </summary>
-		public string Title { get; set; }
-		
-		/// <summary>
-		/// A list of all Universal Product Codes (UPCs) that identify the suggested product.
-		/// </summary>
-		public string[] Upc { get; set; }
-		
-		/// <summary>
-		/// Required or returned only if the value of changeRequestType is PRODUCT_UPDATE. This is the current version number in the catalog of the product record for which an update is being suggested.
-		/// </summary>
-		public string Version { get; set; }
-	}
-	
-	/// <summary>
-	/// This type contains a list of the dependencies that identify when a particular value is available for a given aspect of a given category. Each dependency specifies the values of another aspect of the same category (the control aspect), for which the given value of the given aspect can also be selected by the seller. This container consists of constraint information for the corresponding product aspect value.
-	/// </summary>
-	public class ValueConstraint
-	{
-		
-		/// <summary>
-		/// The name of the control aspect on which the current aspect value depends.
-		/// </summary>
-		public string ApplicableForAspectName { get; set; }
-		
-		/// <summary>
-		/// Contains a list of the values of the control aspect on which this aspect's value depends. When the control aspect has any of the specified values, the current value of the current aspect will also be available.
-		/// </summary>
-		public string[] ApplicableForAspectValues { get; set; }
-	}
-	
-	/// <summary>
-	/// This type contains information about a violation of eBay standards in a change request.
-	/// </summary>
-	public class Violation
-	{
-		
-		/// <summary>
-		/// Contains the name of a product aspect that is in violation of eBay standards in a particular catalog change request, along with its values that produced the violation.
-		/// </summary>
-		public ViolationAspectValues AspectsValues { get; set; }
-		
-		/// <summary>
-		/// This type contains the name of a particular product attribute with a value in violation of eBay standards, and if the name is not ASPECT_NAME (a product aspect), the values of the attribute that are in violation.
-		/// </summary>
-		public ViolationProductAttribute ProductAttribute { get; set; }
-		
-		/// <summary>
-		/// An explanation of the reason for this violation.
-		/// </summary>
-		public string Reason { get; set; }
-		
-		/// <summary>
-		/// The eBay-assigned identifier of the violation type of this violation.
-		/// </summary>
-		public string ViolationCode { get; set; }
-	}
-	
-	/// <summary>
-	/// Contains the name of a product aspect that is in violation of eBay standards in a particular catalog change request, along with its values that produced the violation.
-	/// </summary>
-	public class ViolationAspectValues
-	{
-		
-		/// <summary>
-		/// The localized name of this product aspect that's in violation, such as Model Number, Size, or Color.
-		/// </summary>
-		public string AspectName { get; set; }
-		
-		/// <summary>
-		/// A list of one or more values of this product aspect that are in violation of eBay standards.
-		/// </summary>
-		public string[] Values { get; set; }
-	}
-	
-	/// <summary>
-	/// This type contains the name of a particular product attribute with a value in violation of eBay standards, and if the name is not ASPECT_NAME (a product aspect), the values of the attribute that are in violation.
-	/// </summary>
-	public class ViolationProductAttribute
-	{
-		
-		/// <summary>
-		/// The name of the product attribute type in the change request which is in violation, such as BRAND, CATEGORY, or TITLE. See the ProductAttributeName type for available values. Note: If the value of this field is ASPECT_NAME, see violations.aspectsValues for violation information. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/catalog/types/ProductAttributeName.html'>eBay API documentation</a>
-		/// </summary>
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// Not returned if the value of name is ASPECT_NAME (see instead violations.aspectsValues). This is a list of the named attribute's values that are in violation.
-		/// </summary>
-		public string[] Values { get; set; }
 	}
 	
 	public partial class Change_requestClient

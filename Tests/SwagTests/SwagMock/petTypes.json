@@ -121,7 +121,7 @@
 								"type": "integer",
 								"description": "The size of the pack the dog is from",
 								"format": "int32",
-								"default": "1",
+								"default": 1,
 								"minimum": 1.0
 							}
 						}

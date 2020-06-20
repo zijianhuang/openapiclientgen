@@ -17,6 +17,31 @@ namespace MyNS
 	using Newtonsoft.Json;
 	
 	
+	/// <summary>
+	/// A representation of a cat
+	/// </summary>
+	public class Cat : Pet
+	{
+		
+		/// <summary>
+		/// The measured skill for hunting
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public CatHuntingSkill HuntingSkill { get; set; }
+	}
+	
+	public enum CatHuntingSkill
+	{
+		
+		clueless = 0,
+		
+		lazy = 1,
+		
+		adventurous = 2,
+		
+		aggressive = 3,
+	}
+	
 	public class Category
 	{
 		
@@ -34,6 +59,32 @@ namespace MyNS
 		/// Test Sub Category
 		/// </summary>
 		public string Sub { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a dog
+	/// </summary>
+	public class Dog : Pet
+	{
+		
+		/// <summary>
+		/// The size of the pack the dog is from
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public int PackSize { get; set; }
+	}
+	
+	/// <summary>
+	/// A representation of a honey bee
+	/// </summary>
+	public class HoneyBee : Pet
+	{
+		
+		/// <summary>
+		/// Average amount of honey produced per day in ounces
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public float HoneyPerDay { get; set; }
 	}
 	
 	public class Pet
@@ -79,16 +130,6 @@ namespace MyNS
 		public string PetType { get; set; }
 	}
 	
-	public enum PetStatus
-	{
-		
-		available = 0,
-		
-		pending = 1,
-		
-		sold = 2,
-	}
-	
 	public class Tag
 	{
 		
@@ -103,55 +144,14 @@ namespace MyNS
 		public string Name { get; set; }
 	}
 	
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	public class Cat : Pet
+	public enum PetStatus
 	{
 		
-		/// <summary>
-		/// The measured skill for hunting
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public CatHuntingSkill HuntingSkill { get; set; }
-	}
-	
-	public enum CatHuntingSkill
-	{
+		available = 0,
 		
-		clueless = 0,
+		pending = 1,
 		
-		lazy = 1,
-		
-		adventurous = 2,
-		
-		aggressive = 3,
-	}
-	
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
-	public class Dog : Pet
-	{
-		
-		/// <summary>
-		/// The size of the pack the dog is from
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public int PackSize { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	public class HoneyBee : Pet
-	{
-		
-		/// <summary>
-		/// Average amount of honey produced per day in ounces
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		public float HoneyPerDay { get; set; }
+		sold = 2,
 	}
 	
 	public partial class Misc
@@ -180,7 +180,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
+		public async Task<Pet[]> FindPetsByStatusAsync(string status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -210,7 +210,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus(PetStatus[] status)
+		public Pet[] FindPetsByStatus(string status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -240,7 +240,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatus2Async(PetStatus status)
+		public async Task<Pet[]> FindPetsByStatus2Async(string status)
 		{
 			var requestUri = "pet/findByStatus2?status=" + status;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -270,7 +270,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus2(PetStatus status)
+		public Pet[] FindPetsByStatus2(string status)
 		{
 			var requestUri = "pet/findByStatus2?status=" + status;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -300,7 +300,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatus3Async(PetStatus status)
+		public async Task<Pet[]> FindPetsByStatus3Async(string status)
 		{
 			var requestUri = "pet/findByStatus3?status=" + status;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -330,7 +330,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus3(PetStatus status)
+		public Pet[] FindPetsByStatus3(string status)
 		{
 			var requestUri = "pet/findByStatus3?status=" + status;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))

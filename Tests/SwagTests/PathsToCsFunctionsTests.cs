@@ -3,12 +3,20 @@ using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using System.IO;
 using Xunit;
-using Fonlow.OpenApiClientGen.Cs;
+using Fonlow.OpenApiClientGen.CS;
+using Xunit.Abstractions;
 
 namespace SwagTests
 {
 	public class ToCsFunctions
 	{
+
+		readonly ITestOutputHelper output;
+		public ToCsFunctions(ITestOutputHelper output)
+		{
+			this.output = output;
+		}
+
 		static OpenApiDocument ReadJson(string filePath)
 		{
 			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
@@ -40,12 +48,23 @@ namespace SwagTests
 			return File.ReadAllText(filePath);
 		}
 
-		static void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
+		void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
 			string s = TranslateJsonToCode(openApiFile, mySettings);
 			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
+			var r = CSharpValidation.CompileThenSave(s, null);
+			if (!r.Success)
+			{
+				output.WriteLine("CSharp Compilation Errors:");
+				foreach (var ms in r.Diagnostics)
+				{
+					output.WriteLine(ms.ToString());
+				}
+			}
+
+			Assert.True(r.Success);
 		}
 
 		[Fact]

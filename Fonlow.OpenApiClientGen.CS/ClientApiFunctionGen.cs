@@ -7,7 +7,7 @@ using System.CodeDom;
 using System.Diagnostics;
 using System.Linq;
 
-namespace Fonlow.OpenApiClientGen.Cs
+namespace Fonlow.OpenApiClientGen.CS
 {
 	/// <summary>
 	/// Generate a client function upon OpenApiOperation for C#

@@ -166,6 +166,75 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// This type defines the fields returned in an error condition.
+	/// </summary>
+	public class Error
+	{
+		
+		/// <summary>
+		/// The category type for this error or warning. This field can have one of three values: Application: Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency. Business: Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as &quot;Seller does not ship items to Antarctica&quot; or &quot;Buyer ineligible to purchase an alcoholic item&quot;. Business errors are not syntactical input errors. Request: Used when there is anything wrong with the request, such as authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on.
+		/// </summary>
+		public string Category { get; set; }
+		
+		/// <summary>
+		/// The name of the primary system where the error occurred. This is relevant for application errors.
+		/// </summary>
+		public string Domain { get; set; }
+		
+		/// <summary>
+		/// A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		/// </summary>
+		public System.Nullable<System.Int32> ErrorId { get; set; }
+		
+		/// <summary>
+		/// An array of reference IDs that identify the specific request elements most closely associated to the error or warning, if any. For JSON, use JSONPath notation.
+		/// </summary>
+		public string[] InputRefIds { get; set; }
+		
+		/// <summary>
+		/// A detailed description of the condition that caused the error or warning and information on what to do to correct the problem. The string is normally 100-200 characters in length, but is not required to be such.
+		/// </summary>
+		public string LongMessage { get; set; }
+		
+		/// <summary>
+		/// A short description of the condition that caused the error or warning. This value is at most 50 characters long and, if applicable, is localized in the end user's requested locale.
+		/// </summary>
+		public string Message { get; set; }
+		
+		/// <summary>
+		/// An array of reference IDs that identify the specific response elements most closely associated to the error or warning, if any. The path format is the same as inputRefId.
+		/// </summary>
+		public string[] OutputRefIds { get; set; }
+		
+		/// <summary>
+		/// An array that contains contextual information about the error or warning. The list often includes the parameter or input fields that triggered the warning or error condition.
+		/// </summary>
+		public ErrorParameter[] Parameters { get; set; }
+		
+		/// <summary>
+		/// The name of the subdomain in which the error or warning occurred. For example, checkout is a subdomain in the buying domain.
+		/// </summary>
+		public string Subdomain { get; set; }
+	}
+	
+	/// <summary>
+	/// A name/value pair that provides parameter details regarding a warning or error condition.
+	/// </summary>
+	public class ErrorParameter
+	{
+		
+		/// <summary>
+		/// Name of the entity that threw the error.
+		/// </summary>
+		public string Name { get; set; }
+		
+		/// <summary>
+		/// The value that was set for the element specified in the name field.
+		/// </summary>
+		public string Value { get; set; }
+	}
+	
+	/// <summary>
 	/// This type defines the container for an array of ads.
 	/// </summary>
 	public class Ads
@@ -231,6 +300,23 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// This type defines the fields for the create ad request.
+	/// </summary>
+	public class CreateAdRequest
+	{
+		
+		/// <summary>
+		/// The user-defined bid percentage (also known as the ad rate) sets the level that eBay increases the visibility in search results for the associated listing. The higher the bidPercentage value, the more eBay promotes the listing. The value specified here is also used to calculate the Promoted Listings fee. This percentage value is multiplied by the final sales price to determine the fee. The Promoted Listings fee is determined at the time the transaction completes and the seller is assessed the fee only when an item sells through a Promoted Listings ad campaign. bidPercentage is a single precision value that is guided by the following rules: These values are valid: &nbsp;&nbsp;&nbsp;1, &nbsp;&nbsp;&nbsp;1.0, &nbsp;&nbsp;&nbsp;4.1, &nbsp;&nbsp;&nbsp;5.0, &nbsp;&nbsp;&nbsp;5.5, ... These values are not valid: &nbsp;&nbsp;&nbsp;0.01, &nbsp;&nbsp;&nbsp;10.75, &nbsp;&nbsp;&nbsp;99.99, &nbsp;&nbsp;&nbsp;and so on. If a bid percentage is not provided for an ad, eBay uses the default bid percentage of the associated campaign.Minimum value: 1.0 Maximum value: 100.0
+		/// </summary>
+		public string BidPercentage { get; set; }
+		
+		/// <summary>
+		/// A unique eBay-assigned ID for a listing that is generated when the listing is created. Note: This field accepts both listing IDs, as generated by the Inventory API, and an item IDs, as used in the eBay Traditional API set (e.g., the Trading and Finding APIs).
+		/// </summary>
+		public string ListingId { get; set; }
+	}
+	
+	/// <summary>
 	/// This type defines the fields used to create ads in bulk by inventory reference IDs.
 	/// </summary>
 	public class BulkCreateAdsByInventoryReferenceRequest
@@ -240,6 +326,28 @@ namespace MyNS
 		/// A lsit of inventory reference ID and inventory reference type pairs, and the bid percentage, which the call uses to create ads in bulk.
 		/// </summary>
 		public CreateAdsByInventoryReferenceRequest[] Requests { get; set; }
+	}
+	
+	/// <summary>
+	/// This type defines the fields needed to create ads by inventory reference ID request.
+	/// </summary>
+	public class CreateAdsByInventoryReferenceRequest
+	{
+		
+		/// <summary>
+		/// The user-defined bid percentage (also known as the ad rate) sets the level that eBay increases the visibility in search results for the associated listing. The higher the bidPercentage value, the more eBay promotes the listing. The value specified here is also used to calculate the Promoted Listings fee. This percentage value is multiplied by the final sales price to determine the fee. The Promoted Listings fee is determined at the time the transaction completes and the seller is assessed the fee only when an item sells through a Promoted Listings ad campaign. bidPercentage is a single precision value that is guided by the following rules: These values are valid: &nbsp;&nbsp;&nbsp;1, &nbsp;&nbsp;&nbsp;1.0, &nbsp;&nbsp;&nbsp;4.1, &nbsp;&nbsp;&nbsp;5.0, &nbsp;&nbsp;&nbsp;5.5, ... These values are not valid: &nbsp;&nbsp;&nbsp;0.01, &nbsp;&nbsp;&nbsp;10.75, &nbsp;&nbsp;&nbsp;99.99, &nbsp;&nbsp;&nbsp;and so on. If a bid percentage is not provided for an ad, eBay uses the default bid percentage of the associated campaign.Minimum value: 1.0 Maximum value: 100.0
+		/// </summary>
+		public string BidPercentage { get; set; }
+		
+		/// <summary>
+		/// The seller's inventory reference ID for a listing. An inventory reference ID can be either a seller-defined SKU value or an inventoryItemGroupKey. An inventoryItemGroupKey is a value used by the Inventory API to indicate a listing that's the parent of a inventory item group (a multi-variation listing, such as a listing for shirt that's available in multiple sizes and colors). You must always specify both an inventory_reference_id and an inventory_reference_type.
+		/// </summary>
+		public string InventoryReferenceId { get; set; }
+		
+		/// <summary>
+		/// Indicates the item type of the listing referenced by inventoryReferenceId, and can be either INVENTORY_ITEM or INVENTORY_ITEM_GROUP. You must always pair an inventory_reference_id with and inventory_reference_type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string InventoryReferenceType { get; set; }
 	}
 	
 	/// <summary>
@@ -255,6 +363,38 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// This type defines the fields returned when you create an ad by inventory reference ID.
+	/// </summary>
+	public class CreateAdsByInventoryReferenceResponse
+	{
+		
+		/// <summary>
+		/// A list of ad IDs (based on their inventory reference IDs) and the URIs that point to them.
+		/// </summary>
+		public AdReference[] Ads { get; set; }
+		
+		/// <summary>
+		/// An array of errors or warnings associated with the create-ads request.
+		/// </summary>
+		public Error[] Errors { get; set; }
+		
+		/// <summary>
+		/// The seller's inventory reference ID that's associated with the ad.
+		/// </summary>
+		public string InventoryReferenceId { get; set; }
+		
+		/// <summary>
+		/// Indicates the item type of the listing referenced by inventoryReferenceId, and can be either INVENTORY_ITEM or INVENTORY_ITEM_GROUP. You must always pair an inventory_reference_id with and inventory_reference_type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string InventoryReferenceType { get; set; }
+		
+		/// <summary>
+		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successful created.
+		/// </summary>
+		public System.Nullable<System.Int32> StatusCode { get; set; }
+	}
+	
+	/// <summary>
 	/// This type defines the fields that the call uses to remove ads in bulk.
 	/// </summary>
 	public class BulkDeleteAdRequest
@@ -264,6 +404,18 @@ namespace MyNS
 		/// An array of the listing IDs that identify the ads to remove. Note: This request accepts both listing IDs, as generated by the Inventory API, and an item IDs, as used in the eBay Traditional API set (e.g., the Trading and Finding APIs).
 		/// </summary>
 		public DeleteAdRequest[] Requests { get; set; }
+	}
+	
+	/// <summary>
+	/// This type defines the fields used in a delete-ad request.
+	/// </summary>
+	public class DeleteAdRequest
+	{
+		
+		/// <summary>
+		/// A unique eBay-assigned ID for a listing that is generated when the listing is created. Note: This request accepts both listing IDs, as generated by the Inventory API, and an item IDs, as used in the eBay Traditional API set (e.g., the Trading and Finding APIs).
+		/// </summary>
+		public string ListingId { get; set; }
 	}
 	
 	/// <summary>
@@ -279,6 +431,33 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// This type defines the fields returned in a delete-ad response.
+	/// </summary>
+	public class DeleteAdResponse
+	{
+		
+		/// <summary>
+		/// The ID of the ad that was deleted.
+		/// </summary>
+		public string AdId { get; set; }
+		
+		/// <summary>
+		/// An array of the errors or warnings associated with the request.
+		/// </summary>
+		public Error[] Errors { get; set; }
+		
+		/// <summary>
+		/// A unique eBay-assigned ID for a listing that is generated when the listing is created. Note: This field accepts both listing IDs, as generated by the Inventory API, and an item IDs, as used in the eBay Traditional API set (e.g., the Trading and Finding APIs).
+		/// </summary>
+		public string ListingId { get; set; }
+		
+		/// <summary>
+		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ad was successfully deleted.
+		/// </summary>
+		public System.Nullable<System.Int32> StatusCode { get; set; }
+	}
+	
+	/// <summary>
 	/// This type defines the request fields that bulkDeleteAdsByInventoryReference uses to delete ads in bulk.
 	/// </summary>
 	public class BulkDeleteAdsByInventoryReferenceRequest
@@ -291,6 +470,23 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// This type defines the fields needed to delete an ad by its inventory reference ID. You must always supply both inventory_reference_id and inventory_reference_type.
+	/// </summary>
+	public class DeleteAdsByInventoryReferenceRequest
+	{
+		
+		/// <summary>
+		/// The seller's inventory reference ID for an ad to be deleted. An inventory reference ID can be either a seller-defined SKU value or an inventoryItemGroupKey. An inventoryItemGroupKey is a value used by the Inventory API to indicate a listing that's the parent of a inventory item group (a multi-variation listing, such as a listing for shirt that's available in multiple sizes and colors). You must always specify both an inventory_reference_id and an inventory_reference_type.
+		/// </summary>
+		public string InventoryReferenceId { get; set; }
+		
+		/// <summary>
+		/// Indicates the item type of the listing referenced by inventoryReferenceId, and can be either INVENTORY_ITEM or INVENTORY_ITEM_GROUP. You must always pair an inventory_reference_id with and inventory_reference_type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string InventoryReferenceType { get; set; }
+	}
+	
+	/// <summary>
 	/// This type defines a container that lists the ads that bulkDeleteAdsByInventoryReference deleted.
 	/// </summary>
 	public class BulkDeleteAdsByInventoryReferenceResponse
@@ -300,6 +496,38 @@ namespace MyNS
 		/// An array of the ads that were deleted by the bulkDeleteAdsByInventoryReference request, including information associated with each individual delete request.
 		/// </summary>
 		public DeleteAdsByInventoryReferenceResponse[] Responses { get; set; }
+	}
+	
+	/// <summary>
+	/// This type defines the fields returned by request to delete a set of ads by inventory reference ID.
+	/// </summary>
+	public class DeleteAdsByInventoryReferenceResponse
+	{
+		
+		/// <summary>
+		/// The list of ad IDs that were removed from the campaign.
+		/// </summary>
+		public string[] AdIds { get; set; }
+		
+		/// <summary>
+		/// The container for the errors associated with the request.
+		/// </summary>
+		public Error[] Errors { get; set; }
+		
+		/// <summary>
+		/// The seller's inventory reference ID for a listing that's associated with the ad. An inventory reference ID can be either a seller-defined SKU value or an inventoryItemGroupKey. An inventoryItemGroupKey is a value used by the Inventory API to indicate a listing that's the parent of a inventory item group (a multi-variation listing, such as a listing for shirt that's available in multiple sizes and colors). You must always specify both an inventory_reference_id and an inventory_reference_type.
+		/// </summary>
+		public string InventoryReferenceId { get; set; }
+		
+		/// <summary>
+		/// Indicates the item type of the listing referenced by inventoryReferenceId, and can be either INVENTORY_ITEM or INVENTORY_ITEM_GROUP. You must always pair an inventory_reference_id with and inventory_reference_type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string InventoryReferenceType { get; set; }
+		
+		/// <summary>
+		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successfully deleted.
+		/// </summary>
+		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
 	/// <summary>
@@ -369,6 +597,60 @@ namespace MyNS
 		/// Set of rules that selects the listings to include in the campaign. The following rules apply to the selection rules: Each set of selection rules are ORed with each other. Individual rules within a selection rule set are ANDed with each other. If a rule has a list of values (such a list of category IDs), the item need match only one of the values of the rule in order to be included in the campaign. Note: If an item matches multiple sets of rules or multiple rules within a selection rule set, the item is considered only once.Maximum number of rules: 10
 		/// </summary>
 		public SelectionRule[] SelectionRules { get; set; }
+	}
+	
+	/// <summary>
+	/// This type specifies the selection rules used to create a campaign.
+	/// </summary>
+	public class SelectionRule
+	{
+		
+		/// <summary>
+		/// A list of the brands of the items to be included in the campaign.
+		/// </summary>
+		public string[] Brands { get; set; }
+		
+		/// <summary>
+		/// A list of category IDs associated with the listings to be included in the campaign. All the seller's items listed in the specified categories are included in the campaign, up to a maximum of 25,000 items. The IDs can be either a list of eBay category IDs (from the site where the item is hosted), or a list of category IDs defined and used by the seller's store. eBay Marketplace category IDs To get a list of marketplace category IDs, do one of the following: Get a list of category IDs for a marketplace by adding /sch/allcategories/all-categories to the marketplace URL when browsing the site. For example: http://www.ebay.com.au/sch/allcategories/all-categories Navigate to the desired category on the host site and copy the category ID from the URL. These options are also available for the US marketplace: See Category Changes for the latest list of category IDs. Retrieve a list of category IDs using the Taxonomy API. Seller store category IDs Because store category IDs are uniquely defined and maintained by each seller, this service cannot provide a list of a seller's IDs. However, sellers can retrieve their store category IDs as follows: Go to Seller Hub &gt; Marketing. Click Manage store categories. A list of your store categories displays. Click the All categories link displayed at the bottom of the list. A complete list of your store categories and their associated store category IDs displays.
+		/// </summary>
+		public string[] CategoryIds { get; set; }
+		
+		/// <summary>
+		/// Indicates the source of the category ID; eBay or seller's store. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/CategoryScopeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string CategoryScope { get; set; }
+		
+		/// <summary>
+		/// The ID of the listing's condition. Valid values: 1000 = New 2000 = Manufacturer refurbished 2500 = Seller refurbished 3000 = Used/Like new/Pre owned
+		/// </summary>
+		public string[] ListingConditionIds { get; set; }
+		
+		/// <summary>
+		/// This type defines a monetary value as represented by a currency. The currency is normally set to the currency used on the associated eBay marketplace.
+		/// </summary>
+		public Amount MaxPrice { get; set; }
+		
+		/// <summary>
+		/// This type defines a monetary value as represented by a currency. The currency is normally set to the currency used on the associated eBay marketplace.
+		/// </summary>
+		public Amount MinPrice { get; set; }
+	}
+	
+	/// <summary>
+	/// This type defines how the Promoted Listing fee is calculated when fundingModel is set to COST_PER_SALE.
+	/// </summary>
+	public class FundingStrategy
+	{
+		
+		/// <summary>
+		/// The user-defined bid percentage (also known as the ad rate) sets the level that eBay increases the visibility in search results for the associated listing. The higher the bidPercentage value, the more eBay promotes the listing. The value specified here is also used to calculate the Promoted Listings fee. This percentage value is multiplied by the final sales price to determine the fee. The Promoted Listings fee is determined at the time the transaction completes and the seller is assessed the fee only when an item sells through a Promoted Listings ad campaign. bidPercentage is a single precision value that is guided by the following rules: These values are valid: &nbsp;&nbsp;&nbsp;1, &nbsp;&nbsp;&nbsp;1.0, &nbsp;&nbsp;&nbsp;4.1, &nbsp;&nbsp;&nbsp;5.0, &nbsp;&nbsp;&nbsp;5.5, ... These values are not valid: &nbsp;&nbsp;&nbsp;0.01, &nbsp;&nbsp;&nbsp;10.75, &nbsp;&nbsp;&nbsp;99.99, &nbsp;&nbsp;&nbsp;and so on. If a bid percentage is not provided for an ad, eBay uses the default bid percentage of the associated campaign.Minimum value: 1.0 Maximum value: 100.0
+		/// </summary>
+		public string BidPercentage { get; set; }
+		
+		/// <summary>
+		/// Indicates the model that eBay uses to calculate the Promoted Listings fee. Currently, only COST_PER_SALE is supported. Default: COST_PER_SALE For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/FundingModelEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string FundingModel { get; set; }
 	}
 	
 	/// <summary>
@@ -450,77 +732,6 @@ namespace MyNS
 		/// The date and time the cloned campaign starts, in UTC format (yyyy-MM-ddThh:mm:ssZ). For display purposes, convert this time into the local time of the seller. On the date specified, the service derives the keywords for each listing in the campaign, creates an ad for each listing, and associates each new ad with the campaign. The campaign starts after this process is completed. The amount of time it takes the service to start the campaign depends on the number of listings in the campaign. Call getCampaign to check the status of the campaign.
 		/// </summary>
 		public string StartDate { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines the fields for the create ad request.
-	/// </summary>
-	public class CreateAdRequest
-	{
-		
-		/// <summary>
-		/// The user-defined bid percentage (also known as the ad rate) sets the level that eBay increases the visibility in search results for the associated listing. The higher the bidPercentage value, the more eBay promotes the listing. The value specified here is also used to calculate the Promoted Listings fee. This percentage value is multiplied by the final sales price to determine the fee. The Promoted Listings fee is determined at the time the transaction completes and the seller is assessed the fee only when an item sells through a Promoted Listings ad campaign. bidPercentage is a single precision value that is guided by the following rules: These values are valid: &nbsp;&nbsp;&nbsp;1, &nbsp;&nbsp;&nbsp;1.0, &nbsp;&nbsp;&nbsp;4.1, &nbsp;&nbsp;&nbsp;5.0, &nbsp;&nbsp;&nbsp;5.5, ... These values are not valid: &nbsp;&nbsp;&nbsp;0.01, &nbsp;&nbsp;&nbsp;10.75, &nbsp;&nbsp;&nbsp;99.99, &nbsp;&nbsp;&nbsp;and so on. If a bid percentage is not provided for an ad, eBay uses the default bid percentage of the associated campaign.Minimum value: 1.0 Maximum value: 100.0
-		/// </summary>
-		public string BidPercentage { get; set; }
-		
-		/// <summary>
-		/// A unique eBay-assigned ID for a listing that is generated when the listing is created. Note: This field accepts both listing IDs, as generated by the Inventory API, and an item IDs, as used in the eBay Traditional API set (e.g., the Trading and Finding APIs).
-		/// </summary>
-		public string ListingId { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines the fields needed to create ads by inventory reference ID request.
-	/// </summary>
-	public class CreateAdsByInventoryReferenceRequest
-	{
-		
-		/// <summary>
-		/// The user-defined bid percentage (also known as the ad rate) sets the level that eBay increases the visibility in search results for the associated listing. The higher the bidPercentage value, the more eBay promotes the listing. The value specified here is also used to calculate the Promoted Listings fee. This percentage value is multiplied by the final sales price to determine the fee. The Promoted Listings fee is determined at the time the transaction completes and the seller is assessed the fee only when an item sells through a Promoted Listings ad campaign. bidPercentage is a single precision value that is guided by the following rules: These values are valid: &nbsp;&nbsp;&nbsp;1, &nbsp;&nbsp;&nbsp;1.0, &nbsp;&nbsp;&nbsp;4.1, &nbsp;&nbsp;&nbsp;5.0, &nbsp;&nbsp;&nbsp;5.5, ... These values are not valid: &nbsp;&nbsp;&nbsp;0.01, &nbsp;&nbsp;&nbsp;10.75, &nbsp;&nbsp;&nbsp;99.99, &nbsp;&nbsp;&nbsp;and so on. If a bid percentage is not provided for an ad, eBay uses the default bid percentage of the associated campaign.Minimum value: 1.0 Maximum value: 100.0
-		/// </summary>
-		public string BidPercentage { get; set; }
-		
-		/// <summary>
-		/// The seller's inventory reference ID for a listing. An inventory reference ID can be either a seller-defined SKU value or an inventoryItemGroupKey. An inventoryItemGroupKey is a value used by the Inventory API to indicate a listing that's the parent of a inventory item group (a multi-variation listing, such as a listing for shirt that's available in multiple sizes and colors). You must always specify both an inventory_reference_id and an inventory_reference_type.
-		/// </summary>
-		public string InventoryReferenceId { get; set; }
-		
-		/// <summary>
-		/// Indicates the item type of the listing referenced by inventoryReferenceId, and can be either INVENTORY_ITEM or INVENTORY_ITEM_GROUP. You must always pair an inventory_reference_id with and inventory_reference_type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string InventoryReferenceType { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines the fields returned when you create an ad by inventory reference ID.
-	/// </summary>
-	public class CreateAdsByInventoryReferenceResponse
-	{
-		
-		/// <summary>
-		/// A list of ad IDs (based on their inventory reference IDs) and the URIs that point to them.
-		/// </summary>
-		public AdReference[] Ads { get; set; }
-		
-		/// <summary>
-		/// An array of errors or warnings associated with the create-ads request.
-		/// </summary>
-		public Error[] Errors { get; set; }
-		
-		/// <summary>
-		/// The seller's inventory reference ID that's associated with the ad.
-		/// </summary>
-		public string InventoryReferenceId { get; set; }
-		
-		/// <summary>
-		/// Indicates the item type of the listing referenced by inventoryReferenceId, and can be either INVENTORY_ITEM or INVENTORY_ITEM_GROUP. You must always pair an inventory_reference_id with and inventory_reference_type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string InventoryReferenceType { get; set; }
-		
-		/// <summary>
-		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successful created.
-		/// </summary>
-		public System.Nullable<System.Int32> StatusCode { get; set; }
 	}
 	
 	/// <summary>
@@ -618,94 +829,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// This type defines the fields used in a delete-ad request.
-	/// </summary>
-	public class DeleteAdRequest
-	{
-		
-		/// <summary>
-		/// A unique eBay-assigned ID for a listing that is generated when the listing is created. Note: This request accepts both listing IDs, as generated by the Inventory API, and an item IDs, as used in the eBay Traditional API set (e.g., the Trading and Finding APIs).
-		/// </summary>
-		public string ListingId { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines the fields returned in a delete-ad response.
-	/// </summary>
-	public class DeleteAdResponse
-	{
-		
-		/// <summary>
-		/// The ID of the ad that was deleted.
-		/// </summary>
-		public string AdId { get; set; }
-		
-		/// <summary>
-		/// An array of the errors or warnings associated with the request.
-		/// </summary>
-		public Error[] Errors { get; set; }
-		
-		/// <summary>
-		/// A unique eBay-assigned ID for a listing that is generated when the listing is created. Note: This field accepts both listing IDs, as generated by the Inventory API, and an item IDs, as used in the eBay Traditional API set (e.g., the Trading and Finding APIs).
-		/// </summary>
-		public string ListingId { get; set; }
-		
-		/// <summary>
-		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ad was successfully deleted.
-		/// </summary>
-		public System.Nullable<System.Int32> StatusCode { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines the fields needed to delete an ad by its inventory reference ID. You must always supply both inventory_reference_id and inventory_reference_type.
-	/// </summary>
-	public class DeleteAdsByInventoryReferenceRequest
-	{
-		
-		/// <summary>
-		/// The seller's inventory reference ID for an ad to be deleted. An inventory reference ID can be either a seller-defined SKU value or an inventoryItemGroupKey. An inventoryItemGroupKey is a value used by the Inventory API to indicate a listing that's the parent of a inventory item group (a multi-variation listing, such as a listing for shirt that's available in multiple sizes and colors). You must always specify both an inventory_reference_id and an inventory_reference_type.
-		/// </summary>
-		public string InventoryReferenceId { get; set; }
-		
-		/// <summary>
-		/// Indicates the item type of the listing referenced by inventoryReferenceId, and can be either INVENTORY_ITEM or INVENTORY_ITEM_GROUP. You must always pair an inventory_reference_id with and inventory_reference_type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string InventoryReferenceType { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines the fields returned by request to delete a set of ads by inventory reference ID.
-	/// </summary>
-	public class DeleteAdsByInventoryReferenceResponse
-	{
-		
-		/// <summary>
-		/// The list of ad IDs that were removed from the campaign.
-		/// </summary>
-		public string[] AdIds { get; set; }
-		
-		/// <summary>
-		/// The container for the errors associated with the request.
-		/// </summary>
-		public Error[] Errors { get; set; }
-		
-		/// <summary>
-		/// The seller's inventory reference ID for a listing that's associated with the ad. An inventory reference ID can be either a seller-defined SKU value or an inventoryItemGroupKey. An inventoryItemGroupKey is a value used by the Inventory API to indicate a listing that's the parent of a inventory item group (a multi-variation listing, such as a listing for shirt that's available in multiple sizes and colors). You must always specify both an inventory_reference_id and an inventory_reference_type.
-		/// </summary>
-		public string InventoryReferenceId { get; set; }
-		
-		/// <summary>
-		/// Indicates the item type of the listing referenced by inventoryReferenceId, and can be either INVENTORY_ITEM or INVENTORY_ITEM_GROUP. You must always pair an inventory_reference_id with and inventory_reference_type. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string InventoryReferenceType { get; set; }
-		
-		/// <summary>
-		/// An HTTP status code that indicates the response-status of the request. Check this code to see if the ads were successfully deleted.
-		/// </summary>
-		public System.Nullable<System.Int32> StatusCode { get; set; }
-	}
-	
-	/// <summary>
 	/// This type defines the annotation and dimension key used by the report. For information on how to set these values, see Reading Promoted Listings reports.
 	/// </summary>
 	public class Dimension
@@ -720,6 +843,23 @@ namespace MyNS
 		/// The name of the dimension on which the report is based. A dimension is an attribute to which the report data applies.
 		/// </summary>
 		public string DimensionKey { get; set; }
+	}
+	
+	/// <summary>
+	/// This type defines the fields contained in an inventory reference ID.
+	/// </summary>
+	public class InventoryReference
+	{
+		
+		/// <summary>
+		/// Required if if you supply an inventoryReferenceType The seller's inventory reference ID for a listing. An inventory reference is either the ID of a single listing or the ID of the parent of an item group listing (a multi-variation listing, such as a shirt that is available in multiple sizes and colors).
+		/// </summary>
+		public string InventoryReferenceId { get; set; }
+		
+		/// <summary>
+		/// Required if if you supply an inventoryReferenceId Indicates the type of the inventoryReferenceId. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
+		/// </summary>
+		public string InventoryReferenceType { get; set; }
 	}
 	
 	/// <summary>
@@ -843,92 +983,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// This type defines the fields returned in an error condition.
-	/// </summary>
-	public class Error
-	{
-		
-		/// <summary>
-		/// The category type for this error or warning. This field can have one of three values: Application: Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency. Business: Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as &quot;Seller does not ship items to Antarctica&quot; or &quot;Buyer ineligible to purchase an alcoholic item&quot;. Business errors are not syntactical input errors. Request: Used when there is anything wrong with the request, such as authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on.
-		/// </summary>
-		public string Category { get; set; }
-		
-		/// <summary>
-		/// The name of the primary system where the error occurred. This is relevant for application errors.
-		/// </summary>
-		public string Domain { get; set; }
-		
-		/// <summary>
-		/// A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
-		/// </summary>
-		public System.Nullable<System.Int32> ErrorId { get; set; }
-		
-		/// <summary>
-		/// An array of reference IDs that identify the specific request elements most closely associated to the error or warning, if any. For JSON, use JSONPath notation.
-		/// </summary>
-		public string[] InputRefIds { get; set; }
-		
-		/// <summary>
-		/// A detailed description of the condition that caused the error or warning and information on what to do to correct the problem. The string is normally 100-200 characters in length, but is not required to be such.
-		/// </summary>
-		public string LongMessage { get; set; }
-		
-		/// <summary>
-		/// A short description of the condition that caused the error or warning. This value is at most 50 characters long and, if applicable, is localized in the end user's requested locale.
-		/// </summary>
-		public string Message { get; set; }
-		
-		/// <summary>
-		/// An array of reference IDs that identify the specific response elements most closely associated to the error or warning, if any. The path format is the same as inputRefId.
-		/// </summary>
-		public string[] OutputRefIds { get; set; }
-		
-		/// <summary>
-		/// An array that contains contextual information about the error or warning. The list often includes the parameter or input fields that triggered the warning or error condition.
-		/// </summary>
-		public ErrorParameter[] Parameters { get; set; }
-		
-		/// <summary>
-		/// The name of the subdomain in which the error or warning occurred. For example, checkout is a subdomain in the buying domain.
-		/// </summary>
-		public string Subdomain { get; set; }
-	}
-	
-	/// <summary>
-	/// A name/value pair that provides parameter details regarding a warning or error condition.
-	/// </summary>
-	public class ErrorParameter
-	{
-		
-		/// <summary>
-		/// Name of the entity that threw the error.
-		/// </summary>
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// The value that was set for the element specified in the name field.
-		/// </summary>
-		public string Value { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines how the Promoted Listing fee is calculated when fundingModel is set to COST_PER_SALE.
-	/// </summary>
-	public class FundingStrategy
-	{
-		
-		/// <summary>
-		/// The user-defined bid percentage (also known as the ad rate) sets the level that eBay increases the visibility in search results for the associated listing. The higher the bidPercentage value, the more eBay promotes the listing. The value specified here is also used to calculate the Promoted Listings fee. This percentage value is multiplied by the final sales price to determine the fee. The Promoted Listings fee is determined at the time the transaction completes and the seller is assessed the fee only when an item sells through a Promoted Listings ad campaign. bidPercentage is a single precision value that is guided by the following rules: These values are valid: &nbsp;&nbsp;&nbsp;1, &nbsp;&nbsp;&nbsp;1.0, &nbsp;&nbsp;&nbsp;4.1, &nbsp;&nbsp;&nbsp;5.0, &nbsp;&nbsp;&nbsp;5.5, ... These values are not valid: &nbsp;&nbsp;&nbsp;0.01, &nbsp;&nbsp;&nbsp;10.75, &nbsp;&nbsp;&nbsp;99.99, &nbsp;&nbsp;&nbsp;and so on. If a bid percentage is not provided for an ad, eBay uses the default bid percentage of the associated campaign.Minimum value: 1.0 Maximum value: 100.0
-		/// </summary>
-		public string BidPercentage { get; set; }
-		
-		/// <summary>
-		/// Indicates the model that eBay uses to calculate the Promoted Listings fee. Currently, only COST_PER_SALE is supported. Default: COST_PER_SALE For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/FundingModelEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string FundingModel { get; set; }
-	}
-	
-	/// <summary>
 	/// This type defines either the selections rules or the list of listing IDs for the promotion. The &quot;listing IDs&quot; are are either the seller's item IDs or the eBay listing IDs.
 	/// </summary>
 	public class InventoryCriterion
@@ -968,20 +1022,35 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// This type defines the fields contained in an inventory reference ID.
+	/// This type defines the fields for a set of inventory selection rules. Required: When inventoryCriterionType is set to INVENTORY_BY_RULE.
 	/// </summary>
-	public class InventoryReference
+	public class RuleCriteria
 	{
 		
 		/// <summary>
-		/// Required if if you supply an inventoryReferenceType The seller's inventory reference ID for a listing. An inventory reference is either the ID of a single listing or the ID of the parent of an item group listing (a multi-variation listing, such as a shirt that is available in multiple sizes and colors).
+		/// A list of seller inventory reference IDs to exclude from the promotion. Note: The request can have either excludeInventoryItems or excludeListingIds but not both. Maximum: 100 parent items Maximum SKU or custom label length: 50 characters
 		/// </summary>
-		public string InventoryReferenceId { get; set; }
+		public InventoryItem[] ExcludeInventoryItems { get; set; }
 		
 		/// <summary>
-		/// Required if if you supply an inventoryReferenceId Indicates the type of the inventoryReferenceId. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/InventoryReferenceTypeEnum.html'>eBay API documentation</a>
+		/// A list of eBay listing IDs to exclude from the promotion. Note: The request can have either excludeInventoryItems or excludeListingIds but not both. Maximum: 100 parent items Maximum SKU or custom label length: 50 characters
 		/// </summary>
-		public string InventoryReferenceType { get; set; }
+		public string[] ExcludeListingIds { get; set; }
+		
+		/// <summary>
+		/// A list of SKUs to remove from a markdown promotion. The listed SKUs are 'marked up' to their standard price after being part of the markdown promotion.
+		/// </summary>
+		public InventoryItem[] MarkupInventoryItems { get; set; }
+		
+		/// <summary>
+		/// A list of listing IDs to remove from a markdown promotion. The listed items are 'marked up' to their standard price after being part of the markdown promotion.
+		/// </summary>
+		public string[] MarkupListingIds { get; set; }
+		
+		/// <summary>
+		/// Required if: inventoryCriterionType is set to INVENTORY_BY_RULE. The container for the rules that select the items to include in a promotion.
+		/// </summary>
+		public SelectionRule[] SelectionRules { get; set; }
 	}
 	
 	/// <summary>
@@ -1049,6 +1118,33 @@ namespace MyNS
 		/// The date and time the promotion starts in UTC format (yyyy-MM-ddThh:mm:ssZ). For display purposes, convert this time into the local time of the seller.
 		/// </summary>
 		public string StartDate { get; set; }
+	}
+	
+	/// <summary>
+	/// This type defines the fields that describe the discounts applied to a set of inventory items and the order in which the selection rules are applied.
+	/// </summary>
+	public class SelectedInventoryDiscount
+	{
+		
+		/// <summary>
+		/// This container defines the promotional discount as either a monetary amount or a percentage of the sales price. Important!: You must populate one and only one of the fields in this container: amountOffItem amountOffOrder percentageOffItem percentageOffOrder Tip: Refer to Configuring discounts for threshold promotions for information and examples on how to combine discountBenefit and discountSpecification values to create different types of promotions.
+		/// </summary>
+		public DiscountBenefit DiscountBenefit { get; set; }
+		
+		/// <summary>
+		/// A unique, eBay-generated ID that you can use to identify the discount. This field is ignored in POST and PUT operations.
+		/// </summary>
+		public string DiscountId { get; set; }
+		
+		/// <summary>
+		/// This type defines either the selections rules or the list of listing IDs for the promotion. The &quot;listing IDs&quot; are are either the seller's item IDs or the eBay listing IDs.
+		/// </summary>
+		public InventoryCriterion InventoryCriterion { get; set; }
+		
+		/// <summary>
+		/// For markdown promotions, this field is reserved for future use.
+		/// </summary>
+		public System.Nullable<System.Int32> RuleOrder { get; set; }
 	}
 	
 	/// <summary>
@@ -1631,102 +1727,6 @@ namespace MyNS
 		/// A list of report tasks contained on this page from the paginated response.
 		/// </summary>
 		public ReportTask[] ReportTasks { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines the fields for a set of inventory selection rules. Required: When inventoryCriterionType is set to INVENTORY_BY_RULE.
-	/// </summary>
-	public class RuleCriteria
-	{
-		
-		/// <summary>
-		/// A list of seller inventory reference IDs to exclude from the promotion. Note: The request can have either excludeInventoryItems or excludeListingIds but not both. Maximum: 100 parent items Maximum SKU or custom label length: 50 characters
-		/// </summary>
-		public InventoryItem[] ExcludeInventoryItems { get; set; }
-		
-		/// <summary>
-		/// A list of eBay listing IDs to exclude from the promotion. Note: The request can have either excludeInventoryItems or excludeListingIds but not both. Maximum: 100 parent items Maximum SKU or custom label length: 50 characters
-		/// </summary>
-		public string[] ExcludeListingIds { get; set; }
-		
-		/// <summary>
-		/// A list of SKUs to remove from a markdown promotion. The listed SKUs are 'marked up' to their standard price after being part of the markdown promotion.
-		/// </summary>
-		public InventoryItem[] MarkupInventoryItems { get; set; }
-		
-		/// <summary>
-		/// A list of listing IDs to remove from a markdown promotion. The listed items are 'marked up' to their standard price after being part of the markdown promotion.
-		/// </summary>
-		public string[] MarkupListingIds { get; set; }
-		
-		/// <summary>
-		/// Required if: inventoryCriterionType is set to INVENTORY_BY_RULE. The container for the rules that select the items to include in a promotion.
-		/// </summary>
-		public SelectionRule[] SelectionRules { get; set; }
-	}
-	
-	/// <summary>
-	/// This type defines the fields that describe the discounts applied to a set of inventory items and the order in which the selection rules are applied.
-	/// </summary>
-	public class SelectedInventoryDiscount
-	{
-		
-		/// <summary>
-		/// This container defines the promotional discount as either a monetary amount or a percentage of the sales price. Important!: You must populate one and only one of the fields in this container: amountOffItem amountOffOrder percentageOffItem percentageOffOrder Tip: Refer to Configuring discounts for threshold promotions for information and examples on how to combine discountBenefit and discountSpecification values to create different types of promotions.
-		/// </summary>
-		public DiscountBenefit DiscountBenefit { get; set; }
-		
-		/// <summary>
-		/// A unique, eBay-generated ID that you can use to identify the discount. This field is ignored in POST and PUT operations.
-		/// </summary>
-		public string DiscountId { get; set; }
-		
-		/// <summary>
-		/// This type defines either the selections rules or the list of listing IDs for the promotion. The &quot;listing IDs&quot; are are either the seller's item IDs or the eBay listing IDs.
-		/// </summary>
-		public InventoryCriterion InventoryCriterion { get; set; }
-		
-		/// <summary>
-		/// For markdown promotions, this field is reserved for future use.
-		/// </summary>
-		public System.Nullable<System.Int32> RuleOrder { get; set; }
-	}
-	
-	/// <summary>
-	/// This type specifies the selection rules used to create a campaign.
-	/// </summary>
-	public class SelectionRule
-	{
-		
-		/// <summary>
-		/// A list of the brands of the items to be included in the campaign.
-		/// </summary>
-		public string[] Brands { get; set; }
-		
-		/// <summary>
-		/// A list of category IDs associated with the listings to be included in the campaign. All the seller's items listed in the specified categories are included in the campaign, up to a maximum of 25,000 items. The IDs can be either a list of eBay category IDs (from the site where the item is hosted), or a list of category IDs defined and used by the seller's store. eBay Marketplace category IDs To get a list of marketplace category IDs, do one of the following: Get a list of category IDs for a marketplace by adding /sch/allcategories/all-categories to the marketplace URL when browsing the site. For example: http://www.ebay.com.au/sch/allcategories/all-categories Navigate to the desired category on the host site and copy the category ID from the URL. These options are also available for the US marketplace: See Category Changes for the latest list of category IDs. Retrieve a list of category IDs using the Taxonomy API. Seller store category IDs Because store category IDs are uniquely defined and maintained by each seller, this service cannot provide a list of a seller's IDs. However, sellers can retrieve their store category IDs as follows: Go to Seller Hub &gt; Marketing. Click Manage store categories. A list of your store categories displays. Click the All categories link displayed at the bottom of the list. A complete list of your store categories and their associated store category IDs displays.
-		/// </summary>
-		public string[] CategoryIds { get; set; }
-		
-		/// <summary>
-		/// Indicates the source of the category ID; eBay or seller's store. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/marketing/types/CategoryScopeEnum.html'>eBay API documentation</a>
-		/// </summary>
-		public string CategoryScope { get; set; }
-		
-		/// <summary>
-		/// The ID of the listing's condition. Valid values: 1000 = New 2000 = Manufacturer refurbished 2500 = Seller refurbished 3000 = Used/Like new/Pre owned
-		/// </summary>
-		public string[] ListingConditionIds { get; set; }
-		
-		/// <summary>
-		/// This type defines a monetary value as represented by a currency. The currency is normally set to the currency used on the associated eBay marketplace.
-		/// </summary>
-		public Amount MaxPrice { get; set; }
-		
-		/// <summary>
-		/// This type defines a monetary value as represented by a currency. The currency is normally set to the currency used on the associated eBay marketplace.
-		/// </summary>
-		public Amount MinPrice { get; set; }
 	}
 	
 	/// <summary>

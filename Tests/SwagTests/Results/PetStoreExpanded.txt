@@ -17,6 +17,13 @@ namespace MyNS
 	using Newtonsoft.Json;
 	
 	
+	public class Pet : NewPet
+	{
+		
+		[System.ComponentModel.DataAnnotations.Required()]
+		public long Id { get; set; }
+	}
+	
 	public class NewPet
 	{
 		
@@ -34,13 +41,6 @@ namespace MyNS
 		
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Message { get; set; }
-	}
-	
-	public class Pet : NewPet
-	{
-		
-		[System.ComponentModel.DataAnnotations.Required()]
-		public long Id { get; set; }
 	}
 	
 	public partial class Misc
@@ -73,7 +73,7 @@ namespace MyNS
 		/// <param name="tags">tags to filter by</param>
 		/// <param name="limit">maximum number of results to return</param>
 		/// <returns>pet response</returns>
-		public async Task<Pet[]> FindPetsAsync(string[] tags, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet[]> FindPetsAsync(string tags, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit;
 			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))

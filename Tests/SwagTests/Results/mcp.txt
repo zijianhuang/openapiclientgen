@@ -763,59 +763,6 @@ namespace MyNS
 		public string Ind { get; set; }
 	}
 	
-	public class PatientType
-	{
-		
-		[System.ComponentModel.DataAnnotations.Required()]
-		public IdentityType Identity { get; set; }
-		
-		public AddressType ResidentialAddress { get; set; }
-	}
-	
-	public class AddressType
-	{
-		
-		/// <summary>
-		/// Max length: 40
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
-		public string AddressLineOne { get; set; }
-		
-		/// <summary>
-		/// Max length: 40
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
-		public string AddressLineTwo { get; set; }
-		
-		/// <summary>
-		/// Max length: 40
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
-		public string Locality { get; set; }
-		
-		/// <summary>
-		/// Max length: 4
-		/// Min length: 4
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(4, MinimumLength=4)]
-		public string Postcode { get; set; }
-	}
-	
-	public class VeteranMembershipType
-	{
-		
-		/// <summary>
-		/// Max length: 9
-		/// Min length: 3
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=3)]
-		public string VeteranNumber { get; set; }
-	}
-	
 	public class VAAServiceType
 	{
 		
@@ -935,6 +882,65 @@ namespace MyNS
 		public string UpperLowerJawCode { get; set; }
 	}
 	
+	public class VeteranPatientType : PatientType
+	{
+		
+		public VeteranMembershipType VeteranMembership { get; set; }
+	}
+	
+	public class VeteranMembershipType
+	{
+		
+		/// <summary>
+		/// Max length: 9
+		/// Min length: 3
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.ComponentModel.DataAnnotations.StringLength(9, MinimumLength=3)]
+		public string VeteranNumber { get; set; }
+	}
+	
+	public class PatientType
+	{
+		
+		[System.ComponentModel.DataAnnotations.Required()]
+		public IdentityType Identity { get; set; }
+		
+		public AddressType ResidentialAddress { get; set; }
+	}
+	
+	public class AddressType
+	{
+		
+		/// <summary>
+		/// Max length: 40
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
+		public string AddressLineOne { get; set; }
+		
+		/// <summary>
+		/// Max length: 40
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
+		public string AddressLineTwo { get; set; }
+		
+		/// <summary>
+		/// Max length: 40
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(40, MinimumLength=1)]
+		public string Locality { get; set; }
+		
+		/// <summary>
+		/// Max length: 4
+		/// Min length: 4
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(4, MinimumLength=4)]
+		public string Postcode { get; set; }
+	}
+	
 	public class AlliedHealthClaimResponseType
 	{
 		
@@ -1050,6 +1056,19 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public DVAServiceType[] Service { get; set; }
+	}
+	
+	public class DVAServiceType : ServiceType
+	{
+		
+		/// <summary>
+		/// Max length: 8
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=1)]
+		public string AccountReferenceNumber { get; set; }
+		
+		public System.Nullable<System.Int32> DistanceKilometres { get; set; }
 	}
 	
 	public class DVAClaimResponseType
@@ -1180,6 +1199,12 @@ namespace MyNS
 		public string NumberOfPatientsSeen { get; set; }
 	}
 	
+	public class VeteranMembershipResponseType : VeteranMembershipType
+	{
+		
+		public string EntitlementCode { get; set; }
+	}
+	
 	public class EnterpriseConcessionVerificationRequestType
 	{
 		
@@ -1191,6 +1216,13 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferenceConcessionVerificationRequestType[] ConcessionVerificationRequest { get; set; }
+	}
+	
+	public class ReferenceConcessionVerificationRequestType : ConcessionVerificationRequestType
+	{
+		
+		[System.ComponentModel.DataAnnotations.Required()]
+		public string Id { get; set; }
 	}
 	
 	public class ConcessionVerificationRequestType
@@ -1213,6 +1245,13 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferenceConcessionVerificationResponseType[] ConcessionVerificationResponse { get; set; }
+	}
+	
+	public class ReferenceConcessionVerificationResponseType : ConcessionVerificationResponseType
+	{
+		
+		[System.ComponentModel.DataAnnotations.Required()]
+		public string Id { get; set; }
 	}
 	
 	public class ConcessionVerificationResponseType
@@ -1246,6 +1285,13 @@ namespace MyNS
 		public ReferencePatientVerificationRequestType[] PatientVerificationRequest { get; set; }
 	}
 	
+	public class ReferencePatientVerificationRequestType : PatientVerificationRequestType
+	{
+		
+		[System.ComponentModel.DataAnnotations.Required()]
+		public string Id { get; set; }
+	}
+	
 	public class PatientVerificationRequestType
 	{
 		
@@ -1263,6 +1309,16 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=3)]
 		public string TypeCode { get; set; }
+	}
+	
+	public class FundPatientType : PatientType
+	{
+		
+		public IdentityType AlsoKnownAs { get; set; }
+		
+		public MembershipType Medicare { get; set; }
+		
+		public FundMembershipType HealthFund { get; set; }
 	}
 	
 	public class FundMembershipType
@@ -1303,6 +1359,13 @@ namespace MyNS
 		public ReferencePatientVerificationResponseType[] PatientVerificationResponse { get; set; }
 	}
 	
+	public class ReferencePatientVerificationResponseType : PatientVerificationResponseType
+	{
+		
+		[System.ComponentModel.DataAnnotations.Required()]
+		public string Id { get; set; }
+	}
+	
 	public class PatientVerificationResponseType
 	{
 		
@@ -1336,6 +1399,13 @@ namespace MyNS
 		public ReferenceVeteranVerificationRequestType[] VeteranVerificationRequest { get; set; }
 	}
 	
+	public class ReferenceVeteranVerificationRequestType : VeteranVerificationRequestType
+	{
+		
+		[System.ComponentModel.DataAnnotations.Required()]
+		public string Id { get; set; }
+	}
+	
 	public class VeteranVerificationRequestType
 	{
 		
@@ -1354,6 +1424,12 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ReferenceVeteranVerificationResponseType[] VeteranVerificationResponse { get; set; }
+	}
+	
+	public class ReferenceVeteranVerificationResponseType : VeteranVerificationResponseType
+	{
+		
+		public string Id { get; set; }
 	}
 	
 	public class VeteranVerificationResponseType
@@ -1421,26 +1497,6 @@ namespace MyNS
 		public System.DateTimeOffset AuthorisationDate { get; set; }
 	}
 	
-	public class ContactType
-	{
-		
-		/// <summary>
-		/// Max length: 128
-		/// Min length: 5
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(128, MinimumLength=5)]
-		public string EmailAddress { get; set; }
-		
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// Max length: 19
-		/// Min length: 8
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(19, MinimumLength=8)]
-		public string PhoneNumber { get; set; }
-	}
-	
 	public class PCIMedicalEventType
 	{
 		
@@ -1466,6 +1522,61 @@ namespace MyNS
 		/// Pattern: ^([0-1][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)([.][0-9]*)?(Z|z|(([+]|-)([0-1][0-9]|2[0-3]):[0-5][0-9]))?$
 		/// </summary>
 		public string MedicalEventTime { get; set; }
+	}
+	
+	public class PCIServiceType : ServiceType
+	{
+		
+		/// <summary>
+		/// Max length: 7
+		/// Min length: 3
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(7, MinimumLength=3)]
+		public string PatientContribAmount { get; set; }
+		
+		/// <summary>
+		/// Max length: 8
+		/// Min length: 8
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
+		public string FacilityId { get; set; }
+		
+		/// <summary>
+		/// Max length: 1
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
+		public string HospitalInd { get; set; }
+	}
+	
+	public class ClaimantType : MedicarePatientType
+	{
+		
+		public BankAccountType EftDetails { get; set; }
+		
+		public AddressType ResidentialAddress { get; set; }
+		
+		public ContactType ContactDetails { get; set; }
+	}
+	
+	public class ContactType
+	{
+		
+		/// <summary>
+		/// Max length: 128
+		/// Min length: 5
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(128, MinimumLength=5)]
+		public string EmailAddress { get; set; }
+		
+		public string Name { get; set; }
+		
+		/// <summary>
+		/// Max length: 19
+		/// Min length: 8
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.StringLength(19, MinimumLength=8)]
+		public string PhoneNumber { get; set; }
 	}
 	
 	public class PatientClaimInteractiveResponseType
@@ -1545,6 +1656,24 @@ namespace MyNS
 		public string TransactionId { get; set; }
 		
 		public string Status { get; set; }
+	}
+	
+	public class EnterpriseConcessionVerificationReportContentType : ContentType
+	{
+		
+		public EnterpriseConcessionVerificationResponseType Report { get; set; }
+	}
+	
+	public class EnterprisePatientVerificationReportContentType : ContentType
+	{
+		
+		public EnterprisePatientVerificationResponseType Report { get; set; }
+	}
+	
+	public class EnterpriseVeteranVerificationReportContentType : ContentType
+	{
+		
+		public EnterpriseVeteranVerificationResponseType Report { get; set; }
 	}
 	
 	public class SameDayDeleteRequestType
@@ -1627,135 +1756,6 @@ namespace MyNS
 		public string RequestTransmissionType { get; set; }
 		
 		public string TransactionId { get; set; }
-	}
-	
-	public class VeteranPatientType : PatientType
-	{
-		
-		public VeteranMembershipType VeteranMembership { get; set; }
-	}
-	
-	public class DVAServiceType : ServiceType
-	{
-		
-		/// <summary>
-		/// Max length: 8
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=1)]
-		public string AccountReferenceNumber { get; set; }
-		
-		public System.Nullable<System.Int32> DistanceKilometres { get; set; }
-	}
-	
-	public class VeteranMembershipResponseType : VeteranMembershipType
-	{
-		
-		public string EntitlementCode { get; set; }
-	}
-	
-	public class ReferenceConcessionVerificationRequestType : ConcessionVerificationRequestType
-	{
-		
-		[System.ComponentModel.DataAnnotations.Required()]
-		public string Id { get; set; }
-	}
-	
-	public class ReferenceConcessionVerificationResponseType : ConcessionVerificationResponseType
-	{
-		
-		[System.ComponentModel.DataAnnotations.Required()]
-		public string Id { get; set; }
-	}
-	
-	public class ReferencePatientVerificationRequestType : PatientVerificationRequestType
-	{
-		
-		[System.ComponentModel.DataAnnotations.Required()]
-		public string Id { get; set; }
-	}
-	
-	public class FundPatientType : PatientType
-	{
-		
-		public IdentityType AlsoKnownAs { get; set; }
-		
-		public MembershipType Medicare { get; set; }
-		
-		public FundMembershipType HealthFund { get; set; }
-	}
-	
-	public class ReferencePatientVerificationResponseType : PatientVerificationResponseType
-	{
-		
-		[System.ComponentModel.DataAnnotations.Required()]
-		public string Id { get; set; }
-	}
-	
-	public class ReferenceVeteranVerificationRequestType : VeteranVerificationRequestType
-	{
-		
-		[System.ComponentModel.DataAnnotations.Required()]
-		public string Id { get; set; }
-	}
-	
-	public class ReferenceVeteranVerificationResponseType : VeteranVerificationResponseType
-	{
-		
-		public string Id { get; set; }
-	}
-	
-	public class ClaimantType : MedicarePatientType
-	{
-		
-		public BankAccountType EftDetails { get; set; }
-		
-		public AddressType ResidentialAddress { get; set; }
-		
-		public ContactType ContactDetails { get; set; }
-	}
-	
-	public class PCIServiceType : ServiceType
-	{
-		
-		/// <summary>
-		/// Max length: 7
-		/// Min length: 3
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(7, MinimumLength=3)]
-		public string PatientContribAmount { get; set; }
-		
-		/// <summary>
-		/// Max length: 8
-		/// Min length: 8
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
-		public string FacilityId { get; set; }
-		
-		/// <summary>
-		/// Max length: 1
-		/// Min length: 1
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
-		public string HospitalInd { get; set; }
-	}
-	
-	public class EnterpriseConcessionVerificationReportContentType : ContentType
-	{
-		
-		public EnterpriseConcessionVerificationResponseType Report { get; set; }
-	}
-	
-	public class EnterprisePatientVerificationReportContentType : ContentType
-	{
-		
-		public EnterprisePatientVerificationResponseType Report { get; set; }
-	}
-	
-	public class EnterpriseVeteranVerificationReportContentType : ContentType
-	{
-		
-		public EnterpriseVeteranVerificationResponseType Report { get; set; }
 	}
 	
 	public partial class McpClient

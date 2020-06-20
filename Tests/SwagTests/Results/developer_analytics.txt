@@ -73,18 +73,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// This complex type defines a list of rate-limit data as it pertains to a method within the specified version of an API.
-	/// </summary>
-	public class RateLimitsResponse
-	{
-		
-		/// <summary>
-		/// The rate-limit data for the specified APIs. The rate-limit data is returned for all the methods in the specified APIs and data pertains to the current time window.
-		/// </summary>
-		public RateLimit[] RateLimits { get; set; }
-	}
-	
-	/// <summary>
 	/// This complex type defines the resource (API method) and the current rate-limit data for that resource.
 	/// </summary>
 	public class Resource
@@ -99,6 +87,18 @@ namespace MyNS
 		/// A list of rate-limit data, where each list element represents the rate-limit data for a specific resource.
 		/// </summary>
 		public Rate[] Rates { get; set; }
+	}
+	
+	/// <summary>
+	/// This complex type defines a list of rate-limit data as it pertains to a method within the specified version of an API.
+	/// </summary>
+	public class RateLimitsResponse
+	{
+		
+		/// <summary>
+		/// The rate-limit data for the specified APIs. The rate-limit data is returned for all the methods in the specified APIs and data pertains to the current time window.
+		/// </summary>
+		public RateLimit[] RateLimits { get; set; }
 	}
 	
 	/// <summary>

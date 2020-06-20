@@ -125,6 +125,28 @@ namespace MyNS
 	}
 	
 	/// <summary>
+	/// The type that defines the fields for the details of a phone.
+	/// </summary>
+	public class Phone
+	{
+		
+		/// <summary>
+		/// The two-letter ISO 3166 standard of the country to which the phone number belongs.
+		/// </summary>
+		public string CountryCode { get; set; }
+		
+		/// <summary>
+		/// The numeric string representing the phone number.
+		/// </summary>
+		public string Number { get; set; }
+		
+		/// <summary>
+		/// The type of phone service. Valid Values: MOBILE or LAND_LINE Code so that your app gracefully handles any future changes to this list.
+		/// </summary>
+		public string PhoneType { get; set; }
+	}
+	
+	/// <summary>
 	/// This type defines the fields that can be returned in an error.
 	/// </summary>
 	public class Error
@@ -225,28 +247,6 @@ namespace MyNS
 		/// The type that defines the fields for the details of a phone.
 		/// </summary>
 		public Phone SecondaryPhone { get; set; }
-	}
-	
-	/// <summary>
-	/// The type that defines the fields for the details of a phone.
-	/// </summary>
-	public class Phone
-	{
-		
-		/// <summary>
-		/// The two-letter ISO 3166 standard of the country to which the phone number belongs.
-		/// </summary>
-		public string CountryCode { get; set; }
-		
-		/// <summary>
-		/// The numeric string representing the phone number.
-		/// </summary>
-		public string Number { get; set; }
-		
-		/// <summary>
-		/// The type of phone service. Valid Values: MOBILE or LAND_LINE Code so that your app gracefully handles any future changes to this list.
-		/// </summary>
-		public string PhoneType { get; set; }
 	}
 	
 	/// <summary>
