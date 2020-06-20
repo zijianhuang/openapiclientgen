@@ -545,9 +545,9 @@ namespace MyNS
 		public async Task<SalesHistoryPagedCollection> SearchAsync(string aspect_filter, string category_ids, string epid, string fieldgroups, string filter, string gtin, string limit, string offset, string q, string sort)
 		{
 			var requestUri = "item_sales/search?aspect_filter=" + (aspect_filter==null? "" : Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : Uri.EscapeDataString(category_ids))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&fieldgroups=" + (fieldgroups==null? "" : Uri.EscapeDataString(fieldgroups))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&gtin=" + (gtin==null? "" : Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -583,9 +583,9 @@ namespace MyNS
 		public SalesHistoryPagedCollection Search(string aspect_filter, string category_ids, string epid, string fieldgroups, string filter, string gtin, string limit, string offset, string q, string sort)
 		{
 			var requestUri = "item_sales/search?aspect_filter=" + (aspect_filter==null? "" : Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : Uri.EscapeDataString(category_ids))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&fieldgroups=" + (fieldgroups==null? "" : Uri.EscapeDataString(fieldgroups))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&gtin=" + (gtin==null? "" : Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : Uri.EscapeDataString(q))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

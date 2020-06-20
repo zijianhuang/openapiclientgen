@@ -354,9 +354,9 @@ namespace MyNS
 		public async Task GetListingViolationsSummaryAsync(string compliance_type)
 		{
 			var requestUri = "listing_violation_summary?compliance_type=" + (compliance_type==null? "" : Uri.EscapeDataString(compliance_type));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -377,9 +377,9 @@ namespace MyNS
 		public void GetListingViolationsSummary(string compliance_type)
 		{
 			var requestUri = "listing_violation_summary?compliance_type=" + (compliance_type==null? "" : Uri.EscapeDataString(compliance_type));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -424,9 +424,9 @@ namespace MyNS
 		public async Task GetListingViolationsAsync(string compliance_type, string offset, string listing_id, string limit, string filter)
 		{
 			var requestUri = "listing_violation?compliance_type=" + (compliance_type==null? "" : Uri.EscapeDataString(compliance_type))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&listing_id=" + (listing_id==null? "" : Uri.EscapeDataString(listing_id))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -451,9 +451,9 @@ namespace MyNS
 		public void GetListingViolations(string compliance_type, string offset, string listing_id, string limit, string filter)
 		{
 			var requestUri = "listing_violation?compliance_type=" + (compliance_type==null? "" : Uri.EscapeDataString(compliance_type))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset))+"&listing_id=" + (listing_id==null? "" : Uri.EscapeDataString(listing_id))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -473,14 +473,14 @@ namespace MyNS
 		public async Task SuppressViolationAsync(SuppressViolationRequest requestBody)
 		{
 			var requestUri = "suppress_listing_violation";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -501,14 +501,14 @@ namespace MyNS
 		public void SuppressViolation(SuppressViolationRequest requestBody)
 		{
 			var requestUri = "suppress_listing_violation";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

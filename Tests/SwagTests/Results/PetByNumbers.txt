@@ -307,9 +307,9 @@ namespace MyNS
 		public async Task<Pet[]> FindPetsByTagsAsync(string tags)
 		{
 			var requestUri = "pet/findByNumbers?"+String.Join("&", tags.Select(z => $"tags={z}"));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -337,9 +337,9 @@ namespace MyNS
 		public Pet[] FindPetsByTags(string tags)
 		{
 			var requestUri = "pet/findByNumbers?"+String.Join("&", tags.Select(z => $"tags={z}"));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

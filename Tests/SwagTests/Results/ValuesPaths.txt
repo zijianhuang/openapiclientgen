@@ -44,9 +44,9 @@ namespace MyNS
 		public async Task<string[]> ValuesGetAsync()
 		{
 			var requestUri = "api/Values";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -71,9 +71,9 @@ namespace MyNS
 		public string[] ValuesGet()
 		{
 			var requestUri = "api/Values";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -98,14 +98,14 @@ namespace MyNS
 		public async Task<string> ValuesPostAsync(string requestBody)
 		{
 			var requestUri = "api/Values";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -130,14 +130,14 @@ namespace MyNS
 		public string ValuesPost(string requestBody)
 		{
 			var requestUri = "api/Values";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -162,9 +162,9 @@ namespace MyNS
 		public async Task<string> ValuesGetByIdAsync(int id)
 		{
 			var requestUri = "api/Values/"+id;
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -188,9 +188,9 @@ namespace MyNS
 		public string ValuesGetById(int id)
 		{
 			var requestUri = "api/Values/"+id;
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -214,14 +214,14 @@ namespace MyNS
 		public async Task ValuesPutByIdAsync(int id, string requestBody)
 		{
 			var requestUri = "api/Values/"+id;
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -241,14 +241,14 @@ namespace MyNS
 		public void ValuesPutById(int id, string requestBody)
 		{
 			var requestUri = "api/Values/"+id;
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -268,9 +268,9 @@ namespace MyNS
 		public async Task ValuesDeleteByIdAsync(int id)
 		{
 			var requestUri = "api/Values/"+id;
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -289,9 +289,9 @@ namespace MyNS
 		public void ValuesDeleteById(int id)
 		{
 			var requestUri = "api/Values/"+id;
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

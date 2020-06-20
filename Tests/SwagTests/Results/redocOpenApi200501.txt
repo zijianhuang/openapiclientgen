@@ -305,9 +305,9 @@ namespace MyNS
 		public async Task AddPetAsync()
 		{
 			var requestUri = "pet";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -327,9 +327,9 @@ namespace MyNS
 		public void AddPet()
 		{
 			var requestUri = "pet";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -348,9 +348,9 @@ namespace MyNS
 		public async Task UpdatePetAsync()
 		{
 			var requestUri = "pet";
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -369,9 +369,9 @@ namespace MyNS
 		public void UpdatePet()
 		{
 			var requestUri = "pet";
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -393,9 +393,9 @@ namespace MyNS
 		public async Task<Pet> GetPetByIdAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -423,9 +423,9 @@ namespace MyNS
 		public Pet GetPetById(long petId)
 		{
 			var requestUri = "pet/"+petId;
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -451,9 +451,9 @@ namespace MyNS
 		public async Task DeletePetAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -473,9 +473,9 @@ namespace MyNS
 		public void DeletePet(long petId)
 		{
 			var requestUri = "pet/"+petId;
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -497,9 +497,9 @@ namespace MyNS
 		public async Task<Pet[]> FindPetsByStatusAsync(string status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -527,9 +527,9 @@ namespace MyNS
 		public Pet[] FindPetsByStatus(string status)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -557,9 +557,9 @@ namespace MyNS
 		public async Task<Pet[]> FindPetsByTagsAsync(string tags)
 		{
 			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -587,9 +587,9 @@ namespace MyNS
 		public Pet[] FindPetsByTags(string tags)
 		{
 			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -636,9 +636,9 @@ namespace MyNS
 		public async Task<string> GetInventoryAsync()
 		{
 			var requestUri = "store/inventory";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -664,9 +664,9 @@ namespace MyNS
 		public string GetInventory()
 		{
 			var requestUri = "store/inventory";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -692,14 +692,14 @@ namespace MyNS
 		public async Task<Order> PlaceOrderAsync(Order requestBody)
 		{
 			var requestUri = "store/order";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -727,14 +727,14 @@ namespace MyNS
 		public Order PlaceOrder(Order requestBody)
 		{
 			var requestUri = "store/order";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -763,9 +763,9 @@ namespace MyNS
 		public async Task<Order> GetOrderByIdAsync(long orderId)
 		{
 			var requestUri = "store/order/"+orderId;
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -793,9 +793,9 @@ namespace MyNS
 		public Order GetOrderById(long orderId)
 		{
 			var requestUri = "store/order/"+orderId;
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -822,9 +822,9 @@ namespace MyNS
 		public async Task DeleteOrderAsync(string orderId)
 		{
 			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -845,9 +845,9 @@ namespace MyNS
 		public void DeleteOrder(string orderId)
 		{
 			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -867,14 +867,14 @@ namespace MyNS
 		public async Task SubscribeAsync(SubscribeBody requestBody)
 		{
 			var requestUri = "store/subscribe";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -895,14 +895,14 @@ namespace MyNS
 		public void Subscribe(SubscribeBody requestBody)
 		{
 			var requestUri = "store/subscribe";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -944,14 +944,14 @@ namespace MyNS
 		public async Task CreateUserAsync(User requestBody)
 		{
 			var requestUri = "user";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -973,14 +973,14 @@ namespace MyNS
 		public void CreateUser(User requestBody)
 		{
 			var requestUri = "user";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1002,9 +1002,9 @@ namespace MyNS
 		public async Task<User> GetUserByNameAsync(string username)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1031,9 +1031,9 @@ namespace MyNS
 		public User GetUserByName(string username)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1061,14 +1061,14 @@ namespace MyNS
 		public async Task UpdateUserAsync(string username, User requestBody)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1091,14 +1091,14 @@ namespace MyNS
 		public void UpdateUser(string username, User requestBody)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1120,9 +1120,9 @@ namespace MyNS
 		public async Task DeleteUserAsync(string username)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1143,9 +1143,9 @@ namespace MyNS
 		public void DeleteUser(string username)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1164,9 +1164,9 @@ namespace MyNS
 		public async Task CreateUsersWithArrayInputAsync()
 		{
 			var requestUri = "user/createWithArray";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1185,9 +1185,9 @@ namespace MyNS
 		public void CreateUsersWithArrayInput()
 		{
 			var requestUri = "user/createWithArray";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1206,9 +1206,9 @@ namespace MyNS
 		public async Task CreateUsersWithListInputAsync()
 		{
 			var requestUri = "user/createWithList";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1227,9 +1227,9 @@ namespace MyNS
 		public void CreateUsersWithListInput()
 		{
 			var requestUri = "user/createWithList";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1251,9 +1251,9 @@ namespace MyNS
 		public async Task<string> LoginUserAsync(string username, string password)
 		{
 			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1280,9 +1280,9 @@ namespace MyNS
 		public string LoginUser(string username, string password)
 		{
 			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1306,9 +1306,9 @@ namespace MyNS
 		public async Task LogoutUserAsync()
 		{
 			var requestUri = "user/logout";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1327,9 +1327,9 @@ namespace MyNS
 		public void LogoutUser()
 		{
 			var requestUri = "user/logout";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

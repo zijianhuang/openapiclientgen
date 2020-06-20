@@ -45,9 +45,9 @@ namespace MyNS
 		public async Task DeletePetAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -67,9 +67,9 @@ namespace MyNS
 		public void DeletePet(long petId)
 		{
 			var requestUri = "pet/"+petId;
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

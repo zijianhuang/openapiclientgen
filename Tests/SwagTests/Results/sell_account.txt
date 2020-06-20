@@ -1301,9 +1301,9 @@ namespace MyNS
 		public async Task<FulfillmentPolicyResponse> GetFulfillmentPoliciesAsync(string marketplace_id)
 		{
 			var requestUri = "fulfillment_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1330,9 +1330,9 @@ namespace MyNS
 		public FulfillmentPolicyResponse GetFulfillmentPolicies(string marketplace_id)
 		{
 			var requestUri = "fulfillment_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1358,14 +1358,14 @@ namespace MyNS
 		public async Task CreateFulfillmentPolicyAsync(FulfillmentPolicyRequest requestBody)
 		{
 			var requestUri = "fulfillment_policy/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1386,14 +1386,14 @@ namespace MyNS
 		public void CreateFulfillmentPolicy(FulfillmentPolicyRequest requestBody)
 		{
 			var requestUri = "fulfillment_policy/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1415,9 +1415,9 @@ namespace MyNS
 		public async Task<FulfillmentPolicy> GetFulfillmentPolicyAsync(string fulfillmentPolicyId)
 		{
 			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1444,9 +1444,9 @@ namespace MyNS
 		public FulfillmentPolicy GetFulfillmentPolicy(string fulfillmentPolicyId)
 		{
 			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1474,14 +1474,14 @@ namespace MyNS
 		public async Task<SetFulfillmentPolicyResponse> UpdateFulfillmentPolicyAsync(string fulfillmentPolicyId, FulfillmentPolicyRequest requestBody)
 		{
 			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1510,14 +1510,14 @@ namespace MyNS
 		public SetFulfillmentPolicyResponse UpdateFulfillmentPolicy(string fulfillmentPolicyId, FulfillmentPolicyRequest requestBody)
 		{
 			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1544,9 +1544,9 @@ namespace MyNS
 		public async Task DeleteFulfillmentPolicyAsync(string fulfillmentPolicyId)
 		{
 			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1566,9 +1566,9 @@ namespace MyNS
 		public void DeleteFulfillmentPolicy(string fulfillmentPolicyId)
 		{
 			var requestUri = "fulfillment_policy/"+ (fulfillmentPolicyId==null? "" : Uri.EscapeDataString(fulfillmentPolicyId));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1590,9 +1590,9 @@ namespace MyNS
 		public async Task<FulfillmentPolicy> GetFulfillmentPolicyByNameAsync(string marketplace_id, string name)
 		{
 			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1620,9 +1620,9 @@ namespace MyNS
 		public FulfillmentPolicy GetFulfillmentPolicyByName(string marketplace_id, string name)
 		{
 			var requestUri = "fulfillment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1669,9 +1669,9 @@ namespace MyNS
 		public async Task<PaymentPolicyResponse> GetPaymentPoliciesAsync(string marketplace_id)
 		{
 			var requestUri = "payment_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1698,9 +1698,9 @@ namespace MyNS
 		public PaymentPolicyResponse GetPaymentPolicies(string marketplace_id)
 		{
 			var requestUri = "payment_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1726,14 +1726,14 @@ namespace MyNS
 		public async Task CreatePaymentPolicyAsync(PaymentPolicyRequest requestBody)
 		{
 			var requestUri = "payment_policy/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1754,14 +1754,14 @@ namespace MyNS
 		public void CreatePaymentPolicy(PaymentPolicyRequest requestBody)
 		{
 			var requestUri = "payment_policy/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1783,9 +1783,9 @@ namespace MyNS
 		public async Task<PaymentPolicy> GetPaymentPolicyAsync(string payment_policy_id)
 		{
 			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1812,9 +1812,9 @@ namespace MyNS
 		public PaymentPolicy GetPaymentPolicy(string payment_policy_id)
 		{
 			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1842,14 +1842,14 @@ namespace MyNS
 		public async Task<SetPaymentPolicyResponse> UpdatePaymentPolicyAsync(string payment_policy_id, PaymentPolicyRequest requestBody)
 		{
 			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1878,14 +1878,14 @@ namespace MyNS
 		public SetPaymentPolicyResponse UpdatePaymentPolicy(string payment_policy_id, PaymentPolicyRequest requestBody)
 		{
 			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1912,9 +1912,9 @@ namespace MyNS
 		public async Task DeletePaymentPolicyAsync(string payment_policy_id)
 		{
 			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1934,9 +1934,9 @@ namespace MyNS
 		public void DeletePaymentPolicy(string payment_policy_id)
 		{
 			var requestUri = "payment_policy/"+ (payment_policy_id==null? "" : Uri.EscapeDataString(payment_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1958,9 +1958,9 @@ namespace MyNS
 		public async Task<PaymentPolicy> GetPaymentPolicyByNameAsync(string marketplace_id, string name)
 		{
 			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1988,9 +1988,9 @@ namespace MyNS
 		public PaymentPolicy GetPaymentPolicyByName(string marketplace_id, string name)
 		{
 			var requestUri = "payment_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2038,9 +2038,9 @@ namespace MyNS
 		public async Task<PaymentsProgramResponse> GetPaymentsProgramAsync(string marketplace_id, string payments_program_type)
 		{
 			var requestUri = "payments_program/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/"+ (payments_program_type==null? "" : Uri.EscapeDataString(payments_program_type));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2068,9 +2068,9 @@ namespace MyNS
 		public PaymentsProgramResponse GetPaymentsProgram(string marketplace_id, string payments_program_type)
 		{
 			var requestUri = "payments_program/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/"+ (payments_program_type==null? "" : Uri.EscapeDataString(payments_program_type));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2116,9 +2116,9 @@ namespace MyNS
 		public async Task<SellingPrivileges> GetPrivilegesAsync()
 		{
 			var requestUri = "privilege/";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2144,9 +2144,9 @@ namespace MyNS
 		public SellingPrivileges GetPrivileges()
 		{
 			var requestUri = "privilege/";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2192,9 +2192,9 @@ namespace MyNS
 		public async Task<Programs> GetOptedInProgramsAsync()
 		{
 			var requestUri = "program/get_opted_in_programs";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2220,9 +2220,9 @@ namespace MyNS
 		public Programs GetOptedInPrograms()
 		{
 			var requestUri = "program/get_opted_in_programs";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2249,14 +2249,14 @@ namespace MyNS
 		public async Task<string> OptInToProgramAsync(Program requestBody)
 		{
 			var requestUri = "program/opt_in";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2283,14 +2283,14 @@ namespace MyNS
 		public string OptInToProgram(Program requestBody)
 		{
 			var requestUri = "program/opt_in";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2317,14 +2317,14 @@ namespace MyNS
 		public async Task<string> OptOutOfProgramAsync(Program requestBody)
 		{
 			var requestUri = "program/opt_out";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2351,14 +2351,14 @@ namespace MyNS
 		public string OptOutOfProgram(Program requestBody)
 		{
 			var requestUri = "program/opt_out";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2405,9 +2405,9 @@ namespace MyNS
 		public async Task<RateTableResponse> GetRateTablesAsync(string country_code)
 		{
 			var requestUri = "rate_table/?country_code=" + (country_code==null? "" : Uri.EscapeDataString(country_code));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2434,9 +2434,9 @@ namespace MyNS
 		public RateTableResponse GetRateTables(string country_code)
 		{
 			var requestUri = "rate_table/?country_code=" + (country_code==null? "" : Uri.EscapeDataString(country_code));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2483,9 +2483,9 @@ namespace MyNS
 		public async Task<ReturnPolicyResponse> GetReturnPoliciesAsync(string marketplace_id)
 		{
 			var requestUri = "return_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2512,9 +2512,9 @@ namespace MyNS
 		public ReturnPolicyResponse GetReturnPolicies(string marketplace_id)
 		{
 			var requestUri = "return_policy/?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2540,14 +2540,14 @@ namespace MyNS
 		public async Task CreateReturnPolicyAsync(ReturnPolicyRequest requestBody)
 		{
 			var requestUri = "return_policy/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2568,14 +2568,14 @@ namespace MyNS
 		public void CreateReturnPolicy(ReturnPolicyRequest requestBody)
 		{
 			var requestUri = "return_policy/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2597,9 +2597,9 @@ namespace MyNS
 		public async Task<ReturnPolicy> GetReturnPolicyAsync(string return_policy_id)
 		{
 			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2626,9 +2626,9 @@ namespace MyNS
 		public ReturnPolicy GetReturnPolicy(string return_policy_id)
 		{
 			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2656,14 +2656,14 @@ namespace MyNS
 		public async Task<SetReturnPolicyResponse> UpdateReturnPolicyAsync(string return_policy_id, ReturnPolicyRequest requestBody)
 		{
 			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2692,14 +2692,14 @@ namespace MyNS
 		public SetReturnPolicyResponse UpdateReturnPolicy(string return_policy_id, ReturnPolicyRequest requestBody)
 		{
 			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2726,9 +2726,9 @@ namespace MyNS
 		public async Task DeleteReturnPolicyAsync(string return_policy_id)
 		{
 			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2748,9 +2748,9 @@ namespace MyNS
 		public void DeleteReturnPolicy(string return_policy_id)
 		{
 			var requestUri = "return_policy/"+ (return_policy_id==null? "" : Uri.EscapeDataString(return_policy_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2772,9 +2772,9 @@ namespace MyNS
 		public async Task<ReturnPolicy> GetReturnPolicyByNameAsync(string marketplace_id, string name)
 		{
 			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2802,9 +2802,9 @@ namespace MyNS
 		public ReturnPolicy GetReturnPolicyByName(string marketplace_id, string name)
 		{
 			var requestUri = "return_policy/get_by_policy_name?marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&name=" + (name==null? "" : Uri.EscapeDataString(name));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2852,9 +2852,9 @@ namespace MyNS
 		public async Task<SalesTax> GetSalesTaxAsync(string countryCode, string jurisdictionId)
 		{
 			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2882,9 +2882,9 @@ namespace MyNS
 		public SalesTax GetSalesTax(string countryCode, string jurisdictionId)
 		{
 			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2912,14 +2912,14 @@ namespace MyNS
 		public async Task CreateOrReplaceSalesTaxAsync(string countryCode, string jurisdictionId, SalesTaxBase requestBody)
 		{
 			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2942,14 +2942,14 @@ namespace MyNS
 		public void CreateOrReplaceSalesTax(string countryCode, string jurisdictionId, SalesTaxBase requestBody)
 		{
 			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2971,9 +2971,9 @@ namespace MyNS
 		public async Task DeleteSalesTaxAsync(string countryCode, string jurisdictionId)
 		{
 			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2994,9 +2994,9 @@ namespace MyNS
 		public void DeleteSalesTax(string countryCode, string jurisdictionId)
 		{
 			var requestUri = "sales_tax/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/"+ (jurisdictionId==null? "" : Uri.EscapeDataString(jurisdictionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3017,9 +3017,9 @@ namespace MyNS
 		public async Task<SalesTaxes> GetSalesTaxesAsync(string country_code)
 		{
 			var requestUri = "sales_tax/?country_code=" + (country_code==null? "" : Uri.EscapeDataString(country_code));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3046,9 +3046,9 @@ namespace MyNS
 		public SalesTaxes GetSalesTaxes(string country_code)
 		{
 			var requestUri = "sales_tax/?country_code=" + (country_code==null? "" : Uri.EscapeDataString(country_code));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

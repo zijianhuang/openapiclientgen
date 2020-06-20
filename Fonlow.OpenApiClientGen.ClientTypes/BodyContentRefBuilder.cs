@@ -46,7 +46,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 					}
 
-					string typeName = op.RequestBody.Reference.Id;
+					string typeName = ToTitleCase(op.RequestBody.Reference.Id);
 					CodeTypeReference codeTypeReference = new CodeTypeReference(typeName);
 					return Tuple.Create(codeTypeReference, description, true);
 				}
@@ -54,7 +54,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (content.Schema != null && content.Schema.Reference != null)
 					{
-						string typeName = content.Schema.Reference.Id;
+						string typeName = ToTitleCase(content.Schema.Reference.Id);
 						CodeTypeReference codeTypeReference = new CodeTypeReference(typeName);
 						return Tuple.Create(codeTypeReference, description, true);
 					}
@@ -90,6 +90,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			return null; //empty post
+		}
+
+		static string ToTitleCase(string s)
+		{
+			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
 		}
 
 	}

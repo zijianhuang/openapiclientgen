@@ -2200,9 +2200,9 @@ namespace MyNS
 		public async Task<InventoryLocationResponse> GetInventoryLocationAsync(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2229,9 +2229,9 @@ namespace MyNS
 		public InventoryLocationResponse GetInventoryLocation(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2258,14 +2258,14 @@ namespace MyNS
 		public async Task CreateInventoryLocationAsync(string merchantLocationKey, InventoryLocationFull requestBody)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2287,14 +2287,14 @@ namespace MyNS
 		public void CreateInventoryLocation(string merchantLocationKey, InventoryLocationFull requestBody)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2315,9 +2315,9 @@ namespace MyNS
 		public async Task DeleteInventoryLocationAsync(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2337,9 +2337,9 @@ namespace MyNS
 		public void DeleteInventoryLocation(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2360,9 +2360,9 @@ namespace MyNS
 		public async Task<string> DisableInventoryLocationAsync(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/disable";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2388,9 +2388,9 @@ namespace MyNS
 		public string DisableInventoryLocation(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/disable";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2416,9 +2416,9 @@ namespace MyNS
 		public async Task<string> EnableInventoryLocationAsync(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/enable";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2444,9 +2444,9 @@ namespace MyNS
 		public string EnableInventoryLocation(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/enable";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2473,9 +2473,9 @@ namespace MyNS
 		public async Task<LocationResponse> GetInventoryLocationsAsync(string limit, string offset)
 		{
 			var requestUri = "location?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2503,9 +2503,9 @@ namespace MyNS
 		public LocationResponse GetInventoryLocations(string limit, string offset)
 		{
 			var requestUri = "location?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2532,14 +2532,14 @@ namespace MyNS
 		public async Task UpdateInventoryLocationAsync(string merchantLocationKey, InventoryLocation requestBody)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/update_location_details";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2561,14 +2561,14 @@ namespace MyNS
 		public void UpdateInventoryLocation(string merchantLocationKey, InventoryLocation requestBody)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/update_location_details";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2610,9 +2610,9 @@ namespace MyNS
 		public async Task<InventoryItemWithSkuLocaleGroupid> GetInventoryItemAsync(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2639,9 +2639,9 @@ namespace MyNS
 		public InventoryItemWithSkuLocaleGroupid GetInventoryItem(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2669,14 +2669,14 @@ namespace MyNS
 		public async Task<BaseResponse> CreateOrReplaceInventoryItemAsync(string sku, InventoryItem requestBody)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2705,14 +2705,14 @@ namespace MyNS
 		public BaseResponse CreateOrReplaceInventoryItem(string sku, InventoryItem requestBody)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2739,9 +2739,9 @@ namespace MyNS
 		public async Task DeleteInventoryItemAsync(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2761,9 +2761,9 @@ namespace MyNS
 		public void DeleteInventoryItem(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2785,9 +2785,9 @@ namespace MyNS
 		public async Task<InventoryItems> GetInventoryItemsAsync(string limit, string offset)
 		{
 			var requestUri = "inventory_item?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2815,9 +2815,9 @@ namespace MyNS
 		public InventoryItems GetInventoryItems(string limit, string offset)
 		{
 			var requestUri = "inventory_item?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2844,14 +2844,14 @@ namespace MyNS
 		public async Task<BulkPriceQuantityResponse> BulkUpdatePriceQuantityAsync(BulkPriceQuantity requestBody)
 		{
 			var requestUri = "bulk_update_price_quantity";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2879,14 +2879,14 @@ namespace MyNS
 		public BulkPriceQuantityResponse BulkUpdatePriceQuantity(BulkPriceQuantity requestBody)
 		{
 			var requestUri = "bulk_update_price_quantity";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2914,14 +2914,14 @@ namespace MyNS
 		public async Task<BulkInventoryItemResponse> BulkCreateOrReplaceInventoryItemAsync(BulkInventoryItem requestBody)
 		{
 			var requestUri = "bulk_create_or_replace_inventory_item";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2949,14 +2949,14 @@ namespace MyNS
 		public BulkInventoryItemResponse BulkCreateOrReplaceInventoryItem(BulkInventoryItem requestBody)
 		{
 			var requestUri = "bulk_create_or_replace_inventory_item";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2984,14 +2984,14 @@ namespace MyNS
 		public async Task<BulkGetInventoryItemResponse> BulkGetInventoryItemAsync(BulkGetInventoryItem requestBody)
 		{
 			var requestUri = "bulk_get_inventory_item";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3019,14 +3019,14 @@ namespace MyNS
 		public BulkGetInventoryItemResponse BulkGetInventoryItem(BulkGetInventoryItem requestBody)
 		{
 			var requestUri = "bulk_get_inventory_item";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3074,9 +3074,9 @@ namespace MyNS
 		public async Task<Compatibility> GetProductCompatibilityAsync(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3103,9 +3103,9 @@ namespace MyNS
 		public Compatibility GetProductCompatibility(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3133,14 +3133,14 @@ namespace MyNS
 		public async Task<BaseResponse> CreateOrReplaceProductCompatibilityAsync(string sku, Compatibility requestBody)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3169,14 +3169,14 @@ namespace MyNS
 		public BaseResponse CreateOrReplaceProductCompatibility(string sku, Compatibility requestBody)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3203,9 +3203,9 @@ namespace MyNS
 		public async Task DeleteProductCompatibilityAsync(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3225,9 +3225,9 @@ namespace MyNS
 		public void DeleteProductCompatibility(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3272,9 +3272,9 @@ namespace MyNS
 		public async Task<Offers> GetOffersAsync(string sku, string marketplace_id, string format, string limit, string offset)
 		{
 			var requestUri = "offer?sku=" + (sku==null? "" : Uri.EscapeDataString(sku))+"&marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&format=" + (format==null? "" : Uri.EscapeDataString(format))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3305,9 +3305,9 @@ namespace MyNS
 		public Offers GetOffers(string sku, string marketplace_id, string format, string limit, string offset)
 		{
 			var requestUri = "offer?sku=" + (sku==null? "" : Uri.EscapeDataString(sku))+"&marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&format=" + (format==null? "" : Uri.EscapeDataString(format))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3333,14 +3333,14 @@ namespace MyNS
 		public async Task CreateOfferAsync(EbayOfferDetailsWithKeys requestBody)
 		{
 			var requestUri = "offer";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3361,14 +3361,14 @@ namespace MyNS
 		public void CreateOffer(EbayOfferDetailsWithKeys requestBody)
 		{
 			var requestUri = "offer";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3390,9 +3390,9 @@ namespace MyNS
 		public async Task<EbayOfferDetailsWithAll> GetOfferAsync(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3419,9 +3419,9 @@ namespace MyNS
 		public EbayOfferDetailsWithAll GetOffer(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3449,14 +3449,14 @@ namespace MyNS
 		public async Task<OfferResponse> UpdateOfferAsync(string offerId, EbayOfferDetailsWithId requestBody)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3485,14 +3485,14 @@ namespace MyNS
 		public OfferResponse UpdateOffer(string offerId, EbayOfferDetailsWithId requestBody)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3519,9 +3519,9 @@ namespace MyNS
 		public async Task DeleteOfferAsync(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3541,9 +3541,9 @@ namespace MyNS
 		public void DeleteOffer(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3564,9 +3564,9 @@ namespace MyNS
 		public async Task<PublishResponse> PublishOfferAsync(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId))+"/publish/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3593,9 +3593,9 @@ namespace MyNS
 		public PublishResponse PublishOffer(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId))+"/publish/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3622,14 +3622,14 @@ namespace MyNS
 		public async Task<PublishResponse> PublishOfferByInventoryItemGroupAsync(PublishByInventoryItemGroupRequest requestBody)
 		{
 			var requestUri = "offer/publish_by_inventory_item_group/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3657,14 +3657,14 @@ namespace MyNS
 		public PublishResponse PublishOfferByInventoryItemGroup(PublishByInventoryItemGroupRequest requestBody)
 		{
 			var requestUri = "offer/publish_by_inventory_item_group/";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3691,14 +3691,14 @@ namespace MyNS
 		public async Task WithdrawOfferByInventoryItemGroupAsync(WithdrawByInventoryItemGroupRequest requestBody)
 		{
 			var requestUri = "offer/withdraw_by_inventory_item_group";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3719,14 +3719,14 @@ namespace MyNS
 		public void WithdrawOfferByInventoryItemGroup(WithdrawByInventoryItemGroupRequest requestBody)
 		{
 			var requestUri = "offer/withdraw_by_inventory_item_group";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3748,14 +3748,14 @@ namespace MyNS
 		public async Task<FeesSummaryResponse> GetListingFeesAsync(OfferKeysWithId requestBody)
 		{
 			var requestUri = "offer/get_listing_fees";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3783,14 +3783,14 @@ namespace MyNS
 		public FeesSummaryResponse GetListingFees(OfferKeysWithId requestBody)
 		{
 			var requestUri = "offer/get_listing_fees";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3818,14 +3818,14 @@ namespace MyNS
 		public async Task<BulkOfferResponse> BulkCreateOfferAsync(BulkEbayOfferDetailsWithKeys requestBody)
 		{
 			var requestUri = "bulk_create_offer";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3853,14 +3853,14 @@ namespace MyNS
 		public BulkOfferResponse BulkCreateOffer(BulkEbayOfferDetailsWithKeys requestBody)
 		{
 			var requestUri = "bulk_create_offer";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3888,14 +3888,14 @@ namespace MyNS
 		public async Task<BulkPublishResponse> BulkPublishOfferAsync(BulkOffer requestBody)
 		{
 			var requestUri = "bulk_publish_offer";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3923,14 +3923,14 @@ namespace MyNS
 		public BulkPublishResponse BulkPublishOffer(BulkOffer requestBody)
 		{
 			var requestUri = "bulk_publish_offer";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3958,9 +3958,9 @@ namespace MyNS
 		public async Task<WithdrawResponse> WithdrawOfferAsync(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId))+"/withdraw";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3987,9 +3987,9 @@ namespace MyNS
 		public WithdrawResponse WithdrawOffer(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId))+"/withdraw";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4036,9 +4036,9 @@ namespace MyNS
 		public async Task<InventoryItemGroup> GetInventoryItemGroupAsync(string inventoryItemGroupKey)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4065,9 +4065,9 @@ namespace MyNS
 		public InventoryItemGroup GetInventoryItemGroup(string inventoryItemGroupKey)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4095,14 +4095,14 @@ namespace MyNS
 		public async Task<BaseResponse> CreateOrReplaceInventoryItemGroupAsync(string inventoryItemGroupKey, InventoryItemGroup requestBody)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4131,14 +4131,14 @@ namespace MyNS
 		public BaseResponse CreateOrReplaceInventoryItemGroup(string inventoryItemGroupKey, InventoryItemGroup requestBody)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4165,9 +4165,9 @@ namespace MyNS
 		public async Task DeleteInventoryItemGroupAsync(string inventoryItemGroupKey)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4187,9 +4187,9 @@ namespace MyNS
 		public void DeleteInventoryItemGroup(string inventoryItemGroupKey)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var request = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4230,14 +4230,14 @@ namespace MyNS
 		public async Task<BulkMigrateListingResponse> BulkMigrateListingAsync(BulkMigrateListing requestBody)
 		{
 			var requestUri = "bulk_migrate_listing";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -4265,14 +4265,14 @@ namespace MyNS
 		public BulkMigrateListingResponse BulkMigrateListing(BulkMigrateListing requestBody)
 		{
 			var requestUri = "bulk_migrate_listing";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

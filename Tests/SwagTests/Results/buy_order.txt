@@ -1533,14 +1533,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> ApplyCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1569,14 +1569,14 @@ namespace MyNS
 		public CheckoutSessionResponse ApplyCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1604,9 +1604,9 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> GetCheckoutSessionAsync(string checkoutSessionId)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1633,9 +1633,9 @@ namespace MyNS
 		public CheckoutSessionResponse GetCheckoutSession(string checkoutSessionId)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1662,14 +1662,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> InitiateCheckoutSessionAsync(CreateSignInCheckoutSessionRequest requestBody)
 		{
 			var requestUri = "checkout_session/initiate";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1697,14 +1697,14 @@ namespace MyNS
 		public CheckoutSessionResponse InitiateCheckoutSession(CreateSignInCheckoutSessionRequest requestBody)
 		{
 			var requestUri = "checkout_session/initiate";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1732,9 +1732,9 @@ namespace MyNS
 		public async Task<PurchaseOrderSummary> PlaceOrderAsync(string checkoutSessionId)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1761,9 +1761,9 @@ namespace MyNS
 		public PurchaseOrderSummary PlaceOrder(string checkoutSessionId)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1791,14 +1791,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> RemoveCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1827,14 +1827,14 @@ namespace MyNS
 		public CheckoutSessionResponse RemoveCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1863,14 +1863,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> UpdatePaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1899,14 +1899,14 @@ namespace MyNS
 		public CheckoutSessionResponse UpdatePaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1935,14 +1935,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> UpdateQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1971,14 +1971,14 @@ namespace MyNS
 		public CheckoutSessionResponse UpdateQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2007,14 +2007,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> UpdateShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2043,14 +2043,14 @@ namespace MyNS
 		public CheckoutSessionResponse UpdateShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2079,14 +2079,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> UpdateShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2115,14 +2115,14 @@ namespace MyNS
 		public CheckoutSessionResponse UpdateShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2171,14 +2171,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> ApplyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2207,14 +2207,14 @@ namespace MyNS
 		public CheckoutSessionResponse ApplyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2242,9 +2242,9 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> GetGuestCheckoutSessionAsync(string checkoutSessionId)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2271,9 +2271,9 @@ namespace MyNS
 		public GuestCheckoutSessionResponse GetGuestCheckoutSession(string checkoutSessionId)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2300,14 +2300,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> InitiateGuestCheckoutSessionAsync(CreateGuestCheckoutSessionRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/initiate";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2335,14 +2335,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse InitiateGuestCheckoutSession(CreateGuestCheckoutSessionRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/initiate";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2371,14 +2371,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> InitiateGuestPaymentAsync(string checkoutSessionId, InitiatePaymentRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/initiate_payment";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2407,14 +2407,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse InitiateGuestPayment(string checkoutSessionId, InitiatePaymentRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/initiate_payment";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2443,14 +2443,14 @@ namespace MyNS
 		public async Task<PurchaseOrderSummary> PlaceGuestOrderAsync(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2479,14 +2479,14 @@ namespace MyNS
 		public PurchaseOrderSummary PlaceGuestOrder(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2515,14 +2515,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> RemoveGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2551,14 +2551,14 @@ namespace MyNS
 		public CheckoutSessionResponse RemoveGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2587,14 +2587,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> UpdateGuestPaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2623,14 +2623,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse UpdateGuestPaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2659,14 +2659,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> UpdateGuestQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2695,14 +2695,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse UpdateGuestQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2731,14 +2731,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> UpdateGuestShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2767,14 +2767,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse UpdateGuestShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2803,14 +2803,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> UpdateGuestShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2839,14 +2839,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse UpdateGuestShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2895,14 +2895,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> ApplyProxyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2931,14 +2931,14 @@ namespace MyNS
 		public CheckoutSessionResponse ApplyProxyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/apply_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2966,9 +2966,9 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> GetProxyGuestCheckoutSessionAsync(string checkoutSessionId)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -2995,9 +2995,9 @@ namespace MyNS
 		public GuestCheckoutSessionResponse GetProxyGuestCheckoutSession(string checkoutSessionId)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3024,14 +3024,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> InitiateProxyGuestCheckoutSessionAsync(CheckoutSessionRequestWithoutPayment requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/initiate";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3059,14 +3059,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse InitiateProxyGuestCheckoutSession(CheckoutSessionRequestWithoutPayment requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/initiate";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3095,14 +3095,14 @@ namespace MyNS
 		public async Task<PurchaseOrderSummary> PlaceProxyGuestOrderAsync(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3131,14 +3131,14 @@ namespace MyNS
 		public PurchaseOrderSummary PlaceProxyGuestOrder(string checkoutSessionId, GuestPlaceOrderRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/place_order";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3167,14 +3167,14 @@ namespace MyNS
 		public async Task<CheckoutSessionResponse> RemoveProxyGuestCouponAsync(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3203,14 +3203,14 @@ namespace MyNS
 		public CheckoutSessionResponse RemoveProxyGuestCoupon(string checkoutSessionId, CouponRequest requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/remove_coupon";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3239,14 +3239,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestPaymentInfoAsync(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3275,14 +3275,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse UpdateProxyGuestPaymentInfo(string checkoutSessionId, UpdatePaymentInformation requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_payment_info";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3311,14 +3311,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestQuantityAsync(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3347,14 +3347,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse UpdateProxyGuestQuantity(string checkoutSessionId, UpdateQuantity requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_quantity";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3383,14 +3383,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestShippingAddressAsync(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3419,14 +3419,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse UpdateProxyGuestShippingAddress(string checkoutSessionId, ShippingAddressImpl requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_address";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3455,14 +3455,14 @@ namespace MyNS
 		public async Task<GuestCheckoutSessionResponse> UpdateProxyGuestShippingOptionAsync(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3491,14 +3491,14 @@ namespace MyNS
 		public GuestCheckoutSessionResponse UpdateProxyGuestShippingOption(string checkoutSessionId, UpdateShippingOption requestBody)
 		{
 			var requestUri = "proxy_guest_checkout_session/"+ (checkoutSessionId==null? "" : Uri.EscapeDataString(checkoutSessionId))+"/update_shipping_option";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3546,9 +3546,9 @@ namespace MyNS
 		public async Task<GuestPurchaseOrder> GetGuestPurchaseOrderAsync(string purchaseOrderId)
 		{
 			var requestUri = "guest_purchase_order/"+ (purchaseOrderId==null? "" : Uri.EscapeDataString(purchaseOrderId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3575,9 +3575,9 @@ namespace MyNS
 		public GuestPurchaseOrder GetGuestPurchaseOrder(string purchaseOrderId)
 		{
 			var requestUri = "guest_purchase_order/"+ (purchaseOrderId==null? "" : Uri.EscapeDataString(purchaseOrderId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3624,9 +3624,9 @@ namespace MyNS
 		public async Task<PurchaseOrder> GetPurchaseOrderAsync(string purchaseOrderId)
 		{
 			var requestUri = "purchase_order/"+ (purchaseOrderId==null? "" : Uri.EscapeDataString(purchaseOrderId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -3653,9 +3653,9 @@ namespace MyNS
 		public PurchaseOrder GetPurchaseOrder(string purchaseOrderId)
 		{
 			var requestUri = "purchase_order/"+ (purchaseOrderId==null? "" : Uri.EscapeDataString(purchaseOrderId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

@@ -292,9 +292,9 @@ namespace MyNS
 		public async Task<BestSellingProductResponse> GetAlsoBoughtByProductAsync(string brand, string epid, string gtin, string mpn)
 		{
 			var requestUri = "merchandised_product/get_also_bought_products?brand=" + (brand==null? "" : Uri.EscapeDataString(brand))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&gtin=" + (gtin==null? "" : Uri.EscapeDataString(gtin))+"&mpn=" + (mpn==null? "" : Uri.EscapeDataString(mpn));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -324,9 +324,9 @@ namespace MyNS
 		public BestSellingProductResponse GetAlsoBoughtByProduct(string brand, string epid, string gtin, string mpn)
 		{
 			var requestUri = "merchandised_product/get_also_bought_products?brand=" + (brand==null? "" : Uri.EscapeDataString(brand))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&gtin=" + (gtin==null? "" : Uri.EscapeDataString(gtin))+"&mpn=" + (mpn==null? "" : Uri.EscapeDataString(mpn));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -356,9 +356,9 @@ namespace MyNS
 		public async Task<BestSellingProductResponse> GetAlsoViewedByProductAsync(string brand, string epid, string gtin, string mpn)
 		{
 			var requestUri = "merchandised_product/get_also_viewed_products?brand=" + (brand==null? "" : Uri.EscapeDataString(brand))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&gtin=" + (gtin==null? "" : Uri.EscapeDataString(gtin))+"&mpn=" + (mpn==null? "" : Uri.EscapeDataString(mpn));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -388,9 +388,9 @@ namespace MyNS
 		public BestSellingProductResponse GetAlsoViewedByProduct(string brand, string epid, string gtin, string mpn)
 		{
 			var requestUri = "merchandised_product/get_also_viewed_products?brand=" + (brand==null? "" : Uri.EscapeDataString(brand))+"&epid=" + (epid==null? "" : Uri.EscapeDataString(epid))+"&gtin=" + (gtin==null? "" : Uri.EscapeDataString(gtin))+"&mpn=" + (mpn==null? "" : Uri.EscapeDataString(mpn));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -420,9 +420,9 @@ namespace MyNS
 		public async Task<BestSellingProductResponse> GetMerchandisedProductsAsync(string aspect_filter, string category_id, string limit, string metric_name)
 		{
 			var requestUri = "merchandised_product?aspect_filter=" + (aspect_filter==null? "" : Uri.EscapeDataString(aspect_filter))+"&category_id=" + (category_id==null? "" : Uri.EscapeDataString(category_id))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&metric_name=" + (metric_name==null? "" : Uri.EscapeDataString(metric_name));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -452,9 +452,9 @@ namespace MyNS
 		public BestSellingProductResponse GetMerchandisedProducts(string aspect_filter, string category_id, string limit, string metric_name)
 		{
 			var requestUri = "merchandised_product?aspect_filter=" + (aspect_filter==null? "" : Uri.EscapeDataString(aspect_filter))+"&category_id=" + (category_id==null? "" : Uri.EscapeDataString(category_id))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&metric_name=" + (metric_name==null? "" : Uri.EscapeDataString(metric_name));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

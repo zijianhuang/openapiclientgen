@@ -240,7 +240,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeSnippetExpression(uriText)));
 
 			method.Statements.Add(new CodeSnippetStatement(
-			$@"			using (var request = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
+			$@"			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
 			{{"
 			));
 
@@ -249,14 +249,14 @@ namespace Fonlow.OpenApiClientGen.CS
 				method.Statements.Add(new CodeSnippetStatement(
 				$@"			if (handleHeaders != null)
 			{{
-				handleHeaders(request.Headers);
+				handleHeaders(httpRequestMessage.Headers);
 			}}
 "
 				));
 			}
 
 			method.Statements.Add(new CodeVariableDeclarationStatement(
-				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(request)") : new CodeSnippetExpression("client.SendAsync(request).Result")));
+				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(httpRequestMessage)") : new CodeSnippetExpression("client.SendAsync(httpRequestMessage).Result")));
 
 
 			CodeVariableReferenceExpression resultReference = new CodeVariableReferenceExpression("responseMessage");
@@ -330,7 +330,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			AddRequestUriWithQueryAssignmentStatement();
 
 			method.Statements.Add(new CodeSnippetStatement(
-				$@"			using (var request = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
+				$@"			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
 			{{"
 				));
 
@@ -352,22 +352,22 @@ namespace Fonlow.OpenApiClientGen.CS
 
 				if (settings.HandleHttpRequestHeaders)
 				{
-					method.Statements.Add(new CodeSnippetStatement(@"			request.Content = content;
+					method.Statements.Add(new CodeSnippetStatement(@"			httpRequestMessage.Content = content;
 			if (handleHeaders != null)
 			{
-				handleHeaders(request.Headers);
+				handleHeaders(httpRequestMessage.Headers);
 			}
 "));
 				}
 
 				method.Statements.Add(new CodeVariableDeclarationStatement(
-					new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(request)") : new CodeSnippetExpression("client.SendAsync(request).Result")));
+					new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(httpRequestMessage)") : new CodeSnippetExpression("client.SendAsync(httpRequestMessage).Result")));
 
 			}
 			else
 			{
 				method.Statements.Add(new CodeVariableDeclarationStatement(
-					new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(request)") : new CodeSnippetExpression("client.SendAsync(request).Result")));
+					new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(httpRequestMessage)") : new CodeSnippetExpression("client.SendAsync(httpRequestMessage).Result")));
 
 			}
 

@@ -698,14 +698,14 @@ namespace MyNS
 		public async Task CreateFromShippingQuoteAsync(CreateShipmentFromQuoteRequest requestBody)
 		{
 			var requestUri = "shipment/create_from_shipping_quote";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -726,14 +726,14 @@ namespace MyNS
 		public void CreateFromShippingQuote(CreateShipmentFromQuoteRequest requestBody)
 		{
 			var requestUri = "shipment/create_from_shipping_quote";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -755,9 +755,9 @@ namespace MyNS
 		public async Task<Shipment> GetShipmentAsync(string shipmentId)
 		{
 			var requestUri = "shipment/"+ (shipmentId==null? "" : Uri.EscapeDataString(shipmentId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -784,9 +784,9 @@ namespace MyNS
 		public Shipment GetShipment(string shipmentId)
 		{
 			var requestUri = "shipment/"+ (shipmentId==null? "" : Uri.EscapeDataString(shipmentId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -813,9 +813,9 @@ namespace MyNS
 		public async Task DownloadLabelFileAsync(string shipmentId)
 		{
 			var requestUri = "shipment/"+ (shipmentId==null? "" : Uri.EscapeDataString(shipmentId))+"/download_label_file";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -836,9 +836,9 @@ namespace MyNS
 		public void DownloadLabelFile(string shipmentId)
 		{
 			var requestUri = "shipment/"+ (shipmentId==null? "" : Uri.EscapeDataString(shipmentId))+"/download_label_file";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -859,9 +859,9 @@ namespace MyNS
 		public async Task<Shipment> CancelShipmentAsync(string shipmentId)
 		{
 			var requestUri = "shipment/"+ (shipmentId==null? "" : Uri.EscapeDataString(shipmentId))+"/cancel";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -888,9 +888,9 @@ namespace MyNS
 		public Shipment CancelShipment(string shipmentId)
 		{
 			var requestUri = "shipment/"+ (shipmentId==null? "" : Uri.EscapeDataString(shipmentId))+"/cancel";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -936,14 +936,14 @@ namespace MyNS
 		public async Task CreateShippingQuoteAsync(ShippingQuoteRequest requestBody)
 		{
 			var requestUri = "shipping_quote";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -964,14 +964,14 @@ namespace MyNS
 		public void CreateShippingQuote(ShippingQuoteRequest requestBody)
 		{
 			var requestUri = "shipping_quote";
-			using (var request = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -993,9 +993,9 @@ namespace MyNS
 		public async Task<ShippingQuote> GetShippingQuoteAsync(string shippingQuoteId)
 		{
 			var requestUri = "shipping_quote/"+ (shippingQuoteId==null? "" : Uri.EscapeDataString(shippingQuoteId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1022,9 +1022,9 @@ namespace MyNS
 		public ShippingQuote GetShippingQuote(string shippingQuoteId)
 		{
 			var requestUri = "shipping_quote/"+ (shippingQuoteId==null? "" : Uri.EscapeDataString(shippingQuoteId));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

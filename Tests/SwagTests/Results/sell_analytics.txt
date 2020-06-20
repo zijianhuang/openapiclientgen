@@ -542,9 +542,9 @@ namespace MyNS
 		public async Task<GetCustomerServiceMetricResponse> GetCustomerServiceMetricAsync(string customer_service_metric_type, string evaluation_marketplace_id, string evaluation_type)
 		{
 			var requestUri = "customer_service_metric/"+ (customer_service_metric_type==null? "" : Uri.EscapeDataString(customer_service_metric_type))+"/"+ (evaluation_type==null? "" : Uri.EscapeDataString(evaluation_type))+"&evaluation_marketplace_id=" + (evaluation_marketplace_id==null? "" : Uri.EscapeDataString(evaluation_marketplace_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -573,9 +573,9 @@ namespace MyNS
 		public GetCustomerServiceMetricResponse GetCustomerServiceMetric(string customer_service_metric_type, string evaluation_marketplace_id, string evaluation_type)
 		{
 			var requestUri = "customer_service_metric/"+ (customer_service_metric_type==null? "" : Uri.EscapeDataString(customer_service_metric_type))+"/"+ (evaluation_type==null? "" : Uri.EscapeDataString(evaluation_type))+"&evaluation_marketplace_id=" + (evaluation_marketplace_id==null? "" : Uri.EscapeDataString(evaluation_marketplace_id));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -621,9 +621,9 @@ namespace MyNS
 		public async Task<FindSellerStandardsProfilesResponse> FindSellerStandardsProfilesAsync()
 		{
 			var requestUri = "seller_standards_profile";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -649,9 +649,9 @@ namespace MyNS
 		public FindSellerStandardsProfilesResponse FindSellerStandardsProfiles()
 		{
 			var requestUri = "seller_standards_profile";
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -679,9 +679,9 @@ namespace MyNS
 		public async Task<StandardsProfile> GetSellerStandardsProfileAsync(string cycle, string program)
 		{
 			var requestUri = "seller_standards_profile/"+ (program==null? "" : Uri.EscapeDataString(program))+"/"+ (cycle==null? "" : Uri.EscapeDataString(cycle));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -709,9 +709,9 @@ namespace MyNS
 		public StandardsProfile GetSellerStandardsProfile(string cycle, string program)
 		{
 			var requestUri = "seller_standards_profile/"+ (program==null? "" : Uri.EscapeDataString(program))+"/"+ (cycle==null? "" : Uri.EscapeDataString(cycle));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -761,9 +761,9 @@ namespace MyNS
 		public async Task<Report> GetTrafficReportAsync(string dimension, string filter, string metric, string sort)
 		{
 			var requestUri = "traffic_report?dimension=" + (dimension==null? "" : Uri.EscapeDataString(dimension))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&metric=" + (metric==null? "" : Uri.EscapeDataString(metric))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(request);
+			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -793,9 +793,9 @@ namespace MyNS
 		public Report GetTrafficReport(string dimension, string filter, string metric, string sort)
 		{
 			var requestUri = "traffic_report?dimension=" + (dimension==null? "" : Uri.EscapeDataString(dimension))+"&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&metric=" + (metric==null? "" : Uri.EscapeDataString(metric))+"&sort=" + (sort==null? "" : Uri.EscapeDataString(sort));
-			using (var request = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(request).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
