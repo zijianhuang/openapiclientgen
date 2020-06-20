@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Diagnostics;
 using System.Linq;
+using Fonlow.OpenApiClientGen.CS;
 
 namespace Fonlow.CodeDom.Web
 {
@@ -34,7 +35,9 @@ namespace Fonlow.CodeDom.Web
 				gen.CreateCodeDom(paths, components);
 				if (settings.CompileToValidate)
 				{
-					var result = gen.CompileThenSave(path, settings.AssemblyPath);
+					var csharpCodes = gen.WriteToText();
+					System.IO.File.WriteAllText(path, csharpCodes);
+					var result = CSharpValidation.CompileThenSave(csharpCodes, settings.AssemblyPath);
 					if (result.Success)
 					{
 						Trace.TraceInformation("Generated codes pass compilation.");

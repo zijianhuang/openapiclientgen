@@ -1,4 +1,5 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
+using Microsoft.CodeAnalysis;
 using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
@@ -7,13 +8,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Tavis.UriTemplates;
-using System.Runtime.Loader;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Emit;
-using System.Diagnostics;
-using System.Net;
 
 namespace Fonlow.OpenApiClientGen.Cs
 {
@@ -54,31 +48,6 @@ namespace Fonlow.OpenApiClientGen.Cs
 		readonly NameComposer nameComposer;
 
 		/// <summary>
-		/// Save C# codes to a file, after CreateDom().
-		/// </summary>
-		/// <param name="fileName"></param>
-		// hack inspired by https://csharpcodewhisperer.blogspot.com/2014/10/create-c-class-code-from-datatable.html
-		public void Save(string fileName)
-		{
-			using MemoryStream stream = new MemoryStream();
-			using StreamWriter writer = new StreamWriter(stream);
-			WriteCode(writer);
-			writer.Flush();
-			stream.Position = 0;
-			using StreamReader stringReader = new StreamReader(stream);
-			using StreamWriter fileWriter = new StreamWriter(fileName);
-			string s = stringReader.ReadToEnd();
-			if (settings.UseEnsureSuccessStatusCodeEx)
-			{
-				fileWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
-			}
-			else
-			{
-				fileWriter.Write(s.Replace("//;", ""));
-			}
-		}
-
-		/// <summary>
 		/// Write CodeDOM into C# codes to TextWriter
 		/// </summary>
 		/// <param name="writer"></param>
@@ -92,63 +61,15 @@ namespace Fonlow.OpenApiClientGen.Cs
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
-		//public CompilerResults CompileThenSave(string fileName)//not working in .net core
-		//{
-		//	using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
-		//	CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
-		//	var s = WriteToText();
-		//	var results = provider.CompileAssemblyFromSource(  //https://docs.microsoft.com/en-us/dotnet/core/compatibility/unsupported-apis
-		//		new CompilerParameters(new string[] { "System.Net.Http", "Newtonsoft.Json" })
-		//		{
-		//			GenerateInMemory = true,
-		//		}, s
-		//		);
-
-		//	File.WriteAllText(fileName, s); //save the file anyway
-
-		//	return results;
-		//}
-
-		public EmitResult CompileThenSave(string fileName, string assemblyPath)//https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/may/net-core-cross-platform-code-generation-with-roslyn-and-net-core
+		/// <summary>
+		/// Save C# codes to a file, after CreateDom().
+		/// </summary>
+		/// <param name="fileName"></param>
+		// hack inspired by https://csharpcodewhisperer.blogspot.com/2014/10/create-c-class-code-from-datatable.html
+		public void Save(string fileName)
 		{
-			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
-			CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
-			var s = WriteToText();
-			File.WriteAllText(fileName, s); //save the file anyway
-			Trace.TraceInformation($"Generated C# codes written to {fileName}");
-
-			var tree = SyntaxFactory.ParseSyntaxTree(s);
-			var assemblyFileName = Path.GetFileName(assemblyPath);
-			MetadataReference CreateFromName(string n)
-			{
-				return MetadataReference.CreateFromFile(Assembly.Load(n).Location);
-			};
-
-			var compilation = CSharpCompilation.Create(assemblyFileName, null, null, new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, true))
-				.AddReferences(
-				CreateFromName("System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"),
-				CreateFromName("System.Runtime, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-				CreateFromName("netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51"),
-				CreateFromName("System.Net.Http, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-				CreateFromName("System.Private.Uri, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-				CreateFromName("System.Runtime.Extensions, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-				CreateFromName("System.Runtime.Serialization.Primitives, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-				CreateFromName("System.Net.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-				CreateFromName("System.ComponentModel.Annotations, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-				CreateFromName("System.Linq, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-				MetadataReference.CreateFromFile("Newtonsoft.Json.dll"))
-				.AddSyntaxTrees(tree);
-
-			Trace.TraceInformation(String.IsNullOrEmpty(assemblyPath)? "Compiling generated codes ..." : $"Compiling generated codes to {assemblyPath} ...");
-			if (String.IsNullOrEmpty(assemblyPath))
-			{
-				using var ms = new MemoryStream();
-				return compilation.Emit(ms);
-			}
-			else
-			{
-				return compilation.Emit(assemblyPath);
-			}
+			using StreamWriter streamWriter = new StreamWriter(fileName);
+			Write(streamWriter);
 		}
 
 		/// <summary>
@@ -157,24 +78,28 @@ namespace Fonlow.OpenApiClientGen.Cs
 		/// <returns></returns>
 		public string WriteToText()
 		{
+			using StringWriter stringWriter = new StringWriter();
+			Write(stringWriter);
+			return stringWriter.ToString();
+		}
+
+		void Write(TextWriter textWriter)
+		{
 			using MemoryStream stream = new MemoryStream();
 			using StreamWriter writer = new StreamWriter(stream);
 			WriteCode(writer);
 			writer.Flush();
 			stream.Position = 0;
-			using StreamReader stringReader = new StreamReader(stream);
-			using StringWriter stringWriter = new StringWriter();
-			string s = stringReader.ReadToEnd();
+			using StreamReader streamReader = new StreamReader(stream);
+			string s = streamReader.ReadToEnd();
 			if (settings.UseEnsureSuccessStatusCodeEx)
 			{
-				stringWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
+				textWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
 			}
 			else
 			{
-				stringWriter.Write(s.Replace("//;", ""));
+				textWriter.Write(s.Replace("//;", ""));
 			}
-
-			return stringWriter.ToString();
 		}
 
 		/// <summary>
@@ -244,6 +169,23 @@ namespace Fonlow.OpenApiClientGen.Cs
 				CreateDummyOfEnsureSuccessStatusCodeEx();
 			}
 		}
+
+		//public CompilerResults CompileThenSave(string fileName)//not working in .net core
+		//{
+		//	using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
+		//	CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
+		//	var s = WriteToText();
+		//	var results = provider.CompileAssemblyFromSource(  //https://docs.microsoft.com/en-us/dotnet/core/compatibility/unsupported-apis
+		//		new CompilerParameters(new string[] { "System.Net.Http", "Newtonsoft.Json" })
+		//		{
+		//			GenerateInMemory = true,
+		//		}, s
+		//		);
+
+		//	File.WriteAllText(fileName, s); //save the file anyway
+
+		//	return results;
+		//}
 
 		string[] GetContainerClassNames(OpenApiPaths paths)
 		{

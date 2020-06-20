@@ -20,6 +20,10 @@ OpenApiClientGen is a .NET Core console app.
 
 * .NET Core 3.1.
 
+**Remarks**
+
+The generated C# codes could be built with .NET Frameworks in addition to .NET Core.
+
 ### Source Installation
 Check out this repository or one of its tags, then do a release build or a Visual Stuido's Publish.
 
