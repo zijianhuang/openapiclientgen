@@ -80,59 +80,119 @@ namespace SwagTests
 		}
 
 		[Fact]
-		public void Testwheretocredit()
+		public void Test_wheretocredit()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\wheretocredit.com\1.0");
 		}
 
 		[Fact]
-		public void Testvonagevgis()
+		public void Test_vonagevgis()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\vgis\1.0.1");
 		}
 
 		[Fact]
-		public void Testvonageuser()
+		public void Test_vonageuser()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\user\1.11.8");
 		}
 
 		[Fact]
-		public void Testvonageaccount()
+		public void Test_vonageaccount()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\account\1.11.8");
 		}
 
 
 		[Fact]
-		public void Testvimeo()
+		public void Test_vimeo()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\vimeo.com\3.4");
 		}
 
 		//[Fact]System.ArgumentException : Not yet supported enumMember of Microsoft.OpenApi.Any.OpenApiBoolean with HideReplyByIdBodyHidden
 		//Enum with boolean in operation HideReplyById. Nswag could not either.
-		//public void Testtwitter()
+		//public void Test_twitter()
 		//{
 		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\twitter.com\labs\2.7");
 		//}
 
 		[Fact]
-		public void Testtomtomsearch()
+		public void Test_tomtomsearch()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\search\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
-		public void Testtomtomrouting()
+		public void Test_tomtomrouting()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\routing\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
-		public void Testtomtommaps()
+		public void Test_tomtommaps()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\maps\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_tisane()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tisane.ai\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_stackexchange()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\stackexchange.com\2.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_shutterstock()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\shutterstock.com\1.0.16");
+		}
+
+		[Fact]
+		public void Test_ritekit()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ritekit.com\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_football()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\rapidapi.com\football-prediction\2", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_rebilly()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\rebilly.com\2.1");
+		}
+
+		[Fact]
+		public void Test_randommer()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\randommer.io\v1", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_patientview()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\patientview.org\1.0");
+		}
+
+		[Fact]
+		public void Test_parliament()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\parliament.uk\search\Live");
+		}
+
+		[Fact]
+		public void Test_openlinksw()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\openlinksw.com\osdb\1.0.0");
 		}
 
 

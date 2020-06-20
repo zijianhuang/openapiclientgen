@@ -115,10 +115,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
+		static string refineTypeName(string s)
+		{
+			if (String.IsNullOrEmpty(s))
+			{
+				return s;
+			}
+
+			return ToTitleCase(s).Replace('-', '_');
+		}
 
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
-			var currentTypeName = ToTitleCase(item.Key).Replace('-', '_');
+			var currentTypeName = refineTypeName(item.Key);
 			OpenApiSchema schema = item.Value;
 
 			string type = schema.Type;
@@ -194,6 +203,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					TypeAliasDic.Instance.Add(item.Key, clrType.FullName);
 					Trace.TraceInformation($"TypeAlias {item.Key} for {clrType.FullName} added.");
 				}
+				else if (type == "object")//object alias without properties
+				{
+					typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
+					CreateTypeDocComment(item, typeDeclaration);
+
+					if (settings.DecorateDataModelWithDataContract)
+					{
+						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+					}
+
+					if (settings.DecorateDataModelWithSerializable)
+					{
+						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
+					}
+				}
 				else
 				{
 					Trace.TraceInformation($"Type Alias {item.Key} is skipped:.");
@@ -223,6 +247,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
+		static string refineEnumMemberName(string s)
+		{
+			if (String.IsNullOrEmpty(s))
+			{
+				return s;
+			}
+
+			var rs = s.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
+						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
+						.Replace(":", "")//atlassian api has this.
+						.Replace('+', '_'); 
+
+			if (!Char.IsLetter(rs[0]) && rs[0] != '_')
+			{
+				rs = "_" + rs;
+			}
+
+			return rs;
+		}
+
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
 			int k = 0;
@@ -230,14 +274,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = stringMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
-						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
-						.Replace(":", ""); //atlassian api has this.
-					if (!Char.IsLetter(memberName[0]) && memberName[0] != '_')
-					{
-						memberName = "_" + memberName;
-					}
-
+					string memberName = refineEnumMemberName(stringMember.Value);
 					bool hasFunkyMemberName = memberName != stringMember.Value;
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
@@ -330,14 +367,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
-				string propertyName = ToTitleCase(p.Key.Replace("$", ""));
-				bool propertyNameAdjusted = false;
+				string propertyName = ToTitleCase(p.Key.Replace("$", "").Replace(':', '_').Replace('-', '_')); //todo: function to replace all non alphanumeric to underscore.
 				if (propertyName == currentTypeName)
 				{
 					Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
 					propertyName += "1";
-					propertyNameAdjusted = true;
 				}
+
+				if (!Char.IsLetter(propertyName[0]) && propertyName[0] != '_')
+				{
+					propertyName = "_" + propertyName;
+				}
+
+				bool propertyNameAdjusted = propertyName != p.Key;
 
 				OpenApiSchema propertySchema = p.Value;
 				string primitivePropertyType = propertySchema.Type;
@@ -381,7 +423,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (propertySchema.Reference != null)
 					{
-						string typeId = ToTitleCase(propertySchema.Reference.Id);
+						string typeId = refineTypeName(propertySchema.Reference.Id);
 						clientProperty = CreateProperty(propertyName, typeId, defaultValue);
 					}
 					else
@@ -498,7 +540,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else // for enum
 					{
-						string complexType = propertySchema.Reference?.Id;
+						string complexType = refineTypeName(propertySchema.Reference?.Id);
 						if (complexType != null)
 						{
 							complexType = ToTitleCase(complexType);
@@ -535,7 +577,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertyNameAdjusted)
 					{
-						var originalPropertyName = ToTitleCase(p.Key);
+						var originalPropertyName = p.Key;
 						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{originalPropertyName}\""))));
 					}
 					else
@@ -666,9 +708,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					return "\"" + stringValue.Value + "\"";
 				}
-				else
+				else //enum
 				{
-					return stringValue.Value;
+					return refineEnumMemberName(stringValue.Value);
 				}
 			}
 
