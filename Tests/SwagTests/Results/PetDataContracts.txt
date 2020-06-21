@@ -22,13 +22,13 @@ namespace MyNS
 	public class ApiResponse
 	{
 		
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="code")]
 		public System.Nullable<System.Int32> Code { get; set; }
 		
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="type")]
 		public string Type { get; set; }
 		
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="message")]
 		public string Message { get; set; }
 	}
 	
@@ -73,19 +73,19 @@ namespace MyNS
 		/// <summary>
 		/// Category ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Category name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="name")]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Test Sub Category
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="sub")]
 		public string Sub { get; set; }
 	}
 	
@@ -101,7 +101,7 @@ namespace MyNS
 		/// The size of the pack the dog is from
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="packSize")]
 		public int PackSize { get; set; }
 	}
 	
@@ -117,7 +117,7 @@ namespace MyNS
 		/// Average amount of honey produced per day in ounces
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
 		public float HoneyPerDay { get; set; }
 	}
 	
@@ -129,22 +129,22 @@ namespace MyNS
 		/// <summary>
 		/// Order ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="petId")]
 		public System.Nullable<System.Int64> PetId { get; set; }
 		
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="quantity")]
 		public System.Nullable<System.Int32> Quantity { get; set; }
 		
 		/// <summary>
 		/// Estimated ship date
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="shipDate")]
 		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
 		
 		/// <summary>
@@ -155,13 +155,13 @@ namespace MyNS
 		/// <summary>
 		/// Indicates whenever order was completed or not
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="complete")]
 		public System.Nullable<System.Boolean> Complete { get; set; }
 		
 		/// <summary>
 		/// Unique Request Id
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="requestId")]
 		public string RequestId { get; set; }
 	}
 	
@@ -188,36 +188,36 @@ namespace MyNS
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Categories this pet belongs to
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="category")]
 		public string Category { get; set; }
 		
 		/// <summary>
 		/// The name given to a pet
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="name")]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="photoUrls")]
 		public string[] PhotoUrls { get; set; }
 		
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="friend")]
 		public string Friend { get; set; }
 		
 		/// <summary>
 		/// Tags attached to the pet
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="tags")]
 		public Tag[] Tags { get; set; }
 		
 		/// <summary>
@@ -228,7 +228,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of a pet
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="petType")]
 		public string PetType { get; set; }
 	}
 	
@@ -240,13 +240,13 @@ namespace MyNS
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
 		/// Tag name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="name")]
 		public string Name { get; set; }
 	}
 	
@@ -270,52 +270,52 @@ namespace MyNS
 	public class User
 	{
 		
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="id")]
 		public System.Nullable<System.Int64> Id { get; set; }
 		
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="pet")]
 		public string Pet { get; set; }
 		
 		/// <summary>
 		/// User supplied username
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="username")]
 		public string Username { get; set; }
 		
 		/// <summary>
 		/// User first name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="firstName")]
 		public string FirstName { get; set; }
 		
 		/// <summary>
 		/// User last name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="lastName")]
 		public string LastName { get; set; }
 		
 		/// <summary>
 		/// User email address
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="email")]
 		public string Email { get; set; }
 		
 		/// <summary>
 		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="password")]
 		public string Password { get; set; }
 		
 		/// <summary>
 		/// User phone number in international format
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="phone")]
 		public string Phone { get; set; }
 		
 		/// <summary>
 		/// User status
 		/// </summary>
-		[System.Runtime.Serialization.DataMember()]
+		[System.Runtime.Serialization.DataMember(Name="userStatus")]
 		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
 	

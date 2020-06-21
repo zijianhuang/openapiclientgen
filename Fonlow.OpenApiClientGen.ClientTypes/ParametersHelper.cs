@@ -20,21 +20,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
 			return ps.Select(p =>
-				new ParameterDescriptionEx()
+			{
+				var refinedName = NameFunc.RefineParameterName(p.Name);
+				var r = new ParameterDescriptionEx()
 				{
-					Name = p.Name.Replace('-', '_').Replace("$", ""), //azure.com\apimanagement-apimapis has $ in query parameter
-					QName=p.Name,
+					Name = refinedName, //azure.com\apimanagement-apimapis has $ in query parameter
+					QName = p.Name,
 					Documentation = p.Description,
 					ParameterDescriptor = new ParameterDescriptor()
 					{
 						IsOptional = !p.Required,
-						ParameterName = p.Name.Replace('-', '_').Replace("$", ""),
+						ParameterName = refinedName,
 						ParameterType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
 
 					ParameterTypeReference = OpenApiParameterToCodeTypeReference(p)
-				}
+				};
+
+				return r;
+			}
 			).Where(k => k.ParameterDescriptor.ParameterBinder != ParameterBinder.None).ToArray();
 		}
 
@@ -46,7 +51,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (schemaType == "array") // for array
 				{
 					OpenApiSchema arrayItemsSchema = apiParameter.Schema.Items;
-					if (arrayItemsSchema.Reference != null) //array of custom type
+					if (arrayItemsSchema == null)//ritekit.com has parameter as array but without items type. Presumbly it may be string.
+					{
+						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType("string", null);
+						CodeTypeReference arrayCodeTypeReference = TypeRefBuilder.CreateArrayTypeReference(clrType, 1);
+						return arrayCodeTypeReference;
+					}
+					else if (arrayItemsSchema.Reference != null) //array of custom type
 					{
 						string arrayTypeName = arrayItemsSchema.Reference.Id;
 						if (TypeAliasDic.Instance.TryGet(arrayTypeName, out string aliasTypeName))

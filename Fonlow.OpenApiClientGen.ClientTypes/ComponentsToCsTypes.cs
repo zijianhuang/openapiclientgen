@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Globalization;
 using System.Data;
+using System.Diagnostics.Tracing;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -96,7 +97,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
 			{
-				var existingType = FindTypeDeclaration(ToTitleCase(item.Key));
+				var existingType = FindTypeDeclaration(NameFunc.ToTitleCase(item.Key));
 				if (existingType == null)
 				{
 					AddTypeToClientNamespace(item);
@@ -115,19 +116,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		static string refineTypeName(string s)
-		{
-			if (String.IsNullOrEmpty(s))
-			{
-				return s;
-			}
-
-			return ToTitleCase(s).Replace('-', '_');
-		}
-
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
-			var currentTypeName = refineTypeName(item.Key);
+			var currentTypeName = NameFunc.RefineTypeName(item.Key);
 			OpenApiSchema schema = item.Value;
 
 			string type = schema.Type;
@@ -247,26 +238,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		static string refineEnumMemberName(string s)
-		{
-			if (String.IsNullOrEmpty(s))
-			{
-				return s;
-			}
-
-			var rs = s.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
-						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
-						.Replace(":", "")//atlassian api has this.
-						.Replace('+', '_'); 
-
-			if (!Char.IsLetter(rs[0]) && rs[0] != '_')
-			{
-				rs = "_" + rs;
-			}
-
-			return rs;
-		}
-
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
 			int k = 0;
@@ -274,7 +245,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = refineEnumMemberName(stringMember.Value);
+					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value);
 					bool hasFunkyMemberName = memberName != stringMember.Value;
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
@@ -367,7 +338,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
-				string propertyName = ToTitleCase(p.Key.Replace("$", "").Replace(':', '_').Replace('-', '_')); //todo: function to replace all non alphanumeric to underscore.
+				string propertyName = NameFunc.ToTitleCase(p.Key.Replace("$", "").Replace(':', '_').Replace('-', '_')); //todo: function to replace all non alphanumeric to underscore.
 				if (propertyName == currentTypeName)
 				{
 					Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
@@ -390,8 +361,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				void GenerateCasualEnum()
 				{
-					string casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
-					CodeTypeDeclaration existingType = FindTypeDeclaration(ToTitleCase(casualEnumName));
+					string casualEnumName = typeDeclaration.Name + NameFunc.ToTitleCase(propertyName);
+					CodeTypeDeclaration existingType = FindTypeDeclaration(NameFunc.ToTitleCase(casualEnumName));
 					if (existingType == null)
 					{
 						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
@@ -423,7 +394,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (propertySchema.Reference != null)
 					{
-						string typeId = refineTypeName(propertySchema.Reference.Id);
+						string typeId = NameFunc.RefineTypeName(propertySchema.Reference.Id);
 						clientProperty = CreateProperty(propertyName, typeId, defaultValue);
 					}
 					else
@@ -474,7 +445,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
 							string arrayTypeName = arrayItemsSchema.Reference.Id;
-							var existingType = FindTypeDeclaration(ToTitleCase(arrayTypeName.Replace('-', '_')));
+							var existingType = FindTypeDeclaration(NameFunc.ToTitleCase(arrayTypeName.Replace('-', '_')));
 							if (existingType == null) // Referencing to a type not yet added to namespace
 							{
 								var existingSchema = FindSchema(arrayTypeName);
@@ -492,7 +463,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 							else
 							{
-								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(ToTitleCase(arrayTypeName.Replace('-', '_')), 1);
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(NameFunc.ToTitleCase(arrayTypeName.Replace('-', '_')), 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
@@ -501,7 +472,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							string arrayType = arrayItemsSchema.Type;
 							if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 							{
-								string casualTypeName = typeDeclaration.Name + ToTitleCase(propertyName);
+								string casualTypeName = typeDeclaration.Name + NameFunc.ToTitleCase(propertyName);
 								CodeTypeDeclaration casualTypeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, casualTypeName);
 								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName);
 								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
@@ -517,7 +488,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
-						string complexType = ToTitleCase(propertySchema.Reference.Id);
+						string complexType = NameFunc.ToTitleCase(propertySchema.Reference.Id);
 						var existingType = FindTypeDeclaration(complexType);
 						if (existingType == null) // Referencing to a type not yet added to namespace
 						{
@@ -540,10 +511,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else // for enum
 					{
-						string complexType = refineTypeName(propertySchema.Reference?.Id);
+						string complexType = NameFunc.RefineTypeName(propertySchema.Reference?.Id);
 						if (complexType != null)
 						{
-							complexType = ToTitleCase(complexType);
+							complexType = NameFunc.ToTitleCase(complexType);
 							var existingType = FindTypeDeclaration(complexType);
 							if (existingType == null) // Referencing to a type not yet added to namespace
 							{
@@ -710,7 +681,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else //enum
 				{
-					return refineEnumMemberName(stringValue.Value);
+					return NameFunc.RefineEnumMemberName(stringValue.Value);
 				}
 			}
 
@@ -736,11 +707,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			Trace.TraceWarning($"Default as {s.Default.GetType().FullName} is not yet supported.");
 			return null;
-		}
-
-		static string ToTitleCase(string s)
-		{
-			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
 		}
 
 		static void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration)

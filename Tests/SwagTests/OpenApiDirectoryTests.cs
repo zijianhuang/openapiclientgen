@@ -68,7 +68,6 @@ namespace SwagTests
 			return new Settings()
 			{
 				ClientNamespace = "MyNS",
-				PathPrefixToRemove = "/api",
 				ContainerClassName = "Misc",
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				ActionNameStrategy = ans,
@@ -147,11 +146,11 @@ namespace SwagTests
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\stackexchange.com\2.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
-		public void Test_shutterstock()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\shutterstock.com\1.0.16");
-		}
+		//[Fact]
+		//public void Test_shutterstock()//has duplicate definitions of api calls.
+		//{
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\shutterstock.com\1.0.16", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//}
 
 		[Fact]
 		public void Test_ritekit()
@@ -165,11 +164,11 @@ namespace SwagTests
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\rapidapi.com\football-prediction\2", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
-		public void Test_rebilly()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\rebilly.com\2.1");
-		}
+		//[Fact]
+		//public void Test_rebilly()
+		//{
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\rebilly.com\2.1");wrong definitions with duplicated enum member voided in billingStatus.
+		//}
 
 		[Fact]
 		public void Test_randommer()
