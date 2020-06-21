@@ -194,7 +194,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					TypeAliasDic.Instance.Add(item.Key, clrType.FullName);
 					Trace.TraceInformation($"TypeAlias {item.Key} for {clrType.FullName} added.");
 				}
-				else if (type == "object")//object alias without properties
+				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
 				{
 					typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
 					CreateTypeDocComment(item, typeDeclaration);
@@ -211,7 +211,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else
 				{
-					Trace.TraceInformation($"Type Alias {item.Key} is skipped:.");
+					Trace.TraceInformation($"Type Alias {item.Key} for type {type} is skipped:.");
 					return;
 				}
 

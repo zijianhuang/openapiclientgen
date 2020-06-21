@@ -34,8 +34,8 @@ namespace Fonlow.CodeDom.Web
 		//   "UInt64[]",
 		//   "Int16[]",
 		//   "UInt16[]",
-	 //  }
-	 //  );
+		//  }
+		//  );
 
 		static readonly Type typeofString = typeof(string);
 		static readonly Type typeofDateTime = typeof(DateTime);
@@ -106,7 +106,7 @@ namespace Fonlow.CodeDom.Web
 			}
 			else
 			{
-				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference.ArrayRank == 0)
+				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference != null && d.ParameterTypeReference.ArrayRank == 0)
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
@@ -141,7 +141,7 @@ namespace Fonlow.CodeDom.Web
 
 					return replaced;
 				}
-				else if (d.ParameterTypeReference.ArrayRank > 0)
+				else if (d.ParameterTypeReference != null && d.ParameterTypeReference.ArrayRank > 0)
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{

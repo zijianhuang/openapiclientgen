@@ -194,6 +194,54 @@ namespace SwagTests
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\openlinksw.com\osdb\1.0.0");
 		}
 
+		[Fact]
+		public void Test_opendatanetwork()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\opendatanetwork.com\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_oceandrivers()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\oceandrivers.com\1.0");
+		}
+
+		[Fact]
+		public void Test_nsidc()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\nsidc.org\1.0.0");
+		}
+
+		[Fact]
+		public void Test_domainfinder()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\nic.at\domainfinder\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_neowsapp()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\neowsapp.com\1.0");
+		}
+
+		[Fact]
+		public void Test_namsor()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\namsor.com\2.0.5");
+		}
+
+		[Fact]
+		public void Test_mycru()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\mycru.io\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_microsoftgraph()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\microsoft.com\graph\1.0.1");
+		}
+
 
 
 	}
