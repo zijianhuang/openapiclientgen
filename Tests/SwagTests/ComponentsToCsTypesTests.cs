@@ -518,5 +518,35 @@ namespace MyNS
             Assert.Equal(expected, s);
         }
 
-    }
+		[Fact]
+		public void TestGetNamespaces()
+		{
+			var ns = NameFunc.GetNamespaceOfClassName("myns.company.MyClass");
+			Assert.Equal("myns.company", ns);
+		}
+
+		[Fact]
+		public void TestGetNamespaces2()
+		{
+			var ns = NameFunc.GetNamespaceOfClassName("MyClass");
+			Assert.Null(ns);
+		}
+
+		[Fact]
+		public void TestFindNamespacesInClassNames()
+		{
+			var names = new string[] { "myns.company.MyClass", "another.company.MyClass", "myns.company.Someclass", "myns.company.gg", "myns.company.cc", "another.company.ggggg" };
+			var nss = NameFunc.FindNamespacesInClassNames(names);
+			Assert.Equal(2, nss.Length);
+		}
+
+		[Fact]
+		public void TestFindNamespacesInClassNames2()
+		{
+			var names = new string[] { "c1", "c3", "c9" };
+			var nss = NameFunc.FindNamespacesInClassNames(names);
+			Assert.Empty(nss);
+		}
+
+	}
 }

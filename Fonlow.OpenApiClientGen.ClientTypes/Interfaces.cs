@@ -6,7 +6,7 @@ namespace Fonlow.OpenApiClientGen
 {
 	public interface IComponentToCodeDom
 	{
-		void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item);
+		void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item, string nsTextWithLastDot);
 
 		public CodeTypeDeclaration FindTypeDeclaration(string typeName);
 

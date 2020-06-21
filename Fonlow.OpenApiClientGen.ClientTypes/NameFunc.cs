@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
@@ -96,6 +96,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
 		}
 
+		public static string[] FindNamespacesInClassNames(IEnumerable<string> names)
+		{
+			var nss = names.Select(n => GetNamespaceOfClassName(n));
+			var r = nss.Distinct().Where(k=>k!=null).ToArray();
+			return r;
+		}
+
+		public static string GetNamespaceOfClassName(string className)
+		{
+			var lastIndex = className.LastIndexOf('.');
+			return (lastIndex >= 0) ? className.Substring(0, lastIndex) : null;
+		}
 
 	}
+
 }

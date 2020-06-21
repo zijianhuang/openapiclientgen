@@ -82,7 +82,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, settings.NamespaceInClassName);
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, null); //todo: try to handle namespace of the return type
 
 			}
 			catch (CodeGenException ex)

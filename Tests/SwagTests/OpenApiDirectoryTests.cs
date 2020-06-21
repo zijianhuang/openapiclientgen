@@ -243,7 +243,7 @@ namespace SwagTests
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\microsoft.com\graph\1.0.1", new Settings()
 			{
 				ClientNamespace = "MyNS",
-				NamespaceInClassName = "microsoft.graph.",
+				//NamespaceInClassName = "microsoft.graph.",
 				ContainerClassName = "Misc",
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				ActionNameStrategy = ActionNameStrategy.Default,

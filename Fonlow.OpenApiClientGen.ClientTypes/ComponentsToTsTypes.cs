@@ -106,12 +106,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			foreach (KeyValuePair<string, OpenApiSchema> item in components.Schemas)
 			{
-				AddTypeToClientNamespace(item);
+				AddTypeToClientNamespace(item, null);
 			}
 
 		}
 
-		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
+		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item, string nsTextWithLastDot)
 		{
 			string typeName = ToTitleCase(item.Key);
 			RegisterTypeToBeAdded(item.Key);
@@ -136,7 +136,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							return;
 						}
 
-						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, settings.NamespaceInClassName); //pointing to parent class
+						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, nsTextWithLastDot); //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
 						OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1];

@@ -73,7 +73,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, settings.NamespaceInClassName);
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, null);//todo: handle namespace in classes
 
 			}
 			catch (CodeGenException ex)
