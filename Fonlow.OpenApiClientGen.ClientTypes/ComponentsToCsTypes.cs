@@ -118,7 +118,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
-			var currentTypeName = NameFunc.RefineTypeName(item.Key);
+			var currentTypeName = NameFunc.RefineTypeName(item.Key, settings.NamespaceInClassName);
 			OpenApiSchema schema = item.Value;
 
 			string type = schema.Type;
@@ -394,7 +394,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (propertySchema.Reference != null)
 					{
-						string typeId = NameFunc.RefineTypeName(propertySchema.Reference.Id);
+						string typeId = NameFunc.RefineTypeName(propertySchema.Reference.Id, settings.NamespaceInClassName);
 						clientProperty = CreateProperty(propertyName, typeId, defaultValue);
 					}
 					else
@@ -511,7 +511,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else // for enum
 					{
-						string complexType = NameFunc.RefineTypeName(propertySchema.Reference?.Id);
+						string complexType = NameFunc.RefineTypeName(propertySchema.Reference?.Id, settings.NamespaceInClassName);
 						if (complexType != null)
 						{
 							complexType = NameFunc.ToTitleCase(complexType);

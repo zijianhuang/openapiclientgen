@@ -50,6 +50,8 @@
 		/// </summary>
 		public string ClientNamespace { get; set; } = "My.Namespace";
 
+		public string NamespaceInClassName { get; set; }
+
 		/// <summary>
 		/// To compose client function name through removing path prefix. Typically / or /api. The default is /.
 		/// The lenght of the prefix is used to remove path prefix. Applied when ActionNameStrategy is PathMethodQueryParameters.

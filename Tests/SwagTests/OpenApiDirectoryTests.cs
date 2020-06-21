@@ -37,6 +37,7 @@ namespace SwagTests
 		void GenerateAndAssert(string openApiFile, Settings mySettings = null)
 		{
 			string s = TranslateJsonToCode(openApiFile, mySettings);
+			//File.WriteAllText(@"c:\temp\openapi\ccc.cs", s);
 			var r = CSharpValidation.CompileThenSave(s, null);
 			if (!r.Success)
 			{
@@ -56,7 +57,7 @@ namespace SwagTests
 			PathPrefixToRemove = "/api",
 			ContainerClassName = "Misc",
 			ContainerNameStrategy = ContainerNameStrategy.None,
-			ActionNameStrategy= ActionNameStrategy.Default,
+			ActionNameStrategy = ActionNameStrategy.Default,
 			GenerateBothAsyncAndSync = true,
 			UseEnsureSuccessStatusCodeEx = true,
 			DataAnnotationsEnabled = true,
@@ -239,7 +240,21 @@ namespace SwagTests
 		[Fact]
 		public void Test_microsoftgraph()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\microsoft.com\graph\1.0.1");
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\microsoft.com\graph\1.0.1", new Settings()
+			{
+				ClientNamespace = "MyNS",
+				NamespaceInClassName = "microsoft.graph.",
+				ContainerClassName = "Misc",
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				GenerateBothAsyncAndSync = true,
+				UseEnsureSuccessStatusCodeEx = true,
+				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
+				DecorateDataModelWithDataContract = true,
+				DataContractNamespace = "http://demo.domain/2020/03",
+				HandleHttpRequestHeaders = true,
+			});
 		}
 
 

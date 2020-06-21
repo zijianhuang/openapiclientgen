@@ -22,14 +22,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return keywords.Any(d => d == s);
 		}
 
-		public static string RefineTypeName(string s)
+		//public static string RefineTypeName(string s)
+		//{
+		//	if (String.IsNullOrEmpty(s))
+		//	{
+		//		return s;
+		//	}
+
+		//	return ToTitleCase(s).Replace('-', '_');
+		//}
+
+		public static string RefineTypeName(string s, string nsInType)
 		{
 			if (String.IsNullOrEmpty(s))
 			{
 				return s;
 			}
 
-			return ToTitleCase(s).Replace('-', '_');
+			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length) : s;
+
+			return ToTitleCase(rs).Replace('-', '_');
 		}
 
 		public static string RefineEnumMemberName(string s)
