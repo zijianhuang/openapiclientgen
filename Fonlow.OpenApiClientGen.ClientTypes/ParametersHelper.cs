@@ -83,7 +83,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 
 							//warning about bad yaml design.
-							Trace.TraceWarning($"Parameter {apiParameter.Name.Replace('-', '_')} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
+							Trace.TraceWarning($"Parameter {NameFunc.RefineParameterName(apiParameter.Name)} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 						}
 
 						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);

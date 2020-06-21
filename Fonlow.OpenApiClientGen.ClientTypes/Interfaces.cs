@@ -9,5 +9,7 @@ namespace Fonlow.OpenApiClientGen
 		void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item);
 
 		public CodeTypeDeclaration FindTypeDeclaration(string typeName);
+
+		bool RegisteredTypeExists(string t);
 	}
 }

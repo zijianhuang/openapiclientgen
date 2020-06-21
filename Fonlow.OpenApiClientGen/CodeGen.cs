@@ -48,6 +48,8 @@ namespace Fonlow.CodeDom.Web
 						{
 							Trace.TraceError(ms.ToString());
 						}
+
+						Trace.TraceWarning($"Total Errors: {result.Diagnostics.Length}");
 					}
 				}
 				else

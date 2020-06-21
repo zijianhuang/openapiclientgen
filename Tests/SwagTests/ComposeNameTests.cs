@@ -93,7 +93,7 @@ namespace SwagTests
 		public void TestReturnComplexType()
 		{
 			OpenApiPathItem pathItem = doc.Paths["/api/Entities/getPerson/{id}"];
-			string t = TypeRefBuilder.GetOperationReturnComplexTypeReference(pathItem.Operations[OperationType.Get]);
+			string t = TypeRefBuilder.GetOperationReturnComplexTypeReferenceId(pathItem.Operations[OperationType.Get]);
 			Assert.Equal("Person", t);
 		}
 

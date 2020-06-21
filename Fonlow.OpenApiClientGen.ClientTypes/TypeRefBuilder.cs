@@ -16,9 +16,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="op"></param>
 		/// <returns>Item3 indicate whether to be complex type.</returns>
-		public static Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op)
+		public static Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op, string nsInClass)
 		{
-			string complexTypeName = GetOperationReturnComplexTypeReference(op);
+			var referenceId = GetOperationReturnComplexTypeReferenceId(op);
+			string complexTypeName = NameFunc.RefineTypeName(referenceId, nsInClass);
 			bool stringAsString = false;
 			if (complexTypeName == null)
 			{
@@ -256,7 +257,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return oafTypes.Contains(typeName);
 		}
 
-		public static string GetOperationReturnComplexTypeReference(OpenApiOperation op)
+		/// <summary>
+		/// content.Schema.Reference.Id of op
+		/// </summary>
+		/// <param name="op"></param>
+		/// <returns></returns>
+		public static string GetOperationReturnComplexTypeReferenceId(OpenApiOperation op)
 		{
 			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
 			{

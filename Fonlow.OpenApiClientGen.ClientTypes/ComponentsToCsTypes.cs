@@ -11,6 +11,7 @@ using System.Linq;
 using System.Globalization;
 using System.Data;
 using System.Diagnostics.Tracing;
+using System.ComponentModel;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -33,6 +34,23 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly Settings settings;
 
 		IDictionary<string, OpenApiSchema> ComponentsSchemas;
+
+		readonly List<string> registeredTypes = new List<string>();
+
+		void RegisterTypeToBeAdded(string t)
+		{
+			registeredTypes.Add(t);
+		}
+
+		void RemoveRegisteredType(string t)
+		{
+			registeredTypes.Remove(t);
+		}
+
+		public bool RegisteredTypeExists(string t)
+		{
+			return registeredTypes.Exists(d => d == t);
+		}
 
 		/// <summary>
 		/// Save TypeScript codes generated into a file.
@@ -97,7 +115,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
 			{
-				var existingType = FindTypeDeclaration(NameFunc.ToTitleCase(item.Key));
+				var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(item.Key, settings.NamespaceInClassName));
 				if (existingType == null)
 				{
 					AddTypeToClientNamespace(item);
@@ -119,6 +137,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
 			var currentTypeName = NameFunc.RefineTypeName(item.Key, settings.NamespaceInClassName);
+			RegisterTypeToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 
 			string type = schema.Type;
@@ -138,10 +157,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (allOfRef.Reference == null)
 						{
 							Trace.TraceWarning($"Not yet support Type {item.Key} having allOf[0] without Reference. Skipped.");
+							RemoveRegisteredType(item.Key);
 							return;
 						}
 
-						string baseTypeName = allOfRef.Reference.Id; //pointing to parent class
+						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, settings.NamespaceInClassName); //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
 						if (allOfBaseTypeSchemaList.Count > 1)
@@ -171,6 +191,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (itemsRef == null)
 					{
 						Trace.TraceWarning($"Not yet support array type with casual items type without reference: {item.Key}. Skipped.");
+						RemoveRegisteredType(item.Key);
 						return;
 					}
 
@@ -212,6 +233,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else
 				{
 					Trace.TraceInformation($"Type Alias {item.Key} for type {type} is skipped:.");
+					RemoveRegisteredType(item.Key);
 					return;
 				}
 
@@ -236,6 +258,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Trace.TraceInformation("client enum: " + currentTypeName);
 			}
 
+			RemoveRegisteredType(item.Key);
 		}
 
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
@@ -307,9 +330,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 				{
-					string memberName = passwordMember.Value.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
-						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
-						.Replace(":", ""); //atlassian api has this.
+					string memberName = NameFunc.RefineEnumMemberName(passwordMember.Value);
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -338,7 +359,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
-				string propertyName = NameFunc.ToTitleCase(p.Key.Replace("$", "").Replace(':', '_').Replace('-', '_')); //todo: function to replace all non alphanumeric to underscore.
+				string propertyName = NameFunc.RefinePropertyName(p.Key);
 				if (propertyName == currentTypeName)
 				{
 					Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
@@ -361,8 +382,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				void GenerateCasualEnum()
 				{
-					string casualEnumName = typeDeclaration.Name + NameFunc.ToTitleCase(propertyName);
-					CodeTypeDeclaration existingType = FindTypeDeclaration(NameFunc.ToTitleCase(casualEnumName));
+					string casualEnumName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
+					CodeTypeDeclaration existingType = FindTypeDeclaration(casualEnumName);
 					if (existingType == null)
 					{
 						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
@@ -445,11 +466,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
 							string arrayTypeName = arrayItemsSchema.Reference.Id;
-							var existingType = FindTypeDeclaration(NameFunc.ToTitleCase(arrayTypeName.Replace('-', '_')));
+							var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(arrayTypeName, settings.NamespaceInClassName));
 							if (existingType == null) // Referencing to a type not yet added to namespace
 							{
 								var existingSchema = FindSchema(arrayTypeName);
-								if (existingSchema != null)
+								if (existingSchema != null && !RegisteredTypeExists(arrayTypeName))
 								{
 									AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(arrayTypeName, existingSchema));
 								}
@@ -463,7 +484,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 							else
 							{
-								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(NameFunc.ToTitleCase(arrayTypeName.Replace('-', '_')), 1);
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(NameFunc.RefineTypeName(arrayTypeName, settings.NamespaceInClassName), 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
@@ -472,7 +493,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							string arrayType = arrayItemsSchema.Type;
 							if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 							{
-								string casualTypeName = typeDeclaration.Name + NameFunc.ToTitleCase(propertyName);
+								string casualTypeName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
 								CodeTypeDeclaration casualTypeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, casualTypeName);
 								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName);
 								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
@@ -488,9 +509,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
-						string complexType = NameFunc.ToTitleCase(propertySchema.Reference.Id);
+						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, settings.NamespaceInClassName);
 						var existingType = FindTypeDeclaration(complexType);
-						if (existingType == null) // Referencing to a type not yet added to namespace
+						if (existingType == null && !RegisteredTypeExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 						{
 							AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
 						}
@@ -514,9 +535,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						string complexType = NameFunc.RefineTypeName(propertySchema.Reference?.Id, settings.NamespaceInClassName);
 						if (complexType != null)
 						{
-							complexType = NameFunc.ToTitleCase(complexType);
 							var existingType = FindTypeDeclaration(complexType);
-							if (existingType == null) // Referencing to a type not yet added to namespace
+							if (existingType == null && !RegisteredTypeExists(propertySchema.Reference?.Id)) // Referencing to a type not yet added to namespace
 							{
 								AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
 							}

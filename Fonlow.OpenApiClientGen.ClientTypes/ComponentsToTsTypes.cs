@@ -14,7 +14,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// <summary>
 	/// POCO to TypeScript interfaces generator. Create CodeDOM and output TS codes, with TypeScript CodeDOM provider
 	/// </summary>
-	public class ComponentsToTsTypes: IComponentToCodeDom
+	public class ComponentsToTsTypes : IComponentToCodeDom
 	{
 		public ComponentsToTsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
 		{
@@ -28,6 +28,23 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly CodeCompileUnit codeCompileUnit;
 
 		readonly Settings settings;
+
+		readonly List<string> registeredTypes = new List<string>();
+
+		void RegisterTypeToBeAdded(string t)
+		{
+			registeredTypes.Add(t);
+		}
+
+		void RemoveRegisteredType(string t)
+		{
+			registeredTypes.Remove(t);
+		}
+
+		public bool RegisteredTypeExists(string t)
+		{
+			return registeredTypes.Exists(d => d == t);
+		}
 
 		/// <summary>
 		/// Save TypeScript codes generated into a file.
@@ -97,6 +114,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item)
 		{
 			string typeName = ToTitleCase(item.Key);
+			RegisterTypeToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 			string type = schema.Type;
 			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
@@ -118,7 +136,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							return;
 						}
 
-						string baseTypeName = allOfRef.Reference.Id; //pointing to parent class
+						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, settings.NamespaceInClassName); //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
 						OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1];
@@ -144,6 +162,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else
 				{
 					Trace.TraceInformation($"TS Type Alias {typeName} is skipped:.");
+					RemoveRegisteredType(item.Key);
 					return;
 				}
 
@@ -156,6 +175,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				AddEnumMembers(typeDeclaration, enumTypeList);
 				Trace.TraceInformation("TS client enum: " + typeName);
 			}
+
+			RemoveRegisteredType(item.Key);
 		}
 
 		static void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
