@@ -35,13 +35,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				return Tuple.Create(new CodeTypeReference(typeAlias), stringAsString, true);
 			}
-			else if (Char.IsLower(complexTypeName[0])) //uspto.yaml has component names in camelCase.
-			{
-				string adjustedTypeName = ToTitleCase(complexTypeName);
-				return Tuple.Create(new CodeTypeReference(adjustedTypeName), stringAsString, true);
-			}
+			//else if (Char.IsLower(complexTypeName[0])) //uspto.yaml has component names in camelCase.
+			//{
+			//	string adjustedTypeName = ToTitleCase(complexTypeName);
+			//	return Tuple.Create(new CodeTypeReference(adjustedTypeName), stringAsString, true);
+			//}
 
-			return Tuple.Create(new CodeTypeReference(complexTypeName), stringAsString, true);
+			return Tuple.Create(new CodeTypeReference(CombineNamespaceWithClassName(ns, complexTypeName)), stringAsString, true);
 		}
 
 		static string ToTitleCase(string s)
@@ -70,8 +70,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					OpenApiSchema arrayItemsSchema = content.Schema.Items;
 					if (arrayItemsSchema.Reference != null) //array of custom type
 					{
-						string arrayTypeName = arrayItemsSchema.Reference.Id;
-						CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(ToTitleCase(arrayTypeName), 1);
+						string ns = NameFunc.GetNamespaceOfClassName(arrayItemsSchema.Reference.Id);
+						string arrayTypeName = NameFunc.RefineTypeName(arrayItemsSchema.Reference.Id, ns);
+						CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(CombineNamespaceWithClassName(ns, arrayTypeName), 1);
 						return arrayCodeTypeReference;
 					}
 					else
@@ -220,6 +221,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				ArrayElementType = elementTypeReference,
 			};
 			return typeReference;
+		}
+
+		static string CombineNamespaceWithClassName(string ns, string typeName)
+		{
+			return String.IsNullOrEmpty(ns) ? typeName : (ns + "." + typeName);
 		}
 
 		static readonly Dictionary<string, Type> basicClrTypeDic = new Dictionary<string, Type>()
