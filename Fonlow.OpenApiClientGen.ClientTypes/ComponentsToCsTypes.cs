@@ -575,7 +575,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
 						}
 
-						clientProperty = CreateProperty(propertyName, complexType, defaultValue);
+						var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
+						clientProperty = CreateProperty(propertyName, typeWithNs, defaultValue);
 					}
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{

@@ -93,11 +93,5 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			return null; //empty post
 		}
-
-		//static string ToTitleCase(string s)
-		//{
-		//	return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
-		//}
-
 	}
 }
