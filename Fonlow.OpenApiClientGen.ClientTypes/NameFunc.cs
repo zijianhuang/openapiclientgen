@@ -22,16 +22,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return keywords.Any(d => d == s);
 		}
 
-		//public static string RefineTypeName(string s)
-		//{
-		//	if (String.IsNullOrEmpty(s))
-		//	{
-		//		return s;
-		//	}
-
-		//	return ToTitleCase(s).Replace('-', '_');
-		//}
-
 		public static string RefineTypeName(string s, string nsInType)
 		{
 			if (String.IsNullOrEmpty(s))
@@ -39,7 +29,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
-			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length) : s;
+			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
 
 			return ToTitleCase(rs).Replace('-', '_');
 		}

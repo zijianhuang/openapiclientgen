@@ -64,7 +64,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						CodeTypeDeclaration existingType = componentsToCodeDom.FindTypeDeclaration(newTypeName);
 						if (existingType == null && !componentsToCodeDom.RegisteredTypeExists(newTypeName))
 						{
-							componentsToCodeDom.AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema), null);//todo: handle namespace of return type
+							componentsToCodeDom.AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema));//todo: handle namespace of return type
 							System.Diagnostics.Trace.TraceInformation($"Casual type {newTypeName} created.");
 						}
 

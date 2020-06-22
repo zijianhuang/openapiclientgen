@@ -26,7 +26,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			this.settings = settings;
 			this.ClientNamespace = clientNamespace;
 		}
-
+		
 		public CodeNamespace ClientNamespace { get; private set; }
 
 		readonly CodeCompileUnit codeCompileUnit;
@@ -36,6 +36,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		IDictionary<string, OpenApiSchema> ComponentsSchemas;
 
 		readonly List<string> registeredTypes = new List<string>();
+
+		readonly List<CodeNamespace> classNamespaces = new List<CodeNamespace>();
 
 		void RegisterTypeToBeAdded(string t)
 		{
@@ -112,9 +114,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			ComponentsSchemas = components.Schemas;//.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
-			var classNamespaces = NameFunc.FindNamespacesInClassNames(ComponentsSchemas.Keys);
+			var classNamespaceNames = NameFunc.FindNamespacesInClassNames(ComponentsSchemas.Keys);
 
-			if (classNamespaces.Length > 0)
+			if (classNamespaceNames.Length > 0)
 			{
 				var groupedComponentsSchemas = ComponentsSchemas
 					.GroupBy(d => NameFunc.GetNamespaceOfClassName(d.Key))
@@ -122,15 +124,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var namespacesOfTypes = groupedComponentsSchemas.Select(d => d.Key).ToArray();
 				foreach (var groupedTypes in groupedComponentsSchemas)
 				{
-					var classNamespaceText = groupedTypes.Key + ".";
+					var classNamespaceText = groupedTypes.Key;
 					var classNamespace = new CodeNamespace(classNamespaceText);
 					codeCompileUnit.Namespaces.Add(classNamespace);
+					classNamespaces.Add(classNamespace);
 					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
 					{
 						var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(kv.Key, classNamespaceText), classNamespace);
 						if (existingType == null)
 						{
-							AddTypeToClientNamespace(kv, classNamespaceText);
+							AddTypeToCodeDom(kv);
 						}
 					}
 				}
@@ -142,7 +145,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(item.Key, null));
 					if (existingType == null)
 					{
-						AddTypeToClientNamespace(item, null);
+						AddTypeToCodeDom(item);
 					}
 				}
 			}
@@ -159,9 +162,30 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		public void AddTypeToClientNamespace(KeyValuePair<string, OpenApiSchema> item, string nsTextWithLastDot)
+		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
 		{
-			var currentTypeName = NameFunc.RefineTypeName(item.Key, nsTextWithLastDot);
+			if (String.IsNullOrEmpty(ns))
+			{
+				return PodGenHelper.CreatePodClientClass(ClientNamespace, typeName);
+			}
+			else
+			{
+				var foundNamespace = classNamespaces.Find(d => d.Name == ns);
+				if (foundNamespace == null)
+				{
+					foundNamespace = new CodeNamespace(ns);
+					codeCompileUnit.Namespaces.Add(foundNamespace);
+					classNamespaces.Add(foundNamespace);
+				}
+
+				return PodGenHelper.CreatePodClientClass(foundNamespace, typeName);
+			}
+		}
+
+		public void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item)
+		{
+			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
+			var currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
 			RegisterTypeToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 
@@ -175,7 +199,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 				{
-					typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
+					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 					{
 						OpenApiSchema allOfRef = allOfBaseTypeSchemaList[0];
@@ -186,19 +210,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							return;
 						}
 
-						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, nsTextWithLastDot); //pointing to parent class
+						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, ns); //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
 						if (allOfBaseTypeSchemaList.Count > 1)
 						{
 							OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
-							AddProperties(typeDeclaration, allOfProperteisSchema, currentTypeName, nsTextWithLastDot);
+							AddProperties(typeDeclaration, allOfProperteisSchema, currentTypeName, ns);
 						}
 					}
 
 					CreateTypeDocComment(item, typeDeclaration);
 
-					AddProperties(typeDeclaration, schema, currentTypeName, nsTextWithLastDot);
+					AddProperties(typeDeclaration, schema, currentTypeName, ns);
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
@@ -242,7 +266,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
 				{
-					typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
+					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns); 
 					CreateTypeDocComment(item, typeDeclaration);
 
 					if (settings.DecorateDataModelWithDataContract)
@@ -380,7 +404,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		//string currentTypeName;
 
-		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string nsTextWithLastDot)
+		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
@@ -440,7 +464,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (propertySchema.Reference != null)
 					{
-						string typeId = NameFunc.RefineTypeName(propertySchema.Reference.Id, nsTextWithLastDot);
+						string typeId = NameFunc.RefineTypeName(propertySchema.Reference.Id, ns);
 						clientProperty = CreateProperty(propertyName, typeId, defaultValue);
 					}
 					else
@@ -491,13 +515,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
 							string arrayTypeName = arrayItemsSchema.Reference.Id;
-							var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(arrayTypeName, nsTextWithLastDot));
+							var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeName);
+							var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(arrayTypeName, arrayTypeNs));
 							if (existingType == null) // Referencing to a type not yet added to namespace
 							{
 								var existingSchema = FindSchema(arrayTypeName);
 								if (existingSchema != null && !RegisteredTypeExists(arrayTypeName))
 								{
-									AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(arrayTypeName, existingSchema), nsTextWithLastDot);
+									AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeName, existingSchema));
 								}
 							}
 
@@ -509,7 +534,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 							else
 							{
-								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(NameFunc.RefineTypeName(arrayTypeName, nsTextWithLastDot), 1);
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(NameFunc.RefineTypeName(arrayTypeName, ns), 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
@@ -519,8 +544,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 							{
 								string casualTypeName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
-								CodeTypeDeclaration casualTypeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, casualTypeName);
-								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, nsTextWithLastDot);
+								CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);
+								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
 								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, defaultValue);
 							}
@@ -534,11 +559,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
-						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, nsTextWithLastDot);
+						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, ns);
 						var existingType = FindTypeDeclaration(complexType);
 						if (existingType == null && !RegisteredTypeExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 						{
-							AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema), nsTextWithLastDot);
+							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
 						}
 
 						clientProperty = CreateProperty(propertyName, complexType, defaultValue);
@@ -557,13 +582,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else // for enum
 					{
-						string complexType = NameFunc.RefineTypeName(propertySchema.Reference?.Id, nsTextWithLastDot);
+						string complexType = NameFunc.RefineTypeName(propertySchema.Reference?.Id, ns);
 						if (complexType != null)
 						{
 							var existingType = FindTypeDeclaration(complexType);
 							if (existingType == null && !RegisteredTypeExists(propertySchema.Reference?.Id)) // Referencing to a type not yet added to namespace
 							{
-								AddTypeToClientNamespace(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema), nsTextWithLastDot);
+								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
 							}
 
 							clientProperty = CreateProperty(propertyName, complexType, defaultValue);
@@ -896,7 +921,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeDeclaration FindTypeDeclaration(string typeName)
 		{
-			return ClientNamespace.FindTypeDeclaration(typeName);
+			var cd = ClientNamespace.FindTypeDeclaration(typeName);
+			if (cd != null)
+			{
+				return cd;
+			}
+
+			foreach (var cs in classNamespaces)
+			{
+				var ctd = cs.FindTypeDeclaration(typeName);
+				if (ctd != null)
+				{
+					return ctd;
+				}
+			}
+
+			return null;
 		}
 
 		public static CodeTypeDeclaration FindTypeDeclaration(string typeName, CodeNamespace ns)
