@@ -35,23 +35,23 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		IDictionary<string, OpenApiSchema> ComponentsSchemas;
 
-		readonly List<string> registeredTypes = new List<string>();
+		readonly List<string> registeredSchemaRefIds = new List<string>();
 
 		public List<CodeNamespace> ClassNamespaces { get; private set; } = new List<CodeNamespace>();
 
-		void RegisterTypeToBeAdded(string t)
+		void RegisterSchemaRefIdToBeAdded(string t)
 		{
-			registeredTypes.Add(t);
+			registeredSchemaRefIds.Add(t);
 		}
 
-		void RemoveRegisteredType(string t)
+		void RemoveRegisteredSchemaRefId(string t)
 		{
-			registeredTypes.Remove(t);
+			registeredSchemaRefIds.Remove(t);
 		}
 
-		public bool RegisteredTypeExists(string t)
+		public bool RegisteredSchemaRefIdExists(string t)
 		{
-			return registeredTypes.Exists(d => d == t);
+			return registeredSchemaRefIds.Exists(d => d == t);
 		}
 
 		/// <summary>
@@ -186,7 +186,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
 			var currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
-			RegisterTypeToBeAdded(item.Key);
+			RegisterSchemaRefIdToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 
 			string type = schema.Type;
@@ -206,7 +206,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (allOfRef.Reference == null)
 						{
 							Trace.TraceWarning($"Not yet support Type {item.Key} having allOf[0] without Reference. Skipped.");
-							RemoveRegisteredType(item.Key);
+							RemoveRegisteredSchemaRefId(item.Key);
 							return;
 						}
 
@@ -240,7 +240,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (itemsRef == null)
 					{
 						Trace.TraceWarning($"Not yet support array type with casual items type without reference: {item.Key}. Skipped.");
-						RemoveRegisteredType(item.Key);
+						RemoveRegisteredSchemaRefId(item.Key);
 						return;
 					}
 
@@ -282,7 +282,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else
 				{
 					Trace.TraceInformation($"Type Alias {item.Key} for type {type} is skipped:.");
-					RemoveRegisteredType(item.Key);
+					RemoveRegisteredSchemaRefId(item.Key);
 					return;
 				}
 
@@ -307,7 +307,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Trace.TraceInformation("client enum: " + currentTypeName);
 			}
 
-			RemoveRegisteredType(item.Key);
+			RemoveRegisteredSchemaRefId(item.Key);
 		}
 
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
@@ -520,7 +520,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (existingType == null) // Referencing to a type not yet added to namespace
 							{
 								var existingSchema = FindSchema(arrayTypeName);
-								if (existingSchema != null && !RegisteredTypeExists(arrayTypeName))
+								if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeName))
 								{
 									AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeName, existingSchema));
 								}
@@ -561,7 +561,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, ns);
 						var existingType = FindTypeDeclaration(complexType);
-						if (existingType == null && !RegisteredTypeExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
+						if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 						{
 							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
 						}
@@ -586,7 +586,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (complexType != null)
 						{
 							var existingType = FindTypeDeclaration(complexType);
-							if (existingType == null && !RegisteredTypeExists(propertySchema.Reference?.Id)) // Referencing to a type not yet added to namespace
+							if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference?.Id)) // Referencing to a type not yet added to namespace
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
 							}

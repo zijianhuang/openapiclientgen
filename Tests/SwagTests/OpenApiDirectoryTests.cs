@@ -240,6 +240,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_microsoftgraph()
 		{
+			//ms graph yaml has some funky paths like /groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id}, duplicate parameters.
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\microsoft.com\graph\1.0.1", new Settings()
 			{
 				ClientNamespace = "MyNS",

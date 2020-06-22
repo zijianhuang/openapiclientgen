@@ -10,6 +10,6 @@ namespace Fonlow.OpenApiClientGen
 
 		public CodeTypeDeclaration FindTypeDeclaration(string typeName);
 
-		bool RegisteredTypeExists(string t);
+		bool RegisteredSchemaRefIdExists(string t);
 	}
 }

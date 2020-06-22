@@ -41,7 +41,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			registeredTypes.Remove(t);
 		}
 
-		public bool RegisteredTypeExists(string t)
+		public bool RegisteredSchemaRefIdExists(string t)
 		{
 			return registeredTypes.Exists(d => d == t);
 		}

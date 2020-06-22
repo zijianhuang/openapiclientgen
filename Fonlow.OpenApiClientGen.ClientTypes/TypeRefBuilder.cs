@@ -35,20 +35,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				return Tuple.Create(new CodeTypeReference(typeAlias), stringAsString, true);
 			}
-			//else if (Char.IsLower(complexTypeName[0])) //uspto.yaml has component names in camelCase.
-			//{
-			//	string adjustedTypeName = ToTitleCase(complexTypeName);
-			//	return Tuple.Create(new CodeTypeReference(adjustedTypeName), stringAsString, true);
-			//}
 
 			return Tuple.Create(new CodeTypeReference(CombineNamespaceWithClassName(ns, complexTypeName)), stringAsString, true);
 		}
-
-		static string ToTitleCase(string s)
-		{
-			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
-		}
-
 
 		/// <summary>
 		/// Translate OpenApiMediaType content to CodeTypeReference
