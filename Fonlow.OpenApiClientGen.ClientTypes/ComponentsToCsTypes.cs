@@ -152,6 +152,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
+		/// <summary>
+		/// Check if schema key exists in ComponentsSchemas
+		/// </summary>
+		/// <param name="key"></param>
+		/// <returns></returns>
 		OpenApiSchema FindSchema(string key)
 		{
 			if (ComponentsSchemas.TryGetValue(key, out OpenApiSchema v))
@@ -464,8 +469,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (propertySchema.Reference != null)
 					{
-						string typeId = NameFunc.RefineTypeName(propertySchema.Reference.Id, ns);
-						clientProperty = CreateProperty(propertyName, typeId, defaultValue);
+						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+						string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+						clientProperty = CreateProperty(propertyName, propertyTypeName, defaultValue);
 					}
 					else
 					{
@@ -514,19 +520,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
-							string arrayTypeName = arrayItemsSchema.Reference.Id;
-							var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeName);
-							var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(arrayTypeName, arrayTypeNs));
+							string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
+							var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
+							var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs));
 							if (existingType == null) // Referencing to a type not yet added to namespace
 							{
-								var existingSchema = FindSchema(arrayTypeName);
-								if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeName))
+								var existingSchema = FindSchema(arrayTypeSchemaRefId);
+								if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
 								{
-									AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeName, existingSchema));
+									AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
 								}
 							}
 
-							if (TypeAliasDic.Instance.TryGet(arrayTypeName, out string arrayTypeNameAlias))
+							if (TypeAliasDic.Instance.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
 							{
 								var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
 								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(clrType.FullName, 1);
@@ -534,7 +540,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 							else
 							{
-								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(NameFunc.RefineTypeName(arrayTypeName, ns), 1);
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(NameFunc.RefineTypeName(arrayTypeSchemaRefId, ns), 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
@@ -559,7 +565,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
-						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, ns);
+						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
 						var existingType = FindTypeDeclaration(complexType);
 						if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 						{
@@ -582,16 +589,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else // for enum
 					{
-						string complexType = NameFunc.RefineTypeName(propertySchema.Reference?.Id, ns);
-						if (complexType != null)
+						
+						if (propertySchema.Reference != null)
 						{
-							var existingType = FindTypeDeclaration(complexType);
-							if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference?.Id)) // Referencing to a type not yet added to namespace
+							var propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+							string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+							string typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
+							var existingType = FindTypeDeclaration(typeWithNs);
+							if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 							{
-								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
+								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
 							}
 
-							clientProperty = CreateProperty(propertyName, complexType, defaultValue);
+							clientProperty = CreateProperty(propertyName, typeWithNs, defaultValue);
 						}
 						else //for casual enum
 						{

@@ -105,6 +105,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return (lastIndex >= 0) ? className.Substring(0, lastIndex) : null;
 		}
 
+		public static string CombineNamespaceWithClassName(string ns, string typeName)
+		{
+			return String.IsNullOrEmpty(ns) ? typeName : (ns + "." + typeName);
+		}
+
+
 	}
 
 }

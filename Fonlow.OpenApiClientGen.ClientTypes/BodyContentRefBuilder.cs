@@ -48,7 +48,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					var ns = NameFunc.GetNamespaceOfClassName(op.RequestBody.Reference.Id);
 					string typeName = NameFunc.RefineTypeName(op.RequestBody.Reference.Id, ns);
-					CodeTypeReference codeTypeReference = new CodeTypeReference(CombineNamespaceWithClassName(ns, typeName));
+					CodeTypeReference codeTypeReference = new CodeTypeReference(NameFunc.CombineNamespaceWithClassName(ns, typeName));
 					return Tuple.Create(codeTypeReference, description, true);
 				}
 				else if (op.RequestBody.Content.TryGetValue("application/json", out content))
@@ -57,7 +57,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						var ns = NameFunc.GetNamespaceOfClassName(content.Schema.Reference.Id);
 						string typeName = NameFunc.RefineTypeName(content.Schema.Reference.Id, ns);
-						CodeTypeReference codeTypeReference = new CodeTypeReference(CombineNamespaceWithClassName(ns, typeName));
+						CodeTypeReference codeTypeReference = new CodeTypeReference(NameFunc.CombineNamespaceWithClassName(ns, typeName));
 						return Tuple.Create(codeTypeReference, description, true);
 					}
 					else if (content.Schema.Type == "object") // Casual type like what defined in /store/subscribe
@@ -66,7 +66,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						CodeTypeDeclaration existingType = componentsToCodeDom.FindTypeDeclaration(newTypeName);
 						if (existingType == null && !componentsToCodeDom.RegisteredSchemaRefIdExists(newTypeName))
 						{
-							componentsToCodeDom.AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema));//todo: handle namespace of return type
+							componentsToCodeDom.AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema));
 							System.Diagnostics.Trace.TraceInformation($"Casual type {newTypeName} created.");
 						}
 
@@ -92,11 +92,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			return null; //empty post
-		}
-
-		static string CombineNamespaceWithClassName(string ns, string typeName)
-		{
-			return String.IsNullOrEmpty(ns) ? typeName : (ns + "." + typeName);
 		}
 
 		//static string ToTitleCase(string s)
