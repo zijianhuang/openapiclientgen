@@ -142,7 +142,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
 				{
-					var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(item.Key, null));
+					var existingType = FindTypeDeclarationInNamespaces(NameFunc.RefineTypeName(item.Key, null), null);
 					if (existingType == null)
 					{
 						AddTypeToCodeDom(item);
@@ -407,8 +407,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		//string currentTypeName;
-
 		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
@@ -437,7 +435,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				void GenerateCasualEnum()
 				{
 					string casualEnumName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
-					CodeTypeDeclaration existingType = FindTypeDeclaration(casualEnumName);
+					CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
 					if (existingType == null)
 					{
 						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
@@ -471,7 +469,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 						string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-						clientProperty = CreateProperty(propertyName, NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName), defaultValue);
+						string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
+						clientProperty = CreateProperty(propertyName, propertyTypeWithNs, defaultValue);
 					}
 					else
 					{
@@ -524,7 +523,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
 							var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
 							var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
-							var existingType = FindTypeDeclaration(arrayTypeName);
+							var existingType = FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
 							if (existingType == null) // Referencing to a type not yet added to namespace
 							{
 								var existingSchema = FindSchema(arrayTypeSchemaRefId);
@@ -569,7 +568,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-						var existingType = FindTypeDeclaration(complexType);
+						var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 						if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 						{
 							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
@@ -592,13 +591,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else // for enum
 					{
-						
 						if (propertySchema.Reference != null)
 						{
 							var propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 							string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
 							string typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
-							var existingType = FindTypeDeclaration(complexType);
+							var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 							if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
@@ -932,26 +930,46 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return typeReference;
 		}
 
-		public CodeTypeDeclaration FindTypeDeclaration(string typeNameNoNs)
+		/// <summary>
+		/// Find in ClientNamespace if ns is not defined, or in ClassNamespaces.
+		/// </summary>
+		/// <param name="typeNameNoNs"></param>
+		/// <param name="ns"></param>
+		/// <returns></returns>
+		public CodeTypeDeclaration FindTypeDeclarationInNamespaces(string typeNameNoNs, string ns)
 		{
-			var cd = ClientNamespace.FindTypeDeclaration(typeNameNoNs);
-			if (cd != null)
+			if (String.IsNullOrEmpty(ns))
 			{
-				return cd;
+				var cd = ClientNamespace.FindTypeDeclaration(typeNameNoNs);
+				if (cd != null)
+				{
+					return cd;
+				}
+
+				return null;
 			}
 
 			foreach (var cs in ClassNamespaces)
 			{
-				var ctd = cs.FindTypeDeclaration(typeNameNoNs);
-				if (ctd != null)
+				if (cs.Name == ns)
 				{
-					return ctd;
+					var ctd = cs.FindTypeDeclaration(typeNameNoNs);
+					if (ctd != null)
+					{
+						return ctd;
+					}
 				}
 			}
 
 			return null;
 		}
 
+		/// <summary>
+		/// Find in specific namespace
+		/// </summary>
+		/// <param name="typeName"></param>
+		/// <param name="ns"></param>
+		/// <returns></returns>
 		public static CodeTypeDeclaration FindTypeDeclaration(string typeName, CodeNamespace ns)
 		{
 			return ns.FindTypeDeclaration(typeName);

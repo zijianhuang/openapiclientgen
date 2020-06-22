@@ -63,7 +63,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else if (content.Schema.Type == "object") // Casual type like what defined in /store/subscribe
 					{
 						string newTypeName = nameComposer.GetActionName(op, httpMethod, path) + "Body";
-						CodeTypeDeclaration existingType = componentsToCodeDom.FindTypeDeclaration(newTypeName);
+						CodeTypeDeclaration existingType = componentsToCodeDom.FindTypeDeclarationInNamespaces(newTypeName, null);
 						if (existingType == null && !componentsToCodeDom.RegisteredSchemaRefIdExists(newTypeName))
 						{
 							componentsToCodeDom.AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema));

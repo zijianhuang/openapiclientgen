@@ -237,26 +237,26 @@ namespace SwagTests
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\mycru.io\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
-		public void Test_microsoftgraph()
-		{
-			//ms graph yaml has some funky paths like /groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id}, duplicate parameters.
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\microsoft.com\graph\1.0.1", new Settings()
-			{
-				ClientNamespace = "MyNS",
-				//NamespaceInClassName = "microsoft.graph.",
-				ContainerClassName = "Misc",
-				ContainerNameStrategy = ContainerNameStrategy.None,
-				ActionNameStrategy = ActionNameStrategy.Default,
-				GenerateBothAsyncAndSync = true,
-				UseEnsureSuccessStatusCodeEx = true,
-				DataAnnotationsEnabled = true,
-				DataAnnotationsToComments = true,
-				DecorateDataModelWithDataContract = true,
-				DataContractNamespace = "http://demo.domain/2020/03",
-				HandleHttpRequestHeaders = true,
-			});
-		}
+		//[Fact]
+		//public void Test_microsoftgraph()
+		//{
+		//	//ms graph yaml has some funky paths like /groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id}, duplicate parameters.
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\microsoft.com\graph\1.0.1", new Settings()
+		//	{
+		//		ClientNamespace = "MyNS",
+		//		//NamespaceInClassName = "microsoft.graph.",
+		//		ContainerClassName = "Misc",
+		//		ContainerNameStrategy = ContainerNameStrategy.None,
+		//		ActionNameStrategy = ActionNameStrategy.Default,
+		//		GenerateBothAsyncAndSync = true,
+		//		UseEnsureSuccessStatusCodeEx = true,
+		//		DataAnnotationsEnabled = true,
+		//		DataAnnotationsToComments = true,
+		//		DecorateDataModelWithDataContract = true,
+		//		DataContractNamespace = "http://demo.domain/2020/03",
+		//		HandleHttpRequestHeaders = true,
+		//	});
+		//}
 
 
 

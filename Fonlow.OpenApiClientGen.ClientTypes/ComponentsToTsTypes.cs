@@ -492,7 +492,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return typeReference;
 		}
 
-		public CodeTypeDeclaration FindTypeDeclaration(string typeName)
+		public CodeTypeDeclaration FindTypeDeclarationInNamespaces(string typeName, string ns)//todo: fix this like C# one.
 		{
 			return ClientNamespace.FindTypeDeclaration(typeName);
 		}

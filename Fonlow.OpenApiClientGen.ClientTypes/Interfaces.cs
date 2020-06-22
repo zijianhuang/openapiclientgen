@@ -8,7 +8,7 @@ namespace Fonlow.OpenApiClientGen
 	{
 		void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item);
 
-		public CodeTypeDeclaration FindTypeDeclaration(string typeName);
+		public CodeTypeDeclaration FindTypeDeclarationInNamespaces(string typeName, string ns);
 
 		bool RegisteredSchemaRefIdExists(string t);
 	}
