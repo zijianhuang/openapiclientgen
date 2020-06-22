@@ -37,7 +37,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		readonly List<string> registeredTypes = new List<string>();
 
-		readonly List<CodeNamespace> classNamespaces = new List<CodeNamespace>();
+		public List<CodeNamespace> ClassNamespaces { get; private set; } = new List<CodeNamespace>();
 
 		void RegisterTypeToBeAdded(string t)
 		{
@@ -127,7 +127,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var classNamespaceText = groupedTypes.Key;
 					var classNamespace = new CodeNamespace(classNamespaceText);
 					codeCompileUnit.Namespaces.Add(classNamespace);
-					classNamespaces.Add(classNamespace);
+					ClassNamespaces.Add(classNamespace);
 					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
 					{
 						var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(kv.Key, classNamespaceText), classNamespace);
@@ -170,12 +170,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else
 			{
-				var foundNamespace = classNamespaces.Find(d => d.Name == ns);
+				var foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
 				if (foundNamespace == null)
 				{
 					foundNamespace = new CodeNamespace(ns);
 					codeCompileUnit.Namespaces.Add(foundNamespace);
-					classNamespaces.Add(foundNamespace);
+					ClassNamespaces.Add(foundNamespace);
 				}
 
 				return PodGenHelper.CreatePodClientClass(foundNamespace, typeName);
@@ -927,7 +927,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return cd;
 			}
 
-			foreach (var cs in classNamespaces)
+			foreach (var cs in ClassNamespaces)
 			{
 				var ctd = cs.FindTypeDeclaration(typeName);
 				if (ctd != null)

@@ -46,16 +46,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 					}
 
-					string typeName = ToTitleCase(op.RequestBody.Reference.Id);
-					CodeTypeReference codeTypeReference = new CodeTypeReference(typeName);
+					var ns = NameFunc.GetNamespaceOfClassName(op.RequestBody.Reference.Id);
+					string typeName = NameFunc.RefineTypeName(op.RequestBody.Reference.Id, ns);
+					CodeTypeReference codeTypeReference = new CodeTypeReference(CombineNamespaceWithClassName(ns, typeName));
 					return Tuple.Create(codeTypeReference, description, true);
 				}
 				else if (op.RequestBody.Content.TryGetValue("application/json", out content))
 				{
 					if (content.Schema != null && content.Schema.Reference != null)
 					{
-						string typeName = ToTitleCase(content.Schema.Reference.Id);
-						CodeTypeReference codeTypeReference = new CodeTypeReference(typeName);
+						var ns = NameFunc.GetNamespaceOfClassName(content.Schema.Reference.Id);
+						string typeName = NameFunc.RefineTypeName(content.Schema.Reference.Id, ns);
+						CodeTypeReference codeTypeReference = new CodeTypeReference(CombineNamespaceWithClassName(ns, typeName));
 						return Tuple.Create(codeTypeReference, description, true);
 					}
 					else if (content.Schema.Type == "object") // Casual type like what defined in /store/subscribe
@@ -92,10 +94,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null; //empty post
 		}
 
-		static string ToTitleCase(string s)
+		static string CombineNamespaceWithClassName(string ns, string typeName)
 		{
-			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
+			return String.IsNullOrEmpty(ns) ? typeName : (ns + "." + typeName);
 		}
+
+		//static string ToTitleCase(string s)
+		//{
+		//	return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
+		//}
 
 	}
 }

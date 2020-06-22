@@ -49,7 +49,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(poco2CsGen.ClientNamespace);
+			this.parametersHelper = new ParametersHelper(poco2CsGen.ClientNamespace, poco2CsGen.ClassNamespaces);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(poco2CsGen, nameComposer);
 			this.apiOperation = apiOperation;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
@@ -82,7 +82,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, null); //todo: try to handle namespace of the return type
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
 
 			}
 			catch (CodeGenException ex)
@@ -444,11 +444,6 @@ namespace Fonlow.OpenApiClientGen.CS
 			string[] ts = new string[] { "System.Int32", "System.Int64", "System.Float", "System.Double", "System.DateTime", "System.Boolean", "System.Enum" };
 			return ts.Contains(typeName);
 		}
-
-		//bool IsComplexType(CodeTypeReference ctf)
-		//{
-		//	return ctf.BaseType.StartsWith(settings.ClientNamespace) || ctf.ArrayElementType != null;
-		//}
 
 		private static string RemoveTrialEmptyString(string s)
 		{

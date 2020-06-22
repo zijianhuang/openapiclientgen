@@ -10,12 +10,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class ParametersHelper
 	{
-		public ParametersHelper(CodeNamespace clientNamespace)
+		public ParametersHelper(CodeNamespace clientNamespace, List<CodeNamespace> classNamespaces)
 		{
 			this.clientNamespace = clientNamespace;
+			this.classNamespaces = classNamespaces;
 		}
 
 		readonly CodeNamespace clientNamespace;
+		readonly List<CodeNamespace> classNamespaces;
 
 		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
@@ -41,6 +43,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return r;
 			}
 			).Where(k => k.ParameterDescriptor.ParameterBinder != ParameterBinder.None).ToArray();
+		}
+
+		CodeTypeDeclaration FindEnumDeclaration(string[] enumMemberNames)
+		{
+			var t = clientNamespace.FindEnumDeclaration(enumMemberNames);
+			if (t != null)
+			{
+				return t;
+			}
+
+			foreach (var cs in classNamespaces)
+			{
+				var cd = cs.FindEnumDeclaration(enumMemberNames);
+				if (cd != null)
+				{
+					return cd;
+				}
+			}
+
+			return null;
 		}
 
 		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter apiParameter)
@@ -74,7 +96,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
 						{
 							string[] enumMemberNames = arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
-							CodeTypeDeclaration existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
+							CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
 							if (existingDeclaration != null)
 							{
 								string existingTypeName = existingDeclaration.Name;
@@ -104,7 +126,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						throw new CodeGenException($"When dealing with {apiParameter.Name} of {schemaType}, error: {ex.Message}");
 					}
 
-					CodeTypeDeclaration existingDeclaration = clientNamespace.FindEnumDeclaration(enumMemberNames);
+					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
 					if (existingDeclaration != null)
 					{
 						string existingTypeName = existingDeclaration.Name;

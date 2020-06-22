@@ -22,6 +22,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return keywords.Any(d => d == s);
 		}
 
+		/// <summary>
+		/// Normalize type name and remove namespace prefix.
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="nsInType"></param>
+		/// <returns></returns>
 		public static string RefineTypeName(string s, string nsInType)
 		{
 			if (String.IsNullOrEmpty(s))

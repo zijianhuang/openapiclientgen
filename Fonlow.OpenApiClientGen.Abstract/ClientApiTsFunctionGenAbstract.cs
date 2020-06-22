@@ -43,7 +43,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(com2TsTypes.ClientNamespace);
+			this.parametersHelper = new ParametersHelper(com2TsTypes.ClientNamespace, null); //pass the class namespace list
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
@@ -73,7 +73,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, null);//todo: handle namespace in classes
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
 
 			}
 			catch (CodeGenException ex)

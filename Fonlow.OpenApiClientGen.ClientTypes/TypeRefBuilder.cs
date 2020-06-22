@@ -16,18 +16,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="op"></param>
 		/// <returns>Item3 indicate whether to be complex type.</returns>
-		public static Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op, string nsInClass)
+		public static Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op)
 		{
 			var referenceId = GetOperationReturnComplexTypeReferenceId(op);
-			string complexTypeName = NameFunc.RefineTypeName(referenceId, nsInClass);
 			bool stringAsString = false;
-			if (complexTypeName == null)
+			if (referenceId == null)
 			{
 				Tuple<CodeTypeReference, bool> r = GetOperationReturnSimpleTypeReference(op);
 				CodeTypeReference primitiveTypeReference = r.Item1;
 				stringAsString = r.Item2;
 				return Tuple.Create(primitiveTypeReference ?? null, stringAsString, false);
 			}
+
+			var ns = NameFunc.GetNamespaceOfClassName(referenceId);
+			string complexTypeName = NameFunc.RefineTypeName(referenceId, ns);
 
 			if (TypeAliasDic.Instance.TryGet(complexTypeName, out string typeAlias))
 			{
