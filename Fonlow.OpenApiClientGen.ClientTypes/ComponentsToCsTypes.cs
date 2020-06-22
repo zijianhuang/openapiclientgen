@@ -471,7 +471,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 						string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-						clientProperty = CreateProperty(propertyName, propertyTypeName, defaultValue);
+						clientProperty = CreateProperty(propertyName, NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName), defaultValue);
 					}
 					else
 					{
