@@ -28,7 +28,7 @@ namespace SwagTests
 		{
 			OpenApiDocument doc = ReadJson(Path.Combine(fileDir, "openapi.yaml"));
 
-			Settings settings = mySettings ?? defaultSettings;
+			Settings settings = mySettings ?? CodeGenSettings.Default;
 			ControllersClientApiGen gen = new ControllersClientApiGen(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
@@ -49,36 +49,6 @@ namespace SwagTests
 			}
 
 			Assert.True(r.Success);
-		}
-
-		static readonly Settings defaultSettings = new Settings()
-		{
-			ClientNamespace = "MyNS",
-			PathPrefixToRemove = "/api",
-			ContainerClassName = "Misc",
-			ContainerNameStrategy = ContainerNameStrategy.None,
-			ActionNameStrategy = ActionNameStrategy.Default,
-			GenerateBothAsyncAndSync = true,
-			UseEnsureSuccessStatusCodeEx = true,
-			DataAnnotationsEnabled = true,
-			DataAnnotationsToComments = true,
-		};
-
-		static Settings settingsWithActionNameStrategy(ActionNameStrategy ans)
-		{
-			return new Settings()
-			{
-				ClientNamespace = "MyNS",
-				ContainerClassName = "Misc",
-				ContainerNameStrategy = ContainerNameStrategy.None,
-				ActionNameStrategy = ans,
-				GenerateBothAsyncAndSync = true,
-				DecorateDataModelWithSerializable = true,
-				UseEnsureSuccessStatusCodeEx = true,
-				DataAnnotationsEnabled = true,
-				DataAnnotationsToComments = true,
-				HandleHttpRequestHeaders = true,
-			};
 		}
 
 		[Fact]
@@ -122,49 +92,49 @@ namespace SwagTests
 		[Fact]
 		public void Test_tomtomsearch()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\search\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\search\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_tomtomrouting()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\routing\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\routing\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_tomtommaps()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\maps\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\maps\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_tisane()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tisane.ai\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\tisane.ai\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
 		//public void Test_stackexchange() has a array type member property: 'the id of the object (answer, comment, question, or user) the event describes'
 		//{
-		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\stackexchange.com\2.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\stackexchange.com\2.0", CodeGenSettings.SettingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		//}
 
 		//[Fact]
 		//public void Test_shutterstock()//has duplicate definitions of api calls.
 		//{
-		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\shutterstock.com\1.0.16", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\shutterstock.com\1.0.16", CodeGenSettings.SettingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		//}
 
 		[Fact]
 		public void Test_ritekit()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ritekit.com\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ritekit.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_football()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\rapidapi.com\football-prediction\2", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\rapidapi.com\football-prediction\2", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -176,7 +146,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_randommer()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\randommer.io\v1", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\randommer.io\v1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -200,7 +170,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_opendatanetwork()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\opendatanetwork.com\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\opendatanetwork.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -218,7 +188,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_domainfinder()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\nic.at\domainfinder\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\nic.at\domainfinder\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -236,19 +206,19 @@ namespace SwagTests
 		[Fact]
 		public void Test_math()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\math.tools\1.5", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\math.tools\1.5", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
 		//public void Test_listennotes() //it has funky casual enum in operation, with type double and default value. Code generated won't pass compilation. Better not to tolerate such definitiohn.
 		//{
-		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\listennotes.com\2.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\listennotes.com\2.0", CodeGenSettings.SettingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		//}
 
 		//[Fact]
 		//public void Test_linode()// The Grant type has a casual enum definition with member null. OpenApi lib could not intepret it well
 		//{
-		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\linode.com\4.5.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\linode.com\4.5.0", CodeGenSettings.SettingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		//}
 
 		[Fact]
@@ -260,19 +230,19 @@ namespace SwagTests
 		[Fact]
 		public void Test_ipinfodb()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ipinfodb.com\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ipinfodb.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_mycru()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\mycru.io\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\mycru.io\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_mercure()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\mercure.local\0.3.2", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\mercure.local\0.3.2", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -299,249 +269,68 @@ namespace SwagTests
 		[Fact]
 		public void Test_ip2whois()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2whois.com\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2whois.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_ip2proxy()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2proxy.com\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2proxy.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_geolocation()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2location.com\geolocation\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2location.com\geolocation\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_convertcurrency()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\convertcurrency\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\convertcurrency\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_getaddressmatch()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getaddressmatch\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getaddressmatch\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_getareacodefromnumber()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getareacodefromnumber\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getareacodefromnumber\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_getcitymatch()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getcitymatch\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getcitymatch\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_hackathonwatch()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\hackathonwatch.com\0.1", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\hackathonwatch.com\0.1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_bcdc()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcdc\3.0.1", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcdc\3.0.1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_bcgnws()
 		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcgnws\3.x.x", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcgnws\3.x.x", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
 		//public void Test_geocoder()has invalid url sites/{siteID}/subsites.{outputFormat} and sites/{siteID}.{outputFormat},  https://stackoverflow.com/questions/3856693/a-url-resource-that-is-a-dot-2e
 		//{
-		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\geocoder\2.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\geocoder\2.0.0", CodeGenSettings.SettingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		//}
-
-		[Fact]
-		public void Test_youtubeAnalytics()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\youtubeAnalytics\v2");
-		}
-
-		[Fact]
-		public void Test_youtubereporting()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\youtubereporting\v1");
-		}
-
-		[Fact]
-		public void Test_youtube()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\youtube\v3");
-		}
-
-		[Fact]
-		public void Test_websecurityscanner()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\websecurityscanner\v1");
-		}
-
-		[Fact]
-		public void Test_webmasters()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\webmasters\v3");
-		}
-
-		[Fact]
-		public void Test_webfonts()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\webfonts\v1");
-		}
-
-		[Fact]
-		public void Test_vision()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\vision\v1");
-		}
-
-		[Fact]
-		public void Test_videointelligence()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\videointelligence\v1");
-		}
-
-		[Fact]
-		public void Test_verifiedaccess()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\verifiedaccess\v1");
-		}
-
-		[Fact]
-		public void Test_vault()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\vault\v1");
-		}
-
-		[Fact]
-		public void Test_translate()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\translate\v2");
-		}
-
-		[Fact]
-		public void Test_tpu()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\tpu\v1");
-		}
-
-		[Fact]
-		public void Test_texttospeech()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\texttospeech\v1");
-		}
-
-		[Fact]
-		public void Test_testing()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\testing\v1");
-		}
-
-		[Fact]
-		public void Test_tasks()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\tasks\v1");
-		}
-
-		[Fact]
-		public void Test_tagmanager()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\tagmanager\v1");
-		}
-
-		[Fact]
-		public void Test_streetviewpublish()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\streetviewpublish\v1");
-		}
-
-		[Fact]
-		public void Test_storagetransfer()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\storagetransfer\v1");
-		}
-
-		[Fact]
-		public void Test_storage()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\storage\v1");
-		}
-
-		[Fact]
-		public void Test_sqladmin()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\sqladmin\v1beta4");
-		}
-
-		[Fact]
-		public void Test_speech()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\speech\v1");
-		}
-
-		[Fact]
-		public void Test_spanner()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\spanner\v1");
-		}
-
-		[Fact]
-		public void Test_sourcerepo()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\sourcerepo\v1");
-		}
-
-		[Fact]
-		public void Test_slides()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\slides\v1");
-		}
-
-		[Fact]
-		public void Test_siteVerification()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\siteVerification\v1");
-		}
-
-		[Fact]
-		public void Test_sheets()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\sheets\v4");
-		}
-
-		[Fact]
-		public void Test_serviceusage()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\serviceusage\v1");
-		}
-
-		[Fact]
-		public void Test_servicenetworking()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\servicenetworking\v1");
-		}
-
-		[Fact]
-		public void Test_servicemanagement()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\servicemanagement\v1");
-		}
-
-		[Fact]
-		public void Test_servicecontrol()
-		{
-			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\servicecontrol\v1");
-		}
-
 
 
 	}
