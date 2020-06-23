@@ -47,6 +47,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
+			if (IsKeyword(s))
+			{
+				return "_" + s;
+			}
+
 			var rs = s.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
 						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
 						.Replace(":", "")//atlassian api has this.
@@ -67,13 +72,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
-			var rs = s.Replace('-', '_').Replace("$", "");
-			
 			if (IsKeyword(s))
 			{
 				return "_" + s;
 			}
 
+			var rs = s.Replace('-', '_').Replace("$", "");
+			
 			return rs;
 		}
 

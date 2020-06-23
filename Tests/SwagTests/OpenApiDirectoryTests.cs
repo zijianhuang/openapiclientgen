@@ -73,9 +73,11 @@ namespace SwagTests
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				ActionNameStrategy = ans,
 				GenerateBothAsyncAndSync = true,
+				DecorateDataModelWithSerializable = true,
 				UseEnsureSuccessStatusCodeEx = true,
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
+				HandleHttpRequestHeaders = true,
 			};
 		}
 
@@ -232,9 +234,45 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void Test_math()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\math.tools\1.5", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		//[Fact]
+		//public void Test_listennotes() //it has funky casual enum in operation, with type double and default value. Code generated won't pass compilation. Better not to tolerate such definitiohn.
+		//{
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\listennotes.com\2.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//}
+
+		//[Fact]
+		//public void Test_linode()// The Grant type has a casual enum definition with member null. OpenApi lib could not intepret it well
+		//{
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\linode.com\4.5.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//}
+
+		[Fact]
+		public void Test_iptwist()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\iptwist.com\1.0.0");
+		}
+
+		[Fact]
+		public void Test_ipinfodb()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ipinfodb.com\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
 		public void Test_mycru()
 		{
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\mycru.io\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_mercure()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\mercure.local\0.3.2", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -257,6 +295,12 @@ namespace SwagTests
 		//		HandleHttpRequestHeaders = true,
 		//	});
 		//}
+
+		[Fact]
+		public void Test_ip2whois()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2whois.com\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
 
 
 

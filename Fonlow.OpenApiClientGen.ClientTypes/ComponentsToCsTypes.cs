@@ -400,6 +400,24 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					typeDeclaration.Members.Add(clientField);
 					k++;
 				}
+				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
+				{
+					string memberName = "_" + doubleMember.Value.ToString();
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					if (settings.DecorateDataModelWithDataContract)
+					{
+						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+					}
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
 				else
 				{
 					throw new ArgumentException($"Not yet supported enumMember of {enumMember.GetType()} with {typeDeclaration.Name}");
