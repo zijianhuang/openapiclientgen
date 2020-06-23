@@ -798,7 +798,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if ((s.Enum == null || s.Enum.Count == 0) && s.Type == "string") //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
 				{
-					return "\"" + stringValue.Value + "\"";
+					return "\"" + EscapeString(stringValue.Value) + "\"";
 				}
 				else //enum
 				{
@@ -828,6 +828,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			Trace.TraceWarning($"Default as {s.Default.GetType().FullName} is not yet supported.");
 			return null;
+		}
+
+		static string EscapeString(string s)
+		{
+			if (String.IsNullOrWhiteSpace(s))
+			{
+				return s;
+			}
+
+			return s.Replace("\"", "\\\"");
 		}
 
 		static void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration)
