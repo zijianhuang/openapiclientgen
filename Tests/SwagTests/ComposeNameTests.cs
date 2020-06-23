@@ -72,6 +72,18 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestUrlToFunctionName2()
+		{
+			Assert.Equal("Sites", composer.PathToActionOrContainerName("/sites/{siteID}.{outputFormat}"));
+		}
+
+		//[Fact]
+		//public void TestUrlToFunctionName3()
+		//{
+		//	Assert.Equal("Sitessubsites", composer.PathToActionOrContainerName("/sites/{siteID}/subsites.{outputFormat}"));
+		//}
+
+		[Fact]
 		public void TestSwaggerTypeToClrType()
 		{
 			Assert.Equal(typeof(long), TypeRefBuilder.PrimitiveSwaggerTypeToClrType("integer", "int64"));

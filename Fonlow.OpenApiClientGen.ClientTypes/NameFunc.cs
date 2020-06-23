@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -48,6 +49,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			if (IsKeyword(s))
+			{
+				return "_" + s;
+			}
+
+			if (int.TryParse(s, out _))//youtube api has funky enum member 360
 			{
 				return "_" + s;
 			}

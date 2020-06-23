@@ -159,10 +159,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			IEnumerable<string> pathSegments = uri.Segments.Where(s => !s.Contains("%7B"));
 			string localPath = String.Join(String.Empty, pathSegments);
 
-			if (!String.IsNullOrEmpty(settings.PathPrefixToRemove))
+			if (!String.IsNullOrEmpty(settings.PathPrefixToRemove) && localPath.StartsWith(settings.PathPrefixToRemove))
 			{
 				localPath = localPath.Remove(0, settings.PathPrefixToRemove.Length);
-
 			}
 
 			if (!localPath.StartsWith("/"))

@@ -302,6 +302,126 @@ namespace SwagTests
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2whois.com\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
+		[Fact]
+		public void Test_ip2proxy()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2proxy.com\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_geolocation()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\ip2location.com\geolocation\1.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_convertcurrency()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\convertcurrency\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_getaddressmatch()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getaddressmatch\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_getareacodefromnumber()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getareacodefromnumber\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_getcitymatch()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getcitymatch\1.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_hackathonwatch()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\hackathonwatch.com\0.1", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_bcdc()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcdc\3.0.1", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
+		public void Test_bcgnws()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcgnws\3.x.x", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		//[Fact]
+		//public void Test_geocoder()has invalid url sites/{siteID}/subsites.{outputFormat} and sites/{siteID}.{outputFormat},  https://stackoverflow.com/questions/3856693/a-url-resource-that-is-a-dot-2e
+		//{
+		//	GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\geocoder\2.0.0", settingsWithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//}
+
+		[Fact]
+		public void Test_youtubeAnalytics()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\youtubeAnalytics\v2");
+		}
+
+		[Fact]
+		public void Test_youtubereporting()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\youtubereporting\v1");
+		}
+
+		[Fact]
+		public void Test_youtube()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\youtube\v3");
+		}
+
+		[Fact]
+		public void Test_websecurityscanner()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\websecurityscanner\v1");
+		}
+
+		[Fact]
+		public void Test_webmasters()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\webmasters\v3");
+		}
+
+		[Fact]
+		public void Test_webfonts()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\webfonts\v1");
+		}
+
+		[Fact]
+		public void Test_vision()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\vision\v1");
+		}
+
+		[Fact]
+		public void Test_videointelligence()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\videointelligence\v1");
+		}
+
+		[Fact]
+		public void Test_verifiedaccess()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\verifiedaccess\v1");
+		}
+
+		[Fact]
+		public void Test_vault()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\vault\v1");
+		}
+
 
 
 	}
