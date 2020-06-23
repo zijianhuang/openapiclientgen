@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			"fixed", "float", "for", "foreach", "goto", "if", "implicit", "in", "int", "interface", "internal", "is", "lock", "long", "namespace", "new",
 			"null", "object", "operator", "out", "override", "params", "private", "protected", "public", "readonly", "ref", "return", "sbyte", "sealed", "short",
 			"sizeof", "stackalloc", "static", "string", "struct", "switch", "this", "throw", "true", "try", "typeof", "uint", "ulong", "unchecked", "unsafe", "ushort",
-			"using", "virtual", "void", "volatile", "while" };
+			"using", "virtual", "void", "volatile", "while", "Task" };
 
 		public static bool IsKeyword(string s)
 		{
@@ -34,6 +34,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (String.IsNullOrEmpty(s))
 			{
 				return s;
+			}
+
+			if (IsKeyword(s))
+			{
+				return s + "_";
 			}
 
 			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
@@ -63,7 +68,32 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						.Replace(":", "")//atlassian api has this.
 						.Replace('+', '_');
 
-			if (!Char.IsLetter(rs[0]) && rs[0] != '_' && !int.TryParse(rs, out int _) &&!double.TryParse(rs, out double _))
+			if (!Char.IsLetter(rs[0]) && rs[0] != '_' && !int.TryParse(rs, out int _) && !double.TryParse(rs, out double _))
+			{
+				rs = "_" + rs;
+			}
+
+			return rs;
+		}
+
+		public static string RefineEnumValue(string s)
+		{
+			if (String.IsNullOrEmpty(s))
+			{
+				return s;
+			}
+
+			if (IsKeyword(s))
+			{
+				return "_" + s;
+			}
+
+			var rs = s.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
+						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
+						.Replace(":", "")//atlassian api has this.
+						.Replace('+', '_');
+
+			if (!Char.IsLetter(rs[0]) && rs[0] != '_' && !int.TryParse(rs, out int _) && !double.TryParse(rs, out double _))
 			{
 				rs = "_" + rs;
 			}

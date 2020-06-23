@@ -422,6 +422,66 @@ namespace SwagTests
 			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\vault\v1");
 		}
 
+		[Fact]
+		public void Test_translate()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\translate\v2");
+		}
+
+		[Fact]
+		public void Test_tpu()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\tpu\v1");
+		}
+
+		[Fact]
+		public void Test_texttospeech()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\texttospeech\v1");
+		}
+
+		[Fact]
+		public void Test_testing()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\testing\v1");
+		}
+
+		[Fact]
+		public void Test_tasks()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\tasks\v1");
+		}
+
+		[Fact]
+		public void Test_tagmanager()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\tagmanager\v1");
+		}
+
+		[Fact]
+		public void Test_streetviewpublish()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\streetviewpublish\v1");
+		}
+
+		[Fact]
+		public void Test_storagetransfer()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\storagetransfer\v1");
+		}
+
+		[Fact]
+		public void Test_storage()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\storage\v1");
+		}
+
+		[Fact]
+		public void Test_sqladmin()
+		{
+			GenerateAndAssert(@"C:\VSProjects\Study\openapi-directory\APIs\googleapis.com\sqladmin\v1beta4");
+		}
+
 
 
 	}

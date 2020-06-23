@@ -150,10 +150,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				return t;
 			}
-			else
-			{
-				return typeof(string);
-			}
+
+			return typeof(string);
+		}
+
+		public static bool IsSwaggerPrimitive(string type)
+		{
+			return basicClrTypeDic.TryGetValue(type, out _);
 		}
 
 		public static string PrimitiveSwaggerTypeToTsType(string type, string format)

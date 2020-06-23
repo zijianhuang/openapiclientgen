@@ -26,7 +26,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			this.settings = settings;
 			this.ClientNamespace = clientNamespace;
 		}
-		
+
 		public CodeNamespace ClientNamespace { get; private set; }
 
 		readonly CodeCompileUnit codeCompileUnit;
@@ -244,8 +244,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					OpenApiReference itemsRef = schema.Items.Reference;
 					if (itemsRef == null)
 					{
-						Trace.TraceWarning($"Not yet support array type with casual items type without reference: {item.Key}. Skipped.");
-						RemoveRegisteredSchemaRefId(item.Key);
+						if (schema.Items.Properties.Count > 0) //casual member type definition in an array type
+						{
+							var newTypeName = currentTypeName + "Element";
+							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
+							{
+								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
+								TypeAliasDic.Instance.Add(item.Key, $"{newTypeName}");
+								Trace.TraceInformation($"arrayTypeAlias of generated type: {newTypeName} for {item.Key} added.");
+							}
+						}
+						else
+						{
+							RemoveRegisteredSchemaRefId(item.Key);
+							Trace.TraceWarning($"Not yet support array type with casual items type without reference and without casual properties: {item.Key}. Skipped.");
+						}
+
 						return;
 					}
 
@@ -271,7 +285,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
 				{
-					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns); 
+					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					CreateTypeDocComment(item, typeDeclaration);
 
 					if (settings.DecorateDataModelWithDataContract)
@@ -553,9 +567,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 							if (TypeAliasDic.Instance.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
 							{
-								var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
-								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(clrType.FullName, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+								if (!TypeRefBuilder.IsSwaggerPrimitive(arrayTypeNameAlias))
+								{
+									CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
+									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+								}
+								else
+								{
+									var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
+									CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(clrType.FullName, 1);
+									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+								}
 							}
 							else
 							{
@@ -780,7 +802,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else //enum
 				{
-					return NameFunc.RefineEnumMemberName(stringValue.Value);
+					return NameFunc.RefineEnumValue(stringValue.Value);
 				}
 			}
 
