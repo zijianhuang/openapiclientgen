@@ -267,9 +267,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						TypeAliasDic.Instance.Add(item.Key, $"{arrayTypeAlias}[]");
 						Trace.TraceInformation($"arrayTypeAlias: {arrayTypeAlias} for {item.Key} added.");
-
-						//typeDeclaration = PodGenHelper.CreatePodClientClass(ClientNamespace, currentTypeName);
-						//typeDeclaration.BaseTypes.Add($"System.Collections.ObjectModel.Collection<{arrayTypeAlias}>");
 					}
 					else
 					{

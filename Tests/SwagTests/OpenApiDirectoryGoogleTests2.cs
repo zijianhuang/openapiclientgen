@@ -37,7 +37,6 @@ namespace SwagTests
 		void GenerateAndAssert(string openApiFile, Settings mySettings = null)
 		{
 			string s = TranslateJsonToCode(openApiFile, mySettings);
-			//File.WriteAllText(@"c:\temp\openapi\ccc.cs", s);
 			var r = CSharpValidation.CompileThenSave(s, null);
 			if (!r.Success)
 			{

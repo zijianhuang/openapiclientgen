@@ -38,7 +38,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						try
 						{
 							return Tuple.Create(TypeRefBuilder.OpenApiMediaTypeToCodeTypeReference(content), description, true);
-
 						}
 						catch (ArgumentException ex)
 						{
@@ -63,11 +62,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else if (content.Schema.Type == "object") // Casual type like what defined in /store/subscribe
 					{
 						string newTypeName = nameComposer.GetActionName(op, httpMethod, path) + "Body";
-						CodeTypeDeclaration existingType = componentsToCodeDom.FindTypeDeclarationInNamespaces(newTypeName, null);
-						if (existingType == null && !componentsToCodeDom.RegisteredSchemaRefIdExists(newTypeName))
+						if (componentsToCodeDom.FindTypeDeclarationInNamespaces(newTypeName, null) == null)
 						{
 							componentsToCodeDom.AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema));
-							System.Diagnostics.Trace.TraceInformation($"Casual type {newTypeName} created.");
+							System.Diagnostics.Trace.TraceInformation($"Casual type {newTypeName} created for operation.");
 						}
 
 						CodeTypeReference codeTypeReference = new CodeTypeReference(newTypeName);
