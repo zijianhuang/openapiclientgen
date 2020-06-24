@@ -251,7 +251,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
 								TypeAliasDic.Instance.Add(item.Key, $"{newTypeName}");
-								Trace.TraceInformation($"arrayTypeAlias of generated type: {newTypeName} for {item.Key} added.");
+								Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {newTypeName}) -- generated: {newTypeName}");
 							}
 						}
 						else
@@ -266,19 +266,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (TypeAliasDic.Instance.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
 						TypeAliasDic.Instance.Add(item.Key, $"{arrayTypeAlias}[]");
-						Trace.TraceInformation($"arrayTypeAlias: {arrayTypeAlias} for {item.Key} added.");
+						Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
 					}
 					else
 					{
 						TypeAliasDic.Instance.Add(item.Key, $"{itemsRef.Id}[]");
-						Trace.TraceInformation($"arrayTypeAlias: {itemsRef.Id}[] for {item.Key} added.");
+						Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {itemsRef.Id}[])");
 					}
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
 				{
 					var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(type, null);
 					TypeAliasDic.Instance.Add(item.Key, clrType.FullName);
-					Trace.TraceInformation($"TypeAlias {item.Key} for {clrType.FullName} added.");
+					Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {clrType.FullName}) -- clrType: {clrType.FullName}");
 				}
 				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
 				{
