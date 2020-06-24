@@ -199,7 +199,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
 			//IDictionary<string, OpenApiSchema> schemaProperties = schema.Properties;
-			CodeTypeDeclaration typeDeclaration;
+			CodeTypeDeclaration typeDeclaration = null;
 			if (isForClass)
 			{
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
@@ -297,12 +297,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else
 				{
-					Trace.TraceInformation($"Type Alias {item.Key} for type {type} is skipped:.");
+					Trace.TraceInformation($"Type Alias {item.Key} for type {type} is skipped.");
 					RemoveRegisteredSchemaRefId(item.Key);
 					return;
 				}
 
-				Trace.TraceInformation("clientClass: " + currentTypeName);
+				if (typeDeclaration != null)
+				{
+					Trace.TraceInformation($"clientClass {currentTypeName} created for {item.Key}");
+				}
+				else
+				{
+					Trace.TraceInformation($"Candidate clientClass {currentTypeName} for {item.Key} is skipped");
+				}
 			}
 			else
 			{
