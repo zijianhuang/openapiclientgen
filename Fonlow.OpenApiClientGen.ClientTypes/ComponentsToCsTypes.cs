@@ -25,6 +25,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			this.codeCompileUnit = codeCompileUnit;
 			this.settings = settings;
 			this.ClientNamespace = clientNamespace;
+			TypeAliasDic.Instance.Clear();
 		}
 
 		public CodeNamespace ClientNamespace { get; private set; }
@@ -250,8 +251,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
-								TypeAliasDic.Instance.Add(item.Key, $"{newTypeName}");
-								Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {newTypeName}) -- generated: {newTypeName}");
+								TypeAliasDic.Instance.Add(item.Key, $"{newTypeName}[]");
+								Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {newTypeName}[]) -- generated: {newTypeName}");
 							}
 						}
 						else
@@ -270,8 +271,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						TypeAliasDic.Instance.Add(item.Key, $"{itemsRef.Id}[]");
-						Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {itemsRef.Id}[])");
+						if (TypeAliasDic.Instance.TryGet(item.Key, out string hey))
+						{
+							string typeCandidate = $"{itemsRef.Id}[]";
+							if (hey != typeCandidate)
+							{
+								throw new CodeGenException($"Type alias {item.Key} in Open Api Definitiohn may have problem, presenting {hey} and {typeCandidate} ");
+							}
+						}
+						else
+						{
+							TypeAliasDic.Instance.Add(item.Key, $"{itemsRef.Id}[]");
+							Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {itemsRef.Id}[])");
+						}
 					}
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))

@@ -28,6 +28,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			return dic.TryGetValue(alias, out typeName);
 		}
+
+		public void Clear()
+		{
+			dic.Clear();
+		}
 	}
 }
 

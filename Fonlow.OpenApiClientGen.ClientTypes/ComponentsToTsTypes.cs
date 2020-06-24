@@ -21,6 +21,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			this.codeCompileUnit = codeCompileUnit;
 			this.settings = settings;
 			this.ClientNamespace = clientNamespace;
+			TypeAliasDic.Instance.Clear();
 		}
 
 		public CodeNamespace ClientNamespace { get; private set; }
