@@ -21,7 +21,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			this.codeCompileUnit = codeCompileUnit;
 			this.settings = settings;
 			this.ClientNamespace = clientNamespace;
-			TypeAliasDic.Instance.Clear();
+			TypeAliasDic = new TypeAliasDic();
 		}
 
 		public CodeNamespace ClientNamespace { get; private set; }
@@ -31,6 +31,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly Settings settings;
 
 		readonly List<string> registeredTypes = new List<string>();
+
+		public TypeAliasDic TypeAliasDic { get; private set; }
 
 		void RegisterTypeToBeAdded(string t)
 		{
@@ -159,7 +161,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return;
 					}
 
-					TypeAliasDic.Instance.Add(typeName, $"{itemsRef.Id}[]");
+					TypeAliasDic.Add(typeName, $"{itemsRef.Id}[]");
 				}
 				else
 				{

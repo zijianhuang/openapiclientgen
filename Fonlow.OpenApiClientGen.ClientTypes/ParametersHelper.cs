@@ -19,7 +19,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly CodeNamespace clientNamespace;
 		readonly List<CodeNamespace> classNamespaces;
 
-		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
+		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps, TypeAliasDic typeAliasDic)
 		{
 			return ps.Select(p =>
 			{
@@ -37,7 +37,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
 
-					ParameterTypeReference = OpenApiParameterToCodeTypeReference(p)
+					ParameterTypeReference = OpenApiParameterToCodeTypeReference(p, typeAliasDic)
 				};
 
 				return r;
@@ -65,7 +65,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter apiParameter)
+		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter apiParameter, TypeAliasDic typeAliasDic)
 		{
 			string schemaType = apiParameter.Schema.Type;
 			if (schemaType != null)
@@ -82,7 +82,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else if (arrayItemsSchema.Reference != null) //array of custom type
 					{
 						string arrayTypeName = arrayItemsSchema.Reference.Id;
-						if (TypeAliasDic.Instance.TryGet(arrayTypeName, out string aliasTypeName))
+						if (typeAliasDic.TryGet(arrayTypeName, out string aliasTypeName))
 						{
 							return TypeRefBuilder.CreateArrayOfCustomTypeReference(aliasTypeName, 1);
 						}
@@ -134,7 +134,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return enumReference;
 					}
 				}
-				else if (TypeAliasDic.Instance.TryGet(schemaType, out string aliasTypeName))
+				else if (typeAliasDic.TryGet(schemaType, out string aliasTypeName))
 				{
 					return new CodeTypeReference(aliasTypeName);
 				}

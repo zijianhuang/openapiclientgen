@@ -53,7 +53,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(poco2CsGen, nameComposer);
 			this.apiOperation = apiOperation;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
-			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
+			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters, poco2CsGen.TypeAliasDic);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
@@ -82,7 +82,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, poco2CsGen.TypeAliasDic);
 
 			}
 			catch (CodeGenException ex)

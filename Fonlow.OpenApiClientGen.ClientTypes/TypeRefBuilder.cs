@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="op"></param>
 		/// <returns>Item3 indicate whether to be complex type.</returns>
-		public static Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op)
+		public static Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op, TypeAliasDic typeAliasDic)
 		{
 			var referenceId = GetOperationReturnComplexTypeReferenceId(op);
 			bool stringAsString = false;
@@ -31,7 +31,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			var ns = NameFunc.GetNamespaceOfClassName(referenceId);
 			string complexTypeName = NameFunc.RefineTypeName(referenceId, ns);
 
-			if (TypeAliasDic.Instance.TryGet(complexTypeName, out string typeAlias))
+			if (typeAliasDic.TryGet(complexTypeName, out string typeAlias))
 			{
 				return Tuple.Create(new CodeTypeReference(typeAlias), stringAsString, true);
 			}

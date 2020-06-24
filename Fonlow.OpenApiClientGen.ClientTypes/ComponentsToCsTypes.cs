@@ -25,7 +25,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			this.codeCompileUnit = codeCompileUnit;
 			this.settings = settings;
 			this.ClientNamespace = clientNamespace;
-			TypeAliasDic.Instance.Clear();
+			TypeAliasDic = new TypeAliasDic();
 		}
 
 		public CodeNamespace ClientNamespace { get; private set; }
@@ -39,6 +39,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly List<string> registeredSchemaRefIds = new List<string>();
 
 		public List<CodeNamespace> ClassNamespaces { get; private set; } = new List<CodeNamespace>();
+
+		public TypeAliasDic TypeAliasDic { get; private set; }
 
 		void RegisterSchemaRefIdToBeAdded(string t)
 		{
@@ -251,8 +253,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
-								TypeAliasDic.Instance.Add(item.Key, $"{newTypeName}[]");
-								Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {newTypeName}[]) -- generated: {newTypeName}");
+								TypeAliasDic.Add(item.Key, $"{newTypeName}[]");
+								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {newTypeName}[]) -- generated: {newTypeName}");
 							}
 						}
 						else
@@ -264,14 +266,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return;
 					}
 
-					if (TypeAliasDic.Instance.TryGet(itemsRef.Id, out string arrayTypeAlias))
+					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
-						TypeAliasDic.Instance.Add(item.Key, $"{arrayTypeAlias}[]");
-						Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
+						TypeAliasDic.Add(item.Key, $"{arrayTypeAlias}[]");
+						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
 					}
 					else
 					{
-						if (TypeAliasDic.Instance.TryGet(item.Key, out string hey))
+						if (TypeAliasDic.TryGet(item.Key, out string hey))
 						{
 							string typeCandidate = $"{itemsRef.Id}[]";
 							if (hey != typeCandidate)
@@ -281,16 +283,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
-							TypeAliasDic.Instance.Add(item.Key, $"{itemsRef.Id}[]");
-							Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {itemsRef.Id}[])");
+							TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
+							Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
 						}
 					}
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
 				{
 					var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(type, null);
-					TypeAliasDic.Instance.Add(item.Key, clrType.FullName);
-					Trace.TraceInformation($"TypeAliasDic.Instance.Add({item.Key}, {clrType.FullName}) -- clrType: {clrType.FullName}");
+					TypeAliasDic.Add(item.Key, clrType.FullName);
+					Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {clrType.FullName}) -- clrType: {clrType.FullName}");
 				}
 				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
 				{
@@ -581,7 +583,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 								}
 							}
 
-							if (TypeAliasDic.Instance.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
+							if (TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
 							{
 								if (!TypeRefBuilder.IsSwaggerPrimitive(arrayTypeNameAlias))
 								{

@@ -47,7 +47,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
-			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
+			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters, com2TsTypes.TypeAliasDic);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
@@ -73,7 +73,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation);
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, com2TsTypes.TypeAliasDic);
 
 			}
 			catch (CodeGenException ex)
