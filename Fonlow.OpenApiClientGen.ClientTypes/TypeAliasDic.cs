@@ -26,7 +26,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public bool TryGet(string alias, out string typeName)
 		{
-			return dic.TryGetValue(alias, out typeName);
+			bool r = dic.TryGetValue(alias, out typeName);
+			if (!r)
+			{
+				return false;
+			}
+
+			bool r2 = TryGet(typeName, out string typeName2);
+			if (r2)
+			{
+				typeName = typeName2;
+				return true;
+			}
+
+			return true;
 		}
 
 		public void Clear()

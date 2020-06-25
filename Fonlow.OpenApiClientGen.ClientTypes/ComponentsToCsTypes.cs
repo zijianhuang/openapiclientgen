@@ -277,29 +277,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						if (TypeAliasDic.TryGet(item.Key, out string hey))
+						string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
+						string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
+						var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
+						if (existing == null)
 						{
-							string typeCandidate = $"{itemsRef.Id}[]";
-							if (hey != typeCandidate)
-							{
-								throw new CodeGenException($"Type alias {item.Key} in Open Api Definitiohn may have problem, presenting {hey} and {typeCandidate} ");
-							}
+							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
+							RemoveRegisteredSchemaRefId(itemsRef.Id);
 						}
 						else
 						{
-							string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
-							string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
-							var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
-							if (existing == null)
-							{
-								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
-								RemoveRegisteredSchemaRefId(itemsRef.Id);
-							}
-							else
-							{
-								TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
-								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
-							}
+							TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
+							Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
 						}
 					}
 				}
