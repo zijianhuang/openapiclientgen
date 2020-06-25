@@ -190,6 +190,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		/// <summary>
+		/// The Id will be translated to proper C# type name and namespace if the YAML does support namespace in components.
+		/// </summary>
+		/// <param name="item">Reference Id and its schema</param>
 		public void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item)
 		{
 			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
@@ -283,8 +287,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
-							TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
-							Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
+							string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
+							string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
+							var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
+							if (existing == null)
+							{
+								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
+								RemoveRegisteredSchemaRefId(itemsRef.Id);
+							}
+							else
+							{
+								TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
+								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
+							}
 						}
 					}
 				}
@@ -999,7 +1014,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		}
 
 		/// <summary>
-		/// Find in ClientNamespace if ns is not defined, or in ClassNamespaces.
+		/// Find in ClientNamespace if ns is not defined, or in ClassNamespaces and ClientNamespace.
 		/// </summary>
 		/// <param name="typeNameNoNs"></param>
 		/// <param name="ns"></param>
@@ -1027,6 +1042,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return ctd;
 					}
 				}
+			}
+
+			var cg = ClientNamespace.FindTypeDeclaration(typeNameNoNs);
+			if (cg != null)
+			{
+				return cg;
 			}
 
 			return null;
