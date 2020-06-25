@@ -249,7 +249,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (type == "array") // wrapper of array. Microsoft OpenApi library could not intepret this as type alias, so I have to register the alias myself.
 				{
 					OpenApiReference itemsRef = schema.Items.Reference;
-					if (itemsRef == null)
+					if (itemsRef == null) //Array type with casual schema
 					{
 						if (schema.Items.Properties.Count > 0) //casual member type definition in an array type
 						{
@@ -270,6 +270,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return;
 					}
 
+					string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
+					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
+					var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
+					if (existing == null)
+					{
+						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
+						RemoveRegisteredSchemaRefId(itemsRef.Id);
+					}
+
+					//Array type with ref to the other type
 					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
 						TypeAliasDic.Add(item.Key, $"{arrayTypeAlias}[]");
@@ -277,19 +287,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
-						string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
-						var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
-						if (existing == null)
-						{
-							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
-							RemoveRegisteredSchemaRefId(itemsRef.Id);
-						}
-						else
-						{
-							TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
-							Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
-						}
+						TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
+						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
 					}
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
