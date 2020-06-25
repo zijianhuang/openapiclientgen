@@ -273,7 +273,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
 					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
 					var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
-					if (existing == null)
+					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
 						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
 						RemoveRegisteredSchemaRefId(itemsRef.Id);
