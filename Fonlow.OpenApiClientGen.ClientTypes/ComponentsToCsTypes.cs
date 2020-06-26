@@ -58,7 +58,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		}
 
 		/// <summary>
-		/// Save TypeScript codes generated into a file.
+		/// Save CS codes generated into a file.
 		/// </summary>
 		/// <param name="fileName"></param>
 		public void SaveCodeToFile(string fileName)
@@ -92,6 +92,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		/// <summary>
+		/// Write code with C# CodeDOM
+		/// </summary>
+		/// <param name="writer"></param>
 		void WriteCode(TextWriter writer)
 		{
 			//if (writer == null)

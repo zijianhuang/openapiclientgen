@@ -3,6 +3,7 @@ using Fonlow.Reflection;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Linq;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -24,29 +25,34 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			TypeAliasDic = new TypeAliasDic();
 		}
 
+
 		public CodeNamespace ClientNamespace { get; private set; }
 
 		readonly CodeCompileUnit codeCompileUnit;
 
 		readonly Settings settings;
 
-		readonly List<string> registeredTypes = new List<string>();
+		IDictionary<string, OpenApiSchema> ComponentsSchemas;
+
+		readonly List<string> registeredSchemaRefIds = new List<string>();
+
+		public List<CodeNamespace> ClassNamespaces { get; private set; } = new List<CodeNamespace>();
 
 		public TypeAliasDic TypeAliasDic { get; private set; }
 
-		void RegisterTypeToBeAdded(string t)
+		void RegisterSchemaRefIdToBeAdded(string t)
 		{
-			registeredTypes.Add(t);
+			registeredSchemaRefIds.Add(t);
 		}
 
-		void RemoveRegisteredType(string t)
+		void RemoveRegisteredSchemaRefId(string t)
 		{
-			registeredTypes.Remove(t);
+			registeredSchemaRefIds.Remove(t);
 		}
 
 		public bool RegisteredSchemaRefIdExists(string t)
 		{
-			return registeredTypes.Exists(d => d == t);
+			return registeredSchemaRefIds.Exists(d => d == t);
 		}
 
 		/// <summary>
@@ -77,6 +83,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		/// <summary>
+		/// Write code with TypeScript CodeDOM
+		/// </summary>
+		/// <param name="writer"></param>
 		void WriteCode(TextWriter writer)
 		{
 			//if (writer == null)
@@ -107,9 +117,41 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return;
 			}
 
-			foreach (KeyValuePair<string, OpenApiSchema> item in components.Schemas)
+			ComponentsSchemas = components.Schemas;//.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
+			var classNamespaceNames = NameFunc.FindNamespacesInClassNames(ComponentsSchemas.Keys);
+
+			if (classNamespaceNames.Length > 0)
 			{
-				AddTypeToCodeDom(item);
+				var groupedComponentsSchemas = ComponentsSchemas
+					.GroupBy(d => NameFunc.GetNamespaceOfClassName(d.Key))
+					.OrderBy(k => k.Key);
+				var namespacesOfTypes = groupedComponentsSchemas.Select(d => d.Key).ToArray();
+				foreach (var groupedTypes in groupedComponentsSchemas)
+				{
+					var classNamespaceText = groupedTypes.Key;
+					var classNamespace = new CodeNamespace(classNamespaceText);
+					codeCompileUnit.Namespaces.Add(classNamespace);
+					ClassNamespaces.Add(classNamespace);
+					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
+					{
+						var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(kv.Key, classNamespaceText), classNamespace);
+						if (existingType == null)
+						{
+							AddTypeToCodeDom(kv);
+						}
+					}
+				}
+			}
+			else
+			{
+				foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
+				{
+					var existingType = FindTypeDeclarationInNamespaces(NameFunc.RefineTypeName(item.Key, null), null);
+					if (existingType == null)
+					{
+						AddTypeToCodeDom(item);
+					}
+				}
 			}
 
 		}
@@ -118,7 +160,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
 			string typeName = ToTitleCase(item.Key);
-			RegisterTypeToBeAdded(item.Key);
+			RegisterSchemaRefIdToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 			string type = schema.Type;
 			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
@@ -166,7 +208,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else
 				{
 					Trace.TraceInformation($"TS Type Alias {typeName} is skipped:.");
-					RemoveRegisteredType(item.Key);
+					RemoveRegisteredSchemaRefId(item.Key);
 					return;
 				}
 
@@ -180,7 +222,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Trace.TraceInformation("TS client enum: " + typeName);
 			}
 
-			RemoveRegisteredType(item.Key);
+			RemoveRegisteredSchemaRefId(item.Key);
 		}
 
 		static void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
@@ -498,6 +540,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public CodeTypeDeclaration FindTypeDeclarationInNamespaces(string typeName, string ns)//todo: fix this like C# one.
 		{
 			return ClientNamespace.FindTypeDeclaration(typeName);
+		}
+
+		/// <summary>
+		/// Find in specific namespace
+		/// </summary>
+		/// <param name="typeName"></param>
+		/// <param name="ns"></param>
+		/// <returns></returns>
+		public static CodeTypeDeclaration FindTypeDeclaration(string typeName, CodeNamespace ns)
+		{
+			return ns.FindTypeDeclaration(typeName);
 		}
 
 	}
