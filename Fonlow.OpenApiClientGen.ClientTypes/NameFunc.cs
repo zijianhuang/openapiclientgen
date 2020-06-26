@@ -129,6 +129,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_'));
 		}
 
+		public static string RefineTsPropertyName(string s)
+		{
+			if (String.IsNullOrEmpty(s))
+			{
+				return s;
+			}
+
+			return s.Replace("$", "").Replace(':', '_').Replace('-', '_');
+		}
+
 		public static string ToTitleCase(string s)
 		{
 			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));

@@ -209,7 +209,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
 			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
-			//IDictionary<string, OpenApiSchema> schemaProperties = schema.Properties;
 			CodeTypeDeclaration typeDeclaration = null;
 			if (isForClass)
 			{
@@ -521,7 +520,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (String.IsNullOrEmpty(primitivePropertyType))
 				{
 					OpenApiSchema refToType = null;
-
 					if (propertySchema.Reference != null)
 					{
 						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
@@ -573,7 +571,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (propertySchema.Type == "array") // for array
 					{
 						OpenApiSchema arrayItemsSchema = propertySchema.Items;
-
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
 							string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;

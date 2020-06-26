@@ -40,7 +40,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public TypeAliasDic TypeAliasDic { get; private set; }
 
-		void RegisterSchemaRefIdToBeAdded(string t)
+		void RegisterSchemaRefIdToBeAdded(string t)//common
 		{
 			registeredSchemaRefIds.Add(t);
 		}
@@ -110,7 +110,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="types">POCO types.</param>
 		/// <param name="methods"></param>
-		public void CreateCodeDom(OpenApiComponents components)
+		public void CreateCodeDom(OpenApiComponents components)//common
 		{
 			if (components == null)
 			{
@@ -159,67 +159,132 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item)
 		{
 			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
-			string typeName = ToTitleCase(item.Key);
+			var currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
 			RegisterSchemaRefIdToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
+
 			string type = schema.Type;
 			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
 			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
-			//IDictionary<string, OpenApiSchema> schemaProperties = schema.Properties;
-			CodeTypeDeclaration typeDeclaration;
+			CodeTypeDeclaration typeDeclaration = null;
 			if (isForClass)
 			{
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 				{
-					typeDeclaration = PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName);
+					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 					{
 						OpenApiSchema allOfRef = allOfBaseTypeSchemaList[0];
 						if (allOfRef.Reference == null)
 						{
-							Trace.TraceWarning($"Not yet support Type {item.Key} having allOf[0] without Reference. Skipped TS gen.");
+							Trace.TraceWarning($"Not yet support Type {item.Key} having allOf[0] without Reference. Skipped.");
+							RemoveRegisteredSchemaRefId(item.Key);
 							return;
 						}
 
 						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, ns); //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
-						OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1];
-						AddProperties(typeDeclaration, allOfProperteisSchema, typeName);
+						if (allOfBaseTypeSchemaList.Count > 1)
+						{
+							OpenApiSchema allOfProperteisSchema = allOfBaseTypeSchemaList[1]; //the 2nd one points to properties of the derived type, while the 1st one points to the base type.
+							AddProperties(typeDeclaration, allOfProperteisSchema, currentTypeName, ns);
+						}
 					}
 
 					CreateTypeDocComment(item, typeDeclaration);
-					//	typeDeclarationDic.Add(typeName, typeDeclaration);
 
-					AddProperties(typeDeclaration, schema, typeName);
+					AddProperties(typeDeclaration, schema, currentTypeName, ns);
 				}
 				else if (type == "array") // wrapper of array
 				{
 					OpenApiReference itemsRef = schema.Items.Reference;
-					if (itemsRef == null)
+					if (itemsRef == null) //Array type with casual schema
 					{
-						Trace.TraceWarning($"Not yet support array type with casual items type without reference: {item.Key}. Skipped TS gen.");
+						if (schema.Items.Properties.Count > 0) //casual member type definition in an array type
+						{
+							var newTypeName = currentTypeName + "Element";
+							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
+							{
+								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
+								TypeAliasDic.Add(item.Key, $"{newTypeName}[]");
+								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {newTypeName}[]) -- generated: {newTypeName}");
+							}
+						}
+						else
+						{
+							RemoveRegisteredSchemaRefId(item.Key);
+							Trace.TraceWarning($"Not yet support array type with casual items type without reference and without casual properties: {item.Key}. Skipped.");
+						}
+
 						return;
 					}
 
-					TypeAliasDic.Add(typeName, $"{itemsRef.Id}[]");
+					string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
+					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
+					var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
+					if (existing == null) //so process itemsRef.Id first before considering type alias
+					{
+						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
+						RemoveRegisteredSchemaRefId(itemsRef.Id);
+					}
+
+					//Array type with ref to the other type
+					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
+					{
+						TypeAliasDic.Add(item.Key, $"{arrayTypeAlias}[]");
+						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
+					}
+					else
+					{
+						TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
+						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
+					}
+				}
+				else if (type != "object" && !String.IsNullOrEmpty(type))
+				{
+					var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(type, null);
+					TypeAliasDic.Add(item.Key, clrType.FullName);
+					Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {clrType.FullName}) -- clrType: {clrType.FullName}");
+				}
+				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
+				{
+					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
+					CreateTypeDocComment(item, typeDeclaration);
+
+					if (settings.DecorateDataModelWithDataContract)
+					{
+						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+					}
+
+					if (settings.DecorateDataModelWithSerializable)
+					{
+						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
+					}
 				}
 				else
 				{
-					Trace.TraceInformation($"TS Type Alias {typeName} is skipped:.");
+					Trace.TraceInformation($"Type Alias {item.Key} for type {type} is skipped.");
 					RemoveRegisteredSchemaRefId(item.Key);
 					return;
 				}
 
-				Trace.TraceInformation("TS client class: " + typeName);
+				if (typeDeclaration != null)
+				{
+					Trace.TraceInformation($"TS clientClass {currentTypeName} created for {item.Key}");
+				}
+				else
+				{
+					Trace.TraceInformation($"TS Candidate clientClass {currentTypeName} for {item.Key} is skipped");
+				}
 			}
 			else
 			{
-				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, typeName);
+				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, currentTypeName);
 				CreateTypeDocComment(item, typeDeclaration);
 				AddEnumMembers(typeDeclaration, enumTypeList);
-				Trace.TraceInformation("TS client enum: " + typeName);
+				Trace.TraceInformation("TS client enum: " + currentTypeName);
 			}
 
 			RemoveRegisteredSchemaRefId(item.Key);
@@ -232,7 +297,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = stringMember.Value;
+					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value);
+					bool hasFunkyMemberName = memberName != stringMember.Value;
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -256,7 +322,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					typeDeclaration.Members.Add(clientField);
 					k++;
 				}
-				else if (enumMember is OpenApiInteger longMember)
+				else if (enumMember is OpenApiLong longMember)
 				{
 					string memberName = "_" + longMember.Value.ToString();
 					int intValue = k;
@@ -271,7 +337,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 				{
-					string memberName = passwordMember.Value;
+					string memberName = NameFunc.RefineEnumMemberName(passwordMember.Value);
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
+				{
+					string memberName = "_" + doubleMember.Value.ToString();
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -289,24 +368,47 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName)
+		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
-				string propertyName = p.Key;
+				string propertyName = NameFunc.RefineTsPropertyName(p.Key);
+				if (propertyName == currentTypeName)
+				{
+					Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
+					propertyName += "1";
+				}
+
+				if (!Char.IsLetter(propertyName[0]) && propertyName[0] != '_')
+				{
+					propertyName = "_" + propertyName;
+				}
+
+				bool propertyNameAdjusted = propertyName != p.Key;
+
 				OpenApiSchema propertySchema = p.Value;
 				string primitivePropertyType = propertySchema.Type;
 				bool isPrimitiveType = TypeRefBuilder.IsPrimitiveType(primitivePropertyType);
-				bool isRequired = schema.Required.Contains(p.Key);//compare with the original key
-
+				bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
 				CodeMemberField clientProperty;
 
 				void GenerateCasualEnum()
 				{
-					string casualEnumName = typeDeclaration.Name + ToTitleCase(propertyName);
-					CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
-					AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-					clientProperty = CreateProperty(propertyName, casualEnumName, isRequired);
+					string casualEnumName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName); // make Pascal case like OrderStatus
+					CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
+					if (existingType == null)
+					{
+						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
+						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
+						clientProperty = CreateProperty(propertyName, casualEnumName, isRequired);
+
+						Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
+					}
+					else
+					{
+						clientProperty = CreateProperty(propertyName, casualEnumName, isRequired);
+					}
+
 				}
 
 				if (String.IsNullOrEmpty(primitivePropertyType)) // for custom type, pointing to a custom type "$ref": "#/components/schemas/PhoneType"
@@ -314,8 +416,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					OpenApiSchema refToType = null;
 					if (propertySchema.Reference != null)
 					{
-						string typeId = propertySchema.Reference.Id;
-						clientProperty = CreateProperty(propertyName, typeId, isRequired);
+						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+						string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+						string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
+						clientProperty = CreateProperty(propertyName, propertyTypeWithNs, isRequired);
 					}
 					else
 					{
@@ -356,18 +460,48 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						OpenApiSchema arrayItemsSchema = propertySchema.Items;
 						if (arrayItemsSchema.Reference != null) //array of custom type
 						{
-							string arrayTypeName = arrayItemsSchema.Reference.Id;
-							CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeName, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
+							string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
+							var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
+							var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
+							var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
+							var existingType = FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
+							if (existingType == null) // Referencing to a type not yet added to namespace
+							{
+								var existingSchema = FindSchema(arrayTypeSchemaRefId);
+								if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
+								{
+									AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
+								}
+							}
+
+							if (TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
+							{
+								if (!TypeRefBuilder.IsSwaggerPrimitive(arrayTypeNameAlias))
+								{
+									CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
+									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
+								}
+								else
+								{
+									var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
+									CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(clrType.FullName, 1);
+									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
+								}
+							}
+							else
+							{
+								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1);
+								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
+							}
 						}
 						else
 						{
 							string arrayType = arrayItemsSchema.Type;
 							if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 							{
-								string casualTypeName = typeDeclaration.Name + ToTitleCase(propertyName);
-								CodeTypeDeclaration casualTypeDeclaration = PodGenHelper.CreatePodClientInterface(ClientNamespace, casualTypeName);
-								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName);
+								string casualTypeName = typeDeclaration.Name + NameFunc.RefineTsPropertyName(propertyName);
+								CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
+								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
 								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, isRequired);
 							}
@@ -381,17 +515,45 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 					{
-						string complexType = propertySchema.Reference.Id;
-						clientProperty = CreateProperty(propertyName, complexType, isRequired);
+						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+						var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
+						if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
+						{
+							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
+						}
+
+						var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
+						clientProperty = CreateProperty(propertyName, typeWithNs, isRequired);
 					}
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{
 						Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 						clientProperty = CreateProperty(propertyName, simpleType, isRequired);
 					}
-					else // for casual enum
+					else // for enum
 					{
-						GenerateCasualEnum();
+						if (propertySchema.Reference != null)
+						{
+							var propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+							string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+							string typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
+							var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
+							if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
+							{
+								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
+							}
+
+							clientProperty = CreateProperty(propertyName, typeWithNs, isRequired);
+						}
+						else //for casual enum
+						{
+							GenerateCasualEnum();
+						}
+
+						CreateMemberDocComment(p, clientProperty);
+						typeDeclaration.Members.Add(clientProperty);
+						continue;
 					}
 				}
 
@@ -456,11 +618,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
 			return result;
-		}
-
-		static string ToTitleCase(string s)
-		{
-			return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
 		}
 
 		/// <summary>
@@ -548,9 +705,44 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="typeName"></param>
 		/// <param name="ns"></param>
 		/// <returns></returns>
-		public static CodeTypeDeclaration FindTypeDeclaration(string typeName, CodeNamespace ns)
+		public static CodeTypeDeclaration FindTypeDeclaration(string typeName, CodeNamespace ns)//common
 		{
 			return ns.FindTypeDeclaration(typeName);
+		}
+
+		/// <summary>
+		/// Check if schema key exists in ComponentsSchemas
+		/// </summary>
+		/// <param name="key"></param>
+		/// <returns></returns>
+		OpenApiSchema FindSchema(string key)//common
+		{
+			if (ComponentsSchemas.TryGetValue(key, out OpenApiSchema v))
+			{
+				return v;
+			}
+
+			return null;
+		}
+
+		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
+		{
+			if (String.IsNullOrEmpty(ns))
+			{
+				return PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName);
+			}
+			else
+			{
+				var foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
+				if (foundNamespace == null)
+				{
+					foundNamespace = new CodeNamespace(ns);
+					codeCompileUnit.Namespaces.Add(foundNamespace);
+					ClassNamespaces.Add(foundNamespace);
+				}
+
+				return PodGenHelper.CreatePodClientInterface(foundNamespace, typeName);
+			}
 		}
 
 	}
