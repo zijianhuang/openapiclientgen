@@ -1,13 +1,8 @@
-﻿using Fonlow.Poco2Client;
-using Microsoft.OpenApi.Any;
+﻿using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Globalization;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes

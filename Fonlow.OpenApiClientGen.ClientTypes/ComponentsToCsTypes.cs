@@ -5,14 +5,10 @@ using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Globalization;
-using System.Data;
-using System.Diagnostics.Tracing;
-using System.Diagnostics.CodeAnalysis;
-using System.ComponentModel;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -1024,16 +1020,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (cg != null)
 			{
 				return cg;
-			}
-
-			return null;
-		}
-
-		static CodeTypeReference TranslateActionResultToClientTypeReference(Type type)
-		{
-			if (type.FullName.Contains("System.Net.Http.HttpResponseMessage") || type.FullName.Contains("System.Web.Http.IHttpActionResult") || type.FullName.Contains("Microsoft.AspNetCore.Mvc.IActionResult") || type.FullName.Contains("Microsoft.AspNetCore.Mvc.ActionResult"))
-			{
-				return new CodeTypeReference("response");
 			}
 
 			return null;

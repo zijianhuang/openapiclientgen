@@ -1,8 +1,7 @@
-﻿using System;
-using System.Diagnostics;
+﻿using Fonlow.OpenApiClientGen.ClientTypes;
+using System;
 using System.Linq;
 using Tavis.UriTemplates;
-using Fonlow.OpenApiClientGen.ClientTypes;
 
 namespace Fonlow.CodeDom.Web
 {

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
-using System.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
