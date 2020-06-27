@@ -134,7 +134,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return enumReference;
 					}
 				}
-				else if (typeAliasDic.TryGet(schemaType, out string aliasTypeName))
+				else if (schemaType != "string" && typeAliasDic.TryGet(schemaType, out string aliasTypeName))
 				{
 					return new CodeTypeReference(aliasTypeName);
 				}

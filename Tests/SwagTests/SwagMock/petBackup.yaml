@@ -208,7 +208,7 @@ paths:
         - petstore_auth:
             - 'write:pets'
             - 'read:pets'
-  /pet/backup-jobs/:
+  /backup-jobs/:
     get:
       operationId: ListBackupJobs
       description: Returns metadata about your backup jobs.
@@ -295,6 +295,14 @@ paths:
             type: string
           description: Pagination token
           required: false
+    parameters:
+      - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+      - $ref: '#/components/parameters/X-Amz-Date'
+      - $ref: '#/components/parameters/X-Amz-Algorithm'
+      - $ref: '#/components/parameters/X-Amz-Credential'
+      - $ref: '#/components/parameters/X-Amz-Security-Token'
+      - $ref: '#/components/parameters/X-Amz-Signature'
+      - $ref: '#/components/parameters/X-Amz-SignedHeaders'
 
 
 components:

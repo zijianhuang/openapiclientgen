@@ -352,5 +352,81 @@ namespace MyNS
 			}
 			}
 		}
+		
+		/// <summary>
+		/// Returns metadata about your backup jobs.
+		/// ListBackupJobs backup-jobs/
+		/// </summary>
+		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="resourceArn">Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</param>
+		/// <param name="state">Returns only backup jobs that are in the specified state.</param>
+		/// <param name="backupVaultName">Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.</param>
+		/// <param name="createdBefore">Returns only backup jobs that were created before the specified date.</param>
+		/// <param name="createdAfter">Returns only backup jobs that were created after the specified date.</param>
+		/// <param name="resourceType"><p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul></param>
+		/// <param name="MaxResults">Pagination limit</param>
+		/// <param name="NextToken">Pagination token</param>
+		/// <returns>Success</returns>
+		public async Task<Pet> ListBackupJobsAsync(string nextToken, int maxResults, string resourceArn, string state, string backupVaultName, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string resourceType, string MaxResults, string NextToken)
+		{
+			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : Uri.EscapeDataString(resourceArn))+"&state=" + (state==null? "" : Uri.EscapeDataString(state))+"&backupVaultName=" + (backupVaultName==null? "" : Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : Uri.EscapeDataString(NextToken));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCode();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns metadata about your backup jobs.
+		/// ListBackupJobs backup-jobs/
+		/// </summary>
+		/// <param name="nextToken">The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</param>
+		/// <param name="maxResults">The maximum number of items to be returned.</param>
+		/// <param name="resourceArn">Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</param>
+		/// <param name="state">Returns only backup jobs that are in the specified state.</param>
+		/// <param name="backupVaultName">Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.</param>
+		/// <param name="createdBefore">Returns only backup jobs that were created before the specified date.</param>
+		/// <param name="createdAfter">Returns only backup jobs that were created after the specified date.</param>
+		/// <param name="resourceType"><p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul></param>
+		/// <param name="MaxResults">Pagination limit</param>
+		/// <param name="NextToken">Pagination token</param>
+		/// <returns>Success</returns>
+		public Pet ListBackupJobs(string nextToken, int maxResults, string resourceArn, string state, string backupVaultName, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string resourceType, string MaxResults, string NextToken)
+		{
+			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : Uri.EscapeDataString(resourceArn))+"&state=" + (state==null? "" : Uri.EscapeDataString(state))+"&backupVaultName=" + (backupVaultName==null? "" : Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : Uri.EscapeDataString(NextToken));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCode();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
 	}
 }

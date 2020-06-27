@@ -215,7 +215,6 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeParameterDeclarationExpression(d.ParameterTypeReference, d.Name))
 				.ToArray();
 			method.Parameters.AddRange(parameters);
-
 			if (settings.HandleHttpRequestHeaders)
 			{
 				method.Parameters.Add(new CodeParameterDeclarationExpression(
