@@ -292,11 +292,8 @@ namespace Fonlow.OpenApiClientGen.CS
 				(d.ParameterDescriptor.ParameterBinder != ParameterBinder.FromBody && d.ParameterDescriptor.ParameterBinder != ParameterBinder.FromForm && TypeHelper.IsSimpleType(d.ParameterDescriptor.ParameterType))
 				|| (TypeHelper.IsComplexType(d.ParameterDescriptor.ParameterType) && d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri)
 				|| (d.ParameterDescriptor.ParameterType.IsValueType && d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri)
-				).Select(d => new CodeParameterDeclarationExpression()
-				{
-					Name = d.Name,
-					Type = coms2CsTypes.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType),
-				}).ToArray();
+				).Select(d => new CodeParameterDeclarationExpression(d.ParameterTypeReference, d.Name))
+				.ToArray();
 
 			void AddRequestUriWithQueryAssignmentStatement()
 			{

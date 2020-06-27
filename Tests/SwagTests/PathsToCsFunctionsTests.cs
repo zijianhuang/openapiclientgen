@@ -152,6 +152,19 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPetBackup()
+		{
+			GenerateAndAssert("SwagMock\\petBackup.yaml", "Results\\PetBackup.txt", new Settings()
+			{
+				ClientNamespace = "MyNS",
+				PathPrefixToRemove = "/api",
+				ContainerClassName = "Misc",
+				ContainerNameSuffix = "",
+				GenerateBothAsyncAndSync = true
+			});
+		}
+
+		[Fact]
 		public void TestPetDelete()
 		{
 			GenerateAndAssert("SwagMock\\PetDelete.json", "Results\\PetDelete.txt");
