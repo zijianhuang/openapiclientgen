@@ -61,7 +61,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="typeName"></param>
 		/// <param name="ns"></param>
 		/// <returns></returns>
-		public static CodeTypeDeclaration FindTypeDeclaration(string typeName, CodeNamespace ns)//common
+		public static CodeTypeDeclaration FindTypeDeclarationInNamespace(string typeName, CodeNamespace ns)//common
 		{
 			return ns.FindTypeDeclaration(typeName);
 		}
@@ -83,42 +83,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			return new CodeTypeReference(typeName);
 
-		}
-
-		public static CodeTypeReference TranslateActionResultToClientTypeReference(Type type)
-		{
-			if (type.FullName.Contains("System.Net.Http.HttpResponseMessage") || type.FullName.Contains("System.Web.Http.IHttpActionResult") || type.FullName.Contains("Microsoft.AspNetCore.Mvc.IActionResult") || type.FullName.Contains("Microsoft.AspNetCore.Mvc.ActionResult"))
-			{
-				return new CodeTypeReference("response");
-			}
-
-			return null;
-		}
-
-		public static CodeMemberField CreateProperty(string propertyName, string typeName, bool isRequired)
-		{
-			string memberName = propertyName + (isRequired ? String.Empty : "?");
-			CodeMemberField result = new CodeMemberField() { Type = TranslateTypeNameToClientTypeReference(typeName), Name = memberName };
-			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
-			return result;
-		}
-
-		public static CodeMemberField CreateProperty(CodeTypeReference codeTypeReference, string propertyName, bool isRequired)
-		{
-			string memberName = propertyName + (isRequired ? String.Empty : "?");
-			CodeMemberField result = new CodeMemberField(codeTypeReference, memberName)
-			{
-				Attributes = MemberAttributes.Public | MemberAttributes.Final
-			};
-			return result;
-		}
-
-		public static void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
-		{
-			if (String.IsNullOrEmpty(item.Value.Description))
-				return;
-
-			declaration.Comments.Add(new CodeCommentStatement(item.Value.Description, true));
 		}
 
 		public static void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)

@@ -12,6 +12,7 @@ using System.Globalization;
 using System.Data;
 using System.Diagnostics.Tracing;
 using System.Diagnostics.CodeAnalysis;
+using System.ComponentModel;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -137,7 +138,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					ClassNamespaces.Add(classNamespace);
 					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
 					{
-						var existingType = FindTypeDeclaration(NameFunc.RefineTypeName(kv.Key, classNamespaceText), classNamespace);
+						var existingType = ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, classNamespaceText), classNamespace);
 						if (existingType == null)
 						{
 							AddTypeToCodeDom(kv);
@@ -591,19 +592,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							{
 								if (!TypeRefBuilder.IsSwaggerPrimitive(arrayTypeNameAlias))
 								{
-									CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
+									CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
 									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 								}
 								else
 								{
 									var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
-									CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(clrType.FullName, 1);
+									CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1);
 									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 								}
 							}
 							else
 							{
-								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1);
+								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
@@ -615,7 +616,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 								string casualTypeName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
 								CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
 								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
-								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);
+								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, defaultValue);
 							}
 							else
@@ -865,6 +866,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		static void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration)
 		{
 			string typeComment = item.Value.Description;
+			if (String.IsNullOrEmpty(typeComment))
+			{
+				return;
+			}
+
 			AddDocComments(typeComment, typeDeclaration.Comments);
 
 		}
@@ -942,7 +948,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
-			CodeMemberField result = new CodeMemberField() { Type = TranslateToClientTypeReference(typeName), Name = memberName };
+			CodeMemberField result = new CodeMemberField() { Type = ComponentsHelper.TranslateTypeNameToClientTypeReference(typeName), Name = memberName };
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
 			return result;
 		}
@@ -974,15 +980,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		public static CodeTypeReference TranslateToClientTypeReference(string typeName)
-		{
-			if (typeName == null)
-				return null;// new CodeTypeReference("void");
-
-			return new CodeTypeReference(typeName);
-
-		}
-
 		CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
 		{
 			CodeTypeReference otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
@@ -990,16 +987,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				ArrayElementType = TranslateToClientTypeReference(elementType),
 			};
 			return otherArrayType;
-		}
-
-		static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
-		{
-			CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
-			CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
-			{
-				ArrayElementType = elementTypeReference,
-			};
-			return typeReference;
 		}
 
 		/// <summary>
@@ -1042,17 +1029,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		/// <summary>
-		/// Find in specific namespace
-		/// </summary>
-		/// <param name="typeName"></param>
-		/// <param name="ns"></param>
-		/// <returns></returns>
-		public static CodeTypeDeclaration FindTypeDeclaration(string typeName, CodeNamespace ns)
+		static CodeTypeReference TranslateActionResultToClientTypeReference(Type type)
 		{
-			return ns.FindTypeDeclaration(typeName);
-		}
+			if (type.FullName.Contains("System.Net.Http.HttpResponseMessage") || type.FullName.Contains("System.Web.Http.IHttpActionResult") || type.FullName.Contains("Microsoft.AspNetCore.Mvc.IActionResult") || type.FullName.Contains("Microsoft.AspNetCore.Mvc.ActionResult"))
+			{
+				return new CodeTypeReference("response");
+			}
 
+			return null;
+		}
 	}
 
 }
