@@ -73,7 +73,7 @@ namespace MyNS
 		/// <param name="tags">tags to filter by</param>
 		/// <param name="limit">maximum number of results to return</param>
 		/// <returns>pet response</returns>
-		public async Task<Pet[]> FindPetsAsync(string tags, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pet[]> FindPetsAsync(string[] tags, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pets?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"))+"&limit="+limit;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))

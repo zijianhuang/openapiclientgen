@@ -39,7 +39,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		string statementOfEnsureSuccessStatusCode;
 
 		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod,
-			OpenApiOperation apiOperation, ComponentsToCsTypes poco2CsGen, bool forAsync, bool useEnsureSuccessStatusCodeEx)
+			OpenApiOperation apiOperation, ComponentsToCsTypes coms2CsTypes, bool forAsync, bool useEnsureSuccessStatusCodeEx)
 		{
 			if (httpMethod > OperationType.Delete)
 			{
@@ -49,11 +49,11 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(poco2CsGen.ClientNamespace, poco2CsGen.ClassNamespaces);
-			this.bodyContentRefBuilder = new BodyContentRefBuilder(poco2CsGen, nameComposer);
+			this.parametersHelper = new ParametersHelper(coms2CsTypes.ClientNamespace, coms2CsTypes.ClassNamespaces);
+			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
-			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters, poco2CsGen.TypeAliasDic);
+			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters, coms2CsTypes.TypeAliasDic);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
@@ -69,7 +69,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			}
 
 			this.actionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
-			this.coms2CsTypes = poco2CsGen;
+			this.coms2CsTypes = coms2CsTypes;
 			this.forAsync = forAsync;
 
 
@@ -82,7 +82,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, poco2CsGen.TypeAliasDic);
+				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, coms2CsTypes.TypeAliasDic);
 
 			}
 			catch (CodeGenException ex)
@@ -212,7 +212,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		{
 			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 				.Select(d =>
-				new CodeParameterDeclarationExpression(coms2CsTypes.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType), d.Name))
+				new CodeParameterDeclarationExpression(d.ParameterTypeReference, d.Name))
 				.ToArray();
 			method.Parameters.AddRange(parameters);
 
@@ -272,7 +272,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			//Create function parameters in prototype
 			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 				.Select(d =>
-				new CodeParameterDeclarationExpression(coms2CsTypes.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType), d.Name))
+				new CodeParameterDeclarationExpression(d.ParameterTypeReference, d.Name))
 				.ToArray();
 			method.Parameters.AddRange(parameters);
 

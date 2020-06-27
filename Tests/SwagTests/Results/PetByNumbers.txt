@@ -304,7 +304,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(string tags)
+		public async Task<Pet[]> FindPetsByTagsAsync(float[] tags)
 		{
 			var requestUri = "pet/findByNumbers?"+String.Join("&", tags.Select(z => $"tags={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -334,7 +334,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByTags(string tags)
+		public Pet[] FindPetsByTags(float[] tags)
 		{
 			var requestUri = "pet/findByNumbers?"+String.Join("&", tags.Select(z => $"tags={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
