@@ -210,16 +210,6 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		void RenderGetOrDeleteImplementation(OperationType httpMethod, bool forAsync)
 		{
-			//Create function parameters
-			//CodeParameterDeclarationExpression[] parameters = apiOperation.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query)
-			//	.Select(d =>
-			//	new CodeParameterDeclarationExpression()
-			//	{
-			//		Name = d.Name.Replace('-', '_').Replace("$", ""),
-			//		Type = parametersHelper.OpenApiParameterToCodeTypeReference(d),
-
-			//	})
-			//	.ToArray();
 			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 				.Select(d =>
 				new CodeParameterDeclarationExpression(coms2CsTypes.TranslateToClientTypeReference(d.ParameterDescriptor.ParameterType), d.Name))

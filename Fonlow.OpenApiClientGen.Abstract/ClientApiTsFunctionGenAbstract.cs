@@ -20,10 +20,8 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected string RelativePath { get; private set; }
 		protected CodeTypeReference ReturnTypeReference { get; private set; }
-		//bool returnTypeIsStream;
 
 		protected CodeMemberMethod Method { get; private set; }
-		protected ComponentsToTsTypes ComToTsTypes { get; private set; }
 		NameComposer nameComposer;
 		ParametersHelper parametersHelper;
 		BodyContentRefBuilder bodyContentRefBuilder;
@@ -43,7 +41,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(com2TsTypes.ClientNamespace, null); //pass the class namespace list
+			this.parametersHelper = new ParametersHelper(com2TsTypes.ClientNamespace, com2TsTypes.ClassNamespaces);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
@@ -63,7 +61,6 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
-			this.ComToTsTypes = com2TsTypes;
 
 			this.RelativePath = RemovePrefixSlash(relativePath);
 			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
@@ -87,16 +84,6 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			ReturnTypeReference = r.Item1;
-
-			//todo: stream, byte and ActionResult later.
-			//returnTypeIsStream = returnType!=null && ( (returnType.FullName == typeNameOfHttpResponseMessage) 
-			//	|| (returnType.FullName == typeOfIHttpActionResult) 
-			//	|| (returnType.FullName == typeOfIActionResult) 
-			//	|| (returnType.FullName == typeOfActionResult)
-			//	|| (returnType.FullName.StartsWith("System.Threading.Tasks.Task`1[[Microsoft.AspNetCore.Mvc.IActionResult")) // .net core is not translating Task<IActionResult> properly.
-			//	|| (returnType.FullName.StartsWith("System.Threading.Tasks.Task`1[[Microsoft.AspNetCore.Mvc.IHttpActionResult"))
-			//	|| (returnType.FullName.StartsWith("System.Threading.Tasks.Task`1[[Microsoft.AspNetCore.Mvc.ActionResult"))
-			//	);
 
 			//create method
 			Method = CreateMethodName();
