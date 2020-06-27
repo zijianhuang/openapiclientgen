@@ -48,7 +48,7 @@ namespace SwagTests
 			return File.ReadAllText(filePath);
 		}
 
-		void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
+		void GenerateFileAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
 			string s = TranslateJsonToCode(openApiFile, mySettings);
 			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
@@ -70,37 +70,37 @@ namespace SwagTests
 		[Fact]
 		public void TestValuesPaths()
 		{
-			GenerateAndAssert("SwagMock\\ValuesPaths.json", "Results\\ValuesPaths.txt");
+			GenerateFileAndAssert("SwagMock\\ValuesPaths.json", "Results\\ValuesPaths.txt");
 		}
 
 		[Fact]
 		public void TestSimplePet()
 		{
-			GenerateAndAssert("SwagMock\\SimplePet.json", "Results\\SimplePet.txt");
+			GenerateFileAndAssert("SwagMock\\SimplePet.json", "Results\\SimplePet.txt");
 		}
 
 		[Fact]
 		public void TestPet()
 		{
-			GenerateAndAssert("SwagMock\\pet.yaml", "Results\\Pet.txt");
+			GenerateFileAndAssert("SwagMock\\pet.yaml", "Results\\Pet.txt");
 		}
 
 		[Fact]
 		public void TestPetByTags()
 		{
-			GenerateAndAssert("SwagMock\\petByTags.yaml", "Results\\PetByTags.txt");
+			GenerateFileAndAssert("SwagMock\\petByTags.yaml", "Results\\PetByTags.txt");
 		}
 
 		[Fact]
 		public void TestPetByNumbers()
 		{
-			GenerateAndAssert("SwagMock\\petByNumbers.yaml", "Results\\PetByNumbers.txt");
+			GenerateFileAndAssert("SwagMock\\petByNumbers.yaml", "Results\\PetByNumbers.txt");
 		}
 
 		[Fact]
 		public void TestPetWithDataContractAttribute()
 		{
-			GenerateAndAssert("SwagMock\\pet.yaml", "Results\\PetDataContracts.txt", new Settings()
+			GenerateFileAndAssert("SwagMock\\pet.yaml", "Results\\PetDataContracts.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
@@ -116,7 +116,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetWithPathAsContainerName()
 		{
-			GenerateAndAssert("SwagMock\\pet.yaml", "Results\\PetPathAsContainer.txt", new Settings()
+			GenerateFileAndAssert("SwagMock\\pet.yaml", "Results\\PetPathAsContainer.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "Misc",
@@ -129,7 +129,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetWithGodContainerAndPathAction()
 		{
-			GenerateAndAssert("SwagMock\\pet.yaml", "Results\\PetGodClass.txt", new Settings()
+			GenerateFileAndAssert("SwagMock\\pet.yaml", "Results\\PetGodClass.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ActionNameStrategy = ActionNameStrategy.PathMethodQueryParameters,
@@ -141,7 +141,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetFindByStatus()
 		{
-			GenerateAndAssert("SwagMock\\petByStatus.yaml", "Results\\PetFindByStatus.txt", new Settings()
+			GenerateFileAndAssert("SwagMock\\petByStatus.yaml", "Results\\PetFindByStatus.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
@@ -154,7 +154,7 @@ namespace SwagTests
 		[Fact]
 		public void TestPetBackup()
 		{
-			GenerateAndAssert("SwagMock\\petBackup.yaml", "Results\\PetBackup.txt", new Settings()
+			GenerateFileAndAssert("SwagMock\\petBackup.yaml", "Results\\PetBackup.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
@@ -167,25 +167,25 @@ namespace SwagTests
 		[Fact]
 		public void TestPetDelete()
 		{
-			GenerateAndAssert("SwagMock\\PetDelete.json", "Results\\PetDelete.txt");
+			GenerateFileAndAssert("SwagMock\\PetDelete.json", "Results\\PetDelete.txt");
 		}
 
 		[Fact]
 		public void TestPetTypes()
 		{
-			GenerateAndAssert("SwagMock\\PetTypes.json", "Results\\PetTypes.txt");
+			GenerateFileAndAssert("SwagMock\\PetTypes.json", "Results\\PetTypes.txt");
 		}
 
 		[Fact]
 		public void TestPetStore()
 		{
-			GenerateAndAssert("SwagMock\\petStore.yaml", "Results\\PetStore.txt");
+			GenerateFileAndAssert("SwagMock\\petStore.yaml", "Results\\PetStore.txt");
 		}
 
 		[Fact]
 		public void TestPetStoreExpanded()
 		{
-			GenerateAndAssert("SwagMock\\petStoreExpanded.yaml", "Results\\PetStoreExpanded.txt", new Settings()
+			GenerateFileAndAssert("SwagMock\\petStoreExpanded.yaml", "Results\\PetStoreExpanded.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "Misc",
@@ -200,7 +200,7 @@ namespace SwagTests
 		[Fact]
 		public void TestUspto()
 		{
-			GenerateAndAssert("SwagMock\\uspto.yaml", "Results\\Uspto.txt", new Settings()
+			GenerateFileAndAssert("SwagMock\\uspto.yaml", "Results\\Uspto.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "Misc",
@@ -217,7 +217,7 @@ namespace SwagTests
 		[Fact]
 		public void TestMcp()
 		{
-			GenerateAndAssert("SwagMock\\mcp3.yaml", "Results\\mcp.txt", new Settings()
+			GenerateFileAndAssert("SwagMock\\mcp3.yaml", "Results\\mcp.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "McpClient",
@@ -235,139 +235,139 @@ namespace SwagTests
 		[Fact]
 		public void TestRedocOpenApi()
 		{
-			GenerateAndAssert("SwagMock\\redocOpenApi200501.json", "Results\\redocOpenApi200501.txt");
+			GenerateFileAndAssert("SwagMock\\redocOpenApi200501.json", "Results\\redocOpenApi200501.txt");
 		}
 
 		[Fact]
 		public void TestEBaySellAccount()
 		{
-			GenerateAndAssert("SwagMock\\sell_account_v1_oas3.json", "Results\\sell_account.txt");
+			GenerateFileAndAssert("SwagMock\\sell_account_v1_oas3.json", "Results\\sell_account.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_analytics()
 		{
-			GenerateAndAssert("SwagMock\\sell_analytics_v1_oas3.yaml", "Results\\sell_analytics.txt");
+			GenerateFileAndAssert("SwagMock\\sell_analytics_v1_oas3.yaml", "Results\\sell_analytics.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_compliance()
 		{
-			GenerateAndAssert("SwagMock\\sell_compliance_v1_oas3.yaml", "Results\\sell_compliance.txt");
+			GenerateFileAndAssert("SwagMock\\sell_compliance_v1_oas3.yaml", "Results\\sell_compliance.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_finances()
 		{
-			GenerateAndAssert("SwagMock\\sell_finances_v1_oas3.yaml", "Results\\sell_finances.txt");
+			GenerateFileAndAssert("SwagMock\\sell_finances_v1_oas3.yaml", "Results\\sell_finances.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_inventory()
 		{
-			GenerateAndAssert("SwagMock\\sell_inventory_v1_oas3.yaml", "Results\\sell_inventory.txt");
+			GenerateFileAndAssert("SwagMock\\sell_inventory_v1_oas3.yaml", "Results\\sell_inventory.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_listing()
 		{
-			GenerateAndAssert("SwagMock\\sell_listing_v1_beta_oas3.yaml", "Results\\sell_listing.txt");
+			GenerateFileAndAssert("SwagMock\\sell_listing_v1_beta_oas3.yaml", "Results\\sell_listing.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_logistics()
 		{
-			GenerateAndAssert("SwagMock\\sell_logistics_v1_oas3.json", "Results\\sell_logistics.txt");
+			GenerateFileAndAssert("SwagMock\\sell_logistics_v1_oas3.json", "Results\\sell_logistics.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_negotiation()
 		{
-			GenerateAndAssert("SwagMock\\sell_negotiation_v1_oas3.yaml", "Results\\sell_negotiation.txt");
+			GenerateFileAndAssert("SwagMock\\sell_negotiation_v1_oas3.yaml", "Results\\sell_negotiation.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_marketing()
 		{
-			GenerateAndAssert("SwagMock\\sell_marketing_v1_oas3.json", "Results\\sell_marketing.txt");
+			GenerateFileAndAssert("SwagMock\\sell_marketing_v1_oas3.json", "Results\\sell_marketing.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_metadata()
 		{
-			GenerateAndAssert("SwagMock\\sell_metadata_v1_oas3.json", "Results\\sell_metadata.txt");
+			GenerateFileAndAssert("SwagMock\\sell_metadata_v1_oas3.json", "Results\\sell_metadata.txt");
 		}
 
 		[Fact]
 		public void TestEBay_sell_recommendation()
 		{
-			GenerateAndAssert("SwagMock\\sell_recommendation_v1_oas3.yaml", "Results\\sell_recommendation.txt");
+			GenerateFileAndAssert("SwagMock\\sell_recommendation_v1_oas3.yaml", "Results\\sell_recommendation.txt");
 		}
 
 		[Fact]
 		public void TestEBay_buy_browse()
 		{
-			GenerateAndAssert("SwagMock\\buy_browse_v1_beta_oas3.json", "Results\\buy_browse.txt");
+			GenerateFileAndAssert("SwagMock\\buy_browse_v1_beta_oas3.json", "Results\\buy_browse.txt");
 		}
 
 		[Fact]
 		public void TestEBay_buy_feed()
 		{
-			GenerateAndAssert("SwagMock\\buy_feed_v1_beta_oas3.json", "Results\\buy_feed.txt");
+			GenerateFileAndAssert("SwagMock\\buy_feed_v1_beta_oas3.json", "Results\\buy_feed.txt");
 		}
 
 		[Fact]
 		public void TestEBay_buy_marketing()
 		{
-			GenerateAndAssert("SwagMock\\buy_marketing_v1_beta_oas3.yaml", "Results\\buy_marketing.txt");
+			GenerateFileAndAssert("SwagMock\\buy_marketing_v1_beta_oas3.yaml", "Results\\buy_marketing.txt");
 		}
 
 		[Fact]
 		public void TestEBay_buy_marketplace_insights()
 		{
-			GenerateAndAssert("SwagMock\\buy_marketplace_insights_v1_beta_oas3.yaml", "Results\\buy_marketplace_insights.txt");
+			GenerateFileAndAssert("SwagMock\\buy_marketplace_insights_v1_beta_oas3.yaml", "Results\\buy_marketplace_insights.txt");
 		}
 
 		[Fact]
 		public void TestEBay_buy_offer()
 		{
-			GenerateAndAssert("SwagMock\\buy_offer_v1_beta_oas3.yaml", "Results\\buy_offer.txt");
+			GenerateFileAndAssert("SwagMock\\buy_offer_v1_beta_oas3.yaml", "Results\\buy_offer.txt");
 		}
 
 		[Fact]
 		public void TestEBay_buy_order()
 		{
-			GenerateAndAssert("SwagMock\\buy_order_v1_beta_oas3.json", "Results\\buy_order.txt");
+			GenerateFileAndAssert("SwagMock\\buy_order_v1_beta_oas3.json", "Results\\buy_order.txt");
 		}
 
 		[Fact]
 		public void TestEBay_commerce_catalog()
 		{
-			GenerateAndAssert("SwagMock\\commerce_catalog_v1_beta_oas3.json", "Results\\commerce_catalog.txt");
+			GenerateFileAndAssert("SwagMock\\commerce_catalog_v1_beta_oas3.json", "Results\\commerce_catalog.txt");
 		}
 
 		[Fact]
 		public void TestEBay_commerce_identity()
 		{
-			GenerateAndAssert("SwagMock\\commerce_identity_v1_oas3.json", "Results\\commerce_identity.txt");
+			GenerateFileAndAssert("SwagMock\\commerce_identity_v1_oas3.json", "Results\\commerce_identity.txt");
 		}
 
 		[Fact]
 		public void TestEBay_commerce_taxonomy()
 		{
-			GenerateAndAssert("SwagMock\\commerce_taxonomy_v1_beta_oas3.json", "Results\\commerce_taxonomy.txt");
+			GenerateFileAndAssert("SwagMock\\commerce_taxonomy_v1_beta_oas3.json", "Results\\commerce_taxonomy.txt");
 		}
 
 		[Fact]
 		public void TestEBay_commerce_translation()
 		{
-			GenerateAndAssert("SwagMock\\commerce_translation_v1_oas3.json", "Results\\commerce_translation.txt");
+			GenerateFileAndAssert("SwagMock\\commerce_translation_v1_oas3.json", "Results\\commerce_translation.txt");
 		}
 
 		[Fact]
 		public void TestEBay_developer_analytics()
 		{
-			GenerateAndAssert("SwagMock\\developer_analytics_v1_beta_oas3.json", "Results\\developer_analytics.txt");
+			GenerateFileAndAssert("SwagMock\\developer_analytics_v1_beta_oas3.json", "Results\\developer_analytics.txt");
 		}
 
 	}
