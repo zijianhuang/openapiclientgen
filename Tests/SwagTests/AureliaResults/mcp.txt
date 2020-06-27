@@ -224,26 +224,6 @@ export namespace MyNS {
 		ind: string;
 	}
 
-	export interface VeteranPatientType extends PatientType {
-		veteranMembership?: VeteranMembershipType;
-	}
-
-	export interface PatientType {
-		identity: IdentityType;
-		residentialAddress?: AddressType;
-	}
-
-	export interface AddressType {
-		addressLineOne?: string;
-		addressLineTwo?: string;
-		locality?: string;
-		postcode?: string;
-	}
-
-	export interface VeteranMembershipType {
-		veteranNumber: string;
-	}
-
 	export interface VAAServiceType {
 		id: string;
 		accountReferenceNumber?: string;
@@ -264,6 +244,26 @@ export namespace MyNS {
 		timeDuration?: string;
 		toothNumber?: string;
 		upperLowerJawCode?: string;
+	}
+
+	export interface VeteranPatientType extends PatientType {
+		veteranMembership?: VeteranMembershipType;
+	}
+
+	export interface VeteranMembershipType {
+		veteranNumber: string;
+	}
+
+	export interface PatientType {
+		identity: IdentityType;
+		residentialAddress?: AddressType;
+	}
+
+	export interface AddressType {
+		addressLineOne?: string;
+		addressLineTwo?: string;
+		locality?: string;
+		postcode?: string;
 	}
 
 	export interface AlliedHealthClaimResponseType {
@@ -349,10 +349,6 @@ export namespace MyNS {
 		processDate?: Date;
 	}
 
-	export interface VeteranMembershipResponseType extends VeteranMembershipType {
-		entitlementCode?: string;
-	}
-
 	export interface DVAServiceAssessmentType {
 		id?: string;
 		accountReferenceNumber?: string;
@@ -362,6 +358,10 @@ export namespace MyNS {
 		gstInd?: string;
 		itemNumber?: string;
 		numberOfPatientsSeen?: string;
+	}
+
+	export interface VeteranMembershipResponseType extends VeteranMembershipType {
+		entitlementCode?: string;
 	}
 
 	export interface EnterpriseConcessionVerificationRequestType {
@@ -490,18 +490,6 @@ export namespace MyNS {
 		authorisationDate: Date;
 	}
 
-	export interface ClaimantType extends MedicarePatientType {
-		eftDetails?: BankAccountType;
-		residentialAddress?: AddressType;
-		contactDetails?: ContactType;
-	}
-
-	export interface ContactType {
-		emailAddress?: string;
-		name?: string;
-		phoneNumber?: string;
-	}
-
 	export interface PCIMedicalEventType {
 		service: Array<PCIServiceType>;
 		id: string;
@@ -513,6 +501,18 @@ export namespace MyNS {
 		patientContribAmount?: string;
 		facilityId?: string;
 		hospitalInd?: string;
+	}
+
+	export interface ClaimantType extends MedicarePatientType {
+		eftDetails?: BankAccountType;
+		residentialAddress?: AddressType;
+		contactDetails?: ContactType;
+	}
+
+	export interface ContactType {
+		emailAddress?: string;
+		name?: string;
+		phoneNumber?: string;
 	}
 
 	export interface PatientClaimInteractiveResponseType {

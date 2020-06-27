@@ -61,6 +61,51 @@ export namespace MyNS {
 	}
 
 
+	/**This complex data type defines the details of the customer service metric and benchmark data related to the associated dimension. */
+	export interface Metric {
+
+		/**This complex type defines the benchmark data, which includes the average value of the metric for the group (the benchmark) and the seller's overall rating when compared to the benchmark. */
+		benchmark?: MetricBenchmark;
+
+		/**Returned when metricKey equals COUNT, this field returns an array of seller data where each set of data is grouped according by an overarching basis. When the seller distribution is returned, the numeric value of the associated value container equals the sum of the transactions where the seller meets the criteria of the customer service metric type for the given dimension during the evaluationCycle. */
+		distributions?: Array<MetricDistribution>;
+
+		/**This field indicates the customer service metric being returned in the associated metrics container. The field is set as follows: TRANSACTION_COUNT &ndash; When set to this value, the associated value field equals the total number of transactions completed in the seller group for the metric in the given dimension during the associated evaluationCycle. COUNT &ndash; When set to this value, the associated value field is set to the total number of transactions the seller completed that meet the criteria of the customer service metric type for the given dimension that occurred during the evaluationCycle. RATE &ndash; When set to this value, the value of the associated value field is the rate of the customer service metric type in the given dimension during the associated evaluationCycle. Specifically, when metricKey is set to RATE, the associated value field is set to the value of metricKey TRANSACTION_COUNT divided by the value of metricKey COUNT. The returned benchmark.rating for the seller is based on this calculated value. */
+		metricKey?: string;
+
+		/**This field is set to the seller's numeric rating for the associated metricKey for the given dimension during the evaluationCycle. To determine the seller's rating for this metric, the value of this field is compared to the average metric value of the group. */
+		value?: string;
+	}
+
+
+	/**This complex type defines the benchmark data, which includes the average value of the metric for the group (the benchmark) and the seller's overall rating when compared to the benchmark. */
+	export interface MetricBenchmark {
+
+		/**If this field is present, it indicates that the rating given to the seller was &quot;adjusted&quot; for one reason or another. If eBay determines that the normal rating of a seller is impacted by circumstances beyond their control, they can issue an override to adjust the rating given to the seller. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/RatingAdjustmentTypeEnum.html'>eBay API documentation</a> */
+		adjustment?: string;
+
+		/**This field returns the &quot;basis&quot; by which the benchmark is calculated for the customer service metric type. Currently, the only supported basis is PEER_BENCHMARK. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/BenchmarkTypeEnum.html'>eBay API documentation</a> */
+		basis?: string;
+
+		/**This complex type defines the fields that comprise the benchmark against which the seller's performance is compared. The comparison determines the seller's rating for the metric. */
+		metadata?: BenchmarkMetadata;
+
+		/**This field returns seller's rating for the customer service metric. The rating is set to a value that equals the relative deviation between the seller's metric value and the benchmark value for the customer service metric. Deviation values range from LOW to VERY HIGH, and the lower the deviation, the better the seller rating. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/RatingTypeEnum.html'>eBay API documentation</a> */
+		rating?: string;
+	}
+
+
+	/**This complex data type describes the metric distribution by basis. */
+	export interface MetricDistribution {
+
+		/**This field returns the basis, or the method, by which the metric rating is calculated. */
+		basis?: string;
+
+		/**This field returns a list of name/value pairs, where the name indicates the distribution being rated and the value indicates the count of seller transactions that meet the distribution criteria. */
+		data?: Array<Distribution>;
+	}
+
+
 	/**This complex type defines of a piece of data that is grouped by the associated basis. It contains the name for the data set and its associated value. */
 	export interface Distribution {
 
@@ -140,6 +185,29 @@ export namespace MyNS {
 	}
 
 
+	/**A complex type that defines a seller profile. */
+	export interface StandardsProfile {
+
+		/**A complex type that describes a program cycle. */
+		cycle?: Cycle;
+
+		/**If set to true, this flag indicates this is the default program for the seller. Except for sellers in China, a seller's default program is the marketplace where they registered with eBay. Seller's in China select their default program when they register. */
+		defaultProgram?: boolean;
+
+		/**Specifies how the overall seller level was calculated. In the event of special circumstances (as determined by eBay), eBay may override the calculated seller level. In general, such overrides protect a seller's level. The usual value for both cycle types is &quot;Seller level generated by standards monthly evaluation cycle.&quot; */
+		evaluationReason?: string;
+
+		/**A list of the metrics upon which a seller's profile is evaluated. Each program's applicable metrics and requirements are listed at eBay Top Rated seller program standards. */
+		metrics?: Array<Metric>;
+
+		/**Indicates the program used to generate the profile data. Values can be PROGRAM_DE, PROGRAM_UK, PROGRAM_US, or PROGRAM_GLOBAL. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/ProgramEnum.html'>eBay API documentation</a> */
+		program?: string;
+
+		/**The overall standards level of the seller, one of TOP_RATED, ABOVE_STANDARD, or BELOW_STANDARD. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/StandardsLevelEnum.html'>eBay API documentation</a> */
+		standardsLevel?: string;
+	}
+
+
 	/**This complex data type defines the response data that is returned from a request to getCustomerServiceMetric. The dimensionMetrics object contains the details of the dimension being measured and the calculated customer service metric values. The evaluationCycle defines the period used to calculate the metric values. The marketplaceId is the eBay marketplace for which the metrics are being considered. */
 	export interface GetCustomerServiceMetricResponse {
 
@@ -198,48 +266,14 @@ export namespace MyNS {
 	}
 
 
-	/**This complex data type defines the details of the customer service metric and benchmark data related to the associated dimension. */
-	export interface Metric {
+	/**A complex type that contains a value, plus the veracity of that value. */
+	export interface Value {
 
-		/**This complex type defines the benchmark data, which includes the average value of the metric for the group (the benchmark) and the seller's overall rating when compared to the benchmark. */
-		benchmark?: MetricBenchmark;
+		/**If set to true, this flag indicates the value in the value field is valid as computed. A value of false indicates one or more of the values used to calculate the value was invalid. The occurrence of this is a rare, however consider this case: suppose a buyer navigates to a View Item page at 11:59 pm (the end of the day) and purchases the item at 12:05am the next day. In this case, the item would have been purchased with 0 views for the day. */
+		applicable?: boolean;
 
-		/**Returned when metricKey equals COUNT, this field returns an array of seller data where each set of data is grouped according by an overarching basis. When the seller distribution is returned, the numeric value of the associated value container equals the sum of the transactions where the seller meets the criteria of the customer service metric type for the given dimension during the evaluationCycle. */
-		distributions?: Array<MetricDistribution>;
-
-		/**This field indicates the customer service metric being returned in the associated metrics container. The field is set as follows: TRANSACTION_COUNT &ndash; When set to this value, the associated value field equals the total number of transactions completed in the seller group for the metric in the given dimension during the associated evaluationCycle. COUNT &ndash; When set to this value, the associated value field is set to the total number of transactions the seller completed that meet the criteria of the customer service metric type for the given dimension that occurred during the evaluationCycle. RATE &ndash; When set to this value, the value of the associated value field is the rate of the customer service metric type in the given dimension during the associated evaluationCycle. Specifically, when metricKey is set to RATE, the associated value field is set to the value of metricKey TRANSACTION_COUNT divided by the value of metricKey COUNT. The returned benchmark.rating for the seller is based on this calculated value. */
-		metricKey?: string;
-
-		/**This field is set to the seller's numeric rating for the associated metricKey for the given dimension during the evaluationCycle. To determine the seller's rating for this metric, the value of this field is compared to the average metric value of the group. */
+		/**The value of the report data. */
 		value?: string;
-	}
-
-
-	/**This complex type defines the benchmark data, which includes the average value of the metric for the group (the benchmark) and the seller's overall rating when compared to the benchmark. */
-	export interface MetricBenchmark {
-
-		/**If this field is present, it indicates that the rating given to the seller was &quot;adjusted&quot; for one reason or another. If eBay determines that the normal rating of a seller is impacted by circumstances beyond their control, they can issue an override to adjust the rating given to the seller. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/RatingAdjustmentTypeEnum.html'>eBay API documentation</a> */
-		adjustment?: string;
-
-		/**This field returns the &quot;basis&quot; by which the benchmark is calculated for the customer service metric type. Currently, the only supported basis is PEER_BENCHMARK. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/BenchmarkTypeEnum.html'>eBay API documentation</a> */
-		basis?: string;
-
-		/**This complex type defines the fields that comprise the benchmark against which the seller's performance is compared. The comparison determines the seller's rating for the metric. */
-		metadata?: BenchmarkMetadata;
-
-		/**This field returns seller's rating for the customer service metric. The rating is set to a value that equals the relative deviation between the seller's metric value and the benchmark value for the customer service metric. Deviation values range from LOW to VERY HIGH, and the lower the deviation, the better the seller rating. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/RatingTypeEnum.html'>eBay API documentation</a> */
-		rating?: string;
-	}
-
-
-	/**This complex data type describes the metric distribution by basis. */
-	export interface MetricDistribution {
-
-		/**This field returns the basis, or the method, by which the metric rating is calculated. */
-		basis?: string;
-
-		/**This field returns a list of name/value pairs, where the name indicates the distribution being rated and the value indicates the count of seller transactions that meet the distribution criteria. */
-		data?: Array<Distribution>;
 	}
 
 
@@ -277,40 +311,6 @@ export namespace MyNS {
 
 		/**An array of any process errors or warnings that were generated during the processing of the call processing. */
 		warnings?: Array<Error>;
-	}
-
-
-	/**A complex type that defines a seller profile. */
-	export interface StandardsProfile {
-
-		/**A complex type that describes a program cycle. */
-		cycle?: Cycle;
-
-		/**If set to true, this flag indicates this is the default program for the seller. Except for sellers in China, a seller's default program is the marketplace where they registered with eBay. Seller's in China select their default program when they register. */
-		defaultProgram?: boolean;
-
-		/**Specifies how the overall seller level was calculated. In the event of special circumstances (as determined by eBay), eBay may override the calculated seller level. In general, such overrides protect a seller's level. The usual value for both cycle types is &quot;Seller level generated by standards monthly evaluation cycle.&quot; */
-		evaluationReason?: string;
-
-		/**A list of the metrics upon which a seller's profile is evaluated. Each program's applicable metrics and requirements are listed at eBay Top Rated seller program standards. */
-		metrics?: Array<Metric>;
-
-		/**Indicates the program used to generate the profile data. Values can be PROGRAM_DE, PROGRAM_UK, PROGRAM_US, or PROGRAM_GLOBAL. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/ProgramEnum.html'>eBay API documentation</a> */
-		program?: string;
-
-		/**The overall standards level of the seller, one of TOP_RATED, ABOVE_STANDARD, or BELOW_STANDARD. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/StandardsLevelEnum.html'>eBay API documentation</a> */
-		standardsLevel?: string;
-	}
-
-
-	/**A complex type that contains a value, plus the veracity of that value. */
-	export interface Value {
-
-		/**If set to true, this flag indicates the value in the value field is valid as computed. A value of false indicates one or more of the values used to calculate the value was invalid. The occurrence of this is a rare, however consider this case: suppose a buyer navigates to a View Item page at 11:59 pm (the end of the day) and purchases the item at 12:05am the next day. In this case, the item would have been purchased with 0 views for the day. */
-		applicable?: boolean;
-
-		/**The value of the report data. */
-		value?: string;
 	}
 
 	export class Customer_service_metricClient {

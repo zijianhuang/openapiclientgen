@@ -499,7 +499,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							string arrayType = arrayItemsSchema.Type;
 							if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 							{
-								string casualTypeName = typeDeclaration.Name + NameFunc.RefineTsPropertyName(propertyName);
+								string casualTypeName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName); //keep Pascal case
 								CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
 								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
 								CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(casualTypeName, 1);

@@ -68,6 +68,14 @@ export namespace MyNS {
 	}
 
 
+	/**This complex type contains a string field representing a telephone number. */
+	export interface PhoneNumber {
+
+		/**A telephone number. */
+		phoneNumber?: string;
+	}
+
+
 	/**This complex type contains the request payload for the createFromShippingQuote method. */
 	export interface CreateShipmentFromQuoteRequest {
 
@@ -130,11 +138,14 @@ export namespace MyNS {
 	}
 
 
-	/**This complex type contains a string field representing a telephone number. */
-	export interface PhoneNumber {
+	/**This complex type contains information about the weight of an object such as a shipping package. */
+	export interface Weight {
 
-		/**A telephone number. */
-		phoneNumber?: string;
+		/**The unit of measure used to express the weight of the package. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/WeightUnitOfMeasureEnum.html'>eBay API documentation</a> */
+		unit?: string;
+
+		/**The numeric value of the weight of the package, as measured by the value of unit. */
+		value?: string;
 	}
 
 
@@ -339,34 +350,6 @@ export namespace MyNS {
 	}
 
 
-	/**This complex type defines the request body for createShippingQuote. Sellers request a quote for a shipment by defining the &quot;To&quot; and &quot;From&quot; addresses for the package, plus the package's size. Carriers respond by offering up a &quot;rate&quot; for the service of theirs that best fits seller's needs. */
-	export interface ShippingQuoteRequest {
-
-		/**A seller-defined list that contains information about the orders in the package. This allows sellers to include information about the line items in the package with the shipment information. A package can contain any number of line items from one or more orders, providing they all ship in the same package. Maximum list size: 10 */
-		orders?: Array<Order>;
-
-		/**This complex type specifies the dimensions and weight of a package. */
-		packageSpecification?: PackageSpecification;
-
-		/**This complex type contains contact information for an individual buyer or seller. */
-		shipFrom?: Contact;
-
-		/**This complex type contains contact information for an individual buyer or seller. */
-		shipTo?: Contact;
-	}
-
-
-	/**This complex type contains information about the weight of an object such as a shipping package. */
-	export interface Weight {
-
-		/**The unit of measure used to express the weight of the package. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/WeightUnitOfMeasureEnum.html'>eBay API documentation</a> */
-		unit?: string;
-
-		/**The numeric value of the weight of the package, as measured by the value of unit. */
-		value?: string;
-	}
-
-
 	/**A container that defines the elements of error and warning message. */
 	export interface Error {
 
@@ -407,6 +390,23 @@ export namespace MyNS {
 
 		/**A description of the error. */
 		value?: string;
+	}
+
+
+	/**This complex type defines the request body for createShippingQuote. Sellers request a quote for a shipment by defining the &quot;To&quot; and &quot;From&quot; addresses for the package, plus the package's size. Carriers respond by offering up a &quot;rate&quot; for the service of theirs that best fits seller's needs. */
+	export interface ShippingQuoteRequest {
+
+		/**A seller-defined list that contains information about the orders in the package. This allows sellers to include information about the line items in the package with the shipment information. A package can contain any number of line items from one or more orders, providing they all ship in the same package. Maximum list size: 10 */
+		orders?: Array<Order>;
+
+		/**This complex type specifies the dimensions and weight of a package. */
+		packageSpecification?: PackageSpecification;
+
+		/**This complex type contains contact information for an individual buyer or seller. */
+		shipFrom?: Contact;
+
+		/**This complex type contains contact information for an individual buyer or seller. */
+		shipTo?: Contact;
 	}
 
 	@Injectable()

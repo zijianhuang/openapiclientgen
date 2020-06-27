@@ -38,6 +38,42 @@ export namespace MyNS {
 	}
 
 
+	/**A complex type that specifies a period of time using a specified time-measurement unit. */
+	export interface TimeDuration {
+
+		/**Required in the TimeDuration container. A time-measurement unit used to specify a period of time. Time-measurement units can be years, months, days, hours, minutes, and other time units (see TimeDurationUnitEnum for a complete list of possible units). The unit is applied to the number in the value field to define a span of time. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/TimeDurationUnitEnum.html'>eBay API documentation</a> */
+		unit?: string;
+
+		/**Required in the TimeDuration container. An amount of time, as measured by the time-measurement units specified in the unit field. Supported values for this field vary according to the object using the time duration. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. */
+		value?: number;
+	}
+
+
+	/**Container specifying a payment method that is accepted by the seller. Specify multiple payment methods by repeating this container. For more on payment methods, see Accepted payments policy. Note that payment methods are not applicable to classified ad listings &ndash; all classified ad payments are handled off of the eBay platform. */
+	export interface PaymentMethod {
+
+		/**Required if paymentMethodType is set to CREDIT_CARD. A list of credit card brands accepted by the seller. It's important to note that the credit card brands Visa and MasterCard must both be listed if either one is listed, as is shown in the following code fragment: &quot;paymentMethods&quot;: [{ &quot;brands&quot;: [VISA, MASTERCARD] }] ... Note: Different eBay marketplaces may or may not support this field. Use the Trading API GetCategoryFeatures call with FeatureID set to PaymentMethods and DetailLevel set to ReturnAll to see what credit card brands different marketplaces support. If the GetCategoryFeatures call returns details on credit card brands for the categories in which you sell, then you can use this field to list the credit card brands the seller accepts. If, on the other hand, GetCategoryFeatures does not enumerate credit card brands for your target site (for example, if it returns PaymentMethod set to CCAccepted), then you cannot enumerate specific credit card brands with this field for that marketplace. */
+		brands?: Array<string>;
+
+		/**The payment method, selected from the supported payment method types. Use GetCategoryFeatures in the Trading API to retrieve the payment methods allowed for a category on a specific marketplace, as well as the default payment method for that marketplace (review the SiteDefaults.PaymentMethod field). For example, the response from GetCategoryFeatures shows that on the US marketplace, most categories allow only electronic payments via credit cards, PayPal, and the like. Also, note that GeteBayDetails does not return payment method information. Note: If you create item listings using the Inventory API, you must set this field to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items where the only supported paymentMethod is PayPal). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentMethodTypeEnum.html'>eBay API documentation</a> */
+		paymentMethodType?: string;
+
+		/**Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address. */
+		recipientAccountReference?: RecipientAccountReference;
+	}
+
+
+	/**Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address. */
+	export interface RecipientAccountReference {
+
+		/**Contains the PayPal email address of the recipient (buyer) if referenceType is set to PAYPAL_EMAIL. */
+		referenceId?: string;
+
+		/**A reference a recipient's account. Currently only PAYPAL_EMAIL is valid. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RecipientAccountReferenceTypeEnum.html'>eBay API documentation</a> */
+		referenceType?: string;
+	}
+
+
 	/**This root container defines a seller's fulfillment policy for a specific marketplace and category type. fulfillmentPolicy encapsulates a seller's terms for fulfilling an order and includes the shipping carriers and services used for shipment and time the seller takes to ship an order. While each seller must define at least one fulfillment policy for every marketplace into which they sell, sellers can define multiple fulfillment policies for a single marketplace by specifying different configurations for the unique policies. */
 	export interface FulfillmentPolicy {
 
@@ -76,6 +112,92 @@ export namespace MyNS {
 
 		/**This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
 		shipToLocations?: RegionSet;
+	}
+
+
+	/**This complex type defines a seller's shipping configuration for either a DOMESTIC or INTERNATIONAL shipping option. Shipping options configure the high-level settings for shipments, such as flat-rate or calculated shipping, and any rate tables the seller wants to associate with the policy. Each shippingOption element has a shippingServices container that defines the list of shipping carriers and services that are available for the parent shipping option (that is, for either DOMESTIC or INTERNATIONAL shipping). If a seller offers an international shipping option, they must also offer a domestic shipping option. Note that costType (FLAT_RATE or CALCULATED) is set in shippingOptions and that all associated shipping services must be able to support this cost type. */
+	export interface ShippingOption {
+
+		/**Required if the policy offers shipping options using a shippingOptions container. Defines whether the shipping cost is FLAT_RATE, CALCULATED, or NOT_SPECIFIED (for use with freight shipping and local pickup). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ShippingCostTypeEnum.html'>eBay API documentation</a> */
+		costType?: string;
+
+		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
+		insuranceFee?: Amount;
+
+		/**If set to true, the seller offers buyer-paid shipping insurance. The optionType shows whether this is for either a domestic or international shipment. Buyer-paid shipping insurance is currently supported in only Australia (AU), France (FR), and Italy (IT). */
+		insuranceOffered?: boolean;
+
+		/**Required if the policy offers shipping options using a shippingOptions container. Use this field to set the ShippingOption element to either DOMESTIC or INTERNATIONAL. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ShippingOptionTypeEnum.html'>eBay API documentation</a> */
+		optionType?: string;
+
+		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
+		packageHandlingCost?: Amount;
+
+		/**A unique eBay-assigned ID associated with a user-created shipping rate table. The locality of a shipping rate table can be either DOMESTIC or INTERNATIONAL and you must ensure the value specified in this field references a shipping rate table that matches the type specified in the shippingOptions.optionType field. If you mismatch the types, eBay responds with a 20403 error. Call getRateTable to retrieve information (including rateTableId values) on the rate tables configured by a seller. For information on creating rate tables, see Using shipping rate tables. */
+		rateTableId?: string;
+
+		/**Required if the policy offers shipping options using a shippingOptions container. Contains a list of shipping services offered for either DOMESTIC or INTERNATIONAL shipments. Sellers can specify up to four domestic shipping services and up to five international shipping services by using separate shippingService containers for each. Note that if the seller is opted in to the Global Shipping Program, they can specify only four other international shipping services, regardless of whether or not Global Shipping is offered as one of the services. */
+		shippingServices?: Array<ShippingService>;
+	}
+
+
+	/**A complex type that defines the available shipping services offered in the parent shippingOptions container. The shipping services specified here must be able to accommodate the optionType defined in the parent shippingOption container (either DOMESTIC or INTERNATIONAL). Tip: For more on setting up shipping services, see Setting the shipping carrier and shipping service values. */
+	export interface ShippingService {
+
+		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
+		additionalShippingCost?: Amount;
+
+		/**This field is only applicable to vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for picking up the vehicle. Otherwise, the seller should specify the vehicle pickup arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false */
+		buyerResponsibleForPickup?: boolean;
+
+		/**This field is applicable for only items listed in vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for the shipment of the vehicle. Otherwise, the seller should specify the vehicle shipping arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false */
+		buyerResponsibleForShipping?: boolean;
+
+		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
+		cashOnDeliveryFee?: Amount;
+
+		/**If set to true, the seller offers free shipping to the buyer. This field can only be included and set to 'true' for the first domestic shipping service option specified in the shippingServices container (it is ignored if set for subsequent shipping services). The first specified shipping service option has a sortOrder value of 1 or (if the sortOrderId field is not used) it is the shipping service option that's specified first in the shippingServices container. */
+		freeShipping?: boolean;
+
+		/**The shipping carrier, such as 'USPS', 'FedEx', 'UPS', and so on. */
+		shippingCarrierCode?: string;
+
+		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
+		shippingCost?: Amount;
+
+		/**The shipping service that the shipping carrier uses to ship an item. For example, an overnight, two-day delivery, or other type of service. For details on configuring shipping services, see Setting the shipping carrier and shipping service values. */
+		shippingServiceCode?: string;
+
+		/**This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
+		shipToLocations?: RegionSet;
+
+		/**This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service). */
+		sortOrder?: number;
+
+		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
+		surcharge?: Amount;
+	}
+
+
+	/**This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
+	export interface RegionSet {
+
+		/**A list of one or more regionsName fields that specify the areas to where a seller does not ship. Populate regionExcluded in only the top-level shipToLocations container (do not populate this field within the shippingOptions container). Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options and they don't have a need to exclude any regions from their ship-to locations. With this, there's no reason to set regionExclude fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's located within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region, from the larger world area they ship to. To retrieve the regions you can specify in the associated regionName field, call GeteBayDetails with DetailName set to ExcludeShippingLocationDetails, then review the Location fields in the response for the strings that you can specify regionExcluded.regionName. Note that if a buyer's primary ship-to location is a region that a seller has excluded in their fulfillment policy (or if the buyer does not have a primary ship-to location), they will receive an error message if they attempt to buy or place a bid on an item that uses that fulfillment policy. For details on setting this field, see Excluding specific regions from included shipping areas. */
+		regionExcluded?: Array<Region>;
+
+		/**Required if optionType set to INTERNATIONAL. A list of one or more regionsName fields that specify the areas to where a seller ships. Important: Populate this field only when the parent shipToLocations object is located within a shippingOptions container (that is, the parent shipTolocations object must not be the one at the top-level of the policy). Also, this field needs to be populated only when the associated shippingOptions container has optionType set to INTERNATIONAL. Withing an international shipping option, set this value to Worldwide to indicate the seller ships to all world regions. If needed, use the regionExcluded field to exclude any regions in the world to where the seller does not ship. Each eBay marketplace supports its own set of allowable shipping locations. Obtain the valid 'Ship-To Locations' for a marketplace by calling GeteBayDetails with DetailName set to ShippingLocationDetails, then review the ShippingLocation fields in the response for the strings that you can specify in the regionIncluded.regionName field. For DOMESTIC shipping options, eBay automatically uses the seller's listing country as the default regionIncluded country. For details on setting this field, see How to set up worldwide shipping. This field is always returned in the shipping policy response. */
+		regionIncluded?: Array<Region>;
+	}
+
+
+	/**This type defines information for a region. */
+	export interface Region {
+
+		/**A string that indicates the name of a region, as defined by eBay. A &quot;region&quot; can be either a 'world region' (e.g., the &quot;Middle East&quot; or &quot;Southeast Asia&quot;) or a country, as represented with a two-letter country code. Use GeteBayDetails to get the values accepted by this field. The values that you're allowed to use for a specific regionName field depend on the context in which you are setting the value. For details on how to set the values for this field, see The shipToLocations container. */
+		regionName?: string;
+
+		/**Reserved for future use. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RegionTypeEnum.html'>eBay API documentation</a> */
+		regionType?: string;
 	}
 
 
@@ -157,20 +279,6 @@ export namespace MyNS {
 
 		/**Required if the internationalOverride.returnsAccepted field is set to true. This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a> */
 		returnShippingCostPayer?: string;
-	}
-
-
-	/**Container specifying a payment method that is accepted by the seller. Specify multiple payment methods by repeating this container. For more on payment methods, see Accepted payments policy. Note that payment methods are not applicable to classified ad listings &ndash; all classified ad payments are handled off of the eBay platform. */
-	export interface PaymentMethod {
-
-		/**Required if paymentMethodType is set to CREDIT_CARD. A list of credit card brands accepted by the seller. It's important to note that the credit card brands Visa and MasterCard must both be listed if either one is listed, as is shown in the following code fragment: &quot;paymentMethods&quot;: [{ &quot;brands&quot;: [VISA, MASTERCARD] }] ... Note: Different eBay marketplaces may or may not support this field. Use the Trading API GetCategoryFeatures call with FeatureID set to PaymentMethods and DetailLevel set to ReturnAll to see what credit card brands different marketplaces support. If the GetCategoryFeatures call returns details on credit card brands for the categories in which you sell, then you can use this field to list the credit card brands the seller accepts. If, on the other hand, GetCategoryFeatures does not enumerate credit card brands for your target site (for example, if it returns PaymentMethod set to CCAccepted), then you cannot enumerate specific credit card brands with this field for that marketplace. */
-		brands?: Array<string>;
-
-		/**The payment method, selected from the supported payment method types. Use GetCategoryFeatures in the Trading API to retrieve the payment methods allowed for a category on a specific marketplace, as well as the default payment method for that marketplace (review the SiteDefaults.PaymentMethod field). For example, the response from GetCategoryFeatures shows that on the US marketplace, most categories allow only electronic payments via credit cards, PayPal, and the like. Also, note that GeteBayDetails does not return payment method information. Note: If you create item listings using the Inventory API, you must set this field to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items where the only supported paymentMethod is PayPal). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentMethodTypeEnum.html'>eBay API documentation</a> */
-		paymentMethodType?: string;
-
-		/**Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address. */
-		recipientAccountReference?: RecipientAccountReference;
 	}
 
 
@@ -322,39 +430,6 @@ export namespace MyNS {
 
 		/**A list of elements that provide information on the seller-defined shipping rate tables. */
 		rateTables?: Array<RateTable>;
-	}
-
-
-	/**Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address. */
-	export interface RecipientAccountReference {
-
-		/**Contains the PayPal email address of the recipient (buyer) if referenceType is set to PAYPAL_EMAIL. */
-		referenceId?: string;
-
-		/**A reference a recipient's account. Currently only PAYPAL_EMAIL is valid. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RecipientAccountReferenceTypeEnum.html'>eBay API documentation</a> */
-		referenceType?: string;
-	}
-
-
-	/**This type defines information for a region. */
-	export interface Region {
-
-		/**A string that indicates the name of a region, as defined by eBay. A &quot;region&quot; can be either a 'world region' (e.g., the &quot;Middle East&quot; or &quot;Southeast Asia&quot;) or a country, as represented with a two-letter country code. Use GeteBayDetails to get the values accepted by this field. The values that you're allowed to use for a specific regionName field depend on the context in which you are setting the value. For details on how to set the values for this field, see The shipToLocations container. */
-		regionName?: string;
-
-		/**Reserved for future use. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RegionTypeEnum.html'>eBay API documentation</a> */
-		regionType?: string;
-	}
-
-
-	/**This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-	export interface RegionSet {
-
-		/**A list of one or more regionsName fields that specify the areas to where a seller does not ship. Populate regionExcluded in only the top-level shipToLocations container (do not populate this field within the shippingOptions container). Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options and they don't have a need to exclude any regions from their ship-to locations. With this, there's no reason to set regionExclude fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's located within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region, from the larger world area they ship to. To retrieve the regions you can specify in the associated regionName field, call GeteBayDetails with DetailName set to ExcludeShippingLocationDetails, then review the Location fields in the response for the strings that you can specify regionExcluded.regionName. Note that if a buyer's primary ship-to location is a region that a seller has excluded in their fulfillment policy (or if the buyer does not have a primary ship-to location), they will receive an error message if they attempt to buy or place a bid on an item that uses that fulfillment policy. For details on setting this field, see Excluding specific regions from included shipping areas. */
-		regionExcluded?: Array<Region>;
-
-		/**Required if optionType set to INTERNATIONAL. A list of one or more regionsName fields that specify the areas to where a seller ships. Important: Populate this field only when the parent shipToLocations object is located within a shippingOptions container (that is, the parent shipTolocations object must not be the one at the top-level of the policy). Also, this field needs to be populated only when the associated shippingOptions container has optionType set to INTERNATIONAL. Withing an international shipping option, set this value to Worldwide to indicate the seller ships to all world regions. If needed, use the regionExcluded field to exclude any regions in the world to where the seller does not ship. Each eBay marketplace supports its own set of allowable shipping locations. Obtain the valid 'Ship-To Locations' for a marketplace by calling GeteBayDetails with DetailName set to ShippingLocationDetails, then review the ShippingLocation fields in the response for the strings that you can specify in the regionIncluded.regionName field. For DOMESTIC shipping options, eBay automatically uses the seller's listing country as the default regionIncluded country. For details on setting this field, see How to set up worldwide shipping. This field is always returned in the shipping policy response. */
-		regionIncluded?: Array<Region>;
 	}
 
 
@@ -577,6 +652,49 @@ export namespace MyNS {
 	}
 
 
+	/**A container that defines the elements of error and warning messages. */
+	export interface Error {
+
+		/**The category type for this error or warning. It takes a string that can have one of three values: Application: Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency. Business: Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as &quot;Seller does not ship item to Antarctica&quot; or &quot;Buyer ineligible to purchase an alcoholic item&quot;. Business errors are not syntactical input errors. Request: Used when there is anything wrong with the request, such as authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on. */
+		category?: string;
+
+		/**Name of the domain containing the service or application. */
+		domain?: string;
+
+		/**A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		errorId?: number;
+
+		/**Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
+		inputRefIds?: Array<string>;
+
+		/**An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
+		longMessage?: string;
+
+		/**An end user and app developer friendly device agnostic message. It explains what the error or warning is, and how to fix it (in a general sense). Its value is at most 50 characters long. If applicable, the value is localized in the end user's requested locale. */
+		message?: string;
+
+		/**Identifies specific response elements associated with the error, if any. Path format is the same as inputRefId. */
+		outputRefIds?: Array<string>;
+
+		/**This optional complex field type contains a list of one or more context-specific ErrorParameter objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each ErrorParameter object consists of two fields, a name and a value. */
+		parameters?: Array<ErrorParameter>;
+
+		/**Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
+		subdomain?: string;
+	}
+
+
+	/**Container for an error parameter. */
+	export interface ErrorParameter {
+
+		/**Name of the entity that threw the error. */
+		name?: string;
+
+		/**A description of the error. */
+		value?: string;
+	}
+
+
 	/**Complex type that that gets populated with a response containing a payment policy. */
 	export interface SetPaymentPolicyResponse {
 
@@ -662,124 +780,6 @@ export namespace MyNS {
 
 		/**A list of warnings related to request. This field normally returns empty, which indicates the request did not generate any warnings. */
 		warnings?: Array<Error>;
-	}
-
-
-	/**This complex type defines a seller's shipping configuration for either a DOMESTIC or INTERNATIONAL shipping option. Shipping options configure the high-level settings for shipments, such as flat-rate or calculated shipping, and any rate tables the seller wants to associate with the policy. Each shippingOption element has a shippingServices container that defines the list of shipping carriers and services that are available for the parent shipping option (that is, for either DOMESTIC or INTERNATIONAL shipping). If a seller offers an international shipping option, they must also offer a domestic shipping option. Note that costType (FLAT_RATE or CALCULATED) is set in shippingOptions and that all associated shipping services must be able to support this cost type. */
-	export interface ShippingOption {
-
-		/**Required if the policy offers shipping options using a shippingOptions container. Defines whether the shipping cost is FLAT_RATE, CALCULATED, or NOT_SPECIFIED (for use with freight shipping and local pickup). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ShippingCostTypeEnum.html'>eBay API documentation</a> */
-		costType?: string;
-
-		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
-		insuranceFee?: Amount;
-
-		/**If set to true, the seller offers buyer-paid shipping insurance. The optionType shows whether this is for either a domestic or international shipment. Buyer-paid shipping insurance is currently supported in only Australia (AU), France (FR), and Italy (IT). */
-		insuranceOffered?: boolean;
-
-		/**Required if the policy offers shipping options using a shippingOptions container. Use this field to set the ShippingOption element to either DOMESTIC or INTERNATIONAL. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ShippingOptionTypeEnum.html'>eBay API documentation</a> */
-		optionType?: string;
-
-		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
-		packageHandlingCost?: Amount;
-
-		/**A unique eBay-assigned ID associated with a user-created shipping rate table. The locality of a shipping rate table can be either DOMESTIC or INTERNATIONAL and you must ensure the value specified in this field references a shipping rate table that matches the type specified in the shippingOptions.optionType field. If you mismatch the types, eBay responds with a 20403 error. Call getRateTable to retrieve information (including rateTableId values) on the rate tables configured by a seller. For information on creating rate tables, see Using shipping rate tables. */
-		rateTableId?: string;
-
-		/**Required if the policy offers shipping options using a shippingOptions container. Contains a list of shipping services offered for either DOMESTIC or INTERNATIONAL shipments. Sellers can specify up to four domestic shipping services and up to five international shipping services by using separate shippingService containers for each. Note that if the seller is opted in to the Global Shipping Program, they can specify only four other international shipping services, regardless of whether or not Global Shipping is offered as one of the services. */
-		shippingServices?: Array<ShippingService>;
-	}
-
-
-	/**A complex type that defines the available shipping services offered in the parent shippingOptions container. The shipping services specified here must be able to accommodate the optionType defined in the parent shippingOption container (either DOMESTIC or INTERNATIONAL). Tip: For more on setting up shipping services, see Setting the shipping carrier and shipping service values. */
-	export interface ShippingService {
-
-		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
-		additionalShippingCost?: Amount;
-
-		/**This field is only applicable to vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for picking up the vehicle. Otherwise, the seller should specify the vehicle pickup arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false */
-		buyerResponsibleForPickup?: boolean;
-
-		/**This field is applicable for only items listed in vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for the shipment of the vehicle. Otherwise, the seller should specify the vehicle shipping arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false */
-		buyerResponsibleForShipping?: boolean;
-
-		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
-		cashOnDeliveryFee?: Amount;
-
-		/**If set to true, the seller offers free shipping to the buyer. This field can only be included and set to 'true' for the first domestic shipping service option specified in the shippingServices container (it is ignored if set for subsequent shipping services). The first specified shipping service option has a sortOrder value of 1 or (if the sortOrderId field is not used) it is the shipping service option that's specified first in the shippingServices container. */
-		freeShipping?: boolean;
-
-		/**The shipping carrier, such as 'USPS', 'FedEx', 'UPS', and so on. */
-		shippingCarrierCode?: string;
-
-		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
-		shippingCost?: Amount;
-
-		/**The shipping service that the shipping carrier uses to ship an item. For example, an overnight, two-day delivery, or other type of service. For details on configuring shipping services, see Setting the shipping carrier and shipping service values. */
-		shippingServiceCode?: string;
-
-		/**This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet;
-
-		/**This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service). */
-		sortOrder?: number;
-
-		/**A complex type that describes the value of a monetary amount as represented by a global currency. */
-		surcharge?: Amount;
-	}
-
-
-	/**A complex type that specifies a period of time using a specified time-measurement unit. */
-	export interface TimeDuration {
-
-		/**Required in the TimeDuration container. A time-measurement unit used to specify a period of time. Time-measurement units can be years, months, days, hours, minutes, and other time units (see TimeDurationUnitEnum for a complete list of possible units). The unit is applied to the number in the value field to define a span of time. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/TimeDurationUnitEnum.html'>eBay API documentation</a> */
-		unit?: string;
-
-		/**Required in the TimeDuration container. An amount of time, as measured by the time-measurement units specified in the unit field. Supported values for this field vary according to the object using the time duration. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. */
-		value?: number;
-	}
-
-
-	/**A container that defines the elements of error and warning messages. */
-	export interface Error {
-
-		/**The category type for this error or warning. It takes a string that can have one of three values: Application: Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency. Business: Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as &quot;Seller does not ship item to Antarctica&quot; or &quot;Buyer ineligible to purchase an alcoholic item&quot;. Business errors are not syntactical input errors. Request: Used when there is anything wrong with the request, such as authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on. */
-		category?: string;
-
-		/**Name of the domain containing the service or application. */
-		domain?: string;
-
-		/**A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
-		errorId?: number;
-
-		/**Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
-		inputRefIds?: Array<string>;
-
-		/**An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
-		longMessage?: string;
-
-		/**An end user and app developer friendly device agnostic message. It explains what the error or warning is, and how to fix it (in a general sense). Its value is at most 50 characters long. If applicable, the value is localized in the end user's requested locale. */
-		message?: string;
-
-		/**Identifies specific response elements associated with the error, if any. Path format is the same as inputRefId. */
-		outputRefIds?: Array<string>;
-
-		/**This optional complex field type contains a list of one or more context-specific ErrorParameter objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each ErrorParameter object consists of two fields, a name and a value. */
-		parameters?: Array<ErrorParameter>;
-
-		/**Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
-		subdomain?: string;
-	}
-
-
-	/**Container for an error parameter. */
-	export interface ErrorParameter {
-
-		/**Name of the entity that threw the error. */
-		name?: string;
-
-		/**A description of the error. */
-		value?: string;
 	}
 
 	@autoinject()

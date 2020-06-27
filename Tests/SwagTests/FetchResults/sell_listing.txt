@@ -97,20 +97,6 @@ export namespace MyNS {
 	}
 
 
-	/**The type that defines the field for the createItemDraft response. */
-	export interface ItemDraftResponse {
-
-		/**The eBay generated ID of the listing draft. */
-		itemDraftId?: string;
-
-		/**The URI the Partner uses to send the seller to their listing draft that was created on the eBay site. From there the seller can change, update, and publish the item on eBay. This is returned when the seller is using a mobile app. */
-		sellFlowNativeUri?: string;
-
-		/**The web URL the Partner uses to send the seller to the listing draft that was created on the eBay site. From there the seller can change, update, and publish the item on eBay. This is returned when the seller is using mobile web (mweb) or the desktop web. Note: You must construct the URL using the URL returned in this field and a session token. For example: sellFlowUrl?id_token=session_token */
-		sellFlowUrl?: string;
-	}
-
-
 	/**The type that defines the fields for the price details for an item. */
 	export interface PricingSummary {
 
@@ -145,6 +131,20 @@ export namespace MyNS {
 
 		/**The seller-created title of the item. This should include unique characteristics of the item, such as brand, model, color, size, capacity, etc. For example: Levi's 501 size 10 black jeans */
 		title?: string;
+	}
+
+
+	/**The type that defines the field for the createItemDraft response. */
+	export interface ItemDraftResponse {
+
+		/**The eBay generated ID of the listing draft. */
+		itemDraftId?: string;
+
+		/**The URI the Partner uses to send the seller to their listing draft that was created on the eBay site. From there the seller can change, update, and publish the item on eBay. This is returned when the seller is using a mobile app. */
+		sellFlowNativeUri?: string;
+
+		/**The web URL the Partner uses to send the seller to the listing draft that was created on the eBay site. From there the seller can change, update, and publish the item on eBay. This is returned when the seller is using mobile web (mweb) or the desktop web. Note: You must construct the URL using the URL returned in this field and a session token. For example: sellFlowUrl?id_token=session_token */
+		sellFlowUrl?: string;
 	}
 
 	export class Item_draftClient {

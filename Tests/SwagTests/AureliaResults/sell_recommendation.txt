@@ -9,27 +9,27 @@ export namespace MyNS {
 		bidPercentages?: Array<BidPercentages>;
 
 		/**An enum that describes whether or not eBay recommends placing the associated listing in a Promoted Listings ad campaign. */
-		promoteWithAd?: AdPromoteWithAd;
+		promoteWithAd?: PromoteWithAd;
 	}
-
-	export enum AdPromoteWithAd { RECOMMENDED = 0, UNDETERMINED = 1 }
-
-
-	/**An enum that describes the different ways, or the basis, by which the bid percentage value is calculated. Currently, TRENDING is the only valid basis. */
-	export enum Basis { TRENDING = 0 }
 
 
 	/**A complex type that returns data related to Promoted Listings bid percentages. */
 	export interface BidPercentages {
 
 		/**An enum that describes the different ways, or the basis, by which the bid percentage value is calculated. Currently, TRENDING is the only valid basis. */
-		basis?: BidPercentagesBasis;
+		basis?: Basis;
 
 		/**The bid percentage data is a single precision value, as calculated by the associated basis. A TRENDING value is calculated by taking into account the average bid percentages of similar promoted listings in the associated marketplace. In Promoted listings ad campaigns, the bid percentage (also known as the ad rate) is a user-defined value that sets the level that eBay raises the visibility of the listing in the marketplace. It is also the rate that is used to calculate the Promoted Listings fee. Minimum value: 1.0 &nbsp; Maximum value: 100.0 */
 		value?: string;
 	}
 
-	export enum BidPercentagesBasis { TRENDING = 0 }
+
+	/**An enum that describes the different ways, or the basis, by which the bid percentage value is calculated. Currently, TRENDING is the only valid basis. */
+	export enum Basis { TRENDING = 0 }
+
+
+	/**An enum that describes whether or not eBay recommends placing the associated listing in a Promoted Listings ad campaign. */
+	export enum PromoteWithAd { RECOMMENDED = 0, UNDETERMINED = 1 }
 
 
 	/**This type defines the fields that can be returned in an error. */
@@ -127,10 +127,6 @@ export namespace MyNS {
 		/**The total number of items in the result set. */
 		total?: number;
 	}
-
-
-	/**An enum that describes whether or not eBay recommends placing the associated listing in a Promoted Listings ad campaign. */
-	export enum PromoteWithAd { RECOMMENDED = 0, UNDETERMINED = 1 }
 
 	@autoinject()
 	export class Listing_recommendationClient {

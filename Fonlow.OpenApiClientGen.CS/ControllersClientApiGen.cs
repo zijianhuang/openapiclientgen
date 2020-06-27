@@ -149,8 +149,8 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
 				{
-					ClientApiFunctionGen functionGen = new ClientApiFunctionGen();
-					CodeMemberMethod apiFunction = functionGen.CreateApiFunction(settings, p.Key, op.Key, op.Value, componentsToCsTypes, true, settings.UseEnsureSuccessStatusCodeEx);
+					ClientApiFunctionGen apiFunctionGen = new ClientApiFunctionGen();
+					CodeMemberMethod apiFunction = apiFunctionGen.CreateApiFunction(settings, p.Key, op.Key, op.Value, componentsToCsTypes, true, settings.UseEnsureSuccessStatusCodeEx);
 					if (apiFunction == null)
 					{
 						System.Diagnostics.Trace.TraceWarning($"Not to generate C# for {p.Key} {op.Key}.");

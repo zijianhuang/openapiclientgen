@@ -63,8 +63,6 @@ export namespace MyNS {
 		petType?: string;
 	}
 
-	export enum PetStatus { available = 0, pending = 1, sold = 2 }
-
 	export interface Tag {
 
 		/**Tag ID */
@@ -73,6 +71,8 @@ export namespace MyNS {
 		/**Tag name */
 		name?: string;
 	}
+
+	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export class Misc {
 		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {

@@ -110,7 +110,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
 				{
 					ClientApiTsFunctionGenAbstract apiFunctionGen = apiFunctionGenFactory();
-					CodeMemberMethod apiFunction = apiFunctionGen.CreateApiFunction(settings, relativePath, op.Key, op.Value, new ComponentsToTsTypes(settings, CodeCompileUnit, clientNamespace) );
+					CodeMemberMethod apiFunction = apiFunctionGen.CreateApiFunction(settings, relativePath, op.Key, op.Value, componentsToTsTypes);
 					if (apiFunction == null)
 					{
 						System.Diagnostics.Trace.TraceWarning($"Not to generate TS for {p.Key} {op.Key}.");
