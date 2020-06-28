@@ -6,7 +6,7 @@ using Xunit;
 
 namespace SwagTests
 {
-    public class ToCsTypes
+    public class ComponentsToCsTypesTests
     {
         static OpenApiDocument ReadJson(string filePath)
         {

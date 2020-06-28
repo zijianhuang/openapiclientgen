@@ -8,11 +8,11 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
-	public class ToCsFunctions
+	public class CodeGenCsTests
 	{
 
 		readonly ITestOutputHelper output;
-		public ToCsFunctions(ITestOutputHelper output)
+		public CodeGenCsTests(ITestOutputHelper output)
 		{
 			this.output = output;
 		}

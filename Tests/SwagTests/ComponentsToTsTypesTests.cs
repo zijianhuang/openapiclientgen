@@ -1,35 +1,15 @@
-using Fonlow.OpenApiClientGen.ClientTypes;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
-using System.IO;
 using Xunit;
-
 namespace SwagTests
 {
-	public class ToTsTypes
+	[Collection("PluginsInSequence")]
+	public class ComponentsToTsTypesTests
 	{
-		static OpenApiDocument ReadJson(string filePath)
+		public ComponentsToTsTypesTests()
 		{
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
+			helper = new TsTestHelper("ng2");
 		}
 
-		static string TranslateJsonToCode(string filePath)
-		{
-			OpenApiDocument doc = ReadJson(filePath);
-
-			Settings settings = new Settings()
-			{
-				ClientNamespace = "MyNS",
-			};
-
-			System.CodeDom.CodeCompileUnit codeCompileUnit = new System.CodeDom.CodeCompileUnit();
-			System.CodeDom.CodeNamespace clientNamespace = new System.CodeDom.CodeNamespace(settings.ClientNamespace);
-			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
-			ComponentsToTsTypes gen = new ComponentsToTsTypes(settings, codeCompileUnit, clientNamespace);
-			gen.CreateCodeDom(doc.Components);
-			return gen.WriteToText();
-		}
+		readonly TsTestHelper helper;
 
 		[Fact]
 		public void TestSimplePet()
@@ -48,7 +28,7 @@ namespace SwagTests
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\SimplePet.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\SimplePet.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -77,7 +57,7 @@ namespace SwagTests
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\SimplePetCat.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\SimplePetCat.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -92,7 +72,7 @@ namespace SwagTests
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\Enum.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\Enum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -107,7 +87,7 @@ namespace SwagTests
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\IntEnum.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\IntEnum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -133,7 +113,7 @@ namespace SwagTests
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\CasualEnum.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\CasualEnum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -149,14 +129,17 @@ namespace SwagTests
 		/**Type of a pet */
 		petType?: string;
 
-		/**The list of URL to a cute photos featuring pet */
+		/**
+		 * The list of URL to a cute photos featuring pet
+		 * Maximum items: 20
+		 */
 		photoUrls?: Array<string>;
 	}
 
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\StringArray.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\StringArray.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -172,7 +155,10 @@ namespace SwagTests
 		/**Type of a pet */
 		petType?: string;
 
-		/**Tags attached to the pet */
+		/**
+		 * Tags attached to the pet
+		 * Minimum items: 1
+		 */
 		tags?: Array<Tag>;
 	}
 
@@ -181,14 +167,17 @@ namespace SwagTests
 		/**Tag ID */
 		id?: number;
 
-		/**Tag name */
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
 		name?: string;
 	}
 
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\CustomTypeArray.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\CustomTypeArray.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -217,7 +206,7 @@ namespace SwagTests
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\SimpleOrder.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\SimpleOrder.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -230,14 +219,17 @@ namespace SwagTests
 		/**Tag ID */
 		id?: number;
 
-		/**Tag name */
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
 		name?: string;
 	}
 
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\TypeAlias.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\TypeAlias.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -265,17 +257,9 @@ namespace SwagTests
 }
 
 ";
-			string s = TranslateJsonToCode("SwagMock\\Required.json");
+			string s = helper.TranslateJsonToCode("SwagMock\\Required.json");
 			Assert.Equal(expected, s);
 		}
-
-		[Fact]
-		public void TestReplaceDollar()
-		{
-			Assert.Equal("filter", "$filter".Replace("$", ""));
-		}
-
 	}
-
 
 }
