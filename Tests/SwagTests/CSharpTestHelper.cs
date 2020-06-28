@@ -17,15 +17,15 @@ namespace SwagTests
 			this.output = output;
 		}
 
-		static OpenApiDocument ReadJson(string filePath)
+		static OpenApiDocument ReadDef(string filePath)
 		{
 			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		public static string TranslateJsonToCode(string fileDir, Settings mySettings = null)
+		public static string TranslateDefToCode(string fileDir, Settings mySettings = null)
 		{
-			OpenApiDocument doc = ReadJson(Path.Combine(fileDir, "openapi.yaml"));
+			OpenApiDocument doc = ReadDef(Path.Combine(fileDir, "openapi.yaml"));
 
 			Settings settings = mySettings ?? CodeGenSettings.Default;
 			ControllersClientApiGen gen = new ControllersClientApiGen(settings);
@@ -33,9 +33,9 @@ namespace SwagTests
 			return gen.WriteToText();
 		}
 
-		public void GenerateAndAssert(string openApiFile, Settings mySettings = null)
+		public void CreateClientApiAndBuild(string openApiFile, Settings mySettings = null)
 		{
-			string s = TranslateJsonToCode(openApiFile, mySettings);
+			string s = TranslateDefToCode(openApiFile, mySettings);
 			var r = CSharpValidation.CompileThenSave(s, null);
 			if (!r.Success)
 			{

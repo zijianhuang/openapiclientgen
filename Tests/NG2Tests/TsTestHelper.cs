@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Readers;
 using System;
 using System.IO;
 using Xunit;
+using System.Diagnostics;
 
 namespace SwagTests
 {
@@ -13,15 +14,15 @@ namespace SwagTests
 		{
 		}
 
-		public static OpenApiDocument ReadJson(string filePath)
+		public static OpenApiDocument ReadDef(string filePath)
 		{
 			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		public void CreateClientApi(string filePath, Settings mySettings = null)
+		public void CreateClientApiAndBuild(string filePath, Settings mySettings = null)
 		{
-			OpenApiDocument doc = ReadJson(filePath);
+			OpenApiDocument doc = ReadDef(filePath);
 
 			Settings settings = mySettings ?? new Settings()
 			{
@@ -45,6 +46,29 @@ namespace SwagTests
 			var gen = new Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen(settings, jsOutput);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			gen.Save();
+
+			Assert.Equal(0, Build());
+		}
+
+		int Build()
+		{
+			var currentDir = Directory.GetCurrentDirectory();
+			Directory.SetCurrentDirectory(@"..\..\..\..\NG2TestBed\"); // setting ProcessStartInfo.WorkingDirectory is not always working. Working in this demo, but not working in other heavier .net core Web app.
+			ProcessStartInfo info = new ProcessStartInfo("ng", "build")
+			{
+				UseShellExecute = true,
+			};
+
+			try
+			{
+				var process = Process.Start(info);
+				process.WaitForExit();
+				return process.ExitCode;
+			}
+			finally
+			{
+				Directory.SetCurrentDirectory(currentDir);
+			}
 		}
 	}
 }
