@@ -51,13 +51,13 @@ namespace SwagTests
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			gen.Save();
 
-			Assert.Equal(0, Build());
+			Assert.Equal(0, Build(@"..\..\..\..\NG2TestBed\"));
 		}
 
-		int Build()
+		int Build(string ng2Dir)
 		{
 			var currentDir = Directory.GetCurrentDirectory();
-			Directory.SetCurrentDirectory(@"..\..\..\..\NG2TestBed\"); // setting ProcessStartInfo.WorkingDirectory is not always working. Working in this demo, but not working in other heavier .net core Web app.
+			Directory.SetCurrentDirectory(ng2Dir); // setting ProcessStartInfo.WorkingDirectory is not always working. Working in this demo, but not working in other heavier .net core Web app.
 			var ngCmd = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "npm\\ng.cmd");
 			ProcessStartInfo info = new ProcessStartInfo(ngCmd, "build")
 			{
@@ -71,6 +71,7 @@ namespace SwagTests
 				var errorMsg = process.StandardError.ReadToEnd(); //before WaitForExit() https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.standarderror?view=netcore-3.1#System_Diagnostics_Process_StandardError
 				if (!String.IsNullOrEmpty(errorMsg))
 				{
+					output.WriteLine("Code generated but with ng build errors:");
 					output.WriteLine(errorMsg);
 				}
 

@@ -11,7 +11,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <summary>
 		/// stackexchange.com api uses C# keywords as parameters.
 		/// </summary>
-		static readonly string[] keywords = new string[] { "abstract", "as", "base", "bool", "break", "byte", "case", "catch", "char",
+		static readonly string[] csKeywords = new string[] { "abstract", "as", "base", "bool", "break", "byte", "case", "catch", "char",
 			"checked", "class", "const", "continue", "decimal", "default", "delegate", "do", "double", "else", "enum", "event", "explicit", "extern", "false", "finally",
 			"fixed", "float", "for", "foreach", "goto", "if", "implicit", "in", "int", "interface", "internal", "is", "lock", "long", "namespace", "new",
 			"null", "object", "operator", "out", "override", "params", "private", "protected", "public", "readonly", "ref", "return", "sbyte", "sealed", "short",
@@ -20,7 +20,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static bool IsKeyword(string s)
 		{
-			return keywords.Any(d => d == s);
+			return csKeywords.Any(d => d == s);
 		}
 
 		/// <summary>

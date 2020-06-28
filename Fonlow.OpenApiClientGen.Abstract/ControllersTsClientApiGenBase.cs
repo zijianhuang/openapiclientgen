@@ -43,7 +43,12 @@ namespace Fonlow.CodeDom.Web.Ts
 			options.IndentString = "\t";
 			options.CamelCase = true;
 
+
+			var versionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location);
+			ProductName = versionInfo.ProductName;
 		}
+
+		public string ProductName { get; private set; }
 
 		/// <summary>
 		/// Save C# codes into a file.

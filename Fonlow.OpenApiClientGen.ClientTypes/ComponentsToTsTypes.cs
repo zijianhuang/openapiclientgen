@@ -498,6 +498,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 
 			string typeComment = item.Value.Description;
+			if (!String.IsNullOrEmpty(typeComment))
+			{
+				bool funky = typeComment.Contains("*/");
+				if (funky)
+				{
+					typeComment = typeComment.Replace("*/", "");
+					Trace.TraceWarning($"Component {item.Key} with property {property.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
+				}
+			}
+
 			if (settings.DataAnnotationsToComments)
 			{
 				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(item.Value);
@@ -635,6 +645,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (String.IsNullOrEmpty(typeComment))
 			{
 				return;
+			}
+
+			bool funky = typeComment.Contains("*/");
+			if (funky)
+			{
+				typeComment = typeComment.Replace("*/", "");
+				Trace.TraceWarning($"Component {item.Key} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
 			}
 
 			declaration.Comments.Add(new CodeCommentStatement(typeComment, true));

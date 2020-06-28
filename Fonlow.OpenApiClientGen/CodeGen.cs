@@ -117,6 +117,7 @@ namespace Fonlow.CodeDom.Web
 					Ts.ControllersTsClientApiGenBase tsGen = PluginFactory.CreateImplementationsFromAssembly(assemblyFilePath, settings, jsOutput);
 					if (tsGen != null)
 					{
+						Trace.TraceInformation($"Generate codes with {tsGen.ProductName} ......");
 						tsGen.CreateCodeDom(paths, components);
 						tsGen.Save();
 					}

@@ -64,8 +64,6 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			this.RelativePath = RemovePrefixSlash(relativePath);
 			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
-			if (ActionName.EndsWith("Async"))
-				ActionName = ActionName[0..^5];
 
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
@@ -127,7 +125,13 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				foreach (string item in noIndent)
 				{
-					builder.AppendLine(item);
+					bool funky = item.Contains("*/");
+					var docComment = funky ? item.Replace("*/", "") : item;
+					builder.Append(docComment);
+					if (funky)
+					{
+						Trace.TraceWarning("Doc comments contain '*/' which is invalid in JSDoc. Please remove it in the definition.");
+					}
 				}
 			}
 
@@ -137,13 +141,25 @@ namespace Fonlow.CodeDom.Web.Ts
 				CodeTypeReference tsParameterType = item.ParameterTypeReference;// Poco2TsGen.TranslateToClientTypeReference(item.ParameterDescriptor.ParameterType);
 				if (!String.IsNullOrEmpty(item.Documentation))
 				{
-					builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {item.Documentation}");
+					var funky = item.Documentation.Contains("*/");
+					var docComment = funky ? item.Documentation.Replace("*/", "") : item.Documentation;
+					builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}}} {item.Name} {docComment}");
+					if (funky)
+					{
+						Trace.TraceWarning($"param {TypeMapper.MapCodeTypeReferenceToTsText(tsParameterType)}  {item.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
+					}
 				}
 			}
 
 			if (!String.IsNullOrEmpty(requestBodyComment))
 			{
-				builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(RequestBodyCodeTypeReference)}}} requestBody {requestBodyComment}");
+				var funky = requestBodyComment.Contains("*/");
+				var docComment = funky ? requestBodyComment.Replace("*/", "") : requestBodyComment;
+				builder.AppendLine($"@param {{{TypeMapper.MapCodeTypeReferenceToTsText(RequestBodyCodeTypeReference)}}} requestBody {docComment}");
+				if (funky)
+				{
+					Trace.TraceWarning($"param {TypeMapper.MapCodeTypeReferenceToTsText(RequestBodyCodeTypeReference)} requestBody has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
+				}
 			}
 
 

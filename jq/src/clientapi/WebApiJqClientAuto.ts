@@ -105,8 +105,6 @@ namespace My_Pet_Client {
 		petType?: string;
 	}
 
-	export enum PetStatus { available = 0, pending = 1, sold = 2 }
-
 	export interface Tag {
 
 		/**Tag ID */
@@ -118,6 +116,8 @@ namespace My_Pet_Client {
 		 */
 		name?: string;
 	}
+
+	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export interface User {
 		id?: number;
