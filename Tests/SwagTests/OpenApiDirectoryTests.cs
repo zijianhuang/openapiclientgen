@@ -15,32 +15,32 @@ namespace SwagTests
 		[Fact]
 		public void Test_wheretocredit()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\wheretocredit.com\1.0");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\wheretocredit.com\1.0");
 		}
 
 		[Fact]
 		public void Test_vonagevgis()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\vgis\1.0.1");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\vgis\1.0.1");
 		}
 
 		[Fact]
 		public void Test_vonageuser()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\user\1.11.8");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\user\1.11.8");
 		}
 
 		[Fact]
 		public void Test_vonageaccount()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\account\1.11.8");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\vonage.com\account\1.11.8");
 		}
 
 
 		[Fact]
 		public void Test_vimeo()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\vimeo.com\3.4");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\vimeo.com\3.4");
 		}
 
 		//[Fact]System.ArgumentException : Not yet supported enumMember of Microsoft.OpenApi.Any.OpenApiBoolean with HideReplyByIdBodyHidden
@@ -53,25 +53,25 @@ namespace SwagTests
 		[Fact]
 		public void Test_tomtomsearch()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\search\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\search\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_tomtomrouting()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\routing\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\routing\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_tomtommaps()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\maps\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\tomtom.com\maps\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_tisane()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\tisane.ai\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\tisane.ai\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -89,13 +89,13 @@ namespace SwagTests
 		[Fact]
 		public void Test_ritekit()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ritekit.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ritekit.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_football()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\rapidapi.com\football-prediction\2", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\rapidapi.com\football-prediction\2", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -107,67 +107,67 @@ namespace SwagTests
 		[Fact]
 		public void Test_randommer()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\randommer.io\v1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\randommer.io\v1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_patientview()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\patientview.org\1.0");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\patientview.org\1.0");
 		}
 
 		[Fact]
 		public void Test_parliament()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\parliament.uk\search\Live");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\parliament.uk\search\Live");
 		}
 
 		[Fact]
 		public void Test_openlinksw()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\openlinksw.com\osdb\1.0.0");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\openlinksw.com\osdb\1.0.0");
 		}
 
 		[Fact]
 		public void Test_opendatanetwork()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\opendatanetwork.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\opendatanetwork.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_oceandrivers()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\oceandrivers.com\1.0");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\oceandrivers.com\1.0");
 		}
 
 		[Fact]
 		public void Test_nsidc()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\nsidc.org\1.0.0");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\nsidc.org\1.0.0");
 		}
 
 		[Fact]
 		public void Test_domainfinder()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\nic.at\domainfinder\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\nic.at\domainfinder\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_neowsapp()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\neowsapp.com\1.0");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\neowsapp.com\1.0");
 		}
 
 		[Fact]
 		public void Test_namsor()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\namsor.com\2.0.5");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\namsor.com\2.0.5");
 		}
 
 		[Fact]
 		public void Test_math()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\math.tools\1.5", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\math.tools\1.5", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -185,25 +185,25 @@ namespace SwagTests
 		[Fact]
 		public void Test_iptwist()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\iptwist.com\1.0.0");
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\iptwist.com\1.0.0");
 		}
 
 		[Fact]
 		public void Test_ipinfodb()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ipinfodb.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ipinfodb.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_mycru()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\mycru.io\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\mycru.io\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_mercure()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\mercure.local\0.3.2", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\mercure.local\0.3.2", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -230,61 +230,61 @@ namespace SwagTests
 		[Fact]
 		public void Test_ip2whois()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ip2whois.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ip2whois.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_ip2proxy()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ip2proxy.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ip2proxy.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_geolocation()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ip2location.com\geolocation\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\ip2location.com\geolocation\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_convertcurrency()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\convertcurrency\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\convertcurrency\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_getaddressmatch()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getaddressmatch\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getaddressmatch\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_getareacodefromnumber()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getareacodefromnumber\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getareacodefromnumber\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_getcitymatch()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getcitymatch\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\interzoid.com\getcitymatch\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_hackathonwatch()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\hackathonwatch.com\0.1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\hackathonwatch.com\0.1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_bcdc()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcdc\3.0.1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcdc\3.0.1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_bcgnws()
 		{
-			helper.CreateClientApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcgnws\3.x.x", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\gov.bc.ca\bcgnws\3.x.x", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]

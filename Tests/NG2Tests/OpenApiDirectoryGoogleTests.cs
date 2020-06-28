@@ -1,14 +1,15 @@
+using SwagTests;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SwagTests
+namespace NG2Tests
 {
 	public class OpenapiDirectoryGoogleTests
 	{
-		readonly CSharpTestHelper helper;
+		readonly TsTestHelper helper;
 		public OpenapiDirectoryGoogleTests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelper(output);
+			helper = new TsTestHelper(output);
 		}
 
 		[Fact]

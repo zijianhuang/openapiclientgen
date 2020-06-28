@@ -1,13 +1,14 @@
-using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit;
+using Xunit.Abstractions;
+
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")]
 	public class CodeGenNG2Tests
 	{
-		public CodeGenNG2Tests()
+		public CodeGenNG2Tests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper();
+			helper = new TsTestHelper(output);
 		}
 
 		readonly TsTestHelper helper;

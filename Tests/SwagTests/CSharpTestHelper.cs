@@ -23,9 +23,9 @@ namespace SwagTests
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		public static string TranslateDefToCode(string fileDir, Settings mySettings = null)
+		public static string TranslateDefToCode(string openapiDir, Settings mySettings = null)
 		{
-			OpenApiDocument doc = ReadDef(Path.Combine(fileDir, "openapi.yaml"));
+			OpenApiDocument doc = ReadDef(Path.Combine(openapiDir, "openapi.yaml"));
 
 			Settings settings = mySettings ?? CodeGenSettings.Default;
 			ControllersClientApiGen gen = new ControllersClientApiGen(settings);
@@ -33,9 +33,9 @@ namespace SwagTests
 			return gen.WriteToText();
 		}
 
-		public void CreateClientApiAndBuild(string openApiFile, Settings mySettings = null)
+		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings = null)
 		{
-			string s = TranslateDefToCode(openApiFile, mySettings);
+			string s = TranslateDefToCode(openapiDir, mySettings);
 			var r = CSharpValidation.CompileThenSave(s, null);
 			if (!r.Success)
 			{

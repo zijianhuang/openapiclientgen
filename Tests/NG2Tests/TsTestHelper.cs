@@ -5,14 +5,18 @@ using System;
 using System.IO;
 using Xunit;
 using System.Diagnostics;
+using Xunit.Abstractions;
 
 namespace SwagTests
 {
 	public class TsTestHelper
 	{
-		public TsTestHelper()
+		public TsTestHelper(ITestOutputHelper output)
 		{
+			this.output = output;
 		}
+
+		readonly ITestOutputHelper output;
 
 		public static OpenApiDocument ReadDef(string filePath)
 		{
@@ -54,21 +58,36 @@ namespace SwagTests
 		{
 			var currentDir = Directory.GetCurrentDirectory();
 			Directory.SetCurrentDirectory(@"..\..\..\..\NG2TestBed\"); // setting ProcessStartInfo.WorkingDirectory is not always working. Working in this demo, but not working in other heavier .net core Web app.
-			ProcessStartInfo info = new ProcessStartInfo("ng", "build")
+			var ngCmd = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "npm\\ng.cmd");
+			ProcessStartInfo info = new ProcessStartInfo(ngCmd, "build")
 			{
-				UseShellExecute = true,
+				UseShellExecute = false,
+				RedirectStandardError = true,
 			};
 
 			try
 			{
 				var process = Process.Start(info);
+				var errorMsg = process.StandardError.ReadToEnd(); //before WaitForExit() https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.standarderror?view=netcore-3.1#System_Diagnostics_Process_StandardError
+				if (!String.IsNullOrEmpty(errorMsg))
+				{
+					output.WriteLine(errorMsg);
+				}
+
 				process.WaitForExit();
+
 				return process.ExitCode;
 			}
 			finally
 			{
 				Directory.SetCurrentDirectory(currentDir);
 			}
+		}
+
+		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings = null)
+		{
+			var filePath = Path.Combine(openapiDir, "openapi.yaml");
+			CreateClientApiAndBuild(filePath, mySettings);
 		}
 	}
 }
