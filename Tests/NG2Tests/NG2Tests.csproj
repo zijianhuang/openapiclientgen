@@ -1,0 +1,234 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SwagMock\buy_browse_v1_beta_oas3.json" />
+    <None Remove="SwagMock\buy_feed_v1_beta_oas3.json" />
+    <None Remove="SwagMock\buy_marketing_v1_beta_oas3.yaml" />
+    <None Remove="SwagMock\buy_marketplace_insights_v1_beta_oas3.yaml" />
+    <None Remove="SwagMock\buy_offer_v1_beta_oas3.yaml" />
+    <None Remove="SwagMock\buy_order_v1_beta_oas3.json" />
+    <None Remove="SwagMock\CasualEnum.json" />
+    <None Remove="SwagMock\commerce_catalog_v1_beta_oas3.json" />
+    <None Remove="SwagMock\commerce_identity_v1_oas3.json" />
+    <None Remove="SwagMock\commerce_taxonomy_v1_beta_oas3.json" />
+    <None Remove="SwagMock\commerce_translation_v1_oas3.json" />
+    <None Remove="SwagMock\CustomTypeArray.json" />
+    <None Remove="SwagMock\developer_analytics_v1_beta_oas3.json" />
+    <None Remove="SwagMock\Enum.json" />
+    <None Remove="SwagMock\IntEnum.json" />
+    <None Remove="SwagMock\mcp.yaml" />
+    <None Remove="SwagMock\mcp3.yaml" />
+    <None Remove="SwagMock\myswagger.json" />
+    <None Remove="SwagMock\PathItemValues.json" />
+    <None Remove="SwagMock\pet.json" />
+    <None Remove="SwagMock\pet.yaml" />
+    <None Remove="SwagMock\petBackup.yaml" />
+    <None Remove="SwagMock\petByNumbers.yaml" />
+    <None Remove="SwagMock\petByStatus.yaml" />
+    <None Remove="SwagMock\petByTags.yaml" />
+    <None Remove="SwagMock\PetDelete.json" />
+    <None Remove="SwagMock\PetDogCat.json" />
+    <None Remove="SwagMock\PetFindByStatus.json" />
+    <None Remove="SwagMock\petStore.yaml" />
+    <None Remove="SwagMock\petStoreExpanded.yaml" />
+    <None Remove="SwagMock\petTypes.json" />
+    <None Remove="SwagMock\redocOpenApi200501.json" />
+    <None Remove="SwagMock\Required.json" />
+    <None Remove="SwagMock\sell_account_v1_oas3.json" />
+    <None Remove="SwagMock\sell_analytics_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_compliance_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_finances_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_inventory_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_listing_v1_beta_oas3.yaml" />
+    <None Remove="SwagMock\sell_logistics_v1_oas3.json" />
+    <None Remove="SwagMock\sell_marketing_v1_oas3.json" />
+    <None Remove="SwagMock\sell_metadata_v1_oas3.json" />
+    <None Remove="SwagMock\sell_negotiation_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_recommendation_v1_oas3.yaml" />
+    <None Remove="SwagMock\SimpleOrder.json" />
+    <None Remove="SwagMock\SimplePet.json" />
+    <None Remove="SwagMock\SimplePetCat.json" />
+    <None Remove="SwagMock\StringArray.json" />
+    <None Remove="SwagMock\TypeAlias.json" />
+    <None Remove="SwagMock\TypeAlias2.json" />
+    <None Remove="SwagMock\uspto.yaml" />
+    <None Remove="SwagMock\ValuesPaths.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="SwagMock\buy_browse_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_feed_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_marketing_v1_beta_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_marketplace_insights_v1_beta_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_offer_v1_beta_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_order_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\CasualEnum.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\commerce_catalog_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\commerce_identity_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\commerce_taxonomy_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\commerce_translation_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\CustomTypeArray.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\developer_analytics_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Enum.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\IntEnum.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\mcp.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\mcp3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\myswagger.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\PathItemValues.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\pet.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\pet.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petBackup.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petByNumbers.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petByStatus.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petByTags.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\PetDelete.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\PetDogCat.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\PetFindByStatus.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petStore.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petStoreExpanded.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petTypes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\redocOpenApi200501.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Required.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_account_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_analytics_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_compliance_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_finances_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_inventory_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_listing_v1_beta_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_logistics_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_marketing_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_metadata_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_negotiation_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_recommendation_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\SimpleOrder.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\SimplePet.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\SimplePetCat.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\StringArray.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\TypeAlias.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\TypeAlias2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\uspto.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\ValuesPaths.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
+  </ItemGroup>
+
+</Project>

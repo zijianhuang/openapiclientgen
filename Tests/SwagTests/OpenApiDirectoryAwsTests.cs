@@ -1,11 +1,5 @@
-using Fonlow.OpenApiClientGen.ClientTypes;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
-using System.IO;
 using Xunit;
-using Fonlow.OpenApiClientGen.CS;
 using Xunit.Abstractions;
-using System;
 
 namespace SwagTests
 {
