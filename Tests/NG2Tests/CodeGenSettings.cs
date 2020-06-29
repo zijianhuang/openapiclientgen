@@ -7,7 +7,8 @@ namespace SwagTests
 		public static readonly Settings Default = new Settings()
 		{
 			ClientNamespace = "MyNS",
-			ContainerClassName = "MyClient",
+			PathPrefixToRemove = "/api",
+			ContainerClassName = "Misc",
 			ContainerNameStrategy = ContainerNameStrategy.None,
 			ActionNameStrategy = ActionNameStrategy.Default,
 			GenerateBothAsyncAndSync = true,
@@ -21,7 +22,7 @@ namespace SwagTests
 			return new Settings()
 			{
 				ClientNamespace = "MyNS",
-				ContainerClassName = "MyClient",
+				ContainerClassName = "Misc",
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				ActionNameStrategy = ans,
 				GenerateBothAsyncAndSync = true,
