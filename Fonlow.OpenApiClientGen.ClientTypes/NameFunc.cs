@@ -130,7 +130,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
-			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_'));
+			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_'));
 		}
 
 		public static string RefineTsPropertyName(string s)
