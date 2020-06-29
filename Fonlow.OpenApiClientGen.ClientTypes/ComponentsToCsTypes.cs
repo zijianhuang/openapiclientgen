@@ -514,9 +514,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 				}
 
+				//Debug.Assert(propertySchema.Reference?.Id != "DeallocationOption");
 				if (String.IsNullOrEmpty(primitivePropertyType))
 				{
-					OpenApiSchema refToType = null;
 					if (propertySchema.Reference != null)
 					{
 						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
@@ -532,6 +532,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
+							OpenApiSchema refToType = null;
 							if (propertySchema.AllOf.Count > 0)
 							{
 								refToType = propertySchema.AllOf[0];
@@ -661,7 +662,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
 							}
 
-							clientProperty = CreateProperty(propertyName, typeWithNs, defaultValue);
+							clientProperty = CreateProperty(propertyName, typeWithNs, String.IsNullOrEmpty(defaultValue)? null : typeWithNs + "." + defaultValue);
 						}
 						else //for casual enum
 						{
