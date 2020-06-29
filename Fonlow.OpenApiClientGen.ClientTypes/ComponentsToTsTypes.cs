@@ -252,16 +252,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					CreateTypeDocComment(item, typeDeclaration);
-
-					if (settings.DecorateDataModelWithDataContract)
-					{
-						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
-					}
-
-					if (settings.DecorateDataModelWithSerializable)
-					{
-						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
-					}
 				}
 				else
 				{
