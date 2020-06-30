@@ -833,7 +833,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiBoolean boolValue)
 			{
-				return boolValue.Value.ToString();
+				return boolValue.Value ? "true" : "false";
 			}
 
 			if (s.Default is OpenApiFloat floatValue)
