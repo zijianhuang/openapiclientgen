@@ -41,11 +41,11 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(com2TsTypes.ClientNamespace, com2TsTypes.ClassNamespaces);
+			this.parametersHelper = new ParametersHelper(com2TsTypes);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
-			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters, com2TsTypes.TypeAliasDic);
+			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);

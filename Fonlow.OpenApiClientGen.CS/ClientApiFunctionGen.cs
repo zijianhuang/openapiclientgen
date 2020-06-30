@@ -49,11 +49,11 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(coms2CsTypes.ClientNamespace, coms2CsTypes.ClassNamespaces);
+			this.parametersHelper = new ParametersHelper(coms2CsTypes);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
-			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters, coms2CsTypes.TypeAliasDic);
+			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);

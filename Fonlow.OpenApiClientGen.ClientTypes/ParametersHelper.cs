@@ -10,16 +10,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class ParametersHelper
 	{
-		public ParametersHelper(CodeNamespace clientNamespace, List<CodeNamespace> classNamespaces)
+		public ParametersHelper(IComponentToCodeDom com2TsTypes)
 		{
-			this.clientNamespace = clientNamespace;
-			this.classNamespaces = classNamespaces;
+			this.clientNamespace = com2TsTypes.ClientNamespace;
+			this.classNamespaces = com2TsTypes.ClassNamespaces;
+			this.typeAliasDic = com2TsTypes.TypeAliasDic;
 		}
 
 		readonly CodeNamespace clientNamespace;
 		readonly List<CodeNamespace> classNamespaces;
+		readonly TypeAliasDic typeAliasDic;
 
-		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps, TypeAliasDic typeAliasDic)
+		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
 			return ps.Select(p =>
 			{
@@ -37,7 +39,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
 
-					ParameterTypeReference = OpenApiParameterToCodeTypeReference(p, typeAliasDic)
+					ParameterTypeReference = OpenApiParameterToCodeTypeReference(p)
 				};
 
 				return r;
@@ -65,7 +67,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter apiParameter, TypeAliasDic typeAliasDic)
+		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter apiParameter)
 		{
 			string schemaType = apiParameter.Schema.Type;
 			if (schemaType != null)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.CodeDom;
 
-namespace Fonlow.OpenApiClientGen
+namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public interface IComponentToCodeDom
 	{
@@ -11,5 +11,20 @@ namespace Fonlow.OpenApiClientGen
 		public CodeTypeDeclaration FindTypeDeclarationInNamespaces(string typeName, string ns);
 
 		bool RegisteredSchemaRefIdExists(string t);
-	}
+
+		CodeNamespace ClientNamespace
+		{
+			get;
+		}
+
+		List<CodeNamespace> ClassNamespaces
+		{
+			get;
+		}
+
+		TypeAliasDic TypeAliasDic
+		{
+			get;
+		}
+		}
 }
