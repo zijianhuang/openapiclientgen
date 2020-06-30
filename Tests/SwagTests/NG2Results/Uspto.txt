@@ -9,16 +9,16 @@ export namespace MyNS {
 
 	export interface DataSetListApis {
 
-		/**To be used as a dataset parameter value */
+		/** To be used as a dataset parameter value */
 		apiKey?: string;
 
-		/**To be used as a version parameter value */
+		/** To be used as a version parameter value */
 		apiVersionNumber?: string;
 
-		/**The URL describing the dataset's fields */
+		/** The URL describing the dataset's fields */
 		apiUrl?: string;
 
-		/**A URL to the API console for each API */
+		/** A URL to the API console for each API */
 		apiDocumentationUrl?: string;
 	}
 

@@ -117,17 +117,17 @@ namespace Fonlow.CodeDom.Web.Ts
 		void CreateDocComments()
 		{
 			StringBuilder builder = new StringBuilder();
-			string[] noIndent = Fonlow.DocComment.StringFunctions.TrimIndentedMultiLineTextToArray(
+			string[] linesNoIndent = Fonlow.DocComment.StringFunctions.TrimIndentedMultiLineTextToArray(
 				apiOperation.Summary
 				+ ((String.IsNullOrEmpty(apiOperation.Summary) || string.IsNullOrEmpty(apiOperation.Description)) ? String.Empty : "\n")
 				+ apiOperation.Description);
-			if (noIndent != null)
+			if (linesNoIndent != null)
 			{
-				foreach (string item in noIndent)
+				foreach (string line in linesNoIndent)
 				{
-					bool funky = item.Contains("*/");
-					var docComment = funky ? item.Replace("*/", "") : item;
-					builder.Append(docComment);
+					bool funky = line.Contains("*/");
+					var lineComment = funky ? line.Replace("*/", "") : line;
+					builder.AppendLine(lineComment);
 					if (funky)
 					{
 						Trace.TraceWarning("Doc comments contain '*/' which is invalid in JSDoc. Please remove it in the definition.");

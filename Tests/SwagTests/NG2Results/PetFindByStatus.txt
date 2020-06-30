@@ -3,10 +3,10 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 
-	/**A representation of a cat */
+	/** A representation of a cat */
 	export interface Cat extends Pet {
 
-		/**The measured skill for hunting */
+		/** The measured skill for hunting */
 		huntingSkill: CatHuntingSkill;
 	}
 
@@ -14,63 +14,63 @@ export namespace MyNS {
 
 	export interface Category {
 
-		/**Category ID */
+		/** Category ID */
 		id?: number;
 
-		/**Category name */
+		/** Category name */
 		name?: string;
 
-		/**Test Sub Category */
+		/** Test Sub Category */
 		sub?: string;
 	}
 
 
-	/**A representation of a dog */
+	/** A representation of a dog */
 	export interface Dog extends Pet {
 
-		/**The size of the pack the dog is from */
+		/** The size of the pack the dog is from */
 		packSize: number;
 	}
 
 
-	/**A representation of a honey bee */
+	/** A representation of a honey bee */
 	export interface HoneyBee extends Pet {
 
-		/**Average amount of honey produced per day in ounces */
+		/** Average amount of honey produced per day in ounces */
 		honeyPerDay: number;
 	}
 
 	export interface Pet {
 
-		/**Pet ID */
+		/** Pet ID */
 		id?: number;
 
-		/**Categories this pet belongs to */
+		/** Categories this pet belongs to */
 		category?: string;
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name: string;
 
-		/**The list of URL to a cute photos featuring pet */
+		/** The list of URL to a cute photos featuring pet */
 		photoUrls: Array<string>;
 		friend?: string;
 
-		/**Tags attached to the pet */
+		/** Tags attached to the pet */
 		tags?: Array<Tag>;
 
-		/**Pet status in the store */
+		/** Pet status in the store */
 		status?: PetStatus;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 	}
 
 	export interface Tag {
 
-		/**Tag ID */
+		/** Tag ID */
 		id?: number;
 
-		/**Tag name */
+		/** Tag name */
 		name?: string;
 	}
 

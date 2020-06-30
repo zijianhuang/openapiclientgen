@@ -69,12 +69,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeReference OpenApiParameterToCodeTypeReference(OpenApiParameter apiParameter)
 		{
-			string schemaType = apiParameter.Schema.Type;
+			return OpenApiParameterSchemaToCodeTypeReference(apiParameter.Schema, apiParameter.Name);
+		}
+
+		public CodeTypeReference OpenApiParameterSchemaToCodeTypeReference(OpenApiSchema apiParameterSchema, string apiParameterName)
+		{
+			string schemaType = apiParameterSchema.Type;
 			if (schemaType != null)
 			{
 				if (schemaType == "array") // for array
 				{
-					OpenApiSchema arrayItemsSchema = apiParameter.Schema.Items;
+					OpenApiSchema arrayItemsSchema = apiParameterSchema.Items;
 					if (arrayItemsSchema == null)//ritekit.com has parameter as array but without items type. Presumbly it may be string.
 					{
 						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType("string", null);
@@ -107,7 +112,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 
 							//warning about bad yaml design.
-							Trace.TraceWarning($"Parameter {NameFunc.RefineParameterName(apiParameter.Name)} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
+							Trace.TraceWarning($"Parameter {NameFunc.RefineParameterName(apiParameterName)} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 						}
 
 						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
@@ -115,17 +120,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return arrayCodeTypeReference;
 					}
 				}
-				else if (apiParameter.Schema.Enum.Count > 0 && schemaType == "string") // for enum
+				else if (apiParameterSchema.Enum.Count > 0 && schemaType == "string") // for enum
 				{
 					string[] enumMemberNames;
 					try
 					{
-						enumMemberNames = apiParameter.Schema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+						enumMemberNames = apiParameterSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
 
 					}
 					catch (InvalidCastException ex)
 					{
-						throw new CodeGenException($"When dealing with {apiParameter.Name} of {schemaType}, error: {ex.Message}");
+						throw new CodeGenException($"When dealing with {apiParameterName} of {schemaType}, error: {ex.Message}");
 					}
 
 					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
@@ -141,7 +146,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					return new CodeTypeReference(aliasTypeName);
 				}
 
-				Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(schemaType, apiParameter.Schema.Format);
+				Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(schemaType, apiParameterSchema.Format);
 				CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
 				return codeTypeReference;
 

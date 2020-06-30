@@ -7,10 +7,10 @@ export namespace MyNS {
 	}
 
 
-	/**A representation of a cat */
+	/** A representation of a cat */
 	export interface Cat extends Pet {
 
-		/**The measured skill for hunting */
+		/** The measured skill for hunting */
 		huntingSkill: CatHuntingSkill;
 	}
 
@@ -18,7 +18,7 @@ export namespace MyNS {
 
 	export interface Category {
 
-		/**Category ID */
+		/** Category ID */
 		id?: number;
 
 		/**
@@ -27,12 +27,12 @@ export namespace MyNS {
 		 */
 		name?: string;
 
-		/**Test Sub Category */
+		/** Test Sub Category */
 		sub?: string;
 	}
 
 
-	/**A representation of a dog */
+	/** A representation of a dog */
 	export interface Dog extends Pet {
 
 		/**
@@ -43,32 +43,32 @@ export namespace MyNS {
 	}
 
 
-	/**A representation of a honey bee */
+	/** A representation of a honey bee */
 	export interface HoneyBee extends Pet {
 
-		/**Average amount of honey produced per day in ounces */
+		/** Average amount of honey produced per day in ounces */
 		honeyPerDay: number;
 	}
 
 	export interface Order {
 
-		/**Order ID */
+		/** Order ID */
 		id?: number;
 
-		/**Pet ID */
+		/** Pet ID */
 		petId?: number;
 		quantity?: number;
 
-		/**Estimated ship date */
+		/** Estimated ship date */
 		shipDate?: Date;
 
-		/**Order Status */
+		/** Order Status */
 		status?: OrderStatus;
 
-		/**Indicates whenever order was completed or not */
+		/** Indicates whenever order was completed or not */
 		complete?: boolean;
 
-		/**Unique Request Id */
+		/** Unique Request Id */
 		requestId?: string;
 	}
 
@@ -76,13 +76,13 @@ export namespace MyNS {
 
 	export interface Pet {
 
-		/**Pet ID */
+		/** Pet ID */
 		id?: number;
 
-		/**Categories this pet belongs to */
+		/** Categories this pet belongs to */
 		category?: string;
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name: string;
 
 		/**
@@ -98,16 +98,16 @@ export namespace MyNS {
 		 */
 		tags?: Array<Tag>;
 
-		/**Pet status in the store */
+		/** Pet status in the store */
 		status?: PetStatus;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 	}
 
 	export interface Tag {
 
-		/**Tag ID */
+		/** Tag ID */
 		id?: number;
 
 		/**
@@ -141,7 +141,7 @@ export namespace MyNS {
 		 */
 		lastName?: string;
 
-		/**User email address */
+		/** User email address */
 		email?: string;
 
 		/**
@@ -157,7 +157,7 @@ export namespace MyNS {
 		 */
 		phone?: string;
 
-		/**User status */
+		/** User status */
 		userStatus?: number;
 	}
 
@@ -374,10 +374,10 @@ export namespace MyNS {
 
 	export interface SubscribeBody {
 
-		/**This URL will be called by the server when the desired event will occur */
+		/** This URL will be called by the server when the desired event will occur */
 		callbackUrl: string;
 
-		/**Event name for the subscription */
+		/** Event name for the subscription */
 		eventName: SubscribeBodyEventName;
 	}
 
