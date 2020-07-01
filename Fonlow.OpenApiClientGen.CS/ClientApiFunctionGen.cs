@@ -25,7 +25,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		CodeMemberMethod method;
 		ComponentsToCsTypes coms2CsTypes;
 		NameComposer nameComposer;
-		ParametersHelper parametersHelper;
+		ParametersRefBuilder parametersHelper;
 		BodyContentRefBuilder bodyContentRefBuilder;
 		Settings settings;
 		string actionName;
@@ -49,7 +49,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(coms2CsTypes);
+			this.parametersHelper = new ParametersRefBuilder(coms2CsTypes);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
@@ -82,7 +82,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, coms2CsTypes.TypeAliasDic);
+				r = ReturnRefHelper.GetOperationReturnTypeReference(apiOperation, coms2CsTypes.TypeAliasDic);
 
 			}
 			catch (CodeGenException ex)

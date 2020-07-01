@@ -34,7 +34,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						try
 						{
-							return Tuple.Create(TypeRefBuilder.OpenApiMediaTypeToCodeTypeReference(content), description, true);
+							return Tuple.Create(TypeRefHelper.OpenApiMediaTypeToCodeTypeReference(content), description, true);
 						}
 						catch (ArgumentException ex)
 						{
@@ -71,7 +71,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					try
 					{
-						return Tuple.Create(TypeRefBuilder.OpenApiMediaTypeToCodeTypeReference(content), description, true);
+						return Tuple.Create(TypeRefHelper.OpenApiMediaTypeToCodeTypeReference(content), description, true);
 
 					}
 					catch (ArgumentException ex)

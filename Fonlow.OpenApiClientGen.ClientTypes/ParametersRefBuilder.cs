@@ -8,9 +8,16 @@ using System.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
-	public class ParametersHelper
+	/// <summary>
+	/// Helper functions for openapi operation parameters
+	/// </summary>
+	public class ParametersRefBuilder
 	{
-		public ParametersHelper(IComponentToCodeDom com2TsTypes)
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="com2TsTypes">Provide some CodeCOM lookup functions for registered components.</param>
+		public ParametersRefBuilder(IComponentToCodeDom com2TsTypes)
 		{
 			this.clientNamespace = com2TsTypes.ClientNamespace;
 			this.classNamespaces = com2TsTypes.ClassNamespaces;
@@ -35,7 +42,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						IsOptional = !p.Required,
 						ParameterName = refinedName,
-						ParameterType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
+						ParameterType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
 
@@ -47,6 +54,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			).Where(k => k.ParameterDescriptor.ParameterBinder != ParameterBinder.None).ToArray();
 		}
 
+		/// <summary>
+		/// Find existing CodeTypeDeclaration in clientNamespace and classNamespaces.
+		/// </summary>
+		/// <param name="enumMemberNames"></param>
+		/// <returns></returns>
 		CodeTypeDeclaration FindEnumDeclaration(string[] enumMemberNames)
 		{
 			var t = clientNamespace.FindEnumDeclaration(enumMemberNames);
@@ -82,8 +94,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					OpenApiSchema arrayItemsSchema = apiParameterSchema.Items;
 					if (arrayItemsSchema == null)//ritekit.com has parameter as array but without items type. Presumbly it may be string.
 					{
-						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType("string", null);
-						CodeTypeReference arrayCodeTypeReference = TypeRefBuilder.CreateArrayTypeReference(clrType, 1);
+						Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", null);
+						CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
 						return arrayCodeTypeReference;
 					}
 					else if (arrayItemsSchema.Reference != null) //array of custom type
@@ -91,10 +103,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						string arrayTypeName = arrayItemsSchema.Reference.Id;
 						if (typeAliasDic.TryGet(arrayTypeName, out string aliasTypeName))
 						{
-							return TypeRefBuilder.CreateArrayOfCustomTypeReference(aliasTypeName, 1);
+							return TypeRefHelper.CreateArrayOfCustomTypeReference(aliasTypeName, 1);
 						}
 
-						CodeTypeReference arrayCodeTypeReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(arrayTypeName, 1);
+						CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayOfCustomTypeReference(arrayTypeName, 1);
 						return arrayCodeTypeReference;
 					}
 					else
@@ -107,7 +119,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (existingDeclaration != null)
 							{
 								string existingTypeName = existingDeclaration.Name;
-								CodeTypeReference enumArrayReference = TypeRefBuilder.CreateArrayOfCustomTypeReference(existingTypeName, 1);
+								CodeTypeReference enumArrayReference = TypeRefHelper.CreateArrayOfCustomTypeReference(existingTypeName, 1);
 								return enumArrayReference;
 							}
 
@@ -115,8 +127,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							Trace.TraceWarning($"Parameter {NameFunc.RefineParameterName(apiParameterName)} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 						}
 
-						Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
-						CodeTypeReference arrayCodeTypeReference = TypeRefBuilder.CreateArrayTypeReference(clrType, 1);
+						Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
+						CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
 						return arrayCodeTypeReference;
 					}
 				}
@@ -137,7 +149,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (existingDeclaration != null)
 					{
 						string existingTypeName = existingDeclaration.Name;
-						CodeTypeReference enumReference = TypeRefBuilder.TranslateToClientTypeReference(existingTypeName);
+						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
 						return enumReference;
 					}
 				}
@@ -146,7 +158,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					return new CodeTypeReference(aliasTypeName);
 				}
 
-				Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(schemaType, apiParameterSchema.Format);
+				Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, apiParameterSchema.Format);
 				CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
 				return codeTypeReference;
 

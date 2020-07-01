@@ -17,10 +17,10 @@ namespace SwagTests
 			string expected = @"export namespace MyNS {
 	export interface Pet {
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name?: string;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 		BirthDateTime?: Date;
 	}
@@ -39,18 +39,18 @@ namespace SwagTests
 			string expected = @"export namespace MyNS {
 	export interface Pet {
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name?: string;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 	}
 
 
-	/**A representation of a cat */
+	/** A representation of a cat */
 	export interface Cat extends Pet {
 
-		/**The measured skill for hunting */
+		/** The measured skill for hunting */
 		huntingSkill?: string;
 	}
 
@@ -66,7 +66,7 @@ namespace SwagTests
 		{
 			string expected = @"export namespace MyNS {
 
-	/**Phone types */
+	/** Phone types */
 	export enum PhoneType { Tel = 0, Mobile = 1, Skype = 2, Fax = 3 }
 
 }
@@ -81,7 +81,7 @@ namespace SwagTests
 		{
 			string expected = @"export namespace MyNS {
 
-	/**Integer enum types */
+	/** Integer enum types */
 	export enum IntType { _1 = 0, _2 = 1, _3 = 2, _4 = 3 }
 
 }
@@ -98,13 +98,13 @@ namespace SwagTests
 			string expected = @"export namespace MyNS {
 	export interface Pet {
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name?: string;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 
-		/**Pet status in the store */
+		/** Pet status in the store */
 		status?: PetStatus;
 	}
 
@@ -123,10 +123,10 @@ namespace SwagTests
 			string expected = @"export namespace MyNS {
 	export interface Pet {
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name?: string;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 
 		/**
@@ -149,10 +149,10 @@ namespace SwagTests
 			string expected = @"export namespace MyNS {
 	export interface Pet {
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name?: string;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 
 		/**
@@ -164,7 +164,7 @@ namespace SwagTests
 
 	export interface Tag {
 
-		/**Tag ID */
+		/** Tag ID */
 		id?: number;
 
 		/**
@@ -188,16 +188,16 @@ namespace SwagTests
 	export interface Order {
 		quantity?: number;
 
-		/**Estimated ship date */
+		/** Estimated ship date */
 		shipDate?: Date;
 
-		/**Order Status */
+		/** Order Status */
 		status?: OrderStatus;
 
-		/**Indicates whenever order was completed or not */
+		/** Indicates whenever order was completed or not */
 		complete?: boolean;
 
-		/**Unique Request Id */
+		/** Unique Request Id */
 		requestId?: string;
 	}
 
@@ -216,7 +216,7 @@ namespace SwagTests
 			string expected = @"export namespace MyNS {
 	export interface Tag {
 
-		/**Tag ID */
+		/** Tag ID */
 		id?: number;
 
 		/**
@@ -239,18 +239,18 @@ namespace SwagTests
 			string expected = @"export namespace MyNS {
 	export interface Pet {
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name: string;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 	}
 
 
-	/**A representation of a cat */
+	/** A representation of a cat */
 	export interface Cat extends Pet {
 
-		/**The measured skill for hunting */
+		/** The measured skill for hunting */
 		huntingSkill: string;
 	}
 

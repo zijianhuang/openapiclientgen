@@ -244,7 +244,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
 				{
-					var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(type, null);
+					var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(type, null);
 					TypeAliasDic.Add(item.Key, clrType.FullName);
 					Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {clrType.FullName}) -- clrType: {clrType.FullName}");
 				}
@@ -298,7 +298,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				OpenApiSchema propertySchema = p.Value;
 				string primitivePropertyType = propertySchema.Type;
-				bool isPrimitiveType = TypeRefBuilder.IsPrimitiveType(primitivePropertyType);
+				bool isPrimitiveType = TypeRefHelper.IsPrimitiveType(primitivePropertyType);
 				bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
 				CodeMemberField clientProperty;
 
@@ -359,7 +359,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 						string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
 						string customPropertyFormat = refToType?.Format;
-						Type customType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
+						Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
 						clientProperty = CreatePropertyOfType(propertyName, customType, isRequired);
 					}
 				}
@@ -386,14 +386,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 							if (TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
 							{
-								if (!TypeRefBuilder.IsSwaggerPrimitive(arrayTypeNameAlias))
+								if (!TypeRefHelper.IsSwaggerPrimitive(arrayTypeNameAlias))
 								{
 									CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
 									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
 								}
 								else
 								{
-									var clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
+									var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
 									CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1);
 									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
 								}
@@ -417,7 +417,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							}
 							else
 							{
-								Type clrType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(arrayType, null);
+								Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
 								CodeTypeReference arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
 							}
@@ -438,7 +438,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (propertySchema.Enum.Count == 0) // for primitive type
 					{
-						Type simpleType = TypeRefBuilder.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
+						Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 						clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired);
 					}
 					else // for enum

@@ -23,7 +23,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected CodeMemberMethod Method { get; private set; }
 		NameComposer nameComposer;
-		ParametersHelper parametersHelper;
+		ParametersRefBuilder parametersHelper;
 		BodyContentRefBuilder bodyContentRefBuilder;
 		protected string ActionName { get; private set; }
 		protected OperationType HttpMethod { get; private set; }
@@ -41,7 +41,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersHelper(com2TsTypes);
+			this.parametersHelper = new ParametersRefBuilder(com2TsTypes);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
@@ -68,7 +68,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = TypeRefBuilder.GetOperationReturnTypeReference(apiOperation, com2TsTypes.TypeAliasDic);
+				r = ReturnRefHelper.GetOperationReturnTypeReference(apiOperation, com2TsTypes.TypeAliasDic);
 
 			}
 			catch (CodeGenException ex)
