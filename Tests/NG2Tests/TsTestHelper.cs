@@ -28,14 +28,7 @@ namespace SwagTests
 		{
 			OpenApiDocument doc = ReadDef(filePath);
 
-			Settings settings = mySettings ?? new Settings()
-			{
-				ClientNamespace = "MyNS",
-				ContainerClassName = "MyClient",
-				ContainerNameStrategy = ContainerNameStrategy.None,
-				ActionNameStrategy = ActionNameStrategy.Default,
-				DataAnnotationsToComments = true,
-			};
+			Settings settings = mySettings ?? CodeGenSettings.Default;
 
 			System.CodeDom.CodeCompileUnit codeCompileUnit = new System.CodeDom.CodeCompileUnit();
 			System.CodeDom.CodeNamespace clientNamespace = new System.CodeDom.CodeNamespace(settings.ClientNamespace);

@@ -7,13 +7,9 @@ namespace SwagTests
 		public static readonly Settings Default = new Settings()
 		{
 			ClientNamespace = "MyNS",
-			PathPrefixToRemove = "/api",
-			ContainerClassName = "Misc",
+			ContainerClassName = "MyClient",
 			ContainerNameStrategy = ContainerNameStrategy.None,
 			ActionNameStrategy = ActionNameStrategy.Default,
-			GenerateBothAsyncAndSync = true,
-			UseEnsureSuccessStatusCodeEx = true,
-			DataAnnotationsEnabled = true,
 			DataAnnotationsToComments = true,
 		};
 
@@ -22,13 +18,10 @@ namespace SwagTests
 			return new Settings()
 			{
 				ClientNamespace = "MyNS",
-				ContainerClassName = "Misc",
+				ContainerClassName = "MyClient",
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				ActionNameStrategy = ans,
-				GenerateBothAsyncAndSync = true,
-				DecorateDataModelWithSerializable = true,
-				UseEnsureSuccessStatusCodeEx = true,
-				DataAnnotationsEnabled = true,
+
 				DataAnnotationsToComments = true,
 				HandleHttpRequestHeaders = true,
 			};

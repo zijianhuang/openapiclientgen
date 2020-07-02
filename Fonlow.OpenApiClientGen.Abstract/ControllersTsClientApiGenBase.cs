@@ -55,7 +55,8 @@ namespace Fonlow.CodeDom.Web.Ts
 		/// </summary>
 		public void Save()
 		{
-			using StreamWriter writer = new StreamWriter(jsOutput.JSPath);
+			using FileStream fs = new FileStream(jsOutput.JSPath, FileMode.Create, FileAccess.Write);
+			using StreamWriter writer = new StreamWriter(fs);
 			WriteCode(writer);
 		}
 
