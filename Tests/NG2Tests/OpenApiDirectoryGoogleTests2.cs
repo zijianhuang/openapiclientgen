@@ -3,6 +3,7 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryGoogleTests2
 	{
 		readonly TsTestHelper helper;

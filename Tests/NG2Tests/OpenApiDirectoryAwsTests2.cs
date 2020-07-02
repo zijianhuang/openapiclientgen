@@ -3,6 +3,7 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryAwsTests2
 	{
 		readonly TsTestHelper helper;

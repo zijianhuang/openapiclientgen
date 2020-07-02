@@ -4,6 +4,7 @@ using Xunit.Abstractions;
 
 namespace NG2Tests
 {
+	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryGoogleTests
 	{
 		readonly TsTestHelper helper;

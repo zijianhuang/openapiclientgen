@@ -3,7 +3,7 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
-	[Collection("PluginsInSequence")]
+	[Collection("NGBuildInSequence")]
 	public class CodeGenNG2Tests
 	{
 		public CodeGenNG2Tests(ITestOutputHelper output)
