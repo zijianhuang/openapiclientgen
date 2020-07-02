@@ -65,7 +65,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.RelativePath = RemovePrefixSlash(relativePath);
 			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
 
-			Tuple<CodeTypeReference, bool, bool> r;
+			Tuple<CodeTypeReference, bool> r;
 			try
 			{
 				var returnRefBuilder = new ReturnRefHelper(com2TsTypes);

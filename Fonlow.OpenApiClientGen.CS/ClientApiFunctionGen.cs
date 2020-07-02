@@ -79,7 +79,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			if (actionName.EndsWith("Async"))
 				actionName = actionName[0..^5];
 
-			Tuple<CodeTypeReference, bool, bool> r;
+			Tuple<CodeTypeReference, bool> r;
 			try
 			{
 				var returnRefBuilder = new ReturnRefHelper(coms2CsTypes);
