@@ -9,14 +9,14 @@ using System.Numerics;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
-	public class ReturnRefHelper
+	public class ReturnRefBuilder
 	{
-		public ReturnRefHelper(IComponentToCodeDom com2CodeDom)
+		public ReturnRefBuilder(IComponentToCodeDom com2CodeDom, string actionName)
 		{
-			this.pRefBuilder = new ParametersRefBuilder(com2CodeDom);
+			this.parametersRefBuilder = new ParametersRefBuilder(com2CodeDom, actionName);
 		}
 
-		readonly ParametersRefBuilder pRefBuilder;
+		readonly ParametersRefBuilder parametersRefBuilder;
 
 		/// <summary>
 		/// 
@@ -38,7 +38,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					try
 					{
-						codeTypeReference = pRefBuilder.OpenApiParameterSchemaToCodeTypeReference(content.Schema, "Return");
+						codeTypeReference = parametersRefBuilder.OpenApiParameterSchemaToCodeTypeReference(content.Schema, "Return");
 
 					}
 					catch (ArgumentException ex)

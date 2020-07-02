@@ -17,18 +17,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// 
 		/// </summary>
 		/// <param name="com2CodeDom">Provide some CodeCOM lookup functions for registered components.</param>
-		public ParametersRefBuilder(IComponentToCodeDom com2CodeDom)
+		/// <param name="actionName">for prefix of casual types.</param>
+		public ParametersRefBuilder(IComponentToCodeDom com2CodeDom, string actionName)
 		{
 			this.clientNamespace = com2CodeDom.ClientNamespace;
 			this.classNamespaces = com2CodeDom.ClassNamespaces;
 			this.typeAliasDic = com2CodeDom.TypeAliasDic;
 			this.com2CodeDom = com2CodeDom;
+			this.actionName = actionName;
 		}
 
 		readonly CodeNamespace clientNamespace;
 		readonly List<CodeNamespace> classNamespaces;
 		readonly TypeAliasDic typeAliasDic;
 		readonly IComponentToCodeDom com2CodeDom;
+		readonly string actionName;
 
 		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
@@ -90,7 +93,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			CodeTypeReference GenerateCasualEnum()
 			{
-				string casualEnumName = "Api" + NameFunc.RefinePropertyName(apiParameterName); //todo: give a proper name later.
+				string casualEnumName = actionName + NameFunc.RefinePropertyName(apiParameterName);
 				CodeTypeDeclaration existingType = com2CodeDom.FindTypeDeclarationInNamespaces(casualEnumName, null);
 				if (existingType == null)
 				{
@@ -223,7 +226,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 						{
-							string casualTypeName = "Api" + NameFunc.RefinePropertyName(apiParameterName);//todo: proper prefix later
+							string casualTypeName = actionName + NameFunc.RefinePropertyName(apiParameterName);
 							CodeTypeDeclaration casualTypeDeclaration = com2CodeDom.AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
 							return ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1);
 						}

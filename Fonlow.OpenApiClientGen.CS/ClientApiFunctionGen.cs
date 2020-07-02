@@ -25,7 +25,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		CodeMemberMethod method;
 		ComponentsToCsTypes coms2CsTypes;
 		NameComposer nameComposer;
-		ParametersRefBuilder parametersHelper;
+		ParametersRefBuilder parametersRefBuilder;
 		BodyContentRefBuilder bodyContentRefBuilder;
 		Settings settings;
 		string actionName;
@@ -49,11 +49,23 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersRefBuilder(coms2CsTypes);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
-			this.parameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
+
+			this.actionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
+			this.coms2CsTypes = coms2CsTypes;
+			this.forAsync = forAsync;
+
+
+			this.RelativePath = RemovePrefixSlash(relativePath);
+			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
+
+			if (actionName.EndsWith("Async"))
+				actionName = actionName[0..^5];
+
+			this.parametersRefBuilder = new ParametersRefBuilder(coms2CsTypes, actionName);
+			this.parameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
@@ -68,21 +80,10 @@ namespace Fonlow.OpenApiClientGen.CS
 				}
 			}
 
-			this.actionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
-			this.coms2CsTypes = coms2CsTypes;
-			this.forAsync = forAsync;
-
-
-			this.RelativePath = RemovePrefixSlash(relativePath);
-			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
-
-			if (actionName.EndsWith("Async"))
-				actionName = actionName[0..^5];
-
 			Tuple<CodeTypeReference, bool> r;
 			try
 			{
-				var returnRefBuilder = new ReturnRefHelper(coms2CsTypes);
+				var returnRefBuilder = new ReturnRefBuilder(coms2CsTypes, actionName);
 				r = returnRefBuilder.GetOperationReturnTypeReference(apiOperation);
 
 			}

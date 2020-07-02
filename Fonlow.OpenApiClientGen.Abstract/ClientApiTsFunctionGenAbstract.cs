@@ -23,7 +23,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected CodeMemberMethod Method { get; private set; }
 		NameComposer nameComposer;
-		ParametersRefBuilder parametersHelper;
+		ParametersRefBuilder parametersRefBuilder;
 		BodyContentRefBuilder bodyContentRefBuilder;
 		protected string ActionName { get; private set; }
 		protected OperationType HttpMethod { get; private set; }
@@ -41,11 +41,12 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			this.nameComposer = new NameComposer(settings);
-			this.parametersHelper = new ParametersRefBuilder(com2TsTypes);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
-			this.ParameterDescriptions = parametersHelper.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
+			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
+			this.parametersRefBuilder = new ParametersRefBuilder(com2TsTypes, ActionName);
+			this.ParameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
@@ -60,15 +61,13 @@ namespace Fonlow.CodeDom.Web.Ts
 				}
 			}
 
-			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
-
 			this.RelativePath = RemovePrefixSlash(relativePath);
 			this.RelativePath = RegexFunctions.RefineUrlWithHyphenInParameters(RelativePath);
 
 			Tuple<CodeTypeReference, bool> r;
 			try
 			{
-				var returnRefBuilder = new ReturnRefHelper(com2TsTypes);
+				var returnRefBuilder = new ReturnRefBuilder(com2TsTypes, ActionName);
 				r = returnRefBuilder.GetOperationReturnTypeReference(apiOperation);
 
 			}
