@@ -68,7 +68,8 @@ namespace Fonlow.CodeDom.Web.Ts
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = ReturnRefHelper.GetOperationReturnTypeReference(apiOperation, com2TsTypes.TypeAliasDic);
+				var returnRefBuilder = new ReturnRefHelper(com2TsTypes);
+				r = returnRefBuilder.GetOperationReturnTypeReference(apiOperation);
 
 			}
 			catch (CodeGenException ex)

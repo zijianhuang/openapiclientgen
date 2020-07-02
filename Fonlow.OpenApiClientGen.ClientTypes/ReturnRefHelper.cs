@@ -9,14 +9,21 @@ using System.Numerics;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
-	public static class ReturnRefHelper
+	public class ReturnRefHelper
 	{
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="op"></param>
-		/// <returns>Item3 indicate whether to be complex type.</returns>
-		public static Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op, TypeAliasDic typeAliasDic)
+		public ReturnRefHelper(IComponentToCodeDom com2TsTypes)
+		{
+			this.typeAliasDic = com2TsTypes.TypeAliasDic;
+		}
+
+		readonly TypeAliasDic typeAliasDic;
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="op"></param>
+	/// <returns>Item3 indicate whether to be complex type.</returns>
+	public Tuple<CodeTypeReference, bool, bool> GetOperationReturnTypeReference(OpenApiOperation op)
 		{
 			var referenceId = GetOperationReturnComplexTypeReferenceId(op);
 			bool stringAsString = false;

@@ -82,7 +82,8 @@ namespace Fonlow.OpenApiClientGen.CS
 			Tuple<CodeTypeReference, bool, bool> r;
 			try
 			{
-				r = ReturnRefHelper.GetOperationReturnTypeReference(apiOperation, coms2CsTypes.TypeAliasDic);
+				var returnRefBuilder = new ReturnRefHelper(coms2CsTypes);
+				r = returnRefBuilder.GetOperationReturnTypeReference(apiOperation);
 
 			}
 			catch (CodeGenException ex)
@@ -97,16 +98,6 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			returnTypeReference = r.Item1;
 			stringAsString = r.Item2;
-
-			//todo: stream, byte and ActionResult later.
-			//returnTypeIsStream = returnType!=null && ( (returnType.FullName == typeNameOfHttpResponseMessage) 
-			//	|| (returnType.FullName == typeOfIHttpActionResult) 
-			//	|| (returnType.FullName == typeOfIActionResult) 
-			//	|| (returnType.FullName == typeOfActionResult)
-			//	|| (returnType.FullName.StartsWith("System.Threading.Tasks.Task`1[[Microsoft.AspNetCore.Mvc.IActionResult")) // .net core is not translating Task<IActionResult> properly.
-			//	|| (returnType.FullName.StartsWith("System.Threading.Tasks.Task`1[[Microsoft.AspNetCore.Mvc.IHttpActionResult"))
-			//	|| (returnType.FullName.StartsWith("System.Threading.Tasks.Task`1[[Microsoft.AspNetCore.Mvc.ActionResult"))
-			//	);
 
 			//create method
 			method = forAsync ? CreateMethodBasicForAsync() : CreateMethodBasic();
