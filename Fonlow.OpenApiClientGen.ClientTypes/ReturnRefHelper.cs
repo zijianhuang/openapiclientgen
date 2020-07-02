@@ -11,73 +11,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class ReturnRefHelper
 	{
-		public ReturnRefHelper(IComponentToCodeDom com2TsTypes)
+		public ReturnRefHelper(IComponentToCodeDom com2CodeDom)
 		{
-			this.typeAliasDic = com2TsTypes.TypeAliasDic;
+			this.pRefBuilder = new ParametersRefBuilder(com2CodeDom);
 		}
 
-		readonly TypeAliasDic typeAliasDic;
-
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="op"></param>
-	/// <returns>Item3 indicate whether to be complex type.</returns>
-	public Tuple<CodeTypeReference, bool> GetOperationReturnTypeReference(OpenApiOperation op)
-		{
-			var referenceId = GetOperationReturnComplexTypeReferenceId(op);
-			bool stringAsString = false;
-			if (referenceId == null)
-			{
-				Tuple<CodeTypeReference, bool> r = GetOperationReturnSimpleTypeReference(op);
-				CodeTypeReference primitiveTypeReference = r.Item1;
-				stringAsString = r.Item2;
-				return Tuple.Create(primitiveTypeReference ?? null, stringAsString);
-			}
-
-			var ns = NameFunc.GetNamespaceOfClassName(referenceId);
-			string complexTypeName = NameFunc.RefineTypeName(referenceId, ns);
-
-			if (typeAliasDic.TryGet(complexTypeName, out string typeAlias))
-			{
-				return Tuple.Create(new CodeTypeReference(typeAlias), stringAsString);
-			}
-
-			return Tuple.Create(new CodeTypeReference(TypeRefHelper.CombineNamespaceWithClassName(ns, complexTypeName)), stringAsString);
-		}
-
-		/// <summary>
-		/// content.Schema.Reference.Id of op
-		/// </summary>
-		/// <param name="op"></param>
-		/// <returns></returns>
-		public static string GetOperationReturnComplexTypeReferenceId(OpenApiOperation op)
-		{
-			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
-			{
-				if (goodResponse.Content == null)
-				{
-					throw new CodeGenException($"OpenApiOperation {op.OperationId} is having 200 response content null.");
-				}
-
-				if (goodResponse.Content.TryGetValue("application/json", out OpenApiMediaType content))
-					if (content != null && content.Schema != null && content.Schema.Reference != null)
-					{
-						return content.Schema.Reference.Id;
-					}
-			}
-
-			return null;
-		}
-
-		static readonly Type typeOfString = typeof(string);
+		readonly ParametersRefBuilder pRefBuilder;
 
 		/// <summary>
 		/// 
 		/// </summary>
 		/// <param name="op"></param>
-		/// <returns>CodeTypeReference of the return type, and StringAsString generally with text/plain</returns>
-		public static Tuple<CodeTypeReference, bool> GetOperationReturnSimpleTypeReference(OpenApiOperation op)
+		/// <returns>Item3 indicate whether to be complex type.</returns>
+		public Tuple<CodeTypeReference, bool> GetOperationReturnTypeReference(OpenApiOperation op)
 		{
 			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
 			{
@@ -92,7 +38,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					try
 					{
-						codeTypeReference = TypeRefHelper.OpenApiMediaTypeToCodeTypeReference(content);
+						codeTypeReference = pRefBuilder.OpenApiParameterSchemaToCodeTypeReference(content.Schema, "Return");
 
 					}
 					catch (ArgumentException ex)
@@ -122,5 +68,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return Tuple.Create<CodeTypeReference, bool>(null, false);
 		}
 
+		static readonly Type typeOfString = typeof(string);
 	}
 }

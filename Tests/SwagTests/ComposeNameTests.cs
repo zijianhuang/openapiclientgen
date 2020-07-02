@@ -93,21 +93,21 @@ namespace SwagTests
 			Assert.Equal(typeof(DateTimeOffset), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", "date-time"));
 		}
 
-		[Fact]
-		public void TestReturnSimpleType()
-		{
-			OpenApiPathItem pathItem = doc.Paths["/api/SuperDemo/decimal/{d}"];
-			Tuple<System.CodeDom.CodeTypeReference, bool> t = ReturnRefHelper.GetOperationReturnSimpleTypeReference(pathItem.Operations[OperationType.Get]);
-			Assert.Equal("System.Double", t.Item1.BaseType);
-		}
+		//[Fact]
+		//public void TestReturnSimpleType()
+		//{
+		//	OpenApiPathItem pathItem = doc.Paths["/api/SuperDemo/decimal/{d}"];
+		//	Tuple<System.CodeDom.CodeTypeReference, bool> t = ReturnRefHelper.GetOperationReturnSimpleTypeReference(pathItem.Operations[OperationType.Get]);
+		//	Assert.Equal("System.Double", t.Item1.BaseType);
+		//}
 
-		[Fact]
-		public void TestReturnComplexType()
-		{
-			OpenApiPathItem pathItem = doc.Paths["/api/Entities/getPerson/{id}"];
-			string t = ReturnRefHelper.GetOperationReturnComplexTypeReferenceId(pathItem.Operations[OperationType.Get]);
-			Assert.Equal("Person", t);
-		}
+		//[Fact]
+		//public void TestReturnComplexType()
+		//{
+		//	OpenApiPathItem pathItem = doc.Paths["/api/Entities/getPerson/{id}"];
+		//	string t = ReturnRefHelper.GetOperationReturnComplexTypeReferenceId(pathItem.Operations[OperationType.Get]);
+		//	Assert.Equal("Person", t);
+		//}
 
 		//[Fact]
 		//public void TestReturnTypePerson()
