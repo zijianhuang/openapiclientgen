@@ -350,7 +350,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			RemoveRegisteredSchemaRefId(item.Key);
 		}
 
-		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
+		public void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
 			int k = 0;
 			foreach (IOpenApiAny enumMember in enumTypeList)

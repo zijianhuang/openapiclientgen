@@ -16,17 +16,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <summary>
 		/// 
 		/// </summary>
-		/// <param name="com2TsTypes">Provide some CodeCOM lookup functions for registered components.</param>
-		public ParametersRefBuilder(IComponentToCodeDom com2TsTypes)
+		/// <param name="com2CodeDom">Provide some CodeCOM lookup functions for registered components.</param>
+		public ParametersRefBuilder(IComponentToCodeDom com2CodeDom)
 		{
-			this.clientNamespace = com2TsTypes.ClientNamespace;
-			this.classNamespaces = com2TsTypes.ClassNamespaces;
-			this.typeAliasDic = com2TsTypes.TypeAliasDic;
+			this.clientNamespace = com2CodeDom.ClientNamespace;
+			this.classNamespaces = com2CodeDom.ClassNamespaces;
+			this.typeAliasDic = com2CodeDom.TypeAliasDic;
+			this.com2CodeDom = com2CodeDom;
 		}
 
 		readonly CodeNamespace clientNamespace;
 		readonly List<CodeNamespace> classNamespaces;
 		readonly TypeAliasDic typeAliasDic;
+		readonly IComponentToCodeDom com2CodeDom;
 
 		public ParameterDescriptionEx[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
@@ -86,8 +88,75 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeReference OpenApiParameterSchemaToCodeTypeReference(OpenApiSchema apiParameterSchema, string apiParameterName)
 		{
+			CodeTypeReference GenerateCasualEnum()
+			{
+				string casualEnumName = "Api" + NameFunc.RefinePropertyName(apiParameterName); //todo: give a proper name later.
+				CodeTypeDeclaration existingType = com2CodeDom.FindTypeDeclarationInNamespaces(casualEnumName, null);
+				if (existingType == null)
+				{
+					CodeTypeDeclaration casualEnumTypeDeclaration = Fonlow.Poco2Client.PodGenHelper.CreatePodClientEnum(com2CodeDom.ClientNamespace, casualEnumName);
+					com2CodeDom.AddEnumMembers(casualEnumTypeDeclaration, apiParameterSchema.Enum);
+
+					//if (settings.DecorateDataModelWithDataContract)
+					//{
+					//	casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+					//}
+
+					//if (settings.DecorateDataModelWithSerializable)
+					//{
+					//	casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
+					//}
+
+					Trace.TraceInformation($"Casual enum {casualEnumName} added for Api/{apiParameterName}.");
+				}
+
+				return ComponentsHelper.TranslateTypeNameToClientTypeReference(casualEnumName);
+			}
+
 			string schemaType = apiParameterSchema.Type;
-			if (schemaType != null)
+			if (String.IsNullOrEmpty(schemaType))
+			{
+				if (apiParameterSchema.Reference != null)
+				{
+					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(apiParameterSchema.Reference.Id);
+					string propertyTypeName = NameFunc.RefineTypeName(apiParameterSchema.Reference.Id, propertyTypeNs);
+					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
+					return ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
+				}
+				else
+				{
+					if (apiParameterSchema.Enum.Count > 0) //for casual enum
+					{
+						return GenerateCasualEnum();
+					}
+					else
+					{
+						OpenApiSchema refToType = null;
+						if (apiParameterSchema.AllOf.Count > 0)
+						{
+							refToType = apiParameterSchema.AllOf[0];
+						}
+						else if (apiParameterSchema.OneOf.Count > 0)
+						{
+							refToType = apiParameterSchema.OneOf[0];
+						}
+						else if (apiParameterSchema.AnyOf.Count > 0)
+						{
+							refToType = apiParameterSchema.AnyOf[0];
+						}
+						else if (refToType == null)
+						{
+							//Trace.TraceWarning($"Property '{p.Key}' of {currentTypeName} may be of type object.");
+						}
+
+						string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
+						string customPropertyFormat = refToType?.Format;
+						Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
+						return new CodeTypeReference(customType);
+					}
+				}
+			}
+			else
 			{
 				if (schemaType == "array") // for array
 				{

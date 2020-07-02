@@ -273,7 +273,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, currentTypeName);
 				CreateTypeDocComment(item, typeDeclaration);
-				ComponentsHelper.AddEnumMembers(typeDeclaration, enumTypeList);
+				AddEnumMembers(typeDeclaration, enumTypeList);
 				Trace.TraceInformation("TS client enum: " + currentTypeName);
 			}
 
@@ -309,7 +309,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (existingType == null)
 					{
 						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
-						ComponentsHelper.AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
+						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
 						clientProperty = CreateProperty(propertyName, casualEnumName, isRequired);
 
 						Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
@@ -647,7 +647,83 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			declaration.Comments.Add(new CodeCommentStatement(typeComment, true));
 		}
 
+		public void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
+		{
+			int k = 0;
+			foreach (IOpenApiAny enumMember in enumTypeList)
+			{
+				if (enumMember is OpenApiString stringMember)
+				{
+					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value);
+					bool hasFunkyMemberName = memberName != stringMember.Value;
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
 
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiInteger intMember)
+				{
+					string memberName = "_" + intMember.Value.ToString();
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiLong longMember)
+				{
+					string memberName = "_" + longMember.Value.ToString();
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
+				{
+					string memberName = NameFunc.RefineEnumMemberName(passwordMember.Value);
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
+				{
+					string memberName = "_" + doubleMember.Value.ToString();
+					int intValue = k;
+					CodeMemberField clientField = new CodeMemberField()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(intValue),
+					};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else
+				{
+					throw new ArgumentException($"Not yet supported enumMember of {enumMember.GetType()} with {typeDeclaration.Name}");
+				}
+			}
+		}
 	}
 
 }
