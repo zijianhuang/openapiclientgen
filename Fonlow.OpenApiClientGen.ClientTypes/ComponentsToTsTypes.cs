@@ -550,7 +550,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return new CodeTypeReference("any");
 		}
 
-		CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
+		public CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
 		{
 			CodeTypeReference otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
 			{
@@ -571,7 +571,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
-		OpenApiSchema FindSchema(string key)//common
+		public OpenApiSchema FindSchema(string key)//common
 		{
 			if (ComponentsSchemas.TryGetValue(key, out OpenApiSchema v))
 			{
@@ -581,7 +581,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
+		public CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
 		{
 			if (String.IsNullOrEmpty(ns))
 			{

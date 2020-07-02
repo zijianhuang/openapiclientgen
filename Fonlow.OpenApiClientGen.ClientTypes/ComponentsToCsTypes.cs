@@ -161,7 +161,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
-		OpenApiSchema FindSchema(string key)
+		public OpenApiSchema FindSchema(string key)
 		{
 			if (ComponentsSchemas.TryGetValue(key, out OpenApiSchema v))
 			{
@@ -171,7 +171,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
+		public CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
 		{
 			if (String.IsNullOrEmpty(ns))
 			{
@@ -619,7 +619,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							else
 							{
 								Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
-								CodeTypeReference arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
+								CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
 								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
 							}
 						}
@@ -920,7 +920,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
-			CodeMemberField result = new CodeMemberField() { Type = TranslateToClientTypeReference(type), Name = memberName };
+			CodeMemberField result = new CodeMemberField() { Type = TypeRefHelper.TranslateToClientTypeReference(type), Name = memberName };
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
 			return result;
 		}
@@ -959,31 +959,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
 			return result;
-		}
-
-		public CodeTypeReference TranslateToClientTypeReference(Type type)
-		{
-			if (type == null)
-				return null;// new CodeTypeReference("void");
-			if (type.IsArray)
-			{
-				Debug.Assert(type.Name.EndsWith("]"));
-				Type elementType = type.GetElementType();
-				int arrayRank = type.GetArrayRank();
-				return CreateArrayTypeReference(elementType, arrayRank);
-			}
-
-			return new CodeTypeReference(type);
-
-		}
-
-		CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
-		{
-			CodeTypeReference otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
-			{
-				ArrayElementType = TranslateToClientTypeReference(elementType),
-			};
-			return otherArrayType;
 		}
 
 		/// <summary>

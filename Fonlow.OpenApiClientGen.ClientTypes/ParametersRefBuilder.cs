@@ -169,14 +169,39 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else if (arrayItemsSchema.Reference != null) //array of custom type
 					{
-						string arrayTypeName = arrayItemsSchema.Reference.Id;
-						if (typeAliasDic.TryGet(arrayTypeName, out string aliasTypeName))
+						string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
+						var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
+						var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
+						var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
+						var existingType = com2CodeDom.FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
+						if (existingType == null) // Referencing to a type not yet added to namespace
 						{
-							return TypeRefHelper.CreateArrayOfCustomTypeReference(aliasTypeName, 1);
+							var existingSchema = com2CodeDom.FindSchema(arrayTypeSchemaRefId);
+							if (existingSchema != null && !com2CodeDom.RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
+							{
+								com2CodeDom.AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
+							}
 						}
 
-						CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayOfCustomTypeReference(arrayTypeName, 1);
-						return arrayCodeTypeReference;
+						if (com2CodeDom.TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
+						{
+							if (!TypeRefHelper.IsSwaggerPrimitive(arrayTypeNameAlias))
+							{
+								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
+								return arrayCodeTypeReference;
+							}
+							else
+							{
+								var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
+								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1);
+								return arrayCodeTypeReference;
+							}
+						}
+						else
+						{
+							CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1);
+							return arrayCodeTypeReference;
+						}
 					}
 					else
 					{
@@ -194,6 +219,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 							//warning about bad yaml design.
 							Trace.TraceWarning($"Parameter {NameFunc.RefineParameterName(apiParameterName)} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
+						}
+						else if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
+						{
+							string casualTypeName = "Api" + NameFunc.RefinePropertyName(apiParameterName);//todo: proper prefix later
+							CodeTypeDeclaration casualTypeDeclaration = com2CodeDom.AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
+							return ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1);
 						}
 
 						Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
@@ -234,8 +265,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				//var schemaFormat = content.Schema.Format;
 				//return new CodeTypeReference(nameComposer.PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat));
 			}
-
-			return null;
 		}
 
 		static ParameterBinder ParameterLocationToParameterBinder(ParameterLocation? lo)

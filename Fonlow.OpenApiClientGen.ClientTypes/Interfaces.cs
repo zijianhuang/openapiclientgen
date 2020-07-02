@@ -2,6 +2,7 @@
 using Microsoft.OpenApi.Any;
 using System.Collections.Generic;
 using System.CodeDom;
+using System;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -14,6 +15,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		bool RegisteredSchemaRefIdExists(string t);
 
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList);
+
+		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns);
+
+		OpenApiSchema FindSchema(string key);
 
 		CodeNamespace ClientNamespace
 		{
