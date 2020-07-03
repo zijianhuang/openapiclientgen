@@ -6,6 +6,9 @@
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <Copyright>Copyright © Zijian Huang 2020</Copyright>
     <Authors>Zijian Huang</Authors>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <Description>Shared component for plugins that generate TypeScript client API codes</Description>
   </PropertyGroup>
 
   <ItemGroup>

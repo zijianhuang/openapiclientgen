@@ -271,13 +271,6 @@ namespace Fonlow.OpenApiClientGen.CS
 				Type = new CodeTypeReference("JsonSerializerSettings")
 			};
 			targetClass.Members.Add(jsonSettingsField);
-
-			//CodeMemberField baseUriField = new CodeMemberField();
-			//baseUriField.Attributes = MemberAttributes.Private;
-			//baseUriField.Name = "baseUri";
-			//baseUriField.Type = new CodeTypeReference("System.Uri");
-			//targetClass.Members.Add(baseUriField);
-
 		}
 
 		void AddConstructorWithHttpClient(CodeTypeDeclaration targetClass)

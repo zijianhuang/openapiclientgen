@@ -54,8 +54,4 @@
     <ProjectReference Include="..\Fonlow.OpenApiClientGen.CS\Fonlow.OpenApiClientGen.CS.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(TargetDir)*.* c:\Green\OpenApiClientGen /D /Y" />
-  </Target>
-
 </Project>

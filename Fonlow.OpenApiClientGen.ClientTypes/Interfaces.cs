@@ -1,8 +1,7 @@
-﻿using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Any;
-using System.Collections.Generic;
+﻿using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
 using System.CodeDom;
-using System;
+using System.Collections.Generic;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {

@@ -1,9 +1,8 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
+using Fonlow.OpenApiClientGen.CS;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Diagnostics;
-using System.Linq;
-using Fonlow.OpenApiClientGen.CS;
 
 namespace Fonlow.CodeDom.Web
 {
@@ -31,7 +30,7 @@ namespace Fonlow.CodeDom.Web
 				}
 
 				string path = System.IO.Path.Combine(csharpClientProjectDir, settings.ClientLibraryFileName);
-				OpenApiClientGen.CS.ControllersClientApiGen gen = new Fonlow.OpenApiClientGen.CS.ControllersClientApiGen(settings);
+				ControllersClientApiGen gen = new ControllersClientApiGen(settings);
 				gen.CreateCodeDom(paths, components);
 				if (settings.CompileToValidate)
 				{
@@ -57,7 +56,6 @@ namespace Fonlow.CodeDom.Web
 					gen.Save(path);
 				}
 			}
-
 
 			string CreateTsPath(string folder, string fileName)
 			{
@@ -85,7 +83,7 @@ namespace Fonlow.CodeDom.Web
 					}
 					catch (ArgumentException e)
 					{
-						System.Diagnostics.Trace.TraceWarning(e.Message);
+						Trace.TraceWarning(e.Message);
 						string msg = $"Invalid TypeScriptFolder {folder} while current directory is {currentDir}";
 						throw new CodeGenException(msg);
 					}
@@ -123,7 +121,7 @@ namespace Fonlow.CodeDom.Web
 					}
 					else
 					{
-						System.Diagnostics.Trace.TraceWarning($"Not done with plugin {plugin.AssemblyName}");
+						Trace.TraceWarning($"Not done with plugin {plugin.AssemblyName}");
 					}
 				}
 			}
