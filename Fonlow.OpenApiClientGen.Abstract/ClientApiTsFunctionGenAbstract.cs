@@ -47,7 +47,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
 			this.parametersRefBuilder = new ParametersRefBuilder(com2TsTypes, ActionName);
 			this.ParameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
-			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
+			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
 				if (kc != null)
@@ -94,6 +94,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				case OperationType.Delete:
 				case OperationType.Post:
 				case OperationType.Put:
+				case OperationType.Patch:
 					RenderImplementation();
 					break;
 				default:

@@ -66,7 +66,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			this.parametersRefBuilder = new ParametersRefBuilder(coms2CsTypes, actionName);
 			this.parameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
-			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put)
+			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
 			{
 				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
 				if (kc != null)
@@ -113,6 +113,7 @@ namespace Fonlow.OpenApiClientGen.CS
 					break;
 				case OperationType.Post:
 				case OperationType.Put:
+				case OperationType.Patch:
 					RenderPostOrPutImplementation(httpMethod, forAsync);
 					break;
 				default:
