@@ -133,11 +133,6 @@
 		public bool CreateFolder { get; set; }
 
 		/// <summary>
-		/// Compile and write generate codes if no error.
-		/// </summary>
-		public bool CompileToValidate { get; set; }
-
-		/// <summary>
 		/// Optional file output of generated codes compilation. If not defined, the compilation is done in memory.
 		/// </summary>
 		public string AssemblyPath { get; set; }

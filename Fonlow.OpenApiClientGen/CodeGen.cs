@@ -32,29 +32,7 @@ namespace Fonlow.CodeDom.Web
 				string path = System.IO.Path.Combine(csharpClientProjectDir, settings.ClientLibraryFileName);
 				ControllersClientApiGen gen = new ControllersClientApiGen(settings);
 				gen.CreateCodeDom(paths, components);
-				if (settings.CompileToValidate)
-				{
-					var csharpCodes = gen.WriteToText();
-					System.IO.File.WriteAllText(path, csharpCodes);
-					var result = CSharpValidation.CompileThenSave(csharpCodes, settings.AssemblyPath);
-					if (result.Success)
-					{
-						Trace.TraceInformation("Generated codes pass compilation.");
-					}else
-					{
-						Trace.TraceInformation("Compile generated codes and found the following errors:");
-						foreach (var ms in result.Diagnostics)
-						{
-							Trace.TraceError(ms.ToString());
-						}
-
-						Trace.TraceWarning($"Total Errors: {result.Diagnostics.Length}");
-					}
-				}
-				else
-				{
-					gen.Save(path);
-				}
+				gen.Save(path);
 			}
 
 			string CreateTsPath(string folder, string fileName)
