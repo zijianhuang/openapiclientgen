@@ -454,14 +454,14 @@ namespace MyNS
 		public Transaction[] Transactions1 { get; set; }
 	}
 	
-	public partial class PayoutClient
+	public partial class Misc
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public PayoutClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -652,26 +652,6 @@ namespace MyNS
 			}
 			}
 		}
-	}
-	
-	public partial class TransactionClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public TransactionClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
-		}
 		
 		/// <summary>
 		/// This method allows a seller to retrieve one or monetary transactions. In this case, 'monetary transactions' include sales orders, buyer refunds, seller credits, buyer-initiated payment disputes, and eBay shipping label purchases. There are numerous input filters available for use, including filters to retrieve specific types of monetary transactions, to retrieve monetary transactions processed within a specific date range, or to retrieve monetary transactions in a specific state. See the filter field for more information on each filter, and how each one is used. There are also pagination and sort query parameters that allow users to further control the monetary transactions that are returned in the response. If no monetary transactions match the input criteria, an http status code of 204 No Content is returned with no response payload.
@@ -793,26 +773,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-	}
-	
-	public partial class Seller_funds_summaryClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Seller_funds_summaryClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>

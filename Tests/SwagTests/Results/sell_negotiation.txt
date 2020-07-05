@@ -317,14 +317,14 @@ namespace MyNS
 		public Offer[] Offers { get; set; }
 	}
 	
-	public partial class OfferClient
+	public partial class Misc
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public OfferClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");

@@ -512,14 +512,14 @@ namespace MyNS
 		public Error[] Warnings { get; set; }
 	}
 	
-	public partial class Customer_service_metricClient
+	public partial class Misc
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Customer_service_metricClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -591,26 +591,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-	}
-	
-	public partial class Seller_standards_profileClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Seller_standards_profileClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -727,26 +707,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-	}
-	
-	public partial class Traffic_reportClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Traffic_reportClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>

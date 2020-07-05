@@ -261,14 +261,14 @@ namespace MyNS
 		public string Value { get; set; }
 	}
 	
-	public partial class Merchandised_productClient
+	public partial class Misc
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Merchandised_productClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");

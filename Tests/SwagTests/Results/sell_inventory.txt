@@ -2172,14 +2172,14 @@ namespace MyNS
 		public Error[] Warnings { get; set; }
 	}
 	
-	public partial class LocationClient
+	public partial class Misc
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public LocationClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -2579,26 +2579,6 @@ namespace MyNS
 			}
 			}
 			}
-		}
-	}
-	
-	public partial class Inventory_itemClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Inventory_itemClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -3044,26 +3024,6 @@ namespace MyNS
 			}
 			}
 		}
-	}
-	
-	public partial class Product_compatibilityClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Product_compatibilityClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
-		}
 		
 		/// <summary>
 		/// This call is used by the seller to retrieve the list of products that are compatible with the inventory item. The SKU value for the inventory item is passed into the call URI, and a successful call with return the compatible vehicle list associated with this inventory item. Product compatibility is currently only applicable to motor vehicle parts and accessory categories, but more categories may be supported in the future.
@@ -3237,26 +3197,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-	}
-	
-	public partial class OfferClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public OfferClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -4006,26 +3946,6 @@ namespace MyNS
 			}
 			}
 		}
-	}
-	
-	public partial class Inventory_item_groupClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Inventory_item_groupClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
-		}
 		
 		/// <summary>
 		/// This call retrieves the inventory item group for a given inventoryItemGroupKey value. The inventoryItemGroupKey value is passed in at the end of the call URI.
@@ -4199,26 +4119,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-	}
-	
-	public partial class ListingClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public ListingClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>

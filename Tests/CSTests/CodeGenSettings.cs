@@ -4,18 +4,7 @@ namespace SwagTests
 {
 	public static class CodeGenSettings
 	{
-		public static readonly Settings Default = new Settings()
-		{
-			ClientNamespace = "MyNS",
-			PathPrefixToRemove = "/api",
-			ContainerClassName = "Misc",
-			ContainerNameStrategy = ContainerNameStrategy.None,
-			ActionNameStrategy = ActionNameStrategy.Default,
-			GenerateBothAsyncAndSync = true,
-			UseEnsureSuccessStatusCodeEx = true,
-			DataAnnotationsEnabled = true,
-			DataAnnotationsToComments = true,
-		};
+		public static readonly Settings Default = WithActionNameStrategy(ActionNameStrategy.Default);
 
 		public static Settings WithActionNameStrategy(ActionNameStrategy ans)
 		{

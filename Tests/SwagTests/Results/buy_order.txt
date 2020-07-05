@@ -1504,14 +1504,14 @@ namespace MyNS
 		public string ShippingOptionId { get; set; }
 	}
 	
-	public partial class Checkout_sessionClient
+	public partial class Misc
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Checkout_sessionClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -2139,26 +2139,6 @@ namespace MyNS
 			}
 			}
 			}
-		}
-	}
-	
-	public partial class Guest_checkout_sessionClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Guest_checkout_sessionClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>
@@ -2864,26 +2844,6 @@ namespace MyNS
 			}
 			}
 		}
-	}
-	
-	public partial class Proxy_guest_checkout_sessionClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Proxy_guest_checkout_sessionClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
-		}
 		
 		/// <summary>
 		/// (Limited Release) You must be whitelisted to use this method. This method adds a coupon to an eBay proxy guest checkout session and applies it to all the eligible items in the order. The checkoutSessionId is passed in as a URI parameter and is required. The redemption code of the coupon is in the payload and is also required. To meet security requirements for payments, the URLs for this method are: Production URL: https://apix.ebay.com/buy/order/v1 Sandbox URL: https://apix.sandbox.ebay.com/buy/order/v1 Note: This method is not available in the eBay API Explorer. Restrictions Maximum: One coupon per order For a list of supported sites and other restrictions, see API Restrictions in the Order API overview.
@@ -3516,26 +3476,6 @@ namespace MyNS
 			}
 			}
 		}
-	}
-	
-	public partial class Guest_purchase_orderClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Guest_purchase_orderClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
-		}
 		
 		/// <summary>
 		/// This method retrieves the details about a specific guest purchase order. It returns the line items, including purchase order status; dates created and modified; item quantity and listing data; payment and shipping information; and prices, taxes, and discounts and credits. The purchaseOrderId is passed in as a URI parameter and is required. This method has no request payload. The placeGuestOrder or method initiates the payment process, which can sometimes take a few minutes. You can use this method to not only get the details of a purchase order but to check the value of the purchaseOrderPaymentStatus field to determine if the order has been paid for. If the order has been paid for, this field will return PAID. Restrictions For a list of supported sites and other restrictions, see API Restrictions in the Order API overview.
@@ -3593,26 +3533,6 @@ namespace MyNS
 				responseMessage.Dispose();
 			}
 			}
-		}
-	}
-	
-	public partial class Purchase_orderClient
-	{
-		
-		private System.Net.Http.HttpClient client;
-		
-		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public Purchase_orderClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
-		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
-
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
-
-			this.client = client;
-			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>

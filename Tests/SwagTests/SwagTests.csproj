@@ -156,6 +156,7 @@
     <None Remove="Results\SimplePet.txt" />
     <None Remove="Results\Uspto.txt" />
     <None Remove="Results\ValuesPaths.txt" />
+    <None Remove="Results\Vsts\accounts.txt" />
     <None Remove="SwagMock\buy_browse_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_feed_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_marketing_v1_beta_oas3.yaml" />
@@ -207,6 +208,42 @@
     <None Remove="SwagMock\TypeAlias2.json" />
     <None Remove="SwagMock\uspto.yaml" />
     <None Remove="SwagMock\ValuesPaths.json" />
+    <None Remove="SwagMock\Vsts\accounts.json" />
+    <None Remove="SwagMock\Vsts\audit.json" />
+    <None Remove="SwagMock\Vsts\build.json" />
+    <None Remove="SwagMock\Vsts\cloudLoadTest.json" />
+    <None Remove="SwagMock\Vsts\core.json" />
+    <None Remove="SwagMock\Vsts\dashboard.json" />
+    <None Remove="SwagMock\Vsts\extensionManagement.json" />
+    <None Remove="SwagMock\Vsts\feed.json" />
+    <None Remove="SwagMock\Vsts\git.json" />
+    <None Remove="SwagMock\Vsts\graph.json" />
+    <None Remove="SwagMock\Vsts\memberEntitlementManagement.json" />
+    <None Remove="SwagMock\Vsts\notification.json" />
+    <None Remove="SwagMock\Vsts\operations.json" />
+    <None Remove="SwagMock\Vsts\permissionsReport.json" />
+    <None Remove="SwagMock\Vsts\policy.json" />
+    <None Remove="SwagMock\Vsts\profile.json" />
+    <None Remove="SwagMock\Vsts\provenance.json" />
+    <None Remove="SwagMock\Vsts\release.json" />
+    <None Remove="SwagMock\Vsts\search.json" />
+    <None Remove="SwagMock\Vsts\security.json" />
+    <None Remove="SwagMock\Vsts\serviceEndpoint.json" />
+    <None Remove="SwagMock\Vsts\serviceHooks.json" />
+    <None Remove="SwagMock\Vsts\status.json" />
+    <None Remove="SwagMock\Vsts\symbol.json" />
+    <None Remove="SwagMock\Vsts\taskAgent.json" />
+    <None Remove="SwagMock\Vsts\test.json" />
+    <None Remove="SwagMock\Vsts\testPlan.json" />
+    <None Remove="SwagMock\Vsts\testResults.json" />
+    <None Remove="SwagMock\Vsts\tfvc.json" />
+    <None Remove="SwagMock\Vsts\tokenAdmin.json" />
+    <None Remove="SwagMock\Vsts\tokenAdministration.json" />
+    <None Remove="SwagMock\Vsts\wiki.json" />
+    <None Remove="SwagMock\Vsts\work.json" />
+    <None Remove="SwagMock\Vsts\workItemTracking.json" />
+    <None Remove="SwagMock\Vsts\workItemTrackingProcess.json" />
+    <None Remove="SwagMock\Vsts\workItemTrackingProcessTemplate.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -657,6 +694,9 @@
     <Content Include="Results\ValuesPaths.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Results\Vsts\accounts.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SwagMock\buy_browse_v1_beta_oas3.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -808,6 +848,114 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\ValuesPaths.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\accounts.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\audit.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\build.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\cloudLoadTest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\core.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\dashboard.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\extensionManagement.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\feed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\git.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\graph.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\memberEntitlementManagement.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\notification.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\operations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\permissionsReport.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\policy.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\profile.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\provenance.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\release.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\search.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\security.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\serviceEndpoint.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\serviceHooks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\status.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\symbol.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\taskAgent.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\test.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\testPlan.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\testResults.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\tfvc.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\tokenAdmin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\tokenAdministration.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\wiki.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\work.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\workItemTracking.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\workItemTrackingProcess.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\workItemTrackingProcessTemplate.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
