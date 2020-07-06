@@ -383,7 +383,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiInteger intMember)
 				{
-					string memberName = "_" + intMember.Value.ToString();
+					string memberName = "_" + NameFunc.RefineEnumMemberName(intMember.Value.ToString());//take care of negative value
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -401,7 +401,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiLong longMember)
 				{
-					string memberName = "_" + longMember.Value.ToString();
+					string memberName = "_" + NameFunc.RefineEnumMemberName(longMember.Value.ToString());
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -828,7 +828,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiInteger integerValue)
 			{
-				return integerValue.Value.ToString();
+				return (s.Enum == null || s.Enum.Count == 0) ? integerValue.Value.ToString() : NameFunc.RefineEnumValue(integerValue.Value.ToString());
 			}
 
 			if (s.Default is OpenApiBoolean boolValue)

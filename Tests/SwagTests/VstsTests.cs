@@ -1,9 +1,11 @@
-﻿using Fonlow.OpenApiClientGen.ClientTypes;
-using Xunit;
+﻿using Xunit;
 using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// Test with Swagger 2 definitions at https://github.com/MicrosoftDocs/vsts-rest-api-specs
+	/// </summary>
 	public class VstsCsTests
 	{
 		public VstsCsTests(ITestOutputHelper output)

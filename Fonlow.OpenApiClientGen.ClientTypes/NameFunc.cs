@@ -45,7 +45,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
 
-			return ToTitleCase(rs).Replace('-', '_');
+			return ToTitleCase(rs).Replace('-', '_').Replace('[', '_').Replace("]", ""); // for something like PartialFindResult[ActivityEntryForApiContract]
 		}
 
 		public static string RefineEnumMemberName(string s)
@@ -62,7 +62,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (int.TryParse(s, out _))//youtube api has funky enum member 360
 			{
-				return "_" + s;
+				return ("_" + s).Replace('-', '_'); // zoom has -1 as enum member.
 			}
 
 			var rs = s.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
@@ -93,12 +93,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return "_" + s;
 			}
 
+			if (int.TryParse(s, out _))//youtube api has funky enum member 360
+			{
+				System.Diagnostics.Debug.Assert(s != "-1");
+				return ("_" + s).Replace('-', '_'); // zoom has -1 as enum member.
+			}
+
 			var rs = s.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
 						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
 						.Replace(":", "")//atlassian api has this.
 						.Replace('+', '_');
 
-			if (!Char.IsLetter(rs[0]) && rs[0] != '_' && !int.TryParse(rs, out int _) && !double.TryParse(rs, out double _))
+			if (!Char.IsLetter(rs[0]) && rs[0] != '_' && (int.TryParse(rs, out int _) || double.TryParse(rs, out double _)))
 			{
 				rs = "_" + rs;
 			}
@@ -118,7 +124,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return "_" + s;
 			}
 
-			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_');
+			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_').Replace('[', '_').Replace("]", "");
 			
 			return rs;
 		}
@@ -130,7 +136,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
-			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_'));
+			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_')
+				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_')
+				.Replace(' ', '_'));
 		}
 
 		public static string RefineTsPropertyName(string s)
@@ -140,7 +148,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
-			return s.Replace("$", "").Replace(':', '_').Replace('-', '_');
+			return s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace(' ', '_');
 		}
 
 		public static string ToTitleCase(string s)

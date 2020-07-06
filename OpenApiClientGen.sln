@@ -49,7 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsSwagger2Tests", "Tests\Cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateCases", "Tests\GenerateCases\GenerateCases.csproj", "{5309D429-9D5A-4175-9602-F770EE3A3198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCodesValidation", "Tests\ClientCodesValidation\ClientCodesValidation.csproj", "{CC503714-47BB-42F3-A703-0271470FAD82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientCodesValidation", "Tests\ClientCodesValidation\ClientCodesValidation.csproj", "{CC503714-47BB-42F3-A703-0271470FAD82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateClientApi", "Tests\ValidateClientApi\ValidateClientApi.csproj", "{DEDC07C3-C25F-4C88-A874-243E79746A08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{CC503714-47BB-42F3-A703-0271470FAD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC503714-47BB-42F3-A703-0271470FAD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC503714-47BB-42F3-A703-0271470FAD82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDC07C3-C25F-4C88-A874-243E79746A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDC07C3-C25F-4C88-A874-243E79746A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDC07C3-C25F-4C88-A874-243E79746A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDC07C3-C25F-4C88-A874-243E79746A08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +153,7 @@ Global
 		{442E12DB-6824-44D9-864A-54A26FEB3097} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{5309D429-9D5A-4175-9602-F770EE3A3198} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{CC503714-47BB-42F3-A703-0271470FAD82} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
+		{DEDC07C3-C25F-4C88-A874-243E79746A08} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BEA7BD1-2BD3-4E85-8E05-D98DE5C44574}
