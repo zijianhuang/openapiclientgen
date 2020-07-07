@@ -157,6 +157,12 @@ export namespace MyNS {
 		Put(requestBody: Pet): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
+	}
+
+	@Injectable()
+	export class Pet_petIdClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
 
 		/**
 		 * Find pet by ID
@@ -181,7 +187,7 @@ export namespace MyNS {
 	}
 
 	@Injectable()
-	export class PetUploadImageClient {
+	export class Pet_petIdUploadImageClient {
 		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 	}
@@ -250,6 +256,12 @@ export namespace MyNS {
 		Post(requestBody: Order): Observable<Order> {
 			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
+	}
+
+	@Injectable()
+	export class StoreOrder_orderIdClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
 
 		/**
 		 * Find purchase order by ID
@@ -288,6 +300,12 @@ export namespace MyNS {
 		 */
 		Post(requestBody: User): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
+		}
+	}
+
+	@Injectable()
+	export class User_usernameClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
 		}
 
 		/**

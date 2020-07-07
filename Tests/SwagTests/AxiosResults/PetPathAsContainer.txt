@@ -155,6 +155,11 @@ export namespace MyNS {
 		Put(requestBody: Pet): Promise<AxiosResponse<string>> {
 			return Axios.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
+	}
+
+	export class Pet_petIdClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
 
 		/**
 		 * Find pet by ID
@@ -178,7 +183,7 @@ export namespace MyNS {
 		}
 	}
 
-	export class PetUploadImageClient {
+	export class Pet_petIdUploadImageClient {
 		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
 		}
 	}
@@ -243,6 +248,11 @@ export namespace MyNS {
 		Post(requestBody: Order): Promise<Order> {
 			return Axios.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
 		}
+	}
+
+	export class StoreOrder_orderIdClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
 
 		/**
 		 * Find purchase order by ID
@@ -280,6 +290,11 @@ export namespace MyNS {
 		 */
 		Post(requestBody: User): Promise<AxiosResponse<string>> {
 			return Axios.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+		}
+	}
+
+	export class User_usernameClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
 		}
 
 		/**

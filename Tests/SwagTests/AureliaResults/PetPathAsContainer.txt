@@ -156,6 +156,12 @@ export namespace MyNS {
 		Put(requestBody: Pet): Promise<Response> {
 			return this.http.put('pet', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
+	}
+
+	@autoinject()
+	export class Pet_petIdClient {
+		constructor(private http: HttpClient) {
+		}
 
 		/**
 		 * Find pet by ID
@@ -180,7 +186,7 @@ export namespace MyNS {
 	}
 
 	@autoinject()
-	export class PetUploadImageClient {
+	export class Pet_petIdUploadImageClient {
 		constructor(private http: HttpClient) {
 		}
 	}
@@ -249,6 +255,12 @@ export namespace MyNS {
 		Post(requestBody: Order): Promise<Order> {
 			return this.http.post('store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
 		}
+	}
+
+	@autoinject()
+	export class StoreOrder_orderIdClient {
+		constructor(private http: HttpClient) {
+		}
 
 		/**
 		 * Find purchase order by ID
@@ -287,6 +299,12 @@ export namespace MyNS {
 		 */
 		Post(requestBody: User): Promise<Response> {
 			return this.http.post('user', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+	}
+
+	@autoinject()
+	export class User_usernameClient {
+		constructor(private http: HttpClient) {
 		}
 
 		/**

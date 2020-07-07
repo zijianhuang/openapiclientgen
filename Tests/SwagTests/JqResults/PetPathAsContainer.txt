@@ -154,6 +154,11 @@ export namespace MyNS {
 		Put(callback: (data : void) => any, requestBody: Pet) {
 			this.httpClient.put(this.baseUri + 'pet', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
+	}
+
+	export class Pet_petIdClient {
+		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
+		}
 
 		/**
 		 * Find pet by ID
@@ -177,7 +182,7 @@ export namespace MyNS {
 		}
 	}
 
-	export class PetUploadImageClient {
+	export class Pet_petIdUploadImageClient {
 		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
 		}
 	}
@@ -242,6 +247,11 @@ export namespace MyNS {
 		Post(callback: (data : Order) => any, requestBody: Order) {
 			this.httpClient.post(this.baseUri + 'store/order', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
+	}
+
+	export class StoreOrder_orderIdClient {
+		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
+		}
 
 		/**
 		 * Find purchase order by ID
@@ -279,6 +289,11 @@ export namespace MyNS {
 		 */
 		Post(callback: (data : void) => any, requestBody: User) {
 			this.httpClient.post(this.baseUri + 'user', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
+		}
+	}
+
+	export class User_usernameClient {
+		constructor(private baseUri: string = HttpClient.locationOrigin, private httpClient: HttpClientBase = new HttpClient(), private error?: (xhr: JQueryXHR, ajaxOptions: string, thrown: string) => any, private statusCode?: { [key: string]: any; }) {
 		}
 
 		/**

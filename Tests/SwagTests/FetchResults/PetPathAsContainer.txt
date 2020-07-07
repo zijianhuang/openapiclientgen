@@ -153,6 +153,11 @@ export namespace MyNS {
 		Put(requestBody: Pet): Promise<Response> {
 			return fetch(this.baseUri + 'pet', { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) });
 		}
+	}
+
+	export class Pet_petIdClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
 
 		/**
 		 * Find pet by ID
@@ -176,7 +181,7 @@ export namespace MyNS {
 		}
 	}
 
-	export class PetUploadImageClient {
+	export class Pet_petIdUploadImageClient {
 		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
 		}
 	}
@@ -241,6 +246,11 @@ export namespace MyNS {
 		Post(requestBody: Order): Promise<Order> {
 			return fetch(this.baseUri + 'store/order', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
 		}
+	}
+
+	export class StoreOrder_orderIdClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
 
 		/**
 		 * Find purchase order by ID
@@ -278,6 +288,11 @@ export namespace MyNS {
 		 */
 		Post(requestBody: User): Promise<Response> {
 			return fetch(this.baseUri + 'user', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) });
+		}
+	}
+
+	export class User_usernameClient {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
 		}
 
 		/**

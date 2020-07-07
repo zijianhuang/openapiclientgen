@@ -165,7 +165,7 @@ export namespace MyNS {
 		 * @param {number} petId ID of pet to return
 		 * @return {Pet} successful operation
 		 */
-		PetGetByPetId(petId: number): Observable<Pet> {
+		Pet_petIdGet(petId: number): Observable<Pet> {
 			return this.http.get<Pet>(this.baseUri + 'pet/' + petId, {});
 		}
 
@@ -175,7 +175,7 @@ export namespace MyNS {
 		 * @param {number} petId Pet id to delete
 		 * @return {void} 
 		 */
-		PetDeleteByPetId(petId: number): Observable<HttpResponse<string>> {
+		Pet_petIdDelete(petId: number): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'pet/' + petId, { observe: 'response', responseType: 'text' });
 		}
 
@@ -228,7 +228,7 @@ export namespace MyNS {
 		 * @param {number} orderId ID of pet that needs to be fetched
 		 * @return {Order} successful operation
 		 */
-		StoreOrderGetByOrderId(orderId: number): Observable<Order> {
+		StoreOrder_orderIdGet(orderId: number): Observable<Order> {
 			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, {});
 		}
 
@@ -239,7 +239,7 @@ export namespace MyNS {
 		 * @param {string} orderId ID of the order that needs to be deleted
 		 * @return {void} 
 		 */
-		StoreOrderDeleteByOrderId(orderId: string): Observable<HttpResponse<string>> {
+		StoreOrder_orderIdDelete(orderId: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -260,7 +260,7 @@ export namespace MyNS {
 		 * @param {string} username The name that needs to be fetched. Use user1 for testing. 
 		 * @return {User} successful operation
 		 */
-		UserGetByUsername(username: string): Observable<User> {
+		User_usernameGet(username: string): Observable<User> {
 			return this.http.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), {});
 		}
 
@@ -272,7 +272,7 @@ export namespace MyNS {
 		 * @param {User} requestBody Updated user object
 		 * @return {void} 
 		 */
-		UserPutByUsername(username: string, requestBody: User): Observable<HttpResponse<string>> {
+		User_usernamePut(username: string, requestBody: User): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -283,7 +283,7 @@ export namespace MyNS {
 		 * @param {string} username The name that needs to be deleted
 		 * @return {void} 
 		 */
-		UserDeleteByUsername(username: string): Observable<HttpResponse<string>> {
+		User_usernameDelete(username: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { observe: 'response', responseType: 'text' });
 		}
 

@@ -328,6 +328,26 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public partial class Pet_petIdClient
+	{
+		
+		private System.Net.Http.HttpClient client;
+		
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public Pet_petIdClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		{
+			if (client == null)
+				throw new ArgumentNullException("Null HttpClient.", "client");
+
+			if (client.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
+
+			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
+		}
 		
 		/// <summary>
 		/// Find pet by ID
@@ -382,14 +402,14 @@ namespace MyNS
 		}
 	}
 	
-	public partial class PetUploadImageClient
+	public partial class Pet_petIdUploadImageClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public PetUploadImageClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public Pet_petIdUploadImageClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -603,6 +623,26 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public partial class StoreOrder_orderIdClient
+	{
+		
+		private System.Net.Http.HttpClient client;
+		
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public StoreOrder_orderIdClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		{
+			if (client == null)
+				throw new ArgumentNullException("Null HttpClient.", "client");
+
+			if (client.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
+
+			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
+		}
 		
 		/// <summary>
 		/// Find purchase order by ID
@@ -704,6 +744,26 @@ namespace MyNS
 			}
 			}
 			}
+		}
+	}
+	
+	public partial class User_usernameClient
+	{
+		
+		private System.Net.Http.HttpClient client;
+		
+		private JsonSerializerSettings jsonSerializerSettings;
+		
+		public User_usernameClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		{
+			if (client == null)
+				throw new ArgumentNullException("Null HttpClient.", "client");
+
+			if (client.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
+
+			this.client = client;
+			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
 		/// <summary>

@@ -383,7 +383,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiInteger intMember)
 				{
-					string memberName = "_" + NameFunc.RefineEnumMemberName(intMember.Value.ToString());//take care of negative value
+					string memberName = NameFunc.RefineEnumMemberName(intMember.Value.ToString());//take care of negative value
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -401,7 +401,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiLong longMember)
 				{
-					string memberName = "_" + NameFunc.RefineEnumMemberName(longMember.Value.ToString());
+					string memberName = NameFunc.RefineEnumMemberName(longMember.Value.ToString());
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -816,9 +816,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiString stringValue)
 			{
-				if ((s.Enum == null || s.Enum.Count == 0) && s.Type == "string") //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
+				if (s.Enum == null || s.Enum.Count == 0) //Sometimes people make make a number default with value string. And this mistake seems common. Better to tolerate.
 				{
-					return "\"" + EscapeString(stringValue.Value) + "\"";
+					if (s.Type == "string")
+					{
+						return "\"" + EscapeString(stringValue.Value) + "\"";
+					}
+
+					return stringValue.Value;
 				}
 				else //enum
 				{

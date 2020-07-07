@@ -332,11 +332,11 @@ namespace MyNS
 		/// <summary>
 		/// Find pet by ID
 		/// Returns a single pet
-		/// PetGetByPetId pet/{petId}
+		/// Pet_petIdGet pet/{petId}
 		/// </summary>
 		/// <param name="petId">ID of pet to return</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet> PetGetByPetIdAsync(long petId)
+		public async Task<Pet> Pet_petIdGetAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -361,10 +361,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Deletes a pet
-		/// PetDeleteByPetId pet/{petId}
+		/// Pet_petIdDelete pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public async Task PetDeleteByPetIdAsync(long petId)
+		public async Task Pet_petIdDeleteAsync(long petId)
 		{
 			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
@@ -507,11 +507,11 @@ namespace MyNS
 		/// <summary>
 		/// Find purchase order by ID
 		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
-		/// StoreOrderGetByOrderId store/order/{orderId}
+		/// StoreOrder_orderIdGet store/order/{orderId}
 		/// </summary>
 		/// <param name="orderId">ID of pet that needs to be fetched</param>
 		/// <returns>successful operation</returns>
-		public async Task<Order> StoreOrderGetByOrderIdAsync(long orderId)
+		public async Task<Order> StoreOrder_orderIdGetAsync(long orderId)
 		{
 			var requestUri = "store/order/"+orderId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -537,10 +537,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete purchase order by ID
 		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
-		/// StoreOrderDeleteByOrderId store/order/{orderId}
+		/// StoreOrder_orderIdDelete store/order/{orderId}
 		/// </summary>
 		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public async Task StoreOrderDeleteByOrderIdAsync(string orderId)
+		public async Task StoreOrder_orderIdDeleteAsync(string orderId)
 		{
 			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
@@ -588,11 +588,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Get user by user name
-		/// UserGetByUsername user/{username}
+		/// User_usernameGet user/{username}
 		/// </summary>
 		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
 		/// <returns>successful operation</returns>
-		public async Task<User> UserGetByUsernameAsync(string username)
+		public async Task<User> User_usernameGetAsync(string username)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -618,11 +618,11 @@ namespace MyNS
 		/// <summary>
 		/// Updated user
 		/// This can only be done by the logged in user.
-		/// UserPutByUsername user/{username}
+		/// User_usernamePut user/{username}
 		/// </summary>
 		/// <param name="username">name that need to be deleted</param>
 		/// <param name="requestBody">Updated user object</param>
-		public async Task UserPutByUsernameAsync(string username, User requestBody)
+		public async Task User_usernamePutAsync(string username, User requestBody)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -648,10 +648,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete user
 		/// This can only be done by the logged in user.
-		/// UserDeleteByUsername user/{username}
+		/// User_usernameDelete user/{username}
 		/// </summary>
 		/// <param name="username">The name that needs to be deleted</param>
-		public async Task UserDeleteByUsernameAsync(string username)
+		public async Task User_usernameDeleteAsync(string username)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))

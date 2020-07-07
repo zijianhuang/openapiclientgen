@@ -162,7 +162,7 @@ export namespace MyNS {
 		 * @param {number} petId ID of pet to return
 		 * @return {Pet} successful operation
 		 */
-		PetGetByPetId(petId: number, callback: (data : Pet) => any) {
+		Pet_petIdGet(petId: number, callback: (data : Pet) => any) {
 			this.httpClient.get(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode);
 		}
 
@@ -172,7 +172,7 @@ export namespace MyNS {
 		 * @param {number} petId Pet id to delete
 		 * @return {void} 
 		 */
-		PetDeleteByPetId(petId: number, callback: (data : void) => any) {
+		Pet_petIdDelete(petId: number, callback: (data : void) => any) {
 			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode);
 		}
 
@@ -225,7 +225,7 @@ export namespace MyNS {
 		 * @param {number} orderId ID of pet that needs to be fetched
 		 * @return {Order} successful operation
 		 */
-		StoreOrderGetByOrderId(orderId: number, callback: (data : Order) => any) {
+		StoreOrder_orderIdGet(orderId: number, callback: (data : Order) => any) {
 			this.httpClient.get(this.baseUri + 'store/order/' + orderId, callback, this.error, this.statusCode);
 		}
 
@@ -236,7 +236,7 @@ export namespace MyNS {
 		 * @param {string} orderId ID of the order that needs to be deleted
 		 * @return {void} 
 		 */
-		StoreOrderDeleteByOrderId(orderId: string, callback: (data : void) => any) {
+		StoreOrder_orderIdDelete(orderId: string, callback: (data : void) => any) {
 			this.httpClient.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), callback, this.error, this.statusCode);
 		}
 
@@ -257,7 +257,7 @@ export namespace MyNS {
 		 * @param {string} username The name that needs to be fetched. Use user1 for testing. 
 		 * @return {User} successful operation
 		 */
-		UserGetByUsername(username: string, callback: (data : User) => any) {
+		User_usernameGet(username: string, callback: (data : User) => any) {
 			this.httpClient.get(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), callback, this.error, this.statusCode);
 		}
 
@@ -269,7 +269,7 @@ export namespace MyNS {
 		 * @param {User} requestBody Updated user object
 		 * @return {void} 
 		 */
-		UserPutByUsername(username: string, callback: (data : void) => any, requestBody: User) {
+		User_usernamePut(username: string, callback: (data : void) => any, requestBody: User) {
 			this.httpClient.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8');
 		}
 
@@ -280,7 +280,7 @@ export namespace MyNS {
 		 * @param {string} username The name that needs to be deleted
 		 * @return {void} 
 		 */
-		UserDeleteByUsername(username: string, callback: (data : void) => any) {
+		User_usernameDelete(username: string, callback: (data : void) => any) {
 			this.httpClient.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), callback, this.error, this.statusCode);
 		}
 
