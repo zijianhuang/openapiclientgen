@@ -236,6 +236,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return arrayCodeTypeReference;
 					}
 				}
+				else if (apiParameterSchema.Reference ==null && apiParameterSchema.Properties != null && apiParameterSchema.Properties.Count > 0) // for casual type
+				{
+					string casualTypeName = actionName + NameFunc.RefinePropertyName(apiParameterName);
+					var found = com2CodeDom.FindTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
+					if (found == null)
+					{
+						CodeTypeDeclaration casualTypeDeclaration = com2CodeDom.AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
+						com2CodeDom.AddProperties(casualTypeDeclaration, apiParameterSchema, casualTypeName, null);
+					}
+
+					return TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
+				}
 				else if (apiParameterSchema.Enum.Count == 0 && apiParameterSchema.Reference != null && !isPrimitiveType) // for complex type
 				{
 					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(apiParameterSchema.Reference.Id);

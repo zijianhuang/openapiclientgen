@@ -844,7 +844,7 @@ namespace MyNS
 		/// Add subscription for a store events
 		/// Subscribe store/subscribe
 		/// </summary>
-		public async Task SubscribeAsync(SubscribeBody requestBody)
+		public async Task SubscribeAsync(SubscribePostBody requestBody)
 		{
 			var requestUri = "store/subscribe";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -872,7 +872,7 @@ namespace MyNS
 		/// Add subscription for a store events
 		/// Subscribe store/subscribe
 		/// </summary>
-		public void Subscribe(SubscribeBody requestBody)
+		public void Subscribe(SubscribePostBody requestBody)
 		{
 			var requestUri = "store/subscribe";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1302,7 +1302,7 @@ namespace MyNS
 		}
 	}
 	
-	public class SubscribeBody
+	public class SubscribePostBody
 	{
 		
 		/// <summary>
@@ -1315,10 +1315,10 @@ namespace MyNS
 		/// Event name for the subscription
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public SubscribeBodyEventName EventName { get; set; }
+		public SubscribePostBodyEventName EventName { get; set; }
 	}
 	
-	public enum SubscribeBodyEventName
+	public enum SubscribePostBodyEventName
 	{
 		
 		orderInProgress = 0,

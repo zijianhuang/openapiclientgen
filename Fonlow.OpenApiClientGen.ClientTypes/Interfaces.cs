@@ -15,6 +15,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList);
 
+		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns);
+
 		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns);
 
 		OpenApiSchema FindSchema(string key);

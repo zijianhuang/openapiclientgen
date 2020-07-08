@@ -7,14 +7,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class BodyContentRefBuilder
 	{
-		public BodyContentRefBuilder(IComponentToCodeDom componentsToCodeDom, NameComposer nameComposer)
+		public BodyContentRefBuilder(IComponentToCodeDom com2CodeDom, string actionName)
 		{
-			this.componentsToCodeDom = componentsToCodeDom;
-			this.nameComposer = nameComposer;
+			this.parametersRefBuilder = new ParametersRefBuilder(com2CodeDom, actionName);
+			//this.actionName = actionName;
 		}
 
-		readonly IComponentToCodeDom componentsToCodeDom;
-		readonly NameComposer nameComposer;
+		readonly ParametersRefBuilder parametersRefBuilder;
+		//readonly string actionName;
 
 		/// <summary>
 		/// Get CodeTypeReference and description of requestBody of operation.
@@ -34,7 +34,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						try
 						{
-							return Tuple.Create(TypeRefHelper.OpenApiMediaTypeToCodeTypeReference(content), description, true);
+							return Tuple.Create(parametersRefBuilder.OpenApiParameterSchemaToCodeTypeReference(content.Schema, httpMethod + "Body"), description, true);
 						}
 						catch (ArgumentException ex)
 						{
@@ -49,36 +49,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (op.RequestBody.Content.TryGetValue("application/json", out content))
 				{
-					if (content.Schema != null && content.Schema.Reference != null)
+					if (content.Schema != null)
 					{
-						var ns = NameFunc.GetNamespaceOfClassName(content.Schema.Reference.Id);
-						string typeName = NameFunc.RefineTypeName(content.Schema.Reference.Id, ns);
-						CodeTypeReference codeTypeReference = new CodeTypeReference(NameFunc.CombineNamespaceWithClassName(ns, typeName));
+						CodeTypeReference codeTypeReference = parametersRefBuilder.OpenApiParameterSchemaToCodeTypeReference(content.Schema, httpMethod + "Body");
 						return Tuple.Create(codeTypeReference, description, true);
 					}
-					else if (content.Schema.Type == "object") // Casual type like what defined in /store/subscribe
-					{
-						string newTypeName = nameComposer.GetActionName(op, httpMethod, path) + "Body";
-						if (componentsToCodeDom.FindTypeDeclarationInNamespaces(newTypeName, null) == null)
-						{
-							componentsToCodeDom.AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, content.Schema));
-							System.Diagnostics.Trace.TraceInformation($"Casual type {newTypeName} created for operation.");
-						}
-
-						CodeTypeReference codeTypeReference = new CodeTypeReference(newTypeName);
-						return Tuple.Create(codeTypeReference, description, true);
-					}
-
-					try
-					{
-						return Tuple.Create(TypeRefHelper.OpenApiMediaTypeToCodeTypeReference(content), description, true);
-
-					}
-					catch (ArgumentException ex)
-					{
-						throw new CodeGenException($"Definition {path}=>{httpMethod} for op.RequestBody.Content triggers error: {ex.Message}");
-					}
-
 				}
 				else if (op.RequestBody.Content.Count > 0) // with content but not supported
 				{

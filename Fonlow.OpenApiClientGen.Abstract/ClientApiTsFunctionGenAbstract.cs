@@ -41,10 +41,10 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			this.nameComposer = new NameComposer(settings);
-			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
 			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
+			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, ActionName);
 			this.parametersRefBuilder = new ParametersRefBuilder(com2TsTypes, ActionName);
 			this.ParameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)

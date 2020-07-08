@@ -460,7 +460,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
+		public void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{

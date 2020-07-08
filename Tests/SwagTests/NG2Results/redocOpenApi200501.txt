@@ -284,7 +284,7 @@ export namespace MyNS {
 		 * Post store/subscribe
 		 * @return {void} 
 		 */
-		Subscribe(requestBody: SubscribeBody): Observable<HttpResponse<string>> {
+		Subscribe(requestBody: SubscribePostBody): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'store/subscribe', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}
@@ -377,16 +377,16 @@ export namespace MyNS {
 		}
 	}
 
-	export interface SubscribeBody {
+	export interface SubscribePostBody {
 
 		/** This URL will be called by the server when the desired event will occur */
 		callbackUrl: string;
 
 		/** Event name for the subscription */
-		eventName: SubscribeBodyEventName;
+		eventName: SubscribePostBodyEventName;
 	}
 
-	export enum SubscribeBodyEventName { orderInProgress = 0, orderShipped = 1, orderDelivered = 2 }
+	export enum SubscribePostBodyEventName { orderInProgress = 0, orderShipped = 1, orderDelivered = 2 }
 
 }
 

@@ -49,7 +49,6 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			this.settings = settings;
 			this.nameComposer = new NameComposer(settings);
-			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, nameComposer);
 			this.apiOperation = apiOperation;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
 
@@ -64,6 +63,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			if (actionName.EndsWith("Async"))
 				actionName = actionName[0..^5];
 
+			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, actionName);
 			this.parametersRefBuilder = new ParametersRefBuilder(coms2CsTypes, actionName);
 			this.parameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
