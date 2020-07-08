@@ -464,249 +464,255 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
-				string propertyName = NameFunc.RefinePropertyName(p.Key);
-				if (propertyName == currentTypeName)
+				AddProperty(p, typeDeclaration, schema, currentTypeName, ns);
+			}
+		}
+
+		void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
+		{
+			string propertyName = NameFunc.RefinePropertyName(p.Key);
+			if (propertyName == currentTypeName)
+			{
+				Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
+				propertyName += "1";
+			}
+
+			if (!Char.IsLetter(propertyName[0]) && propertyName[0] != '_')
+			{
+				propertyName = "_" + propertyName;
+			}
+
+			bool propertyNameAdjusted = propertyName != p.Key;
+
+			OpenApiSchema propertySchema = p.Value;
+			string primitivePropertyType = propertySchema.Type;
+			bool isPrimitiveType = TypeRefHelper.IsPrimitiveType(primitivePropertyType);
+			bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
+			string defaultValue = GetDefaultValue(propertySchema);
+			CodeMemberField clientProperty;
+
+			void GenerateCasualEnum()
+			{
+				string casualEnumName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
+				CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
+				if (existingType == null)
 				{
-					Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
-					propertyName += "1";
-				}
+					CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
+					AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
 
-				if (!Char.IsLetter(propertyName[0]) && propertyName[0] != '_')
-				{
-					propertyName = "_" + propertyName;
-				}
-
-				bool propertyNameAdjusted = propertyName != p.Key;
-
-				OpenApiSchema propertySchema = p.Value;
-				string primitivePropertyType = propertySchema.Type;
-				bool isPrimitiveType = TypeRefHelper.IsPrimitiveType(primitivePropertyType);
-				bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
-				string defaultValue = GetDefaultValue(propertySchema);
-				CodeMemberField clientProperty;
-
-				void GenerateCasualEnum()
-				{
-					string casualEnumName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
-					CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
-					if (existingType == null)
+					if (settings.DecorateDataModelWithDataContract)
 					{
-						CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
-						AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-
-						if (settings.DecorateDataModelWithDataContract)
-						{
-							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
-						}
-
-						if (settings.DecorateDataModelWithSerializable)
-						{
-							casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
-						}
-
-						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
-
-						Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
+						casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
 					}
-					else
+
+					if (settings.DecorateDataModelWithSerializable)
 					{
-						clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
+						casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
 					}
-				}
 
-				//Debug.Assert(propertySchema.Reference?.Id != "DeallocationOption");
-				if (String.IsNullOrEmpty(primitivePropertyType))
-				{
-					if (propertySchema.Reference != null)
-					{
-						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-						string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-						string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
-						clientProperty = CreateProperty(propertyName, propertyTypeWithNs, defaultValue);
-					}
-					else
-					{
-						if (propertySchema.Enum.Count > 0) //for casual enum
-						{
-							GenerateCasualEnum();
-						}
-						else
-						{
-							OpenApiSchema refToType = null;
-							if (propertySchema.AllOf.Count > 0)
-							{
-								refToType = propertySchema.AllOf[0];
-							}
-							else if (propertySchema.OneOf.Count > 0)
-							{
-								refToType = propertySchema.OneOf[0];
-							}
-							else if (propertySchema.AnyOf.Count > 0)
-							{
-								refToType = propertySchema.AnyOf[0];
-							}
-							else if (refToType == null)
-							{
-								Trace.TraceWarning($"Property '{p.Key}' of {currentTypeName} may be of type object.");
-							}
+					clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
 
-							string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
-							string customPropertyFormat = refToType?.Format;
-							Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-							if (!customType.IsClass && !isRequired)
-							{
-								clientProperty = CreateNullableProperty(propertyName, customType);
-							}
-							else
-							{
-								clientProperty = CreateProperty(propertyName, customType, defaultValue);
-							}
-						}
-					}
+					Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
 				}
 				else
 				{
-					if (propertySchema.Type == "array") // for array
-					{
-						OpenApiSchema arrayItemsSchema = propertySchema.Items;
-						if (arrayItemsSchema.Reference != null) //array of custom type
-						{
-							string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
-							var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
-							var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
-							var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
-							var existingType = FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
-							if (existingType == null) // Referencing to a type not yet added to namespace
-							{
-								var existingSchema = FindSchema(arrayTypeSchemaRefId);
-								if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
-								{
-									AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
-								}
-							}
-
-							if (TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
-							{
-								if (!TypeRefHelper.IsSwaggerPrimitive(arrayTypeNameAlias))
-								{
-									CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
-									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
-								}
-								else
-								{
-									var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
-									CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1);
-									clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
-								}
-							}
-							else
-							{
-								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
-							}
-						}
-						else
-						{
-							string arrayType = arrayItemsSchema.Type;
-							if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
-							{
-								string casualTypeName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
-								CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
-								AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
-								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, defaultValue);
-							}
-							else
-							{
-								Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
-								CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
-							}
-						}
-					}
-					else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
-					{
-						string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-						var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
-						if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
-						{
-							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
-						}
-
-						var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
-						clientProperty = CreateProperty(propertyName, typeWithNs, defaultValue);
-					}
-					else if (propertySchema.Enum.Count == 0) // for primitive type
-					{
-						Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-						if (!simpleType.IsClass && !isRequired)
-						{
-							clientProperty = CreateNullableProperty(propertyName, simpleType);
-						}
-						else
-						{
-							clientProperty = CreateProperty(propertyName, simpleType, defaultValue);
-						}
-					}
-					else // for enum
-					{
-						if (propertySchema.Reference != null)
-						{
-							var propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-							string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-							string typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
-							var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
-							if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
-							{
-								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
-							}
-
-							clientProperty = CreateProperty(propertyName, typeWithNs, String.IsNullOrEmpty(defaultValue)? null : typeWithNs + "." + defaultValue);
-						}
-						else //for casual enum
-						{
-							GenerateCasualEnum();
-						}
-
-						if (isRequired)
-						{
-							clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
-						}
-
-						CreateMemberDocComment(p, clientProperty);
-						typeDeclaration.Members.Add(clientProperty);
-						continue;
-					}
+					clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
 				}
+			}
 
-				if (isRequired)
+			//Debug.Assert(propertySchema.Reference?.Id != "DeallocationOption");
+			if (String.IsNullOrEmpty(primitivePropertyType))
+			{
+				if (propertySchema.Reference != null)
 				{
-					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
+					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
+					clientProperty = CreateProperty(propertyName, propertyTypeWithNs, defaultValue);
 				}
-
-				if (settings.DecorateDataModelWithDataContract)
+				else
 				{
-					if (propertyNameAdjusted)
+					if (propertySchema.Enum.Count > 0) //for casual enum
 					{
-						var originalPropertyName = p.Key;
-						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{originalPropertyName}\""))));
+						GenerateCasualEnum();
 					}
 					else
 					{
-						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
+						OpenApiSchema refToType = null;
+						if (propertySchema.AllOf.Count > 0)
+						{
+							refToType = propertySchema.AllOf[0];
+						}
+						else if (propertySchema.OneOf.Count > 0)
+						{
+							refToType = propertySchema.OneOf[0];
+						}
+						else if (propertySchema.AnyOf.Count > 0)
+						{
+							refToType = propertySchema.AnyOf[0];
+						}
+						else if (refToType == null)
+						{
+							Trace.TraceWarning($"Property '{p.Key}' of {currentTypeName} may be of type object.");
+						}
+
+						string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
+						string customPropertyFormat = refToType?.Format;
+						Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
+						if (!customType.IsClass && !isRequired)
+						{
+							clientProperty = CreateNullableProperty(propertyName, customType);
+						}
+						else
+						{
+							clientProperty = CreateProperty(propertyName, customType, defaultValue);
+						}
 					}
 				}
-
-				CreateMemberDocComment(p, clientProperty);
-
-				if (settings.DataAnnotationsEnabled)
-				{
-					AddValidationAttributes(propertySchema, clientProperty);
-				}
-
-				typeDeclaration.Members.Add(clientProperty);
 			}
+			else
+			{
+				if (propertySchema.Type == "array") // for array
+				{
+					OpenApiSchema arrayItemsSchema = propertySchema.Items;
+					if (arrayItemsSchema.Reference != null) //array of custom type
+					{
+						string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
+						var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
+						var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
+						var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
+						var existingType = FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
+						if (existingType == null) // Referencing to a type not yet added to namespace
+						{
+							var existingSchema = FindSchema(arrayTypeSchemaRefId);
+							if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
+							{
+								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
+							}
+						}
+
+						if (TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
+						{
+							if (!TypeRefHelper.IsSwaggerPrimitive(arrayTypeNameAlias))
+							{
+								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
+								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+							}
+							else
+							{
+								var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
+								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1);
+								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+							}
+						}
+						else
+						{
+							CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1);
+							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+						}
+					}
+					else
+					{
+						string arrayType = arrayItemsSchema.Type;
+						if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
+						{
+							string casualTypeName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
+							CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
+							AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
+							CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1);
+							clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, defaultValue);
+						}
+						else
+						{
+							Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
+							CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
+							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
+						}
+					}
+				}
+				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
+				{
+					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+					string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+					var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
+					if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
+					{
+						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
+					}
+
+					var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
+					clientProperty = CreateProperty(propertyName, typeWithNs, defaultValue);
+				}
+				else if (propertySchema.Enum.Count == 0) // for primitive type
+				{
+					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
+					if (!simpleType.IsClass && !isRequired)
+					{
+						clientProperty = CreateNullableProperty(propertyName, simpleType);
+					}
+					else
+					{
+						clientProperty = CreateProperty(propertyName, simpleType, defaultValue);
+					}
+				}
+				else // for enum
+				{
+					if (propertySchema.Reference != null)
+					{
+						var propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+						string typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
+						var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
+						if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
+						{
+							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
+						}
+
+						clientProperty = CreateProperty(propertyName, typeWithNs, String.IsNullOrEmpty(defaultValue) ? null : typeWithNs + "." + defaultValue);
+					}
+					else //for casual enum
+					{
+						GenerateCasualEnum();
+					}
+
+					if (isRequired)
+					{
+						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
+					}
+
+					CreateMemberDocComment(p, clientProperty);
+					typeDeclaration.Members.Add(clientProperty);
+					return;
+				}
+			}
+
+			if (isRequired)
+			{
+				clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
+			}
+
+			if (settings.DecorateDataModelWithDataContract)
+			{
+				if (propertyNameAdjusted)
+				{
+					var originalPropertyName = p.Key;
+					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{originalPropertyName}\""))));
+				}
+				else
+				{
+					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember"));
+				}
+			}
+
+			CreateMemberDocComment(p, clientProperty);
+
+			if (settings.DataAnnotationsEnabled)
+			{
+				AddValidationAttributes(propertySchema, clientProperty);
+			}
+
+			typeDeclaration.Members.Add(clientProperty);
+
 		}
 
 		static void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
