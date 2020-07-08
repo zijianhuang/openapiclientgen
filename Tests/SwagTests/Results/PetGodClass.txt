@@ -447,7 +447,7 @@ namespace MyNS
 		/// StoreInventoryGet store/inventory
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<string> StoreInventoryGetAsync()
+		public async Task<System.Collections.Generic.Dictionary<string, int>> StoreInventoryGetAsync()
 		{
 			var requestUri = "store/inventory";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -459,7 +459,8 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				return jsonReader.ReadAsString();
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
 				}
 			}
 			finally

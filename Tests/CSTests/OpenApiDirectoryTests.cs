@@ -146,11 +146,11 @@ namespace SwagTests
 			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\nsidc.org\1.0.0");
 		}
 
-		[Fact]
-		public void Test_domainfinder()
-		{
-			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\nic.at\domainfinder\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
-		}
+		//[Fact]
+		//public void Test_domainfinder() //empty property?
+		//{
+		//	helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\nic.at\domainfinder\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		//}
 
 		[Fact]
 		public void Test_neowsapp()

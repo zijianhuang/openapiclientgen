@@ -641,7 +641,7 @@ namespace MyNS
 		/// GetInventory store/inventory
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<string> GetInventoryAsync()
+		public async Task<System.Collections.Generic.Dictionary<string, int>> GetInventoryAsync()
 		{
 			var requestUri = "store/inventory";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -653,7 +653,8 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				return jsonReader.ReadAsString();
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
 				}
 			}
 			finally
@@ -669,7 +670,7 @@ namespace MyNS
 		/// GetInventory store/inventory
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public string GetInventory()
+		public System.Collections.Generic.Dictionary<string, int> GetInventory()
 		{
 			var requestUri = "store/inventory";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -681,7 +682,8 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				return jsonReader.ReadAsString();
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
 				}
 			}
 			finally

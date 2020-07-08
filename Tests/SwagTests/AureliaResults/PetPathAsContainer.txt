@@ -234,10 +234,10 @@ export namespace MyNS {
 		 * Returns pet inventories by status
 		 * Returns a map of status codes to quantities
 		 * Get store/inventory
-		 * @return {string} successful operation
+		 * @return {{[id: string]: number }} successful operation
 		 */
-		Get(): Promise<string> {
-			return this.http.get('store/inventory', {}).then(d => d.text());
+		Get(): Promise<{[id: string]: number }> {
+			return this.http.get('store/inventory', {}).then(d => d.json());
 		}
 	}
 

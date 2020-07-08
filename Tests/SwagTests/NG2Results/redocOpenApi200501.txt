@@ -240,10 +240,10 @@ export namespace MyNS {
 		 * Returns pet inventories by status
 		 * Returns a map of status codes to quantities
 		 * Get store/inventory
-		 * @return {string} successful operation
+		 * @return {{[id: string]: number }} successful operation
 		 */
-		GetInventory(): Observable<string> {
-			return this.http.get(this.baseUri + 'store/inventory', { responseType: 'text' });
+		GetInventory(): Observable<{[id: string]: number }> {
+			return this.http.get<{[id: string]: number }>(this.baseUri + 'store/inventory', {});
 		}
 
 		/**

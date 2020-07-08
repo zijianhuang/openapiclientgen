@@ -3691,7 +3691,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <param name="requestBody">options to updated</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Boards_Set_Board_OptionsAsync(string organization, string project, string id, string team, string api_version, string requestBody)
+		public async Task<System.Collections.Generic.Dictionary<string, string>> Boards_Set_Board_OptionsAsync(string organization, string project, string id, string team, string api_version, System.Collections.Generic.Dictionary<string, string> requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/work/boards/"+ (id==null? "" : Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -3708,7 +3708,8 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				return jsonReader.ReadAsString();
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, string>>(jsonReader);
 				}
 			}
 			finally
@@ -3730,7 +3731,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <param name="requestBody">options to updated</param>
 		/// <returns>successful operation</returns>
-		public string Boards_Set_Board_Options(string organization, string project, string id, string team, string api_version, string requestBody)
+		public System.Collections.Generic.Dictionary<string, string> Boards_Set_Board_Options(string organization, string project, string id, string team, string api_version, System.Collections.Generic.Dictionary<string, string> requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/work/boards/"+ (id==null? "" : Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -3747,7 +3748,8 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				return jsonReader.ReadAsString();
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, string>>(jsonReader);
 				}
 			}
 			finally

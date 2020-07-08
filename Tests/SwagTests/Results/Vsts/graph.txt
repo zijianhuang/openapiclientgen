@@ -1561,7 +1561,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <param name="requestBody">A list of descriptors that specifies a subset of subjects to retrieve. Each descriptor uniquely identifies the subject across all instance scopes, but only at a single point in time.</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Subject_Lookup_Lookup_SubjectsAsync(string organization, string api_version, GraphSubjectLookup requestBody)
+		public async Task<System.Collections.Generic.Dictionary<string, GraphSubject>> Subject_Lookup_Lookup_SubjectsAsync(string organization, string api_version, GraphSubjectLookup requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/subjectlookup&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1578,7 +1578,8 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				return jsonReader.ReadAsString();
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, GraphSubject>>(jsonReader);
 				}
 			}
 			finally
@@ -1597,7 +1598,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <param name="requestBody">A list of descriptors that specifies a subset of subjects to retrieve. Each descriptor uniquely identifies the subject across all instance scopes, but only at a single point in time.</param>
 		/// <returns>successful operation</returns>
-		public string Subject_Lookup_Lookup_Subjects(string organization, string api_version, GraphSubjectLookup requestBody)
+		public System.Collections.Generic.Dictionary<string, GraphSubject> Subject_Lookup_Lookup_Subjects(string organization, string api_version, GraphSubjectLookup requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/subjectlookup&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1614,7 +1615,8 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				return jsonReader.ReadAsString();
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, GraphSubject>>(jsonReader);
 				}
 			}
 			finally

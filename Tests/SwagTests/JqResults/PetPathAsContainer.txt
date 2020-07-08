@@ -227,9 +227,9 @@ export namespace MyNS {
 		 * Returns pet inventories by status
 		 * Returns a map of status codes to quantities
 		 * Get store/inventory
-		 * @return {string} successful operation
+		 * @return {{[id: string]: number }} successful operation
 		 */
-		Get(callback: (data : string) => any) {
+		Get(callback: (data : {[id: string]: number }) => any) {
 			this.httpClient.get(this.baseUri + 'store/inventory', callback, this.error, this.statusCode);
 		}
 	}

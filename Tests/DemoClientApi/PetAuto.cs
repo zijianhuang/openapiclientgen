@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyNS
+namespace My.Pet.Client
 {
 	using System;
 	using System.Linq;
@@ -16,1913 +16,330 @@ namespace MyNS
 	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
-
-
-	public class Activity
+	
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class ApiResponse
 	{
-
-		public System.Nullable<System.Single> CapacityPerDay { get; set; }
-
-		public string Name { get; set; }
-	}
-
-	public class Attribute
-	{
-	}
-
-	public class BacklogColumn
-	{
-
-		/// <summary>
-		/// Reference to a field in a work item
-		/// </summary>
-		public WorkItemFieldReference ColumnFieldReference { get; set; }
-
-		public System.Nullable<System.Int32> Width { get; set; }
-	}
-
-	/// <summary>
-	/// Reference to a field in a work item
-	/// </summary>
-	public class WorkItemFieldReference
-	{
-
-		/// <summary>
-		/// The friendly name of the field.
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// The reference name of the field.
-		/// </summary>
-		public string ReferenceName { get; set; }
-
-		/// <summary>
-		/// The REST URL of the resource.
-		/// </summary>
-		public string Url { get; set; }
-	}
-
-	public class BacklogConfiguration
-	{
-
-		public BacklogFields BacklogFields { get; set; }
-
-		/// <summary>
-		/// Bugs behavior
-		/// </summary>
-		public BacklogConfigurationBugsBehavior BugsBehavior { get; set; }
-
-		/// <summary>
-		/// Hidden Backlog
-		/// </summary>
-		public string[] HiddenBacklogs { get; set; }
-
-		/// <summary>
-		/// Is BugsBehavior Configured in the process
-		/// </summary>
-		public System.Nullable<System.Boolean> IsBugsBehaviorConfigured { get; set; }
-
-		/// <summary>
-		/// Portfolio backlog descriptors
-		/// </summary>
-		public BacklogLevelConfiguration[] PortfolioBacklogs { get; set; }
-
-		public BacklogLevelConfiguration RequirementBacklog { get; set; }
-
-		public BacklogLevelConfiguration TaskBacklog { get; set; }
-
-		public string Url { get; set; }
-
-		/// <summary>
-		/// Mapped states for work item types
-		/// </summary>
-		public WorkItemTypeStateInfo[] WorkItemTypeMappedStates { get; set; }
-	}
-
-	public class BacklogFields
-	{
-
-		/// <summary>
-		/// Field Type (e.g. Order, Activity) to Field Reference Name map
-		/// </summary>
-		public string TypeFields { get; set; }
-	}
-
-	public enum BacklogConfigurationBugsBehavior
-	{
-
-		off = 0,
-
-		asRequirements = 1,
-
-		asTasks = 2,
-	}
-
-	public class BacklogLevelConfiguration
-	{
-
-		/// <summary>
-		/// List of fields to include in Add Panel
-		/// </summary>
-		public WorkItemFieldReference[] AddPanelFields { get; set; }
-
-		/// <summary>
-		/// Color for the backlog level
-		/// </summary>
-		public string Color { get; set; }
-
-		/// <summary>
-		/// Default list of columns for the backlog
-		/// </summary>
-		public BacklogColumn[] ColumnFields { get; set; }
-
-		/// <summary>
-		/// Reference to a work item type.
-		/// </summary>
-		public WorkItemTypeReference DefaultWorkItemType { get; set; }
-
-		/// <summary>
-		/// Backlog Id (for Legacy Backlog Level from process config it can be categoryref name)
-		/// </summary>
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Indicates whether the backlog level is hidden
-		/// </summary>
-		public System.Nullable<System.Boolean> IsHidden { get; set; }
-
-		/// <summary>
-		/// Backlog Name
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Backlog Rank (Taskbacklog is 0)
-		/// </summary>
-		public System.Nullable<System.Int32> Rank { get; set; }
-
-		/// <summary>
-		/// The type of this backlog level
-		/// </summary>
-		public BacklogLevelConfigurationType Type { get; set; }
-
-		/// <summary>
-		/// Max number of work items to show in the given backlog
-		/// </summary>
-		public System.Nullable<System.Int32> WorkItemCountLimit { get; set; }
-
-		/// <summary>
-		/// Work Item types participating in this backlog as known by the project/Process, can be overridden by team settings for bugs
-		/// </summary>
-		public WorkItemTypeReference[] WorkItemTypes { get; set; }
-	}
-
-	/// <summary>
-	/// Reference to a work item type.
-	/// </summary>
-	public class WorkItemTypeReference
-	{
-
-		/// <summary>
-		/// Name of the work item type.
-		/// </summary>
-		public string Name { get; set; }
-	}
-
-	public enum BacklogLevelConfigurationType
-	{
-
-		portfolio = 0,
-
-		requirement = 1,
-
-		task = 2,
-	}
-
-	public class WorkItemTypeStateInfo
-	{
-
-		/// <summary>
-		/// State name to state category map
-		/// </summary>
-		public string States { get; set; }
-
-		/// <summary>
-		/// Work Item type name
-		/// </summary>
-		public string WorkItemTypeName { get; set; }
-	}
-
-	/// <summary>
-	/// Contract representing a backlog level
-	/// </summary>
-	public class BacklogLevel
-	{
-
-		/// <summary>
-		/// Reference name of the corresponding WIT category
-		/// </summary>
-		public string CategoryReferenceName { get; set; }
-
-		/// <summary>
-		/// Plural name for the backlog level
-		/// </summary>
-		public string PluralName { get; set; }
-
-		/// <summary>
-		/// Collection of work item states that are included in the plan. The server will filter to only these work item types.
-		/// </summary>
-		public string[] WorkItemStates { get; set; }
-
-		/// <summary>
-		/// Collection of valid workitem type names for the given backlog level
-		/// </summary>
-		public string[] WorkItemTypes { get; set; }
-	}
-
-	/// <summary>
-	/// Represents work items in a backlog level
-	/// </summary>
-	public class BacklogLevelWorkItems
-	{
-
-		/// <summary>
-		/// A list of work items within a backlog level
-		/// </summary>
-		public WorkItemLink[] WorkItems { get; set; }
-	}
-
-	/// <summary>
-	/// A link between two work items.
-	/// </summary>
-	public class WorkItemLink
-	{
-
-		/// <summary>
-		/// The type of link.
-		/// </summary>
-		public string Rel { get; set; }
-
-		/// <summary>
-		/// Contains reference to a work item.
-		/// </summary>
-		public WorkItemReference Source { get; set; }
-
-		/// <summary>
-		/// Contains reference to a work item.
-		/// </summary>
-		public WorkItemReference Target { get; set; }
-	}
-
-	/// <summary>
-	/// Contains reference to a work item.
-	/// </summary>
-	public class WorkItemReference
-	{
-
-		/// <summary>
-		/// Work item ID.
-		/// </summary>
-		public System.Nullable<System.Int32> Id { get; set; }
-
-		/// <summary>
-		/// REST API URL of the resource
-		/// </summary>
-		public string Url { get; set; }
-	}
-
-	public class Board
-	{
-
-		/// <summary>
-		/// The class to represent a collection of REST reference links.
-		/// </summary>
-		public ReferenceLinks _links { get; set; }
-
-		public string AllowedMappings { get; set; }
-
-		public System.Nullable<System.Boolean> CanEdit { get; set; }
-
-		public BoardColumn[] Columns { get; set; }
-
-		public BoardFields Fields { get; set; }
-
-		public System.Nullable<System.Boolean> IsValid { get; set; }
-
-		public System.Nullable<System.Int32> Revision { get; set; }
-
-		public BoardRow[] Rows { get; set; }
-	}
-
-	/// <summary>
-	/// The class to represent a collection of REST reference links.
-	/// </summary>
-	public class ReferenceLinks
-	{
-
-		/// <summary>
-		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
-		/// </summary>
-		public string Links { get; set; }
-	}
-
-	public class BoardColumn
-	{
-
-		public BoardColumnColumnType ColumnType { get; set; }
-
-		public string Description { get; set; }
-
-		public string Id { get; set; }
-
-		public System.Nullable<System.Boolean> IsSplit { get; set; }
-
-		public System.Nullable<System.Int32> ItemLimit { get; set; }
-
-		public string Name { get; set; }
-
-		public string StateMappings { get; set; }
-	}
-
-	public enum BoardColumnColumnType
-	{
-
-		incoming = 0,
-
-		inProgress = 1,
-
-		outgoing = 2,
-	}
-
-	public class BoardFields
-	{
-
-		/// <summary>
-		/// An abstracted reference to a field
-		/// </summary>
-		public FieldReference ColumnField { get; set; }
-
-		/// <summary>
-		/// An abstracted reference to a field
-		/// </summary>
-		public FieldReference DoneField { get; set; }
-
-		/// <summary>
-		/// An abstracted reference to a field
-		/// </summary>
-		public FieldReference RowField { get; set; }
-	}
-
-	/// <summary>
-	/// An abstracted reference to a field
-	/// </summary>
-	public class FieldReference
-	{
-
-		/// <summary>
-		/// fieldRefName for the field
-		/// </summary>
-		public string ReferenceName { get; set; }
-
-		/// <summary>
-		/// Full http link to more information about the field
-		/// </summary>
-		public string Url { get; set; }
-	}
-
-	public class BoardRow
-	{
-
-		public string Id { get; set; }
-
-		public string Name { get; set; }
-	}
-
-	/// <summary>
-	/// Represents a board badge.
-	/// </summary>
-	public class BoardBadge
-	{
-
-		/// <summary>
-		/// The ID of the board represented by this badge.
-		/// </summary>
-		public string BoardId { get; set; }
-
-		/// <summary>
-		/// A link to the SVG resource.
-		/// </summary>
-		public string ImageUrl { get; set; }
-	}
-
-	public class BoardCardRuleSettings
-	{
-
-		/// <summary>
-		/// The class to represent a collection of REST reference links.
-		/// </summary>
-		public ReferenceLinks _links { get; set; }
-
-		public string Rules { get; set; }
-
-		public string Url { get; set; }
-	}
-
-	public class BoardCardSettings
-	{
-
-		public string Cards { get; set; }
-	}
-
-	public class BoardChart
-	{
-
-		/// <summary>
-		/// The class to represent a collection of REST reference links.
-		/// </summary>
-		public ReferenceLinks _links { get; set; }
-
-		/// <summary>
-		/// The settings for the resource
-		/// </summary>
-		public string Settings { get; set; }
-	}
-
-	public class BoardChartReference
-	{
-
-		/// <summary>
-		/// Name of the resource
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Full http link to the resource
-		/// </summary>
-		public string Url { get; set; }
-	}
-
-	public class BoardReference
-	{
-
-		/// <summary>
-		/// Id of the resource
-		/// </summary>
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Name of the resource
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Full http link to the resource
-		/// </summary>
-		public string Url { get; set; }
-	}
-
-	public class BoardSuggestedValue
-	{
-
-		public string Name { get; set; }
-	}
-
-	public class BoardUserSettings
-	{
-
-		public System.Nullable<System.Boolean> AutoRefreshState { get; set; }
-	}
-
-	public class CapacityContractBase
-	{
-
-		/// <summary>
-		/// Collection of capacities associated with the team member
-		/// </summary>
-		public Activity[] Activities { get; set; }
-
-		/// <summary>
-		/// The days off associated with the team member
-		/// </summary>
-		public DateRange[] DaysOff { get; set; }
-	}
-
-	public class DateRange
-	{
-
-		/// <summary>
-		/// End of the date range.
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> End { get; set; }
-
-		/// <summary>
-		/// Start of the date range.
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Start { get; set; }
-	}
-
-	/// <summary>
-	/// Expected data from PATCH
-	/// </summary>
-	public class CapacityPatch
-	{
-
-		public Activity[] Activities { get; set; }
-
-		public DateRange[] DaysOff { get; set; }
-	}
-
-	/// <summary>
-	/// Card settings, such as fields and rules
-	/// </summary>
-	public class CardFieldSettings
-	{
-
-		/// <summary>
-		/// A collection of field information of additional fields on cards. The index in the collection signifies the order of the field among the additional fields. Currently unused. Should be used with User Story 691539: Card setting: additional fields
-		/// </summary>
-		public FieldInfo[] AdditionalFields { get; set; }
-
-		/// <summary>
-		/// Display format for the assigned to field
-		/// </summary>
-		public CardFieldSettingsAssignedToDisplayFormat AssignedToDisplayFormat { get; set; }
-
-		/// <summary>
-		/// A collection of field information of rendered core fields on cards.
-		/// </summary>
-		public FieldInfo[] CoreFields { get; set; }
-
-		/// <summary>
-		/// Flag indicating whether to show assigned to field on cards. When true, AssignedToDisplayFormat will determine how the field will be displayed
-		/// </summary>
-		public System.Nullable<System.Boolean> ShowAssignedTo { get; set; }
-
-		/// <summary>
-		/// Flag indicating whether to show empty fields on cards
-		/// </summary>
-		public System.Nullable<System.Boolean> ShowEmptyFields { get; set; }
-
-		/// <summary>
-		/// Flag indicating whether to show ID on cards
-		/// </summary>
-		public System.Nullable<System.Boolean> ShowId { get; set; }
-
-		/// <summary>
-		/// Flag indicating whether to show state field on cards
-		/// </summary>
-		public System.Nullable<System.Boolean> ShowState { get; set; }
-
-		/// <summary>
-		/// Flag indicating whether to show tags on cards
-		/// </summary>
-		public System.Nullable<System.Boolean> ShowTags { get; set; }
-	}
-
-	/// <summary>
-	/// Object bag storing the set of permissions relevant to this plan
-	/// </summary>
-	public class FieldInfo
-	{
-
-		/// <summary>
-		/// The additional field display name
-		/// </summary>
-		public string DisplayName { get; set; }
-
-		/// <summary>
-		/// The additional field type
-		/// </summary>
-		public FieldInfoFieldType FieldType { get; set; }
-
-		/// <summary>
-		/// Indicates if the field definition is for an identity field.
-		/// </summary>
-		public System.Nullable<System.Boolean> IsIdentity { get; set; }
-
-		/// <summary>
-		/// The additional field reference name
-		/// </summary>
-		public string ReferenceName { get; set; }
-	}
-
-	public enum FieldInfoFieldType
-	{
-
-		_string = 0,
-
-		plainText = 1,
-
-		integer = 2,
-
-		dateTime = 3,
-
-		treePath = 4,
-
-		boolean = 5,
-
-		_double = 6,
-	}
-
-	public enum CardFieldSettingsAssignedToDisplayFormat
-	{
-
-		avatarOnly = 0,
-
-		fullName = 1,
-
-		avatarAndFullName = 2,
-	}
-
-	/// <summary>
-	/// Card settings, such as fields and rules
-	/// </summary>
-	public class CardSettings
-	{
-
-		/// <summary>
-		/// Card settings, such as fields and rules
-		/// </summary>
-		public CardFieldSettings Fields { get; set; }
-	}
-
-	/// <summary>
-	/// Details about a given backlog category
-	/// </summary>
-	public class CategoryConfiguration
-	{
-
-		/// <summary>
-		/// Name
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Category Reference Name
-		/// </summary>
-		public string ReferenceName { get; set; }
-
-		/// <summary>
-		/// Work item types for the backlog category
-		/// </summary>
-		public WorkItemTypeReference[] WorkItemTypes { get; set; }
-	}
-
-	public class CreatePlan
-	{
-
-		/// <summary>
-		/// Description of the plan
-		/// </summary>
-		public string Description { get; set; }
-
-		/// <summary>
-		/// Name of the plan to create.
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Plan properties.
-		/// </summary>
-		public string Properties { get; set; }
-
-		/// <summary>
-		/// Type of plan to create.
-		/// </summary>
-		public CreatePlanType Type { get; set; }
-	}
-
-	public enum CreatePlanType
-	{
-
-		deliveryTimelineView = 0,
-	}
-
-	/// <summary>
-	/// Data contract for Data of Delivery View
-	/// </summary>
-	public class DeliveryViewData
-	{
-
-		/// <summary>
-		/// Work item child id to parent id map
-		/// </summary>
-		public string ChildIdToParentIdMap { get; set; }
-
-		public TimelineCriteriaStatus CriteriaStatus { get; set; }
-
-		/// <summary>
-		/// The end date of the delivery view data
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> EndDate { get; set; }
-
-		/// <summary>
-		/// Max number of teams can be configured for a delivery plan.
-		/// </summary>
-		public System.Nullable<System.Int32> MaxExpandedTeams { get; set; }
-
-		/// <summary>
-		/// The start date for the delivery view data
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
-
-		/// <summary>
-		/// All the team data
-		/// </summary>
-		public TimelineTeamData[] Teams { get; set; }
-	}
-
-	public class TimelineCriteriaStatus
-	{
-
+		
+		[System.Runtime.Serialization.DataMember(Name="code")]
+		public System.Nullable<System.Int32> Code { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="type")]
+		public string Type { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="message")]
 		public string Message { get; set; }
-
-		public TimelineCriteriaStatusType Type { get; set; }
 	}
-
-	public enum TimelineCriteriaStatusType
+	
+	/// <summary>
+	/// A representation of a cat
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class Cat : Pet
 	{
-
-		ok = 0,
-
-		invalidFilterClause = 1,
-
-		unknown = 2,
+		
+		/// <summary>
+		/// The measured skill for hunting
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
 	}
-
-	public class TimelineTeamData
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public enum CatHuntingSkill
 	{
-
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		clueless = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		lazy = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		adventurous = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		aggressive = 3,
+	}
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class Category
+	{
+		
 		/// <summary>
-		/// Contract representing a backlog level
+		/// Category ID
 		/// </summary>
-		public BacklogLevel Backlog { get; set; }
-
+		[System.Runtime.Serialization.DataMember(Name="id")]
+		public System.Nullable<System.Int64> Id { get; set; }
+		
 		/// <summary>
-		/// The field reference names of the work item data
+		/// Category name
+		/// Min length: 1
 		/// </summary>
-		public string[] FieldReferenceNames { get; set; }
-
-		/// <summary>
-		/// The id of the team
-		/// </summary>
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Was iteration and work item data retrieved for this team. <remarks> Teams with IsExpanded false have not had their iteration, work item, and field related data queried and will never contain this data. If true then these items are queried and, if there are items in the queried range, there will be data. </remarks>
-		/// </summary>
-		public System.Nullable<System.Boolean> IsExpanded { get; set; }
-
-		/// <summary>
-		/// The iteration data, including the work items, in the queried date range.
-		/// </summary>
-		public TimelineTeamIteration[] Iterations { get; set; }
-
-		/// <summary>
-		/// The name of the team
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="name")]
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
-
+		
 		/// <summary>
-		/// The order by field name of this team
+		/// Test Sub Category
 		/// </summary>
-		public string OrderByField { get; set; }
-
-		/// <summary>
-		/// The field reference names of the partially paged work items, such as ID, WorkItemType
-		/// </summary>
-		public string[] PartiallyPagedFieldReferenceNames { get; set; }
-
-		/// <summary>
-		/// The project id the team belongs team
-		/// </summary>
-		public string ProjectId { get; set; }
-
-		public TimelineTeamStatus Status { get; set; }
-
-		/// <summary>
-		/// The team field default value
-		/// </summary>
-		public string TeamFieldDefaultValue { get; set; }
-
-		/// <summary>
-		/// The team field name of this team
-		/// </summary>
-		public string TeamFieldName { get; set; }
-
-		/// <summary>
-		/// The team field values
-		/// </summary>
-		public TeamFieldValue[] TeamFieldValues { get; set; }
-
-		/// <summary>
-		/// Colors for the work item types.
-		/// </summary>
-		public WorkItemColor[] WorkItemTypeColors { get; set; }
+		[System.Runtime.Serialization.DataMember(Name="sub")]
+		public string Sub { get; set; }
 	}
-
-	public class TimelineTeamIteration
+	
+	/// <summary>
+	/// A representation of a dog
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class Dog : Pet
 	{
-
+		
 		/// <summary>
-		/// The iteration CSS Node Id
+		/// The size of the pack the dog is from
+		/// Minimum: 1
 		/// </summary>
-		public string CssNodeId { get; set; }
-
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name="packSize")]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public int PackSize { get; set; } = 1;
+	}
+	
+	/// <summary>
+	/// A representation of a honey bee
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class HoneyBee : Pet
+	{
+		
 		/// <summary>
-		/// The end date of the iteration
+		/// Average amount of honey produced per day in ounces
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> FinishDate { get; set; }
-
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
+		public float HoneyPerDay { get; set; }
+	}
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class Order
+	{
+		
 		/// <summary>
-		/// The iteration name
+		/// Order ID
 		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="id")]
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		/// <summary>
+		/// Pet ID
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="petId")]
+		public System.Nullable<System.Int64> PetId { get; set; }
+		
+		/// <summary>
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="quantity")]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> Quantity { get; set; }
+		
+		/// <summary>
+		/// Estimated ship date
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="shipDate")]
+		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
+		
+		/// <summary>
+		/// Order Status
+		/// </summary>
+		public OrderStatus Status { get; set; }
+		
+		/// <summary>
+		/// Indicates whenever order was completed or not
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="complete")]
+		public System.Nullable<System.Boolean> Complete { get; set; }
+		
+		/// <summary>
+		/// Unique Request Id
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="requestId")]
+		public string RequestId { get; set; }
+	}
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public enum OrderStatus
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		placed = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		approved = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		delivered = 2,
+	}
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class Pet
+	{
+		
+		/// <summary>
+		/// Pet ID
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="id")]
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		/// <summary>
+		/// Categories this pet belongs to
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="category")]
+		public string Category { get; set; }
+		
+		/// <summary>
+		/// The name given to a pet
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name="name")]
 		public string Name { get; set; }
-
+		
 		/// <summary>
-		/// All the partially paged workitems in this iteration.
+		/// The list of URL to a cute photos featuring pet
+		/// Maximum items: 20
 		/// </summary>
-		public string[] PartiallyPagedWorkItems { get; set; }
-
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name="photoUrls")]
+		[System.ComponentModel.DataAnnotations.MaxLength(20)]
+		public string[] PhotoUrls { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="friend")]
+		public string Friend { get; set; }
+		
 		/// <summary>
-		/// The iteration path
+		/// Tags attached to the pet
+		/// Minimum items: 1
 		/// </summary>
-		public string Path { get; set; }
-
+		[System.Runtime.Serialization.DataMember(Name="tags")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		public Tag[] Tags { get; set; }
+		
 		/// <summary>
-		/// The start date of the iteration
+		/// Pet status in the store
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
-
-		public TimelineIterationStatus Status { get; set; }
-
+		public PetStatus Status { get; set; }
+		
 		/// <summary>
-		/// The work items that have been paged in this iteration
+		/// Type of a pet
 		/// </summary>
-		public string[] WorkItems { get; set; }
+		[System.Runtime.Serialization.DataMember(Name="petType")]
+		public string PetType { get; set; }
 	}
-
-	public class TimelineIterationStatus
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class Tag
 	{
-
-		public string Message { get; set; }
-
-		public TimelineIterationStatusType Type { get; set; }
-	}
-
-	public enum TimelineIterationStatusType
-	{
-
-		ok = 0,
-
-		isOverlapping = 1,
-	}
-
-	public class TimelineTeamStatus
-	{
-
-		public string Message { get; set; }
-
-		public TimelineTeamStatusType Type { get; set; }
-	}
-
-	public enum TimelineTeamStatusType
-	{
-
-		ok = 0,
-
-		doesntExistOrAccessDenied = 1,
-
-		maxTeamsExceeded = 2,
-
-		maxTeamFieldsExceeded = 3,
-
-		backlogInError = 4,
-
-		missingTeamFieldValue = 5,
-
-		noIterationsExist = 6,
-	}
-
-	/// <summary>
-	/// Represents a single TeamFieldValue
-	/// </summary>
-	public class TeamFieldValue
-	{
-
-		public System.Nullable<System.Boolean> IncludeChildren { get; set; }
-
-		public string Value { get; set; }
-	}
-
-	/// <summary>
-	/// Work item color and icon.
-	/// </summary>
-	public class WorkItemColor
-	{
-
-		public string Icon { get; set; }
-
-		public string PrimaryColor { get; set; }
-
-		public string WorkItemTypeName { get; set; }
-	}
-
-	/// <summary>
-	/// Collection of properties, specific to the DeliveryTimelineView
-	/// </summary>
-	public class DeliveryViewPropertyCollection
-	{
-
+		
 		/// <summary>
-		/// Card settings, such as fields and rules
+		/// Tag ID
 		/// </summary>
-		public CardSettings CardSettings { get; set; }
-
+		[System.Runtime.Serialization.DataMember(Name="id")]
+		public System.Nullable<System.Int64> Id { get; set; }
+		
 		/// <summary>
-		/// Field criteria
+		/// Tag name
+		/// Min length: 1
 		/// </summary>
-		public FilterClause[] Criteria { get; set; }
-
-		/// <summary>
-		/// Markers. Will be missing/null if there are no markers.
-		/// </summary>
-		public Marker[] Markers { get; set; }
-
-		/// <summary>
-		/// Team backlog mappings
-		/// </summary>
-		public TeamBacklogMapping[] TeamBacklogMappings { get; set; }
-	}
-
-	public class FilterClause
-	{
-
-		public string FieldName { get; set; }
-
-		public System.Nullable<System.Int32> Index { get; set; }
-
-		public string LogicalOperator { get; set; }
-
-		public string Operator { get; set; }
-
-		public string Value { get; set; }
-	}
-
-	/// <summary>
-	/// Client serialization contract for Delivery Timeline Markers.
-	/// </summary>
-	public class Marker
-	{
-
-		/// <summary>
-		/// Color associated with the marker.
-		/// </summary>
-		public string Color { get; set; }
-
-		/// <summary>
-		/// Where the marker should be displayed on the timeline.
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
-
-		/// <summary>
-		/// Label/title for the marker.
-		/// </summary>
-		public string Label { get; set; }
-	}
-
-	/// <summary>
-	/// Mapping of teams to the corresponding work item category
-	/// </summary>
-	public class TeamBacklogMapping
-	{
-
-		public string CategoryReferenceName { get; set; }
-
-		public string TeamId { get; set; }
-	}
-
-	public class FieldSetting
-	{
-	}
-
-	public class FilterGroup
-	{
-
-		public System.Nullable<System.Int32> End { get; set; }
-
-		public System.Nullable<System.Int32> Level { get; set; }
-
-		public System.Nullable<System.Int32> Start { get; set; }
-	}
-
-	public class GraphSubjectBase
-	{
-
-		/// <summary>
-		/// The class to represent a collection of REST reference links.
-		/// </summary>
-		public ReferenceLinks _links { get; set; }
-
-		/// <summary>
-		/// The descriptor is the primary way to reference the graph subject while the system is running. This field will uniquely identify the same graph subject across both Accounts and Organizations.
-		/// </summary>
-		public string Descriptor { get; set; }
-
-		/// <summary>
-		/// This is the non-unique display name of the graph subject. To change this field, you must alter its value in the source provider.
-		/// </summary>
-		public string DisplayName { get; set; }
-
-		/// <summary>
-		/// This url is the full route to the source resource of this graph subject.
-		/// </summary>
-		public string Url { get; set; }
-	}
-
-	public class IdentityRef
-	{
-
-		/// <summary>
-		/// Deprecated - Can be retrieved by querying the Graph user referenced in the "self" entry of the IdentityRef "_links" dictionary
-		/// </summary>
-		public string DirectoryAlias { get; set; }
-
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Deprecated - Available in the "avatar" entry of the IdentityRef "_links" dictionary
-		/// </summary>
-		public string ImageUrl { get; set; }
-
-		/// <summary>
-		/// Deprecated - Can be retrieved by querying the Graph membership state referenced in the "membershipState" entry of the GraphUser "_links" dictionary
-		/// </summary>
-		public System.Nullable<System.Boolean> Inactive { get; set; }
-
-		/// <summary>
-		/// Deprecated - Can be inferred from the subject type of the descriptor (Descriptor.IsAadUserType/Descriptor.IsAadGroupType)
-		/// </summary>
-		public System.Nullable<System.Boolean> IsAadIdentity { get; set; }
-
-		/// <summary>
-		/// Deprecated - Can be inferred from the subject type of the descriptor (Descriptor.IsGroupType)
-		/// </summary>
-		public System.Nullable<System.Boolean> IsContainer { get; set; }
-
-		public System.Nullable<System.Boolean> IsDeletedInOrigin { get; set; }
-
-		/// <summary>
-		/// Deprecated - not in use in most preexisting implementations of ToIdentityRef
-		/// </summary>
-		public string ProfileUrl { get; set; }
-
-		/// <summary>
-		/// Deprecated - use Domain+PrincipalName instead
-		/// </summary>
-		public string UniqueName { get; set; }
-	}
-
-	public class ITaskboardColumnMapping
-	{
-
-		public string State { get; set; }
-
-		public string WorkItemType { get; set; }
-	}
-
-	/// <summary>
-	/// Represents work items in an iteration backlog
-	/// </summary>
-	public class IterationWorkItems
-	{
-
-		/// <summary>
-		/// Work item relations
-		/// </summary>
-		public WorkItemLink[] WorkItemRelations { get; set; }
-	}
-
-	/// <summary>
-	/// Link description.
-	/// </summary>
-	public class Link
-	{
-
-		/// <summary>
-		/// Collection of link attributes.
-		/// </summary>
-		public string Attributes { get; set; }
-
-		/// <summary>
-		/// Relation type.
-		/// </summary>
-		public string Rel { get; set; }
-
-		/// <summary>
-		/// Link url.
-		/// </summary>
-		public string Url { get; set; }
-	}
-
-	public class Member
-	{
-
-		public string DisplayName { get; set; }
-
-		public string Id { get; set; }
-
-		public string ImageUrl { get; set; }
-
-		public string UniqueName { get; set; }
-
-		public string Url { get; set; }
-	}
-
-	public class ParentChildWIMap
-	{
-
-		public int[] ChildWorkItemIds { get; set; }
-
-		public System.Nullable<System.Int32> Id { get; set; }
-
-		public string Title { get; set; }
-	}
-
-	/// <summary>
-	/// Data contract for the plan definition
-	/// </summary>
-	public class Plan
-	{
-
-		public IdentityRef CreatedByIdentity { get; set; }
-
-		/// <summary>
-		/// Date when the plan was created
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> CreatedDate { get; set; }
-
-		/// <summary>
-		/// Description of the plan
-		/// </summary>
-		public string Description { get; set; }
-
-		/// <summary>
-		/// Id of the plan
-		/// </summary>
-		public string Id { get; set; }
-
-		public IdentityRef ModifiedByIdentity { get; set; }
-
-		/// <summary>
-		/// Date when the plan was last modified. Default to CreatedDate when the plan is first created.
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> ModifiedDate { get; set; }
-
-		/// <summary>
-		/// Name of the plan
-		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="name")]
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
 		public string Name { get; set; }
-
-		/// <summary>
-		/// The PlanPropertyCollection instance associated with the plan. These are dependent on the type of the plan. For example, DeliveryTimelineView, it would be of type DeliveryViewPropertyCollection.
-		/// </summary>
-		public string Properties { get; set; }
-
-		/// <summary>
-		/// Revision of the plan. Used to safeguard users from overwriting each other's changes.
-		/// </summary>
-		public System.Nullable<System.Int32> Revision { get; set; }
-
-		/// <summary>
-		/// Type of the plan
-		/// </summary>
-		public PlanType Type { get; set; }
-
-		/// <summary>
-		/// The resource url to locate the plan via rest api
-		/// </summary>
-		public string Url { get; set; }
-
-		/// <summary>
-		/// Bit flag indicating set of permissions a user has to the plan.
-		/// </summary>
-		public PlanUserPermissions UserPermissions { get; set; }
 	}
-
-	public enum PlanType
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public enum PetStatus
 	{
-
-		deliveryTimelineView = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		available = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		pending = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		sold = 2,
 	}
-
-	public enum PlanUserPermissions
+	
+	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	public class User
 	{
-
-		none = 0,
-
-		view = 1,
-
-		edit = 2,
-
-		delete = 3,
-
-		manage = 4,
-
-		allPermissions = 5,
+		
+		[System.Runtime.Serialization.DataMember(Name="id")]
+		public System.Nullable<System.Int64> Id { get; set; }
+		
+		[System.Runtime.Serialization.DataMember(Name="pet")]
+		public string Pet { get; set; }
+		
+		/// <summary>
+		/// User supplied username
+		/// Min length: 4
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="username")]
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=4)]
+		public string Username { get; set; }
+		
+		/// <summary>
+		/// User first name
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="firstName")]
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
+		public string FirstName { get; set; }
+		
+		/// <summary>
+		/// User last name
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="lastName")]
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
+		public string LastName { get; set; }
+		
+		/// <summary>
+		/// User email address
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="email")]
+		public string Email { get; set; }
+		
+		/// <summary>
+		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
+		/// Min length: 8
+		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="password")]
+		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=8)]
+		public string Password { get; set; }
+		
+		/// <summary>
+		/// User phone number in international format
+		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="phone")]
+		public string Phone { get; set; }
+		
+		/// <summary>
+		/// User status
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="userStatus")]
+		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
-
-	/// <summary>
-	/// Metadata about a plan definition that is stored in favorites service
-	/// </summary>
-	public class PlanMetadata
+	
+	public partial class PetClient
 	{
-
-		public IdentityRef CreatedByIdentity { get; set; }
-
-		/// <summary>
-		/// Description of plan
-		/// </summary>
-		public string Description { get; set; }
-
-		/// <summary>
-		/// Last modified date of the plan
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> ModifiedDate { get; set; }
-
-		/// <summary>
-		/// Bit flag indicating set of permissions a user has to the plan.
-		/// </summary>
-		public PlanMetadataUserPermissions UserPermissions { get; set; }
-	}
-
-	public enum PlanMetadataUserPermissions
-	{
-
-		none = 0,
-
-		view = 1,
-
-		edit = 2,
-
-		delete = 3,
-
-		manage = 4,
-
-		allPermissions = 5,
-	}
-
-	/// <summary>
-	/// Base class for plan view data contracts. Anything common goes here.
-	/// </summary>
-	public class PlanViewData
-	{
-
-		public string Id { get; set; }
-
-		public System.Nullable<System.Int32> Revision { get; set; }
-	}
-
-	/// <summary>
-	/// Represents a single pre-defined query.
-	/// </summary>
-	public class PredefinedQuery
-	{
-
-		/// <summary>
-		/// Whether or not the query returned the complete set of data or if the data was truncated.
-		/// </summary>
-		public System.Nullable<System.Boolean> HasMore { get; set; }
-
-		/// <summary>
-		/// Id of the query
-		/// </summary>
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Localized name of the query
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// The results of the query.  This will be a set of WorkItem objects with only the 'id' set.  The client is responsible for paging in the data as needed.
-		/// </summary>
-		public WorkItem[] Results { get; set; }
-
-		/// <summary>
-		/// REST API Url to use to retrieve results for this query
-		/// </summary>
-		public string Url { get; set; }
-
-		/// <summary>
-		/// Url to use to display a page in the browser with the results of this query
-		/// </summary>
-		public string WebUrl { get; set; }
-	}
-
-	/// <summary>
-	/// Describes a work item.
-	/// </summary>
-	public class WorkItem
-	{
-
-		/// <summary>
-		/// Represents the reference to a specific version of a comment on a Work Item.
-		/// </summary>
-		public WorkItemCommentVersionRef CommentVersionRef { get; set; }
-
-		/// <summary>
-		/// Map of field and values for the work item.
-		/// </summary>
-		public string Fields { get; set; }
-
-		/// <summary>
-		/// The work item ID.
-		/// </summary>
-		public System.Nullable<System.Int32> Id { get; set; }
-
-		/// <summary>
-		/// Relations of the work item.
-		/// </summary>
-		public WorkItemRelation[] Relations { get; set; }
-
-		/// <summary>
-		/// Revision number of the work item.
-		/// </summary>
-		public System.Nullable<System.Int32> Rev { get; set; }
-	}
-
-	/// <summary>
-	/// Represents the reference to a specific version of a comment on a Work Item.
-	/// </summary>
-	public class WorkItemCommentVersionRef
-	{
-
-		/// <summary>
-		/// The id assigned to the comment.
-		/// </summary>
-		public System.Nullable<System.Int32> CommentId { get; set; }
-
-		/// <summary>
-		/// [Internal] The work item revision where this comment was originally added.
-		/// </summary>
-		public System.Nullable<System.Int32> CreatedInRevision { get; set; }
-
-		/// <summary>
-		/// [Internal] Specifies whether comment was deleted.
-		/// </summary>
-		public System.Nullable<System.Boolean> IsDeleted { get; set; }
-
-		/// <summary>
-		/// [Internal] The text of the comment.
-		/// </summary>
-		public string Text { get; set; }
-
-		/// <summary>
-		/// The version number.
-		/// </summary>
-		public System.Nullable<System.Int32> Version { get; set; }
-	}
-
-	public class WorkItemRelation
-	{
-	}
-
-	/// <summary>
-	/// Process Configurations for the project
-	/// </summary>
-	public class ProcessConfiguration
-	{
-
-		/// <summary>
-		/// Details about a given backlog category
-		/// </summary>
-		public CategoryConfiguration BugWorkItems { get; set; }
-
-		/// <summary>
-		/// Details about portfolio backlogs
-		/// </summary>
-		public CategoryConfiguration[] PortfolioBacklogs { get; set; }
-
-		/// <summary>
-		/// Details about a given backlog category
-		/// </summary>
-		public CategoryConfiguration RequirementBacklog { get; set; }
-
-		/// <summary>
-		/// Details about a given backlog category
-		/// </summary>
-		public CategoryConfiguration TaskBacklog { get; set; }
-
-		/// <summary>
-		/// Type fields for the process configuration
-		/// </summary>
-		public string TypeFields { get; set; }
-
-		public string Url { get; set; }
-	}
-
-	/// <summary>
-	/// Represents a reorder request for one or more work items.
-	/// </summary>
-	public class ReorderOperation
-	{
-
-		/// <summary>
-		/// IDs of the work items to be reordered.  Must be valid WorkItem Ids.
-		/// </summary>
-		public int[] Ids { get; set; }
-
-		/// <summary>
-		/// IterationPath for reorder operation. This is only used when we reorder from the Iteration Backlog
-		/// </summary>
-		public string IterationPath { get; set; }
-
-		/// <summary>
-		/// ID of the work item that should be after the reordered items. Can use 0 to specify the end of the list.
-		/// </summary>
-		public System.Nullable<System.Int32> NextId { get; set; }
-
-		/// <summary>
-		/// Parent ID for all of the work items involved in this operation. Can use 0 to indicate the items don't have a parent.
-		/// </summary>
-		public System.Nullable<System.Int32> ParentId { get; set; }
-
-		/// <summary>
-		/// ID of the work item that should be before the reordered items. Can use 0 to specify the beginning of the list.
-		/// </summary>
-		public System.Nullable<System.Int32> PreviousId { get; set; }
-	}
-
-	/// <summary>
-	/// Represents a reorder result for a work item.
-	/// </summary>
-	public class ReorderResult
-	{
-
-		/// <summary>
-		/// The ID of the work item that was reordered.
-		/// </summary>
-		public System.Nullable<System.Int32> Id { get; set; }
-
-		/// <summary>
-		/// The updated order value of the work item that was reordered.
-		/// </summary>
-		public System.Nullable<System.Double> Order { get; set; }
-	}
-
-	public class Rule
-	{
-
-		public FilterClause[] Clauses { get; set; }
-
-		public string Filter { get; set; }
-
-		public string IsEnabled { get; set; }
-
-		public string Name { get; set; }
-
-		public Attribute Settings { get; set; }
-	}
-
-	/// <summary>
-	/// Represents the taskbord column
-	/// </summary>
-	public class TaskboardColumn
-	{
-
-		/// <summary>
-		/// Column ID
-		/// </summary>
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Work item type states mapped to this column to support auto state update when column is updated.
-		/// </summary>
-		public ITaskboardColumnMapping[] Mappings { get; set; }
-
-		/// <summary>
-		/// Column name
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Column position relative to other columns in the same board
-		/// </summary>
-		public System.Nullable<System.Int32> Order { get; set; }
-	}
-
-	/// <summary>
-	/// Represents the state to column mapping per work item type This allows auto state update when the column changes
-	/// </summary>
-	public class TaskboardColumnMapping
-	{
-
-		/// <summary>
-		/// State of the work item type mapped to the column
-		/// </summary>
-		public string State { get; set; }
-
-		/// <summary>
-		/// Work Item Type name who's state is mapped to the column
-		/// </summary>
-		public string WorkItemType { get; set; }
-	}
-
-	public class TaskboardColumns
-	{
-
-		public TaskboardColumn[] Columns { get; set; }
-
-		/// <summary>
-		/// Are the columns cutomized for this team
-		/// </summary>
-		public System.Nullable<System.Boolean> IsCustomized { get; set; }
-
-		/// <summary>
-		/// Specifies if the referenced WIT and State is valid
-		/// </summary>
-		public System.Nullable<System.Boolean> IsValid { get; set; }
-
-		/// <summary>
-		/// Details of validation failure if the state to column mapping is invalid
-		/// </summary>
-		public string ValidationMesssage { get; set; }
-	}
-
-	/// <summary>
-	/// Column value of a work item in the taskboard
-	/// </summary>
-	public class TaskboardWorkItemColumn
-	{
-
-		/// <summary>
-		/// Work item column value in the taskboard
-		/// </summary>
-		public string Column { get; set; }
-
-		/// <summary>
-		/// Work item column id in the taskboard
-		/// </summary>
-		public string ColumnId { get; set; }
-
-		/// <summary>
-		/// Work Item state value
-		/// </summary>
-		public string State { get; set; }
-
-		/// <summary>
-		/// Work item id
-		/// </summary>
-		public System.Nullable<System.Int32> WorkItemId { get; set; }
-	}
-
-	/// <summary>
-	/// The Team Context for an operation.
-	/// </summary>
-	public class TeamContext
-	{
-
-		/// <summary>
-		/// The team project Id or name.  Ignored if ProjectId is set.
-		/// </summary>
-		public string Project { get; set; }
-
-		/// <summary>
-		/// The Team Project ID.  Required if Project is not set.
-		/// </summary>
-		public string ProjectId { get; set; }
-
-		/// <summary>
-		/// The Team Id or name.  Ignored if TeamId is set.
-		/// </summary>
-		public string Team { get; set; }
-
-		/// <summary>
-		/// The Team Id
-		/// </summary>
-		public string TeamId { get; set; }
-	}
-
-	/// <summary>
-	/// Essentially a collection of team field values
-	/// </summary>
-	public class TeamFieldValues
-	{
-
-		/// <summary>
-		/// The default team field value
-		/// </summary>
-		public string DefaultValue { get; set; }
-
-		/// <summary>
-		/// An abstracted reference to a field
-		/// </summary>
-		public FieldReference Field { get; set; }
-
-		/// <summary>
-		/// Collection of all valid team field values
-		/// </summary>
-		public TeamFieldValue[] Values { get; set; }
-	}
-
-	/// <summary>
-	/// Expected data from PATCH
-	/// </summary>
-	public class TeamFieldValuesPatch
-	{
-
-		public string DefaultValue { get; set; }
-
-		public TeamFieldValue[] Values { get; set; }
-	}
-
-	public class TeamIterationAttributes
-	{
-
-		/// <summary>
-		/// Finish date of the iteration. Date-only, correct unadjusted at midnight in UTC.
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> FinishDate { get; set; }
-
-		/// <summary>
-		/// Start date of the iteration. Date-only, correct unadjusted at midnight in UTC.
-		/// </summary>
-		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
-
-		/// <summary>
-		/// Time frame of the iteration, such as past, current or future.
-		/// </summary>
-		public TeamIterationAttributesTimeFrame TimeFrame { get; set; }
-	}
-
-	public enum TeamIterationAttributesTimeFrame
-	{
-
-		past = 0,
-
-		current = 1,
-
-		future = 2,
-	}
-
-	/// <summary>
-	/// Represents capacity for a specific team member
-	/// </summary>
-	public class TeamMemberCapacity
-	{
-
-		public Member TeamMember { get; set; }
-	}
-
-	/// <summary>
-	/// Represents capacity for a specific team member
-	/// </summary>
-	public class TeamMemberCapacityIdentityRef
-	{
-
-		public IdentityRef TeamMember { get; set; }
-	}
-
-	/// <summary>
-	/// Data contract for TeamSettings
-	/// </summary>
-	public class TeamSetting
-	{
-
-		/// <summary>
-		/// Represents a shallow ref for a single iteration.
-		/// </summary>
-		public TeamSettingsIteration BacklogIteration { get; set; }
-
-		/// <summary>
-		/// Information about categories that are visible on the backlog.
-		/// </summary>
-		public string BacklogVisibilities { get; set; }
-
-		/// <summary>
-		/// BugsBehavior (Off, AsTasks, AsRequirements, ...)
-		/// </summary>
-		public TeamSettingBugsBehavior BugsBehavior { get; set; }
-
-		/// <summary>
-		/// Represents a shallow ref for a single iteration.
-		/// </summary>
-		public TeamSettingsIteration DefaultIteration { get; set; }
-
-		/// <summary>
-		/// Default Iteration macro (if any)
-		/// </summary>
-		public string DefaultIterationMacro { get; set; }
-
-		/// <summary>
-		/// Days that the team is working
-		/// </summary>
-		public string[] WorkingDays { get; set; }
-	}
-
-	/// <summary>
-	/// Represents a shallow ref for a single iteration.
-	/// </summary>
-	public class TeamSettingsIteration
-	{
-
-		public TeamIterationAttributes Attributes { get; set; }
-
-		/// <summary>
-		/// Id of the iteration.
-		/// </summary>
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Name of the iteration.
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Relative path of the iteration.
-		/// </summary>
-		public string Path { get; set; }
-	}
-
-	public enum TeamSettingBugsBehavior
-	{
-
-		off = 0,
-
-		asRequirements = 1,
-
-		asTasks = 2,
-	}
-
-	/// <summary>
-	/// Base class for TeamSettings data contracts. Anything common goes here.
-	/// </summary>
-	public class TeamSettingsDataContractBase
-	{
-
-		/// <summary>
-		/// The class to represent a collection of REST reference links.
-		/// </summary>
-		public ReferenceLinks _links { get; set; }
-
-		/// <summary>
-		/// Full http link to the resource
-		/// </summary>
-		public string Url { get; set; }
-	}
-
-	public class TeamSettingsDaysOff
-	{
-
-		public DateRange[] DaysOff { get; set; }
-	}
-
-	public class TeamSettingsDaysOffPatch
-	{
-
-		public DateRange[] DaysOff { get; set; }
-	}
-
-	/// <summary>
-	/// Data contract for what we expect to receive when PATCH
-	/// </summary>
-	public class TeamSettingsPatch
-	{
-
-		public string BacklogIteration { get; set; }
-
-		public string BacklogVisibilities { get; set; }
-
-		public TeamSettingsPatchBugsBehavior BugsBehavior { get; set; }
-
-		public string DefaultIteration { get; set; }
-
-		public string DefaultIterationMacro { get; set; }
-
-		public string[] WorkingDays { get; set; }
-	}
-
-	public enum TeamSettingsPatchBugsBehavior
-	{
-
-		off = 0,
-
-		asRequirements = 1,
-
-		asTasks = 2,
-	}
-
-	public class UpdatePlan
-	{
-
-		/// <summary>
-		/// Description of the plan
-		/// </summary>
-		public string Description { get; set; }
-
-		/// <summary>
-		/// Name of the plan to create.
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Plan properties.
-		/// </summary>
-		public string Properties { get; set; }
-
-		/// <summary>
-		/// Revision of the plan that was updated - the value used here should match the one the server gave the client in the Plan.
-		/// </summary>
-		public System.Nullable<System.Int32> Revision { get; set; }
-
-		/// <summary>
-		/// Type of the plan
-		/// </summary>
-		public UpdatePlanType Type { get; set; }
-	}
-
-	public enum UpdatePlanType
-	{
-
-		deliveryTimelineView = 0,
-	}
-
-	public class UpdateTaskboardColumn
-	{
-
-		/// <summary>
-		/// Column ID, keep it null for new column
-		/// </summary>
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Work item type states mapped to this column to support auto state update when column is updated.
-		/// </summary>
-		public TaskboardColumnMapping[] Mappings { get; set; }
-
-		/// <summary>
-		/// Column name is required
-		/// </summary>
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Column position relative to other columns in the same board
-		/// </summary>
-		public System.Nullable<System.Int32> Order { get; set; }
-	}
-
-	public class UpdateTaskboardWorkItemColumn
-	{
-
-		public string NewColumn { get; set; }
-	}
-
-	/// <summary>
-	/// This class is used to serialized collections as a single JSON object on the wire, to avoid serializing JSON arrays directly to the client, which can be a security hole
-	/// </summary>
-	public class VssJsonCollectionWrapper
-	{
-
-		public string Value { get; set; }
-	}
-
-	public class VssJsonCollectionWrapperBase
-	{
-
-		public System.Nullable<System.Int32> Count { get; set; }
-	}
-
-	/// <summary>
-	/// Base class for WIT REST resources.
-	/// </summary>
-	public class WorkItemTrackingResource
-	{
-
-		/// <summary>
-		/// The class to represent a collection of REST reference links.
-		/// </summary>
-		public ReferenceLinks _links { get; set; }
-	}
-
-	/// <summary>
-	/// Base class for work item tracking resource references.
-	/// </summary>
-	public class WorkItemTrackingResourceReference
-	{
-
-		public string Url { get; set; }
-	}
-
-	public partial class Misc
-	{
-
+		
 		private System.Net.Http.HttpClient client;
-
+		
 		private JsonSerializerSettings jsonSerializerSettings;
-
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings = null)
+		
+		public PetClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -1933,3040 +350,604 @@ namespace MyNS
 			this.client = client;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
-
+		
 		/// <summary>
-		/// Get available board columns in a project
-		/// Boardcolumns_List {organization}/{project}/_apis/work/boardcolumns
+		/// Add a new pet to the store
+		/// Add new pet to the store inventory.
+		/// AddPet pet
 		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardSuggestedValue[]> Boardcolumns_ListAsync(string organization, string project, string api_version)
+		/// <param name="requestBody">Pet object that needs to be added to the store</param>
+		public async Task AddPetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/boardcolumns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardSuggestedValue[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get available board columns in a project
-		/// Boardcolumns_List {organization}/{project}/_apis/work/boardcolumns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardSuggestedValue[] Boardcolumns_List(string organization, string project, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/boardcolumns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardSuggestedValue[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get available board rows in a project
-		/// Boardrows_List {organization}/{project}/_apis/work/boardrows
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardSuggestedValue[]> Boardrows_ListAsync(string organization, string project, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/boardrows&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardSuggestedValue[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get available board rows in a project
-		/// Boardrows_List {organization}/{project}/_apis/work/boardrows
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardSuggestedValue[] Boardrows_List(string organization, string project, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/boardrows&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardSuggestedValue[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Add a new plan for the team
-		/// Plans_Create {organization}/{project}/_apis/work/plans
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Plan definition</param>
-		/// <returns>successful operation</returns>
-		public async Task<Plan> Plans_CreateAsync(string organization, string project, string api_version, CreatePlan requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "pet";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<Plan>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 			}
 		}
-
+		
 		/// <summary>
-		/// Add a new plan for the team
-		/// Plans_Create {organization}/{project}/_apis/work/plans
+		/// Update an existing pet
+		/// UpdatePet pet
 		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Plan definition</param>
-		/// <returns>successful operation</returns>
-		public Plan Plans_Create(string organization, string project, string api_version, CreatePlan requestBody)
+		/// <param name="requestBody">Pet object that needs to be added to the store</param>
+		public async Task UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "pet";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Find pet by ID
+		/// Returns a single pet
+		/// GetPetById pet/{petId}
+		/// </summary>
+		/// <param name="petId">ID of pet to return</param>
+		/// <returns>successful operation</returns>
+		public async Task<Pet> GetPetByIdAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "pet/"+petId;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Pet>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes a pet
+		/// DeletePet pet/{petId}
+		/// </summary>
+		/// <param name="petId">Pet id to delete</param>
+		public async Task DeletePetAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "pet/"+petId;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Finds Pets by status
+		/// Multiple status values can be provided with comma separated strings
+		/// FindPetsByStatus pet/findByStatus
+		/// </summary>
+		/// <param name="status">Status values that need to be considered for filter</param>
+		/// <returns>successful operation</returns>
+		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Pet[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Finds Pets by tags
+		/// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+		/// FindPetsByTags pet/findByTags
+		/// </summary>
+		/// <param name="tags">Tags to filter by</param>
+		/// <returns>successful operation</returns>
+		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Pet[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns pet inventories by status
+		/// Returns a map of status codes to quantities
+		/// GetInventory store/inventory
+		/// </summary>
+		/// <returns>successful operation</returns>
+		public async Task<System.Collections.Generic.Dictionary<string, int>> GetInventoryAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "store/inventory";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Place an order for a pet
+		/// PlaceOrder store/order
+		/// </summary>
+		/// <param name="requestBody">order placed for purchasing the pet</param>
+		/// <returns>successful operation</returns>
+		public async Task<Order> PlaceOrderAsync(Order requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "store/order";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-				using (var requestWriter = new System.IO.StringWriter())
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<Plan>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Order>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
 		}
-
+		
 		/// <summary>
-		/// Get the information for all the plans configured for the given team
-		/// Plans_List {organization}/{project}/_apis/work/plans
+		/// Find purchase order by ID
+		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
+		/// GetOrderById store/order/{orderId}
 		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="orderId">ID of pet that needs to be fetched</param>
 		/// <returns>successful operation</returns>
-		public async Task<Plan[]> Plans_ListAsync(string organization, string project, string api_version)
+		public async Task<Order> GetOrderByIdAsync(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "store/order/"+orderId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<Plan[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get the information for all the plans configured for the given team
-		/// Plans_List {organization}/{project}/_apis/work/plans
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public Plan[] Plans_List(string organization, string project, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			if (handleHeaders != null)
 			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<Plan[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Order>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
 		/// <summary>
-		/// Delete the specified plan
-		/// Plans_Delete {organization}/{project}/_apis/work/plans/{id}
+		/// Delete purchase order by ID
+		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
+		/// DeleteOrder store/order/{orderId}
 		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">Identifier of the plan</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Plans_DeleteAsync(string organization, string project, string id, string api_version)
+		/// <param name="orderId">ID of the order that needs to be deleted</param>
+		public async Task DeleteOrderAsync(string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Delete the specified plan
-		/// Plans_Delete {organization}/{project}/_apis/work/plans/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">Identifier of the plan</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Plans_Delete(string organization, string project, string id, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			if (handleHeaders != null)
 			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+				handleHeaders(httpRequestMessage.Headers);
 			}
-		}
 
-		/// <summary>
-		/// Get the information for the specified plan
-		/// Plans_Get {organization}/{project}/_apis/work/plans/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">Identifier of the plan</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<Plan> Plans_GetAsync(string organization, string project, string id, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<Plan>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
-		}
-
-		/// <summary>
-		/// Get the information for the specified plan
-		/// Plans_Get {organization}/{project}/_apis/work/plans/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">Identifier of the plan</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public Plan Plans_Get(string organization, string project, string id, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			finally
 			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<Plan>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+				responseMessage.Dispose();
+			}
 			}
 		}
-
+		
 		/// <summary>
-		/// Update the information for the specified plan
-		/// Plans_Update {organization}/{project}/_apis/work/plans/{id}
+		/// Create user
+		/// This can only be done by the logged in user.
+		/// CreateUser user
 		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">Identifier of the plan</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Plan definition to be updated</param>
-		/// <returns>successful operation</returns>
-		public async Task<Plan> Plans_UpdateAsync(string organization, string project, string id, string api_version, UpdatePlan requestBody)
+		/// <param name="requestBody">Created user object</param>
+		public async Task CreateUserAsync(User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<Plan>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update the information for the specified plan
-		/// Plans_Update {organization}/{project}/_apis/work/plans/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">Identifier of the plan</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Plan definition to be updated</param>
-		/// <returns>successful operation</returns>
-		public Plan Plans_Update(string organization, string project, string id, string api_version, UpdatePlan requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<Plan>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get Delivery View Data
-		/// Deliverytimeline_Get {organization}/{project}/_apis/work/plans/{id}/deliverytimeline
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">Identifier for delivery view</param>
-		/// <param name="revision">Revision of the plan for which you want data. If the current plan is a different revision you will get an ViewRevisionMismatchException exception. If you do not supply a revision you will get data for the latest revision.</param>
-		/// <param name="startDate">The start date of timeline</param>
-		/// <param name="endDate">The end date of timeline</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<DeliveryViewData> Deliverytimeline_GetAsync(string organization, string project, string id, int revision, System.DateTimeOffset startDate, System.DateTimeOffset endDate, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans/" + (id == null ? "" : Uri.EscapeDataString(id)) + "/deliverytimeline&revision=" + revision + "&startDate=" + startDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ") + "&endDate=" + endDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ") + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<DeliveryViewData>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get Delivery View Data
-		/// Deliverytimeline_Get {organization}/{project}/_apis/work/plans/{id}/deliverytimeline
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">Identifier for delivery view</param>
-		/// <param name="revision">Revision of the plan for which you want data. If the current plan is a different revision you will get an ViewRevisionMismatchException exception. If you do not supply a revision you will get data for the latest revision.</param>
-		/// <param name="startDate">The start date of timeline</param>
-		/// <param name="endDate">The end date of timeline</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public DeliveryViewData Deliverytimeline_Get(string organization, string project, string id, int revision, System.DateTimeOffset startDate, System.DateTimeOffset endDate, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/plans/" + (id == null ? "" : Uri.EscapeDataString(id)) + "/deliverytimeline&revision=" + revision + "&startDate=" + startDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ") + "&endDate=" + endDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ") + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<DeliveryViewData>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get process configuration
-		/// Processconfiguration_Get {organization}/{project}/_apis/work/processconfiguration
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<ProcessConfiguration> Processconfiguration_GetAsync(string organization, string project, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/processconfiguration&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<ProcessConfiguration>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get process configuration
-		/// Processconfiguration_Get {organization}/{project}/_apis/work/processconfiguration
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public ProcessConfiguration Processconfiguration_Get(string organization, string project, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/_apis/work/processconfiguration&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<ProcessConfiguration>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Gets backlog configuration for a team
-		/// Backlogconfiguration_Get {organization}/{project}/{team}/_apis/work/backlogconfiguration
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BacklogConfiguration> Backlogconfiguration_GetAsync(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/backlogconfiguration&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BacklogConfiguration>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Gets backlog configuration for a team
-		/// Backlogconfiguration_Get {organization}/{project}/{team}/_apis/work/backlogconfiguration
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BacklogConfiguration Backlogconfiguration_Get(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/backlogconfiguration&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BacklogConfiguration>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// List all backlog levels
-		/// Backlogs_List {organization}/{project}/{team}/_apis/work/backlogs
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BacklogLevelConfiguration[]> Backlogs_ListAsync(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/backlogs&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BacklogLevelConfiguration[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// List all backlog levels
-		/// Backlogs_List {organization}/{project}/{team}/_apis/work/backlogs
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BacklogLevelConfiguration[] Backlogs_List(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/backlogs&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BacklogLevelConfiguration[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a list of work items within a backlog level
-		/// Backlogs_Get_Backlog_Level_Work_Items {organization}/{project}/{team}/_apis/work/backlogs/{backlogId}/workItems
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BacklogLevelWorkItems> Backlogs_Get_Backlog_Level_Work_ItemsAsync(string organization, string project, string team, string backlogId, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/backlogs/" + (backlogId == null ? "" : Uri.EscapeDataString(backlogId)) + "/workItems&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BacklogLevelWorkItems>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a list of work items within a backlog level
-		/// Backlogs_Get_Backlog_Level_Work_Items {organization}/{project}/{team}/_apis/work/backlogs/{backlogId}/workItems
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BacklogLevelWorkItems Backlogs_Get_Backlog_Level_Work_Items(string organization, string project, string team, string backlogId, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/backlogs/" + (backlogId == null ? "" : Uri.EscapeDataString(backlogId)) + "/workItems&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BacklogLevelWorkItems>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a backlog level
-		/// Backlogs_Get_Backlog {organization}/{project}/{team}/_apis/work/backlogs/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="id">The id of the backlog level</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BacklogLevelConfiguration> Backlogs_Get_BacklogAsync(string organization, string project, string team, string id, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/backlogs/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BacklogLevelConfiguration>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a backlog level
-		/// Backlogs_Get_Backlog {organization}/{project}/{team}/_apis/work/backlogs/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="id">The id of the backlog level</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BacklogLevelConfiguration Backlogs_Get_Backlog(string organization, string project, string team, string id, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/backlogs/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BacklogLevelConfiguration>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get boards
-		/// Boards_List {organization}/{project}/{team}/_apis/work/boards
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardReference[]> Boards_ListAsync(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardReference[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get boards
-		/// Boards_List {organization}/{project}/{team}/_apis/work/boards
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardReference[] Boards_List(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardReference[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board user settings for a board id
-		/// Boardusersettings_Get {organization}/{project}/{team}/_apis/work/boards/{board}/boardusersettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Board ID or Name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardUserSettings> Boardusersettings_GetAsync(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/boardusersettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardUserSettings>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board user settings for a board id
-		/// Boardusersettings_Get {organization}/{project}/{team}/_apis/work/boards/{board}/boardusersettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Board ID or Name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardUserSettings Boardusersettings_Get(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/boardusersettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardUserSettings>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board card Rule settings for the board id or board by name
-		/// Cardrulesettings_Get {organization}/{project}/{team}/_apis/work/boards/{board}/cardrulesettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardCardRuleSettings> Cardrulesettings_GetAsync(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/cardrulesettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardCardRuleSettings>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board card Rule settings for the board id or board by name
-		/// Cardrulesettings_Get {organization}/{project}/{team}/_apis/work/boards/{board}/cardrulesettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardCardRuleSettings Cardrulesettings_Get(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/cardrulesettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardCardRuleSettings>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board card settings for the board id or board by name
-		/// Cardsettings_Get {organization}/{project}/{team}/_apis/work/boards/{board}/cardsettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardCardSettings> Cardsettings_GetAsync(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/cardsettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardCardSettings>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board card settings for the board id or board by name
-		/// Cardsettings_Get {organization}/{project}/{team}/_apis/work/boards/{board}/cardsettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardCardSettings Cardsettings_Get(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/cardsettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardCardSettings>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update board card settings for the board id or board by name
-		/// Cardsettings_Update_Board_Card_Settings {organization}/{project}/{team}/_apis/work/boards/{board}/cardsettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardCardSettings> Cardsettings_Update_Board_Card_SettingsAsync(string organization, string project, string board, string team, string api_version, BoardCardSettings requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/cardsettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<BoardCardSettings>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update board card settings for the board id or board by name
-		/// Cardsettings_Update_Board_Card_Settings {organization}/{project}/{team}/_apis/work/boards/{board}/cardsettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardCardSettings Cardsettings_Update_Board_Card_Settings(string organization, string project, string board, string team, string api_version, BoardCardSettings requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/cardsettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<BoardCardSettings>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a board chart image.
-		/// Chartimages_Get_Board_Chart_Image {organization}/{project}/{team}/_apis/work/boards/{board}/chartimages/{name}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="board">Identifier for board, either board's backlog level name (e.g. "Issues") or Id.</param>
-		/// <param name="name">The chart name. e.g. CumulativeFlow.</param>
-		/// <param name="width">The width of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="height">The height of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="showDetails">Whether or not the chart should include detailed information (e.g. axis labels, titles, trend lines, etc.).</param>
-		/// <param name="title">The title of the chart. Can only be dislayed if ShowLabels is true.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<string> Chartimages_Get_Board_Chart_ImageAsync(string organization, string project, string team, string board, string name, int width, int height, bool showDetails, string title, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/chartimages/" + (name == null ? "" : Uri.EscapeDataString(name)) + "&width=" + width + "&height=" + height + "&showDetails=" + showDetails + "&title=" + (title == null ? "" : Uri.EscapeDataString(title)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						return jsonReader.ReadAsString();
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a board chart image.
-		/// Chartimages_Get_Board_Chart_Image {organization}/{project}/{team}/_apis/work/boards/{board}/chartimages/{name}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="board">Identifier for board, either board's backlog level name (e.g. "Issues") or Id.</param>
-		/// <param name="name">The chart name. e.g. CumulativeFlow.</param>
-		/// <param name="width">The width of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="height">The height of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="showDetails">Whether or not the chart should include detailed information (e.g. axis labels, titles, trend lines, etc.).</param>
-		/// <param name="title">The title of the chart. Can only be dislayed if ShowLabels is true.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public string Chartimages_Get_Board_Chart_Image(string organization, string project, string team, string board, string name, int width, int height, bool showDetails, string title, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/chartimages/" + (name == null ? "" : Uri.EscapeDataString(name)) + "&width=" + width + "&height=" + height + "&showDetails=" + showDetails + "&title=" + (title == null ? "" : Uri.EscapeDataString(title)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						return jsonReader.ReadAsString();
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board charts
-		/// Charts_List {organization}/{project}/{team}/_apis/work/boards/{board}/charts
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Identifier for board, either board's backlog level name (Eg:"Stories") or Id</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardChartReference[]> Charts_ListAsync(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/charts&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardChartReference[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board charts
-		/// Charts_List {organization}/{project}/{team}/_apis/work/boards/{board}/charts
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Identifier for board, either board's backlog level name (Eg:"Stories") or Id</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardChartReference[] Charts_List(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/charts&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardChartReference[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a board chart
-		/// Charts_Get {organization}/{project}/{team}/_apis/work/boards/{board}/charts/{name}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Identifier for board, either board's backlog level name (Eg:"Stories") or Id</param>
-		/// <param name="name">The chart name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardChart> Charts_GetAsync(string organization, string project, string board, string name, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/charts/" + (name == null ? "" : Uri.EscapeDataString(name)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardChart>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a board chart
-		/// Charts_Get {organization}/{project}/{team}/_apis/work/boards/{board}/charts/{name}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Identifier for board, either board's backlog level name (Eg:"Stories") or Id</param>
-		/// <param name="name">The chart name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardChart Charts_Get(string organization, string project, string board, string name, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/charts/" + (name == null ? "" : Uri.EscapeDataString(name)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardChart>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get columns on a board
-		/// Columns_List {organization}/{project}/{team}/_apis/work/boards/{board}/columns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Name or ID of the specific board</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardColumn[]> Columns_ListAsync(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/columns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardColumn[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get columns on a board
-		/// Columns_List {organization}/{project}/{team}/_apis/work/boards/{board}/columns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Name or ID of the specific board</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardColumn[] Columns_List(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/columns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardColumn[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update columns on a board
-		/// Columns_Update {organization}/{project}/{team}/_apis/work/boards/{board}/columns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Name or ID of the specific board</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">List of board columns to update</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardColumn[]> Columns_UpdateAsync(string organization, string project, string board, string team, string api_version, BoardColumn[] requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/columns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<BoardColumn[]>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update columns on a board
-		/// Columns_Update {organization}/{project}/{team}/_apis/work/boards/{board}/columns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Name or ID of the specific board</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">List of board columns to update</param>
-		/// <returns>successful operation</returns>
-		public BoardColumn[] Columns_Update(string organization, string project, string board, string team, string api_version, BoardColumn[] requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/columns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<BoardColumn[]>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get rows on a board
-		/// Rows_List {organization}/{project}/{team}/_apis/work/boards/{board}/rows
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Name or ID of the specific board</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardRow[]> Rows_ListAsync(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/rows&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardRow[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get rows on a board
-		/// Rows_List {organization}/{project}/{team}/_apis/work/boards/{board}/rows
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Name or ID of the specific board</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public BoardRow[] Rows_List(string organization, string project, string board, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/rows&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<BoardRow[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update rows on a board
-		/// Rows_Update {organization}/{project}/{team}/_apis/work/boards/{board}/rows
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Name or ID of the specific board</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">List of board rows to update</param>
-		/// <returns>successful operation</returns>
-		public async Task<BoardRow[]> Rows_UpdateAsync(string organization, string project, string board, string team, string api_version, BoardRow[] requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/rows&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<BoardRow[]>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update rows on a board
-		/// Rows_Update {organization}/{project}/{team}/_apis/work/boards/{board}/rows
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="board">Name or ID of the specific board</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">List of board rows to update</param>
-		/// <returns>successful operation</returns>
-		public BoardRow[] Rows_Update(string organization, string project, string board, string team, string api_version, BoardRow[] requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (board == null ? "" : Uri.EscapeDataString(board)) + "/rows&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<BoardRow[]>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board
-		/// Boards_Get {organization}/{project}/{team}/_apis/work/boards/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">identifier for board, either board's backlog level name (Eg:"Stories") or Id</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<Board> Boards_GetAsync(string organization, string project, string id, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<Board>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get board
-		/// Boards_Get {organization}/{project}/{team}/_apis/work/boards/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">identifier for board, either board's backlog level name (Eg:"Stories") or Id</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public Board Boards_Get(string organization, string project, string id, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<Board>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update board options
-		/// Boards_Set_Board_Options {organization}/{project}/{team}/_apis/work/boards/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">identifier for board, either category plural name (Eg:"Stories") or guid</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">options to updated</param>
-		/// <returns>successful operation</returns>
-		public async Task<string> Boards_Set_Board_OptionsAsync(string organization, string project, string id, string team, string api_version, string requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							return jsonReader.ReadAsString();
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update board options
-		/// Boards_Set_Board_Options {organization}/{project}/{team}/_apis/work/boards/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">identifier for board, either category plural name (Eg:"Stories") or guid</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">options to updated</param>
-		/// <returns>successful operation</returns>
-		public string Boards_Set_Board_Options(string organization, string project, string id, string team, string api_version, string requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							return jsonReader.ReadAsString();
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Returns the list of parent field filter model for the given list of workitem ids
-		/// Boardparents_List {organization}/{project}/{team}/_apis/work/boards/boardparents
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<ParentChildWIMap[]> Boardparents_ListAsync(string organization, string project, string childBacklogContextCategoryRefName, string workitemIds, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/boardparents&childBacklogContextCategoryRefName=" + (childBacklogContextCategoryRefName == null ? "" : Uri.EscapeDataString(childBacklogContextCategoryRefName)) + "&workitemIds=" + (workitemIds == null ? "" : Uri.EscapeDataString(workitemIds)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<ParentChildWIMap[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Returns the list of parent field filter model for the given list of workitem ids
-		/// Boardparents_List {organization}/{project}/{team}/_apis/work/boards/boardparents
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public ParentChildWIMap[] Boardparents_List(string organization, string project, string childBacklogContextCategoryRefName, string workitemIds, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/boards/boardparents&childBacklogContextCategoryRefName=" + (childBacklogContextCategoryRefName == null ? "" : Uri.EscapeDataString(childBacklogContextCategoryRefName)) + "&workitemIds=" + (workitemIds == null ? "" : Uri.EscapeDataString(workitemIds)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<ParentChildWIMap[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get an iteration chart image.
-		/// Chartimages_Get_Iteration_Chart_Image {organization}/{project}/{team}/_apis/work/iterations/{iterationId}/chartimages/{name}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="iterationId">ID of the iteration.</param>
-		/// <param name="name">The chart name. e.g. Burndown.</param>
-		/// <param name="width">The width of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="height">The height of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="showDetails">Whether or not the chart should include detailed information (e.g. axis labels, titles, trend lines, etc.)</param>
-		/// <param name="title">The title of the chart. Can only be dislayed if ShowLabels is true.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<string> Chartimages_Get_Iteration_Chart_ImageAsync(string organization, string project, string team, string iterationId, string name, int width, int height, bool showDetails, string title, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/chartimages/" + (name == null ? "" : Uri.EscapeDataString(name)) + "&width=" + width + "&height=" + height + "&showDetails=" + showDetails + "&title=" + (title == null ? "" : Uri.EscapeDataString(title)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						return jsonReader.ReadAsString();
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get an iteration chart image.
-		/// Chartimages_Get_Iteration_Chart_Image {organization}/{project}/{team}/_apis/work/iterations/{iterationId}/chartimages/{name}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="iterationId">ID of the iteration.</param>
-		/// <param name="name">The chart name. e.g. Burndown.</param>
-		/// <param name="width">The width of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="height">The height of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="showDetails">Whether or not the chart should include detailed information (e.g. axis labels, titles, trend lines, etc.)</param>
-		/// <param name="title">The title of the chart. Can only be dislayed if ShowLabels is true.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public string Chartimages_Get_Iteration_Chart_Image(string organization, string project, string team, string iterationId, string name, int width, int height, bool showDetails, string title, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/chartimages/" + (name == null ? "" : Uri.EscapeDataString(name)) + "&width=" + width + "&height=" + height + "&showDetails=" + showDetails + "&title=" + (title == null ? "" : Uri.EscapeDataString(title)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						return jsonReader.ReadAsString();
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get an iterations chart image.
-		/// Chartimages_Get_Iterations_Chart_Image {organization}/{project}/{team}/_apis/work/iterations/chartimages/{name}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="name">The chart name. e.g. Velocity.</param>
-		/// <param name="iterationsNumber">Number of iterations the chart is for.</param>
-		/// <param name="width">The width of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="height">The height of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="showDetails">Whether or not the chart should include detailed information (e.g. axis labels, titles, trend lines, etc.)</param>
-		/// <param name="title">The title of the chart. Can only be dislayed if ShowLabels is true.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<string> Chartimages_Get_Iterations_Chart_ImageAsync(string organization, string project, string team, string name, int iterationsNumber, int width, int height, bool showDetails, string title, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/iterations/chartimages/" + (name == null ? "" : Uri.EscapeDataString(name)) + "&iterationsNumber=" + iterationsNumber + "&width=" + width + "&height=" + height + "&showDetails=" + showDetails + "&title=" + (title == null ? "" : Uri.EscapeDataString(title)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						return jsonReader.ReadAsString();
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get an iterations chart image.
-		/// Chartimages_Get_Iterations_Chart_Image {organization}/{project}/{team}/_apis/work/iterations/chartimages/{name}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="name">The chart name. e.g. Velocity.</param>
-		/// <param name="iterationsNumber">Number of iterations the chart is for.</param>
-		/// <param name="width">The width of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="height">The height of the chart in pixels. Must be greater than 0.</param>
-		/// <param name="showDetails">Whether or not the chart should include detailed information (e.g. axis labels, titles, trend lines, etc.)</param>
-		/// <param name="title">The title of the chart. Can only be dislayed if ShowLabels is true.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public string Chartimages_Get_Iterations_Chart_Image(string organization, string project, string team, string name, int iterationsNumber, int width, int height, bool showDetails, string title, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/iterations/chartimages/" + (name == null ? "" : Uri.EscapeDataString(name)) + "&iterationsNumber=" + iterationsNumber + "&width=" + width + "&height=" + height + "&showDetails=" + showDetails + "&title=" + (title == null ? "" : Uri.EscapeDataString(title)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						return jsonReader.ReadAsString();
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update taskboard card settings
-		/// Cardsettings_Update_Taskboard_Card_Settings {organization}/{project}/{team}/_apis/work/taskboard/cardsettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Cardsettings_Update_Taskboard_Card_SettingsAsync(string organization, string project, string team, string api_version, BoardCardSettings requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/taskboard/cardsettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Update taskboard card settings
-		/// Cardsettings_Update_Taskboard_Card_Settings {organization}/{project}/{team}/_apis/work/taskboard/cardsettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Cardsettings_Update_Taskboard_Card_Settings(string organization, string project, string team, string api_version, BoardCardSettings requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/taskboard/cardsettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Taskboard_Columns_Get {organization}/{project}/{team}/_apis/work/taskboardcolumns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TaskboardColumns> Taskboard_Columns_GetAsync(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/taskboardcolumns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TaskboardColumns>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Taskboard_Columns_Get {organization}/{project}/{team}/_apis/work/taskboardcolumns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TaskboardColumns Taskboard_Columns_Get(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/taskboardcolumns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TaskboardColumns>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Taskboard_Columns_Update {organization}/{project}/{team}/_apis/work/taskboardcolumns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TaskboardColumns> Taskboard_Columns_UpdateAsync(string organization, string project, string team, string api_version, UpdateTaskboardColumn[] requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/taskboardcolumns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<TaskboardColumns>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Taskboard_Columns_Update {organization}/{project}/{team}/_apis/work/taskboardcolumns
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TaskboardColumns Taskboard_Columns_Update(string organization, string project, string team, string api_version, UpdateTaskboardColumn[] requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/taskboardcolumns&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<TaskboardColumns>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Taskboard_Work_Items_List {organization}/{project}/{team}/_apis/work/taskboardworkitems/{iterationId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TaskboardWorkItemColumn[]> Taskboard_Work_Items_ListAsync(string organization, string project, string team, string iterationId, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/taskboardworkitems/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TaskboardWorkItemColumn[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Taskboard_Work_Items_List {organization}/{project}/{team}/_apis/work/taskboardworkitems/{iterationId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TaskboardWorkItemColumn[] Taskboard_Work_Items_List(string organization, string project, string team, string iterationId, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/taskboardworkitems/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TaskboardWorkItemColumn[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a team's settings
-		/// Teamsettings_Get {organization}/{project}/{team}/_apis/work/teamsettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamSetting> Teamsettings_GetAsync(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamSetting>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a team's settings
-		/// Teamsettings_Get {organization}/{project}/{team}/_apis/work/teamsettings
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TeamSetting Teamsettings_Get(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamSetting>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a team's iterations using timeframe filter
-		/// Iterations_List {organization}/{project}/{team}/_apis/work/teamsettings/iterations
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="timeframe">A filter for which iterations are returned based on relative time. Only Current is supported currently.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamSettingsIteration[]> Iterations_ListAsync(string organization, string project, string team, string timeframe, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations&$timeframe=" + (timeframe == null ? "" : Uri.EscapeDataString(timeframe)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamSettingsIteration[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a team's iterations using timeframe filter
-		/// Iterations_List {organization}/{project}/{team}/_apis/work/teamsettings/iterations
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="timeframe">A filter for which iterations are returned based on relative time. Only Current is supported currently.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TeamSettingsIteration[] Iterations_List(string organization, string project, string team, string timeframe, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations&$timeframe=" + (timeframe == null ? "" : Uri.EscapeDataString(timeframe)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamSettingsIteration[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Add an iteration to the team
-		/// Iterations_Post_Team_Iteration {organization}/{project}/{team}/_apis/work/teamsettings/iterations
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Iteration to add</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamSettingsIteration> Iterations_Post_Team_IterationAsync(string organization, string project, string team, string api_version, TeamSettingsIteration requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "user";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<TeamSettingsIteration>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 			}
 		}
-
+		
 		/// <summary>
-		/// Add an iteration to the team
-		/// Iterations_Post_Team_Iteration {organization}/{project}/{team}/_apis/work/teamsettings/iterations
+		/// Get user by user name
+		/// GetUserByName user/{username}
 		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Iteration to add</param>
+		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
 		/// <returns>successful operation</returns>
-		public TeamSettingsIteration Iterations_Post_Team_Iteration(string organization, string project, string team, string api_version, TeamSettingsIteration requestBody)
+		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<User>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updated user
+		/// This can only be done by the logged in user.
+		/// UpdateUser user/{username}
+		/// </summary>
+		/// <param name="username">name that need to be deleted</param>
+		/// <param name="requestBody">Updated user object</param>
+		public async Task UpdateUserAsync(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete user
+		/// This can only be done by the logged in user.
+		/// DeleteUser user/{username}
+		/// </summary>
+		/// <param name="username">The name that needs to be deleted</param>
+		public async Task DeleteUserAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Creates list of users with given input array
+		/// CreateUsersWithArrayInput user/createWithArray
+		/// </summary>
+		/// <param name="requestBody">List of user object</param>
+		public async Task CreateUsersWithArrayInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "user/createWithArray";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<TeamSettingsIteration>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Delete a team's iteration by iterationId
-		/// Iterations_Delete {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Iterations_DeleteAsync(string organization, string project, string id, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var requestWriter = new System.IO.StringWriter())
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Delete a team's iteration by iterationId
-		/// Iterations_Delete {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Iterations_Delete(string organization, string project, string id, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
 			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 			}
 		}
-
+		
 		/// <summary>
-		/// Get team's iteration by iterationId
-		/// Iterations_Get {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{id}
+		/// Creates list of users with given input array
+		/// CreateUsersWithListInput user/createWithList
 		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamSettingsIteration> Iterations_GetAsync(string organization, string project, string id, string team, string api_version)
+		/// <param name="requestBody">List of user object</param>
+		public async Task CreateUsersWithListInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "user/createWithList";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Logs user into the system
+		/// LoginUser user/login
+		/// </summary>
+		/// <param name="username">The user name for login</param>
+		/// <param name="password">The password for login in clear text</param>
+		/// <returns>successful operation</returns>
+		public async Task<string> LoginUserAsync(string username, string password, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
+			if (handleHeaders != null)
+			{
+				handleHeaders(httpRequestMessage.Headers);
+			}
+
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamSettingsIteration>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				return jsonReader.ReadAsString();
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
 		/// <summary>
-		/// Get team's iteration by iterationId
-		/// Iterations_Get {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{id}
+		/// Logs out current logged in user session
+		/// LogoutUser user/logout
 		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="id">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TeamSettingsIteration Iterations_Get(string organization, string project, string id, string team, string api_version)
+		public async Task LogoutUserAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (id == null ? "" : Uri.EscapeDataString(id)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "user/logout";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamSettingsIteration>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a team's capacity
-		/// Capacities_List {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/capacities
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamMemberCapacityIdentityRef[]> Capacities_ListAsync(string organization, string project, string iterationId, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/capacities&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			if (handleHeaders != null)
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamMemberCapacityIdentityRef[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+				handleHeaders(httpRequestMessage.Headers);
 			}
-		}
 
-		/// <summary>
-		/// Get a team's capacity
-		/// Capacities_List {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/capacities
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TeamMemberCapacityIdentityRef[] Capacities_List(string organization, string project, string iterationId, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/capacities&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
 			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamMemberCapacityIdentityRef[]>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
-		}
-
-		/// <summary>
-		/// Replace a team's capacity
-		/// Capacities_Replace_Capacities_With_Identity_Ref {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/capacities
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <param name="requestBody">Team capacity to replace</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamMemberCapacityIdentityRef[]> Capacities_Replace_Capacities_With_Identity_RefAsync(string organization, string project, string iterationId, string team, string api_version, TeamMemberCapacityIdentityRef[] requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/capacities&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			finally
 			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<TeamMemberCapacityIdentityRef[]>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
+				responseMessage.Dispose();
 			}
-		}
-
-		/// <summary>
-		/// Replace a team's capacity
-		/// Capacities_Replace_Capacities_With_Identity_Ref {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/capacities
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <param name="requestBody">Team capacity to replace</param>
-		/// <returns>successful operation</returns>
-		public TeamMemberCapacityIdentityRef[] Capacities_Replace_Capacities_With_Identity_Ref(string organization, string project, string iterationId, string team, string api_version, TeamMemberCapacityIdentityRef[] requestBody)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/capacities&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-				using (var requestWriter = new System.IO.StringWriter())
-				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					var responseMessage = client.SendAsync(httpRequestMessage).Result;
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = new JsonSerializer();
-							return serializer.Deserialize<TeamMemberCapacityIdentityRef[]>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a team member's capacity
-		/// Capacities_Get {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/capacities/{teamMemberId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="teamMemberId">ID of the team member</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamMemberCapacityIdentityRef> Capacities_GetAsync(string organization, string project, string iterationId, string teamMemberId, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/capacities/" + (teamMemberId == null ? "" : Uri.EscapeDataString(teamMemberId)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamMemberCapacityIdentityRef>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a team member's capacity
-		/// Capacities_Get {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/capacities/{teamMemberId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="teamMemberId">ID of the team member</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TeamMemberCapacityIdentityRef Capacities_Get(string organization, string project, string iterationId, string teamMemberId, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/capacities/" + (teamMemberId == null ? "" : Uri.EscapeDataString(teamMemberId)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamMemberCapacityIdentityRef>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get team's days off for an iteration
-		/// Teamdaysoff_Get {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/teamdaysoff
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamSettingsDaysOff> Teamdaysoff_GetAsync(string organization, string project, string iterationId, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/teamdaysoff&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamSettingsDaysOff>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get team's days off for an iteration
-		/// Teamdaysoff_Get {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/teamdaysoff
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TeamSettingsDaysOff Teamdaysoff_Get(string organization, string project, string iterationId, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/teamdaysoff&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamSettingsDaysOff>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get work items for iteration
-		/// Iterations_Get_Iteration_Work_Items {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/workitems
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<IterationWorkItems> Iterations_Get_Iteration_Work_ItemsAsync(string organization, string project, string iterationId, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/workitems&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<IterationWorkItems>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get work items for iteration
-		/// Iterations_Get_Iteration_Work_Items {organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/workitems
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="iterationId">ID of the iteration</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public IterationWorkItems Iterations_Get_Iteration_Work_Items(string organization, string project, string iterationId, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/iterations/" + (iterationId == null ? "" : Uri.EscapeDataString(iterationId)) + "/workitems&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<IterationWorkItems>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a collection of team field values
-		/// Teamfieldvalues_Get {organization}/{project}/{team}/_apis/work/teamsettings/teamfieldvalues
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TeamFieldValues> Teamfieldvalues_GetAsync(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/teamfieldvalues&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamFieldValues>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Get a collection of team field values
-		/// Teamfieldvalues_Get {organization}/{project}/{team}/_apis/work/teamsettings/teamfieldvalues
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TeamFieldValues Teamfieldvalues_Get(string organization, string project, string team, string api_version)
-		{
-			var requestUri = "" + (organization == null ? "" : Uri.EscapeDataString(organization)) + "/" + (project == null ? "" : Uri.EscapeDataString(project)) + "/" + (team == null ? "" : Uri.EscapeDataString(team)) + "/_apis/work/teamsettings/teamfieldvalues&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				var responseMessage = client.SendAsync(httpRequestMessage).Result;
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = new JsonSerializer();
-						return serializer.Deserialize<TeamFieldValues>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
 			}
 		}
 	}

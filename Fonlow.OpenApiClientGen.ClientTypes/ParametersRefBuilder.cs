@@ -261,7 +261,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
 					return TypeRefHelper.TranslateToClientTypeReference(typeWithNs);
 				}
-				else if (apiParameterSchema.Enum.Count == 0) // for primitive type
+				else if (schemaType == "object" && apiParameterSchema.AdditionalProperties != null)
+				{
+					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
+					CodeTypeReference dicValueTypeRef = OpenApiParameterSchemaToCodeTypeReference(apiParameterSchema.AdditionalProperties, apiParameterName);
+					return new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
+				}
+				else if (apiParameterSchema.Enum.Count == 0 && !isPrimitiveType) // for primitive type
 				{
 					Type t = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, apiParameterSchema.Format);
 					return new CodeTypeReference(t);
