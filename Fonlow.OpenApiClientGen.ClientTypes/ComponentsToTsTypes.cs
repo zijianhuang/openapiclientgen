@@ -15,51 +15,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// <summary>
 	/// POCO to TypeScript interfaces generator. Create CodeDOM and output TS codes, with TypeScript CodeDOM provider
 	/// </summary>
-	public class ComponentsToTsTypes : IComponentToCodeDom
+	public class ComponentsToTsTypes : ComponentsToTypesBase, IComponentToCodeDom
 	{
-		public ComponentsToTsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
+		public ComponentsToTsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
 		{
-			this.codeCompileUnit = codeCompileUnit;
-			this.settings = settings;
-			this.ClientNamespace = clientNamespace;
-			TypeAliasDic = new TypeAliasDic();
-		}
-
-
-		public CodeNamespace ClientNamespace { get; private set; }
-
-		readonly CodeCompileUnit codeCompileUnit;
-
-		readonly Settings settings;
-
-		IDictionary<string, OpenApiSchema> ComponentsSchemas;
-
-		readonly List<string> registeredSchemaRefIds = new List<string>();
-
-		public List<CodeNamespace> ClassNamespaces { get; private set; } = new List<CodeNamespace>();
-
-		public TypeAliasDic TypeAliasDic { get; private set; }
-
-		void RegisterSchemaRefIdToBeAdded(string t)//common
-		{
-			registeredSchemaRefIds.Add(t);
-		}
-
-		void RemoveRegisteredSchemaRefId(string t)
-		{
-			registeredSchemaRefIds.Remove(t);
-		}
-
-		public bool RegisteredSchemaRefIdExists(string t)
-		{
-			return registeredSchemaRefIds.Exists(d => d == t);
 		}
 
 		/// <summary>
 		/// Save TypeScript codes generated into a file.
 		/// </summary>
 		/// <param name="fileName"></param>
-		public void SaveCodeToFile(string fileName)
+		public override  void SaveCodeToFile(string fileName)
 		{
 			if (String.IsNullOrEmpty(fileName))
 				throw new ArgumentException("A valid fileName is not defined.", nameof(fileName));
@@ -87,7 +53,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// Write code with TypeScript CodeDOM
 		/// </summary>
 		/// <param name="writer"></param>
-		void WriteCode(TextWriter writer)
+		protected override void WriteCode(TextWriter writer)
 		{
 			//if (writer == null)
 			//	throw new ArgumentNullException("writer", "No TextWriter instance is defined.");
@@ -97,66 +63,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
-		public string WriteToText()
-		{
-			using StringWriter writer = new StringWriter();
-			WriteCode(writer);
-			return writer.ToString();
-		}
-
-		/// <summary>
-		/// Create TypeScript CodeDOM for POCO types. 
-		/// For an enum type, all members will be processed regardless of EnumMemberAttribute.
-		/// </summary>
-		/// <param name="types">POCO types.</param>
-		/// <param name="methods"></param>
-		public void CreateCodeDom(OpenApiComponents components)//common
-		{
-			if (components == null)
-			{
-				return;
-			}
-
-			ComponentsSchemas = components.Schemas;//.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
-			var classNamespaceNames = NameFunc.FindNamespacesInClassNames(ComponentsSchemas.Keys);
-
-			if (classNamespaceNames.Length > 0)
-			{
-				var groupedComponentsSchemas = ComponentsSchemas
-					.GroupBy(d => NameFunc.GetNamespaceOfClassName(d.Key))
-					.OrderBy(k => k.Key);
-				var namespacesOfTypes = groupedComponentsSchemas.Select(d => d.Key).ToArray();
-				foreach (var groupedTypes in groupedComponentsSchemas)
-				{
-					var classNamespaceText = groupedTypes.Key;
-					var classNamespace = new CodeNamespace(classNamespaceText);
-					codeCompileUnit.Namespaces.Add(classNamespace);
-					ClassNamespaces.Add(classNamespace);
-					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
-					{
-						var existingType = ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, classNamespaceText), classNamespace);
-						if (existingType == null)
-						{
-							AddTypeToCodeDom(kv);
-						}
-					}
-				}
-			}
-			else
-			{
-				foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
-				{
-					var existingType = FindTypeDeclarationInNamespaces(NameFunc.RefineTypeName(item.Key, null), null);
-					if (existingType == null)
-					{
-						AddTypeToCodeDom(item);
-					}
-				}
-			}
-
-		}
-
-		public void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item)
+		public override void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item)
 		{
 			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
 			var currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
@@ -280,15 +187,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			RemoveRegisteredSchemaRefId(item.Key);
 		}
 
-		public void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
-		{
-			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
-			{
-				AddProperty(p, typeDeclaration, schema, currentTypeName, ns);
-			}
-		}
-
-		void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
+		protected override void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			string propertyName = NameFunc.RefineTsPropertyName(p.Key);
 			if (propertyName == currentTypeName)
@@ -308,21 +207,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
 			CodeMemberField clientProperty;
 
-			void GenerateCasualEnum()
-			{
-				string casualEnumName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName); // make Pascal case like OrderStatus
-				CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
-				if (existingType == null)
-				{
-					CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
-					AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-					Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}."); //TS specific
-				}
-
-				clientProperty = CreateProperty(propertyName, casualEnumName, isRequired); //TS
-
-			}
-
 			if (String.IsNullOrEmpty(primitivePropertyType))
 			{
 				OpenApiSchema refToType = null;
@@ -337,32 +221,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum
 					{
-						GenerateCasualEnum();
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
 					}
 					else
 					{
-						if (propertySchema.AllOf.Count > 0)
-						{
-							refToType = propertySchema.AllOf[0];
-						}
-						else if (propertySchema.OneOf.Count > 0)
-						{
-							refToType = propertySchema.OneOf[0];
-						}
-						else if (propertySchema.AnyOf.Count > 0)
-						{
-							refToType = propertySchema.AnyOf[0];
-						}
-						else if (refToType == null)
-						{
-							Trace.TraceWarning($"Property '{p.Key}' of {currentTypeName} may be of type object.");
-						}
+						var r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
+						clientProperty = CreateProperty(r.Item1, propertyName, isRequired);
 					}
-
-					string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
-					string customPropertyFormat = refToType?.Format;
-					Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-					clientProperty = CreatePropertyOfType(propertyName, customType, isRequired); //TS
 				}
 			}
 			else
@@ -460,7 +325,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else //for casual enum
 					{
-						GenerateCasualEnum();
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
 					}
 
 					CreateMemberDocComment(p, clientProperty);
@@ -473,6 +338,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			typeDeclaration.Members.Add(clientProperty);
 		}
 
+		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, bool isRequired)
+		{
+			string casualEnumName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName); // make Pascal case like OrderStatus
+			CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
+			if (existingType == null)
+			{
+				CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
+				AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
+				Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclarationName}/{propertyName}.");
+			}
+
+			return CreateProperty(propertyName, casualEnumName, isRequired);
+
+		}
+
 		CodeMemberField CreatePropertyOfType(string propertyName, Type type, bool isRequired)
 		{
 			string memberName = propertyName + (isRequired ? String.Empty : "?");
@@ -481,7 +361,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property)
+		protected override void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property)
 		{
 			if (String.IsNullOrEmpty(item.Value.Description))
 				return;
@@ -559,48 +439,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return otherArrayType;
 		}
 
-
-		public CodeTypeDeclaration FindTypeDeclarationInNamespaces(string typeName, string ns)//todo: fix this like C# one.
-		{
-			return ClientNamespace.FindTypeDeclaration(typeName);
-		}
-
-
-		/// <summary>
-		/// Check if schema key exists in ComponentsSchemas
-		/// </summary>
-		/// <param name="key"></param>
-		/// <returns></returns>
-		public OpenApiSchema FindSchema(string key)//common
-		{
-			if (ComponentsSchemas.TryGetValue(key, out OpenApiSchema v))
-			{
-				return v;
-			}
-
-			return null;
-		}
-
-		public CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
-		{
-			if (String.IsNullOrEmpty(ns))
-			{
-				return PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName);
-			}
-			else
-			{
-				var foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
-				if (foundNamespace == null)
-				{
-					foundNamespace = new CodeNamespace(ns);
-					codeCompileUnit.Namespaces.Add(foundNamespace);
-					ClassNamespaces.Add(foundNamespace);
-				}
-
-				return PodGenHelper.CreatePodClientInterface(foundNamespace, typeName);
-			}
-		}
-
 		static CodeMemberField CreateProperty(string propertyName, string typeName, bool isRequired)
 		{
 			string memberName = propertyName + (isRequired ? String.Empty : "?");
@@ -629,7 +467,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		static void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
+		protected override void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
 		{
 			string typeComment = item.Value.Description;
 			if (String.IsNullOrEmpty(typeComment))
@@ -647,7 +485,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			declaration.Comments.Add(new CodeCommentStatement(typeComment, true));
 		}
 
-		public void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
+		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
 			int k = 0;
 			foreach (IOpenApiAny enumMember in enumTypeList)
