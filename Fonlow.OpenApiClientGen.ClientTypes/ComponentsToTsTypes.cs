@@ -493,6 +493,27 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 		}
+
+		public override CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
+		{
+			if (String.IsNullOrEmpty(ns))
+			{
+				return PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName);
+			}
+			else
+			{
+				var foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
+				if (foundNamespace == null)
+				{
+					foundNamespace = new CodeNamespace(ns);
+					codeCompileUnit.Namespaces.Add(foundNamespace);
+					ClassNamespaces.Add(foundNamespace);
+				}
+
+				return PodGenHelper.CreatePodClientInterface(foundNamespace, typeName);
+			}
+		}
+
 	}
 
 }

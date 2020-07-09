@@ -133,25 +133,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		public CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
-		{
-			if (String.IsNullOrEmpty(ns))
-			{
-				return PodGenHelper.CreatePodClientClass(ClientNamespace, typeName);
-			}
-			else
-			{
-				var foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
-				if (foundNamespace == null)
-				{
-					foundNamespace = new CodeNamespace(ns);
-					codeCompileUnit.Namespaces.Add(foundNamespace);
-					ClassNamespaces.Add(foundNamespace);
-				}
-
-				return PodGenHelper.CreatePodClientClass(foundNamespace, typeName);
-			}
-		}
+		public abstract CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns);
 
 		/// <summary>
 		/// The Id will be translated to proper C# type name and namespace if the YAML does support namespace in components.
