@@ -261,7 +261,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
 					return TypeRefHelper.TranslateToClientTypeReference(typeWithNs);
 				}
-				else if (schemaType == "object" && apiParameterSchema.AdditionalProperties != null)
+				else if (schemaType == "object" && apiParameterSchema.AdditionalProperties != null) // for dictionary
 				{
 					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
 					CodeTypeReference dicValueTypeRef = OpenApiParameterSchemaToCodeTypeReference(apiParameterSchema.AdditionalProperties, apiParameterName);

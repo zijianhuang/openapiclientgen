@@ -317,17 +317,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
 					AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
 					clientProperty = CreateProperty(propertyName, casualEnumName, isRequired);
-
-					Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
+					Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}."); //TS specific
 				}
 				else
 				{
-					clientProperty = CreateProperty(propertyName, casualEnumName, isRequired);
+					clientProperty = CreateProperty(propertyName, casualEnumName, isRequired); //TS
 				}
 
 			}
 
-			if (String.IsNullOrEmpty(primitivePropertyType)) // for custom type, pointing to a custom type "$ref": "#/components/schemas/PhoneType"
+			if (String.IsNullOrEmpty(primitivePropertyType))
 			{
 				OpenApiSchema refToType = null;
 				if (propertySchema.Reference != null)
@@ -335,7 +334,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
-					clientProperty = CreateProperty(propertyName, propertyTypeWithNs, isRequired);
+					clientProperty = CreateProperty(propertyName, propertyTypeWithNs, isRequired); //TS
 				}
 				else
 				{
@@ -366,7 +365,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
 					string customPropertyFormat = refToType?.Format;
 					Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-					clientProperty = CreatePropertyOfType(propertyName, customType, isRequired);
+					clientProperty = CreatePropertyOfType(propertyName, customType, isRequired); //TS
 				}
 			}
 			else
@@ -445,7 +444,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-					clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired);
+					clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired); //TS
 				}
 				else // for enum
 				{
@@ -474,9 +473,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			CreateMemberDocComment(p, clientProperty);
-
 			typeDeclaration.Members.Add(clientProperty);
-
 		}
 
 		CodeMemberField CreatePropertyOfType(string propertyName, Type type, bool isRequired)

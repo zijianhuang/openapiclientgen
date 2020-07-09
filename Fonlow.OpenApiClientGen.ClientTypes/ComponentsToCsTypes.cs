@@ -499,8 +499,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
 					AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
+					clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue)); //C# specific
+					Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
 
-					if (settings.DecorateDataModelWithDataContract)
+					if (settings.DecorateDataModelWithDataContract) // C# specific
 					{
 						casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
 					}
@@ -509,18 +511,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
 					}
-
-					clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
-
-					Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
 				}
 				else
 				{
-					clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue));
+					clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue)); //C#
 				}
 			}
 
-			//Debug.Assert(propertySchema.Reference?.Id != "DeallocationOption");
 			if (String.IsNullOrEmpty(primitivePropertyType))
 			{
 				if (propertySchema.Reference != null)
@@ -528,7 +525,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
-					clientProperty = CreateProperty(propertyName, propertyTypeWithNs, defaultValue);
+					clientProperty = CreateProperty(propertyName, propertyTypeWithNs, defaultValue); //C#
 				}
 				else
 				{
@@ -559,7 +556,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
 						string customPropertyFormat = refToType?.Format;
 						Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-						if (!customType.IsClass && !isRequired)
+						if (!customType.IsClass && !isRequired) //C#
 						{
 							clientProperty = CreateNullableProperty(propertyName, customType);
 						}
@@ -646,7 +643,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-					if (!simpleType.IsClass && !isRequired)
+					if (!simpleType.IsClass && !isRequired) //C#
 					{
 						clientProperty = CreateNullableProperty(propertyName, simpleType);
 					}
@@ -704,15 +701,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			CreateMemberDocComment(p, clientProperty);
-
-			if (settings.DataAnnotationsEnabled)
+			if (settings.DataAnnotationsEnabled) //C#
 			{
 				AddValidationAttributes(propertySchema, clientProperty);
 			}
 
+			CreateMemberDocComment(p, clientProperty);
 			typeDeclaration.Members.Add(clientProperty);
-
 		}
 
 		static void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
