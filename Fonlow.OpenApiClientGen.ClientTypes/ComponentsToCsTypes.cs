@@ -532,16 +532,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 				{
-					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-					string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-					var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
-					if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
-					{
-						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
-					}
-
-					var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
-					clientProperty = CreateProperty(propertyName, typeWithNs, defaultValue);
+					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
+					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, defaultValue);
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
@@ -559,16 +551,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Reference != null)
 					{
-						var propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-						string typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
-						var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
-						if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
-						{
-							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
-						}
+						//var propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+						//string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+						//string typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
+						//var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
+						//if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
+						//{
+						//	AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
+						//}
 
-						clientProperty = CreateProperty(propertyName, typeWithNs, String.IsNullOrEmpty(defaultValue) ? null : typeWithNs + "." + defaultValue);
+						CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
+						clientProperty = CreateProperty(complexCodeTypeReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : complexCodeTypeReference.BaseType + "." + defaultValue);
 					}
 					else //for casual enum
 					{
@@ -840,6 +833,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					return Tuple.Create(TypeRefHelper.CreateArrayTypeReference(clrType, 1), String.Empty);
 				}
 			}
+		}
+
+		CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema)
+		{
+			string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
+			string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+			var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
+			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
+			{
+				AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
+			}
+
+			var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
+			return TypeRefHelper.TranslateToClientTypeReference(typeWithNs);
 		}
 
 		static string GetDefaultValue(OpenApiSchema s)
