@@ -3,7 +3,6 @@ using Fonlow.Reflection;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Linq;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -209,7 +208,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (String.IsNullOrEmpty(primitivePropertyType))
 			{
-				OpenApiSchema refToType = null;
 				if (propertySchema.Reference != null)
 				{
 					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
@@ -234,74 +232,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertySchema.Type == "array") // for array
 				{
-					OpenApiSchema arrayItemsSchema = propertySchema.Items;
-					if (arrayItemsSchema.Reference != null) //array of custom type
-					{
-						string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
-						var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
-						var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
-						var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
-						var existingType = FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
-						if (existingType == null) // Referencing to a type not yet added to namespace
-						{
-							var existingSchema = FindSchema(arrayTypeSchemaRefId);
-							if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
-							{
-								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
-							}
-						}
-
-						if (TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
-						{
-							if (!TypeRefHelper.IsSwaggerPrimitive(arrayTypeNameAlias))
-							{
-								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
-							}
-							else
-							{
-								var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
-								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
-							}
-						}
-						else
-						{
-							CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
-						}
-					}
-					else
-					{
-						string arrayType = arrayItemsSchema.Type;
-						if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
-						{
-							string casualTypeName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName); //keep Pascal case
-							CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
-							AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
-							CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, isRequired);
-						}
-						else
-						{
-							Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
-							CodeTypeReference arrayCodeTypeReference = CreateArrayTypeReference(clrType, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, isRequired);
-						}
-					}
+					var r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
+					CodeTypeReference arrayCodeTypeReference = r.Item1;
+					var n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
+					clientProperty = CreateProperty(arrayCodeTypeReference, n, isRequired);
 				}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 				{
-					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-					string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-					var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
-					if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
-					{
-						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
-					}
-
-					var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
-					clientProperty = CreateProperty(propertyName, typeWithNs, isRequired);
+					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
+					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
@@ -312,16 +251,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Reference != null)
 					{
-						var propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-						string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-						string typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
-						var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
-						if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
-						{
-							AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(propertySchema.Reference.Id, propertySchema));
-						}
-
-						clientProperty = CreateProperty(propertyName, typeWithNs, isRequired);
+						CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
+						clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
 					}
 					else //for casual enum
 					{
