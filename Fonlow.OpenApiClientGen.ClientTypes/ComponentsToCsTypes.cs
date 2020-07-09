@@ -509,7 +509,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else
 					{
 						var r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
-						if (!r.Item2 && !isRequired) //C#
+						var isClass = r.Item2;
+						if (!isClass && !isRequired) //C#
 						{
 							clientProperty = CreateNullableProperty(r.Item1, propertyName);
 						}
@@ -524,61 +525,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertySchema.Type == "array") // for array
 				{
-					OpenApiSchema arrayItemsSchema = propertySchema.Items;
-					if (arrayItemsSchema.Reference != null) //array of custom type
-					{
-						string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
-						var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
-						var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
-						var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
-						var existingType = FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
-						if (existingType == null) // Referencing to a type not yet added to namespace
-						{
-							var existingSchema = FindSchema(arrayTypeSchemaRefId);
-							if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
-							{
-								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
-							}
-						}
-
-						if (TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
-						{
-							if (!TypeRefHelper.IsSwaggerPrimitive(arrayTypeNameAlias))
-							{
-								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
-							}
-							else
-							{
-								var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
-								CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1);
-								clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
-							}
-						}
-						else
-						{
-							CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
-						}
-					}
-					else
-					{
-						string arrayType = arrayItemsSchema.Type;
-						if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
-						{
-							string casualTypeName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
-							CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
-							AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
-							CodeTypeReference arrayCodeTypeReference = ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, casualTypeName, defaultValue);
-						}
-						else
-						{
-							Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
-							CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
-							clientProperty = CreateProperty(arrayCodeTypeReference, propertyName, defaultValue);
-						}
-					}
+					var r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
+					CodeTypeReference arrayCodeTypeReference = r.Item1;
+					var n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
+					clientProperty = CreateProperty(arrayCodeTypeReference, n, defaultValue);
 				}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 				{
@@ -827,6 +777,69 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			string customPropertyFormat = refToType?.Format;
 			Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
 			return Tuple.Create(new CodeTypeReference(customType), customType.IsClass);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="propertySchema"></param>
+		/// <param name="typeDeclarationName"></param>
+		/// <param name="propertyName"></param>
+		/// <param name="currentTypeName"></param>
+		/// <param name="ns"></param>
+		/// <returns>CodeTypeReference and CasualTypeName. Empty if no casualTypeName.</returns>
+		Tuple<CodeTypeReference, string> CreateArrayCodeTypeReference(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string currentTypeName, string ns)
+		{
+			OpenApiSchema arrayItemsSchema = propertySchema.Items;
+			if (arrayItemsSchema.Reference != null) //array of custom type
+			{
+				string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
+				var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
+				var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
+				var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
+				var existingType = FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
+				if (existingType == null) // Referencing to a type not yet added to namespace
+				{
+					var existingSchema = FindSchema(arrayTypeSchemaRefId);
+					if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
+					{
+						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
+					}
+				}
+
+				if (TypeAliasDic.TryGet(arrayTypeSchemaRefId, out string arrayTypeNameAlias))
+				{
+					if (!TypeRefHelper.IsSwaggerPrimitive(arrayTypeNameAlias))
+					{
+						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1), String.Empty);
+					}
+					else
+					{
+						var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
+						return Tuple.Create( ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1), String.Empty);
+					}
+				}
+				else
+				{
+					return Tuple.Create( ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1), String.Empty);
+				}
+			}
+			else
+			{
+				string arrayType = arrayItemsSchema.Type;
+				if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
+				{
+					string casualTypeName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName);
+					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
+					AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
+					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1), casualTypeName);
+				}
+				else
+				{
+					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
+					return Tuple.Create(TypeRefHelper.CreateArrayTypeReference(clrType, 1), String.Empty);
+				}
+			}
 		}
 
 		static string GetDefaultValue(OpenApiSchema s)
