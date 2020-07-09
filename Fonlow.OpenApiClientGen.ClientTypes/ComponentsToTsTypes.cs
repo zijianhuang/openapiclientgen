@@ -316,13 +316,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
 					AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-					clientProperty = CreateProperty(propertyName, casualEnumName, isRequired);
 					Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}."); //TS specific
 				}
-				else
-				{
-					clientProperty = CreateProperty(propertyName, casualEnumName, isRequired); //TS
-				}
+
+				clientProperty = CreateProperty(propertyName, casualEnumName, isRequired); //TS
 
 			}
 

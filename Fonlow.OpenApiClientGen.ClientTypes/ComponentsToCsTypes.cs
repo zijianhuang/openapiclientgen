@@ -491,33 +491,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			string defaultValue = GetDefaultValue(propertySchema);
 			CodeMemberField clientProperty;
 
-			void GenerateCasualEnum()
-			{
-				string casualEnumName = typeDeclaration.Name + NameFunc.RefinePropertyName(propertyName);
-				CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
-				if (existingType == null)
-				{
-					CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
-					AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
-					clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue)); //C# specific
-					Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclaration.Name}/{propertyName}.");
-
-					if (settings.DecorateDataModelWithDataContract) // C# specific
-					{
-						casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
-					}
-
-					if (settings.DecorateDataModelWithSerializable)
-					{
-						casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
-					}
-				}
-				else
-				{
-					clientProperty = CreateProperty(propertyName, casualEnumName, defaultValue == null ? null : (casualEnumName + "." + defaultValue)); //C#
-				}
-			}
-
 			if (String.IsNullOrEmpty(primitivePropertyType))
 			{
 				if (propertySchema.Reference != null)
@@ -531,38 +504,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum
 					{
-						GenerateCasualEnum();
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
 					}
 					else
 					{
-						OpenApiSchema refToType = null;
-						if (propertySchema.AllOf.Count > 0)
+						var r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
+						if (!r.Item2 && !isRequired) //C#
 						{
-							refToType = propertySchema.AllOf[0];
-						}
-						else if (propertySchema.OneOf.Count > 0)
-						{
-							refToType = propertySchema.OneOf[0];
-						}
-						else if (propertySchema.AnyOf.Count > 0)
-						{
-							refToType = propertySchema.AnyOf[0];
-						}
-						else if (refToType == null)
-						{
-							Trace.TraceWarning($"Property '{p.Key}' of {currentTypeName} may be of type object.");
-						}
-
-						string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
-						string customPropertyFormat = refToType?.Format;
-						Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-						if (!customType.IsClass && !isRequired) //C#
-						{
-							clientProperty = CreateNullableProperty(propertyName, customType);
+							clientProperty = CreateNullableProperty(r.Item1, propertyName);
 						}
 						else
 						{
-							clientProperty = CreateProperty(propertyName, customType, defaultValue);
+							clientProperty = CreateProperty(r.Item1, propertyName, defaultValue);
 						}
 					}
 				}
@@ -669,7 +622,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else //for casual enum
 					{
-						GenerateCasualEnum();
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
 					}
 
 					if (isRequired)
@@ -808,6 +761,74 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
+		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, string defaultValue)
+		{
+			var r = GenerateCasualEnum(propertySchema, typeDeclarationName, propertyName, ns);
+			if (r.Item2 != null)
+			{
+				if (settings.DecorateDataModelWithDataContract) // C# specific
+				{
+					r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+				}
+
+				if (settings.DecorateDataModelWithSerializable)
+				{
+					r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
+				}
+			}
+
+			return CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue)); 
+		}
+
+		Tuple<CodeTypeReference, CodeTypeDeclaration> GenerateCasualEnum(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns)
+		{
+			string casualEnumName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName);
+			CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
+			CodeTypeDeclaration casualEnumTypeDeclaration = null;
+			if (existingType == null)
+			{
+				casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
+				AddEnumMembers(casualEnumTypeDeclaration, propertySchema.Enum);
+				Trace.TraceInformation($"Casual enum {casualEnumName} added for {typeDeclarationName}/{propertyName}.");
+			}
+
+			CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(casualEnumName);
+			return Tuple.Create(codeTypeReference, casualEnumTypeDeclaration);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="propertySchema"></param>
+		/// <param name="currentTypeName"></param>
+		/// <param name="propertyKey"></param>
+		/// <returns>CodeTypeReference and IsClass</returns>
+		static Tuple<CodeTypeReference, bool> CreateCodeTypeReferenceSchemaOf(OpenApiSchema propertySchema, string currentTypeName, string propertyKey)
+		{
+			OpenApiSchema refToType = null;
+			if (propertySchema.AllOf.Count > 0)
+			{
+				refToType = propertySchema.AllOf[0];
+			}
+			else if (propertySchema.OneOf.Count > 0)
+			{
+				refToType = propertySchema.OneOf[0];
+			}
+			else if (propertySchema.AnyOf.Count > 0)
+			{
+				refToType = propertySchema.AnyOf[0];
+			}
+			else if (refToType == null)
+			{
+				Trace.TraceWarning($"Property '{propertyKey}' of {currentTypeName} may be of type object.");
+			}
+
+			string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
+			string customPropertyFormat = refToType?.Format;
+			Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
+			return Tuple.Create(new CodeTypeReference(customType), customType.IsClass);
+		}
+
 		static string GetDefaultValue(OpenApiSchema s)
 		{
 			if (s.Default == null)
@@ -941,6 +962,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			string memberName = propertyName + " { get; set; }//";
 
 			CodeMemberField result = new CodeMemberField($"System.Nullable<{type.FullName}>", memberName)
+			{
+				Attributes = MemberAttributes.Public | MemberAttributes.Final
+			};
+			return result;
+		}
+
+		static CodeMemberField CreateNullableProperty(CodeTypeReference codeTypeReference, string propertyName)
+		{
+			// This is a little hack. Since you cant create auto properties in CodeDOM,
+			//  we make the getter and setter part of the member name.
+			// This leaves behind a trailing semicolon that we comment out.
+			//  Later, we remove the commented out semicolons.
+			string memberName = propertyName + " { get; set; }//";
+
+			CodeMemberField result = new CodeMemberField($"System.Nullable<{codeTypeReference.BaseType}>", memberName)
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
