@@ -26,6 +26,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns);
 
+		Tuple<CodeTypeReference, bool> CreateCodeTypeReferenceSchemaOf(OpenApiSchema propertySchema, string currentTypeName, string propertyKey);
+
 		OpenApiSchema FindSchema(string key);
 
 		CodeNamespace ClientNamespace

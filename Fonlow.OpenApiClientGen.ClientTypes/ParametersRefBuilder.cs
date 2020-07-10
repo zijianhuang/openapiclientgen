@@ -111,28 +111,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						OpenApiSchema refToType = null;
-						if (apiParameterSchema.AllOf.Count > 0)
-						{
-							refToType = apiParameterSchema.AllOf[0];
-						}
-						else if (apiParameterSchema.OneOf.Count > 0)
-						{
-							refToType = apiParameterSchema.OneOf[0];
-						}
-						else if (apiParameterSchema.AnyOf.Count > 0)
-						{
-							refToType = apiParameterSchema.AnyOf[0];
-						}
-						else if (refToType == null)
-						{
-							//Trace.TraceWarning($"Property '{p.Key}' of {currentTypeName} may be of type object.");
-						}
-
-						string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
-						string customPropertyFormat = refToType?.Format;
-						Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-						return new CodeTypeReference(customType);
+						Tuple<CodeTypeReference, bool> r = com2CodeDom.CreateCodeTypeReferenceSchemaOf(apiParameterSchema, actionName, apiParameterName);
+						return r.Item1;
 					}
 				}
 			}

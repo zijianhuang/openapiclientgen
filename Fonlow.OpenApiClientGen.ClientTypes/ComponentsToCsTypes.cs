@@ -76,8 +76,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item)
 		{
-			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
-			var currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
+			string ns = NameFunc.GetNamespaceOfClassName(item.Key);
+			string currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
 			RegisterSchemaRefIdToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 
@@ -132,7 +132,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						if (schema.Items.Properties.Count > 0) //casual member type definition in an array type
 						{
-							var newTypeName = currentTypeName + "Element";
+							string newTypeName = currentTypeName + "Element";
 							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
@@ -151,7 +151,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
 					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
-					var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
+					CodeTypeDeclaration existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
 						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
@@ -172,7 +172,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
 				{
-					var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(type, null);
+					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(type, null);
 					TypeAliasDic.Add(item.Key, clrType.FullName);
 					Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {clrType.FullName}) -- clrType: {clrType.FullName}");
 				}
@@ -281,7 +281,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (enumMember is OpenApiLong longMember)
 				{
 					string memberName = NameFunc.RefineEnumMemberName(longMember.Value.ToString());
-					var longValue = longMember.Value;
+					long longValue = longMember.Value;
 					CodeMemberField clientField = new CodeMemberField()
 					{
 						Name = memberName,
@@ -317,7 +317,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
 				{
 					string memberName = "_" + doubleMember.Value.ToString();
-					var doubleValue = doubleMember.Value;
+					double doubleValue = doubleMember.Value;
 					CodeMemberField clientField = new CodeMemberField()
 					{
 						Name = memberName,
@@ -369,7 +369,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
-					clientProperty = CreateProperty(propertyName, propertyTypeWithNs, defaultValue); //C#
+					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
+					clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
 				}
 				else
 				{
@@ -379,8 +380,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						var r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
-						var isClass = r.Item2;
+						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
+						bool isClass = r.Item2;
 						if (!isClass && !isRequired) //C#
 						{
 							clientProperty = CreateNullableProperty(r.Item1, propertyName);
@@ -396,9 +397,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertySchema.Type == "array") // for array
 				{
-					var r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
+					Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
 					CodeTypeReference arrayCodeTypeReference = r.Item1;
-					var n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
+					string n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
 					clientProperty = CreateProperty(arrayCodeTypeReference, n, defaultValue);
 				}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
@@ -409,14 +410,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
 					string casualTypeName = currentTypeName + NameFunc.RefinePropertyName(propertyName);
-					var found = FindTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
+					CodeTypeDeclaration found = FindTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
 					if (found == null)
 					{
 						CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
 						AddProperties(casualTypeDeclaration, propertySchema, casualTypeName, null);
 					}
 
-					var ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
+					CodeTypeReference ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
 					clientProperty = CreateProperty(ctr, propertyName, defaultValue);
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
@@ -460,7 +461,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName)) //check TypeAliasDic
 				{
-					var r = new CodeTypeReference(aliasTypeName);
+					CodeTypeReference r = new CodeTypeReference(aliasTypeName);
 					clientProperty = CreateProperty(r, propertyName, defaultValue);
 				}
 				else if (propertySchema.Reference != null)
@@ -483,7 +484,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertyNameAdjusted)
 				{
-					var originalPropertyName = p.Key;
+					string originalPropertyName = p.Key;
 					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{originalPropertyName}\""))));
 				}
 				else
@@ -601,7 +602,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, string defaultValue)
 		{
-			var r = GenerateCasualEnum(propertySchema, typeDeclarationName, propertyName, ns);
+			Tuple<CodeTypeReference, CodeTypeDeclaration> r = GenerateCasualEnum(propertySchema, typeDeclarationName, propertyName, ns);
 			if (r.Item2 != null)
 			{
 				if (settings.DecorateDataModelWithDataContract) // C# specific
@@ -790,7 +791,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else
 			{
-				var foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
+				CodeNamespace foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
 				if (foundNamespace == null)
 				{
 					foundNamespace = new CodeNamespace(ns);

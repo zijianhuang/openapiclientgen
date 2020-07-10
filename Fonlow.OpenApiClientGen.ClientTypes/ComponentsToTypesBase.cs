@@ -176,7 +176,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="currentTypeName"></param>
 		/// <param name="propertyKey"></param>
 		/// <returns>CodeTypeReference and IsClass</returns>
-		protected static Tuple<CodeTypeReference, bool> CreateCodeTypeReferenceSchemaOf(OpenApiSchema propertySchema, string currentTypeName, string propertyKey)
+		public Tuple<CodeTypeReference, bool> CreateCodeTypeReferenceSchemaOf(OpenApiSchema propertySchema, string currentTypeName, string propertyKey)
 		{
 			OpenApiSchema refToType = null;
 			if (propertySchema.AllOf.Count > 0)
