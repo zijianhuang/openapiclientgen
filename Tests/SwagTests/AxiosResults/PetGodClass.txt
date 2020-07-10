@@ -26,7 +26,13 @@ export namespace MyNS {
 		name?: string;
 
 		/** Test Sub Category */
-		sub?: string;
+		sub?: CategorySub;
+	}
+
+	export interface CategorySub {
+
+		/** Dumb Property */
+		prop1?: string;
 	}
 
 

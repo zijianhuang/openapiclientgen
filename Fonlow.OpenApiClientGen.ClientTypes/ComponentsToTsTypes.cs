@@ -243,6 +243,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
 				}
+				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
+				{
+					string casualTypeName = currentTypeName + NameFunc.RefinePropertyName(propertyName);
+					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
+					AddProperties(casualTypeDeclaration, propertySchema, casualTypeName, null);
+					var ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
+					clientProperty = CreateProperty(ctr, propertyName, isRequired);
+				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
