@@ -43,6 +43,7 @@ namespace My.Pet.Client
 		/// The measured skill for hunting
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name="huntingSkill")]
 		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
 	}
 	
@@ -85,7 +86,17 @@ namespace My.Pet.Client
 		/// Test Sub Category
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sub")]
-		public string Sub { get; set; }
+		public CategorySub Sub { get; set; }
+	}
+	
+	public class CategorySub
+	{
+		
+		/// <summary>
+		/// Dumb Property
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="prop1")]
+		public string Prop1 { get; set; }
 	}
 	
 	/// <summary>
@@ -152,6 +163,7 @@ namespace My.Pet.Client
 		/// <summary>
 		/// Order Status
 		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="status")]
 		public OrderStatus Status { get; set; }
 		
 		/// <summary>
@@ -195,7 +207,7 @@ namespace My.Pet.Client
 		/// Categories this pet belongs to
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="category")]
-		public string Category { get; set; }
+		public Category Category { get; set; }
 		
 		/// <summary>
 		/// The name given to a pet
@@ -214,7 +226,7 @@ namespace My.Pet.Client
 		public string[] PhotoUrls { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="friend")]
-		public string Friend { get; set; }
+		public Pet Friend { get; set; }
 		
 		/// <summary>
 		/// Tags attached to the pet
@@ -227,6 +239,7 @@ namespace My.Pet.Client
 		/// <summary>
 		/// Pet status in the store
 		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="status")]
 		public PetStatus Status { get; set; }
 		
 		/// <summary>
@@ -277,7 +290,7 @@ namespace My.Pet.Client
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="pet")]
-		public string Pet { get; set; }
+		public Pet Pet { get; set; }
 		
 		/// <summary>
 		/// User supplied username
