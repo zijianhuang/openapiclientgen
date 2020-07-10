@@ -9,10 +9,10 @@ export namespace My_Pet_Client {
 	}
 
 
-	/**A representation of a cat */
+	/** A representation of a cat */
 	export interface Cat extends Pet {
 
-		/**The measured skill for hunting */
+		/** The measured skill for hunting */
 		huntingSkill: CatHuntingSkill;
 	}
 
@@ -20,7 +20,7 @@ export namespace My_Pet_Client {
 
 	export interface Category {
 
-		/**Category ID */
+		/** Category ID */
 		id?: number;
 
 		/**
@@ -29,12 +29,18 @@ export namespace My_Pet_Client {
 		 */
 		name?: string;
 
-		/**Test Sub Category */
-		sub?: string;
+		/** Test Sub Category */
+		sub?: CategorySub;
+	}
+
+	export interface CategorySub {
+
+		/** Dumb Property */
+		prop1?: string;
 	}
 
 
-	/**A representation of a dog */
+	/** A representation of a dog */
 	export interface Dog extends Pet {
 
 		/**
@@ -45,32 +51,32 @@ export namespace My_Pet_Client {
 	}
 
 
-	/**A representation of a honey bee */
+	/** A representation of a honey bee */
 	export interface HoneyBee extends Pet {
 
-		/**Average amount of honey produced per day in ounces */
+		/** Average amount of honey produced per day in ounces */
 		honeyPerDay: number;
 	}
 
 	export interface Order {
 
-		/**Order ID */
+		/** Order ID */
 		id?: number;
 
-		/**Pet ID */
+		/** Pet ID */
 		petId?: number;
 		quantity?: number;
 
-		/**Estimated ship date */
+		/** Estimated ship date */
 		shipDate?: Date;
 
-		/**Order Status */
+		/** Order Status */
 		status?: OrderStatus;
 
-		/**Indicates whenever order was completed or not */
+		/** Indicates whenever order was completed or not */
 		complete?: boolean;
 
-		/**Unique Request Id */
+		/** Unique Request Id */
 		requestId?: string;
 	}
 
@@ -78,13 +84,13 @@ export namespace My_Pet_Client {
 
 	export interface Pet {
 
-		/**Pet ID */
+		/** Pet ID */
 		id?: number;
 
-		/**Categories this pet belongs to */
-		category?: string;
+		/** Categories this pet belongs to */
+		category?: Category;
 
-		/**The name given to a pet */
+		/** The name given to a pet */
 		name: string;
 
 		/**
@@ -92,7 +98,7 @@ export namespace My_Pet_Client {
 		 * Maximum items: 20
 		 */
 		photoUrls: Array<string>;
-		friend?: string;
+		friend?: Pet;
 
 		/**
 		 * Tags attached to the pet
@@ -100,16 +106,16 @@ export namespace My_Pet_Client {
 		 */
 		tags?: Array<Tag>;
 
-		/**Pet status in the store */
+		/** Pet status in the store */
 		status?: PetStatus;
 
-		/**Type of a pet */
+		/** Type of a pet */
 		petType?: string;
 	}
 
 	export interface Tag {
 
-		/**Tag ID */
+		/** Tag ID */
 		id?: number;
 
 		/**
@@ -123,7 +129,7 @@ export namespace My_Pet_Client {
 
 	export interface User {
 		id?: number;
-		pet?: string;
+		pet?: Pet;
 
 		/**
 		 * User supplied username
@@ -143,7 +149,7 @@ export namespace My_Pet_Client {
 		 */
 		lastName?: string;
 
-		/**User email address */
+		/** User email address */
 		email?: string;
 
 		/**
@@ -159,7 +165,7 @@ export namespace My_Pet_Client {
 		 */
 		phone?: string;
 
-		/**User status */
+		/** User status */
 		userStatus?: number;
 	}
 
@@ -236,10 +242,10 @@ export namespace My_Pet_Client {
 		 * Returns pet inventories by status
 		 * Returns a map of status codes to quantities
 		 * Get store/inventory
-		 * @return {string} successful operation
+		 * @return {{[id: string]: number }} successful operation
 		 */
-		GetInventory(headersHandler?: () => HttpHeaders): Observable<string> {
-			return this.http.get(this.baseUri + 'store/inventory', { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
+		GetInventory(headersHandler?: () => HttpHeaders): Observable<{[id: string]: number }> {
+			return this.http.get<{[id: string]: number }>(this.baseUri + 'store/inventory', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
