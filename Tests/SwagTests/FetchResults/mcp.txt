@@ -53,11 +53,9 @@ export namespace MyNS {
 
 	export interface ServiceMessageType {
 		code: string;
-		severity: ServiceMessageTypeSeverity;
+		severity: ServiceMessagesTypeHighestSeverity;
 		reason: string;
 	}
-
-	export enum ServiceMessageTypeSeverity { Fatal = 0, Error = 1, Warning = 2, Informational = 3 }
 
 	export interface BBSProcessingReportResponseType {
 		claimAssessment?: ClaimAssessmentType;

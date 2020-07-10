@@ -8,6 +8,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -247,6 +248,38 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 					clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired);
 				}
+				else if (propertySchema.Enum.Count > 0 && propertySchema.Type == "string") // for enum
+				{
+					string[] enumMemberNames;
+					try
+					{
+						enumMemberNames = (String.IsNullOrEmpty(propertySchema.Type) || propertySchema.Type == "string")
+							? propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
+
+					}
+					catch (InvalidCastException ex)
+					{
+						throw new CodeGenException($"When dealing with {propertyName} of {propertySchema.Type}, error: {ex.Message}");
+					}
+
+					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
+					if (existingDeclaration != null)
+					{
+						string existingTypeName = existingDeclaration.Name;
+						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
+						clientProperty = CreateProperty(enumReference, propertyName, isRequired);
+					}
+					else
+					{
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
+					}
+				}
+				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName))
+				{
+					var r = new CodeTypeReference(aliasTypeName);
+					clientProperty = CreateProperty(r, propertyName, isRequired);
+				}
 				else // for enum
 				{
 					if (propertySchema.Reference != null)
@@ -258,10 +291,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
 					}
-
-					CreateMemberDocComment(p, clientProperty);
-					typeDeclaration.Members.Add(clientProperty);
-					return;
 				}
 			}
 
