@@ -258,7 +258,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				string arrayType = arrayItemsSchema.Type;
 				if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
 				{
-					string[] enumMemberNames = arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+					string[] enumMemberNames = (String.IsNullOrEmpty(arrayItemsSchema.Type) || arrayItemsSchema.Type == "string")
+						? arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+						: arrayItemsSchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
 					if (existingDeclaration != null)
 					{
