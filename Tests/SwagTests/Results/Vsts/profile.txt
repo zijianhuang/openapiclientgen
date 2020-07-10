@@ -96,7 +96,7 @@ namespace MyNS
 	public class CreateProfileContext
 	{
 		
-		public System.Collections.Generic.Dictionary<string, string> CiData { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> CiData { get; set; }
 		
 		public System.Nullable<System.Boolean> ContactWithOffers { get; set; }
 		

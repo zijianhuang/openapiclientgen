@@ -118,7 +118,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	public enum CloneOperationCommonResponseState
@@ -162,7 +162,7 @@ namespace MyNS
 		/// <summary>
 		/// Key value pairs where the key value is overridden by the value.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> OverrideParameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> OverrideParameters { get; set; }
 		
 		/// <summary>
 		/// Comment on the link that will link the new clone  test case to the original Set null for no comment

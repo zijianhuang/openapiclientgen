@@ -625,7 +625,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	/// <summary>
@@ -701,7 +701,7 @@ namespace MyNS
 		/// <summary>
 		/// Collection of link attributes.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Attributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Attributes { get; set; }
 		
 		/// <summary>
 		/// Relation type.
@@ -1302,7 +1302,7 @@ namespace MyNS
 		/// <summary>
 		/// Map of field and values for the work item.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Fields { get; set; }
 		
 		/// <summary>
 		/// The work item ID.
@@ -1419,7 +1419,7 @@ namespace MyNS
 		/// <summary>
 		/// Dictionary that has node attributes like start/finish date for iteration nodes.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Attributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Attributes { get; set; }
 		
 		/// <summary>
 		/// List of child nodes fetched.
@@ -1902,7 +1902,7 @@ namespace MyNS
 		/// <summary>
 		/// The collection of relation type attributes.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Attributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Attributes { get; set; }
 	}
 	
 	/// <summary>
@@ -1963,7 +1963,7 @@ namespace MyNS
 		/// <summary>
 		/// Mapping of field and its templated value.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Fields { get; set; }
 	}
 	
 	/// <summary>

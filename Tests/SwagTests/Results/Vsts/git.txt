@@ -136,7 +136,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	public class IdentityRef
@@ -310,7 +310,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> AllChangesIncluded { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, int> ChangeCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> ChangeCounts { get; set; }
 		
 		public Change[] Changes { get; set; }
 		
@@ -1528,7 +1528,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> BehindCount { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, int> ChangeCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> ChangeCounts { get; set; }
 		
 		public GitChange[] Changes { get; set; }
 		
@@ -3782,7 +3782,7 @@ namespace MyNS
 		/// <summary>
 		/// Specific properties describing the suggestion.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// The type of suggestion (e.g. pull request).

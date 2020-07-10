@@ -51,7 +51,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	public class Identity
@@ -601,7 +601,7 @@ namespace MyNS
 		/// <summary>
 		/// Set of capabilities this project has (such as process template & version control).
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> Capabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Capabilities { get; set; }
 		
 		public WebApiTeamRef DefaultTeam { get; set; }
 	}
@@ -903,7 +903,7 @@ namespace MyNS
 		/// <summary>
 		/// Set of capabilities this project has
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> Capabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Capabilities { get; set; }
 		
 		public WebApiProjectCollectionRef Collection { get; set; }
 		

@@ -202,7 +202,7 @@ namespace MyNS
 		/// <summary>
 		/// Properties associated with the provider
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// Version of contributions associated with this contribution provider.
@@ -354,7 +354,7 @@ namespace MyNS
 		/// <summary>
 		/// Generic property bag that contains context-specific properties that data providers can use when populating their data dictionary
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 	}
 	
 	public enum ContributionNodeQueryQueryOptions
@@ -459,7 +459,7 @@ namespace MyNS
 		/// <summary>
 		/// Properties associated with the provider
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// Version of contributions associated with this contribution provider.
@@ -539,7 +539,7 @@ namespace MyNS
 		/// <summary>
 		/// Property bag of data keyed off of the data provider contribution id
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
 		
 		/// <summary>
 		/// Set of exceptions that occurred resolving the data providers.
@@ -564,7 +564,7 @@ namespace MyNS
 		/// <summary>
 		/// Property bag of shared data that was contributed to by any of the individual data providers
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> SharedData { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> SharedData { get; set; }
 	}
 	
 	/// <summary>
@@ -1474,7 +1474,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	/// <summary>

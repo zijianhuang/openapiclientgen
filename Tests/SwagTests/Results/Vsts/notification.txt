@@ -114,7 +114,7 @@ namespace MyNS
 		
 		public string Result { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, int> Stats { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Stats { get; set; }
 		
 		public string SubscriptionId { get; set; }
 	}
@@ -196,11 +196,11 @@ namespace MyNS
 		
 		public string EndTime { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, int> EventCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> EventCounts { get; set; }
 		
 		public string EventIds { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, int> NotificationCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> NotificationCounts { get; set; }
 		
 		public string PreProcessEndTime { get; set; }
 		
@@ -212,7 +212,7 @@ namespace MyNS
 		
 		public string StartTime { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, int> SubscriptionCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> SubscriptionCounts { get; set; }
 	}
 	
 	public class EventProcessingLog
@@ -228,7 +228,7 @@ namespace MyNS
 		
 		public string Matcher { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> Stats { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Stats { get; set; }
 	}
 	
 	/// <summary>
@@ -289,7 +289,7 @@ namespace MyNS
 		/// <summary>
 		/// System inputs.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> SystemInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> SystemInputs { get; set; }
 	}
 	
 	/// <summary>
@@ -311,7 +311,7 @@ namespace MyNS
 		/// <summary>
 		/// Calculated system inputs.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> SystemInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> SystemInputs { get; set; }
 	}
 	
 	public class ExpressionFilter
@@ -439,7 +439,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	public class GroupSubscriptionChannel
@@ -530,7 +530,7 @@ namespace MyNS
 		/// <summary>
 		/// Dictionary of log properties and settings for the job.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// This identifier depends on the logType.  For notification jobs, this will be the job Id. For subscription tracing, this will be a special root Guid with the subscription Id encoded.
@@ -552,7 +552,7 @@ namespace MyNS
 		/// <summary>
 		/// Any other data about this input
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
 		
 		/// <summary>
 		/// The text to show for the display of this value
@@ -622,7 +622,7 @@ namespace MyNS
 	public class InputValuesQuery
 	{
 		
-		public System.Collections.Generic.Dictionary<string, string> CurrentValues { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> CurrentValues { get; set; }
 		
 		/// <summary>
 		/// The input values to return on input, and the result from the consumer on output.
@@ -761,7 +761,7 @@ namespace MyNS
 		
 		public NotificationDiagnosticLogMessage[] Messages { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// This identifier depends on the logType.  For notification jobs, this will be the job Id. For subscription tracing, this will be a special root Guid with the subscription Id encoded.
@@ -1052,7 +1052,7 @@ namespace MyNS
 		
 		public string Result { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> Stats { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Stats { get; set; }
 	}
 	
 	public class NotificationReason
@@ -1379,7 +1379,7 @@ namespace MyNS
 		/// <summary>
 		/// Any extra properties like detailed description for different contexts, user/group contexts
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> ExtendedProperties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> ExtendedProperties { get; set; }
 		
 		public ISubscriptionFilter Filter { get; set; }
 		
@@ -1756,7 +1756,7 @@ namespace MyNS
 		
 		public string[] MissingIdentities { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 	}
 	
 	public class ProcessingDiagnosticIdentity

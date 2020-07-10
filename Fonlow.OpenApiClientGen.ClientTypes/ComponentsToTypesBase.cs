@@ -194,6 +194,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			else if (refToType == null)
 			{
 				Trace.TraceWarning($"Property '{propertyKey}' of {currentTypeName} may be of type object.");
+				return Tuple.Create(new CodeTypeReference(typeof(object)), true);
 			}
 
 			CodeTypeReference ctr = PropertySchemaToCodeTypeReference(refToType, currentTypeName, NameFunc.RefinePropertyName(propertyKey));

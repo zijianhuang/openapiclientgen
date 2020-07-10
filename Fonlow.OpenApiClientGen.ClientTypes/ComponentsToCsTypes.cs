@@ -423,7 +423,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Type == "object" && propertySchema.AdditionalProperties != null) // for dictionary
 				{
 					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
-					CodeTypeReference dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, typeDeclaration.Name, propertyName);
+					CodeTypeReference dicValueTypeRef;
+					if (propertySchema.AdditionalProperties.Properties.Count == 0 //not casual type
+						&& propertySchema.AdditionalProperties.Reference == null // not complex type
+						&& propertySchema.AdditionalProperties.Items ==null) // not casual array type
+					{
+						dicValueTypeRef = new CodeTypeReference(typeof(object));
+					}
+					else
+					{
+						dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, typeDeclaration.Name, propertyName);
+					}
+
 					CodeTypeReference dicCtr = new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
 					clientProperty = CreateProperty(dicCtr, propertyName, null);
 				}

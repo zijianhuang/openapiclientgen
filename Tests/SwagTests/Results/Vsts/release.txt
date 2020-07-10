@@ -232,9 +232,9 @@ namespace MyNS
 		
 		public string ArtifactType { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> ArtifactTypeStreamMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> ArtifactTypeStreamMapping { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> BrowsableArtifactTypeMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> BrowsableArtifactTypeMapping { get; set; }
 		
 		public DataSourceBinding[] DataSourceBindings { get; set; }
 		
@@ -252,7 +252,7 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> TaskInputMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> TaskInputMapping { get; set; }
 		
 		public string UniqueSourceIdentifier { get; set; }
 	}
@@ -283,12 +283,12 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the resources for artifact trigger configuration.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Resources { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Resources { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the webhook payload mapping for artifact trigger configuration.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> WebhookPayloadMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> WebhookPayloadMapping { get; set; }
 	}
 	
 	public class DataSourceBinding
@@ -327,7 +327,7 @@ namespace MyNS
 		/// <summary>
 		/// Parameters of the datasource.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -404,7 +404,7 @@ namespace MyNS
 		/// <summary>
 		/// Custom properties for the input which can be used by the service provider
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// Underlying data type for the input value. When this value is specified, InputMode, Validation and Values are optional.
@@ -576,7 +576,7 @@ namespace MyNS
 		/// <summary>
 		/// Any other data about this input
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
 		
 		/// <summary>
 		/// The text to show for the display of this value
@@ -943,7 +943,7 @@ namespace MyNS
 		/// <summary>
 		/// Issue data.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
 		
 		/// <summary>
 		/// Issue type, for example error, warning or info.
@@ -1020,7 +1020,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	public enum AutoTriggerIssueReleaseTriggerType
@@ -1095,7 +1095,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the override inputs.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> OverrideInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> OverrideInputs { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the job execution timeout in minutes for deployment which are queued against this release environment.
@@ -1402,7 +1402,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the data source.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -2209,12 +2209,12 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the task environment variables.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Environment { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Environment { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the task inputs.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Inputs { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the name of the task.
@@ -2224,7 +2224,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the task override inputs.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> OverrideInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> OverrideInputs { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the reference name of the task.
@@ -2892,9 +2892,9 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Options { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		public System.Nullable<System.Boolean> Required { get; set; }
 		
@@ -3167,7 +3167,7 @@ namespace MyNS
 		
 		public ReleaseApproval[] CompletedApprovals { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
 		
 		public Deployment Deployment { get; set; }
 		
@@ -3217,7 +3217,7 @@ namespace MyNS
 		
 		public string Comment { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
 		
 		public Deployment Deployment { get; set; }
 		
@@ -3654,7 +3654,7 @@ namespace MyNS
 	public class InputValuesQuery
 	{
 		
-		public System.Collections.Generic.Dictionary<string, string> CurrentValues { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> CurrentValues { get; set; }
 		
 		/// <summary>
 		/// The input values to return on input, and the result from the consumer on output.

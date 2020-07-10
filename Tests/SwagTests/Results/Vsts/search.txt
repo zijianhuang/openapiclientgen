@@ -644,7 +644,7 @@ namespace MyNS
 		/// <summary>
 		/// Contribution url route parameter of the corresponding settings page
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> RouteParameterMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> RouteParameterMapping { get; set; }
 		
 		/// <summary>
 		/// Scope of the settings page, either organization, project or user
@@ -851,7 +851,7 @@ namespace MyNS
 		/// <summary>
 		/// A standard set of work item fields and their values.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Fields { get; set; }
 		
 		/// <summary>
 		/// Highlighted snippets of fields that match the search request. The list is sorted by relevance of the snippets.

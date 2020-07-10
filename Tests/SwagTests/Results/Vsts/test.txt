@@ -1569,7 +1569,7 @@ namespace MyNS
 		/// <summary>
 		/// Key value pairs where the key value is overridden by the value.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> OverrideParameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> OverrideParameters { get; set; }
 		
 		/// <summary>
 		/// Comment on the link that will link the new clone  test case to the original Set null for no comment
@@ -2092,7 +2092,7 @@ namespace MyNS
 	public class TestFieldData
 	{
 		
-		public System.Collections.Generic.Dictionary<string, string> Dimensions { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Dimensions { get; set; }
 		
 		public System.Nullable<System.Int64> Measure { get; set; }
 	}
@@ -2356,7 +2356,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	public class HttpPostedTcmAttachment
@@ -2696,12 +2696,12 @@ namespace MyNS
 		/// <summary>
 		/// Runs count by outcome for runs with state completed and NeedInvestigation runs.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, int> RunSummaryByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> RunSummaryByOutcome { get; set; }
 		
 		/// <summary>
 		/// Runs count by state.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, int> RunSummaryByState { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> RunSummaryByState { get; set; }
 		
 		/// <summary>
 		/// Total runs count.
@@ -2925,7 +2925,7 @@ namespace MyNS
 		/// <summary>
 		/// Generic store for test session data
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Bag { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Bag { get; set; }
 	}
 	
 	public class QueryByPointRequest
@@ -5026,7 +5026,7 @@ namespace MyNS
 		/// <summary>
 		/// Meta data for Log file
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> MetaData { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> MetaData { get; set; }
 		
 		/// <summary>
 		/// LastUpdatedDate for Log file
@@ -7041,7 +7041,7 @@ namespace MyNS
 		
 		public HttpPostedTcmAttachment[] Attachments { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> RequestParams { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> RequestParams { get; set; }
 	}
 	
 	/// <summary>

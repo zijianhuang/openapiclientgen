@@ -239,7 +239,7 @@ namespace MyNS
 		
 		public string Feature { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 	}
 	
 	public class CounterGroup
@@ -380,7 +380,7 @@ namespace MyNS
 	public class ReferenceLinks
 	{
 		
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	public class LoadGenerationGeoLocation
@@ -1225,7 +1225,7 @@ namespace MyNS
 	public class WebApiSetupParamaters
 	{
 		
-		public System.Collections.Generic.Dictionary<string, string> Configurations { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Configurations { get; set; }
 	}
 	
 	public partial class Misc

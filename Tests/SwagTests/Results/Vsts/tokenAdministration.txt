@@ -30,7 +30,7 @@ namespace MyNS
 		
 		public string AuthorizationId { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Claims { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Claims { get; set; }
 		
 		public string ClientId { get; set; }
 		

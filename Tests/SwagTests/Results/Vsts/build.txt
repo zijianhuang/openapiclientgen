@@ -59,7 +59,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Links { get; set; }
 	}
 	
 	/// <summary>
@@ -616,7 +616,7 @@ namespace MyNS
 		/// <summary>
 		/// Type-specific properties of the artifact.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// The type of the resource: File container, version control folder, UNC path, etc.
@@ -869,7 +869,7 @@ namespace MyNS
 		/// <summary>
 		/// Sourceprovider-specific information about what triggered the build
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> TriggerInfo { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> TriggerInfo { get; set; }
 		
 		/// <summary>
 		/// The URI of the build.
@@ -1239,7 +1239,7 @@ namespace MyNS
 		/// </summary>
 		public string Name { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// The root folder.
@@ -1761,7 +1761,7 @@ namespace MyNS
 		/// </summary>
 		public string Category { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
 		
 		/// <summary>
 		/// A description of the issue.
@@ -1967,7 +1967,7 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Inputs { get; set; }
 	}
 	
 	/// <summary>
@@ -2048,7 +2048,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the data source.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -2091,9 +2091,9 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Options { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		public System.Nullable<System.Boolean> Required { get; set; }
 		
@@ -2359,9 +2359,9 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Environment { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Environment { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Inputs { get; set; }
 		
 		/// <summary>
 		/// The reference name for this step.
@@ -2594,7 +2594,7 @@ namespace MyNS
 		/// <summary>
 		/// fields associated with this build definition
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Fields { get; set; }
 		
 		/// <summary>
 		/// Id of this source provider
@@ -2665,7 +2665,7 @@ namespace MyNS
 		/// </summary>
 		public string Description { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Icons { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Icons { get; set; }
 		
 		/// <summary>
 		/// The ID of the task whose icon is used when showing this template in the UI.
@@ -2702,7 +2702,7 @@ namespace MyNS
 		
 		public string Description { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Icons { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Icons { get; set; }
 		
 		public string IconTaskId { get; set; }
 		
@@ -2922,7 +2922,7 @@ namespace MyNS
 		/// </summary>
 		public string GroupName { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Help { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Help { get; set; }
 		
 		/// <summary>
 		/// The label for the input.
@@ -2934,7 +2934,7 @@ namespace MyNS
 		/// </summary>
 		public string Name { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Options { get; set; }
 		
 		/// <summary>
 		/// Indicates whether the input is required to have a value.
@@ -3662,7 +3662,7 @@ namespace MyNS
 		/// <summary>
 		/// Fields of the information node
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Fields { get; set; }
 		
 		/// <summary>
 		/// Process or person that last modified this node
@@ -4068,7 +4068,7 @@ namespace MyNS
 		/// <summary>
 		/// The capabilities supported by this source provider.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, bool> SupportedCapabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> SupportedCapabilities { get; set; }
 		
 		/// <summary>
 		/// The types of triggers supported by this source provider.
@@ -4092,22 +4092,12 @@ namespace MyNS
 		/// <summary>
 		/// The capabilities supported by this trigger.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, SupportedTriggerSupportedCapabilities> SupportedCapabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> SupportedCapabilities { get; set; }
 		
 		/// <summary>
 		/// The type of trigger.
 		/// </summary>
 		public SupportedTriggerType Type { get; set; }
-	}
-	
-	public enum SupportedTriggerSupportedCapabilities
-	{
-		
-		unsupported = 0,
-		
-		supported = 1,
-		
-		required = 2,
 	}
 	
 	public enum SupportedTriggerType
@@ -4229,7 +4219,7 @@ namespace MyNS
 		/// </summary>
 		public string Name { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
 		
 		/// <summary>
 		/// The name of the source provider the repository is from.

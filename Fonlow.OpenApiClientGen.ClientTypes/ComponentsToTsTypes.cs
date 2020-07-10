@@ -252,6 +252,24 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
 					clientProperty = CreateProperty(ctr, propertyName, isRequired);
 				}
+				else if (propertySchema.Type == "object" && propertySchema.AdditionalProperties != null) // for dictionary
+				{
+					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
+					CodeTypeReference dicValueTypeRef;
+					if (propertySchema.AdditionalProperties.Properties.Count == 0 //not casual type
+						&& propertySchema.AdditionalProperties.Reference == null // not complex type
+						&& propertySchema.AdditionalProperties.Items == null) // not casual array type
+					{
+						dicValueTypeRef = new CodeTypeReference(typeof(object));
+					}
+					else
+					{
+						dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, typeDeclaration.Name, propertyName);
+					}
+
+					CodeTypeReference dicCtr = new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
+					clientProperty = CreateProperty(dicCtr, propertyName, isRequired);
+				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
