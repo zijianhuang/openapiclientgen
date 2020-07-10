@@ -2,6 +2,7 @@
 using Microsoft.OpenApi.Models;
 using System.CodeDom;
 using System.Collections.Generic;
+using System;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -16,6 +17,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList);
 
 		void AddProperties(CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns);
+
+		Tuple<CodeTypeReference, string> CreateArrayCodeTypeReference(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string currentTypeName, string ns);
 
 		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns);
 

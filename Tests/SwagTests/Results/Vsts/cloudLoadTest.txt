@@ -1209,7 +1209,7 @@ namespace MyNS
 		
 		public WebApiSetupParamaters SetupConfiguration { get; set; }
 		
-		public string[] SupportedRunTypes { get; set; }
+		public TestRunBasicRunType[] SupportedRunTypes { get; set; }
 	}
 	
 	public enum WebApiLoadTestMachineInputMachineType

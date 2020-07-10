@@ -211,10 +211,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="currentTypeName"></param>
 		/// <param name="ns"></param>
 		/// <returns>CodeTypeReference and CasualTypeName. Empty if no casualTypeName.</returns>
-		protected Tuple<CodeTypeReference, string> CreateArrayCodeTypeReference(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string currentTypeName, string ns)
+		public Tuple<CodeTypeReference, string> CreateArrayCodeTypeReference(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string currentTypeName, string ns)
 		{
 			OpenApiSchema arrayItemsSchema = propertySchema.Items;
-			if (arrayItemsSchema.Reference != null) //array of custom type
+			if (arrayItemsSchema == null)//ritekit.com has parameter as array but without items type. Presumbly it may be string.
+			{
+				Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", null);
+				CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
+				return Tuple.Create(arrayCodeTypeReference, String.Empty);
+			}
+			else if (arrayItemsSchema.Reference != null) //array of custom type
 			{
 				string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
 				var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
@@ -239,29 +245,41 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					else
 					{
 						var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
-						return Tuple.Create( ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1), String.Empty);
+						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1), String.Empty);
 					}
 				}
 				else
 				{
-					return Tuple.Create( ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1), String.Empty);
+					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1), String.Empty);
 				}
 			}
 			else
 			{
 				string arrayType = arrayItemsSchema.Type;
-				if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
+				if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
+				{
+					string[] enumMemberNames = arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
+					if (existingDeclaration != null)
+					{
+						string existingTypeName = existingDeclaration.Name;
+						CodeTypeReference enumArrayReference = TypeRefHelper.CreateArrayOfCustomTypeReference(existingTypeName, 1);
+						return Tuple.Create(enumArrayReference, String.Empty);
+					}
+
+					//warning about bad yaml design.
+					Trace.TraceWarning($"Property {NameFunc.RefineParameterName(propertyName)} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
+				}
+				else if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 				{
 					string casualTypeName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName);
 					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
 					AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
 					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1), casualTypeName);
 				}
-				else
-				{
-					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
-					return Tuple.Create(TypeRefHelper.CreateArrayTypeReference(clrType, 1), String.Empty);
-				}
+
+				Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
+				return Tuple.Create(TypeRefHelper.CreateArrayTypeReference(clrType, 1), String.Empty);
 			}
 		}
 
@@ -332,6 +350,33 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			return null;
 		}
+
+		/// <summary>
+		/// Find existing CodeTypeDeclaration in clientNamespace and classNamespaces.
+		/// </summary>
+		/// <param name="enumMemberNames"></param>
+		/// <returns></returns>
+		CodeTypeDeclaration FindEnumDeclaration(string[] enumMemberNames)
+		{
+			var t = ClientNamespace.FindEnumDeclaration(enumMemberNames);
+			if (t != null)
+			{
+				return t;
+			}
+
+			foreach (var cs in ClassNamespaces)
+			{
+				var cd = cs.FindEnumDeclaration(enumMemberNames);
+				if (cd != null)
+				{
+					return cd;
+				}
+			}
+
+			return null;
+		}
+
+
 	}
 
 }

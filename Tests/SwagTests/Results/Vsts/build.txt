@@ -3901,7 +3901,7 @@ namespace MyNS
 		/// </summary>
 		public string Name { get; set; }
 		
-		public string[] Types { get; set; }
+		public BuildTriggerTriggerType[] Types { get; set; }
 		
 		/// <summary>
 		/// The URL of the repository.
