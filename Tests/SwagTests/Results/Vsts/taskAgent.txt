@@ -99,9 +99,9 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.DateTimeOffset> StatusChangedOn { get; set; }
 		
-		public string SystemCapabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> SystemCapabilities { get; set; }
 		
-		public string UserCapabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> UserCapabilities { get; set; }
 	}
 	
 	public class TaskAgentCloudRequest
@@ -198,7 +198,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	public enum TaskAgentReferenceStatus
@@ -359,7 +359,7 @@ namespace MyNS
 		/// <summary>
 		/// Additional data about the request.
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		public TaskOrchestrationOwner Definition { get; set; }
 		
@@ -693,7 +693,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 		
-		public string Environment { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Environment { get; set; }
 		
 		public string InstanceId { get; set; }
 		
@@ -821,7 +821,7 @@ namespace MyNS
 	public class AuthenticationSchemeReference
 	{
 		
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		public string Type { get; set; }
 	}
@@ -1041,7 +1041,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the data source.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -1078,7 +1078,7 @@ namespace MyNS
 		
 		public AuthorizationHeader[] Headers { get; set; }
 		
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		public string ResourceUrl { get; set; }
 		
@@ -1557,7 +1557,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the selected authorization scheme.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the scheme used for service endpoint authentication.
@@ -1991,7 +1991,7 @@ namespace MyNS
 		/// <summary>
 		/// Custom properties for the input which can be used by the service provider
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// Underlying data type for the input value. When this value is specified, InputMode, Validation and Values are optional.
@@ -2163,7 +2163,7 @@ namespace MyNS
 		/// <summary>
 		/// Any other data about this input
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// The text to show for the display of this value
@@ -2185,7 +2185,31 @@ namespace MyNS
 	public class InputValidationRequest
 	{
 		
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, ValidationItem> Inputs { get; set; }
+	}
+	
+	public class ValidationItem
+	{
+		
+		/// <summary>
+		/// Tells whether the current input is valid or not
+		/// </summary>
+		public System.Nullable<System.Boolean> IsValid { get; set; }
+		
+		/// <summary>
+		/// Reason for input validation failure
+		/// </summary>
+		public string Reason { get; set; }
+		
+		/// <summary>
+		/// Type of validation item
+		/// </summary>
+		public string Type { get; set; }
+		
+		/// <summary>
+		/// Value to validate. The conditional expression to validate for the input for "expression" type Eg:eq(variables['Build.SourceBranch'], 'refs/heads/master');eq(value, 'refs/heads/master')
+		/// </summary>
+		public string Value { get; set; }
 	}
 	
 	public class Issue
@@ -2193,7 +2217,7 @@ namespace MyNS
 		
 		public string Category { get; set; }
 		
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		public string Message { get; set; }
 		
@@ -2261,7 +2285,7 @@ namespace MyNS
 		
 		public MaskHint[] Mask { get; set; }
 		
-		public string Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, JobOption> Options { get; set; }
 		
 		public SecureFile[] SecureFiles { get; set; }
 		
@@ -2270,7 +2294,7 @@ namespace MyNS
 		/// </summary>
 		public ServiceEndpoint SystemConnection { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Variables { get; set; }
 	}
 	
 	/// <summary>
@@ -2285,7 +2309,7 @@ namespace MyNS
 		
 		public IdentityRef CreatedBy { get; set; }
 		
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the description of endpoint.
@@ -2353,6 +2377,20 @@ namespace MyNS
 		regex = 1,
 	}
 	
+	/// <summary>
+	/// Represents an option that may affect the way an agent runs the job.
+	/// </summary>
+	public class JobOption
+	{
+		
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
+		
+		/// <summary>
+		/// Gets the id of the option.
+		/// </summary>
+		public string Id { get; set; }
+	}
+	
 	public class SecureFile
 	{
 		
@@ -2368,7 +2406,7 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		public string Ticket { get; set; }
 	}
@@ -2395,20 +2433,6 @@ namespace MyNS
 		public JobEventConfig JobCompleted { get; set; }
 		
 		public JobEventConfig JobStarted { get; set; }
-	}
-	
-	/// <summary>
-	/// Represents an option that may affect the way an agent runs the job.
-	/// </summary>
-	public class JobOption
-	{
-		
-		public string Data { get; set; }
-		
-		/// <summary>
-		/// Gets the id of the option.
-		/// </summary>
-		public string Id { get; set; }
 	}
 	
 	public class JobRequestMessage
@@ -2511,7 +2535,7 @@ namespace MyNS
 	public class KubernetesResourcePatchParameters
 	{
 		
-		public string AuthorizationParameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> AuthorizationParameters { get; set; }
 		
 		/// <summary>
 		/// Provider type (CustomProvider or AzureKubernetesServiceProvider) of the resource to be updated
@@ -2592,9 +2616,9 @@ namespace MyNS
 		
 		public MaskHint[] Mask { get; set; }
 		
-		public string Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, JobOption> Options { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Variables { get; set; }
 	}
 	
 	public class PublishTaskGroupMetadata
@@ -2665,7 +2689,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets internal properties of the resource.
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// Gets or sets resource type.
@@ -2686,7 +2710,7 @@ namespace MyNS
 		
 		public string ParallelismTag { get; set; }
 		
-		public string ResourceLimitsData { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> ResourceLimitsData { get; set; }
 		
 		public System.Nullable<System.Int32> TotalCount { get; set; }
 		
@@ -2740,7 +2764,7 @@ namespace MyNS
 		
 		public JobEventsConfig Events { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Variables { get; set; }
 	}
 	
 	public class ServerExecutionDefinition
@@ -2786,7 +2810,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> Disabled { get; set; }
 		
-		public string Execution { get; set; }
+		public System.Collections.Generic.Dictionary<string, JObject> Execution { get; set; }
 		
 		public string FriendlyName { get; set; }
 		
@@ -2816,9 +2840,9 @@ namespace MyNS
 		
 		public string PackageType { get; set; }
 		
-		public string PostJobExecution { get; set; }
+		public System.Collections.Generic.Dictionary<string, JObject> PostJobExecution { get; set; }
 		
-		public string PreJobExecution { get; set; }
+		public System.Collections.Generic.Dictionary<string, JObject> PreJobExecution { get; set; }
 		
 		public System.Nullable<System.Boolean> Preview { get; set; }
 		
@@ -2849,7 +2873,7 @@ namespace MyNS
 		/// <summary>
 		/// If a task is going to run code, then this provides the type/script etc... information by platform. For example, it might look like. net45: { typeName: "Microsoft.TeamFoundation.Automation.Tasks.PowerShellTask", assemblyName: "Microsoft.TeamFoundation.Automation.Tasks.PowerShell.dll" } net20: { typeName: "Microsoft.TeamFoundation.Automation.Tasks.PowerShellTask", assemblyName: "Microsoft.TeamFoundation.Automation.Tasks.PowerShell.dll" } java: { jar: "powershelltask.tasks.automation.teamfoundation.microsoft.com", } node: { script: "powershellhost.js", }
 		/// </summary>
-		public string PlatformInstructions { get; set; }
+		public System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> PlatformInstructions { get; set; }
 	}
 	
 	public class TaskReference
@@ -2857,7 +2881,7 @@ namespace MyNS
 		
 		public string Id { get; set; }
 		
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		public string Name { get; set; }
 		
@@ -2940,7 +2964,7 @@ namespace MyNS
 		
 		public EndpointAuthorization Authorization { get; set; }
 		
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		public string Type { get; set; }
 		
@@ -3278,7 +3302,7 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public string SidecarContainers { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> SidecarContainers { get; set; }
 		
 		public TaskAgentJobStep[] Steps { get; set; }
 		
@@ -3294,11 +3318,11 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 		
-		public string Env { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Env { get; set; }
 		
 		public string Id { get; set; }
 		
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		public string Name { get; set; }
 		
@@ -3665,7 +3689,7 @@ namespace MyNS
 		/// </summary>
 		public string SessionId { get; set; }
 		
-		public string SystemCapabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> SystemCapabilities { get; set; }
 	}
 	
 	/// <summary>
@@ -3875,12 +3899,12 @@ namespace MyNS
 		/// <summary>
 		/// Gets dictionary of environment variables.
 		/// </summary>
-		public string Environment { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Environment { get; set; }
 		
 		/// <summary>
 		/// Gets or sets dictionary of inputs.
 		/// </summary>
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		public TaskDefinitionReference Task { get; set; }
 		
@@ -4151,9 +4175,9 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public string Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Options { get; set; }
 		
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		public System.Nullable<System.Boolean> Required { get; set; }
 		
@@ -4207,7 +4231,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> ContinueOnError { get; set; }
 		
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		public System.Nullable<System.Int32> MaxConcurrency { get; set; }
 		
@@ -4249,7 +4273,7 @@ namespace MyNS
 		
 		public TaskInstance[] Tasks { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Variables { get; set; }
 	}
 	
 	public class TaskOrchestrationPlan
@@ -4479,7 +4503,7 @@ namespace MyNS
 		
 		public string Type { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, VariableValue> Variables { get; set; }
 		
 		public System.Nullable<System.Int32> WarningCount { get; set; }
 		
@@ -4536,6 +4560,16 @@ namespace MyNS
 		completed = 2,
 	}
 	
+	public class VariableValue
+	{
+		
+		public System.Nullable<System.Boolean> IsReadOnly { get; set; }
+		
+		public System.Nullable<System.Boolean> IsSecret { get; set; }
+		
+		public string Value { get; set; }
+	}
+	
 	public class TimelineRecordFeedLinesWrapper
 	{
 		
@@ -4548,30 +4582,6 @@ namespace MyNS
 		public string StepId { get; set; }
 		
 		public string[] Value { get; set; }
-	}
-	
-	public class ValidationItem
-	{
-		
-		/// <summary>
-		/// Tells whether the current input is valid or not
-		/// </summary>
-		public System.Nullable<System.Boolean> IsValid { get; set; }
-		
-		/// <summary>
-		/// Reason for input validation failure
-		/// </summary>
-		public string Reason { get; set; }
-		
-		/// <summary>
-		/// Type of validation item
-		/// </summary>
-		public string Type { get; set; }
-		
-		/// <summary>
-		/// Value to validate. The conditional expression to validate for the input for "expression" type Eg:eq(variables['Build.SourceBranch'], 'refs/heads/master');eq(value, 'refs/heads/master')
-		/// </summary>
-		public string Value { get; set; }
 	}
 	
 	/// <summary>
@@ -4632,7 +4642,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets variables contained in the variable group.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, VariableValue> Variables { get; set; }
 	}
 	
 	/// <summary>
@@ -4689,17 +4699,7 @@ namespace MyNS
 		/// <summary>
 		/// Sets variables contained in the variable group.
 		/// </summary>
-		public string Variables { get; set; }
-	}
-	
-	public class VariableValue
-	{
-		
-		public System.Nullable<System.Boolean> IsReadOnly { get; set; }
-		
-		public System.Nullable<System.Boolean> IsSecret { get; set; }
-		
-		public string Value { get; set; }
+		public System.Collections.Generic.Dictionary<string, VariableValue> Variables { get; set; }
 	}
 	
 	public class VirtualMachine

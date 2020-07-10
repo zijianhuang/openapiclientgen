@@ -49,14 +49,14 @@ export namespace MyNS {
 		id?: number;
 
 		/** Categories this pet belongs to */
-		category?: string;
+		category?: Category;
 
 		/** The name given to a pet */
 		name: string;
 
 		/** The list of URL to a cute photos featuring pet */
 		photoUrls: Array<string>;
-		friend?: string;
+		friend?: Pet;
 
 		/** Tags attached to the pet */
 		tags?: Array<Tag>;

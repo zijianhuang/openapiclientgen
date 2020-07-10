@@ -193,7 +193,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets definition reference. e.g. {"project":{"id":"fed755ea-49c5-4399-acea-fd5b5aa90a6c","name":"myProject"},"definition":{"id":"1","name":"mybuildDefinition"},"connection":{"id":"1","name":"myConnection"}}.
 		/// </summary>
-		public string DefinitionReference { get; set; }
+		public System.Collections.Generic.Dictionary<string, ArtifactSourceReference> DefinitionReference { get; set; }
 		
 		/// <summary>
 		/// Indicates whether artifact is primary or not.
@@ -211,6 +211,20 @@ namespace MyNS
 		public string Type { get; set; }
 	}
 	
+	public class ArtifactSourceReference
+	{
+		
+		/// <summary>
+		/// ID of the artifact source.
+		/// </summary>
+		public string Id { get; set; }
+		
+		/// <summary>
+		/// Name of the artifact source.
+		/// </summary>
+		public string Name { get; set; }
+	}
+	
 	public class ArtifactContributionDefinition
 	{
 		
@@ -218,9 +232,9 @@ namespace MyNS
 		
 		public string ArtifactType { get; set; }
 		
-		public string ArtifactTypeStreamMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> ArtifactTypeStreamMapping { get; set; }
 		
-		public string BrowsableArtifactTypeMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> BrowsableArtifactTypeMapping { get; set; }
 		
 		public DataSourceBinding[] DataSourceBindings { get; set; }
 		
@@ -238,7 +252,7 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public string TaskInputMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> TaskInputMapping { get; set; }
 		
 		public string UniqueSourceIdentifier { get; set; }
 	}
@@ -269,12 +283,12 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the resources for artifact trigger configuration.
 		/// </summary>
-		public string Resources { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Resources { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the webhook payload mapping for artifact trigger configuration.
 		/// </summary>
-		public string WebhookPayloadMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> WebhookPayloadMapping { get; set; }
 	}
 	
 	public class DataSourceBinding
@@ -313,7 +327,7 @@ namespace MyNS
 		/// <summary>
 		/// Parameters of the datasource.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -390,7 +404,7 @@ namespace MyNS
 		/// <summary>
 		/// Custom properties for the input which can be used by the service provider
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// Underlying data type for the input value. When this value is specified, InputMode, Validation and Values are optional.
@@ -562,7 +576,7 @@ namespace MyNS
 		/// <summary>
 		/// Any other data about this input
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// The text to show for the display of this value
@@ -814,20 +828,6 @@ namespace MyNS
 		public ArtifactSourceId[] ArtifactSourceIds { get; set; }
 	}
 	
-	public class ArtifactSourceReference
-	{
-		
-		/// <summary>
-		/// ID of the artifact source.
-		/// </summary>
-		public string Id { get; set; }
-		
-		/// <summary>
-		/// Name of the artifact source.
-		/// </summary>
-		public string Name { get; set; }
-	}
-	
 	public class ArtifactSourceTrigger
 	{
 		
@@ -943,7 +943,7 @@ namespace MyNS
 		/// <summary>
 		/// Issue data.
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// Issue type, for example error, warning or info.
@@ -1020,7 +1020,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	public enum AutoTriggerIssueReleaseTriggerType
@@ -1095,7 +1095,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the override inputs.
 		/// </summary>
-		public string OverrideInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> OverrideInputs { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the job execution timeout in minutes for deployment which are queued against this release environment.
@@ -1197,12 +1197,26 @@ namespace MyNS
 		/// <summary>
 		/// Gets and sets the repository references.
 		/// </summary>
-		public string RepositoryReference { get; set; }
+		public System.Collections.Generic.Dictionary<string, ReleaseManagementInputValue> RepositoryReference { get; set; }
 		
 		/// <summary>
 		/// It can have value as ‘GitHub’, ‘Vsts’.
 		/// </summary>
 		public CodeRepositoryReferenceSystemType SystemType { get; set; }
+	}
+	
+	public class ReleaseManagementInputValue
+	{
+		
+		/// <summary>
+		/// The text to show for the display of this value.
+		/// </summary>
+		public string DisplayValue { get; set; }
+		
+		/// <summary>
+		/// The value to store for this input.
+		/// </summary>
+		public string Value { get; set; }
 	}
 	
 	public enum CodeRepositoryReferenceSystemType
@@ -1388,7 +1402,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the data source.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -1985,7 +1999,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the dictionary of variables.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, ConfigurationVariableValue> Variables { get; set; }
 	}
 	
 	public class ReleaseEnvironment
@@ -2109,7 +2123,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets the dictionary of variables.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, ConfigurationVariableValue> Variables { get; set; }
 	}
 	
 	public class ReleaseCondition
@@ -2195,12 +2209,12 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the task environment variables.
 		/// </summary>
-		public string Environment { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Environment { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the task inputs.
 		/// </summary>
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the name of the task.
@@ -2210,7 +2224,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the task override inputs.
 		/// </summary>
-		public string OverrideInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> OverrideInputs { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the reference name of the task.
@@ -2878,9 +2892,9 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public string Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Options { get; set; }
 		
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		public System.Nullable<System.Boolean> Required { get; set; }
 		
@@ -3049,7 +3063,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets and sets the dictionary of variables.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, VariableValue> Variables { get; set; }
 	}
 	
 	public class VariableGroupProviderData
@@ -3073,6 +3087,25 @@ namespace MyNS
 		public string Name { get; set; }
 		
 		public ProjectReference ProjectReference { get; set; }
+	}
+	
+	public class VariableValue
+	{
+		
+		/// <summary>
+		/// Gets or sets if the variable is read only or not.
+		/// </summary>
+		public System.Nullable<System.Boolean> IsReadOnly { get; set; }
+		
+		/// <summary>
+		/// Gets or sets as the variable is secret or not.
+		/// </summary>
+		public System.Nullable<System.Boolean> IsSecret { get; set; }
+		
+		/// <summary>
+		/// Gets or sets the value.
+		/// </summary>
+		public string Value { get; set; }
 	}
 	
 	/// <summary>
@@ -3134,7 +3167,7 @@ namespace MyNS
 		
 		public ReleaseApproval[] CompletedApprovals { get; set; }
 		
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		public Deployment Deployment { get; set; }
 		
@@ -3184,7 +3217,7 @@ namespace MyNS
 		
 		public string Comment { get; set; }
 		
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		public Deployment Deployment { get; set; }
 		
@@ -3621,7 +3654,7 @@ namespace MyNS
 	public class InputValuesQuery
 	{
 		
-		public string CurrentValues { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> CurrentValues { get; set; }
 		
 		/// <summary>
 		/// The input values to return on input, and the result from the consumer on output.
@@ -3747,7 +3780,7 @@ namespace MyNS
 	public class MappingDetails
 	{
 		
-		public string Mappings { get; set; }
+		public System.Collections.Generic.Dictionary<string, InputValue> Mappings { get; set; }
 	}
 	
 	public class Metric
@@ -4093,7 +4126,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the dictionary of variables.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, ConfigurationVariableValue> Variables { get; set; }
 	}
 	
 	public class ReleaseDefinitionEnvironment
@@ -4187,7 +4220,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets and sets the variables.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, ConfigurationVariableValue> Variables { get; set; }
 	}
 	
 	public class ReleaseDefinitionDeployStep
@@ -4555,7 +4588,7 @@ namespace MyNS
 		/// <summary>
 		/// Sets list of environment variables to be overridden at deployment time.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, ConfigurationVariableValue> Variables { get; set; }
 	}
 	
 	public enum ReleaseEnvironmentUpdateMetadataStatus
@@ -4605,20 +4638,6 @@ namespace MyNS
 		/// Date and time at which all gates executed successfully.
 		/// </summary>
 		public System.Nullable<System.DateTimeOffset> SucceedingSince { get; set; }
-	}
-	
-	public class ReleaseManagementInputValue
-	{
-		
-		/// <summary>
-		/// The text to show for the display of this value.
-		/// </summary>
-		public string DisplayValue { get; set; }
-		
-		/// <summary>
-		/// The value to store for this input.
-		/// </summary>
-		public string Value { get; set; }
 	}
 	
 	public class ReleaseNotCreatedEvent
@@ -4715,7 +4734,7 @@ namespace MyNS
 		/// <summary>
 		/// Sets list of environments variables to be overridden at deployment time.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, ConfigurationVariableValue> Variables { get; set; }
 	}
 	
 	public class ReleaseStartMetadata
@@ -4764,7 +4783,7 @@ namespace MyNS
 		/// <summary>
 		/// Sets list of release variables to be overridden at deployment time.
 		/// </summary>
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, ConfigurationVariableValue> Variables { get; set; }
 	}
 	
 	public enum ReleaseStartMetadataReason
@@ -5076,25 +5095,6 @@ namespace MyNS
 		public TimeZone[] ValidTimeZones { get; set; }
 	}
 	
-	public class VariableValue
-	{
-		
-		/// <summary>
-		/// Gets or sets if the variable is read only or not.
-		/// </summary>
-		public System.Nullable<System.Boolean> IsReadOnly { get; set; }
-		
-		/// <summary>
-		/// Gets or sets as the variable is secret or not.
-		/// </summary>
-		public System.Nullable<System.Boolean> IsSecret { get; set; }
-		
-		/// <summary>
-		/// Gets or sets the value.
-		/// </summary>
-		public string Value { get; set; }
-	}
-	
 	/// <summary>
 	/// This class is used to serialized collections as a single JSON object on the wire, to avoid serializing JSON arrays directly to the client, which can be a security hole
 	/// </summary>
@@ -5116,9 +5116,17 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets definition reference. e.g. {"project":{"id":"fed755ea-49c5-4399-acea-fd5b5aa90a6c","name":"myProject"},"definition":{"id":"1","name":"mybuildDefinition"},"connection":{"id":"1","name":"myConnection"}}
 		/// </summary>
-		public string SourceReference { get; set; }
+		public System.Collections.Generic.Dictionary<string, YamlSourceReference> SourceReference { get; set; }
 		
 		public YamlFileSourceType Type { get; set; }
+	}
+	
+	public class YamlSourceReference
+	{
+		
+		public string Id { get; set; }
+		
+		public string Name { get; set; }
 	}
 	
 	public enum YamlFileSourceType
@@ -5147,14 +5155,6 @@ namespace MyNS
 		public ServiceEndpointReference[] Endpoints { get; set; }
 		
 		public AgentPoolQueueReference[] Queues { get; set; }
-	}
-	
-	public class YamlSourceReference
-	{
-		
-		public string Id { get; set; }
-		
-		public string Name { get; set; }
 	}
 	
 	public partial class Misc

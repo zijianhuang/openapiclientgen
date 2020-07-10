@@ -44,7 +44,7 @@ namespace MyNS
 		/// <summary>
 		/// The attributes stored by the container.
 		/// </summary>
-		public string Attributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, ProfileAttribute> Attributes { get; set; }
 		
 		/// <summary>
 		/// The name of the container.
@@ -55,6 +55,13 @@ namespace MyNS
 		/// The maximum revision number of any attribute within the container.
 		/// </summary>
 		public System.Nullable<System.Int32> Revision { get; set; }
+	}
+	
+	/// <summary>
+	/// A named object associated with a profile.
+	/// </summary>
+	public class ProfileAttribute
+	{
 	}
 	
 	public class Avatar
@@ -89,7 +96,7 @@ namespace MyNS
 	public class CreateProfileContext
 	{
 		
-		public string CiData { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> CiData { get; set; }
 		
 		public System.Nullable<System.Boolean> ContactWithOffers { get; set; }
 		
@@ -155,7 +162,7 @@ namespace MyNS
 		/// <summary>
 		/// The core attributes of this profile.
 		/// </summary>
-		public string CoreAttributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, CoreProfileAttribute> CoreAttributes { get; set; }
 		
 		/// <summary>
 		/// The maximum revision number of any attribute.
@@ -191,13 +198,6 @@ namespace MyNS
 		customReadOnly = 1,
 		
 		readOnly = 2,
-	}
-	
-	/// <summary>
-	/// A named object associated with a profile.
-	/// </summary>
-	public class ProfileAttribute
-	{
 	}
 	
 	public class ProfileAttributeBase

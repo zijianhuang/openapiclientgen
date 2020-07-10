@@ -98,7 +98,7 @@ namespace MyNS
 		/// <summary>
 		/// Storage of permissions keyed on the identity the permission is for.
 		/// </summary>
-		public string AcesDictionary { get; set; }
+		public System.Collections.Generic.Dictionary<string, AccessControlEntry> AcesDictionary { get; set; }
 		
 		/// <summary>
 		/// True if this ACL holds ACEs that have extended information.

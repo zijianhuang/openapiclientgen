@@ -51,7 +51,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	public class OperationResultReference

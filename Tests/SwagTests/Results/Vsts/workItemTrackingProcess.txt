@@ -146,7 +146,7 @@ namespace MyNS
 		/// <summary>
 		/// A dictionary holding key value pairs for contribution inputs.
 		/// </summary>
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		/// <summary>
 		/// A value indicating if the contribution should be show on deleted workItem.

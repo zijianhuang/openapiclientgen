@@ -151,7 +151,7 @@ namespace MyNS
 		/// <summary>
 		/// Dictionary of field to hit offsets in the result file. Key identifies the area in which hits were found, for ex: file content/file name etc.
 		/// </summary>
-		public string Matches { get; set; }
+		public System.Collections.Generic.Dictionary<string, Hit[]> Matches { get; set; }
 		
 		/// <summary>
 		/// Path at which result file is present.
@@ -172,6 +172,43 @@ namespace MyNS
 		/// Versions of the result file.
 		/// </summary>
 		public Version[] Versions { get; set; }
+	}
+	
+	/// <summary>
+	/// Describes the position of a piece of text in a document.
+	/// </summary>
+	public class Hit
+	{
+		
+		/// <summary>
+		/// Gets or sets the start character offset of a piece of text.
+		/// </summary>
+		public System.Nullable<System.Int32> CharOffset { get; set; }
+		
+		/// <summary>
+		/// Gets or sets an extract of code where the match appears. Usually it is the line where there is the match.
+		/// </summary>
+		public string CodeSnippet { get; set; }
+		
+		/// <summary>
+		/// Gets or sets the column number where the match appears in the line.
+		/// </summary>
+		public System.Nullable<System.Int32> Column { get; set; }
+		
+		/// <summary>
+		/// Gets or sets the length of a piece of text.
+		/// </summary>
+		public System.Nullable<System.Int32> Length { get; set; }
+		
+		/// <summary>
+		/// Gets or sets the line number where the match appears in the file.
+		/// </summary>
+		public System.Nullable<System.Int32> Line { get; set; }
+		
+		/// <summary>
+		/// Gets or sets the name of type of a piece of text.
+		/// </summary>
+		public string Type { get; set; }
 	}
 	
 	/// <summary>
@@ -339,7 +376,7 @@ namespace MyNS
 		/// <summary>
 		/// Filters to be applied. Set it to null if there are no filters to be applied.
 		/// </summary>
-		public string Filters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string[]> Filters { get; set; }
 		
 		/// <summary>
 		/// The search text.
@@ -356,12 +393,34 @@ namespace MyNS
 		/// <summary>
 		/// A dictionary storing an array of <code>Filter</code> object against each facet.
 		/// </summary>
-		public string Facets { get; set; }
+		public System.Collections.Generic.Dictionary<string, Filter[]> Facets { get; set; }
 		
 		/// <summary>
 		/// Numeric code indicating any additional information: 0 - Ok, 1 - Account is being reindexed, 2 - Account indexing has not started, 3 - Invalid Request, 4 - Prefix wildcard query not supported, 5 - MultiWords with code facet not supported, 6 - Account is being onboarded, 7 - Account is being onboarded or reindexed, 8 - Top value trimmed to maxresult allowed 9 - Branches are being indexed, 10 - Faceting not enabled, 11 - Work items not accessible, 19 - Phrase queries with code type filters not supported, 20 - Wildcard queries with code type filters not supported. Any other info code is used for internal purpose.
 		/// </summary>
 		public System.Nullable<System.Int32> InfoCode { get; set; }
+	}
+	
+	/// <summary>
+	/// Describes a filter bucket item representing the total matches of search result, name and id.
+	/// </summary>
+	public class Filter
+	{
+		
+		/// <summary>
+		/// Id of the filter bucket.
+		/// </summary>
+		public string Id { get; set; }
+		
+		/// <summary>
+		/// Name of the filter bucket.
+		/// </summary>
+		public string Name { get; set; }
+		
+		/// <summary>
+		/// Count of matches in the filter bucket.
+		/// </summary>
+		public System.Nullable<System.Int32> ResultCount { get; set; }
 	}
 	
 	/// <summary>
@@ -409,65 +468,6 @@ namespace MyNS
 		/// List of views which contain the matched package.
 		/// </summary>
 		public string[] Views { get; set; }
-	}
-	
-	/// <summary>
-	/// Describes a filter bucket item representing the total matches of search result, name and id.
-	/// </summary>
-	public class Filter
-	{
-		
-		/// <summary>
-		/// Id of the filter bucket.
-		/// </summary>
-		public string Id { get; set; }
-		
-		/// <summary>
-		/// Name of the filter bucket.
-		/// </summary>
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// Count of matches in the filter bucket.
-		/// </summary>
-		public System.Nullable<System.Int32> ResultCount { get; set; }
-	}
-	
-	/// <summary>
-	/// Describes the position of a piece of text in a document.
-	/// </summary>
-	public class Hit
-	{
-		
-		/// <summary>
-		/// Gets or sets the start character offset of a piece of text.
-		/// </summary>
-		public System.Nullable<System.Int32> CharOffset { get; set; }
-		
-		/// <summary>
-		/// Gets or sets an extract of code where the match appears. Usually it is the line where there is the match.
-		/// </summary>
-		public string CodeSnippet { get; set; }
-		
-		/// <summary>
-		/// Gets or sets the column number where the match appears in the line.
-		/// </summary>
-		public System.Nullable<System.Int32> Column { get; set; }
-		
-		/// <summary>
-		/// Gets or sets the length of a piece of text.
-		/// </summary>
-		public System.Nullable<System.Int32> Length { get; set; }
-		
-		/// <summary>
-		/// Gets or sets the line number where the match appears in the file.
-		/// </summary>
-		public System.Nullable<System.Int32> Line { get; set; }
-		
-		/// <summary>
-		/// Gets or sets the name of type of a piece of text.
-		/// </summary>
-		public string Type { get; set; }
 	}
 	
 	/// <summary>
@@ -644,7 +644,7 @@ namespace MyNS
 		/// <summary>
 		/// Contribution url route parameter of the corresponding settings page
 		/// </summary>
-		public string RouteParameterMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> RouteParameterMapping { get; set; }
 		
 		/// <summary>
 		/// Scope of the settings page, either organization, project or user
@@ -851,7 +851,7 @@ namespace MyNS
 		/// <summary>
 		/// A standard set of work item fields and their values.
 		/// </summary>
-		public string Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
 		
 		/// <summary>
 		/// Highlighted snippets of fields that match the search request. The list is sorted by relevance of the snippets.

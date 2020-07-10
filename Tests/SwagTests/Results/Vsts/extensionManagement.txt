@@ -202,7 +202,7 @@ namespace MyNS
 		/// <summary>
 		/// Properties associated with the provider
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// Version of contributions associated with this contribution provider.
@@ -354,7 +354,7 @@ namespace MyNS
 		/// <summary>
 		/// Generic property bag that contains context-specific properties that data providers can use when populating their data dictionary
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 	}
 	
 	public enum ContributionNodeQueryQueryOptions
@@ -382,12 +382,12 @@ namespace MyNS
 		/// <summary>
 		/// Map of contribution ids to corresponding node.
 		/// </summary>
-		public string Nodes { get; set; }
+		public System.Collections.Generic.Dictionary<string, ClientContributionNode> Nodes { get; set; }
 		
 		/// <summary>
 		/// Map of provider ids to the corresponding provider details object.
 		/// </summary>
-		public string ProviderDetails { get; set; }
+		public System.Collections.Generic.Dictionary<string, ClientContributionProviderDetails> ProviderDetails { get; set; }
 	}
 	
 	/// <summary>
@@ -459,7 +459,7 @@ namespace MyNS
 		/// <summary>
 		/// Properties associated with the provider
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// Version of contributions associated with this contribution provider.
@@ -486,7 +486,7 @@ namespace MyNS
 		/// <summary>
 		/// Describes the allowed properties for this contribution type
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, ContributionPropertyDescription> Properties { get; set; }
 	}
 	
 	public class DataProviderExceptionDetails
@@ -534,17 +534,17 @@ namespace MyNS
 		/// <summary>
 		/// This is the set of data providers that were requested, but either they were defined as client providers, or as remote providers that failed and may be retried by the client.
 		/// </summary>
-		public string ClientProviders { get; set; }
+		public System.Collections.Generic.Dictionary<string, ClientDataProviderQuery> ClientProviders { get; set; }
 		
 		/// <summary>
 		/// Property bag of data keyed off of the data provider contribution id
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// Set of exceptions that occurred resolving the data providers.
 		/// </summary>
-		public string Exceptions { get; set; }
+		public System.Collections.Generic.Dictionary<string, DataProviderExceptionDetails> Exceptions { get; set; }
 		
 		/// <summary>
 		/// List of data providers resolved in the data-provider query
@@ -564,7 +564,7 @@ namespace MyNS
 		/// <summary>
 		/// Property bag of shared data that was contributed to by any of the individual data providers
 		/// </summary>
-		public string SharedData { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> SharedData { get; set; }
 	}
 	
 	/// <summary>
@@ -1474,7 +1474,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	/// <summary>

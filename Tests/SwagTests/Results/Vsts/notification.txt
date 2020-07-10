@@ -110,11 +110,11 @@ namespace MyNS
 		
 		public NotificationDiagnosticLogMessage[] Messages { get; set; }
 		
-		public string Recipients { get; set; }
+		public System.Collections.Generic.Dictionary<string, DiagnosticRecipient> Recipients { get; set; }
 		
 		public string Result { get; set; }
 		
-		public string Stats { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> Stats { get; set; }
 		
 		public string SubscriptionId { get; set; }
 	}
@@ -196,11 +196,11 @@ namespace MyNS
 		
 		public string EndTime { get; set; }
 		
-		public string EventCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> EventCounts { get; set; }
 		
 		public string EventIds { get; set; }
 		
-		public string NotificationCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> NotificationCounts { get; set; }
 		
 		public string PreProcessEndTime { get; set; }
 		
@@ -212,7 +212,7 @@ namespace MyNS
 		
 		public string StartTime { get; set; }
 		
-		public string SubscriptionCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> SubscriptionCounts { get; set; }
 	}
 	
 	public class EventProcessingLog
@@ -228,7 +228,7 @@ namespace MyNS
 		
 		public string Matcher { get; set; }
 		
-		public string Stats { get; set; }
+		public System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> Stats { get; set; }
 	}
 	
 	/// <summary>
@@ -289,7 +289,7 @@ namespace MyNS
 		/// <summary>
 		/// System inputs.
 		/// </summary>
-		public string SystemInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> SystemInputs { get; set; }
 	}
 	
 	/// <summary>
@@ -311,7 +311,7 @@ namespace MyNS
 		/// <summary>
 		/// Calculated system inputs.
 		/// </summary>
-		public string SystemInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> SystemInputs { get; set; }
 	}
 	
 	public class ExpressionFilter
@@ -439,7 +439,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	public class GroupSubscriptionChannel
@@ -530,7 +530,7 @@ namespace MyNS
 		/// <summary>
 		/// Dictionary of log properties and settings for the job.
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// This identifier depends on the logType.  For notification jobs, this will be the job Id. For subscription tracing, this will be a special root Guid with the subscription Id encoded.
@@ -552,7 +552,7 @@ namespace MyNS
 		/// <summary>
 		/// Any other data about this input
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// The text to show for the display of this value
@@ -622,7 +622,7 @@ namespace MyNS
 	public class InputValuesQuery
 	{
 		
-		public string CurrentValues { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> CurrentValues { get; set; }
 		
 		/// <summary>
 		/// The input values to return on input, and the result from the consumer on output.
@@ -761,7 +761,7 @@ namespace MyNS
 		
 		public NotificationDiagnosticLogMessage[] Messages { get; set; }
 		
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// This identifier depends on the logType.  For notification jobs, this will be the job Id. For subscription tracing, this will be a special root Guid with the subscription Id encoded.
@@ -998,7 +998,7 @@ namespace MyNS
 		/// </summary>
 		public NotificationEventPublisher EventPublisher { get; set; }
 		
-		public string Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, NotificationEventField> Fields { get; set; }
 		
 		public System.Nullable<System.Boolean> HasInitiator { get; set; }
 		
@@ -1052,7 +1052,7 @@ namespace MyNS
 		
 		public string Result { get; set; }
 		
-		public string Stats { get; set; }
+		public System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> Stats { get; set; }
 	}
 	
 	public class NotificationReason
@@ -1379,7 +1379,7 @@ namespace MyNS
 		/// <summary>
 		/// Any extra properties like detailed description for different contexts, user/group contexts
 		/// </summary>
-		public string ExtendedProperties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> ExtendedProperties { get; set; }
 		
 		public ISubscriptionFilter Filter { get; set; }
 		
@@ -1728,7 +1728,7 @@ namespace MyNS
 		/// <summary>
 		/// Evaluations for each user
 		/// </summary>
-		public string Evaluations { get; set; }
+		public System.Collections.Generic.Dictionary<string, SubscriptionEvaluation> Evaluations { get; set; }
 		
 		public System.Nullable<System.Int32> EventId { get; set; }
 		
@@ -1748,15 +1748,15 @@ namespace MyNS
 	public class ProcessingIdentities
 	{
 		
-		public string ExcludedIdentities { get; set; }
+		public System.Collections.Generic.Dictionary<string, ProcessingDiagnosticIdentity> ExcludedIdentities { get; set; }
 		
-		public string IncludedIdentities { get; set; }
+		public System.Collections.Generic.Dictionary<string, ProcessingDiagnosticIdentity> IncludedIdentities { get; set; }
 		
 		public NotificationDiagnosticLogMessage[] Messages { get; set; }
 		
 		public string[] MissingIdentities { get; set; }
 		
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 	}
 	
 	public class ProcessingDiagnosticIdentity
@@ -1769,6 +1769,24 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsGroup { get; set; }
 		
 		public string Message { get; set; }
+	}
+	
+	public class SubscriptionEvaluation
+	{
+		
+		public SubscriptionEvaluationClause[] Clauses { get; set; }
+		
+		public DiagnosticIdentity User { get; set; }
+	}
+	
+	public class SubscriptionEvaluationClause
+	{
+		
+		public string Clause { get; set; }
+		
+		public System.Nullable<System.Int32> Order { get; set; }
+		
+		public System.Nullable<System.Boolean> Result { get; set; }
 	}
 	
 	public class RoleBasedFilter
@@ -1805,24 +1823,6 @@ namespace MyNS
 		public string Type { get; set; }
 		
 		public System.Nullable<System.Boolean> UseCustomAddress { get; set; }
-	}
-	
-	public class SubscriptionEvaluation
-	{
-		
-		public SubscriptionEvaluationClause[] Clauses { get; set; }
-		
-		public DiagnosticIdentity User { get; set; }
-	}
-	
-	public class SubscriptionEvaluationClause
-	{
-		
-		public string Clause { get; set; }
-		
-		public System.Nullable<System.Int32> Order { get; set; }
-		
-		public System.Nullable<System.Boolean> Result { get; set; }
 	}
 	
 	/// <summary>
@@ -2022,7 +2022,7 @@ namespace MyNS
 		/// </summary>
 		public DiagnosticIdentity[] OptedOut { get; set; }
 		
-		public string ProcessedEvents { get; set; }
+		public System.Collections.Generic.Dictionary<string, ProcessedEvent> ProcessedEvents { get; set; }
 	}
 	
 	public class SubscriptionTraceNotificationDeliveryLog

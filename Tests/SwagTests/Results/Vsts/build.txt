@@ -59,7 +59,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	/// <summary>
@@ -171,19 +171,69 @@ namespace MyNS
 		
 		public string Duration { get; set; }
 		
-		public string NotReportedResultsByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedResultsByOutcome> NotReportedResultsByOutcome { get; set; }
 		
 		public TestResultsContext PreviousContext { get; set; }
 		
-		public string ResultsByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedResultsByOutcome> ResultsByOutcome { get; set; }
 		
 		public AggregatedResultsDifference ResultsDifference { get; set; }
 		
-		public string RunSummaryByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedRunsByOutcome> RunSummaryByOutcome { get; set; }
 		
-		public string RunSummaryByState { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedRunsByState> RunSummaryByState { get; set; }
 		
 		public System.Nullable<System.Int32> TotalTests { get; set; }
+	}
+	
+	public class AggregatedResultsByOutcome
+	{
+		
+		public System.Nullable<System.Int32> Count { get; set; }
+		
+		public string Duration { get; set; }
+		
+		public string GroupByField { get; set; }
+		
+		public string GroupByValue { get; set; }
+		
+		public AggregatedResultsByOutcomeOutcome Outcome { get; set; }
+		
+		public System.Nullable<System.Int32> RerunResultCount { get; set; }
+	}
+	
+	public enum AggregatedResultsByOutcomeOutcome
+	{
+		
+		unspecified = 0,
+		
+		none = 1,
+		
+		passed = 2,
+		
+		failed = 3,
+		
+		inconclusive = 4,
+		
+		timeout = 5,
+		
+		aborted = 6,
+		
+		blocked = 7,
+		
+		notExecuted = 8,
+		
+		warning = 9,
+		
+		error = 10,
+		
+		notApplicable = 11,
+		
+		paused = 12,
+		
+		inProgress = 13,
+		
+		notImpacted = 14,
 	}
 	
 	public class TestResultsContext
@@ -497,56 +547,6 @@ namespace MyNS
 		public System.Nullable<System.Int32> IncreaseInTotalTests { get; set; }
 	}
 	
-	public class AggregatedResultsByOutcome
-	{
-		
-		public System.Nullable<System.Int32> Count { get; set; }
-		
-		public string Duration { get; set; }
-		
-		public string GroupByField { get; set; }
-		
-		public string GroupByValue { get; set; }
-		
-		public AggregatedResultsByOutcomeOutcome Outcome { get; set; }
-		
-		public System.Nullable<System.Int32> RerunResultCount { get; set; }
-	}
-	
-	public enum AggregatedResultsByOutcomeOutcome
-	{
-		
-		unspecified = 0,
-		
-		none = 1,
-		
-		passed = 2,
-		
-		failed = 3,
-		
-		inconclusive = 4,
-		
-		timeout = 5,
-		
-		aborted = 6,
-		
-		blocked = 7,
-		
-		notExecuted = 8,
-		
-		warning = 9,
-		
-		error = 10,
-		
-		notApplicable = 11,
-		
-		paused = 12,
-		
-		inProgress = 13,
-		
-		notImpacted = 14,
-	}
-	
 	public class AggregatedRunsByOutcome
 	{
 		
@@ -570,7 +570,7 @@ namespace MyNS
 	public class AggregatedRunsByState
 	{
 		
-		public string ResultsByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedResultsByOutcome> ResultsByOutcome { get; set; }
 		
 		public System.Nullable<System.Int32> RunsCount { get; set; }
 		
@@ -616,7 +616,7 @@ namespace MyNS
 		/// <summary>
 		/// Type-specific properties of the artifact.
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// The type of the resource: File container, version control folder, UNC path, etc.
@@ -869,7 +869,7 @@ namespace MyNS
 		/// <summary>
 		/// Sourceprovider-specific information about what triggered the build
 		/// </summary>
-		public string TriggerInfo { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> TriggerInfo { get; set; }
 		
 		/// <summary>
 		/// The URI of the build.
@@ -1239,7 +1239,7 @@ namespace MyNS
 		/// </summary>
 		public string Name { get; set; }
 		
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// The root folder.
@@ -1761,7 +1761,7 @@ namespace MyNS
 		/// </summary>
 		public string Category { get; set; }
 		
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// A description of the issue.
@@ -1940,7 +1940,7 @@ namespace MyNS
 		
 		public VariableGroup[] VariableGroups { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, BuildDefinitionVariable> Variables { get; set; }
 	}
 	
 	public enum BuildDefinitionJobAuthorizationScope
@@ -1967,7 +1967,7 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 		
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 	}
 	
 	/// <summary>
@@ -2048,7 +2048,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the data source.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -2091,9 +2091,9 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public string Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Options { get; set; }
 		
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		public System.Nullable<System.Boolean> Required { get; set; }
 		
@@ -2220,7 +2220,29 @@ namespace MyNS
 		/// </summary>
 		public string Type { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, BuildDefinitionVariable> Variables { get; set; }
+	}
+	
+	/// <summary>
+	/// Represents a variable used by a build definition.
+	/// </summary>
+	public class BuildDefinitionVariable
+	{
+		
+		/// <summary>
+		/// Indicates whether the value can be set at queue time.
+		/// </summary>
+		public System.Nullable<System.Boolean> AllowOverride { get; set; }
+		
+		/// <summary>
+		/// Indicates whether the variable's value is a secret.
+		/// </summary>
+		public System.Nullable<System.Boolean> IsSecret { get; set; }
+		
+		/// <summary>
+		/// The value of the variable.
+		/// </summary>
+		public string Value { get; set; }
 	}
 	
 	/// <summary>
@@ -2303,7 +2325,7 @@ namespace MyNS
 		
 		public BuildTrigger[] Triggers { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, BuildDefinitionVariable> Variables { get; set; }
 	}
 	
 	/// <summary>
@@ -2337,9 +2359,9 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Boolean> Enabled { get; set; }
 		
-		public string Environment { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Environment { get; set; }
 		
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		/// <summary>
 		/// The reference name for this step.
@@ -2572,7 +2594,7 @@ namespace MyNS
 		/// <summary>
 		/// fields associated with this build definition
 		/// </summary>
-		public string Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
 		
 		/// <summary>
 		/// Id of this source provider
@@ -2643,7 +2665,7 @@ namespace MyNS
 		/// </summary>
 		public string Description { get; set; }
 		
-		public string Icons { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Icons { get; set; }
 		
 		/// <summary>
 		/// The ID of the task whose icon is used when showing this template in the UI.
@@ -2680,7 +2702,7 @@ namespace MyNS
 		
 		public string Description { get; set; }
 		
-		public string Icons { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Icons { get; set; }
 		
 		public string IconTaskId { get; set; }
 		
@@ -2692,28 +2714,6 @@ namespace MyNS
 		/// For back-compat with extensions that use the old Steps format instead of Process and Phases
 		/// </summary>
 		public BuildDefinition3_2 Template { get; set; }
-	}
-	
-	/// <summary>
-	/// Represents a variable used by a build definition.
-	/// </summary>
-	public class BuildDefinitionVariable
-	{
-		
-		/// <summary>
-		/// Indicates whether the value can be set at queue time.
-		/// </summary>
-		public System.Nullable<System.Boolean> AllowOverride { get; set; }
-		
-		/// <summary>
-		/// Indicates whether the variable's value is a secret.
-		/// </summary>
-		public System.Nullable<System.Boolean> IsSecret { get; set; }
-		
-		/// <summary>
-		/// The value of the variable.
-		/// </summary>
-		public string Value { get; set; }
 	}
 	
 	public class BuildDeletedEvent
@@ -2922,7 +2922,7 @@ namespace MyNS
 		/// </summary>
 		public string GroupName { get; set; }
 		
-		public string Help { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Help { get; set; }
 		
 		/// <summary>
 		/// The label for the input.
@@ -2934,7 +2934,7 @@ namespace MyNS
 		/// </summary>
 		public string Name { get; set; }
 		
-		public string Options { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Options { get; set; }
 		
 		/// <summary>
 		/// Indicates whether the input is required to have a value.
@@ -3506,7 +3506,7 @@ namespace MyNS
 		/// </summary>
 		public PhaseTarget Target { get; set; }
 		
-		public string Variables { get; set; }
+		public System.Collections.Generic.Dictionary<string, BuildDefinitionVariable> Variables { get; set; }
 	}
 	
 	public enum PhaseJobAuthorizationScope
@@ -3662,7 +3662,7 @@ namespace MyNS
 		/// <summary>
 		/// Fields of the information node
 		/// </summary>
-		public string Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
 		
 		/// <summary>
 		/// Process or person that last modified this node
@@ -4068,7 +4068,7 @@ namespace MyNS
 		/// <summary>
 		/// The capabilities supported by this source provider.
 		/// </summary>
-		public string SupportedCapabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, bool> SupportedCapabilities { get; set; }
 		
 		/// <summary>
 		/// The types of triggers supported by this source provider.
@@ -4092,12 +4092,22 @@ namespace MyNS
 		/// <summary>
 		/// The capabilities supported by this trigger.
 		/// </summary>
-		public string SupportedCapabilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, SupportedTriggerSupportedCapabilities> SupportedCapabilities { get; set; }
 		
 		/// <summary>
 		/// The type of trigger.
 		/// </summary>
 		public SupportedTriggerType Type { get; set; }
+	}
+	
+	public enum SupportedTriggerSupportedCapabilities
+	{
+		
+		unsupported = 0,
+		
+		supported = 1,
+		
+		required = 2,
 	}
 	
 	public enum SupportedTriggerType
@@ -4219,7 +4229,7 @@ namespace MyNS
 		/// </summary>
 		public string Name { get; set; }
 		
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// The name of the source provider the repository is from.

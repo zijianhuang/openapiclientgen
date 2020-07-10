@@ -241,7 +241,24 @@ namespace MyNS
 		/// <summary>
 		/// A Dictionary that maps a list of work item references to the given list of artifact URI.
 		/// </summary>
-		public string ArtifactUrisQueryResult { get; set; }
+		public System.Collections.Generic.Dictionary<string, WorkItemReference[]> ArtifactUrisQueryResult { get; set; }
+	}
+	
+	/// <summary>
+	/// Contains reference to a work item.
+	/// </summary>
+	public class WorkItemReference
+	{
+		
+		/// <summary>
+		/// Work item ID.
+		/// </summary>
+		public System.Nullable<System.Int32> Id { get; set; }
+		
+		/// <summary>
+		/// REST API URL of the resource
+		/// </summary>
+		public string Url { get; set; }
 	}
 	
 	public class AttachmentReference
@@ -608,7 +625,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	/// <summary>
@@ -684,7 +701,7 @@ namespace MyNS
 		/// <summary>
 		/// Collection of link attributes.
 		/// </summary>
-		public string Attributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Attributes { get; set; }
 		
 		/// <summary>
 		/// Relation type.
@@ -1285,7 +1302,7 @@ namespace MyNS
 		/// <summary>
 		/// Map of field and values for the work item.
 		/// </summary>
-		public string Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
 		
 		/// <summary>
 		/// The work item ID.
@@ -1402,7 +1419,7 @@ namespace MyNS
 		/// <summary>
 		/// Dictionary that has node attributes like start/finish date for iteration nodes.
 		/// </summary>
-		public string Attributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Attributes { get; set; }
 		
 		/// <summary>
 		/// List of child nodes fetched.
@@ -1790,23 +1807,6 @@ namespace MyNS
 	}
 	
 	/// <summary>
-	/// Contains reference to a work item.
-	/// </summary>
-	public class WorkItemReference
-	{
-		
-		/// <summary>
-		/// Work item ID.
-		/// </summary>
-		public System.Nullable<System.Int32> Id { get; set; }
-		
-		/// <summary>
-		/// REST API URL of the resource
-		/// </summary>
-		public string Url { get; set; }
-	}
-	
-	/// <summary>
 	/// Describes the next state for a work item.
 	/// </summary>
 	public class WorkItemNextStateOnTransition
@@ -1902,7 +1902,7 @@ namespace MyNS
 		/// <summary>
 		/// The collection of relation type attributes.
 		/// </summary>
-		public string Attributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Attributes { get; set; }
 	}
 	
 	/// <summary>
@@ -1963,7 +1963,7 @@ namespace MyNS
 		/// <summary>
 		/// Mapping of field and its templated value.
 		/// </summary>
-		public string Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
 	}
 	
 	/// <summary>
@@ -2082,7 +2082,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets the various state transition mappings in the work item type.
 		/// </summary>
-		public string Transitions { get; set; }
+		public System.Collections.Generic.Dictionary<string, WorkItemStateTransition[]> Transitions { get; set; }
 		
 		/// <summary>
 		/// The XML form.
@@ -2293,7 +2293,7 @@ namespace MyNS
 		/// <summary>
 		/// List of updates to fields.
 		/// </summary>
-		public string Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, WorkItemFieldUpdate> Fields { get; set; }
 		
 		/// <summary>
 		/// ID of update.

@@ -207,7 +207,7 @@ namespace MyNS
 		/// Categories this pet belongs to
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="category")]
-		public string Category { get; set; }
+		public Category Category { get; set; }
 		
 		/// <summary>
 		/// The name given to a pet
@@ -224,7 +224,7 @@ namespace MyNS
 		public string[] PhotoUrls { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="friend")]
-		public string Friend { get; set; }
+		public Pet Friend { get; set; }
 		
 		/// <summary>
 		/// Tags attached to the pet
@@ -287,7 +287,7 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="pet")]
-		public string Pet { get; set; }
+		public Pet Pet { get; set; }
 		
 		/// <summary>
 		/// User supplied username

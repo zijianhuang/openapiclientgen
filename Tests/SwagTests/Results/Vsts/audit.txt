@@ -89,7 +89,7 @@ namespace MyNS
 		/// <summary>
 		/// External data such as CUIDs, item names, etc.
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// EventId, should be unique
@@ -224,7 +224,7 @@ namespace MyNS
 		/// <summary>
 		/// External data such as CUIDs, item names, etc.
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// Decorated details
@@ -316,7 +316,7 @@ namespace MyNS
 		/// <summary>
 		/// Inputs used to communicate with external service. Inputs could be url, a connection string, a token, etc.
 		/// </summary>
-		public string ConsumerInputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> ConsumerInputs { get; set; }
 		
 		/// <summary>
 		/// Type of the consumer, i.e. splunk, azureEventHub, etc.

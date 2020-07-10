@@ -136,7 +136,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	public class IdentityRef
@@ -310,7 +310,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> AllChangesIncluded { get; set; }
 		
-		public string ChangeCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> ChangeCounts { get; set; }
 		
 		public Change[] Changes { get; set; }
 		
@@ -539,7 +539,7 @@ namespace MyNS
 		/// <summary>
 		/// Set of identities related to this thread
 		/// </summary>
-		public string Identities { get; set; }
+		public System.Collections.Generic.Dictionary<string, IdentityRef> Identities { get; set; }
 		
 		/// <summary>
 		/// Specify if the thread is deleted which happens when all comments are deleted.
@@ -1528,7 +1528,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> BehindCount { get; set; }
 		
-		public string ChangeCounts { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> ChangeCounts { get; set; }
 		
 		public GitChange[] Changes { get; set; }
 		
@@ -2677,7 +2677,7 @@ namespace MyNS
 	public class GitPathToItemsCollection
 	{
 		
-		public string Items { get; set; }
+		public System.Collections.Generic.Dictionary<string, GitItem[]> Items { get; set; }
 	}
 	
 	public class GitPolicyConfigurationResponse
@@ -3782,7 +3782,7 @@ namespace MyNS
 		/// <summary>
 		/// Specific properties describing the suggestion.
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// The type of suggestion (e.g. pull request).

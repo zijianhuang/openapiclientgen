@@ -102,13 +102,91 @@ namespace MyNS
 		/// </summary>
 		public string Duration { get; set; }
 		
-		public string ResultsByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedResultsByOutcome> ResultsByOutcome { get; set; }
 		
-		public string RunSummaryByState { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedRunsByState> RunSummaryByState { get; set; }
 		
 		public TestResultsContext TestResultsContext { get; set; }
 		
 		public System.Nullable<System.Int32> TotalTests { get; set; }
+	}
+	
+	public class AggregatedResultsByOutcome
+	{
+		
+		public System.Nullable<System.Int32> Count { get; set; }
+		
+		public string Duration { get; set; }
+		
+		public string GroupByField { get; set; }
+		
+		public string GroupByValue { get; set; }
+		
+		public AggregatedResultsByOutcomeOutcome Outcome { get; set; }
+		
+		public System.Nullable<System.Int32> RerunResultCount { get; set; }
+	}
+	
+	public enum AggregatedResultsByOutcomeOutcome
+	{
+		
+		unspecified = 0,
+		
+		none = 1,
+		
+		passed = 2,
+		
+		failed = 3,
+		
+		inconclusive = 4,
+		
+		timeout = 5,
+		
+		aborted = 6,
+		
+		blocked = 7,
+		
+		notExecuted = 8,
+		
+		warning = 9,
+		
+		error = 10,
+		
+		notApplicable = 11,
+		
+		paused = 12,
+		
+		inProgress = 13,
+		
+		notImpacted = 14,
+	}
+	
+	public class AggregatedRunsByState
+	{
+		
+		public System.Collections.Generic.Dictionary<string, AggregatedResultsByOutcome> ResultsByOutcome { get; set; }
+		
+		public System.Nullable<System.Int32> RunsCount { get; set; }
+		
+		public AggregatedRunsByStateState State { get; set; }
+	}
+	
+	public enum AggregatedRunsByStateState
+	{
+		
+		unspecified = 0,
+		
+		notStarted = 1,
+		
+		inProgress = 2,
+		
+		completed = 3,
+		
+		aborted = 4,
+		
+		waiting = 5,
+		
+		needsInvestigation = 6,
 	}
 	
 	public class TestResultsContext
@@ -385,17 +463,17 @@ namespace MyNS
 		
 		public string Duration { get; set; }
 		
-		public string NotReportedResultsByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedResultsByOutcome> NotReportedResultsByOutcome { get; set; }
 		
 		public TestResultsContext PreviousContext { get; set; }
 		
-		public string ResultsByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedResultsByOutcome> ResultsByOutcome { get; set; }
 		
 		public AggregatedResultsDifference ResultsDifference { get; set; }
 		
-		public string RunSummaryByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedRunsByOutcome> RunSummaryByOutcome { get; set; }
 		
-		public string RunSummaryByState { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedRunsByState> RunSummaryByState { get; set; }
 		
 		public System.Nullable<System.Int32> TotalTests { get; set; }
 	}
@@ -416,56 +494,6 @@ namespace MyNS
 		public System.Nullable<System.Int32> IncreaseInTotalTests { get; set; }
 	}
 	
-	public class AggregatedResultsByOutcome
-	{
-		
-		public System.Nullable<System.Int32> Count { get; set; }
-		
-		public string Duration { get; set; }
-		
-		public string GroupByField { get; set; }
-		
-		public string GroupByValue { get; set; }
-		
-		public AggregatedResultsByOutcomeOutcome Outcome { get; set; }
-		
-		public System.Nullable<System.Int32> RerunResultCount { get; set; }
-	}
-	
-	public enum AggregatedResultsByOutcomeOutcome
-	{
-		
-		unspecified = 0,
-		
-		none = 1,
-		
-		passed = 2,
-		
-		failed = 3,
-		
-		inconclusive = 4,
-		
-		timeout = 5,
-		
-		aborted = 6,
-		
-		blocked = 7,
-		
-		notExecuted = 8,
-		
-		warning = 9,
-		
-		error = 10,
-		
-		notApplicable = 11,
-		
-		paused = 12,
-		
-		inProgress = 13,
-		
-		notImpacted = 14,
-	}
-	
 	public class AggregatedRunsByOutcome
 	{
 		
@@ -484,34 +512,6 @@ namespace MyNS
 		notImpacted = 2,
 		
 		others = 3,
-	}
-	
-	public class AggregatedRunsByState
-	{
-		
-		public string ResultsByOutcome { get; set; }
-		
-		public System.Nullable<System.Int32> RunsCount { get; set; }
-		
-		public AggregatedRunsByStateState State { get; set; }
-	}
-	
-	public enum AggregatedRunsByStateState
-	{
-		
-		unspecified = 0,
-		
-		notStarted = 1,
-		
-		inProgress = 2,
-		
-		completed = 3,
-		
-		aborted = 4,
-		
-		waiting = 5,
-		
-		needsInvestigation = 6,
 	}
 	
 	public class BatchResponse
@@ -1569,7 +1569,7 @@ namespace MyNS
 		/// <summary>
 		/// Key value pairs where the key value is overridden by the value.
 		/// </summary>
-		public string OverrideParameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> OverrideParameters { get; set; }
 		
 		/// <summary>
 		/// Comment on the link that will link the new clone  test case to the original Set null for no comment
@@ -2092,7 +2092,7 @@ namespace MyNS
 	public class TestFieldData
 	{
 		
-		public string Dimensions { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Dimensions { get; set; }
 		
 		public System.Nullable<System.Int64> Measure { get; set; }
 	}
@@ -2356,7 +2356,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	public class HttpPostedTcmAttachment
@@ -2647,7 +2647,34 @@ namespace MyNS
 		/// <summary>
 		/// Result summary of pipeline, group by TestRun state.
 		/// </summary>
-		public string ResultSummaryByRunState { get; set; }
+		public System.Collections.Generic.Dictionary<string, ResultsSummaryByOutcome> ResultSummaryByRunState { get; set; }
+	}
+	
+	/// <summary>
+	/// Result summary by the outcome of test results.
+	/// </summary>
+	public class ResultsSummaryByOutcome
+	{
+		
+		/// <summary>
+		/// Aggregated result details for each test result outcome.
+		/// </summary>
+		public System.Collections.Generic.Dictionary<string, AggregatedResultDetailsByOutcome> AggregatedResultDetailsByOutcome { get; set; }
+		
+		/// <summary>
+		/// Time taken by results.
+		/// </summary>
+		public string Duration { get; set; }
+		
+		/// <summary>
+		/// Total number of not reported test results.
+		/// </summary>
+		public System.Nullable<System.Int32> NotReportedTestCount { get; set; }
+		
+		/// <summary>
+		/// Total number of test results. (It includes NotImpacted test results as well which need to exclude while calculating pass/fail test result percentage).
+		/// </summary>
+		public System.Nullable<System.Int32> TotalTestCount { get; set; }
 	}
 	
 	/// <summary>
@@ -2669,12 +2696,12 @@ namespace MyNS
 		/// <summary>
 		/// Runs count by outcome for runs with state completed and NeedInvestigation runs.
 		/// </summary>
-		public string RunSummaryByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> RunSummaryByOutcome { get; set; }
 		
 		/// <summary>
 		/// Runs count by state.
 		/// </summary>
-		public string RunSummaryByState { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> RunSummaryByState { get; set; }
 		
 		/// <summary>
 		/// Total runs count.
@@ -2898,7 +2925,7 @@ namespace MyNS
 		/// <summary>
 		/// Generic store for test session data
 		/// </summary>
-		public string Bag { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Bag { get; set; }
 	}
 	
 	public class QueryByPointRequest
@@ -3143,33 +3170,6 @@ namespace MyNS
 		tcm = 1,
 		
 		tfs = 2,
-	}
-	
-	/// <summary>
-	/// Result summary by the outcome of test results.
-	/// </summary>
-	public class ResultsSummaryByOutcome
-	{
-		
-		/// <summary>
-		/// Aggregated result details for each test result outcome.
-		/// </summary>
-		public string AggregatedResultDetailsByOutcome { get; set; }
-		
-		/// <summary>
-		/// Time taken by results.
-		/// </summary>
-		public string Duration { get; set; }
-		
-		/// <summary>
-		/// Total number of not reported test results.
-		/// </summary>
-		public System.Nullable<System.Int32> NotReportedTestCount { get; set; }
-		
-		/// <summary>
-		/// Total number of test results. (It includes NotImpacted test results as well which need to exclude while calculating pass/fail test result percentage).
-		/// </summary>
-		public System.Nullable<System.Int32> TotalTestCount { get; set; }
 	}
 	
 	public class ResultUpdateRequestModel
@@ -5026,7 +5026,7 @@ namespace MyNS
 		/// <summary>
 		/// Meta data for Log file
 		/// </summary>
-		public string MetaData { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> MetaData { get; set; }
 		
 		/// <summary>
 		/// LastUpdatedDate for Log file
@@ -6029,7 +6029,7 @@ namespace MyNS
 		
 		public TestCaseResult[] Results { get; set; }
 		
-		public string ResultsCountByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, AggregatedResultsByOutcome> ResultsCountByOutcome { get; set; }
 		
 		public string[] Tags { get; set; }
 	}
@@ -6941,7 +6941,7 @@ namespace MyNS
 		/// <summary>
 		/// Dictionary which contains tags associated with a test run.
 		/// </summary>
-		public string TagsGroupByTestArtifact { get; set; }
+		public System.Collections.Generic.Dictionary<string, TestTag[]> TagsGroupByTestArtifact { get; set; }
 	}
 	
 	/// <summary>
@@ -7041,7 +7041,7 @@ namespace MyNS
 		
 		public HttpPostedTcmAttachment[] Attachments { get; set; }
 		
-		public string RequestParams { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> RequestParams { get; set; }
 	}
 	
 	/// <summary>

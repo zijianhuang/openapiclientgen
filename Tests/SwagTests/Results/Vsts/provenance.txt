@@ -24,7 +24,7 @@ namespace MyNS
 		/// <summary>
 		/// Generic property bag to store data about the session
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// The feed name or id for the session

@@ -176,7 +176,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="currentTypeName"></param>
 		/// <param name="propertyKey"></param>
 		/// <returns>CodeTypeReference and IsClass</returns>
-		protected static Tuple<CodeTypeReference, bool> CreateCodeTypeReferenceSchemaOf(OpenApiSchema propertySchema, string currentTypeName, string propertyKey)
+		protected Tuple<CodeTypeReference, bool> CreateCodeTypeReferenceSchemaOf(OpenApiSchema propertySchema, string currentTypeName, string propertyKey)
 		{
 			OpenApiSchema refToType = null;
 			if (propertySchema.AllOf.Count > 0)
@@ -196,10 +196,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Trace.TraceWarning($"Property '{propertyKey}' of {currentTypeName} may be of type object.");
 			}
 
-			string customPropertyType = refToType == null ? "System.Object" : refToType.Type;
-			string customPropertyFormat = refToType?.Format;
-			Type customType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(customPropertyType, customPropertyFormat);
-			return Tuple.Create(new CodeTypeReference(customType), customType.IsClass);
+			CodeTypeReference ctr = PropertySchemaToCodeTypeReference(refToType, currentTypeName, NameFunc.RefinePropertyName(propertyKey));
+			bool isClass = !TypeRefHelper.IsPrimitiveStructure(ctr.BaseType);
+			return Tuple.Create(ctr, isClass);
 		}
 
 		/// <summary>
@@ -387,10 +386,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
+		/// <summary>
+		/// Mostly used in ParametersRefBuilder.
+		/// </summary>
+		/// <param name="propertySchema"></param>
+		/// <param name="actionName"></param>
+		/// <param name="propertyName"></param>
+		/// <returns></returns>
+		/// <remarks>This shares similar navigation of schema like those in AddProperty().</remarks>
 		public CodeTypeReference PropertySchemaToCodeTypeReference(OpenApiSchema propertySchema, string actionName, string propertyName)
 		{
 			string schemaType = propertySchema.Type;
-			bool isPrimitiveType = TypeRefHelper.IsPrimitiveType(schemaType);
+			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(schemaType);
 			if (String.IsNullOrEmpty(schemaType))
 			{
 				if (propertySchema.Reference != null)

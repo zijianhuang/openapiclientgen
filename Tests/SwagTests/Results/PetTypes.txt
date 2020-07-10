@@ -165,7 +165,7 @@ namespace MyNS
 		/// <summary>
 		/// Categories this pet belongs to
 		/// </summary>
-		public string Category { get; set; }
+		public Category Category { get; set; }
 		
 		/// <summary>
 		/// The name given to a pet
@@ -181,7 +181,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.MaxLength(20)]
 		public string[] PhotoUrls { get; set; }
 		
-		public string Friend { get; set; }
+		public Pet Friend { get; set; }
 		
 		/// <summary>
 		/// Tags attached to the pet
@@ -232,7 +232,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int64> Id { get; set; }
 		
-		public string Pet { get; set; }
+		public Pet Pet { get; set; }
 		
 		/// <summary>
 		/// User supplied username

@@ -157,6 +157,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{"boolean", typeof(bool) },
 			{"string_date", typeof(DateTimeOffset) },
 			{"string_date-time", typeof(DateTimeOffset) },
+//			{"object", typeof(object) },
 		};
 
 		static readonly Dictionary<string, string> basicTsTypeDic = new Dictionary<string, string>()
@@ -171,6 +172,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{"boolean", "boolean" },
 			{"string_date", "Date" },
 			{"string_date-time", "Date" },
+//			{"object", "any" },
 		};
 
 		static readonly string[] oafTypes = new string[] { "integer", "number", "string", "boolean" };
@@ -180,10 +182,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="typeName"></param>
 		/// <returns></returns>
-		public static bool IsPrimitiveType(string typeName)
+		public static bool IsPrimitiveTypeOfOA(string typeName)
 		{
 			return oafTypes.Contains(typeName);
 		}
+
+		public static bool IsPrimitiveStructure(string typeName)
+		{
+			string[] ts = new string[] { "System.Int32", "System.Int64", "System.Float", "System.Double", "System.DateTime", "System.Boolean", "System.Enum" };
+			return ts.Contains(typeName);
+		}
+
+
 
 	}
 }

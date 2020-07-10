@@ -357,7 +357,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			OpenApiSchema propertySchema = p.Value;
 			string primitivePropertyType = propertySchema.Type;
-			bool isPrimitiveType = TypeRefHelper.IsPrimitiveType(primitivePropertyType);
+			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
 			bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
 			string defaultValue = GetDefaultValue(propertySchema);
 			CodeMemberField clientProperty;
@@ -419,6 +419,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					CodeTypeReference ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
 					clientProperty = CreateProperty(ctr, propertyName, defaultValue);
+				}
+				else if (propertySchema.Type == "object" && propertySchema.AdditionalProperties != null) // for dictionary
+				{
+					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
+					CodeTypeReference dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, typeDeclaration.Name, propertyName);
+					CodeTypeReference dicCtr = new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
+					clientProperty = CreateProperty(dicCtr, propertyName, null);
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{

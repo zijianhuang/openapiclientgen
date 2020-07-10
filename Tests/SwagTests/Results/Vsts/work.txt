@@ -106,7 +106,7 @@ namespace MyNS
 		/// <summary>
 		/// Field Type (e.g. Order, Activity) to Field Reference Name map
 		/// </summary>
-		public string TypeFields { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> TypeFields { get; set; }
 	}
 	
 	public enum BacklogConfigurationBugsBehavior
@@ -206,7 +206,7 @@ namespace MyNS
 		/// <summary>
 		/// State name to state category map
 		/// </summary>
-		public string States { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> States { get; set; }
 		
 		/// <summary>
 		/// Work Item type name
@@ -300,7 +300,7 @@ namespace MyNS
 		/// </summary>
 		public ReferenceLinks _links { get; set; }
 		
-		public string AllowedMappings { get; set; }
+		public System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string[]>> AllowedMappings { get; set; }
 		
 		public System.Nullable<System.Boolean> CanEdit { get; set; }
 		
@@ -324,7 +324,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	public class BoardColumn
@@ -342,7 +342,7 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public string StateMappings { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> StateMappings { get; set; }
 	}
 	
 	public enum BoardColumnColumnType
@@ -424,15 +424,47 @@ namespace MyNS
 		/// </summary>
 		public ReferenceLinks _links { get; set; }
 		
-		public string Rules { get; set; }
+		public System.Collections.Generic.Dictionary<string, Rule[]> Rules { get; set; }
 		
 		public string Url { get; set; }
+	}
+	
+	public class Rule
+	{
+		
+		public FilterClause[] Clauses { get; set; }
+		
+		public string Filter { get; set; }
+		
+		public string IsEnabled { get; set; }
+		
+		public string Name { get; set; }
+		
+		public Attribute Settings { get; set; }
+	}
+	
+	public class FilterClause
+	{
+		
+		public string FieldName { get; set; }
+		
+		public System.Nullable<System.Int32> Index { get; set; }
+		
+		public string LogicalOperator { get; set; }
+		
+		public string Operator { get; set; }
+		
+		public string Value { get; set; }
 	}
 	
 	public class BoardCardSettings
 	{
 		
-		public string Cards { get; set; }
+		public System.Collections.Generic.Dictionary<string, FieldSetting[]> Cards { get; set; }
+	}
+	
+	public class FieldSetting
+	{
 	}
 	
 	public class BoardChart
@@ -446,7 +478,7 @@ namespace MyNS
 		/// <summary>
 		/// The settings for the resource
 		/// </summary>
-		public string Settings { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Settings { get; set; }
 	}
 	
 	public class BoardChartReference
@@ -708,7 +740,7 @@ namespace MyNS
 		/// <summary>
 		/// Work item child id to parent id map
 		/// </summary>
-		public string ChildIdToParentIdMap { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> ChildIdToParentIdMap { get; set; }
 		
 		public TimelineCriteriaStatus CriteriaStatus { get; set; }
 		
@@ -956,20 +988,6 @@ namespace MyNS
 		public TeamBacklogMapping[] TeamBacklogMappings { get; set; }
 	}
 	
-	public class FilterClause
-	{
-		
-		public string FieldName { get; set; }
-		
-		public System.Nullable<System.Int32> Index { get; set; }
-		
-		public string LogicalOperator { get; set; }
-		
-		public string Operator { get; set; }
-		
-		public string Value { get; set; }
-	}
-	
 	/// <summary>
 	/// Client serialization contract for Delivery Timeline Markers.
 	/// </summary>
@@ -1001,10 +1019,6 @@ namespace MyNS
 		public string CategoryReferenceName { get; set; }
 		
 		public string TeamId { get; set; }
-	}
-	
-	public class FieldSetting
-	{
 	}
 	
 	public class FilterGroup
@@ -1113,7 +1127,7 @@ namespace MyNS
 		/// <summary>
 		/// Collection of link attributes.
 		/// </summary>
-		public string Attributes { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Attributes { get; set; }
 		
 		/// <summary>
 		/// Relation type.
@@ -1335,7 +1349,7 @@ namespace MyNS
 		/// <summary>
 		/// Map of field and values for the work item.
 		/// </summary>
-		public string Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
 		
 		/// <summary>
 		/// The work item ID.
@@ -1418,7 +1432,7 @@ namespace MyNS
 		/// <summary>
 		/// Type fields for the process configuration
 		/// </summary>
-		public string TypeFields { get; set; }
+		public System.Collections.Generic.Dictionary<string, WorkItemFieldReference> TypeFields { get; set; }
 		
 		public string Url { get; set; }
 	}
@@ -1470,20 +1484,6 @@ namespace MyNS
 		/// The updated order value of the work item that was reordered.
 		/// </summary>
 		public System.Nullable<System.Double> Order { get; set; }
-	}
-	
-	public class Rule
-	{
-		
-		public FilterClause[] Clauses { get; set; }
-		
-		public string Filter { get; set; }
-		
-		public string IsEnabled { get; set; }
-		
-		public string Name { get; set; }
-		
-		public Attribute Settings { get; set; }
 	}
 	
 	/// <summary>
@@ -1699,7 +1699,7 @@ namespace MyNS
 		/// <summary>
 		/// Information about categories that are visible on the backlog.
 		/// </summary>
-		public string BacklogVisibilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, bool> BacklogVisibilities { get; set; }
 		
 		/// <summary>
 		/// BugsBehavior (Off, AsTasks, AsRequirements, ...)
@@ -1793,7 +1793,7 @@ namespace MyNS
 		
 		public string BacklogIteration { get; set; }
 		
-		public string BacklogVisibilities { get; set; }
+		public System.Collections.Generic.Dictionary<string, bool> BacklogVisibilities { get; set; }
 		
 		public TeamSettingsPatchBugsBehavior BugsBehavior { get; set; }
 		

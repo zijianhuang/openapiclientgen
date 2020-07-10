@@ -203,7 +203,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			OpenApiSchema propertySchema = p.Value;
 			string primitivePropertyType = propertySchema.Type;
-			bool isPrimitiveType = TypeRefHelper.IsPrimitiveType(primitivePropertyType);
+			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
 			bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
 			CodeMemberField clientProperty;
 

@@ -44,7 +44,15 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets parameters contained in configuration object.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, Parameter> Parameters { get; set; }
+	}
+	
+	public class Parameter
+	{
+		
+		public System.Nullable<System.Boolean> IsSecret { get; set; }
+		
+		public string Value { get; set; }
 	}
 	
 	/// <summary>
@@ -56,7 +64,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the key and value of the fields used for authentication.
 		/// </summary>
-		public string Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the type of authentication scheme of an endpoint.
@@ -322,7 +330,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the data source.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -379,7 +387,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets the parameters of data source.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the data source request content.
@@ -462,7 +470,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the selected authorization scheme.
 		/// </summary>
-		public string Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the scheme used for service endpoint authentication.
@@ -548,7 +556,7 @@ namespace MyNS
 		/// <summary>
 		/// The readonly view of the links.  Because Reference links are readonly, we only want to expose them as read only.
 		/// </summary>
-		public string Links { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Links { get; set; }
 	}
 	
 	/// <summary>
@@ -660,7 +668,7 @@ namespace MyNS
 		/// <summary>
 		/// Custom properties for the input which can be used by the service provider
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// Underlying data type for the input value. When this value is specified, InputMode, Validation and Values are optional.
@@ -832,7 +840,7 @@ namespace MyNS
 		/// <summary>
 		/// Any other data about this input
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// The text to show for the display of this value
@@ -1022,14 +1030,6 @@ namespace MyNS
 		public string StatusMessage { get; set; }
 	}
 	
-	public class Parameter
-	{
-		
-		public System.Nullable<System.Boolean> IsSecret { get; set; }
-		
-		public string Value { get; set; }
-	}
-	
 	public class ProjectReference
 	{
 		
@@ -1097,7 +1097,7 @@ namespace MyNS
 		
 		public IdentityRef CreatedBy { get; set; }
 		
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the description of endpoint.
@@ -1212,7 +1212,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the properties of service endpoint authentication scheme.
 		/// </summary>
-		public string Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// Gets or sets whether this auth scheme requires OAuth2 configuration or not.
@@ -1239,7 +1239,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the data of service endpoint.
 		/// </summary>
-		public string Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the type of service endpoint.
@@ -1398,7 +1398,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters used to make subsequent calls to the data source
 		/// </summary>
-		public string CallbackContextParameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> CallbackContextParameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the flat that decides if another call to the data source is to be made
