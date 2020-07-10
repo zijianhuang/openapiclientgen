@@ -263,7 +263,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (enumMember is OpenApiInteger intMember)
 				{
 					string memberName = NameFunc.RefineEnumMemberName(intMember.Value.ToString());//take care of negative value
-					int intValue = k;
+					int intValue = intMember.Value;
 					CodeMemberField clientField = new CodeMemberField()
 					{
 						Name = memberName,
@@ -281,11 +281,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (enumMember is OpenApiLong longMember)
 				{
 					string memberName = NameFunc.RefineEnumMemberName(longMember.Value.ToString());
-					int intValue = k;
+					var longValue = longMember.Value;
 					CodeMemberField clientField = new CodeMemberField()
 					{
 						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
+						InitExpression = new CodePrimitiveExpression(longValue),
 					};
 
 					if (settings.DecorateDataModelWithDataContract)
@@ -317,11 +317,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
 				{
 					string memberName = "_" + doubleMember.Value.ToString();
-					int intValue = k;
+					var doubleValue = doubleMember.Value;
 					CodeMemberField clientField = new CodeMemberField()
 					{
 						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
+						InitExpression = new CodePrimitiveExpression(doubleValue),
 					};
 
 					if (settings.DecorateDataModelWithDataContract)
@@ -405,6 +405,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, defaultValue);
+				}
+				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
+				{
+					string casualTypeName = currentTypeName + NameFunc.RefinePropertyName(propertyName);
+					var found = FindTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
+					if (found == null)
+					{
+						CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
+						AddProperties(casualTypeDeclaration, propertySchema, casualTypeName, null);
+					}
+
+					var ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
+					clientProperty = CreateProperty(ctr, propertyName, defaultValue);
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{

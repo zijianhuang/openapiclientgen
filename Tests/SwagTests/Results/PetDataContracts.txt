@@ -87,7 +87,17 @@ namespace MyNS
 		/// Test Sub Category
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sub")]
-		public string Sub { get; set; }
+		public CategorySub Sub { get; set; }
+	}
+	
+	public class CategorySub
+	{
+		
+		/// <summary>
+		/// Dumb Property
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="prop1")]
+		public string Prop1 { get; set; }
 	}
 	
 	/// <summary>

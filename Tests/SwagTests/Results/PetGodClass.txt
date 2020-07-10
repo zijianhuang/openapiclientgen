@@ -68,7 +68,16 @@ namespace MyNS
 		/// <summary>
 		/// Test Sub Category
 		/// </summary>
-		public string Sub { get; set; }
+		public CategorySub Sub { get; set; }
+	}
+	
+	public class CategorySub
+	{
+		
+		/// <summary>
+		/// Dumb Property
+		/// </summary>
+		public string Prop1 { get; set; }
 	}
 	
 	/// <summary>

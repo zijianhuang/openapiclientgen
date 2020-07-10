@@ -60,12 +60,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return "_" + s;
 			}
 
-			if (int.TryParse(s, out _))//youtube api has funky enum member 360
+			var b = s;
+
+			if (int.TryParse(b, out _)) // some apis define negative value
 			{
-				return ("_" + s).Replace('-', '_'); // zoom has -1 as enum member.
+				b = "_" + b;
 			}
 
-			var rs = s.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
+			b = b.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
 						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
 						.Replace(":", "")//atlassian api has this.
 						.Replace("*", "_")//aws s3 has this
@@ -75,12 +77,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						.Replace(" ", "") //azure.com\appconfiguration seems to define a flags enum as a CSV. But Swagger does not seem to support flags enum.
 						.Replace(",", "");
 
-			if (!Char.IsLetter(rs[0]) && rs[0] != '_' && !int.TryParse(rs, out int _) && !double.TryParse(rs, out double _))
+			if (!Char.IsLetter(b[0]) && b[0] != '_' && Char.IsDigit(b[0]))
 			{
-				rs = "_" + rs;
+				b = "_" + b;
 			}
 
-			return rs;
+			return b;
 		}
 
 		public static string RefineEnumValue(string s)
@@ -95,23 +97,25 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return "_" + s;
 			}
 
-			if (int.TryParse(s, out _))//youtube api has funky enum member 360
+			var b = s;
+
+			if (int.TryParse(b, out _))
 			{
-				System.Diagnostics.Debug.Assert(s != "-1");
-				return ("_" + s).Replace('-', '_'); // zoom has -1 as enum member.
+				System.Diagnostics.Debug.Assert(b != "-1");
+				b = "_" + b;
 			}
 
-			var rs = s.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
+			b = b.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
 						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
 						.Replace(":", "")//atlassian api has this.
 						.Replace('+', '_');
 
-			if (!Char.IsLetter(rs[0]) && rs[0] != '_' && (int.TryParse(rs, out int _) || double.TryParse(rs, out double _)))
+			if (!Char.IsLetter(b[0]) && b[0] != '_' && Char.IsDigit(b[0]))
 			{
-				rs = "_" + rs;
+				b = "_" + b;
 			}
 
-			return rs;
+			return b;
 		}
 
 		public static string RefineParameterName(string s)
