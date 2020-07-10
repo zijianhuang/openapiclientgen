@@ -153,7 +153,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected abstract void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns);
 
-		protected Tuple<CodeTypeReference, CodeTypeDeclaration> GenerateCasualEnum(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns)
+		public Tuple<CodeTypeReference, CodeTypeDeclaration> GenerateCasualEnum(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns)
 		{
 			string casualEnumName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName);
 			CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
@@ -258,9 +258,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				string arrayType = arrayItemsSchema.Type;
 				if (arrayItemsSchema.Enum != null && arrayItemsSchema.Enum.Count > 0)
 				{
-					string[] enumMemberNames = (String.IsNullOrEmpty(arrayItemsSchema.Type) || arrayItemsSchema.Type == "string")
-						? arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
-						: arrayItemsSchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
+					string[] enumMemberNames;
+					try
+					{
+						enumMemberNames = (String.IsNullOrEmpty(arrayItemsSchema.Type) || arrayItemsSchema.Type == "string")
+							? arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+							: arrayItemsSchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
+					}
+					catch (InvalidCastException ex)
+					{
+						throw new CodeGenException($"When dealing with {propertyName} of {arrayType}, error: {ex.Message}");
+					}
+
 					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
 					if (existingDeclaration != null)
 					{

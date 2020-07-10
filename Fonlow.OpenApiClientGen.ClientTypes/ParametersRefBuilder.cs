@@ -91,31 +91,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeReference OpenApiParameterSchemaToCodeTypeReference(OpenApiSchema apiParameterSchema, string apiParameterName)
 		{
-			CodeTypeReference GenerateCasualEnum()
-			{
-				string casualEnumName = actionName + NameFunc.RefinePropertyName(apiParameterName);
-				CodeTypeDeclaration existingType = com2CodeDom.FindTypeDeclarationInNamespaces(casualEnumName, null);
-				if (existingType == null)
-				{
-					CodeTypeDeclaration casualEnumTypeDeclaration = Fonlow.Poco2Client.PodGenHelper.CreatePodClientEnum(com2CodeDom.ClientNamespace, casualEnumName);
-					com2CodeDom.AddEnumMembers(casualEnumTypeDeclaration, apiParameterSchema.Enum);
-
-					//if (settings.DecorateDataModelWithDataContract)
-					//{
-					//	casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
-					//}
-
-					//if (settings.DecorateDataModelWithSerializable)
-					//{
-					//	casualEnumTypeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.SerializableAttribute"));
-					//}
-
-					Trace.TraceInformation($"Casual enum {casualEnumName} added for Api/{apiParameterName}.");
-				}
-
-				return ComponentsHelper.TranslateTypeNameToClientTypeReference(casualEnumName);
-			}
-
 			string schemaType = apiParameterSchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveType(schemaType);
 			if (String.IsNullOrEmpty(schemaType))
@@ -131,7 +106,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (apiParameterSchema.Enum.Count > 0) //for casual enum
 					{
-						return GenerateCasualEnum();
+						var r = com2CodeDom.GenerateCasualEnum(apiParameterSchema, actionName, apiParameterName, null);
+						return r.Item1;
 					}
 					else
 					{
@@ -167,7 +143,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var r = com2CodeDom.CreateArrayCodeTypeReference(apiParameterSchema, actionName, apiParameterName, null, null);
 					return r.Item1;
 				}
-				else if (apiParameterSchema.Reference ==null && apiParameterSchema.Properties != null && apiParameterSchema.Properties.Count > 0) // for casual type
+				else if (apiParameterSchema.Enum.Count == 0 && apiParameterSchema.Reference != null && !isPrimitiveType) // for complex type
+				{
+					CodeTypeReference complexCodeTypeReference = com2CodeDom.CreateComplexCodeTypeReference(apiParameterSchema);
+					return complexCodeTypeReference;
+				}
+				else if (apiParameterSchema.Reference == null && apiParameterSchema.Properties != null && apiParameterSchema.Properties.Count > 0) // for casual type
 				{
 					string casualTypeName = actionName + NameFunc.RefinePropertyName(apiParameterName);
 					var found = com2CodeDom.FindTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
@@ -178,11 +159,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					return TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
-				}
-				else if (apiParameterSchema.Enum.Count == 0 && apiParameterSchema.Reference != null && !isPrimitiveType) // for complex type
-				{
-					CodeTypeReference complexCodeTypeReference = com2CodeDom.CreateComplexCodeTypeReference(apiParameterSchema);
-					return complexCodeTypeReference;
 				}
 				else if (schemaType == "object" && apiParameterSchema.AdditionalProperties != null) // for dictionary
 				{
@@ -195,12 +171,29 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					Type t = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, apiParameterSchema.Format);
 					return new CodeTypeReference(t);
 				}
+
+				//else // for enum
+				//{
+				//	if (apiParameterSchema.Reference != null)
+				//	{
+				//		CodeTypeReference complexCodeTypeReference = com2CodeDom.CreateComplexCodeTypeReference(apiParameterSchema);
+				//		return complexCodeTypeReference;
+				//	}
+				//	else //for casual enum
+				//	{
+				//		var r = com2CodeDom.GenerateCasualEnum(apiParameterSchema, actionName, apiParameterName, null);
+				//		return r.Item1;
+				//	}
+				//}
+
 				else if (apiParameterSchema.Enum.Count > 0 && schemaType == "string") // for enum
 				{
 					string[] enumMemberNames;
 					try
 					{
-						enumMemberNames = apiParameterSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray();
+						enumMemberNames = (String.IsNullOrEmpty(apiParameterSchema.Type) || apiParameterSchema.Type == "string")
+							? apiParameterSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+							: apiParameterSchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
 					}
 					catch (InvalidCastException ex)
@@ -224,9 +217,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, apiParameterSchema.Format);
 				CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
 				return codeTypeReference;
-
-				//var schemaFormat = content.Schema.Format;
-				//return new CodeTypeReference(nameComposer.PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat));
 			}
 		}
 

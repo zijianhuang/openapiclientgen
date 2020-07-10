@@ -245,7 +245,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-					clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired); //TS
+					clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired);
 				}
 				else // for enum
 				{

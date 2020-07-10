@@ -22,6 +22,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema);
 
+		Tuple<CodeTypeReference, CodeTypeDeclaration> GenerateCasualEnum(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns);
+
 		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns);
 
 		OpenApiSchema FindSchema(string key);
