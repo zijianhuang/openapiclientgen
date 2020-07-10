@@ -20,6 +20,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		Tuple<CodeTypeReference, string> CreateArrayCodeTypeReference(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string currentTypeName, string ns);
 
+		CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema);
+
 		CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns);
 
 		OpenApiSchema FindSchema(string key);

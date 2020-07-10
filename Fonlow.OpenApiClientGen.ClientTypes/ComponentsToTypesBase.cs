@@ -285,7 +285,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		protected CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema)
+		public CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema)
 		{
 			string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 			string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);

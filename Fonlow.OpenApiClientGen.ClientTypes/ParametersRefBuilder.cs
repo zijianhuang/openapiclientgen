@@ -181,16 +181,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (apiParameterSchema.Enum.Count == 0 && apiParameterSchema.Reference != null && !isPrimitiveType) // for complex type
 				{
-					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(apiParameterSchema.Reference.Id);
-					string complexType = NameFunc.RefineTypeName(apiParameterSchema.Reference.Id, propertyTypeNs);
-					var existingType = com2CodeDom.FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
-					if (existingType == null && !com2CodeDom.RegisteredSchemaRefIdExists(apiParameterSchema.Reference.Id)) // Referencing to a type not yet added to namespace
-					{
-						com2CodeDom.AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, apiParameterSchema));
-					}
-
-					var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
-					return TypeRefHelper.TranslateToClientTypeReference(typeWithNs);
+					CodeTypeReference complexCodeTypeReference = com2CodeDom.CreateComplexCodeTypeReference(apiParameterSchema);
+					return complexCodeTypeReference;
 				}
 				else if (schemaType == "object" && apiParameterSchema.AdditionalProperties != null) // for dictionary
 				{
