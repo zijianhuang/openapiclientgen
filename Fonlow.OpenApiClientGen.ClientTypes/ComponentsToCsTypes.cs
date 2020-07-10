@@ -763,14 +763,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		CodeMemberField CreateProperty(string propertyName, string typeName, string defaultValue)
-		{
-			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
+		//CodeMemberField CreateProperty(string propertyName, string typeName, string defaultValue)
+		//{
+		//	string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
-			CodeMemberField result = new CodeMemberField() { Type = ComponentsHelper.TranslateTypeNameToClientTypeReference(typeName), Name = memberName };
-			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
-			return result;
-		}
+		//	CodeMemberField result = new CodeMemberField() { Type = ComponentsHelper.TranslateTypeNameToClientTypeReference(typeName), Name = memberName };
+		//	result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
+		//	return result;
+		//}
 
 		CodeMemberField CreateProperty(CodeTypeReference codeTypeReference, string propertyName, string defaultValue)
 		{
