@@ -164,22 +164,10 @@ namespace MyNS
 		public string Code { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public ServiceMessageTypeSeverity Severity { get; set; }
+		public ServiceMessagesTypeHighestSeverity Severity { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Reason { get; set; }
-	}
-	
-	public enum ServiceMessageTypeSeverity
-	{
-		
-		Fatal = 0,
-		
-		Error = 1,
-		
-		Warning = 2,
-		
-		Informational = 3,
 	}
 	
 	public class BBSProcessingReportResponseType

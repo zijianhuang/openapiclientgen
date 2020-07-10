@@ -367,7 +367,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="enumMemberNames"></param>
 		/// <returns></returns>
-		CodeTypeDeclaration FindEnumDeclaration(string[] enumMemberNames)
+		protected CodeTypeDeclaration FindEnumDeclaration(string[] enumMemberNames)
 		{
 			var t = ClientNamespace.FindEnumDeclaration(enumMemberNames);
 			if (t != null)

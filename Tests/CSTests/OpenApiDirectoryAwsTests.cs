@@ -29,11 +29,11 @@ namespace SwagTests
 			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\amazonaws.com\acm-pca\2017-08-22");
 		}
 
-		[Fact]
-		public void Test_alexaforbusiness()
-		{
-			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\amazonaws.com\alexaforbusiness\2017-11-09");
-		}
+		//[Fact]
+		//public void Test_alexaforbusiness() PhoneNumberType enum is password. Looking bad definition.
+		//{
+		//	helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\amazonaws.com\alexaforbusiness\2017-11-09");
+		//}
 
 		[Fact]
 		public void Test_amplify()

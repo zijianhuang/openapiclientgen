@@ -44,6 +44,7 @@ namespace MyNS
 		/// The measured skill for hunting
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name="huntingSkill")]
 		public CatHuntingSkill HuntingSkill { get; set; }
 	}
 	
@@ -150,6 +151,7 @@ namespace MyNS
 		/// <summary>
 		/// Order Status
 		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="status")]
 		public OrderStatus Status { get; set; }
 		
 		/// <summary>
@@ -223,6 +225,7 @@ namespace MyNS
 		/// <summary>
 		/// Pet status in the store
 		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name="status")]
 		public PetStatus Status { get; set; }
 		
 		/// <summary>

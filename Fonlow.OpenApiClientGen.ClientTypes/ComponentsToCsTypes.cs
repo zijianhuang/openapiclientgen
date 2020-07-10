@@ -7,6 +7,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -417,6 +418,38 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						clientProperty = CreateProperty(propertyName, simpleType, defaultValue);
 					}
 				}
+				else if (propertySchema.Enum.Count > 0 && propertySchema.Type == "string") // for enum
+				{
+					string[] enumMemberNames;
+					try
+					{
+						enumMemberNames = (String.IsNullOrEmpty(propertySchema.Type) || propertySchema.Type == "string")
+							? propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
+
+					}
+					catch (InvalidCastException ex)
+					{
+						throw new CodeGenException($"When dealing with {propertyName} of {propertySchema.Type}, error: {ex.Message}");
+					}
+
+					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
+					if (existingDeclaration != null)
+					{
+						string existingTypeName = existingDeclaration.Name;
+						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
+						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + defaultValue);
+					}
+					else
+					{
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
+					}
+				}
+				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName))
+				{
+					var r =  new CodeTypeReference(aliasTypeName);
+					clientProperty = CreateProperty(r, propertyName, defaultValue);
+				}
 				else // for enum
 				{
 					if (propertySchema.Reference != null)
@@ -428,15 +461,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
 					}
-
-					if (isRequired)
-					{
-						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
-					}
-
-					CreateMemberDocComment(p, clientProperty);
-					typeDeclaration.Members.Add(clientProperty);
-					return;
 				}
 			}
 
