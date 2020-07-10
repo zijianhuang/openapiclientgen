@@ -171,21 +171,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					Type t = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, apiParameterSchema.Format);
 					return new CodeTypeReference(t);
 				}
-
-				//else // for enum
-				//{
-				//	if (apiParameterSchema.Reference != null)
-				//	{
-				//		CodeTypeReference complexCodeTypeReference = com2CodeDom.CreateComplexCodeTypeReference(apiParameterSchema);
-				//		return complexCodeTypeReference;
-				//	}
-				//	else //for casual enum
-				//	{
-				//		var r = com2CodeDom.GenerateCasualEnum(apiParameterSchema, actionName, apiParameterName, null);
-				//		return r.Item1;
-				//	}
-				//}
-
 				else if (apiParameterSchema.Enum.Count > 0 && schemaType == "string") // for enum
 				{
 					string[] enumMemberNames;
@@ -208,15 +193,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
 						return enumReference;
 					}
+					else
+					{
+						var r = com2CodeDom.GenerateCasualEnum(apiParameterSchema, actionName, apiParameterName, null);
+						return r.Item1;
+					}
 				}
-				else if (schemaType != "string" && typeAliasDic.TryGet(schemaType, out string aliasTypeName))
+				else if (schemaType != "string" && typeAliasDic.TryGet(schemaType, out string aliasTypeName)) //check TypeAliasDic
 				{
 					return new CodeTypeReference(aliasTypeName);
 				}
-
-				Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schemaType, apiParameterSchema.Format);
-				CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
-				return codeTypeReference;
+				else if (apiParameterSchema.Reference != null)
+				{
+					CodeTypeReference complexCodeTypeReference = com2CodeDom.CreateComplexCodeTypeReference(apiParameterSchema);
+					return complexCodeTypeReference;
+				}
+				else // for casual enum
+				{
+					var r = com2CodeDom.GenerateCasualEnum(apiParameterSchema, actionName, apiParameterName, null);
+					return r.Item1;
+				}
 			}
 		}
 

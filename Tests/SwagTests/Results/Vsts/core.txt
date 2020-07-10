@@ -1144,9 +1144,9 @@ namespace MyNS
 		/// <param name="stateFilter">Filter on team projects in a specific team project state (default: WellFormed).</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TeamProjectReference[]> Projects_ListAsync(string organization, string stateFilter, int top, int skip, string continuationToken, bool getDefaultTeamImageUrl, string api_version)
+		public async Task<TeamProjectReference[]> Projects_ListAsync(string organization, Projects_ListStateFilter stateFilter, int top, int skip, string continuationToken, bool getDefaultTeamImageUrl, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects&stateFilter=" + (stateFilter==null? "" : Uri.EscapeDataString(stateFilter))+"&$top="+top+"&$skip="+skip+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&getDefaultTeamImageUrl="+getDefaultTeamImageUrl+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects&stateFilter=" + stateFilter+"&$top="+top+"&$skip="+skip+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&getDefaultTeamImageUrl="+getDefaultTeamImageUrl+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1175,9 +1175,9 @@ namespace MyNS
 		/// <param name="stateFilter">Filter on team projects in a specific team project state (default: WellFormed).</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TeamProjectReference[] Projects_List(string organization, string stateFilter, int top, int skip, string continuationToken, bool getDefaultTeamImageUrl, string api_version)
+		public TeamProjectReference[] Projects_List(string organization, Projects_ListStateFilter stateFilter, int top, int skip, string continuationToken, bool getDefaultTeamImageUrl, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects&stateFilter=" + (stateFilter==null? "" : Uri.EscapeDataString(stateFilter))+"&$top="+top+"&$skip="+skip+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&getDefaultTeamImageUrl="+getDefaultTeamImageUrl+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects&stateFilter=" + stateFilter+"&$top="+top+"&$skip="+skip+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&getDefaultTeamImageUrl="+getDefaultTeamImageUrl+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1981,6 +1981,24 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Projects_ListStateFilter
+	{
+		
+		deleting = 0,
+		
+		_new = 1,
+		
+		wellFormed = 2,
+		
+		createPending = 3,
+		
+		all = 4,
+		
+		unchanged = 5,
+		
+		deleted = 6,
 	}
 }
 

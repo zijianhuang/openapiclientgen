@@ -1462,9 +1462,9 @@ namespace MyNS
 		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WikiPage> Pages_Get_PageAsync(string organization, string project, string wikiIdentifier, string path, string recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
+		public async Task<WikiPage> Pages_Get_PageAsync(string organization, string project, string wikiIdentifier, string path, Pages_Get_PageRecursionLevel recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&recursionLevel=" + (recursionLevel==null? "" : Uri.EscapeDataString(recursionLevel))+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&recursionLevel=" + recursionLevel+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1500,9 +1500,9 @@ namespace MyNS
 		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WikiPage Pages_Get_Page(string organization, string project, string wikiIdentifier, string path, string recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
+		public WikiPage Pages_Get_Page(string organization, string project, string wikiIdentifier, string path, Pages_Get_PageRecursionLevel recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&recursionLevel=" + (recursionLevel==null? "" : Uri.EscapeDataString(recursionLevel))+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&recursionLevel=" + recursionLevel+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1603,9 +1603,9 @@ namespace MyNS
 		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WikiPage> Pages_Get_Page_By_IdAsync(string organization, string project, string wikiIdentifier, int id, string recursionLevel, bool includeContent, string api_version)
+		public async Task<WikiPage> Pages_Get_Page_By_IdAsync(string organization, string project, string wikiIdentifier, int id, Pages_Get_PageRecursionLevel recursionLevel, bool includeContent, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + (recursionLevel==null? "" : Uri.EscapeDataString(recursionLevel))+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + recursionLevel+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1638,9 +1638,9 @@ namespace MyNS
 		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WikiPage Pages_Get_Page_By_Id(string organization, string project, string wikiIdentifier, int id, string recursionLevel, bool includeContent, string api_version)
+		public WikiPage Pages_Get_Page_By_Id(string organization, string project, string wikiIdentifier, int id, Pages_Get_PageRecursionLevel recursionLevel, bool includeContent, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + (recursionLevel==null? "" : Uri.EscapeDataString(recursionLevel))+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + recursionLevel+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1812,6 +1812,18 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Pages_Get_PageRecursionLevel
+	{
+		
+		none = 0,
+		
+		oneLevel = 1,
+		
+		oneLevelPlusNestedEmptyFolders = 2,
+		
+		full = 3,
 	}
 }
 

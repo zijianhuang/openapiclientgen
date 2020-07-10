@@ -553,9 +553,9 @@ namespace MyNS
 		/// <param name="project">Project ID or project name</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WidgetTypesResponse> Widget_Types_Get_Widget_TypesAsync(string organization, string scope, string project, string api_version)
+		public async Task<WidgetTypesResponse> Widget_Types_Get_Widget_TypesAsync(string organization, Widget_Types_Get_Widget_TypesScope scope, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes&$scope=" + (scope==null? "" : Uri.EscapeDataString(scope))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes&$scope=" + scope+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -584,9 +584,9 @@ namespace MyNS
 		/// <param name="project">Project ID or project name</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WidgetTypesResponse Widget_Types_Get_Widget_Types(string organization, string scope, string project, string api_version)
+		public WidgetTypesResponse Widget_Types_Get_Widget_Types(string organization, Widget_Types_Get_Widget_TypesScope scope, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes&$scope=" + (scope==null? "" : Uri.EscapeDataString(scope))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes&$scope=" + scope+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1530,6 +1530,14 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Widget_Types_Get_Widget_TypesScope
+	{
+		
+		collection_User = 0,
+		
+		project_Team = 1,
 	}
 }
 

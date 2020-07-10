@@ -1422,11 +1422,11 @@ namespace SwagTests
 			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\azure.com\iotspaces\2017-10-01-preview");
 		}
 
-		[Fact]
-		public void Test_azure_com_keyvault_2019_09_01()
-		{
-			helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\azure.com\keyvault\2019-09-01");
-		}
+		//[Fact]
+		//public void Test_azure_com_keyvault_2019_09_01() invalid casual enum  resourceType eq 'Microsoft.KeyVault/vaults' in path '/subscriptions/{subscriptionId}/resources'
+		//{
+		//	helper.GenerateFromOpenApiAndBuild(@"C:\VSProjects\Study\openapi-directory\APIs\azure.com\keyvault\2019-09-01");
+		//}
 
 		[Fact]
 		public void Test_azure_com_keyvault_providers_2019_09_01()

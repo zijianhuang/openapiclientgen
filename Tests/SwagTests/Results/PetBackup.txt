@@ -368,9 +368,9 @@ namespace MyNS
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
-		public async Task<Pet> ListBackupJobsAsync(string nextToken, int maxResults, string resourceArn, string state, string backupVaultName, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string resourceType, string MaxResults, string NextToken)
+		public async Task<Pet> ListBackupJobsAsync(string nextToken, int maxResults, string resourceArn, ListBackupJobsState state, string backupVaultName, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string resourceType, string MaxResults, string NextToken)
 		{
-			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : Uri.EscapeDataString(resourceArn))+"&state=" + (state==null? "" : Uri.EscapeDataString(state))+"&backupVaultName=" + (backupVaultName==null? "" : Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : Uri.EscapeDataString(NextToken));
+			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : Uri.EscapeDataString(resourceArn))+"&state=" + state+"&backupVaultName=" + (backupVaultName==null? "" : Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : Uri.EscapeDataString(NextToken));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -406,9 +406,9 @@ namespace MyNS
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
-		public Pet ListBackupJobs(string nextToken, int maxResults, string resourceArn, string state, string backupVaultName, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string resourceType, string MaxResults, string NextToken)
+		public Pet ListBackupJobs(string nextToken, int maxResults, string resourceArn, ListBackupJobsState state, string backupVaultName, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string resourceType, string MaxResults, string NextToken)
 		{
-			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : Uri.EscapeDataString(resourceArn))+"&state=" + (state==null? "" : Uri.EscapeDataString(state))+"&backupVaultName=" + (backupVaultName==null? "" : Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : Uri.EscapeDataString(NextToken));
+			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : Uri.EscapeDataString(resourceArn))+"&state=" + state+"&backupVaultName=" + (backupVaultName==null? "" : Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : Uri.EscapeDataString(NextToken));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -428,5 +428,25 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum ListBackupJobsState
+	{
+		
+		CREATED = 0,
+		
+		PENDING = 1,
+		
+		RUNNING = 2,
+		
+		ABORTING = 3,
+		
+		ABORTED = 4,
+		
+		COMPLETED = 5,
+		
+		FAILED = 6,
+		
+		EXPIRED = 7,
 	}
 }

@@ -5221,9 +5221,9 @@ namespace MyNS
 		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TaskAgentPool[]> Pools_Get_Agent_Pools_By_IdsAsync(string organization, string poolIds, string actionFilter, string api_version)
+		public async Task<TaskAgentPool[]> Pools_Get_Agent_Pools_By_IdsAsync(string organization, string poolIds, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -5253,9 +5253,9 @@ namespace MyNS
 		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TaskAgentPool[] Pools_Get_Agent_Pools_By_Ids(string organization, string poolIds, string actionFilter, string api_version)
+		public TaskAgentPool[] Pools_Get_Agent_Pools_By_Ids(string organization, string poolIds, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -5336,9 +5336,9 @@ namespace MyNS
 		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TaskAgentPool> Pools_GetAsync(string organization, int poolId, string properties, string actionFilter, string api_version)
+		public async Task<TaskAgentPool> Pools_GetAsync(string organization, int poolId, string properties, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"&properties=" + (properties==null? "" : Uri.EscapeDataString(properties))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"&properties=" + (properties==null? "" : Uri.EscapeDataString(properties))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -5369,9 +5369,9 @@ namespace MyNS
 		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TaskAgentPool Pools_Get(string organization, int poolId, string properties, string actionFilter, string api_version)
+		public TaskAgentPool Pools_Get(string organization, int poolId, string properties, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"&properties=" + (properties==null? "" : Uri.EscapeDataString(properties))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"&properties=" + (properties==null? "" : Uri.EscapeDataString(properties))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6090,9 +6090,9 @@ namespace MyNS
 		/// <param name="ids">Comma separated list of IDs of the deployment groups.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<DeploymentGroup[]> Deploymentgroups_ListAsync(string organization, string project, string name, string actionFilter, string expand, string continuationToken, int top, string ids, string api_version)
+		public async Task<DeploymentGroup[]> Deploymentgroups_ListAsync(string organization, string project, string name, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, Deploymentgroups_ListExpand expand, string continuationToken, int top, string ids, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&actionFilter=" + actionFilter+"&$expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6127,9 +6127,9 @@ namespace MyNS
 		/// <param name="ids">Comma separated list of IDs of the deployment groups.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public DeploymentGroup[] Deploymentgroups_List(string organization, string project, string name, string actionFilter, string expand, string continuationToken, int top, string ids, string api_version)
+		public DeploymentGroup[] Deploymentgroups_List(string organization, string project, string name, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, Deploymentgroups_ListExpand expand, string continuationToken, int top, string ids, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&actionFilter=" + actionFilter+"&$expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6213,9 +6213,9 @@ namespace MyNS
 		/// <param name="expand">Include these additional details in the returned object.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<DeploymentGroup> Deploymentgroups_GetAsync(string organization, string project, int deploymentGroupId, string actionFilter, string expand, string api_version)
+		public async Task<DeploymentGroup> Deploymentgroups_GetAsync(string organization, string project, int deploymentGroupId, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, Deploymentgroups_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"&actionFilter=" + actionFilter+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6247,9 +6247,9 @@ namespace MyNS
 		/// <param name="expand">Include these additional details in the returned object.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public DeploymentGroup Deploymentgroups_Get(string organization, string project, int deploymentGroupId, string actionFilter, string expand, string api_version)
+		public DeploymentGroup Deploymentgroups_Get(string organization, string project, int deploymentGroupId, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, Deploymentgroups_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"&actionFilter=" + actionFilter+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6288,9 +6288,9 @@ namespace MyNS
 		/// <param name="enabled">Get only deployment targets that are enabled or disabled. Default is 'null' which returns all the targets.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<DeploymentMachine[]> Targets_ListAsync(string organization, string project, int deploymentGroupId, string tags, string name, bool partialNameMatch, string expand, string agentStatus, string agentJobResult, string continuationToken, int top, bool enabled, string propertyFilters, string api_version)
+		public async Task<DeploymentMachine[]> Targets_ListAsync(string organization, string project, int deploymentGroupId, string tags, string name, bool partialNameMatch, Targets_ListExpand expand, Targets_ListAgentStatus agentStatus, Targets_ListAgentJobResult agentJobResult, string continuationToken, int top, bool enabled, string propertyFilters, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets&tags=" + (tags==null? "" : Uri.EscapeDataString(tags))+"&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&partialNameMatch="+partialNameMatch+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&agentStatus=" + (agentStatus==null? "" : Uri.EscapeDataString(agentStatus))+"&agentJobResult=" + (agentJobResult==null? "" : Uri.EscapeDataString(agentJobResult))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&enabled="+enabled+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets&tags=" + (tags==null? "" : Uri.EscapeDataString(tags))+"&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&partialNameMatch="+partialNameMatch+"&$expand=" + expand+"&agentStatus=" + agentStatus+"&agentJobResult=" + agentJobResult+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&enabled="+enabled+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6329,9 +6329,9 @@ namespace MyNS
 		/// <param name="enabled">Get only deployment targets that are enabled or disabled. Default is 'null' which returns all the targets.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public DeploymentMachine[] Targets_List(string organization, string project, int deploymentGroupId, string tags, string name, bool partialNameMatch, string expand, string agentStatus, string agentJobResult, string continuationToken, int top, bool enabled, string propertyFilters, string api_version)
+		public DeploymentMachine[] Targets_List(string organization, string project, int deploymentGroupId, string tags, string name, bool partialNameMatch, Targets_ListExpand expand, Targets_ListAgentStatus agentStatus, Targets_ListAgentJobResult agentJobResult, string continuationToken, int top, bool enabled, string propertyFilters, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets&tags=" + (tags==null? "" : Uri.EscapeDataString(tags))+"&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&partialNameMatch="+partialNameMatch+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&agentStatus=" + (agentStatus==null? "" : Uri.EscapeDataString(agentStatus))+"&agentJobResult=" + (agentJobResult==null? "" : Uri.EscapeDataString(agentJobResult))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&enabled="+enabled+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets&tags=" + (tags==null? "" : Uri.EscapeDataString(tags))+"&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&partialNameMatch="+partialNameMatch+"&$expand=" + expand+"&agentStatus=" + agentStatus+"&agentJobResult=" + agentJobResult+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&enabled="+enabled+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6417,9 +6417,9 @@ namespace MyNS
 		/// <param name="expand">Include these additional details in the returned objects.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<DeploymentMachine> Targets_GetAsync(string organization, string project, int deploymentGroupId, int targetId, string expand, string api_version)
+		public async Task<DeploymentMachine> Targets_GetAsync(string organization, string project, int deploymentGroupId, int targetId, Targets_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets/"+targetId+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets/"+targetId+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6451,9 +6451,9 @@ namespace MyNS
 		/// <param name="expand">Include these additional details in the returned objects.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public DeploymentMachine Targets_Get(string organization, string project, int deploymentGroupId, int targetId, string expand, string api_version)
+		public DeploymentMachine Targets_Get(string organization, string project, int deploymentGroupId, int targetId, Targets_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets/"+targetId+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets/"+targetId+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6562,9 +6562,9 @@ namespace MyNS
 		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TaskAgentQueue[]> Queues_Get_Agent_Queues_For_PoolsAsync(string organization, string poolIds, string project, string actionFilter, string api_version)
+		public async Task<TaskAgentQueue[]> Queues_Get_Agent_Queues_For_PoolsAsync(string organization, string poolIds, string project, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6595,9 +6595,9 @@ namespace MyNS
 		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TaskAgentQueue[] Queues_Get_Agent_Queues_For_Pools(string organization, string poolIds, string project, string actionFilter, string api_version)
+		public TaskAgentQueue[] Queues_Get_Agent_Queues_For_Pools(string organization, string poolIds, string project, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6680,9 +6680,9 @@ namespace MyNS
 		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TaskAgentQueue> Queues_GetAsync(string organization, int queueId, string project, string actionFilter, string api_version)
+		public async Task<TaskAgentQueue> Queues_GetAsync(string organization, int queueId, string project, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues/"+queueId+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues/"+queueId+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6713,9 +6713,9 @@ namespace MyNS
 		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TaskAgentQueue Queues_Get(string organization, int queueId, string project, string actionFilter, string api_version)
+		public TaskAgentQueue Queues_Get(string organization, int queueId, string project, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues/"+queueId+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues/"+queueId+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6881,9 +6881,9 @@ namespace MyNS
 		/// <param name="queryOrder">Gets the results in the defined order. Default is 'CreatedOnDescending'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TaskGroup[]> Taskgroups_ListAsync(string organization, string project, string taskGroupId, bool expanded, string taskIdFilter, bool deleted, int top, System.DateTimeOffset continuationToken, string queryOrder, string api_version)
+		public async Task<TaskGroup[]> Taskgroups_ListAsync(string organization, string project, string taskGroupId, bool expanded, string taskIdFilter, bool deleted, int top, System.DateTimeOffset continuationToken, Taskgroups_ListQueryOrder queryOrder, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/taskgroups/"+ (taskGroupId==null? "" : Uri.EscapeDataString(taskGroupId))+"&expanded="+expanded+"&taskIdFilter=" + (taskIdFilter==null? "" : Uri.EscapeDataString(taskIdFilter))+"&deleted="+deleted+"&$top="+top+"&continuationToken=" + continuationToken.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/taskgroups/"+ (taskGroupId==null? "" : Uri.EscapeDataString(taskGroupId))+"&expanded="+expanded+"&taskIdFilter=" + (taskIdFilter==null? "" : Uri.EscapeDataString(taskIdFilter))+"&deleted="+deleted+"&$top="+top+"&continuationToken=" + continuationToken.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&queryOrder=" + queryOrder+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6919,9 +6919,9 @@ namespace MyNS
 		/// <param name="queryOrder">Gets the results in the defined order. Default is 'CreatedOnDescending'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TaskGroup[] Taskgroups_List(string organization, string project, string taskGroupId, bool expanded, string taskIdFilter, bool deleted, int top, System.DateTimeOffset continuationToken, string queryOrder, string api_version)
+		public TaskGroup[] Taskgroups_List(string organization, string project, string taskGroupId, bool expanded, string taskIdFilter, bool deleted, int top, System.DateTimeOffset continuationToken, Taskgroups_ListQueryOrder queryOrder, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/taskgroups/"+ (taskGroupId==null? "" : Uri.EscapeDataString(taskGroupId))+"&expanded="+expanded+"&taskIdFilter=" + (taskIdFilter==null? "" : Uri.EscapeDataString(taskIdFilter))+"&deleted="+deleted+"&$top="+top+"&continuationToken=" + continuationToken.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/taskgroups/"+ (taskGroupId==null? "" : Uri.EscapeDataString(taskGroupId))+"&expanded="+expanded+"&taskIdFilter=" + (taskIdFilter==null? "" : Uri.EscapeDataString(taskIdFilter))+"&deleted="+deleted+"&$top="+top+"&continuationToken=" + continuationToken.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&queryOrder=" + queryOrder+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -7147,6 +7147,68 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Pools_Get_Agent_Pools_By_IdsActionFilter
+	{
+		
+		none = 0,
+		
+		manage = 1,
+		
+		use = 2,
+	}
+	
+	public enum Deploymentgroups_ListExpand
+	{
+		
+		none = 0,
+		
+		machines = 1,
+		
+		tags = 2,
+	}
+	
+	public enum Targets_ListExpand
+	{
+		
+		none = 0,
+		
+		capabilities = 1,
+		
+		assignedRequest = 2,
+		
+		lastCompletedRequest = 3,
+	}
+	
+	public enum Targets_ListAgentStatus
+	{
+		
+		offline = 0,
+		
+		online = 1,
+		
+		all = 2,
+	}
+	
+	public enum Targets_ListAgentJobResult
+	{
+		
+		failed = 0,
+		
+		passed = 1,
+		
+		neverDeployed = 2,
+		
+		all = 3,
+	}
+	
+	public enum Taskgroups_ListQueryOrder
+	{
+		
+		createdOnAscending = 0,
+		
+		createdOnDescending = 1,
 	}
 }
 

@@ -2575,9 +2575,9 @@ namespace MyNS
 		/// <param name="asTreeView">If the suites returned should be in a tree structure.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TestSuite[]> Test__Suites_Get_Test_Suites_For_PlanAsync(string organization, string project, int planId, string expand, string continuationToken, bool asTreeView, string api_version)
+		public async Task<TestSuite[]> Test__Suites_Get_Test_Suites_For_PlanAsync(string organization, string project, int planId, Test__Suites_Get_Test_Suites_For_PlanExpand expand, string continuationToken, bool asTreeView, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&asTreeView="+asTreeView+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&asTreeView="+asTreeView+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2610,9 +2610,9 @@ namespace MyNS
 		/// <param name="asTreeView">If the suites returned should be in a tree structure.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TestSuite[] Test__Suites_Get_Test_Suites_For_Plan(string organization, string project, int planId, string expand, string continuationToken, bool asTreeView, string api_version)
+		public TestSuite[] Test__Suites_Get_Test_Suites_For_Plan(string organization, string project, int planId, Test__Suites_Get_Test_Suites_For_PlanExpand expand, string continuationToken, bool asTreeView, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&asTreeView="+asTreeView+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&asTreeView="+asTreeView+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2698,9 +2698,9 @@ namespace MyNS
 		/// <param name="expand">Include the children suites and testers details</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TestSuite> Test__Suites_GetAsync(string organization, string project, int planId, int suiteId, string expand, string api_version)
+		public async Task<TestSuite> Test__Suites_GetAsync(string organization, string project, int planId, int suiteId, Test__Suites_Get_Test_Suites_For_PlanExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2732,9 +2732,9 @@ namespace MyNS
 		/// <param name="expand">Include the children suites and testers details</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TestSuite Test__Suites_Get(string organization, string project, int planId, int suiteId, string expand, string api_version)
+		public TestSuite Test__Suites_Get(string organization, string project, int planId, int suiteId, Test__Suites_Get_Test_Suites_For_PlanExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2852,9 +2852,9 @@ namespace MyNS
 		/// <param name="excludeFlags">Flag to exclude various values from payload. For example to remove point assignments pass exclude = 1. To remove extra information (links, test plan , test suite) pass exclude = 2. To remove both extra information and point assignments pass exclude = 3 (1 + 2).</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TestCase[]> Suite_Test_Case_Get_Test_Case_ListAsync(string organization, string project, int planId, int suiteId, string testIds, string configurationIds, string witFields, string continuationToken, bool returnIdentityRef, bool expand, string excludeFlags, string api_version)
+		public async Task<TestCase[]> Suite_Test_Case_Get_Test_Case_ListAsync(string organization, string project, int planId, int suiteId, string testIds, string configurationIds, string witFields, string continuationToken, bool returnIdentityRef, bool expand, Suite_Test_Case_Get_Test_Case_ListExcludeFlags excludeFlags, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&testIds=" + (testIds==null? "" : Uri.EscapeDataString(testIds))+"&configurationIds=" + (configurationIds==null? "" : Uri.EscapeDataString(configurationIds))+"&witFields=" + (witFields==null? "" : Uri.EscapeDataString(witFields))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&expand="+expand+"&excludeFlags=" + (excludeFlags==null? "" : Uri.EscapeDataString(excludeFlags))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&testIds=" + (testIds==null? "" : Uri.EscapeDataString(testIds))+"&configurationIds=" + (configurationIds==null? "" : Uri.EscapeDataString(configurationIds))+"&witFields=" + (witFields==null? "" : Uri.EscapeDataString(witFields))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&expand="+expand+"&excludeFlags=" + excludeFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2892,9 +2892,9 @@ namespace MyNS
 		/// <param name="excludeFlags">Flag to exclude various values from payload. For example to remove point assignments pass exclude = 1. To remove extra information (links, test plan , test suite) pass exclude = 2. To remove both extra information and point assignments pass exclude = 3 (1 + 2).</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TestCase[] Suite_Test_Case_Get_Test_Case_List(string organization, string project, int planId, int suiteId, string testIds, string configurationIds, string witFields, string continuationToken, bool returnIdentityRef, bool expand, string excludeFlags, string api_version)
+		public TestCase[] Suite_Test_Case_Get_Test_Case_List(string organization, string project, int planId, int suiteId, string testIds, string configurationIds, string witFields, string continuationToken, bool returnIdentityRef, bool expand, Suite_Test_Case_Get_Test_Case_ListExcludeFlags excludeFlags, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&testIds=" + (testIds==null? "" : Uri.EscapeDataString(testIds))+"&configurationIds=" + (configurationIds==null? "" : Uri.EscapeDataString(configurationIds))+"&witFields=" + (witFields==null? "" : Uri.EscapeDataString(witFields))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&expand="+expand+"&excludeFlags=" + (excludeFlags==null? "" : Uri.EscapeDataString(excludeFlags))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&testIds=" + (testIds==null? "" : Uri.EscapeDataString(testIds))+"&configurationIds=" + (configurationIds==null? "" : Uri.EscapeDataString(configurationIds))+"&witFields=" + (witFields==null? "" : Uri.EscapeDataString(witFields))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&expand="+expand+"&excludeFlags=" + excludeFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3848,6 +3848,26 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Test__Suites_Get_Test_Suites_For_PlanExpand
+	{
+		
+		none = 0,
+		
+		children = 1,
+		
+		defaultTesters = 2,
+	}
+	
+	public enum Suite_Test_Case_Get_Test_Case_ListExcludeFlags
+	{
+		
+		none = 0,
+		
+		pointAssignments = 1,
+		
+		extraInformation = 2,
 	}
 }
 

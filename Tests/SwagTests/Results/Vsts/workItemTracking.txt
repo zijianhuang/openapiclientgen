@@ -2984,9 +2984,9 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <param name="requestBody">Node to create or update.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WorkItemClassificationNode> Classification_Nodes_Create_Or_UpdateAsync(string organization, string project, string structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
+		public async Task<WorkItemClassificationNode> Classification_Nodes_Create_Or_UpdateAsync(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+ (structureGroup==null? "" : Uri.EscapeDataString(structureGroup))+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3024,9 +3024,9 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <param name="requestBody">Node to create or update.</param>
 		/// <returns>successful operation</returns>
-		public WorkItemClassificationNode Classification_Nodes_Create_Or_Update(string organization, string project, string structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
+		public WorkItemClassificationNode Classification_Nodes_Create_Or_Update(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+ (structureGroup==null? "" : Uri.EscapeDataString(structureGroup))+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3064,9 +3064,9 @@ namespace MyNS
 		/// <param name="reclassifyId">Id of the target classification node for reclassification.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task Classification_Nodes_DeleteAsync(string organization, string project, string structureGroup, string path, int reclassifyId, string api_version)
+		public async Task Classification_Nodes_DeleteAsync(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, int reclassifyId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+ (structureGroup==null? "" : Uri.EscapeDataString(structureGroup))+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$reclassifyId="+reclassifyId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$reclassifyId="+reclassifyId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3092,9 +3092,9 @@ namespace MyNS
 		/// <param name="reclassifyId">Id of the target classification node for reclassification.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public void Classification_Nodes_Delete(string organization, string project, string structureGroup, string path, int reclassifyId, string api_version)
+		public void Classification_Nodes_Delete(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, int reclassifyId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+ (structureGroup==null? "" : Uri.EscapeDataString(structureGroup))+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$reclassifyId="+reclassifyId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$reclassifyId="+reclassifyId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3120,9 +3120,9 @@ namespace MyNS
 		/// <param name="depth">Depth of children to fetch.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WorkItemClassificationNode> Classification_Nodes_GetAsync(string organization, string project, string structureGroup, string path, int depth, string api_version)
+		public async Task<WorkItemClassificationNode> Classification_Nodes_GetAsync(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, int depth, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+ (structureGroup==null? "" : Uri.EscapeDataString(structureGroup))+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3154,9 +3154,9 @@ namespace MyNS
 		/// <param name="depth">Depth of children to fetch.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WorkItemClassificationNode Classification_Nodes_Get(string organization, string project, string structureGroup, string path, int depth, string api_version)
+		public WorkItemClassificationNode Classification_Nodes_Get(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, int depth, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+ (structureGroup==null? "" : Uri.EscapeDataString(structureGroup))+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3262,9 +3262,9 @@ namespace MyNS
 		/// <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WorkItemField[]> Fields_ListAsync(string organization, string project, string expand, string api_version)
+		public async Task<WorkItemField[]> Fields_ListAsync(string organization, string project, Fields_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3294,9 +3294,9 @@ namespace MyNS
 		/// <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WorkItemField[] Fields_List(string organization, string project, string expand, string api_version)
+		public WorkItemField[] Fields_List(string organization, string project, Fields_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4122,9 +4122,9 @@ namespace MyNS
 		/// <param name="maxPageSize">The maximum number of results to return in this batch</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ReportingWorkItemRevisionsBatch> Reporting_Work_Item_Revisions_Read_Reporting_Revisions_GetAsync(string organization, string project, string fields, string types, string continuationToken, System.DateTimeOffset startDateTime, bool includeIdentityRef, bool includeDeleted, bool includeTagRef, bool includeLatestOnly, string expand, bool includeDiscussionChangesOnly, int maxPageSize, string api_version)
+		public async Task<ReportingWorkItemRevisionsBatch> Reporting_Work_Item_Revisions_Read_Reporting_Revisions_GetAsync(string organization, string project, string fields, string types, string continuationToken, System.DateTimeOffset startDateTime, bool includeIdentityRef, bool includeDeleted, bool includeTagRef, bool includeLatestOnly, Reporting_Work_Item_Revisions_Read_Reporting_Revisions_GetExpand expand, bool includeDiscussionChangesOnly, int maxPageSize, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&fields=" + (fields==null? "" : Uri.EscapeDataString(fields))+"&types=" + (types==null? "" : Uri.EscapeDataString(types))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&includeIdentityRef="+includeIdentityRef+"&includeDeleted="+includeDeleted+"&includeTagRef="+includeTagRef+"&includeLatestOnly="+includeLatestOnly+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&includeDiscussionChangesOnly="+includeDiscussionChangesOnly+"&$maxPageSize="+maxPageSize+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&fields=" + (fields==null? "" : Uri.EscapeDataString(fields))+"&types=" + (types==null? "" : Uri.EscapeDataString(types))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&includeIdentityRef="+includeIdentityRef+"&includeDeleted="+includeDeleted+"&includeTagRef="+includeTagRef+"&includeLatestOnly="+includeLatestOnly+"&$expand=" + expand+"&includeDiscussionChangesOnly="+includeDiscussionChangesOnly+"&$maxPageSize="+maxPageSize+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4164,9 +4164,9 @@ namespace MyNS
 		/// <param name="maxPageSize">The maximum number of results to return in this batch</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ReportingWorkItemRevisionsBatch Reporting_Work_Item_Revisions_Read_Reporting_Revisions_Get(string organization, string project, string fields, string types, string continuationToken, System.DateTimeOffset startDateTime, bool includeIdentityRef, bool includeDeleted, bool includeTagRef, bool includeLatestOnly, string expand, bool includeDiscussionChangesOnly, int maxPageSize, string api_version)
+		public ReportingWorkItemRevisionsBatch Reporting_Work_Item_Revisions_Read_Reporting_Revisions_Get(string organization, string project, string fields, string types, string continuationToken, System.DateTimeOffset startDateTime, bool includeIdentityRef, bool includeDeleted, bool includeTagRef, bool includeLatestOnly, Reporting_Work_Item_Revisions_Read_Reporting_Revisions_GetExpand expand, bool includeDiscussionChangesOnly, int maxPageSize, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&fields=" + (fields==null? "" : Uri.EscapeDataString(fields))+"&types=" + (types==null? "" : Uri.EscapeDataString(types))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&includeIdentityRef="+includeIdentityRef+"&includeDeleted="+includeDeleted+"&includeTagRef="+includeTagRef+"&includeLatestOnly="+includeLatestOnly+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&includeDiscussionChangesOnly="+includeDiscussionChangesOnly+"&$maxPageSize="+maxPageSize+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&fields=" + (fields==null? "" : Uri.EscapeDataString(fields))+"&types=" + (types==null? "" : Uri.EscapeDataString(types))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&includeIdentityRef="+includeIdentityRef+"&includeDeleted="+includeDeleted+"&includeTagRef="+includeTagRef+"&includeLatestOnly="+includeLatestOnly+"&$expand=" + expand+"&includeDiscussionChangesOnly="+includeDiscussionChangesOnly+"&$maxPageSize="+maxPageSize+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4198,9 +4198,9 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <param name="requestBody">An object that contains request settings: field filter, type filter, identity format</param>
 		/// <returns>successful operation</returns>
-		public async Task<ReportingWorkItemRevisionsBatch> Reporting_Work_Item_Revisions_Read_Reporting_Revisions_PostAsync(string organization, string project, string continuationToken, System.DateTimeOffset startDateTime, string expand, string api_version, ReportingWorkItemRevisionsFilter requestBody)
+		public async Task<ReportingWorkItemRevisionsBatch> Reporting_Work_Item_Revisions_Read_Reporting_Revisions_PostAsync(string organization, string project, string continuationToken, System.DateTimeOffset startDateTime, Reporting_Work_Item_Revisions_Read_Reporting_Revisions_GetExpand expand, string api_version, ReportingWorkItemRevisionsFilter requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4238,9 +4238,9 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <param name="requestBody">An object that contains request settings: field filter, type filter, identity format</param>
 		/// <returns>successful operation</returns>
-		public ReportingWorkItemRevisionsBatch Reporting_Work_Item_Revisions_Read_Reporting_Revisions_Post(string organization, string project, string continuationToken, System.DateTimeOffset startDateTime, string expand, string api_version, ReportingWorkItemRevisionsFilter requestBody)
+		public ReportingWorkItemRevisionsBatch Reporting_Work_Item_Revisions_Read_Reporting_Revisions_Post(string organization, string project, string continuationToken, System.DateTimeOffset startDateTime, Reporting_Work_Item_Revisions_Read_Reporting_Revisions_GetExpand expand, string api_version, ReportingWorkItemRevisionsFilter requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/reporting/workitemrevisions&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&startDateTime=" + startDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -5111,9 +5111,9 @@ namespace MyNS
 		/// <param name="expand">Specifies the additional data retrieval options for work item comments.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<CommentList> Comments_Get_Comments_BatchAsync(string organization, string project, int workItemId, string ids, bool includeDeleted, string expand, string api_version)
+		public async Task<CommentList> Comments_Get_Comments_BatchAsync(string organization, string project, int workItemId, string ids, bool includeDeleted, Comments_Get_Comments_BatchExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -5146,9 +5146,9 @@ namespace MyNS
 		/// <param name="expand">Specifies the additional data retrieval options for work item comments.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public CommentList Comments_Get_Comments_Batch(string organization, string project, int workItemId, string ids, bool includeDeleted, string expand, string api_version)
+		public CommentList Comments_Get_Comments_Batch(string organization, string project, int workItemId, string ids, bool includeDeleted, Comments_Get_Comments_BatchExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -5233,9 +5233,9 @@ namespace MyNS
 		/// <param name="expand">Specifies the additional data retrieval options for work item comments.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<Comment> Comments_Get_CommentAsync(string organization, string project, int workItemId, int commentId, bool includeDeleted, string expand, string api_version)
+		public async Task<Comment> Comments_Get_CommentAsync(string organization, string project, int workItemId, int commentId, bool includeDeleted, Comments_Get_Comments_BatchExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&includeDeleted="+includeDeleted+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -5268,9 +5268,9 @@ namespace MyNS
 		/// <param name="expand">Specifies the additional data retrieval options for work item comments.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public Comment Comments_Get_Comment(string organization, string project, int workItemId, int commentId, bool includeDeleted, string expand, string api_version)
+		public Comment Comments_Get_Comment(string organization, string project, int workItemId, int commentId, bool includeDeleted, Comments_Get_Comments_BatchExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&includeDeleted="+includeDeleted+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6017,9 +6017,9 @@ namespace MyNS
 		/// <param name="expand">Expand level for the API response. Properties: to include allowedvalues, default value, isRequired etc. as a part of response; None: to skip these properties.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WorkItemTypeFieldWithReferences[]> Work_Item_Types_Field_ListAsync(string organization, string project, string type, string expand, string api_version)
+		public async Task<WorkItemTypeFieldWithReferences[]> Work_Item_Types_Field_ListAsync(string organization, string project, string type, Work_Item_Types_Field_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : Uri.EscapeDataString(type))+"/fields&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : Uri.EscapeDataString(type))+"/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6050,9 +6050,9 @@ namespace MyNS
 		/// <param name="expand">Expand level for the API response. Properties: to include allowedvalues, default value, isRequired etc. as a part of response; None: to skip these properties.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WorkItemTypeFieldWithReferences[] Work_Item_Types_Field_List(string organization, string project, string type, string expand, string api_version)
+		public WorkItemTypeFieldWithReferences[] Work_Item_Types_Field_List(string organization, string project, string type, Work_Item_Types_Field_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : Uri.EscapeDataString(type))+"/fields&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : Uri.EscapeDataString(type))+"/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6083,9 +6083,9 @@ namespace MyNS
 		/// <param name="expand">Expand level for the API response. Properties: to include allowedvalues, default value, isRequired etc. as a part of response; None: to skip these properties.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WorkItemTypeFieldWithReferences> Work_Item_Types_Field_GetAsync(string organization, string project, string type, string field, string expand, string api_version)
+		public async Task<WorkItemTypeFieldWithReferences> Work_Item_Types_Field_GetAsync(string organization, string project, string type, string field, Work_Item_Types_Field_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : Uri.EscapeDataString(type))+"/fields/"+ (field==null? "" : Uri.EscapeDataString(field))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : Uri.EscapeDataString(type))+"/fields/"+ (field==null? "" : Uri.EscapeDataString(field))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6116,9 +6116,9 @@ namespace MyNS
 		/// <param name="expand">Expand level for the API response. Properties: to include allowedvalues, default value, isRequired etc. as a part of response; None: to skip these properties.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WorkItemTypeFieldWithReferences Work_Item_Types_Field_Get(string organization, string project, string type, string field, string expand, string api_version)
+		public WorkItemTypeFieldWithReferences Work_Item_Types_Field_Get(string organization, string project, string type, string field, Work_Item_Types_Field_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : Uri.EscapeDataString(type))+"/fields/"+ (field==null? "" : Uri.EscapeDataString(field))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitemtypes/"+ (type==null? "" : Uri.EscapeDataString(type))+"/fields/"+ (field==null? "" : Uri.EscapeDataString(field))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6698,6 +6698,58 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Classification_Nodes_Create_Or_UpdateStructureGroup
+	{
+		
+		areas = 0,
+		
+		iterations = 1,
+	}
+	
+	public enum Fields_ListExpand
+	{
+		
+		none = 0,
+		
+		extensionFields = 1,
+		
+		includeDeleted = 2,
+	}
+	
+	public enum Reporting_Work_Item_Revisions_Read_Reporting_Revisions_GetExpand
+	{
+		
+		none = 0,
+		
+		fields = 1,
+	}
+	
+	public enum Comments_Get_Comments_BatchExpand
+	{
+		
+		none = 0,
+		
+		reactions = 1,
+		
+		renderedText = 2,
+		
+		renderedTextOnly = 3,
+		
+		all = 4,
+	}
+	
+	public enum Work_Item_Types_Field_ListExpand
+	{
+		
+		none = 0,
+		
+		allowedValues = 1,
+		
+		dependentFields = 2,
+		
+		all = 3,
 	}
 }
 

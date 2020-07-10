@@ -2255,9 +2255,9 @@ namespace MyNS
 		/// <param name="actionFilter">Action filter for the service connection. It specifies the action which can be performed on the service connection.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ServiceEndpoint> Endpoints_GetAsync(string organization, string project, string endpointId, string actionFilter, string api_version)
+		public async Task<ServiceEndpoint> Endpoints_GetAsync(string organization, string project, string endpointId, Endpoints_GetActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2288,9 +2288,9 @@ namespace MyNS
 		/// <param name="actionFilter">Action filter for the service connection. It specifies the action which can be performed on the service connection.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ServiceEndpoint Endpoints_Get(string organization, string project, string endpointId, string actionFilter, string api_version)
+		public ServiceEndpoint Endpoints_Get(string organization, string project, string endpointId, Endpoints_GetActionFilter actionFilter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&actionFilter=" + (actionFilter==null? "" : Uri.EscapeDataString(actionFilter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2310,6 +2310,18 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Endpoints_GetActionFilter
+	{
+		
+		none = 0,
+		
+		manage = 1,
+		
+		use = 2,
+		
+		view = 3,
 	}
 }
 

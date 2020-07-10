@@ -5192,9 +5192,9 @@ namespace MyNS
 		/// <param name="includeMyGroupApprovals">'true' to include my group approvals. Default is 'false'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ReleaseApproval[]> Approvals_ListAsync(string organization, string project, string assignedToFilter, ReleaseApprovalStatus statusFilter, string releaseIdsFilter, ReleaseApprovalApprovalType typeFilter, int top, int continuationToken, string queryOrder, bool includeMyGroupApprovals, string api_version)
+		public async Task<ReleaseApproval[]> Approvals_ListAsync(string organization, string project, string assignedToFilter, ReleaseApprovalStatus statusFilter, string releaseIdsFilter, ReleaseApprovalApprovalType typeFilter, int top, int continuationToken, Approvals_ListQueryOrder queryOrder, bool includeMyGroupApprovals, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/approvals&assignedToFilter=" + (assignedToFilter==null? "" : Uri.EscapeDataString(assignedToFilter))+"&statusFilter=" + statusFilter+"&releaseIdsFilter=" + (releaseIdsFilter==null? "" : Uri.EscapeDataString(releaseIdsFilter))+"&typeFilter=" + typeFilter+"&top="+top+"&continuationToken="+continuationToken+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&includeMyGroupApprovals="+includeMyGroupApprovals+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/approvals&assignedToFilter=" + (assignedToFilter==null? "" : Uri.EscapeDataString(assignedToFilter))+"&statusFilter=" + statusFilter+"&releaseIdsFilter=" + (releaseIdsFilter==null? "" : Uri.EscapeDataString(releaseIdsFilter))+"&typeFilter=" + typeFilter+"&top="+top+"&continuationToken="+continuationToken+"&queryOrder=" + queryOrder+"&includeMyGroupApprovals="+includeMyGroupApprovals+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -5231,9 +5231,9 @@ namespace MyNS
 		/// <param name="includeMyGroupApprovals">'true' to include my group approvals. Default is 'false'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ReleaseApproval[] Approvals_List(string organization, string project, string assignedToFilter, ReleaseApprovalStatus statusFilter, string releaseIdsFilter, ReleaseApprovalApprovalType typeFilter, int top, int continuationToken, string queryOrder, bool includeMyGroupApprovals, string api_version)
+		public ReleaseApproval[] Approvals_List(string organization, string project, string assignedToFilter, ReleaseApprovalStatus statusFilter, string releaseIdsFilter, ReleaseApprovalApprovalType typeFilter, int top, int continuationToken, Approvals_ListQueryOrder queryOrder, bool includeMyGroupApprovals, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/approvals&assignedToFilter=" + (assignedToFilter==null? "" : Uri.EscapeDataString(assignedToFilter))+"&statusFilter=" + statusFilter+"&releaseIdsFilter=" + (releaseIdsFilter==null? "" : Uri.EscapeDataString(releaseIdsFilter))+"&typeFilter=" + typeFilter+"&top="+top+"&continuationToken="+continuationToken+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&includeMyGroupApprovals="+includeMyGroupApprovals+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/approvals&assignedToFilter=" + (assignedToFilter==null? "" : Uri.EscapeDataString(assignedToFilter))+"&statusFilter=" + statusFilter+"&releaseIdsFilter=" + (releaseIdsFilter==null? "" : Uri.EscapeDataString(releaseIdsFilter))+"&typeFilter=" + typeFilter+"&top="+top+"&continuationToken="+continuationToken+"&queryOrder=" + queryOrder+"&includeMyGroupApprovals="+includeMyGroupApprovals+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -5356,12 +5356,12 @@ namespace MyNS
 					string organization, 
 					string project, 
 					string searchText, 
-					string expand, 
+					Definitions_ListExpand expand, 
 					string artifactType, 
 					string artifactSourceId, 
 					int top, 
 					string continuationToken, 
-					string queryOrder, 
+					Definitions_ListQueryOrder queryOrder, 
 					string path, 
 					bool isExactNameMatch, 
 					string tagFilter, 
@@ -5371,7 +5371,7 @@ namespace MyNS
 					bool searchTextContainsFolderName, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions&searchText=" + (searchText==null? "" : Uri.EscapeDataString(searchText))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&artifactType=" + (artifactType==null? "" : Uri.EscapeDataString(artifactType))+"&artifactSourceId=" + (artifactSourceId==null? "" : Uri.EscapeDataString(artifactSourceId))+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&isExactNameMatch="+isExactNameMatch+"&tagFilter=" + (tagFilter==null? "" : Uri.EscapeDataString(tagFilter))+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&definitionIdFilter=" + (definitionIdFilter==null? "" : Uri.EscapeDataString(definitionIdFilter))+"&isDeleted="+isDeleted+"&searchTextContainsFolderName="+searchTextContainsFolderName+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions&searchText=" + (searchText==null? "" : Uri.EscapeDataString(searchText))+"&$expand=" + expand+"&artifactType=" + (artifactType==null? "" : Uri.EscapeDataString(artifactType))+"&artifactSourceId=" + (artifactSourceId==null? "" : Uri.EscapeDataString(artifactSourceId))+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&queryOrder=" + queryOrder+"&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&isExactNameMatch="+isExactNameMatch+"&tagFilter=" + (tagFilter==null? "" : Uri.EscapeDataString(tagFilter))+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&definitionIdFilter=" + (definitionIdFilter==null? "" : Uri.EscapeDataString(definitionIdFilter))+"&isDeleted="+isDeleted+"&searchTextContainsFolderName="+searchTextContainsFolderName+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -5418,12 +5418,12 @@ namespace MyNS
 					string organization, 
 					string project, 
 					string searchText, 
-					string expand, 
+					Definitions_ListExpand expand, 
 					string artifactType, 
 					string artifactSourceId, 
 					int top, 
 					string continuationToken, 
-					string queryOrder, 
+					Definitions_ListQueryOrder queryOrder, 
 					string path, 
 					bool isExactNameMatch, 
 					string tagFilter, 
@@ -5433,7 +5433,7 @@ namespace MyNS
 					bool searchTextContainsFolderName, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions&searchText=" + (searchText==null? "" : Uri.EscapeDataString(searchText))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&artifactType=" + (artifactType==null? "" : Uri.EscapeDataString(artifactType))+"&artifactSourceId=" + (artifactSourceId==null? "" : Uri.EscapeDataString(artifactSourceId))+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&isExactNameMatch="+isExactNameMatch+"&tagFilter=" + (tagFilter==null? "" : Uri.EscapeDataString(tagFilter))+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&definitionIdFilter=" + (definitionIdFilter==null? "" : Uri.EscapeDataString(definitionIdFilter))+"&isDeleted="+isDeleted+"&searchTextContainsFolderName="+searchTextContainsFolderName+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/definitions&searchText=" + (searchText==null? "" : Uri.EscapeDataString(searchText))+"&$expand=" + expand+"&artifactType=" + (artifactType==null? "" : Uri.EscapeDataString(artifactType))+"&artifactSourceId=" + (artifactSourceId==null? "" : Uri.EscapeDataString(artifactSourceId))+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&queryOrder=" + queryOrder+"&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&isExactNameMatch="+isExactNameMatch+"&tagFilter=" + (tagFilter==null? "" : Uri.EscapeDataString(tagFilter))+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&definitionIdFilter=" + (definitionIdFilter==null? "" : Uri.EscapeDataString(definitionIdFilter))+"&isDeleted="+isDeleted+"&searchTextContainsFolderName="+searchTextContainsFolderName+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -5798,7 +5798,7 @@ namespace MyNS
 					DeploymentDeploymentStatus deploymentStatus, 
 					DeploymentOperationStatus operationStatus, 
 					bool latestAttemptsOnly, 
-					string queryOrder, 
+					Approvals_ListQueryOrder queryOrder, 
 					int top, 
 					int continuationToken, 
 					string createdFor, 
@@ -5807,7 +5807,7 @@ namespace MyNS
 					string sourceBranch, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/deployments&definitionId="+definitionId+"&definitionEnvironmentId="+definitionEnvironmentId+"&createdBy=" + (createdBy==null? "" : Uri.EscapeDataString(createdBy))+"&minModifiedTime=" + minModifiedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxModifiedTime=" + maxModifiedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&deploymentStatus=" + deploymentStatus+"&operationStatus=" + operationStatus+"&latestAttemptsOnly="+latestAttemptsOnly+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&$top="+top+"&continuationToken="+continuationToken+"&createdFor=" + (createdFor==null? "" : Uri.EscapeDataString(createdFor))+"&minStartedTime=" + minStartedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxStartedTime=" + maxStartedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&sourceBranch=" + (sourceBranch==null? "" : Uri.EscapeDataString(sourceBranch))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/deployments&definitionId="+definitionId+"&definitionEnvironmentId="+definitionEnvironmentId+"&createdBy=" + (createdBy==null? "" : Uri.EscapeDataString(createdBy))+"&minModifiedTime=" + minModifiedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxModifiedTime=" + maxModifiedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&deploymentStatus=" + deploymentStatus+"&operationStatus=" + operationStatus+"&latestAttemptsOnly="+latestAttemptsOnly+"&queryOrder=" + queryOrder+"&$top="+top+"&continuationToken="+continuationToken+"&createdFor=" + (createdFor==null? "" : Uri.EscapeDataString(createdFor))+"&minStartedTime=" + minStartedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxStartedTime=" + maxStartedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&sourceBranch=" + (sourceBranch==null? "" : Uri.EscapeDataString(sourceBranch))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -5846,7 +5846,7 @@ namespace MyNS
 					DeploymentDeploymentStatus deploymentStatus, 
 					DeploymentOperationStatus operationStatus, 
 					bool latestAttemptsOnly, 
-					string queryOrder, 
+					Approvals_ListQueryOrder queryOrder, 
 					int top, 
 					int continuationToken, 
 					string createdFor, 
@@ -5855,7 +5855,7 @@ namespace MyNS
 					string sourceBranch, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/deployments&definitionId="+definitionId+"&definitionEnvironmentId="+definitionEnvironmentId+"&createdBy=" + (createdBy==null? "" : Uri.EscapeDataString(createdBy))+"&minModifiedTime=" + minModifiedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxModifiedTime=" + maxModifiedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&deploymentStatus=" + deploymentStatus+"&operationStatus=" + operationStatus+"&latestAttemptsOnly="+latestAttemptsOnly+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&$top="+top+"&continuationToken="+continuationToken+"&createdFor=" + (createdFor==null? "" : Uri.EscapeDataString(createdFor))+"&minStartedTime=" + minStartedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxStartedTime=" + maxStartedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&sourceBranch=" + (sourceBranch==null? "" : Uri.EscapeDataString(sourceBranch))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/deployments&definitionId="+definitionId+"&definitionEnvironmentId="+definitionEnvironmentId+"&createdBy=" + (createdBy==null? "" : Uri.EscapeDataString(createdBy))+"&minModifiedTime=" + minModifiedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxModifiedTime=" + maxModifiedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&deploymentStatus=" + deploymentStatus+"&operationStatus=" + operationStatus+"&latestAttemptsOnly="+latestAttemptsOnly+"&queryOrder=" + queryOrder+"&$top="+top+"&continuationToken="+continuationToken+"&createdFor=" + (createdFor==null? "" : Uri.EscapeDataString(createdFor))+"&minStartedTime=" + minStartedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxStartedTime=" + maxStartedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&sourceBranch=" + (sourceBranch==null? "" : Uri.EscapeDataString(sourceBranch))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6016,9 +6016,9 @@ namespace MyNS
 		/// <param name="queryOrder">Gets the results in the defined order. Default is 'None'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<Folder[]> Folders_ListAsync(string organization, string project, string path, string queryOrder, string api_version)
+		public async Task<Folder[]> Folders_ListAsync(string organization, string project, string path, Folders_ListQueryOrder queryOrder, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/folders/"+ (path==null? "" : Uri.EscapeDataString(path))+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/folders/"+ (path==null? "" : Uri.EscapeDataString(path))+"&queryOrder=" + queryOrder+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6049,9 +6049,9 @@ namespace MyNS
 		/// <param name="queryOrder">Gets the results in the defined order. Default is 'None'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public Folder[] Folders_List(string organization, string project, string path, string queryOrder, string api_version)
+		public Folder[] Folders_List(string organization, string project, string path, Folders_ListQueryOrder queryOrder, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/folders/"+ (path==null? "" : Uri.EscapeDataString(path))+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/folders/"+ (path==null? "" : Uri.EscapeDataString(path))+"&queryOrder=" + queryOrder+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -6110,10 +6110,10 @@ namespace MyNS
 					int environmentStatusFilter, 
 					System.DateTimeOffset minCreatedTime, 
 					System.DateTimeOffset maxCreatedTime, 
-					string queryOrder, 
+					Approvals_ListQueryOrder queryOrder, 
 					int top, 
 					int continuationToken, 
-					string expand, 
+					Releases_ListExpand expand, 
 					string artifactTypeId, 
 					string sourceId, 
 					string artifactVersionId, 
@@ -6125,7 +6125,7 @@ namespace MyNS
 					string path, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/releases&definitionId="+definitionId+"&definitionEnvironmentId="+definitionEnvironmentId+"&searchText=" + (searchText==null? "" : Uri.EscapeDataString(searchText))+"&createdBy=" + (createdBy==null? "" : Uri.EscapeDataString(createdBy))+"&statusFilter=" + statusFilter+"&environmentStatusFilter="+environmentStatusFilter+"&minCreatedTime=" + minCreatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxCreatedTime=" + maxCreatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&$top="+top+"&continuationToken="+continuationToken+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&artifactTypeId=" + (artifactTypeId==null? "" : Uri.EscapeDataString(artifactTypeId))+"&sourceId=" + (sourceId==null? "" : Uri.EscapeDataString(sourceId))+"&artifactVersionId=" + (artifactVersionId==null? "" : Uri.EscapeDataString(artifactVersionId))+"&sourceBranchFilter=" + (sourceBranchFilter==null? "" : Uri.EscapeDataString(sourceBranchFilter))+"&isDeleted="+isDeleted+"&tagFilter=" + (tagFilter==null? "" : Uri.EscapeDataString(tagFilter))+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&releaseIdFilter=" + (releaseIdFilter==null? "" : Uri.EscapeDataString(releaseIdFilter))+"&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/releases&definitionId="+definitionId+"&definitionEnvironmentId="+definitionEnvironmentId+"&searchText=" + (searchText==null? "" : Uri.EscapeDataString(searchText))+"&createdBy=" + (createdBy==null? "" : Uri.EscapeDataString(createdBy))+"&statusFilter=" + statusFilter+"&environmentStatusFilter="+environmentStatusFilter+"&minCreatedTime=" + minCreatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxCreatedTime=" + maxCreatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&queryOrder=" + queryOrder+"&$top="+top+"&continuationToken="+continuationToken+"&$expand=" + expand+"&artifactTypeId=" + (artifactTypeId==null? "" : Uri.EscapeDataString(artifactTypeId))+"&sourceId=" + (sourceId==null? "" : Uri.EscapeDataString(sourceId))+"&artifactVersionId=" + (artifactVersionId==null? "" : Uri.EscapeDataString(artifactVersionId))+"&sourceBranchFilter=" + (sourceBranchFilter==null? "" : Uri.EscapeDataString(sourceBranchFilter))+"&isDeleted="+isDeleted+"&tagFilter=" + (tagFilter==null? "" : Uri.EscapeDataString(tagFilter))+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&releaseIdFilter=" + (releaseIdFilter==null? "" : Uri.EscapeDataString(releaseIdFilter))+"&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -6184,10 +6184,10 @@ namespace MyNS
 					int environmentStatusFilter, 
 					System.DateTimeOffset minCreatedTime, 
 					System.DateTimeOffset maxCreatedTime, 
-					string queryOrder, 
+					Approvals_ListQueryOrder queryOrder, 
 					int top, 
 					int continuationToken, 
-					string expand, 
+					Releases_ListExpand expand, 
 					string artifactTypeId, 
 					string sourceId, 
 					string artifactVersionId, 
@@ -6199,7 +6199,7 @@ namespace MyNS
 					string path, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/releases&definitionId="+definitionId+"&definitionEnvironmentId="+definitionEnvironmentId+"&searchText=" + (searchText==null? "" : Uri.EscapeDataString(searchText))+"&createdBy=" + (createdBy==null? "" : Uri.EscapeDataString(createdBy))+"&statusFilter=" + statusFilter+"&environmentStatusFilter="+environmentStatusFilter+"&minCreatedTime=" + minCreatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxCreatedTime=" + maxCreatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&queryOrder=" + (queryOrder==null? "" : Uri.EscapeDataString(queryOrder))+"&$top="+top+"&continuationToken="+continuationToken+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&artifactTypeId=" + (artifactTypeId==null? "" : Uri.EscapeDataString(artifactTypeId))+"&sourceId=" + (sourceId==null? "" : Uri.EscapeDataString(sourceId))+"&artifactVersionId=" + (artifactVersionId==null? "" : Uri.EscapeDataString(artifactVersionId))+"&sourceBranchFilter=" + (sourceBranchFilter==null? "" : Uri.EscapeDataString(sourceBranchFilter))+"&isDeleted="+isDeleted+"&tagFilter=" + (tagFilter==null? "" : Uri.EscapeDataString(tagFilter))+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&releaseIdFilter=" + (releaseIdFilter==null? "" : Uri.EscapeDataString(releaseIdFilter))+"&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/release/releases&definitionId="+definitionId+"&definitionEnvironmentId="+definitionEnvironmentId+"&searchText=" + (searchText==null? "" : Uri.EscapeDataString(searchText))+"&createdBy=" + (createdBy==null? "" : Uri.EscapeDataString(createdBy))+"&statusFilter=" + statusFilter+"&environmentStatusFilter="+environmentStatusFilter+"&minCreatedTime=" + minCreatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&maxCreatedTime=" + maxCreatedTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&queryOrder=" + queryOrder+"&$top="+top+"&continuationToken="+continuationToken+"&$expand=" + expand+"&artifactTypeId=" + (artifactTypeId==null? "" : Uri.EscapeDataString(artifactTypeId))+"&sourceId=" + (sourceId==null? "" : Uri.EscapeDataString(sourceId))+"&artifactVersionId=" + (artifactVersionId==null? "" : Uri.EscapeDataString(artifactVersionId))+"&sourceBranchFilter=" + (sourceBranchFilter==null? "" : Uri.EscapeDataString(sourceBranchFilter))+"&isDeleted="+isDeleted+"&tagFilter=" + (tagFilter==null? "" : Uri.EscapeDataString(tagFilter))+"&propertyFilters=" + (propertyFilters==null? "" : Uri.EscapeDataString(propertyFilters))+"&releaseIdFilter=" + (releaseIdFilter==null? "" : Uri.EscapeDataString(releaseIdFilter))+"&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -7031,6 +7031,72 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Approvals_ListQueryOrder
+	{
+		
+		descending = 0,
+		
+		ascending = 1,
+	}
+	
+	public enum Definitions_ListExpand
+	{
+		
+		none = 0,
+		
+		environments = 1,
+		
+		artifacts = 2,
+		
+		triggers = 3,
+		
+		variables = 4,
+		
+		tags = 5,
+		
+		lastRelease = 6,
+	}
+	
+	public enum Definitions_ListQueryOrder
+	{
+		
+		idAscending = 0,
+		
+		idDescending = 1,
+		
+		nameAscending = 2,
+		
+		nameDescending = 3,
+	}
+	
+	public enum Folders_ListQueryOrder
+	{
+		
+		none = 0,
+		
+		ascending = 1,
+		
+		descending = 2,
+	}
+	
+	public enum Releases_ListExpand
+	{
+		
+		none = 0,
+		
+		environments = 1,
+		
+		artifacts = 2,
+		
+		approvals = 3,
+		
+		manualInterventions = 4,
+		
+		variables = 5,
+		
+		tags = 6,
 	}
 }
 

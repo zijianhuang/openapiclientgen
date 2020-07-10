@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// </summary>
 	public class ComponentsToCsTypes : ComponentsToTypesBase, IComponentToCodeDom
 	{
-		public ComponentsToCsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace): base(settings, codeCompileUnit, clientNamespace)
+		public ComponentsToCsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
 		{
 		}
 
@@ -445,22 +445,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
 					}
 				}
-				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName))
+				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName)) //check TypeAliasDic
 				{
-					var r =  new CodeTypeReference(aliasTypeName);
+					var r = new CodeTypeReference(aliasTypeName);
 					clientProperty = CreateProperty(r, propertyName, defaultValue);
 				}
-				else // for enum
+				else if (propertySchema.Reference != null)
 				{
-					if (propertySchema.Reference != null)
-					{
-						CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
-						clientProperty = CreateProperty(complexCodeTypeReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : complexCodeTypeReference.BaseType + "." + defaultValue);
-					}
-					else //for casual enum
-					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
-					}
+					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
+					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : complexCodeTypeReference.BaseType + "." + defaultValue);
+				}
+				else // for casual enum
+				{
+					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
 				}
 			}
 
@@ -605,7 +602,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			return CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue)); 
+			return CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
 		}
 
 		static string GetDefaultValue(OpenApiSchema s)

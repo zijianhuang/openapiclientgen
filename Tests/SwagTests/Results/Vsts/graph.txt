@@ -1134,9 +1134,9 @@ namespace MyNS
 		/// <param name="depth">The maximum number of edges to traverse up or down the membership tree. Currently the only supported value is '1'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<GraphMembership[]> Memberships_ListAsync(string organization, string subjectDescriptor, string direction, int depth, string api_version)
+		public async Task<GraphMembership[]> Memberships_ListAsync(string organization, string subjectDescriptor, Memberships_ListDirection direction, int depth, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&direction=" + (direction==null? "" : Uri.EscapeDataString(direction))+"&depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&direction=" + direction+"&depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1170,9 +1170,9 @@ namespace MyNS
 		/// <param name="depth">The maximum number of edges to traverse up or down the membership tree. Currently the only supported value is '1'.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public GraphMembership[] Memberships_List(string organization, string subjectDescriptor, string direction, int depth, string api_version)
+		public GraphMembership[] Memberships_List(string organization, string subjectDescriptor, Memberships_ListDirection direction, int depth, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&direction=" + (direction==null? "" : Uri.EscapeDataString(direction))+"&depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&direction=" + direction+"&depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2214,6 +2214,16 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Memberships_ListDirection
+	{
+		
+		unknown = 0,
+		
+		down = 1,
+		
+		up = 2,
 	}
 }
 

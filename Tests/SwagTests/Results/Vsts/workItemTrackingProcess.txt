@@ -1613,9 +1613,9 @@ namespace MyNS
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessInfo[]> Processes_ListAsync(string organization, string expand, string api_version)
+		public async Task<ProcessInfo[]> Processes_ListAsync(string organization, Processes_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1643,9 +1643,9 @@ namespace MyNS
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessInfo[] Processes_List(string organization, string expand, string api_version)
+		public ProcessInfo[] Processes_List(string organization, Processes_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1748,9 +1748,9 @@ namespace MyNS
 		/// <param name="processId">The ID of the process</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessBehavior[]> Behaviors_ListAsync(string organization, string processId, string expand, string api_version)
+		public async Task<ProcessBehavior[]> Behaviors_ListAsync(string organization, string processId, Behaviors_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1779,9 +1779,9 @@ namespace MyNS
 		/// <param name="processId">The ID of the process</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessBehavior[] Behaviors_List(string organization, string processId, string expand, string api_version)
+		public ProcessBehavior[] Behaviors_List(string organization, string processId, Behaviors_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1863,9 +1863,9 @@ namespace MyNS
 		/// <param name="behaviorRefName">The reference name of the behavior</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessBehavior> Behaviors_GetAsync(string organization, string processId, string behaviorRefName, string expand, string api_version)
+		public async Task<ProcessBehavior> Behaviors_GetAsync(string organization, string processId, string behaviorRefName, Behaviors_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : Uri.EscapeDataString(behaviorRefName))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : Uri.EscapeDataString(behaviorRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1895,9 +1895,9 @@ namespace MyNS
 		/// <param name="behaviorRefName">The reference name of the behavior</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessBehavior Behaviors_Get(string organization, string processId, string behaviorRefName, string expand, string api_version)
+		public ProcessBehavior Behaviors_Get(string organization, string processId, string behaviorRefName, Behaviors_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : Uri.EscapeDataString(behaviorRefName))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : Uri.EscapeDataString(behaviorRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2077,9 +2077,9 @@ namespace MyNS
 		/// <param name="expand">Flag to determine what properties of work item type to return</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessWorkItemType[]> Work_Item_Types_ListAsync(string organization, string processId, string expand, string api_version)
+		public async Task<ProcessWorkItemType[]> Work_Item_Types_ListAsync(string organization, string processId, Work_Item_Types_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2109,9 +2109,9 @@ namespace MyNS
 		/// <param name="expand">Flag to determine what properties of work item type to return</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessWorkItemType[] Work_Item_Types_List(string organization, string processId, string expand, string api_version)
+		public ProcessWorkItemType[] Work_Item_Types_List(string organization, string processId, Work_Item_Types_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2194,9 +2194,9 @@ namespace MyNS
 		/// <param name="expand">Flag to determine what properties of work item type to return</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessWorkItemType> Work_Item_Types_GetAsync(string organization, string processId, string witRefName, string expand, string api_version)
+		public async Task<ProcessWorkItemType> Work_Item_Types_GetAsync(string organization, string processId, string witRefName, Work_Item_Types_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2227,9 +2227,9 @@ namespace MyNS
 		/// <param name="expand">Flag to determine what properties of work item type to return</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessWorkItemType Work_Item_Types_Get(string organization, string processId, string witRefName, string expand, string api_version)
+		public ProcessWorkItemType Work_Item_Types_Get(string organization, string processId, string witRefName, Work_Item_Types_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2400,9 +2400,9 @@ namespace MyNS
 		/// <param name="fieldRefName">The reference name of the field.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessWorkItemTypeField> Fields_GetAsync(string organization, string processId, string witRefName, string fieldRefName, string expand, string api_version)
+		public async Task<ProcessWorkItemTypeField> Fields_GetAsync(string organization, string processId, string witRefName, string fieldRefName, Fields_GetExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : Uri.EscapeDataString(fieldRefName))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : Uri.EscapeDataString(fieldRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2433,9 +2433,9 @@ namespace MyNS
 		/// <param name="fieldRefName">The reference name of the field.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessWorkItemTypeField Fields_Get(string organization, string processId, string witRefName, string fieldRefName, string expand, string api_version)
+		public ProcessWorkItemTypeField Fields_Get(string organization, string processId, string witRefName, string fieldRefName, Fields_GetExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : Uri.EscapeDataString(fieldRefName))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : Uri.EscapeDataString(fieldRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4273,9 +4273,9 @@ namespace MyNS
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ProcessInfo> Processes_GetAsync(string organization, string processTypeId, string expand, string api_version)
+		public async Task<ProcessInfo> Processes_GetAsync(string organization, string processTypeId, Processes_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4303,9 +4303,9 @@ namespace MyNS
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public ProcessInfo Processes_Get(string organization, string processTypeId, string expand, string api_version)
+		public ProcessInfo Processes_Get(string organization, string processTypeId, Processes_ListExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&$expand=" + (expand==null? "" : Uri.EscapeDataString(expand))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4645,6 +4645,46 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Processes_ListExpand
+	{
+		
+		none = 0,
+		
+		projects = 1,
+	}
+	
+	public enum Behaviors_ListExpand
+	{
+		
+		none = 0,
+		
+		fields = 1,
+		
+		combinedFields = 2,
+	}
+	
+	public enum Work_Item_Types_ListExpand
+	{
+		
+		none = 0,
+		
+		states = 1,
+		
+		behaviors = 2,
+		
+		layout = 3,
+	}
+	
+	public enum Fields_GetExpand
+	{
+		
+		none = 0,
+		
+		allowedValues = 1,
+		
+		all = 2,
 	}
 }
 

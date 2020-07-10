@@ -1094,9 +1094,9 @@ namespace MyNS
 		/// <param name="ruleOption">RuleOption [ApplyGroupRule/TestApplyGroupRule] - specifies if the rules defined in group entitlement should be created and applied to it’s members (default option) or just be tested</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <param name="requestBody">GroupEntitlement object specifying License Rule, Extensions Rule for the group. Based on the rules the members of the group will be given licenses and extensions. The Group Entitlement can be used to add the group to another project level groups</param>
-		public async Task Group_Entitlements_AddAsync(string organization, string ruleOption, string api_version, GroupEntitlement requestBody)
+		public async Task Group_Entitlements_AddAsync(string organization, Group_Entitlements_AddRuleOption ruleOption, string api_version, GroupEntitlement requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&ruleOption=" + (ruleOption==null? "" : Uri.EscapeDataString(ruleOption))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&ruleOption=" + ruleOption+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1125,9 +1125,9 @@ namespace MyNS
 		/// <param name="ruleOption">RuleOption [ApplyGroupRule/TestApplyGroupRule] - specifies if the rules defined in group entitlement should be created and applied to it’s members (default option) or just be tested</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <param name="requestBody">GroupEntitlement object specifying License Rule, Extensions Rule for the group. Based on the rules the members of the group will be given licenses and extensions. The Group Entitlement can be used to add the group to another project level groups</param>
-		public void Group_Entitlements_Add(string organization, string ruleOption, string api_version, GroupEntitlement requestBody)
+		public void Group_Entitlements_Add(string organization, Group_Entitlements_AddRuleOption ruleOption, string api_version, GroupEntitlement requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&ruleOption=" + (ruleOption==null? "" : Uri.EscapeDataString(ruleOption))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&ruleOption=" + ruleOption+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1218,9 +1218,9 @@ namespace MyNS
 		/// <param name="removeGroupMembership">Optional parameter that specifies whether the group with the given ID should be removed from all other groups</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<GroupEntitlementOperationReference> Group_Entitlements_DeleteAsync(string organization, string groupId, string ruleOption, bool removeGroupMembership, string api_version)
+		public async Task<GroupEntitlementOperationReference> Group_Entitlements_DeleteAsync(string organization, string groupId, Group_Entitlements_AddRuleOption ruleOption, bool removeGroupMembership, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&ruleOption=" + (ruleOption==null? "" : Uri.EscapeDataString(ruleOption))+"&removeGroupMembership="+removeGroupMembership+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&ruleOption=" + ruleOption+"&removeGroupMembership="+removeGroupMembership+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1251,9 +1251,9 @@ namespace MyNS
 		/// <param name="removeGroupMembership">Optional parameter that specifies whether the group with the given ID should be removed from all other groups</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public GroupEntitlementOperationReference Group_Entitlements_Delete(string organization, string groupId, string ruleOption, bool removeGroupMembership, string api_version)
+		public GroupEntitlementOperationReference Group_Entitlements_Delete(string organization, string groupId, Group_Entitlements_AddRuleOption ruleOption, bool removeGroupMembership, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&ruleOption=" + (ruleOption==null? "" : Uri.EscapeDataString(ruleOption))+"&removeGroupMembership="+removeGroupMembership+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&ruleOption=" + ruleOption+"&removeGroupMembership="+removeGroupMembership+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1595,9 +1595,9 @@ namespace MyNS
 		/// <param name="orderBy">PropertyName and Order (separated by a space ( )) to sort on (e.g. lastAccessed desc). Order defaults to ascending. valid properties to order by are dateCreated, lastAccessed, and name</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<PagedGraphMemberList> User_Entitlements_Search_User_EntitlementsAsync(string organization, string continuationToken, string select, string filter, string orderBy, string api_version)
+		public async Task<PagedGraphMemberList> User_Entitlements_Search_User_EntitlementsAsync(string organization, string continuationToken, User_Entitlements_Search_User_EntitlementsSelect select, string filter, string orderBy, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + (select==null? "" : Uri.EscapeDataString(select))+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1629,9 +1629,9 @@ namespace MyNS
 		/// <param name="orderBy">PropertyName and Order (separated by a space ( )) to sort on (e.g. lastAccessed desc). Order defaults to ascending. valid properties to order by are dateCreated, lastAccessed, and name</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public PagedGraphMemberList User_Entitlements_Search_User_Entitlements(string organization, string continuationToken, string select, string filter, string orderBy, string api_version)
+		public PagedGraphMemberList User_Entitlements_Search_User_Entitlements(string organization, string continuationToken, User_Entitlements_Search_User_EntitlementsSelect select, string filter, string orderBy, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + (select==null? "" : Uri.EscapeDataString(select))+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1831,6 +1831,28 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Group_Entitlements_AddRuleOption
+	{
+		
+		applyGroupRule = 0,
+		
+		testApplyGroupRule = 1,
+	}
+	
+	public enum User_Entitlements_Search_User_EntitlementsSelect
+	{
+		
+		license = 0,
+		
+		extensions = 1,
+		
+		projects = 2,
+		
+		groupRules = 3,
+		
+		all = 4,
 	}
 }
 

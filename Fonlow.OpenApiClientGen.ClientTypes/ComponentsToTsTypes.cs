@@ -25,7 +25,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// Save TypeScript codes generated into a file.
 		/// </summary>
 		/// <param name="fileName"></param>
-		public override  void SaveCodeToFile(string fileName)
+		public override void SaveCodeToFile(string fileName)
 		{
 			if (String.IsNullOrEmpty(fileName))
 				throw new ArgumentException("A valid fileName is not defined.", nameof(fileName));
@@ -275,22 +275,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
 					}
 				}
-				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName))
+				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName)) //check TypeAliasDic
 				{
 					var r = new CodeTypeReference(aliasTypeName);
 					clientProperty = CreateProperty(r, propertyName, isRequired);
 				}
-				else // for enum
+				else if (propertySchema.Reference != null)
 				{
-					if (propertySchema.Reference != null)
-					{
-						CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
-						clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
-					}
-					else //for casual enum
-					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
-					}
+					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
+					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
+				}
+				else // for casual enum
+				{
+					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
 				}
 			}
 

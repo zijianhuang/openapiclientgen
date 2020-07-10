@@ -8416,9 +8416,9 @@ namespace MyNS
 		/// <param name="outcomes">Comma separated list of test outcomes to filter test results.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.6' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TestCaseResult[]> Results_ListAsync(string organization, string project, int runId, string detailsToInclude, int skip, int top, string outcomes, string api_version)
+		public async Task<TestCaseResult[]> Results_ListAsync(string organization, string project, int runId, Results_ListDetailsToInclude detailsToInclude, int skip, int top, string outcomes, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results&detailsToInclude=" + (detailsToInclude==null? "" : Uri.EscapeDataString(detailsToInclude))+"&$skip="+skip+"&$top="+top+"&outcomes=" + (outcomes==null? "" : Uri.EscapeDataString(outcomes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results&detailsToInclude=" + detailsToInclude+"&$skip="+skip+"&$top="+top+"&outcomes=" + (outcomes==null? "" : Uri.EscapeDataString(outcomes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -8452,9 +8452,9 @@ namespace MyNS
 		/// <param name="outcomes">Comma separated list of test outcomes to filter test results.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.6' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TestCaseResult[] Results_List(string organization, string project, int runId, string detailsToInclude, int skip, int top, string outcomes, string api_version)
+		public TestCaseResult[] Results_List(string organization, string project, int runId, Results_ListDetailsToInclude detailsToInclude, int skip, int top, string outcomes, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results&detailsToInclude=" + (detailsToInclude==null? "" : Uri.EscapeDataString(detailsToInclude))+"&$skip="+skip+"&$top="+top+"&outcomes=" + (outcomes==null? "" : Uri.EscapeDataString(outcomes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results&detailsToInclude=" + detailsToInclude+"&$skip="+skip+"&$top="+top+"&outcomes=" + (outcomes==null? "" : Uri.EscapeDataString(outcomes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -8486,9 +8486,9 @@ namespace MyNS
 		/// <param name="detailsToInclude">Details to include with test results. Default is None. Other values are Iterations, WorkItems and SubResults.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.6' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TestCaseResult> Results_GetAsync(string organization, string project, int runId, int testCaseResultId, string detailsToInclude, string api_version)
+		public async Task<TestCaseResult> Results_GetAsync(string organization, string project, int runId, int testCaseResultId, Results_ListDetailsToInclude detailsToInclude, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results/"+testCaseResultId+"&detailsToInclude=" + (detailsToInclude==null? "" : Uri.EscapeDataString(detailsToInclude))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results/"+testCaseResultId+"&detailsToInclude=" + detailsToInclude+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -8520,9 +8520,9 @@ namespace MyNS
 		/// <param name="detailsToInclude">Details to include with test results. Default is None. Other values are Iterations, WorkItems and SubResults.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.6' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TestCaseResult Results_Get(string organization, string project, int runId, int testCaseResultId, string detailsToInclude, string api_version)
+		public TestCaseResult Results_Get(string organization, string project, int runId, int testCaseResultId, Results_ListDetailsToInclude detailsToInclude, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results/"+testCaseResultId+"&detailsToInclude=" + (detailsToInclude==null? "" : Uri.EscapeDataString(detailsToInclude))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/test/Runs/"+runId+"/results/"+testCaseResultId+"&detailsToInclude=" + detailsToInclude+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -9290,6 +9290,20 @@ namespace MyNS
 			}
 			}
 		}
+	}
+	
+	public enum Results_ListDetailsToInclude
+	{
+		
+		none = 0,
+		
+		iterations = 1,
+		
+		workItems = 2,
+		
+		subResults = 3,
+		
+		point = 4,
 	}
 }
 
