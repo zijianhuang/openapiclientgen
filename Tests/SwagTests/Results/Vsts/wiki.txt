@@ -1214,6 +1214,84 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Updates the wiki corresponding to the wiki ID or wiki name provided using the update parameters.
+		/// Wikis_Update {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <param name="requestBody">Update parameters.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WikiV2> Wikis_UpdateAsync(string organization, string wikiIdentifier, string project, string api_version, WikiUpdateParameters requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<WikiV2>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates the wiki corresponding to the wiki ID or wiki name provided using the update parameters.
+		/// Wikis_Update {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <param name="requestBody">Update parameters.</param>
+		/// <returns>successful operation</returns>
+		public WikiV2 Wikis_Update(string organization, string wikiIdentifier, string project, string api_version, WikiUpdateParameters requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<WikiV2>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Creates a page move operation that updates the path and order of the page as provided in the parameters.
 		/// Page_Moves_Create {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pagemoves
 		/// </summary>
@@ -1657,6 +1735,88 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Edits a wiki page.
+		/// Pages_Update {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages/{id}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
+		/// <param name="id">Wiki page ID.</param>
+		/// <param name="comment">Comment to be associated with the page operation.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Wiki update operation parameters.</param>
+		/// <returns>Page edited. Edited page's version is populated in the ETag response header.</returns>
+		public async Task<WikiPage> Pages_UpdateAsync(string organization, string project, string wikiIdentifier, int id, string comment, string api_version, WikiPageCreateOrUpdateParameters requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<WikiPage>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Edits a wiki page.
+		/// Pages_Update {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages/{id}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
+		/// <param name="id">Wiki page ID.</param>
+		/// <param name="comment">Comment to be associated with the page operation.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Wiki update operation parameters.</param>
+		/// <returns>Page edited. Edited page's version is populated in the ETag response header.</returns>
+		public WikiPage Pages_Update(string organization, string project, string wikiIdentifier, int id, string comment, string api_version, WikiPageCreateOrUpdateParameters requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<WikiPage>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}

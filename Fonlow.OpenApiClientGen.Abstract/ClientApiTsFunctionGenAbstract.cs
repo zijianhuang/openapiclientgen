@@ -5,6 +5,7 @@ using System;
 using System.CodeDom;
 using System.Diagnostics;
 using System.Text;
+using System.Linq;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -34,7 +35,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes com2TsTypes)
 		{
-			if (httpMethod > OperationType.Delete)
+			if (!(new OperationType[] { OperationType.Get, OperationType.Post, OperationType.Put, OperationType.Delete, OperationType.Patch }).Any(d => d == httpMethod))
 			{
 				Trace.TraceWarning("This HTTP method {0} is not yet supported", httpMethod);
 				return null;

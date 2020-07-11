@@ -964,6 +964,84 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Requeue the policy evaluation.
+		/// 
+		/// Some policies define a "requeue" action which performs some policy-specific operation.
+		/// You can trigger this operation by updating an existing policy evaluation and setting the
+		/// PolicyEvaluationRecord.Status field to Queued.
+		/// Although any policy evaluation can be requeued, at present only build policies perform any action
+		/// in response. Requeueing a build policy will queue a new build to run (cancelling any existing build which
+		/// is running).
+		/// Evaluations_Requeue_Policy_Evaluation {organization}/{project}/_apis/policy/evaluations/{evaluationId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="evaluationId">ID of the policy evaluation to be retrieved.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<PolicyEvaluationRecord> Evaluations_Requeue_Policy_EvaluationAsync(string organization, string project, string evaluationId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<PolicyEvaluationRecord>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Requeue the policy evaluation.
+		/// 
+		/// Some policies define a "requeue" action which performs some policy-specific operation.
+		/// You can trigger this operation by updating an existing policy evaluation and setting the
+		/// PolicyEvaluationRecord.Status field to Queued.
+		/// Although any policy evaluation can be requeued, at present only build policies perform any action
+		/// in response. Requeueing a build policy will queue a new build to run (cancelling any existing build which
+		/// is running).
+		/// Evaluations_Requeue_Policy_Evaluation {organization}/{project}/_apis/policy/evaluations/{evaluationId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="evaluationId">ID of the policy evaluation to be retrieved.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public PolicyEvaluationRecord Evaluations_Requeue_Policy_Evaluation(string organization, string project, string evaluationId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<PolicyEvaluationRecord>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Retrieve all available policy types.
 		/// Types_List {organization}/{project}/_apis/policy/types
 		/// </summary>

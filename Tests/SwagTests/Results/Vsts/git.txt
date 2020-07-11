@@ -5934,6 +5934,82 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Recover a soft-deleted Git repository. Recently deleted repositories go into a soft-delete state for a period of time before they are hard deleted and become unrecoverable.
+		/// Repositories_Restore_Repository_From_Recycle_Bin {organization}/{project}/_apis/git/recycleBin/repositories/{repositoryId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="repositoryId">The ID of the repository.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<GitRepository> Repositories_Restore_Repository_From_Recycle_BinAsync(string organization, string project, string repositoryId, string api_version, GitRecycleBinRepositoryDetails requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/recycleBin/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitRepository>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Recover a soft-deleted Git repository. Recently deleted repositories go into a soft-delete state for a period of time before they are hard deleted and become unrecoverable.
+		/// Repositories_Restore_Repository_From_Recycle_Bin {organization}/{project}/_apis/git/recycleBin/repositories/{repositoryId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="repositoryId">The ID of the repository.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public GitRepository Repositories_Restore_Repository_From_Recycle_Bin(string organization, string project, string repositoryId, string api_version, GitRecycleBinRepositoryDetails requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/recycleBin/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitRepository>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create a git repository in a team project.
 		/// Repositories_Create {organization}/{project}/_apis/git/repositories
 		/// </summary>
@@ -6177,6 +6253,84 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates the Git repository with either a new repo name or a new default branch.
+		/// Repositories_Update {organization}/{project}/_apis/git/repositories/{repositoryId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The ID of the repository.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Specify a new repo name or a new default branch of the repository</param>
+		/// <returns>successful operation</returns>
+		public async Task<GitRepository> Repositories_UpdateAsync(string organization, string repositoryId, string project, string api_version, GitRepository requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitRepository>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates the Git repository with either a new repo name or a new default branch.
+		/// Repositories_Update {organization}/{project}/_apis/git/repositories/{repositoryId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The ID of the repository.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Specify a new repo name or a new default branch of the repository</param>
+		/// <returns>successful operation</returns>
+		public GitRepository Repositories_Update(string organization, string repositoryId, string project, string api_version, GitRepository requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitRepository>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -7438,6 +7592,90 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Retry or abandon a failed import request.
+		/// 
+		/// There can only be one active import request associated with a repository. Marking a failed import request abandoned makes it inactive.
+		/// Import_Requests_Update {organization}/{project}/_apis/git/repositories/{repositoryId}/importRequests/{importRequestId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="repositoryId">The name or ID of the repository.</param>
+		/// <param name="importRequestId">The unique identifier for the import request to update.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The updated version of the import request. Currently, the only change allowed is setting the Status to Queued or Abandoned.</param>
+		/// <returns>successful operation</returns>
+		public async Task<GitImportRequest> Import_Requests_UpdateAsync(string organization, string project, string repositoryId, int importRequestId, string api_version, GitImportRequest requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/importRequests/"+importRequestId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitImportRequest>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Retry or abandon a failed import request.
+		/// 
+		/// There can only be one active import request associated with a repository. Marking a failed import request abandoned makes it inactive.
+		/// Import_Requests_Update {organization}/{project}/_apis/git/repositories/{repositoryId}/importRequests/{importRequestId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="repositoryId">The name or ID of the repository.</param>
+		/// <param name="importRequestId">The unique identifier for the import request to update.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The updated version of the import request. Currently, the only change allowed is setting the Status to Queued or Abandoned.</param>
+		/// <returns>successful operation</returns>
+		public GitImportRequest Import_Requests_Update(string organization, string project, string repositoryId, int importRequestId, string api_version, GitImportRequest requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/importRequests/"+importRequestId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitImportRequest>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Get Item Metadata and/or Content for a collection of items. The download parameter is to indicate whether the content should be available as a download or just sent as a stream in the response. Doesn't apply to zipped content which is always returned as a download.
 		/// Items_List {organization}/{project}/_apis/git/repositories/{repositoryId}/items
 		/// </summary>
@@ -7915,6 +8153,108 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update a pull request
+		/// 
+		/// These are the properties that can be updated with the API:
+		/// - Status
+		/// - Title
+		/// - Description (up to 4000 characters)
+		/// - CompletionOptions
+		/// - MergeOptions
+		/// - AutoCompleteSetBy.Id
+		/// - TargetRefName (when the PR retargeting feature is enabled)
+		/// Attempting to update other properties outside of this list will either cause the server to throw an `InvalidArgumentValueException`,
+		/// or to silently ignore the update.
+		/// Pull_Requests_Update {organization}/{project}/_apis/git/repositories/{repositoryId}/pullrequests/{pullRequestId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request to update.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The pull request content that should be updated.</param>
+		/// <returns>successful operation</returns>
+		public async Task<GitPullRequest> Pull_Requests_UpdateAsync(string organization, string repositoryId, int pullRequestId, string project, string api_version, GitPullRequest requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullrequests/"+pullRequestId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitPullRequest>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update a pull request
+		/// 
+		/// These are the properties that can be updated with the API:
+		/// - Status
+		/// - Title
+		/// - Description (up to 4000 characters)
+		/// - CompletionOptions
+		/// - MergeOptions
+		/// - AutoCompleteSetBy.Id
+		/// - TargetRefName (when the PR retargeting feature is enabled)
+		/// Attempting to update other properties outside of this list will either cause the server to throw an `InvalidArgumentValueException`,
+		/// or to silently ignore the update.
+		/// Pull_Requests_Update {organization}/{project}/_apis/git/repositories/{repositoryId}/pullrequests/{pullRequestId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request to update.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The pull request content that should be updated.</param>
+		/// <returns>successful operation</returns>
+		public GitPullRequest Pull_Requests_Update(string organization, string repositoryId, int pullRequestId, string project, string api_version, GitPullRequest requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullrequests/"+pullRequestId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitPullRequest>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -9310,6 +9650,74 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Reset the votes of multiple reviewers on a pull request.  NOTE: This endpoint only supports updating votes, but does not support updating required reviewers (use policy) or display names.
+		/// Pull_Request_Reviewers_Update_Pull_Request_Reviewers {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/reviewers
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">IDs of the reviewers whose votes will be reset to zero</param>
+		/// <returns>successful operation</returns>
+		public async Task Pull_Request_Reviewers_Update_Pull_Request_ReviewersAsync(string organization, string repositoryId, int pullRequestId, string project, string api_version, IdentityRefWithVote[] requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullRequests/"+pullRequestId+"/reviewers&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Reset the votes of multiple reviewers on a pull request.  NOTE: This endpoint only supports updating votes, but does not support updating required reviewers (use policy) or display names.
+		/// Pull_Request_Reviewers_Update_Pull_Request_Reviewers {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/reviewers
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">IDs of the reviewers whose votes will be reset to zero</param>
+		/// <returns>successful operation</returns>
+		public void Pull_Request_Reviewers_Update_Pull_Request_Reviewers(string organization, string repositoryId, int pullRequestId, string project, string api_version, IdentityRefWithVote[] requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullRequests/"+pullRequestId+"/reviewers&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Add a reviewer to a pull request or cast a vote.
 		/// Pull_Request_Reviewers_Create_Pull_Request_Reviewer {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/reviewers/{reviewerId}
 		/// </summary>
@@ -9511,6 +9919,88 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Edit a reviewer entry. These fields are patchable: isFlagged
+		/// Pull_Request_Reviewers_Update_Pull_Request_Reviewer {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/reviewers/{reviewerId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request.</param>
+		/// <param name="reviewerId">ID of the reviewer.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Reviewer data.<br />If the reviewer's ID is included here, it must match the reviewerID parameter.</param>
+		/// <returns>successful operation</returns>
+		public async Task<IdentityRefWithVote> Pull_Request_Reviewers_Update_Pull_Request_ReviewerAsync(string organization, string repositoryId, int pullRequestId, string reviewerId, string project, string api_version, IdentityRefWithVote requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullRequests/"+pullRequestId+"/reviewers/"+ (reviewerId==null? "" : Uri.EscapeDataString(reviewerId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<IdentityRefWithVote>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Edit a reviewer entry. These fields are patchable: isFlagged
+		/// Pull_Request_Reviewers_Update_Pull_Request_Reviewer {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/reviewers/{reviewerId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request.</param>
+		/// <param name="reviewerId">ID of the reviewer.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Reviewer data.<br />If the reviewer's ID is included here, it must match the reviewerID parameter.</param>
+		/// <returns>successful operation</returns>
+		public IdentityRefWithVote Pull_Request_Reviewers_Update_Pull_Request_Reviewer(string organization, string repositoryId, int pullRequestId, string reviewerId, string project, string api_version, IdentityRefWithVote requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullRequests/"+pullRequestId+"/reviewers/"+ (reviewerId==null? "" : Uri.EscapeDataString(reviewerId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<IdentityRefWithVote>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -10084,6 +10574,88 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Update a thread in a pull request.
+		/// Pull_Request_Threads_Update {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/threads/{threadId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request.</param>
+		/// <param name="threadId">ID of the thread to update.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The thread content that should be updated.</param>
+		/// <returns>successful operation</returns>
+		public async Task<GitPullRequestCommentThread> Pull_Request_Threads_UpdateAsync(string organization, string repositoryId, int pullRequestId, int threadId, string project, string api_version, GitPullRequestCommentThread requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullRequests/"+pullRequestId+"/threads/"+threadId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitPullRequestCommentThread>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update a thread in a pull request.
+		/// Pull_Request_Threads_Update {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/threads/{threadId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request.</param>
+		/// <param name="threadId">ID of the thread to update.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The thread content that should be updated.</param>
+		/// <returns>successful operation</returns>
+		public GitPullRequestCommentThread Pull_Request_Threads_Update(string organization, string repositoryId, int pullRequestId, int threadId, string project, string api_version, GitPullRequestCommentThread requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullRequests/"+pullRequestId+"/threads/"+threadId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitPullRequestCommentThread>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create a comment on a specific thread in a pull request (up to 500 comments can be created per thread).
 		/// Pull_Request_Thread_Comments_Create {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/threads/{threadId}/comments
 		/// </summary>
@@ -10357,6 +10929,90 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update a comment associated with a specific thread in a pull request.
+		/// Pull_Request_Thread_Comments_Update {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/threads/{threadId}/comments/{commentId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request.</param>
+		/// <param name="threadId">ID of the thread that the desired comment is in.</param>
+		/// <param name="commentId">ID of the comment to update.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The comment content that should be updated. Comments can be up to 150,000 characters.</param>
+		/// <returns>successful operation</returns>
+		public async Task<Comment> Pull_Request_Thread_Comments_UpdateAsync(string organization, string repositoryId, int pullRequestId, int threadId, int commentId, string project, string api_version, Comment requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullRequests/"+pullRequestId+"/threads/"+threadId+"/comments/"+commentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Comment>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update a comment associated with a specific thread in a pull request.
+		/// Pull_Request_Thread_Comments_Update {organization}/{project}/_apis/git/repositories/{repositoryId}/pullRequests/{pullRequestId}/threads/{threadId}/comments/{commentId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The repository ID of the pull request's target branch.</param>
+		/// <param name="pullRequestId">ID of the pull request.</param>
+		/// <param name="threadId">ID of the thread that the desired comment is in.</param>
+		/// <param name="commentId">ID of the comment to update.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The comment content that should be updated. Comments can be up to 150,000 characters.</param>
+		/// <returns>successful operation</returns>
+		public Comment Pull_Request_Thread_Comments_Update(string organization, string repositoryId, int pullRequestId, int threadId, int commentId, string project, string api_version, Comment requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/pullRequests/"+pullRequestId+"/threads/"+threadId+"/comments/"+commentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Comment>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -10917,6 +11573,88 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Lock or Unlock a branch.
+		/// Refs_Update_Ref {organization}/{project}/_apis/git/repositories/{repositoryId}/refs
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The name or ID of the repository.</param>
+		/// <param name="filter">The name of the branch to lock/unlock</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="projectId">ID or name of the team project. Optional if specifying an ID for repository.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The ref update action (lock/unlock) to perform</param>
+		/// <returns>successful operation</returns>
+		public async Task<GitRef> Refs_Update_RefAsync(string organization, string repositoryId, string filter, string project, string projectId, string api_version, GitRefUpdate requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/refs&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&projectId=" + (projectId==null? "" : Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitRef>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Lock or Unlock a branch.
+		/// Refs_Update_Ref {organization}/{project}/_apis/git/repositories/{repositoryId}/refs
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="repositoryId">The name or ID of the repository.</param>
+		/// <param name="filter">The name of the branch to lock/unlock</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="projectId">ID or name of the team project. Optional if specifying an ID for repository.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The ref update action (lock/unlock) to perform</param>
+		/// <returns>successful operation</returns>
+		public GitRef Refs_Update_Ref(string organization, string repositoryId, string filter, string project, string projectId, string api_version, GitRefUpdate requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/git/repositories/"+ (repositoryId==null? "" : Uri.EscapeDataString(repositoryId))+"/refs&filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&projectId=" + (projectId==null? "" : Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<GitRef>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}

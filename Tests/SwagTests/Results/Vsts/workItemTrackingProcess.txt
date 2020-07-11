@@ -2251,6 +2251,82 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Updates a work item type of the process.
+		/// Work_Item_Types_Update {organization}/_apis/work/processes/{processId}/workitemtypes/{witRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ProcessWorkItemType> Work_Item_Types_UpdateAsync(string organization, string processId, string witRefName, string api_version, UpdateProcessWorkItemTypeRequest requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<ProcessWorkItemType>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a work item type of the process.
+		/// Work_Item_Types_Update {organization}/_apis/work/processes/{processId}/workitemtypes/{witRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public ProcessWorkItemType Work_Item_Types_Update(string organization, string processId, string witRefName, string api_version, UpdateProcessWorkItemTypeRequest requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<ProcessWorkItemType>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Adds a field to a work item type.
 		/// Fields_Add {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/fields
 		/// </summary>
@@ -2506,6 +2582,84 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a field in a work item type.
+		/// Fields_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/fields/{fieldRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="fieldRefName">The reference name of the field.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ProcessWorkItemTypeField> Fields_UpdateAsync(string organization, string processId, string witRefName, string fieldRefName, string api_version, UpdateProcessWorkItemTypeFieldRequest requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : Uri.EscapeDataString(fieldRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<ProcessWorkItemTypeField>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a field in a work item type.
+		/// Fields_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/fields/{fieldRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="fieldRefName">The reference name of the field.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public ProcessWorkItemTypeField Fields_Update(string organization, string processId, string witRefName, string fieldRefName, string api_version, UpdateProcessWorkItemTypeFieldRequest requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : Uri.EscapeDataString(fieldRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<ProcessWorkItemTypeField>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -2795,6 +2949,88 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Updates a control on the work item form.
+		/// Controls_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/groups/{groupId}/controls/{controlId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="groupId">The ID of the group.</param>
+		/// <param name="controlId">The ID of the control.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The updated control.</param>
+		/// <returns>successful operation</returns>
+		public async Task<Control> Controls_UpdateAsync(string organization, string processId, string witRefName, string groupId, string controlId, string api_version, Control requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"/controls/"+ (controlId==null? "" : Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Control>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a control on the work item form.
+		/// Controls_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/groups/{groupId}/controls/{controlId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="groupId">The ID of the group.</param>
+		/// <param name="controlId">The ID of the control.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The updated control.</param>
+		/// <returns>successful operation</returns>
+		public Control Controls_Update(string organization, string processId, string witRefName, string groupId, string controlId, string api_version, Control requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"/controls/"+ (controlId==null? "" : Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Control>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Adds a page to the work item form.
 		/// Pages_Add {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/pages
 		/// </summary>
@@ -2847,6 +3083,84 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/pages&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Page>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a page on the work item form
+		/// Pages_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/pages
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The page</param>
+		/// <returns>successful operation</returns>
+		public async Task<Page> Pages_UpdateAsync(string organization, string processId, string witRefName, string api_version, Page requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/pages&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Page>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a page on the work item form
+		/// Pages_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/pages
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The page</param>
+		/// <returns>successful operation</returns>
+		public Page Pages_Update(string organization, string processId, string witRefName, string api_version, Page requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/pages&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
@@ -3153,6 +3467,90 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Updates a group in the work item form.
+		/// Groups_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/pages/{pageId}/sections/{sectionId}/groups/{groupId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="pageId">The ID of the page the group is in.</param>
+		/// <param name="sectionId">The ID of the section the group is in.</param>
+		/// <param name="groupId">The ID of the group.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The updated group.</param>
+		/// <returns>successful operation</returns>
+		public async Task<Group> Groups_UpdateAsync(string organization, string processId, string witRefName, string pageId, string sectionId, string groupId, string api_version, Group requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : Uri.EscapeDataString(sectionId))+"/groups/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Group>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a group in the work item form.
+		/// Groups_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/pages/{pageId}/sections/{sectionId}/groups/{groupId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="pageId">The ID of the page the group is in.</param>
+		/// <param name="sectionId">The ID of the section the group is in.</param>
+		/// <param name="groupId">The ID of the group.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">The updated group.</param>
+		/// <returns>successful operation</returns>
+		public Group Groups_Update(string organization, string processId, string witRefName, string pageId, string sectionId, string groupId, string api_version, Group requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : Uri.EscapeDataString(sectionId))+"/groups/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Group>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Gets edited system controls for a work item type in a process. To get all system controls (base + edited) use layout API(s)
 		/// System_Controls_List {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/systemcontrols
 		/// </summary>
@@ -3278,6 +3676,84 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates/adds a system control on the work item form.
+		/// System_Controls_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/systemcontrols/{controlId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="controlId">The ID of the control.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<Control> System_Controls_UpdateAsync(string organization, string processId, string witRefName, string controlId, string api_version, Control requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/systemcontrols/"+ (controlId==null? "" : Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Control>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates/adds a system control on the work item form.
+		/// System_Controls_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/layout/systemcontrols/{controlId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process.</param>
+		/// <param name="witRefName">The reference name of the work item type.</param>
+		/// <param name="controlId">The ID of the control.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public Control System_Controls_Update(string organization, string processId, string witRefName, string controlId, string api_version, Control requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/layout/systemcontrols/"+ (controlId==null? "" : Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<Control>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -3959,6 +4435,84 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Updates a given state definition in the work item type of the process.
+		/// States_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states/{stateId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="stateId">ID of the state</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WorkItemStateResultModel> States_UpdateAsync(string organization, string processId, string witRefName, string stateId, string api_version, WorkItemStateInputModel requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<WorkItemStateResultModel>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a given state definition in the work item type of the process.
+		/// States_Update {organization}/_apis/work/processes/{processId}/workItemTypes/{witRefName}/states/{stateId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">ID of the process</param>
+		/// <param name="witRefName">The reference name of the work item type</param>
+		/// <param name="stateId">ID of the state</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WorkItemStateResultModel States_Update(string organization, string processId, string witRefName, string stateId, string api_version, WorkItemStateInputModel requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<WorkItemStateResultModel>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Adds a behavior to the work item type of the process.
 		/// Work_Item_Types_Behaviors_Add {organization}/_apis/work/processes/{processId}/workitemtypesbehaviors/{witRefNameForBehaviors}/behaviors
 		/// </summary>
@@ -4094,6 +4648,82 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a behavior for the work item type of the process.
+		/// Work_Item_Types_Behaviors_Update {organization}/_apis/work/processes/{processId}/workitemtypesbehaviors/{witRefNameForBehaviors}/behaviors
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefNameForBehaviors">Work item type reference name for the behavior</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WorkItemTypeBehavior> Work_Item_Types_Behaviors_UpdateAsync(string organization, string processId, string witRefNameForBehaviors, string api_version, WorkItemTypeBehavior requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<WorkItemTypeBehavior>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Updates a behavior for the work item type of the process.
+		/// Work_Item_Types_Behaviors_Update {organization}/_apis/work/processes/{processId}/workitemtypesbehaviors/{witRefNameForBehaviors}/behaviors
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="processId">The ID of the process</param>
+		/// <param name="witRefNameForBehaviors">Work item type reference name for the behavior</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WorkItemTypeBehavior Work_Item_Types_Behaviors_Update(string organization, string processId, string witRefNameForBehaviors, string api_version, WorkItemTypeBehavior requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<WorkItemTypeBehavior>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -4262,6 +4892,78 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Edit a process of a specific ID.
+		/// Processes_Edit_Process {organization}/_apis/work/processes/{processTypeId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ProcessInfo> Processes_Edit_ProcessAsync(string organization, string processTypeId, string api_version, UpdateProcessModel requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<ProcessInfo>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Edit a process of a specific ID.
+		/// Processes_Edit_Process {organization}/_apis/work/processes/{processTypeId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public ProcessInfo Processes_Edit_Process(string organization, string processTypeId, string api_version, UpdateProcessModel requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : Uri.EscapeDataString(processTypeId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = new JsonSerializer();
+				return serializer.Deserialize<ProcessInfo>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 			}
 		}

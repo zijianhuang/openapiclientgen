@@ -1816,6 +1816,64 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Endpoints_Share_Service_Endpoint {organization}/_apis/serviceendpoint/endpoints/{endpointId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Endpoints_Share_Service_EndpointAsync(string organization, string endpointId, string api_version, ServiceEndpointProjectReference[] requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Endpoints_Share_Service_Endpoint {organization}/_apis/serviceendpoint/endpoints/{endpointId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Endpoints_Share_Service_Endpoint(string organization, string endpointId, string api_version, ServiceEndpointProjectReference[] requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Endpoints_Update_Service_Endpoint {organization}/_apis/serviceendpoint/endpoints/{endpointId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>

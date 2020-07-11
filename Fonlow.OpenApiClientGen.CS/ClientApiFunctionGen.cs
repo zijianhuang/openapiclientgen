@@ -41,7 +41,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod,
 			OpenApiOperation apiOperation, ComponentsToCsTypes coms2CsTypes, bool forAsync, bool useEnsureSuccessStatusCodeEx)
 		{
-			if (httpMethod > OperationType.Delete)
+			if (!(new OperationType[] { OperationType.Get, OperationType.Post, OperationType.Put, OperationType.Delete, OperationType.Patch }).Any(d=>d==httpMethod))
 			{
 				Trace.TraceWarning("This HTTP method {0} is not yet supported", httpMethod);
 				return null;
