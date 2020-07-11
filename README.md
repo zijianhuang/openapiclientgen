@@ -1,11 +1,5 @@
 # OpenApiClientGen
-OpenApiClientGen generates strongly typed client codes in C# and TypeScript from an Open API / Swagger YAML/JSON definition file, through plugins supporting the following JavaScript libraries or frameworks:
-
-1. Angular -- Fonlow.OpenApiClientGen.NG2.dll
-2. Axios -- Fonlow.OpenApiClientGen.Axios.dll
-3. Fetch API -- Fonlow.OpenApiClientGen.Fetch.dll
-4. Aurelia -- Fonlow.OpenApiClientGen.Aurelia.dll
-5. jQuery -- Fonlow.OpenApiClientGen.JQ.dll
+Reading an Open API / Swagger YAML/JSON definition file, OpenApiClientGen generates strongly typed client API codes in C# and in TypeScript for Angular, Axios, Fetch API, Aurelia and jQuery.
 
 This program is based on Fonlow.TypeScriptCodeDomCore and Fonlow.Poco2TsCore which are core components of [WebApiClientGen](https://github.com/zijianhuang/webapiclientgen), thus the codes generated share the same characteristics.
 
