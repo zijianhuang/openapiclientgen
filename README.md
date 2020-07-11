@@ -1,5 +1,5 @@
 # OpenApiClientGen
-OpenApiClientGen generates client codes in C# and TypeScript from an Open API / Swagger YAML/JSON definition file, through plugins supporting the following JavaScript libraries or frameworks:
+OpenApiClientGen generates strongly typed client codes in C# and TypeScript from an Open API / Swagger YAML/JSON definition file, through plugins supporting the following JavaScript libraries or frameworks:
 
 1. Angular -- Fonlow.OpenApiClientGen.NG2.dll
 2. Axios -- Fonlow.OpenApiClientGen.Axios.dll

@@ -1,11 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.CodeDom;
-using System.Text.RegularExpressions;
-using System.Numerics;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -13,16 +8,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	{
 		public ReturnRefBuilder(IComponentToCodeDom com2CodeDom, string actionName)
 		{
-			this.parametersRefBuilder = new ParametersRefBuilder(com2CodeDom, actionName);
+			this.com2CodeDom = com2CodeDom;
+			this.actionName = actionName;
 		}
 
-		readonly ParametersRefBuilder parametersRefBuilder;
+		readonly IComponentToCodeDom com2CodeDom;
+		readonly string actionName;
 
 		/// <summary>
 		/// 
 		/// </summary>
 		/// <param name="op"></param>
-		/// <returns>Item3 indicate whether to be complex type.</returns>
+		/// <returns>item2 indicates whether return is a string.</returns>
 		public Tuple<CodeTypeReference, bool> GetOperationReturnTypeReference(OpenApiOperation op)
 		{
 			if (op.Responses.TryGetValue("200", out OpenApiResponse goodResponse))
@@ -38,7 +35,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					try
 					{
-						codeTypeReference = parametersRefBuilder.OpenApiParameterSchemaToCodeTypeReference(content.Schema, "Return");
+						codeTypeReference = com2CodeDom.PropertySchemaToCodeTypeReference(content.Schema, actionName, "Return");
 
 					}
 					catch (ArgumentException ex)

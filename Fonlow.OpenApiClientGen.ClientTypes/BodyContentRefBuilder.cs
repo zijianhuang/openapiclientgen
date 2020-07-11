@@ -1,7 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
-using System.Collections.Generic;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -9,13 +8,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	{
 		public BodyContentRefBuilder(IComponentToCodeDom com2CodeDom, string actionName)
 		{
-			this.parametersRefBuilder = new ParametersRefBuilder(com2CodeDom, actionName);
-			//this.actionName = actionName;
+			this.com2CodeDom = com2CodeDom;
+			this.actionName = actionName;
 		}
 
-		readonly ParametersRefBuilder parametersRefBuilder;
-		//readonly string actionName;
-
+		readonly IComponentToCodeDom com2CodeDom;
+		readonly string actionName;
 		/// <summary>
 		/// Get CodeTypeReference and description of requestBody of operation.
 		/// </summary>
@@ -34,7 +32,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						try
 						{
-							return Tuple.Create(parametersRefBuilder.OpenApiParameterSchemaToCodeTypeReference(content.Schema, httpMethod + "Body"), description, true);
+							return Tuple.Create(com2CodeDom.PropertySchemaToCodeTypeReference(content.Schema, actionName, httpMethod + "Body"), description, true);
 						}
 						catch (ArgumentException ex)
 						{
@@ -51,8 +49,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (content.Schema != null)
 					{
-						CodeTypeReference codeTypeReference = parametersRefBuilder.OpenApiParameterSchemaToCodeTypeReference(content.Schema, httpMethod + "Body");
-						return Tuple.Create(codeTypeReference, description, true);
+						return Tuple.Create(com2CodeDom.PropertySchemaToCodeTypeReference(content.Schema, actionName, httpMethod + "Body"), description, true);
 					}
 				}
 				else if (op.RequestBody.Content.Count > 0) // with content but not supported

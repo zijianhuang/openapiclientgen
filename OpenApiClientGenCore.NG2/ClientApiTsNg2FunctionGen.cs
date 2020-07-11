@@ -138,31 +138,6 @@ namespace Fonlow.CodeDom.Web.Ts
 				}
 
 			}
-			//else if (returnTypeText == NG2HttpBlobResponse)//translated from blobresponse to this
-			//{
-			//	const string optionForStream = "{ headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'blob' }";
-
-			//	if (httpMethodName == "get" || httpMethodName == "delete")
-			//	{
-			//		Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {optionForStream});"));
-			//		return;
-			//	}
-
-			//	if (httpMethodName == "post" || httpMethodName == "put")
-			//	{
-			//		if (RequestBodyCodeTypeReference == null)
-			//		{
-			//			Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {optionForStream});"));
-			//		}
-			//		else
-			//		{
-			//			Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForStream});"));
-			//		}
-
-			//		return;
-			//	}
-
-			//}
 			else if (returnTypeText == NG2HttpStringResponse)//translated from response to this
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")

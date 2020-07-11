@@ -19,23 +19,8 @@ namespace Fonlow.CodeDom.Web
 			typeof(IReadOnlyCollection<>).Name,
 			"System.Collections.Generic.IAsyncEnumerable`1",
 		   typeof(System.Collections.ObjectModel.ObservableCollection<>).Name,
-	   }
-	   );
-
-		//static readonly HashSet<string> simpleArrayTypeNames = new HashSet<string>(
-		//new string[] {
-		//   "Int32[]",
-		//   "Int64[]",
-		//   "Decimal[]",
-		//   "Double[]",
-		//   "Single[]",
-		//   "String[]",
-		//   "UInt32[]",
-		//   "UInt64[]",
-		//   "Int16[]",
-		//   "UInt16[]",
-		//  }
-		//  );
+		}
+		);
 
 		static readonly Type typeofString = typeof(string);
 		static readonly Type typeofDateTime = typeof(DateTime);

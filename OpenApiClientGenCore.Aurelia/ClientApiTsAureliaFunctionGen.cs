@@ -139,30 +139,6 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 			}
-			//else if (returnTypeText == AureliatHttpBlobResponse)//translated from blobresponse to this
-			//{
-			//	const string optionForStream = "{ responseType: 'blob' }";
-
-			//	if (httpMethodName == "get" || httpMethodName == "delete")
-			//	{
-			//		Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {optionForStream}).then(d => d.json());"));
-			//		return;
-			//	}
-
-			//	if (httpMethodName == "post" || httpMethodName == "put")
-			//	{
-			//		if (RequestBodyCodeTypeReference == null)
-			//		{
-			//			Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {optionForStream}).then(d => d.json());"));
-			//		}
-			//		else
-			//		{
-			//			Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {optionForStream}).then(d => d.json());"));
-			//		}
-
-			//		return;
-			//	}
-			//}
 			else if (returnTypeText == AureliaHttpStringResponse)//translated from response to this
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
