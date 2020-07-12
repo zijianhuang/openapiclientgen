@@ -80,7 +80,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				Method.Statements.Add(new CodeSnippetStatement($"this.httpClient.{httpMethodName}({uriText}, callback, this.error, this.statusCode{headerHandlerCall});"));
 			}
-			else if (httpMethodName == "post" || httpMethodName == "put")
+			else if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 			{
 				if (RequestBodyCodeTypeReference == null) // no body
 				{
@@ -94,7 +94,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 			else
 			{
-				Debug.Assert(false, "How come?");
+				Debug.Assert(false, $"How come with {httpMethodName}?");
 			}
 		}
 

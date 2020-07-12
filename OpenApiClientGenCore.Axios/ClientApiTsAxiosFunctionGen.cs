@@ -200,7 +200,7 @@ namespace Fonlow.CodeDom.Web.Ts
 						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}{returnTypeCast}({uriText}, {Options}).then(d => d.data);"));
 					}
 				}
-				else if (httpMethodName == "post" || httpMethodName == "put")
+				else if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (returnTypeText == null)//http response
 					{

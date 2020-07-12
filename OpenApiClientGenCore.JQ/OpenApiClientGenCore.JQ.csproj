@@ -9,6 +9,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <NeutralLanguage>en</NeutralLanguage>
+    <Version>1.2</Version>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

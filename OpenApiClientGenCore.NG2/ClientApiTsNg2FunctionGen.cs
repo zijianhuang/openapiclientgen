@@ -176,7 +176,7 @@ namespace Fonlow.CodeDom.Web.Ts
 						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}{returnTypeCast}({uriText}, {Options});"));
 					}
 				}
-				else if (httpMethodName == "post" || httpMethodName == "put")
+				else if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (returnTypeText == null)//http response
 					{
