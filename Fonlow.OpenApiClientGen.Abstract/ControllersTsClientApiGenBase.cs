@@ -182,65 +182,6 @@ namespace Fonlow.CodeDom.Web.Ts
 			return names.Distinct().ToArray();
 		}
 
-		//void RefineOverloadingFunctions()
-		//{
-		//	for (int i = 0; i < CodeCompileUnit.Namespaces.Count; i++)
-		//	{
-		//		var ns = CodeCompileUnit.Namespaces[i];
-		//		for (int k = 0; k < ns.Types.Count; k++)
-		//		{
-		//			var c = ns.Types[k];
-		//			List<CodeMemberMethod> methods = new List<CodeMemberMethod>();
-		//			for (int m = 0; m < c.Members.Count; m++)
-		//			{
-		//				var method = c.Members[m] as CodeMemberMethod;
-		//				if (method != null)
-		//				{
-		//					methods.Add(method);
-		//				}
-		//			}
-
-		//			if (methods.Count > 1)//worth of checking overloading
-		//			{
-		//				var candidates = from m in methods group m by m.Name into grp where grp.Count() > 1 select grp.Key;
-		//				foreach (var candidateName in candidates)
-		//				{
-		//					var overloadingMethods = methods.Where(d => d.Name == candidateName).ToArray();
-		//					System.Diagnostics.Debug.Assert(overloadingMethods.Length > 1);
-		//					foreach (var item in overloadingMethods) //Wow, 5 nested loops, plus 2 linq expressions
-		//					{
-		//						RenameCodeMemberMethodWithParameterNames(item);
-		//					}
-		//				}
-		//			}
-		//		}
-		//	}
-
-		//}
-
-		//static string ToTitleCase(string s)
-		//{
-		//	return String.IsNullOrEmpty(s) ? s : (char.ToUpper(s[0]) + (s.Length > 1 ? s.Substring(1) : String.Empty));
-		//}
-
-		//static void RenameCodeMemberMethodWithParameterNames(CodeMemberMethod method)
-		//{
-		//	if (method.Parameters.Count == 0)
-		//		return;
-
-		//	var parameterNamesInTitleCase = method.Parameters.OfType<CodeParameterDeclarationExpression>().Select(d => ToTitleCase(d.Name)).ToList();
-		//	var lastParameter = parameterNamesInTitleCase[parameterNamesInTitleCase.Count - 1];
-		//	if ("callback".Equals(lastParameter, StringComparison.CurrentCultureIgnoreCase))//for JQ output
-		//	{
-		//		parameterNamesInTitleCase.RemoveAt(parameterNamesInTitleCase.Count - 1);
-		//	}
-
-		//	if (parameterNamesInTitleCase.Count > 0)
-		//	{
-		//		method.Name += $"By{String.Join("And", parameterNamesInTitleCase)}";
-		//	}
-		//}
-
 		CodeTypeDeclaration CreateControllerClientClass(CodeNamespace ns, string className)
 		{
 			CodeTypeDeclaration targetClass = new CodeTypeDeclaration(className)
