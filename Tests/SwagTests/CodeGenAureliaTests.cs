@@ -1,13 +1,14 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit;
+using Xunit.Abstractions;
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")]
 	public class CodeGenAureliaTests
 	{
-		public CodeGenAureliaTests()
+		public CodeGenAureliaTests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper("aurelia");
+			helper = new TsTestHelper("aurelia", output);
 		}
 
 		readonly TsTestHelper helper;

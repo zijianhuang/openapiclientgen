@@ -1,13 +1,14 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
+using Xunit.Abstractions;
 using Xunit;
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")]
 	public class CodeGenNG2Tests
 	{
-		public CodeGenNG2Tests()
+		public CodeGenNG2Tests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper("ng2");
+			helper = new TsTestHelper("ng2", output);
 		}
 
 		readonly TsTestHelper helper;
@@ -37,7 +38,7 @@ namespace SwagTests
 			helper.GenerateAndAssert("SwagMock\\pet.yaml", "NG2Results\\PetPathAsContainer.txt", new Settings()
 			{
 				ClientNamespace = "MyNS",
-				ContainerClassName = "Misc",
+				ContainerClassName = "MyClient",
 				ActionNameStrategy = ActionNameStrategy.MethodQueryParameters,
 				ContainerNameStrategy = ContainerNameStrategy.Path,
 			
@@ -63,7 +64,7 @@ namespace SwagTests
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
-				ContainerClassName = "Misc",
+				ContainerClassName = "MyClient",
 				ContainerNameSuffix = "",
 				GenerateBothAsyncAndSync = true
 			});
@@ -219,12 +220,6 @@ namespace SwagTests
 		public void Testxero_payroll_uk()
 		{
 			helper.GenerateAndAssert("SwagMock\\xero-payroll-uk.yaml", "NG2Results\\xero-payroll-uk.txt");
-		}
-
-		[Fact]
-		public void TestXero_projects()
-		{
-			helper.GenerateAndAssert("SwagMock\\Xero-projects.yaml", "NG2Results\\Xero-projects.txt");
 		}
 
 	}

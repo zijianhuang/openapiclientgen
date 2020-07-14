@@ -4,15 +4,20 @@ using Microsoft.OpenApi.Readers;
 using System;
 using System.IO;
 using Xunit;
+using System.Diagnostics;
+using Xunit.Abstractions;
 
 namespace SwagTests
 {
 	public class TsTestHelper
 	{
-		public TsTestHelper(string pluginAliasName)
+		public TsTestHelper(string pluginAliasName, ITestOutputHelper output)
 		{
 			this.pluginAliasName = pluginAliasName;
+			this.output = output;
 		}
+
+		readonly ITestOutputHelper output;
 
 		readonly string pluginAliasName;
 
@@ -31,21 +36,21 @@ namespace SwagTests
 					string theFolder;
 					try
 					{
-						theFolder = System.IO.Path.IsPathRooted(folder) ?
-							folder : System.IO.Path.Combine(Directory.GetCurrentDirectory(), folder);
+						theFolder = Path.IsPathRooted(folder) ?
+							folder : Path.Combine(Directory.GetCurrentDirectory(), folder);
 
 					}
 					catch (ArgumentException e)
 					{
-						System.Diagnostics.Trace.TraceWarning(e.Message);
+						Trace.TraceWarning(e.Message);
 						throw;
 					}
 
-					if (!System.IO.Directory.Exists(theFolder))
+					if (!Directory.Exists(theFolder))
 					{
 						throw new ArgumentException("TypeScript Folder Not Exist");
 					}
-					return System.IO.Path.Combine(theFolder, fileName);
+					return Path.Combine(theFolder, fileName);
 				};
 
 				return null;
@@ -57,7 +62,7 @@ namespace SwagTests
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
-				ContainerClassName = "Misc",
+				ContainerClassName = "MyClient",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
 				DataAnnotationsToComments = true,
 			};
@@ -99,6 +104,59 @@ namespace SwagTests
 			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
+		}
+
+		public void GenerateAndBuildAndAssert(string openApiFile, string expectedFile)
+		{
+			string s = TranslateJsonToCode(openApiFile, new Settings()
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "MyClient", //the TestBed requires this containerClassName
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				DataAnnotationsToComments = true,
+			});
+			//Assert.Equal(0, CheckNGBuild(s)); //Assert this only after updating the generated codes.
+			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			string expected = ReadFromResults(expectedFile);
+			Assert.Equal(expected, s);
+		}
+
+		int CheckNGBuild(string codes)
+		{
+			File.WriteAllText(@"..\..\..\..\NG2TestBed\src\clientapi\ClientApiAuto.ts", codes);
+			return Build(@"..\..\..\..\NG2TestBed\");
+		}
+
+		int Build(string ng2Dir)
+		{
+			var currentDir = Directory.GetCurrentDirectory();
+			Directory.SetCurrentDirectory(ng2Dir); // setting ProcessStartInfo.WorkingDirectory is not always working. Working in this demo, but not working in other heavier .net core Web app.
+			var ngCmd = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "npm\\ng.cmd");
+			ProcessStartInfo info = new ProcessStartInfo(ngCmd, "build")
+			{
+				UseShellExecute = false,
+				RedirectStandardError = true,
+			};
+
+			try
+			{
+				var process = Process.Start(info);
+				var errorMsg = process.StandardError.ReadToEnd(); //before WaitForExit() https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.standarderror?view=netcore-3.1#System_Diagnostics_Process_StandardError
+				if (!String.IsNullOrEmpty(errorMsg))
+				{
+					output.WriteLine("Code generated but with ng build errors:");
+					output.WriteLine(errorMsg);
+				}
+
+				process.WaitForExit();
+
+				return process.ExitCode;
+			}
+			finally
+			{
+				Directory.SetCurrentDirectory(currentDir);
+			}
 		}
 
 

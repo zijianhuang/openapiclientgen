@@ -1,12 +1,14 @@
 using Xunit;
+using Xunit.Abstractions;
+
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")]
 	public class ComponentsToTsTypesTests
 	{
-		public ComponentsToTsTypesTests()
+		public ComponentsToTsTypesTests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper("ng2");
+			helper = new TsTestHelper("ng2", output);
 		}
 
 		readonly TsTestHelper helper;

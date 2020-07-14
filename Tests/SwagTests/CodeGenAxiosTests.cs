@@ -1,13 +1,14 @@
 using Fonlow.OpenApiClientGen.ClientTypes;
 using Xunit;
+using Xunit.Abstractions;
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")]
 	public class CodeGenAxiosTests
 	{
-		public CodeGenAxiosTests()
+		public CodeGenAxiosTests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper("axios");
+			helper = new TsTestHelper("axios", output);
 		}
 
 		readonly TsTestHelper helper;
