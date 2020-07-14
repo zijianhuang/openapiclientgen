@@ -157,6 +157,12 @@
     <None Remove="Results\Uspto.txt" />
     <None Remove="Results\ValuesPaths.txt" />
     <None Remove="Results\Vsts\accounts.txt" />
+    <None Remove="Results\xero-identity.txt" />
+    <None Remove="Results\xero-payroll-au.txt" />
+    <None Remove="Results\xero-payroll-uk.txt" />
+    <None Remove="Results\xero_accounting.txt" />
+    <None Remove="Results\xero_assets.txt" />
+    <None Remove="Results\xero_bankfeeds.txt" />
     <None Remove="SwagMock\buy_browse_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_feed_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_marketing_v1_beta_oas3.yaml" />
@@ -244,6 +250,13 @@
     <None Remove="SwagMock\Vsts\workItemTracking.json" />
     <None Remove="SwagMock\Vsts\workItemTrackingProcess.json" />
     <None Remove="SwagMock\Vsts\workItemTrackingProcessTemplate.json" />
+    <None Remove="SwagMock\xero-identity.yaml" />
+    <None Remove="SwagMock\xero-payroll-au.yaml" />
+    <None Remove="SwagMock\xero-payroll-uk.yaml" />
+    <None Remove="SwagMock\Xero-projects.yaml" />
+    <None Remove="SwagMock\xero_accounting.yaml" />
+    <None Remove="SwagMock\xero_assets.yaml" />
+    <None Remove="SwagMock\xero_bankfeeds.yaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -697,6 +710,24 @@
     <Content Include="Results\Vsts\accounts.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Results\xero-identity.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\xero-payroll-au.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\xero-payroll-uk.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\xero_accounting.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\xero_assets.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\xero_bankfeeds.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SwagMock\buy_browse_v1_beta_oas3.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -755,6 +786,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\petByStatus.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero-identity.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero-payroll-au.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero-payroll-uk.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Xero-projects.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_accounting.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\sell_account_v1_oas3.json">
@@ -956,6 +1002,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\Vsts\workItemTrackingProcessTemplate.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_assets.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_bankfeeds.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

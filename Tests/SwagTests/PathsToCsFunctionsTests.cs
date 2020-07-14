@@ -316,5 +316,48 @@ namespace SwagTests
 			helper.GenerateFromOpenApiAndBuild("SwagMock\\developer_analytics_v1_beta_oas3.json", "Results\\developer_analytics.txt");
 		}
 
+		[Fact]
+		public void Testxero_accounting()
+		{
+			helper.GenerateFromOpenApiAndBuild("SwagMock\\xero_accounting.yaml", "Results\\xero_accounting.txt");
+		}
+
+		[Fact]
+		public void Testxero_assets()
+		{
+			helper.GenerateFromOpenApiAndBuild("SwagMock\\xero_assets.yaml", "Results\\xero_assets.txt");
+		}
+
+		[Fact]
+		public void Testxero_bankfeeds()
+		{
+			helper.GenerateFromOpenApiAndBuild("SwagMock\\xero_bankfeeds.yaml", "Results\\xero_bankfeeds.txt");
+		}
+
+		[Fact]
+		public void Testxero_payroll_au()
+		{
+			helper.GenerateFromOpenApiAndBuild("SwagMock\\xero-payroll-au.yaml", "Results\\xero-payroll-au.txt");
+		}
+
+		[Fact]
+		public void Testxero_identity()
+		{
+			helper.GenerateFromOpenApiAndBuild("SwagMock\\xero-identity.yaml", "Results\\xero-identity.txt");
+		}
+
+		[Fact]
+		public void Testxero_payroll_uk()
+		{
+			helper.GenerateFromOpenApiAndBuild("SwagMock\\xero-payroll-uk.yaml", "Results\\xero-payroll-uk.txt");
+		}
+
+		//[Fact]
+		//public void TestXero_projects() in getTasks, parameter chargeType has no in field which is required.
+		//{
+		//	helper.GenerateFromOpenApiAndBuild("SwagMock\\Xero-projects.yaml", "Results\\Xero-projects.txt");
+		//}
+
+
 	}
 }

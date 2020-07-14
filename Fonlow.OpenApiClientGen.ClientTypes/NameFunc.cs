@@ -52,7 +52,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			if (String.IsNullOrEmpty(s))
 			{
-				return s;
+				return "_";
 			}
 
 			if (IsKeyword(s))
@@ -95,6 +95,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (IsKeyword(s))
 			{
 				return "_" + s;
+			}
+
+			if (String.IsNullOrEmpty(s)) //Xero may have enum member empty. NSwag translate it to 'Empty' but I prefer underscore.
+			{
+				return "_";
 			}
 
 			var b = s;

@@ -573,6 +573,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				Type type = TypeRefHelper.PrimitiveSwaggerTypeToClrType(fieldSchema.Type, fieldSchema.Format);
 				List<CodeAttributeArgument> attributeParams = new List<CodeAttributeArgument>();
+				if (fieldSchema.Type == "string")
+				{
+					Trace.TraceWarning("A string type property shouldn't be decorated by Maximum or Minimum but MaxLength or MinLength.");//Xero_bankfeeds.yaml has such problem.
+					return;
+				}
 
 				if (fieldSchema.Minimum.HasValue)
 				{

@@ -184,6 +184,49 @@ namespace SwagTests
 		{
 			helper.GenerateAndAssert("SwagMock\\redocOpenApi200501.json", "NG2Results\\redocOpenApi200501.txt");
 		}
+
+		[Fact]
+		public void Testxero_accounting()
+		{
+			helper.GenerateAndAssert("SwagMock\\xero_accounting.yaml", "NG2Results\\xero_accounting.txt");
+		}
+
+		[Fact]
+		public void Testxero_assets()
+		{
+			helper.GenerateAndAssert("SwagMock\\xero_assets.yaml", "NG2Results\\xero_assets.txt");
+		}
+
+		[Fact]
+		public void Testxero_bankfeeds()
+		{
+			helper.GenerateAndAssert("SwagMock\\xero_bankfeeds.yaml", "NG2Results\\xero_bankfeeds.txt");
+		}
+
+		[Fact]
+		public void Testxero_payroll_au()
+		{
+			helper.GenerateAndAssert("SwagMock\\xero-payroll-au.yaml", "NG2Results\\xero-payroll-au.txt");
+		}
+
+		[Fact]
+		public void Testxero_identity()
+		{
+			helper.GenerateAndAssert("SwagMock\\xero-identity.yaml", "NG2Results\\xero-identity.txt");
+		}
+
+		[Fact]
+		public void Testxero_payroll_uk()
+		{
+			helper.GenerateAndAssert("SwagMock\\xero-payroll-uk.yaml", "NG2Results\\xero-payroll-uk.txt");
+		}
+
+		[Fact]
+		public void TestXero_projects()
+		{
+			helper.GenerateAndAssert("SwagMock\\Xero-projects.yaml", "NG2Results\\Xero-projects.txt");
+		}
+
 	}
 
 }
