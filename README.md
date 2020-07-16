@@ -236,7 +236,7 @@ public class JSPlugin
 
 ## Examples of Generated Codes
 
-OpenApiClientGen had been tested upon multiple Open API definitions mostly in v3 formats and some in v2 formats.
+OpenApiClientGen had been tested upon over 1000 Open API definitions in v3 formats and in v2 formats.
 
 * [Open API definitions in YAML or JSON](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/SwagMock)
 * [Generated C# codes](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/Results) and [Integration Tests](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagApiTests) for [Client API codes generated](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/DemoClientApi/PetAuto.cs) from [pet.yaml](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/DemoClientApi/pet.yaml)
