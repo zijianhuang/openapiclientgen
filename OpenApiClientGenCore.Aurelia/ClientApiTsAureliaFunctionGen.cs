@@ -125,7 +125,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
@@ -143,19 +143,19 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {OptionsForResponse}).then(d => d.text());"));
+					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {OptionsForResponse}).then(d => d.json());"));
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {OptionsForResponse}).then(d => d.text());"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {OptionsForResponse}).then(d => d.json());"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse}).then(d => d.json());"));
 					}
 
 					return;
@@ -170,7 +170,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{

@@ -299,13 +299,6 @@ namespace Fonlow.OpenApiClientGen.CS
 					new CodeSnippetExpression(uriText)));
 			}
 
-			//void AddPostStatement(CodeExpression httpMethodInvokeExpression)
-			//{
-			//	method.Statements.Add(new CodeVariableDeclarationStatement(
-			//		new CodeTypeReference("var"), "responseMessage", httpMethodInvokeExpression));
-
-			//}
-
 			AddRequestUriWithQueryAssignmentStatement();
 
 			method.Statements.Add(new CodeSnippetStatement(

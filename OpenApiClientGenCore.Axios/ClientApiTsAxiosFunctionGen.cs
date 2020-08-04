@@ -125,7 +125,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
@@ -143,15 +143,15 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {OptionsForResponse}).then(d => d.data);"));
+					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {OptionsForResponse});"));
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {OptionsForResponse}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {OptionsForResponse});"));
 					}
 					else
 					{
@@ -170,7 +170,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{

@@ -115,7 +115,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
@@ -129,29 +129,29 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 			}
-			else if (returnTypeText == FetchHttpStringResponse)//translated from response to this
-			{
-				if (httpMethodName == "get" || httpMethodName == "delete")
-				{
-					Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForResponse}).then(d => d.text());"));
-					return;
-				}
+			//else if (returnTypeText == FetchHttpStringResponse)//translated from response to this
+			//{
+			//	if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
+			//	{
+			//		Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForResponse}).then(d => d.text());"));
+			//		return;
+			//	}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
-				{
-					if (RequestBodyCodeTypeReference == null)
-					{
-						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, null, {OptionsForResponse}).then(d => d.text());"));
-					}
-					else
-					{
-						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse});"));
-					}
+			//	if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
+			//	{
+			//		if (RequestBodyCodeTypeReference == null)
+			//		{
+			//			Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, null, {OptionsForResponse}).then(d => d.text());"));
+			//		}
+			//		else
+			//		{
+			//			Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse});"));
+			//		}
 
-					return;
-				}
+			//		return;
+			//	}
 
-			}
+			//}
 			else if (returnTypeText == FetchHttpResponse) // client should care about only status
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
@@ -160,7 +160,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{

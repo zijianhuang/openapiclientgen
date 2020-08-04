@@ -123,7 +123,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
@@ -146,7 +146,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put")
+				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
