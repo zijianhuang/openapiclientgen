@@ -14,7 +14,7 @@ namespace Fonlow.CodeDom.Web.Ts
 	{
 		const string FetchHttpResponse = "Response";
 		const string FetchtHttpBlobResponse = "Blob";
-		const string FetchHttpStringResponse = "string";
+		//const string FetchHttpStringResponse = "string";
 	
 		string returnTypeText = null;
 		string typeCast = null;
