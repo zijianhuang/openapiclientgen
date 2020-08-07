@@ -12,14 +12,12 @@ namespace SwagTests
 {
 	public class TsTestHelper
 	{
-		public TsTestHelper(Type genType, ITestOutputHelper output)
+		public TsTestHelper(Type genType)
 		{
 			this.genType = genType;
-			this.output = output;
 		}
 
 		readonly Type genType;
-		readonly ITestOutputHelper output;
 
 		public static OpenApiDocument ReadJson(string filePath)
 		{
@@ -94,6 +92,18 @@ namespace SwagTests
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 		}
+	}
+
+	public class NG2TestHelper : TsTestHelper
+	{
+		readonly ITestOutputHelper output;
+		readonly bool buildToValidate;
+
+		public NG2TestHelper(Type genType, ITestOutputHelper output, bool buildToValidate): base(genType)
+		{
+			this.output = output;
+			this.buildToValidate = buildToValidate;
+		}
 
 		public void GenerateAndBuildAndAssert(string openApiFile, string expectedFile)
 		{
@@ -105,8 +115,13 @@ namespace SwagTests
 				ActionNameStrategy = ActionNameStrategy.Default,
 				DataAnnotationsToComments = true,
 			});
-			//Assert.Equal(0, CheckNGBuild(s)); //Assert this only after updating the generated codes.
-			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+
+			if (buildToValidate)
+			{
+				Assert.Equal(0, CheckNGBuild(s)); //Assert this only after updating the generated codes.
+				//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			}
+
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 		}
@@ -147,7 +162,5 @@ namespace SwagTests
 				Directory.SetCurrentDirectory(currentDir);
 			}
 		}
-
-
 	}
 }

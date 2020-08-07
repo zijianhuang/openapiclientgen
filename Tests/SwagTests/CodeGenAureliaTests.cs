@@ -6,9 +6,9 @@ namespace SwagTests
 	[Collection("PluginsInSequence")]
 	public class CodeGenAureliaTests
 	{
-		public CodeGenAureliaTests(ITestOutputHelper output)
+		public CodeGenAureliaTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAureliaClientApiGen), output);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAureliaClientApiGen));
 		}
 
 		readonly TsTestHelper helper;

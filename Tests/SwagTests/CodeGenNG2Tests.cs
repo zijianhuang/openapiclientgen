@@ -8,10 +8,10 @@ namespace SwagTests
 	{
 		public CodeGenNG2Tests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output);
+			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, false);
 		}
 
-		readonly TsTestHelper helper;
+		readonly NG2TestHelper helper;
 
 		[Fact]
 		public void TestValuesPaths()

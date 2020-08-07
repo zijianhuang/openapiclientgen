@@ -6,9 +6,9 @@ namespace SwagTests
 	[Collection("PluginsInSequence")]
 	public class ComponentsToTsTypesTests
 	{
-		public ComponentsToTsTypesTests(ITestOutputHelper output)
+		public ComponentsToTsTypesTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen));
 		}
 
 		readonly TsTestHelper helper;

@@ -6,9 +6,9 @@ namespace SwagTests
 	[Collection("PluginsInSequence")]
 	public class CodeGenFetchTests
 	{
-		public CodeGenFetchTests(ITestOutputHelper output)
+		public CodeGenFetchTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsFetchClientApiGen), output);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsFetchClientApiGen));
 		}
 
 		readonly TsTestHelper helper;

@@ -6,9 +6,9 @@ namespace SwagTests
 	[Collection("PluginsInSequence")]
 	public class CodeGenAxiosTests
 	{
-		public CodeGenAxiosTests(ITestOutputHelper output)
+		public CodeGenAxiosTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen), output);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen));
 		}
 
 		readonly TsTestHelper helper;
