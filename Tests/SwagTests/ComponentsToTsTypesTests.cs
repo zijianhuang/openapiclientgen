@@ -30,7 +30,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\SimplePet.json");
+			string s = helper.TranslateDefToCode("SwagMock\\SimplePet.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -59,7 +59,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\SimplePetCat.json");
+			string s = helper.TranslateDefToCode("SwagMock\\SimplePetCat.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -74,7 +74,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\Enum.json");
+			string s = helper.TranslateDefToCode("SwagMock\\Enum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -89,7 +89,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\IntEnum.json");
+			string s = helper.TranslateDefToCode("SwagMock\\IntEnum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -115,7 +115,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\CasualEnum.json");
+			string s = helper.TranslateDefToCode("SwagMock\\CasualEnum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -141,7 +141,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\StringArray.json");
+			string s = helper.TranslateDefToCode("SwagMock\\StringArray.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -179,7 +179,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\CustomTypeArray.json");
+			string s = helper.TranslateDefToCode("SwagMock\\CustomTypeArray.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -208,7 +208,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\SimpleOrder.json");
+			string s = helper.TranslateDefToCode("SwagMock\\SimpleOrder.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -231,7 +231,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\TypeAlias.json");
+			string s = helper.TranslateDefToCode("SwagMock\\TypeAlias.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -259,7 +259,7 @@ namespace SwagTests
 }
 
 ";
-			string s = helper.TranslateJsonToCode("SwagMock\\Required.json");
+			string s = helper.TranslateDefToCode("SwagMock\\Required.json");
 			Assert.Equal(expected, s);
 		}
 	}

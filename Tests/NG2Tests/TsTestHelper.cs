@@ -24,9 +24,9 @@ namespace SwagTests
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		public void CreateClientApiAndBuild(string filePath, Settings mySettings = null)
+		public void CreateClientApiAndBuild(string openApiFile, Settings mySettings = null)
 		{
-			OpenApiDocument doc = ReadDef(filePath);
+			OpenApiDocument doc = ReadDef(openApiFile);
 
 			Settings settings = mySettings ?? CodeGenSettings.Default;
 
@@ -80,6 +80,8 @@ namespace SwagTests
 
 		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings = null)
 		{
+			var m = (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod();
+			var targetFileName = $"{m.DeclaringType.Name}.{m.Name}.txt";
 			var filePath = Path.Combine(openapiDir, "openapi.yaml");
 			CreateClientApiAndBuild(filePath, mySettings);
 		}

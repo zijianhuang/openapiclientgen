@@ -1116,6 +1116,7 @@
     <ProjectReference Include="..\..\OpenApiClientGenCore.JQ\OpenApiClientGenCore.JQ.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
     <ProjectReference Include="..\ClientCodesValidation\ClientCodesValidation.csproj" />
+    <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
   </ItemGroup>
 
 </Project>
