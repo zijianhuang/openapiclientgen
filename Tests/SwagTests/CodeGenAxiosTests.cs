@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public CodeGenAxiosTests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper("axios", output);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen), output);
 		}
 
 		readonly TsTestHelper helper;

@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public CodeGenAureliaTests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper("aurelia", output);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAureliaClientApiGen), output);
 		}
 
 		readonly TsTestHelper helper;

@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public CodeGenFetchTests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper("fetch", output);
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsFetchClientApiGen), output);
 		}
 
 		readonly TsTestHelper helper;

@@ -6,20 +6,20 @@ using System.IO;
 using Xunit;
 using System.Diagnostics;
 using Xunit.Abstractions;
+using System.Reflection;
 
 namespace SwagTests
 {
 	public class TsTestHelper
 	{
-		public TsTestHelper(string pluginAliasName, ITestOutputHelper output)
+		public TsTestHelper(Type genType, ITestOutputHelper output)
 		{
-			this.pluginAliasName = pluginAliasName;
+			this.genType = genType;
 			this.output = output;
 		}
 
+		readonly Type genType;
 		readonly ITestOutputHelper output;
-
-		readonly string pluginAliasName;
 
 		public static OpenApiDocument ReadJson(string filePath)
 		{
@@ -77,18 +77,7 @@ namespace SwagTests
 				ContentType = "application/json;charset=UTF-8",
 			};
 
-			Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase gen = new Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen(settings, jsOutput);
-			switch (pluginAliasName)
-			{
-				case "ng2": gen = new Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen(settings, jsOutput); break;
-				case "aurelia": gen = new Fonlow.CodeDom.Web.Ts.ControllersTsAureliaClientApiGen(settings, jsOutput); break;
-				case "axios": gen = new Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen(settings, jsOutput); break;
-				case "fetch": gen = new Fonlow.CodeDom.Web.Ts.ControllersTsFetchClientApiGen(settings, jsOutput); break;
-				case "jq": gen = new Fonlow.CodeDom.Web.Ts.ControllersTsJqClientApiGen(settings, jsOutput); break;
-				default:
-					break;
-			}
-
+			Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase gen = (Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase)Activator.CreateInstance(genType, settings, jsOutput);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
 		}
