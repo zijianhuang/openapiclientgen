@@ -7,10 +7,10 @@ namespace NG2Tests
 	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryGoogleTests
 	{
-		readonly TsTestHelper helper;
+		readonly NG2OpenApiDirTestHelper helper;
 		public OpenapiDirectoryGoogleTests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper(output);
+			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, CodeGenSettings.BuildToValidate);
 		}
 
 		[Fact]

@@ -6,10 +6,10 @@ namespace SwagTests
 	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryAwsTests
 	{
-		readonly TsTestHelper helper;
+		readonly NG2OpenApiDirTestHelper helper;
 		public OpenapiDirectoryAwsTests(ITestOutputHelper output)
 		{
-			helper = new TsTestHelper(output);
+			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, CodeGenSettings.BuildToValidate);
 		}
 
 		[Fact]

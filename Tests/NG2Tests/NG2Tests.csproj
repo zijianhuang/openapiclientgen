@@ -7,6 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NG2BuildResults\Pet.txt" />
+    <None Remove="NG2BuildResults\PetDelete.txt" />
+    <None Remove="NG2BuildResults\PetStore.txt" />
+    <None Remove="NG2BuildResults\PetStoreExpanded.txt" />
+    <None Remove="NG2BuildResults\redocOpenApi200501.txt" />
+    <None Remove="NG2BuildResults\sell_account.txt" />
+    <None Remove="NG2BuildResults\sell_analytics.txt" />
+    <None Remove="NG2BuildResults\sell_compliance.txt" />
+    <None Remove="NG2BuildResults\sell_finances.txt" />
+    <None Remove="NG2BuildResults\sell_inventory.txt" />
+    <None Remove="NG2BuildResults\sell_listing.txt" />
+    <None Remove="NG2BuildResults\sell_logistics.txt" />
+    <None Remove="NG2BuildResults\sell_marketing.txt" />
+    <None Remove="NG2BuildResults\sell_metadata.txt" />
+    <None Remove="NG2BuildResults\sell_negotiation.txt" />
+    <None Remove="NG2BuildResults\sell_recommendation.txt" />
+    <None Remove="NG2BuildResults\Uspto.txt" />
+    <None Remove="NG2BuildResults\ValuesPaths.txt" />
+    <None Remove="NG2BuildResults\xero-identity.txt" />
+    <None Remove="NG2BuildResults\xero-payroll-au.txt" />
+    <None Remove="NG2BuildResults\xero-payroll-uk.txt" />
+    <None Remove="NG2BuildResults\xero_accounting.txt" />
+    <None Remove="NG2BuildResults\xero_assets.txt" />
+    <None Remove="NG2BuildResults\xero_bankfeeds.txt" />
     <None Remove="SwagMock\buy_browse_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_feed_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_marketing_v1_beta_oas3.yaml" />
@@ -59,6 +83,13 @@
     <None Remove="SwagMock\TypeAlias2.json" />
     <None Remove="SwagMock\uspto.yaml" />
     <None Remove="SwagMock\ValuesPaths.json" />
+    <None Remove="SwagMock\xero-identity.yaml" />
+    <None Remove="SwagMock\xero-payroll-au.yaml" />
+    <None Remove="SwagMock\xero-payroll-uk.yaml" />
+    <None Remove="SwagMock\Xero-projects.yaml" />
+    <None Remove="SwagMock\xero_accounting.yaml" />
+    <None Remove="SwagMock\xero_assets.yaml" />
+    <None Remove="SwagMock\xero_bankfeeds.yaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -218,6 +249,27 @@
     <Content Include="SwagMock\ValuesPaths.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="SwagMock\xero-identity.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero-payroll-au.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero-payroll-uk.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Xero-projects.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_accounting.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_assets.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_bankfeeds.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -235,6 +287,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
+    <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NG2BuildResults\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy $(ProjectDir)NG2BuildResults\*.ts $(TargetDir)NG2BuildResults\ /D&#xD;&#xA;xcopy $(ProjectDir)Results\*.ts $(TargetDir)Results\ /D&#xD;&#xA;" />
+  </Target>
 
 </Project>

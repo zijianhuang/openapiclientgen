@@ -95,28 +95,6 @@
     <None Remove="AxiosResults\sell_recommendation.txt" />
     <None Remove="AxiosResults\Uspto.txt" />
     <None Remove="AxiosResults\ValuesPaths.txt" />
-    <None Remove="NG2BuildResults\mcp.txt" />
-    <None Remove="NG2BuildResults\Pet.txt" />
-    <None Remove="NG2BuildResults\PetDelete.txt" />
-    <None Remove="NG2BuildResults\PetFindByStatus.txt" />
-    <None Remove="NG2BuildResults\PetGodClass.txt" />
-    <None Remove="NG2BuildResults\PetPathAsContainer.txt" />
-    <None Remove="NG2BuildResults\PetStore.txt" />
-    <None Remove="NG2BuildResults\PetStoreExpanded.txt" />
-    <None Remove="NG2BuildResults\redocOpenApi200501.txt" />
-    <None Remove="NG2BuildResults\sell_account.txt" />
-    <None Remove="NG2BuildResults\sell_analytics.txt" />
-    <None Remove="NG2BuildResults\sell_compliance.txt" />
-    <None Remove="NG2BuildResults\sell_finances.txt" />
-    <None Remove="NG2BuildResults\sell_inventory.txt" />
-    <None Remove="NG2BuildResults\sell_listing.txt" />
-    <None Remove="NG2BuildResults\sell_logistics.txt" />
-    <None Remove="NG2BuildResults\sell_marketing.txt" />
-    <None Remove="NG2BuildResults\sell_metadata.txt" />
-    <None Remove="NG2BuildResults\sell_negotiation.txt" />
-    <None Remove="NG2BuildResults\sell_recommendation.txt" />
-    <None Remove="NG2BuildResults\Uspto.txt" />
-    <None Remove="NG2BuildResults\ValuesPaths.txt" />
     <None Remove="NG2Results\mcp.txt" />
     <None Remove="NG2Results\Pet.txt" />
     <None Remove="NG2Results\PetDelete.txt" />
@@ -544,60 +522,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AxiosResults\ValuesPaths.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\Pet.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\PetDelete.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\PetStore.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\PetStoreExpanded.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\redocOpenApi200501.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_account.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_analytics.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_compliance.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_finances.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_inventory.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_listing.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_logistics.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_marketing.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_metadata.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_negotiation.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_recommendation.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\Uspto.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\ValuesPaths.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NG2Results\mcp.txt">

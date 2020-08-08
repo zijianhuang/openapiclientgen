@@ -18,9 +18,9 @@ namespace SwagTests
 			this.buildToValidate = buildToValidate;
 		}
 
-		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile)
+		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile, Settings settings = null)
 		{
-			string s = TranslateDefToCode(openApiFile, new Settings()
+			string s = TranslateDefToCode(openApiFile, settings ?? new Settings()
 			{
 				ClientNamespace = "MyNS",
 				ContainerClassName = "MyClient", //the TestBed requires this containerClassName
@@ -29,13 +29,13 @@ namespace SwagTests
 				DataAnnotationsToComments = true,
 			});
 
+			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 
 			if (buildToValidate)
 			{
 				Assert.Equal(0, CheckNGBuild(s));
-				//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			}
 		}
 

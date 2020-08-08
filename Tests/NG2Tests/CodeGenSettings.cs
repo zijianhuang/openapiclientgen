@@ -26,5 +26,7 @@ namespace SwagTests
 				HandleHttpRequestHeaders = true,
 			};
 		}
+
+		public static readonly bool BuildToValidate = false;
 	}
 }

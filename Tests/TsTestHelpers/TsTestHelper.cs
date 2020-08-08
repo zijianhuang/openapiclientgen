@@ -44,7 +44,8 @@ namespace SwagTests
 
 					if (!Directory.Exists(theFolder))
 					{
-						throw new ArgumentException("TypeScript Folder Not Exist");
+						//throw new ArgumentException("TypeScript Folder Not Exist");
+						Directory.CreateDirectory(theFolder);
 					}
 					return Path.Combine(theFolder, fileName);
 				};
