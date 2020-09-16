@@ -117,7 +117,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
-						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Namespace", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
 					}
 
 					if (settings.DecorateDataModelWithSerializable)
@@ -183,7 +183,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
-						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Namespace", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
 					}
 
 					if (settings.DecorateDataModelWithSerializable)
@@ -215,7 +215,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (settings.DecorateDataModelWithDataContract)
 				{
-					typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+					typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Namespace", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
 				}
 
 				if (settings.DecorateDataModelWithSerializable)
@@ -630,7 +630,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (settings.DecorateDataModelWithDataContract) // C# specific
 				{
-					r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+					r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Namespace", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
 				}
 
 				if (settings.DecorateDataModelWithSerializable)
