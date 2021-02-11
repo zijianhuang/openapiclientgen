@@ -97,7 +97,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			stream.Position = 0;
 			using StreamReader streamReader = new StreamReader(stream);
 			string s = streamReader.ReadToEnd();
-			if (settings.UseEnsureSuccessStatusCodeEx)
+			if (settings.UseEnsureSuccessStatusCodeEx && settings.IncludeEnsureSuccessStatusCodeExBlock)
 			{
 				textWriter.Write(s.Replace("//;", "").Replace(dummyBlock, blockOfEnsureSuccessStatusCodeEx));
 			}
@@ -169,7 +169,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				}
 			}
 
-			if (settings.UseEnsureSuccessStatusCodeEx)
+			if (settings.UseEnsureSuccessStatusCodeEx && settings.IncludeEnsureSuccessStatusCodeExBlock)
 			{
 				CreateDummyOfEnsureSuccessStatusCodeEx();
 			}

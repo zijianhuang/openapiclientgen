@@ -18,7 +18,7 @@ namespace My.Pet.Client
 	using Fonlow.Net.Http;
 	
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class ApiResponse
 	{
 		
@@ -35,7 +35,7 @@ namespace My.Pet.Client
 	/// <summary>
 	/// A representation of a cat
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class Cat : Pet
 	{
 		
@@ -47,7 +47,7 @@ namespace My.Pet.Client
 		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
 	}
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public enum CatHuntingSkill
 	{
 		
@@ -64,7 +64,7 @@ namespace My.Pet.Client
 		aggressive = 3,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class Category
 	{
 		
@@ -102,7 +102,7 @@ namespace My.Pet.Client
 	/// <summary>
 	/// A representation of a dog
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class Dog : Pet
 	{
 		
@@ -119,7 +119,7 @@ namespace My.Pet.Client
 	/// <summary>
 	/// A representation of a honey bee
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class HoneyBee : Pet
 	{
 		
@@ -131,7 +131,7 @@ namespace My.Pet.Client
 		public float HoneyPerDay { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class Order
 	{
 		
@@ -179,7 +179,7 @@ namespace My.Pet.Client
 		public string RequestId { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public enum OrderStatus
 	{
 		
@@ -193,7 +193,7 @@ namespace My.Pet.Client
 		delivered = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class Pet
 	{
 		
@@ -249,7 +249,7 @@ namespace My.Pet.Client
 		public string PetType { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class Tag
 	{
 		
@@ -268,7 +268,7 @@ namespace My.Pet.Client
 		public string Name { get; set; }
 	}
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public enum PetStatus
 	{
 		
@@ -282,7 +282,7 @@ namespace My.Pet.Client
 		sold = 2,
 	}
 	
-	[System.Runtime.Serialization.DataContract(Name="http://pet.domain/2020/03")]
+	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
 	public class User
 	{
 		
