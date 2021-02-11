@@ -144,6 +144,12 @@ public class Settings
 	/// </summary>
 	public bool UseEnsureSuccessStatusCodeEx { get; set; }
 
+	/// <summary>
+	/// Default  is true so the code block is included in the generated codes.
+	/// Defined if UseEnsureSuccessStatusCodeEx is true. Respective code block will be included the code gen output. However, if you have a few client APIs generated to be used in the same application,
+	/// and you may want these client APIs share the same code block, then put the WebApiRequestException code block to an assembly or a standalone CS file.
+	/// </summary>
+	public bool IncludeEnsureSuccessStatusCodeExBlock { get; set; } = true;
 
 	/// <summary>
 	/// System.ComponentModel.DataAnnotations attributes are to be copied over, including Required, Range, MaxLength, MinLength and StringLength. Applied to C# only.
@@ -158,9 +164,19 @@ public class Settings
 	public bool DataAnnotationsToComments { get; set; }
 
 	/// <summary>
-	/// C# function parameters contain a callback to handle HTTP request headers
+	/// Function parameters contain a callback to handle HTTP request headers
 	/// </summary>
 	public bool HandleHttpRequestHeaders { get; set; }
+
+	/// <summary>
+	/// Create destination folder if not exists. Applied to both CS and TS.
+	/// </summary>
+	public bool CreateFolder { get; set; }
+
+	/// <summary>
+	/// Optional file output of generated codes compilation. If not defined, the compilation is done in memory.
+	/// </summary>
+	public string AssemblyPath { get; set; }
 
 	public JSPlugin[] Plugins { get; set; }
 
