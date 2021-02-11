@@ -1,9 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -117,6 +119,12 @@
     <None Remove="NG2Results\sell_recommendation.txt" />
     <None Remove="NG2Results\Uspto.txt" />
     <None Remove="NG2Results\ValuesPaths.txt" />
+    <None Remove="NG2Results\xero-identity.txt" />
+    <None Remove="NG2Results\xero-payroll-au.txt" />
+    <None Remove="NG2Results\xero-payroll-uk.txt" />
+    <None Remove="NG2Results\xero_accounting.txt" />
+    <None Remove="NG2Results\xero_assets.txt" />
+    <None Remove="NG2Results\xero_bankfeeds.txt" />
     <None Remove="Results\buy_browse.txt" />
     <None Remove="Results\buy_feed.txt" />
     <None Remove="Results\buy_marketing.txt" />
@@ -157,6 +165,41 @@
     <None Remove="Results\Uspto.txt" />
     <None Remove="Results\ValuesPaths.txt" />
     <None Remove="Results\Vsts\accounts.txt" />
+    <None Remove="Results\Vsts\audit.txt" />
+    <None Remove="Results\Vsts\build.txt" />
+    <None Remove="Results\Vsts\cloudLoadTest.txt" />
+    <None Remove="Results\Vsts\core.txt" />
+    <None Remove="Results\Vsts\dashboard.txt" />
+    <None Remove="Results\Vsts\extensionManagement.txt" />
+    <None Remove="Results\Vsts\feed.txt" />
+    <None Remove="Results\Vsts\git.txt" />
+    <None Remove="Results\Vsts\graph.txt" />
+    <None Remove="Results\Vsts\memberEntitlementManagement.txt" />
+    <None Remove="Results\Vsts\notification.txt" />
+    <None Remove="Results\Vsts\operations.txt" />
+    <None Remove="Results\Vsts\permissionsReport.txt" />
+    <None Remove="Results\Vsts\policy.txt" />
+    <None Remove="Results\Vsts\profile.txt" />
+    <None Remove="Results\Vsts\provenance.txt" />
+    <None Remove="Results\Vsts\release.txt" />
+    <None Remove="Results\Vsts\search.txt" />
+    <None Remove="Results\Vsts\security.txt" />
+    <None Remove="Results\Vsts\serviceEndpoint.txt" />
+    <None Remove="Results\Vsts\serviceHooks.txt" />
+    <None Remove="Results\Vsts\status.txt" />
+    <None Remove="Results\Vsts\symbol.txt" />
+    <None Remove="Results\Vsts\taskAgent.txt" />
+    <None Remove="Results\Vsts\test.txt" />
+    <None Remove="Results\Vsts\testPlan.txt" />
+    <None Remove="Results\Vsts\testResults.txt" />
+    <None Remove="Results\Vsts\tfvc.txt" />
+    <None Remove="Results\Vsts\tokenAdmin.txt" />
+    <None Remove="Results\Vsts\tokenAdministration.txt" />
+    <None Remove="Results\Vsts\wiki.txt" />
+    <None Remove="Results\Vsts\work.txt" />
+    <None Remove="Results\Vsts\workItemTracking.txt" />
+    <None Remove="Results\Vsts\workItemTrackingProcess.txt" />
+    <None Remove="Results\Vsts\workItemTrackingProcessTemplate.txt" />
     <None Remove="Results\xero-identity.txt" />
     <None Remove="Results\xero-payroll-au.txt" />
     <None Remove="Results\xero-payroll-uk.txt" />
@@ -590,6 +633,24 @@
     <Content Include="NG2Results\ValuesPaths.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="NG2Results\xero-identity.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero-payroll-au.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero-payroll-uk.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero_accounting.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero_assets.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero_bankfeeds.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Results\buy_browse.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -708,6 +769,111 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Results\Vsts\accounts.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\audit.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\build.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\cloudLoadTest.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\core.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\dashboard.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\extensionManagement.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\feed.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\git.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\graph.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\memberEntitlementManagement.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\notification.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\operations.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\permissionsReport.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\policy.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\profile.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\provenance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\release.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\search.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\security.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\serviceEndpoint.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\serviceHooks.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\status.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\symbol.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\taskAgent.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\testPlan.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\testResults.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\tfvc.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\tokenAdmin.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\tokenAdministration.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\wiki.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\work.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\workItemTracking.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\workItemTrackingProcess.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Vsts\workItemTrackingProcessTemplate.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Results\xero-identity.txt">
@@ -1013,13 +1179,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="1.3.0">
+    <PackageReference Include="coverlet.collector" Version="3.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
