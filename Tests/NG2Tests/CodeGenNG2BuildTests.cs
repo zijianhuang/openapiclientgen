@@ -1,5 +1,6 @@
 using Xunit;
 using Xunit.Abstractions;
+using Fonlow.OpenApiClientGen.ClientTypes;
 
 namespace SwagTests
 {
@@ -8,7 +9,7 @@ namespace SwagTests
 	{
 		public CodeGenNG2BuildTests(ITestOutputHelper output)
 		{
-			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, CodeGenSettings.BuildToValidate);
+			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, true);// CodeGenSettings.BuildToValidate);
 		}
 
 		readonly NG2TestHelper helper;
@@ -41,13 +42,13 @@ namespace SwagTests
 		[Fact]
 		public void TestPetStoreExpanded()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock\\petStoreExpanded.yaml" , "NG2BuildResults\\PetStoreExpanded.ts");
+			helper.GenerateAndAssertAndBuild("SwagMock\\petStoreExpanded.yaml", "NG2BuildResults\\PetStoreExpanded.ts");
 		}
 
 		[Fact]
 		public void TestUspto()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock\\uspto.yaml" , "NG2BuildResults\\Uspto.ts");
+			helper.GenerateAndAssertAndBuild("SwagMock\\uspto.yaml", "NG2BuildResults\\Uspto.ts");
 		}
 
 		[Fact]
@@ -157,6 +158,35 @@ namespace SwagTests
 		{
 			helper.GenerateAndAssertAndBuild("SwagMock\\xero-payroll-uk.yaml", "NG2BuildResults\\xero-payroll-uk.ts");
 		}
+
+		//[Fact]
+		//public void TestMcp()
+		//{
+		//	helper.GenerateAndAssertAndBuild("SwagMock\\mcp.yaml", "NG2BuildResults\\mcp.ts", new Settings()
+		//	{
+		//		ClientNamespace = "MyNS",
+		//		ContainerClassName = "MyClient", //the TestBed requires this containerClassName
+		//		ContainerNameStrategy = ContainerNameStrategy.None,
+		//		ActionNameStrategy = ActionNameStrategy.Default,
+		//		DataAnnotationsToComments = true,
+		//		EnumToString = true,
+		//	});
+		//}
+
+		//[Fact]
+		//public void TestMcpAir()
+		//{
+		//	helper.GenerateAndAssertAndBuild("SwagMock\\AirOne.yaml", "NG2BuildResults\\air.ts", new Settings()
+		//	{
+		//		ClientNamespace = "MyNS",
+		//		ContainerClassName = "MyClient", //the TestBed requires this containerClassName
+		//		ContainerNameStrategy = ContainerNameStrategy.None,
+		//		ActionNameStrategy = ActionNameStrategy.Default,
+		//		DataAnnotationsToComments = true,
+		//		EnumToString = true,
+		//	});
+		//}
+
 
 	}
 

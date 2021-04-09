@@ -482,7 +482,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeMemberField clientField = new CodeMemberField()
 					{
 						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
+						InitExpression = settings.EnumToString ? new CodePrimitiveExpression("'" + memberName + "'") : new CodePrimitiveExpression(intValue),
 					};
 
 					typeDeclaration.Members.Add(clientField);

@@ -1,0 +1,1621 @@
+swagger: '2.0'
+info:
+  title: AIR Authorisation Access List API
+  x-ibm-name: air-authorisation-access-list-api
+  version: 1.0.0
+  description: 'This API supports the following business function: Provider Authorisation Access. This service will validate the provider number and authorise access to the eligible Web Services available to the provider as registered on the AIR. This will process the request and send a response message in real-time. It implements JSON over a REST interface.'
+host: test.healthclaiming.api.humanservices.gov.au
+schemes:
+  - https
+basePath: /claiming/ext-vnd/air/immunisation
+produces:
+  - application/json
+consumes:
+  - application/json
+security:
+  - clientID: []
+securityDefinitions:
+  clientID:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+x-ibm-configuration:
+  cors:
+    enabled: true
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  servers:
+    - url: 'https://test.healthclaiming.api.humanservices.gov.au/claiming/ext-vnd/air/immunisation'
+      description: ''
+      type:
+        - Production
+        - Development
+paths:
+  /v1/authorisation/access/list:
+    post:
+      responses:
+        '200':
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/AirAccessListResponseType'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AirAccessListResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AirAccessListRequestType'
+      operationId: air-authorisation-access-list@1-eigw-post
+      summary: Get authorisation access list
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/details:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/IndividualDetailsResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/IndividualDetailsResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/IdentifyIndividualRequestType'
+      operationId: air-immunisation-individual-details@1-eigw-post
+      summary: Identify Individual details request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/additional-vaccine-indicator/add:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/AdditionalVaccineIndicatorResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AdditionalVaccineIndicatorResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AdditionalVaccineIndicatorRequestType'
+      operationId: air-immunisation-additional-vaccine-indicator-add@1-eigw-post
+      summary: Add additional vaccine indicator request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/additional-vaccine-indicator/remove:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/AdditionalVaccineIndicatorResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AdditionalVaccineIndicatorResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AdditionalVaccineIndicatorRequestType'
+      operationId: air-immunisation-additional-vaccine-indicator-remove@1-eigw-post
+      summary: Remove additional vaccine indicator request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/immunisation-history/details:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/ImmunisationHistoryResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ImmunisationHistoryResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AirHistoryRequestType'
+      operationId: air-immunisation-history-details@1-eigw-post
+      summary: Get immunisation details request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/immunisation-history/statement:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/ImmunisationHistoryStatementResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ImmunisationHistoryStatementResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AirHistoryRequestType'
+      operationId: air-immunisation-history-statement@1-eigw-post
+      summary: Get Vaccine Trial History
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/indigenous-status/update:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/IndigenousStatusResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/IndigenousStatusResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/IndigenousStatusRequestType'
+      operationId: air-immunisation-indigenous-status-update@1-eigw-post
+      summary: Update Indigenous Status request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/medical-contraindication/history:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/MedicalContraindicationHistoryResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/MedicalContraindicationHistoryResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AirHistoryRequestType'
+      operationId: air-immunisation-med-contraindication-history@1-eigw-post
+      summary: Get Medical Contraindication History
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/medical-contraindication/record:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/AddMedicalContraindicationResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AddMedicalContraindicationResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AddMedicalContraindicationRequestType'
+      operationId: air-immunisation-med-contraindication-record@1-eigw-post
+      summary: Record Medical Contraindication request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/natural-immunity/history:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/NaturalImmunityHistoryResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/NaturalImmunityHistoryResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AirHistoryRequestType'
+      operationId: air-immunisation-natural-immunity-history@1-eigw-post
+      summary: Get Natural Immunity History
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/natural-immunity/record:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/AddNaturalImmunityResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AddNaturalImmunityResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AddNaturalImmunityRequestType'
+      operationId: air-immunisation-natural-immunity-record@1-eigw-post
+      summary: Record Natural Immunity request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/individual/vaccine-trial/history:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/VaccineTrialHistoryResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/VaccineTrialHistoryResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AirHistoryRequestType'
+      operationId: air-immunisation-vaccine-trial-history@1-eigw-post
+      summary: Get Vaccine Trial History
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1.1/schedule/catchup:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/CatchupDateResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/CatchupDateResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/CatchupDateRequestType'
+      operationId: air-immunisation-schedule-catchup@1.1.0-eigw-post
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1.1/encounters/record:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/AddEncounterResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/AddEncounterResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/AddEncounterRequestType'
+      operationId: air-immunisation-encounter-record@1.1.0-eigw-post
+      summary: Record Encounter request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+  /v1/encounter/update:
+    post:
+      responses:
+        "200":
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/UpdateEncounterResponseType'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/UpdateEncounterResponseType'
+      parameters:
+        - name: body
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/UpdateEncounterRequestType'
+      operationId: air-immunisation-encounter-update@1-eigw-post
+      summary: Update Encounter request
+    parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/dhs-auditId'
+      - $ref: '#/parameters/dhs-subjectId'
+      - $ref: '#/parameters/dhs-messageId'
+      - $ref: '#/parameters/dhs-auditIdType'
+      - $ref: '#/parameters/dhs-correlationId'
+      - $ref: '#/parameters/dhs-productId'
+      - $ref: '#/parameters/dhs-subjectIdType'
+definitions:
+  ProviderIdentifierType:
+    properties:
+      providerNumber:
+        type: string
+        minLength: 6
+        maxLength: 8
+        description: Vaccination provider number such as Medicare provider number or AIR provider number.
+        example: 2000001X
+      hpioNumber:
+        type: string
+        minLength: 16
+        maxLength: 16
+      hpiiNumber:
+        type: string
+        minLength: 16
+        maxLength: 16
+    required:
+      - providerNumber
+    additionalProperties: false
+  AccessType:
+    properties:
+      code:
+        type: string
+        example: RECENC
+      name:
+        type: string
+        minLength: 1
+        maxLength: 255
+        example: Record Encounter
+      hasAccess:
+        type: boolean
+    required:
+      - code
+      - hasAccess
+    additionalProperties: false
+  AirAccessListRequestType:
+    type: object
+    properties:
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - informationProvider
+  AirAccessListResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      accessList:
+        type: array
+        items:
+          $ref: '#/definitions/AccessType'
+        minItems: 0
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  ErrorMessageType:
+    properties:
+      code:
+        type: string
+        minLength: 10
+        maxLength: 10
+        description: Error code
+      field:
+        type: string
+        description: Error field name
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+        description: Error message details
+    required:
+      - code
+  MedicareCardType:
+    properties:
+      medicareCardNumber:
+        type: string
+        minLength: 10
+        maxLength: 10
+        description: Individual's Medicare card number
+      medicareIRN:
+        type: string
+        minLength: 1
+        maxLength: 1
+        description: Medicare Individual Reference Number
+    required:
+      - medicareCardNumber
+    additionalProperties: false
+  PersonalDetailsType:
+    properties:
+      dateOfBirth:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Individual's date of birth in format DDMMYYYY
+        example: '21102019'
+      firstName:
+        type: string
+        minLength: 1
+        maxLength: 40
+        description: Individual' First Name
+        example: John
+      lastName:
+        type: string
+        minLength: 1
+        maxLength: 40
+        description: Individual' Last Name
+        example: Smith
+      gender:
+        type: string
+        minLength: 1
+        maxLength: 1
+        example: M
+        description: Individual's gender
+    required:
+      - dateOfBirth
+      - lastName
+    additionalProperties: false
+  SearchAddressType:
+    properties:
+      postCode:
+        type: string
+        minLength: 4
+        maxLength: 4
+    required:
+      - postCode
+    additionalProperties: false
+  AddressType:
+    properties:
+      addressLineOne:
+        type: string
+        minLength: 1
+        maxLength: 40
+      addressLineTwo:
+        type: string
+        minLength: 0
+        maxLength: 40
+      locality:
+        type: string
+        minLength: 1
+        maxLength: 40
+      postCode:
+        type: string
+        minLength: 4
+        maxLength: 4
+    additionalProperties: false
+    required:
+      - postCode
+  IndividualType:
+    properties:
+      personalDetails:
+        $ref: '#/definitions/PersonalDetailsType'
+      medicareCard:
+        $ref: '#/definitions/MedicareCardType'
+      address:
+        $ref: '#/definitions/SearchAddressType'
+      ihiNumber:
+        type: string
+        minLength: 16
+        maxLength: 16
+    additionalProperties: false
+  ResponseIndividualType:
+    properties:
+      personalDetails:
+        $ref: '#/definitions/PersonalDetailsType'
+      medicareCard:
+        $ref: '#/definitions/MedicareCardType'
+      address:
+        $ref: '#/definitions/AddressType'
+    additionalProperties: false
+  IndividualDetailsType:
+    type: object
+    properties:
+      individualIdentifier:
+        type: string
+        minLength: 1
+        maxLength: 128
+      individual:
+        $ref: '#/definitions/ResponseIndividualType'
+      catchupDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Individual's catchup date in format DDMMYYYY
+        example: '21102020'
+      endDateCode:
+        type: string
+        example: ALL
+      indigenousStatus:
+        type: boolean
+      additionalVaccineIndicator:
+        type: boolean
+      medContraindicationIndicator:
+        type: boolean
+      naturalImmunityIndicator:
+        type: boolean
+      vaccineTrialIndicator:
+        type: boolean
+      actionRequiredIndicator:
+        type: boolean
+    additionalProperties: false
+  IdentifyIndividualRequestType:
+    type: object
+    properties:
+      individual:
+        $ref: '#/definitions/IndividualType'
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - informationProvider
+      - individual
+    additionalProperties: false
+  IndividualDetailsResponseType:
+    type: object
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      individualDetails:
+        $ref: '#/definitions/IndividualDetailsType'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  AdditionalVaccineIndicatorRequestType:
+    type: object
+    properties:
+      individualIdentifier:
+        type: string
+        minLength: 1
+        maxLength: 128
+      acknowledgement:
+        type: boolean
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - informationProvider
+      - individualIdentifier
+      - acknowledgement
+    additionalProperties: false
+  AdditionalVaccineIndicatorResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+    additionalProperties: false
+  DueVaccineType:
+    properties:
+      disease:
+        type: string
+        minLength: 1
+        maxLength: 6
+      vaccineDose:
+        type: string
+        minLength: 1
+        maxLength: 3
+      dueDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Due date in format DDMMYYYY
+        example: '01102020'
+  EncounterHistoryType:
+    properties:
+      claimId:
+        type: string
+        description: Claim id of the encounter
+      claimSeqNum:
+        type: integer
+        description: Claim sequence number of the encounter
+      immEncSeqNum:
+        type: integer
+        description: Immunisation encounter sequence number of the encounter
+      episodes:
+        type: array
+        items:
+          $ref: '#/definitions/EpisodeResponseType'
+      editable:
+        type: boolean
+      dateOfService:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Date submitted in format DDMMYYYY
+        example: '01102020'
+      dateSubmitted:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Date submitted in format DDMMYYYY
+        example: '01102020'
+      schoolId:
+        type: string
+        minLength: 0
+        maxLength: 9
+    required:
+      - claimId
+      - claimSeqNum
+      - immEncSeqNum
+    additionalProperties: false
+  EpisodeResponseType:
+    properties:
+      id:
+        type: integer
+      vaccineCode:
+        type: string
+        minLength: 1
+        maxLength: 6
+      vaccineDose:
+        type: string
+        minLength: 1
+        maxLength: 3
+      vaccineBatch:
+        type: string
+        minLength: 1
+        maxLength: 15
+      vaccineSerialNumber:
+        type: string
+        minLength: 1
+        maxLength: 108
+      actionRequiredIndicator:
+        type: boolean
+      editable:
+        type: boolean
+      information:
+        $ref: '#/definitions/InformationType'
+    required:
+      - id
+      - actionRequiredIndicator
+      - vaccineCode
+      - editable
+    additionalProperties: false
+  ImmunisationDetailsResponseType:
+    properties:
+      dueList:
+        type: array
+        items:
+          $ref: '#/definitions/DueVaccineType'
+      encounters:
+        type: array
+        items:
+          $ref: '#/definitions/EncounterHistoryType'
+  AirHistoryRequestType:
+    type: object
+    properties:
+      individualIdentifier:
+        type: string
+        minLength: 1
+        maxLength: 128
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - informationProvider
+      - individualIdentifier
+    additionalProperties: false
+  ImmunisationHistoryResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      immunisationDetails:
+        $ref: '#/definitions/ImmunisationDetailsResponseType'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  InformationType:
+    properties:
+      status:
+        type: string
+        minLength: 1
+        maxLength: 20
+      code:
+        type: string
+        minLength: 1
+        maxLength: 10
+      text:
+        type: string
+        minLength: 0
+        maxLength: 255
+      messageCode:
+        type: string
+        minLength: 4
+        maxLength: 4
+      messageText:
+        type: string
+        minLength: 0
+        maxLength: 255
+    required:
+      - status
+  ImmunisationHistoryStatementType:
+    type: object
+    properties:
+      mimeType:
+        type: string
+        enum:
+          - application/pdf
+        example: application/pdf
+      fileName:
+        type: string
+        description: File name of the PDF immunisation history statement
+        example: ihs.pdf
+      fileContent:
+        type: string
+        format: byte
+        description: Base64-encoded content of PDF immunisation history statement
+    required:
+      - mimeType
+      - fileName
+      - fileContent
+    additionalProperties: false
+  ImmunisationHistoryStatementResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      immunisationHistoryStatement:
+        $ref: '#/definitions/ImmunisationHistoryStatementType'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  IndigenousStatusRequestType:
+    type: object
+    properties:
+      individualIdentifier:
+        type: string
+        minLength: 1
+        maxLength: 128
+      indigenousStatus:
+        type: boolean
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - informationProvider
+      - individualIdentifier
+      - indigenousStatus
+    additionalProperties: false
+  IndigenousStatusResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+    additionalProperties: false
+  MedicalContraindiationResponseType:
+    properties:
+      vaccineCode:
+        type: string
+        minLength: 1
+        maxLength: 6
+      typeCode:
+        type: string
+        enum:
+          - P
+          - T
+      startDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Start date in format DDMMYYYY
+        example: '01102020'
+      endDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: End date in format DDMMYYYY
+        example: '31122020'
+      reason:
+        type: string
+        enum:
+          - M
+          - S
+          - P
+          - I
+          - A
+      anaphylaxisDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: AnaphylaxisDate date in format DDMMYYYY
+        example: '21102020'
+    required:
+      - vaccineCode
+      - typeCode
+      - startDate
+      - reason
+    additionalProperties: false
+  MedicalContraindicationHistoryResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      medContraindicationList:
+        type: array
+        items:
+          $ref: '#/definitions/MedicalContraindiationResponseType'
+        minItems: 0
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  MedicalContraindiationRequestType:
+    properties:
+      vaccineCode:
+        type: string
+        minLength: 1
+        maxLength: 6
+      typeCode:
+        type: string
+        enum:
+          - P
+          - T
+      endDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: End date in format DDMMYYYY
+        example: '31122020'
+      reason:
+        type: string
+        enum:
+          - M
+          - S
+          - P
+          - I
+          - A
+      anaphylaxisDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Previous anaphylaxis date in format DDMMYYYY
+        example: '21102020'
+    required:
+      - vaccineCode
+      - typeCode
+      - reason
+    additionalProperties: false
+  AddMedicalContraindicationRequestType:
+    type: object
+    properties:
+      individualIdentifier:
+        type: string
+        minLength: 1
+        maxLength: 128
+      contraindication:
+        $ref: '#/definitions/MedicalContraindiationRequestType'
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - informationProvider
+      - individualIdentifier
+      - contraindication
+    additionalProperties: false
+  AddMedicalContraindicationResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  NaturalImmunityResponseType:
+    properties:
+      disease:
+        type: string
+        minLength: 1
+        maxLength: 6
+      notificationDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Notification date in format DDMMYYYY
+        example: '10102020'
+      labTestDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Lab test date in format DDMMYYYY
+        example: '01102020'
+      diagnosisDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Diagnosis date in format DDMMYYYY
+        example: '01102020'
+    required:
+      - disease
+      - notificationDate
+    additionalProperties: false
+  NaturalImmunityHistoryResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      naturalImmunityList:
+        type: array
+        items:
+          $ref: '#/definitions/NaturalImmunityResponseType'
+        minItems: 0
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  NaturalImmunityRequestType:
+    properties:
+      disease:
+        type: string
+        minLength: 1
+        maxLength: 6
+      labTestDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Lab test date in format DDMMYYYY - it is required if diagnosisDate is not provided
+        example: '01102020'
+      diagnosisDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Diagnosis date in format DDMMYYYY - it is required if labTestDate is not provided
+        example: '01102020'
+    required:
+      - disease
+    additionalProperties: false
+  AddNaturalImmunityRequestType:
+    type: object
+    properties:
+      individualIdentifier:
+        type: string
+        minLength: 1
+        maxLength: 128
+      immunity:
+        $ref: '#/definitions/NaturalImmunityRequestType'
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - informationProvider
+      - individualIdentifier
+      - immunity
+    additionalProperties: false
+  AddNaturalImmunityResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+    additionalProperties: false
+  VaccineTrialType:
+    properties:
+      antigenCode:
+        type: string
+        minLength: 1
+        maxLength: 6
+      dose:
+        type: string
+        minLength: 1
+        maxLength: 3
+      startDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Start date in format DDMMYYYY
+        example: '01102020'
+      endDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: End date in format DDMMYYYY
+        example: '31102020'
+    additionalProperties: false
+  VaccineTrialHistoryResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      vaccineTrialList:
+        type: array
+        items:
+          $ref: '#/definitions/VaccineTrialType'
+        minItems: 0
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  IndividualIdentifierType:
+    properties:
+      personalDetails:
+        $ref: '#/definitions/PersonalDetailsType'
+      medicareCard:
+        $ref: '#/definitions/MedicareCardType'
+      address:
+        $ref: '#/definitions/AddressType'
+      ihiNumber:
+        type: string
+        minLength: 16
+        maxLength: 16
+      atsiIndicator:
+        type: string
+        enum:
+          - 'Y'
+          - 'N'
+      acceptAndConfirm:
+        type: string
+        minLength: 1
+        maxLength: 1
+    additionalProperties: false
+  CatchupDateRequestType:
+    properties:
+      individual:
+        $ref: '#/definitions/IndividualIdentifierType'
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - individual
+      - informationProvider
+    additionalProperties: false
+  CatchupDateResponseType:
+    properties:
+      statusCode:
+        type: string
+        example: '1000'
+        minLength: 4
+        maxLength: 4
+      codeType:
+        type: string
+        example: SUCCESS
+        minLength: 1
+        maxLength: 20
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+        example: Catch-up date was successfully generated.
+      catchupDate:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Immunisation schedule catchup date in format ddMMyyyy
+        example: 07122019
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+    required:
+      - statusCode
+  EpisodeType:
+    properties:
+      id:
+        type: integer
+      vaccineCode:
+        type: string
+        minLength: 1
+        maxLength: 6
+      vaccineDose:
+        type: string
+        minLength: 1
+        maxLength: 3
+      vaccineBatch:
+        type: string
+        minLength: 0
+        maxLength: 15
+      vaccineSerialNumber:
+        type: string
+        minLength: 1
+        maxLength: 108
+    required:
+      - id
+      - vaccineCode
+      - vaccineCode
+    additionalProperties: false
+  EncounterType:
+    properties:
+      id:
+        type: integer
+      claimSequenceNumber:
+        type: string
+        minLength: 1
+        maxLength: 4
+      episodes:
+        type: array
+        items:
+          $ref: '#/definitions/EpisodeType'
+        minItems: 1
+        maxItems: 5
+      immunisationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+      schoolId:
+        type: string
+        minLength: 0
+        maxLength: 9
+      administeredOverseas:
+        type: boolean
+      acceptAndConfirm:
+        type: string
+        minLength: 1
+        maxLength: 1
+      dateOfService:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: The date on which the Individual received the immunisation in format ddMMyyy
+        example: 01022019
+    required:
+      - id
+      - episodes
+      - dateOfService
+    additionalProperties: false
+  EncounterResponseType:
+    properties:
+      id:
+        type: integer
+      claimSequenceNumber:
+        type: string
+        minLength: 1
+        maxLength: 4
+      episodes:
+        type: array
+        items:
+          $ref: '#/definitions/EpisodeResponseType'
+      information:
+        $ref: '#/definitions/InformationType'
+      claimId:
+        type: string
+        minLength: 5
+        maxLength: 8
+        description: Claim id of the encounter
+      claimSeqNum:
+        type: integer
+        description: Claim sequence number of the encounter
+      immEncSeqNum:
+        type: integer
+        description: Immunisation encounter sequence number of the encounter
+      schoolId:
+        type: string
+        minLength: 0
+        maxLength: 9
+      dateOfService:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Date of service in format DDMMYYYY
+        example: '21102020'
+    required:
+      - id
+      - claimSequenceNumber
+      - immEncSeqNum
+      - episodes
+      - dateOfService
+  ClaimDetailsResponseType:
+    properties:
+      claimId:
+        type: string
+        minLength: 8
+        maxLength: 8
+      encounters:
+        type: array
+        items:
+          $ref: '#/definitions/EncounterResponseType'
+  AddEncounterRequestType:
+    type: object
+    properties:
+      individual:
+        $ref: '#/definitions/IndividualIdentifierType'
+      encounters:
+        type: array
+        items:
+          $ref: '#/definitions/EncounterType'
+        minItems: 1
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+      claimId:
+        type: string
+        minLength: 8
+        maxLength: 8
+    required:
+      - informationProvider
+      - individual
+      - encounters
+    additionalProperties: false
+  AddEncounterResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 4
+        maxLength: 4
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      claimDetails:
+        $ref: '#/definitions/ClaimDetailsResponseType'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+  EncounterRequestType:
+    properties:
+      claimId:
+        type: string
+        minLength: 5
+        maxLength: 8
+        description: Claim id of the encounter
+      claimSeqNum:
+        type: integer
+        description: Claim sequence number of the encounter
+      immEncSeqNum:
+        type: integer
+        description: Immunisation encounter sequence number of the encounter
+      episodes:
+        type: array
+        items:
+          $ref: '#/definitions/EpisodeType'
+        minItems: 1
+        maxItems: 5
+      schoolId:
+        type: string
+        minLength: 0
+        maxLength: 9
+      dateOfService:
+        type: string
+        minLength: 8
+        maxLength: 8
+        description: Date of service in format DDMMYYYY
+        example: '21102020'
+    required:
+      - claimId
+      - claimSeqNum
+      - immEncSeqNum
+      - episodes
+      - dateOfService
+    additionalProperties: false
+  UpdateEncounterRequestType:
+    type: object
+    properties:
+      individualIdentifier:
+        type: string
+        minLength: 1
+        maxLength: 128
+      encounter:
+        $ref: '#/definitions/EncounterRequestType'
+      informationProvider:
+        $ref: '#/definitions/ProviderIdentifierType'
+    required:
+      - individualIdentifier
+      - encounter
+      - informationProvider
+    additionalProperties: false
+  UpdateEncounterResponseType:
+    properties:
+      statusCode:
+        type: string
+        minLength: 10
+        maxLength: 10
+      codeType:
+        type: string
+      message:
+        type: string
+        minLength: 0
+        maxLength: 255
+      encounter:
+        $ref: '#/definitions/EncounterResponseType'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorMessageType'
+        minItems: 0
+        maxItems: 5
+    required:
+      - statusCode
+tags: []
+parameters:
+  Authorization:
+    name: Authorization
+    type: string
+    required: true
+    in: header
+    description: JWT header for authorization
+    default: Bearer REPLACE_THIS_TOKEN
+  dhs-auditId:
+    name: dhs-auditId
+    type: string
+    required: true
+    in: header
+    description: DHS Audit ID
+    default: LOC00001
+  dhs-subjectId:
+    name: dhs-subjectId
+    type: string
+    required: true
+    in: header
+    description: DHS Subject ID - Individual Date of birth in DDMMYYYY
+    default: '01012020'
+  dhs-messageId:
+    name: dhs-messageId
+    type: string
+    required: true
+    in: header
+    description: DHS Message ID
+    default: 'urn:uuid:a83f0c71-84a1-42c5-a442-51ea754f088e'
+  dhs-auditIdType:
+    name: dhs-auditIdType
+    type: string
+    required: true
+    in: header
+    description: DHS Audit Type
+    default: Minor Id
+  dhs-correlationId:
+    name: dhs-correlationId
+    type: string
+    required: true
+    in: header
+    description: DHS Correlation ID
+    default: 'uuid:094077ed-1449-4ac2-b531-60fb043ace0c'
+  dhs-productId:
+    name: dhs-productId
+    type: string
+    required: true
+    in: header
+    description: DHS Product ID
+    default: DHS Product v1.0
+  dhs-subjectIdType:
+    name: dhs-subjectIdType
+    type: string
+    required: true
+    in: header
+    description: DHS Subject ID Type
+    default: Date Of Birth

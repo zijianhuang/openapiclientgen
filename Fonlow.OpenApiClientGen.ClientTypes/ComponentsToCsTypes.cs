@@ -216,6 +216,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (settings.DecorateDataModelWithDataContract)
 				{
 					typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Namespace", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+					if (settings.EnumToString)
+					{
+						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(Newtonsoft.Json.Converters.StringEnumConverter)"))));
+					}
 				}
 
 				if (settings.DecorateDataModelWithSerializable)
@@ -247,7 +251,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
-						if (hasFunkyMemberName)
+						if (hasFunkyMemberName || settings.EnumToString)
 						{
 							clientField.CustomAttributes.Add(new CodeAttributeDeclaration($"System.Runtime.Serialization.EnumMemberAttribute", new CodeAttributeArgument("Value", new CodeSnippetExpression($"\"{stringMember.Value}\""))));
 						}
@@ -631,6 +635,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (settings.DecorateDataModelWithDataContract) // C# specific
 				{
 					r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Namespace", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+
+					if (settings.EnumToString)
+					{
+						r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(Newtonsoft.Json.Converters.StringEnumConverter)"))));
+					}
 				}
 
 				if (settings.DecorateDataModelWithSerializable)

@@ -88,9 +88,14 @@
 		public string ClientLibraryFileName { get; set; } = "OpenApiClientAuto.cs";
 
 		/// <summary>
-		/// Generated data types will be decorated with DataContractAttribute and DataMemberAttribute.
+		/// Generated data types will be decorated with DataContractAttribute and DataMemberAttribute in C#.
 		/// </summary>
 		public bool DecorateDataModelWithDataContract { get; set; }
+
+		/// <summary>
+		/// Deserialize enum to strng. For C#, effective if DecorateDataModelWithDataContract is true, and the enum type is decorated by [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]. For TypeScript, the output is string enums.
+		/// </summary>
+		public bool EnumToString { get; set; }
 
 		/// <summary>
 		/// When DecorateDataModelWithDataContract is true, this is the namespace of DataContractAttribute. For example, "http://mybusiness.com/09/2019

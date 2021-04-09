@@ -9,30 +9,57 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NG2BuildResults\air.ts" />
+    <None Remove="NG2BuildResults\mcp.ts" />
+    <None Remove="NG2BuildResults\Pet.ts" />
     <None Remove="NG2BuildResults\Pet.txt" />
+    <None Remove="NG2BuildResults\PetDelete.ts" />
     <None Remove="NG2BuildResults\PetDelete.txt" />
+    <None Remove="NG2BuildResults\PetStore.ts" />
     <None Remove="NG2BuildResults\PetStore.txt" />
+    <None Remove="NG2BuildResults\PetStoreExpanded.ts" />
     <None Remove="NG2BuildResults\PetStoreExpanded.txt" />
+    <None Remove="NG2BuildResults\redocOpenApi200501.ts" />
     <None Remove="NG2BuildResults\redocOpenApi200501.txt" />
+    <None Remove="NG2BuildResults\sell_account.ts" />
     <None Remove="NG2BuildResults\sell_account.txt" />
+    <None Remove="NG2BuildResults\sell_analytics.ts" />
     <None Remove="NG2BuildResults\sell_analytics.txt" />
+    <None Remove="NG2BuildResults\sell_compliance.ts" />
     <None Remove="NG2BuildResults\sell_compliance.txt" />
+    <None Remove="NG2BuildResults\sell_finances.ts" />
     <None Remove="NG2BuildResults\sell_finances.txt" />
+    <None Remove="NG2BuildResults\sell_inventory.ts" />
     <None Remove="NG2BuildResults\sell_inventory.txt" />
+    <None Remove="NG2BuildResults\sell_listing.ts" />
     <None Remove="NG2BuildResults\sell_listing.txt" />
+    <None Remove="NG2BuildResults\sell_logistics.ts" />
     <None Remove="NG2BuildResults\sell_logistics.txt" />
+    <None Remove="NG2BuildResults\sell_marketing.ts" />
     <None Remove="NG2BuildResults\sell_marketing.txt" />
+    <None Remove="NG2BuildResults\sell_metadata.ts" />
     <None Remove="NG2BuildResults\sell_metadata.txt" />
+    <None Remove="NG2BuildResults\sell_negotiation.ts" />
     <None Remove="NG2BuildResults\sell_negotiation.txt" />
+    <None Remove="NG2BuildResults\sell_recommendation.ts" />
     <None Remove="NG2BuildResults\sell_recommendation.txt" />
+    <None Remove="NG2BuildResults\Uspto.ts" />
     <None Remove="NG2BuildResults\Uspto.txt" />
+    <None Remove="NG2BuildResults\ValuesPaths.ts" />
     <None Remove="NG2BuildResults\ValuesPaths.txt" />
+    <None Remove="NG2BuildResults\xero-identity.ts" />
     <None Remove="NG2BuildResults\xero-identity.txt" />
+    <None Remove="NG2BuildResults\xero-payroll-au.ts" />
     <None Remove="NG2BuildResults\xero-payroll-au.txt" />
+    <None Remove="NG2BuildResults\xero-payroll-uk.ts" />
     <None Remove="NG2BuildResults\xero-payroll-uk.txt" />
+    <None Remove="NG2BuildResults\xero_accounting.ts" />
     <None Remove="NG2BuildResults\xero_accounting.txt" />
+    <None Remove="NG2BuildResults\xero_assets.ts" />
     <None Remove="NG2BuildResults\xero_assets.txt" />
+    <None Remove="NG2BuildResults\xero_bankfeeds.ts" />
     <None Remove="NG2BuildResults\xero_bankfeeds.txt" />
+    <None Remove="SwagMock\AirOne.yaml" />
     <None Remove="SwagMock\buy_browse_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_feed_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_marketing_v1_beta_oas3.yaml" />
@@ -95,6 +122,87 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="NG2BuildResults\air.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\mcp.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\Pet.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\PetDelete.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\PetStore.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\PetStoreExpanded.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\redocOpenApi200501.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_account.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_analytics.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_compliance.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_finances.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_inventory.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_listing.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_logistics.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_marketing.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_metadata.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_negotiation.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\sell_recommendation.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\Uspto.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\ValuesPaths.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\xero-identity.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\xero-payroll-au.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\xero-payroll-uk.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\xero_accounting.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\xero_assets.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2BuildResults\xero_bankfeeds.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\AirOne.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SwagMock\buy_browse_v1_beta_oas3.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -275,13 +383,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="3.0.2">
+    <PackageReference Include="coverlet.collector" Version="3.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -290,10 +398,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
     <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NG2BuildResults\" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

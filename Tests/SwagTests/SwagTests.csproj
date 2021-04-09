@@ -97,6 +97,7 @@
     <None Remove="AxiosResults\sell_recommendation.txt" />
     <None Remove="AxiosResults\Uspto.txt" />
     <None Remove="AxiosResults\ValuesPaths.txt" />
+    <None Remove="NG2Results\air.ts" />
     <None Remove="NG2Results\mcp.txt" />
     <None Remove="NG2Results\Pet.txt" />
     <None Remove="NG2Results\PetDelete.txt" />
@@ -206,6 +207,7 @@
     <None Remove="Results\xero_accounting.txt" />
     <None Remove="Results\xero_assets.txt" />
     <None Remove="Results\xero_bankfeeds.txt" />
+    <None Remove="SwagMock\AirOne.yaml" />
     <None Remove="SwagMock\buy_browse_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_feed_v1_beta_oas3.json" />
     <None Remove="SwagMock\buy_marketing_v1_beta_oas3.yaml" />
@@ -567,6 +569,9 @@
     <Content Include="AxiosResults\ValuesPaths.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="NG2Results\air.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="NG2Results\mcp.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -894,6 +899,9 @@
     <Content Include="Results\xero_bankfeeds.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="SwagMock\AirOne.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SwagMock\buy_browse_v1_beta_oas3.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1179,13 +1187,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="3.0.2">
+    <PackageReference Include="coverlet.collector" Version="3.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
