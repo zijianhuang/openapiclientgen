@@ -1,6 +1,5 @@
 using Xunit;
 using Xunit.Abstractions;
-using Fonlow.OpenApiClientGen.ClientTypes;
 
 namespace SwagTests
 {
@@ -9,7 +8,7 @@ namespace SwagTests
 	{
 		public CodeGenNG2BuildTests(ITestOutputHelper output)
 		{
-			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, true);// CodeGenSettings.BuildToValidate);
+			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, CodeGenSettings.BuildToValidate);
 		}
 
 		readonly NG2TestHelper helper;

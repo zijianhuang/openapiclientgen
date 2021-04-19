@@ -101,21 +101,6 @@ namespace SwagTests
 		}
 
 		[Fact]
-		public void TestMcpAir()
-		{
-			helper.GenerateAndAssert("SwagMock\\AirOne.yaml", "NG2Results\\air.ts", new Settings()
-			{
-				ClientNamespace = "MyNS",
-				ContainerClassName = "AirClient",
-				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
-				//RegexForNormalizedOperationId = @"\w*",
-				ContainerNameStrategy = ContainerNameStrategy.None,
-				PathPrefixToRemove = "/air",
-				EnumToString=true,
-			});
-		}
-
-		[Fact]
 		public void TestMcp()
 		{
 			helper.GenerateAndAssert("SwagMock\\mcp.yaml", "NG2Results\\mcp.txt", new Settings()
