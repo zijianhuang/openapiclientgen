@@ -474,7 +474,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string existingTypeName = existingDeclaration.Name;
 						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
-						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + defaultValue);
+						if (isRequired)
+						{
+							clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + defaultValue);
+						}
+						else
+						{
+							clientProperty = CreateNullableProperty(enumReference, propertyName);
+						}
 					}
 					else
 					{
@@ -648,7 +655,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			return CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
+			var isRequired = propertySchema.Required.Contains(propertyName);
+
+			if (isRequired)
+			{
+				return CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
+			}
+			else
+			{
+				return CreateNullableProperty(r.Item1, propertyName);
+			}
 		}
 
 		static string GetDefaultValue(OpenApiSchema s)

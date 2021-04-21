@@ -222,7 +222,7 @@ namespace MyNS
 		/// <summary>
 		/// Pet status in the store
 		/// </summary>
-		public PetStatus Status { get; set; }//;
+		public System.Nullable<PetStatus> Status { get; set; }//;
 	}
 	
 	public enum PetStatus
@@ -363,7 +363,7 @@ namespace MyNS
 		/// <summary>
 		/// Order Status
 		/// </summary>
-		public OrderStatus Status { get; set; }//;
+		public System.Nullable<OrderStatus> Status { get; set; }//;
 		
 		/// <summary>
 		/// Indicates whenever order was completed or not
