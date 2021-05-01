@@ -31,6 +31,12 @@ namespace GenerateCases
 		public void Test_{funcNameSuffix}()
 		{{
 			helper.GenerateFromOpenApiAndBuild(@""..\..\..\..\openapi-directory\APIs\{d}"");
+		}}
+
+		[Fact]
+		public void Test_{funcNameSuffix}_SystemTextJson()
+		{{
+			helper.GenerateFromOpenApiAndBuild(@""..\..\..\..\openapi-directory\APIs\{d}"", new Settings(){{UseSystemTextJson = true}});
 		}}";
 			}));
 		}
