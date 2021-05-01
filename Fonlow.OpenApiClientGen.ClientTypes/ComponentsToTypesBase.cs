@@ -240,17 +240,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (!TypeRefHelper.IsSwaggerPrimitive(arrayTypeNameAlias))
 					{
-						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1), String.Empty);
+						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeNameAlias, 1, settings), String.Empty);
 					}
 					else
 					{
 						var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayTypeNameAlias, null);
-						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1), String.Empty);
+						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(clrType.FullName, 1, settings), String.Empty);
 					}
 				}
 				else
 				{
-					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1), String.Empty);
+					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(arrayTypeWithNs, 1, settings), String.Empty);
 				}
 			}
 			else

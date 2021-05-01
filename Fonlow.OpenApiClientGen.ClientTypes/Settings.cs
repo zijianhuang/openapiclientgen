@@ -93,7 +93,9 @@
 		public bool DecorateDataModelWithDataContract { get; set; }
 
 		/// <summary>
-		/// Serialize enum to strng. For C#, effective if DecorateDataModelWithDataContract is true, and the enum type is decorated by [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]. For TypeScript, the output is string enums.
+		/// Serialize enum to string. For C#, effective if DecorateDataModelWithDataContract is true, and the enum type is decorated by
+		/// [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] or [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))].
+		/// For TypeScript, the output is string enums.
 		/// </summary>
 		public bool EnumToString { get; set; }
 
@@ -102,6 +104,9 @@
 		/// </summary>
 		public string DataContractNamespace { get; set; }
 
+		/// <summary>
+		/// Decorate the Data Model with the System.SerializableAttribute attribute
+		/// </summary>
 		public bool DecorateDataModelWithSerializable { get; set; }
 
 		/// <summary>
@@ -137,6 +142,41 @@
 		/// Function parameters contain a callback to handle HTTP request headers
 		/// </summary>
 		public bool HandleHttpRequestHeaders { get; set; }
+
+		/// <summary>
+		/// Use System.Text.Json instead of Newtonsoft.Json
+		/// </summary>
+		public bool UseSystemTextJson { get; set; }
+
+		/// <summary>
+		/// Generated data types will be decorated with JsonProperty with the PropertyName in C#.
+		/// </summary>
+		public bool DecorateDataModelWithPropertyName { get; set; }
+
+		/// <summary>
+		/// Disable property nullable by default. Set by the OpenApi v3 option nullable 
+		/// </summary>
+		public bool DisableSystemNullableByDefault { get; set; }
+
+		/// <summary>
+		/// Use T? instead of System.Nullable<T>. C# 8.0 feature
+		/// </summary>
+		public bool UseCSharpNullable { get; set; }
+
+		/// <summary>
+		/// Create the Model classes only
+		/// </summary>
+		public bool GenerateModelsOnly { get; set; }
+
+		/// <summary>
+		/// Create arrays as List<T>
+		/// </summary>
+		public bool ArrayAsList { get; set; }
+
+		/// <summary>
+		/// Create arrays as ICollection<T>
+		/// </summary>
+		public bool ArrayAsICollection { get; set; }
 
 		/// <summary>
 		/// Create destination folder if not exists. Applied to both CS and TS.
