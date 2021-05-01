@@ -265,7 +265,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value);
+					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value, settings);
 					bool hasFunkyMemberName = memberName != stringMember.Value;
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()

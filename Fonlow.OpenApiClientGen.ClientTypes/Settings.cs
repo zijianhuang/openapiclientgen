@@ -178,6 +178,11 @@
 		/// </summary>
 		public bool ArrayAsICollection { get; set; }
 
+        /// <summary>
+        /// TitleCase Enum value names
+        /// </summary>
+        public bool TitleCaseEnumValueNames { get; set; }
+
 		/// <summary>
 		/// Create destination folder if not exists. Applied to both CS and TS.
 		/// </summary>
