@@ -4,6 +4,7 @@ using Fonlow.Reflection;
 using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
+using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Linq;
 
@@ -41,7 +42,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod,
 			OpenApiOperation apiOperation, ComponentsToCsTypes coms2CsTypes, bool forAsync, bool useEnsureSuccessStatusCodeEx)
 		{
-			if (!(new OperationType[] { OperationType.Get, OperationType.Post, OperationType.Put, OperationType.Delete, OperationType.Patch }).Any(d=>d==httpMethod))
+			if (!(new OperationType[] { OperationType.Get, OperationType.Post, OperationType.Put, OperationType.Delete, OperationType.Patch }).Any(d => d == httpMethod))
 			{
 				Trace.TraceWarning("This HTTP method {0} is not yet supported", httpMethod);
 				return null;
@@ -222,14 +223,14 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeSnippetExpression(uriText)));
 
 			method.Statements.Add(new CodeSnippetStatement(
-			$@"			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
+				"\t\t\t" + $@"using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
 			{{"
 			));
 
 			if (settings.HandleHttpRequestHeaders)
 			{
 				method.Statements.Add(new CodeSnippetStatement(
-				$@"			if (handleHeaders != null)
+					"\t\t\t" + $@"if (handleHeaders != null)
 			{{
 				handleHeaders(httpRequestMessage.Headers);
 			}}
@@ -302,30 +303,39 @@ namespace Fonlow.OpenApiClientGen.CS
 			AddRequestUriWithQueryAssignmentStatement();
 
 			method.Statements.Add(new CodeSnippetStatement(
-				$@"			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
+				"\t\t\t" + $@"using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
 			{{"
 				));
 
 			if (requestBodyCodeTypeReference != null)
 			{
-				method.Statements.Add(new CodeSnippetStatement(
-@"			using (var requestWriter = new System.IO.StringWriter())
+
+				if (settings.UseSystemTextJson)
+				{
+					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);"));
+					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var content = new StringContent(contentJson, System.Text.Encoding.UTF8, ""application/json"");"));
+				}
+				else
+				{
+					method.Statements.Add(new CodeSnippetStatement(
+						"\t\t\t" + @"using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);"
-));
-				method.Statements.Add(new CodeMethodInvokeExpression(new CodeSnippetExpression("requestSerializer"), "Serialize",
-					new CodeSnippetExpression("requestWriter"),
-					new CodeSnippetExpression("requestBody")));
-
-
-				method.Statements.Add(new CodeSnippetStatement(
-@"			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, ""application/json"");"
 					));
+					method.Statements.Add(new CodeMethodInvokeExpression(new CodeSnippetExpression("requestSerializer"), "Serialize",
+						new CodeSnippetExpression("requestWriter"),
+						new CodeSnippetExpression("requestBody")));
 
-				method.Statements.Add(new CodeSnippetStatement(@"			httpRequestMessage.Content = content;"));
+
+					method.Statements.Add(new CodeSnippetStatement(
+						"\t\t\t" + @"var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, ""application/json"");"
+					));
+				}
+
+				method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"httpRequestMessage.Content = content;"));
 				if (settings.HandleHttpRequestHeaders)
 				{
-					method.Statements.Add(new CodeSnippetStatement(@"			if (handleHeaders != null)
+					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"if (handleHeaders != null)
 			{
 				handleHeaders(httpRequestMessage.Headers);
 			}
@@ -357,7 +367,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			try1.FinallyStatements.Add(new CodeMethodInvokeExpression(resultReference, "Dispose"));
 
-			if (requestBodyCodeTypeReference != null)
+			if (requestBodyCodeTypeReference != null && !settings.UseSystemTextJson)
 				method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
 
 			method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
@@ -367,48 +377,95 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		void AddReturnStatement(CodeStatementCollection statementCollection)
 		{
-			statementCollection.Add(new CodeSnippetStatement(forAsync ?
-				"\t\t\t\tvar stream = await responseMessage.Content.ReadAsStreamAsync();"
-				: "\t\t\t\tvar stream = responseMessage.Content.ReadAsStreamAsync().Result;"));
+			if (settings.UseSystemTextJson)
+			{
+				statementCollection.Add(new CodeSnippetStatement(forAsync
+					? "\t\t\t\tvar contentString = await responseMessage.Content.ReadAsStringAsync();"
+					: "\t\t\t\tvar contentString = responseMessage.Content.ReadAsStringAsync().Result;"));
+			}
+			else
+			{
+				statementCollection.Add(new CodeSnippetStatement(forAsync
+					? "\t\t\t\tvar stream = await responseMessage.Content.ReadAsStreamAsync();"
+					: "\t\t\t\tvar stream = responseMessage.Content.ReadAsStreamAsync().Result;"));
+			}
+
+
+
 			//  statementCollection.Add(new CodeSnippetStatement("            using (System.IO.StreamReader reader = new System.IO.StreamReader(stream))"));
 
-			if (returnTypeReference != null && returnTypeReference.BaseType == "System.String" && returnTypeReference.ArrayElementType == null)
+			if (returnTypeReference != null && returnTypeReference.BaseType == "System.String" &&
+				returnTypeReference.ArrayElementType == null)
 			{
 				if (this.stringAsString)
 				{
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (System.IO.StreamReader streamReader = new System.IO.StreamReader(stream))"));
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
 					statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("streamReader.ReadToEnd();")));
+					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+				}
+				else
+				{
+					if (settings.UseSystemTextJson)
+					{
+						statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+							new CodeMethodReferenceExpression(
+								new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", new CodeTypeReference(typeof(System.String))),
+							new CodeSnippetExpression("contentString"),
+							new CodeSnippetExpression("jsonSerializerSettings"))));
+					}
+					else
+					{
+						statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
+						statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
+						statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("jsonReader.ReadAsString()")));
+						statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+					}
+				}
+			}
+			else if (IsPrimitive(returnTypeReference.BaseType))
+			{
+				if (settings.UseSystemTextJson)
+				{
+					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+						new CodeMethodReferenceExpression(
+							new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", returnTypeReference),
+						new CodeSnippetExpression("contentString"),
+						new CodeSnippetExpression("jsonSerializerSettings"))));
 				}
 				else
 				{
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
-					statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("jsonReader.ReadAsString()")));
-				}
-			}
-			else if (IsPrimitive(returnTypeReference.BaseType))
-			{
-				statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
-				statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
-				statementCollection.Add(new CodeVariableDeclarationStatement(
-					new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("new JsonSerializer()")));
-				statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-					new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
+					statementCollection.Add(new CodeVariableDeclarationStatement(new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("new JsonSerializer()")));
+					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+						new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
 						new CodeSnippetExpression("jsonReader"))));
+					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+				}
 			}
 			else // then is complex.
 			{
-				statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
-				statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
-				statementCollection.Add(new CodeVariableDeclarationStatement(
-					new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("new JsonSerializer()")));
-				statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-					new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
+				if (settings.UseSystemTextJson)
+				{
+					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+						new CodeMethodReferenceExpression(
+							new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", returnTypeReference),
+						new CodeSnippetExpression("contentString"), new CodeSnippetExpression("jsonSerializerSettings"))));
+				}
+				else
+				{
+					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
+					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
+					statementCollection.Add(new CodeVariableDeclarationStatement(new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("new JsonSerializer()")));
+					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+						new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
 						new CodeSnippetExpression("jsonReader"))));
+					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+				}
 			}
 
-			statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+
 		}
 
 		static bool IsPrimitive(string typeName)

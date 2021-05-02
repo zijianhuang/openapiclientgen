@@ -1,10 +1,13 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
+
 using Microsoft.CodeAnalysis;
 using Microsoft.OpenApi.Models;
+
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -124,6 +127,9 @@ namespace Fonlow.OpenApiClientGen.CS
 			ComponentsToCsTypes componentsToCsTypes = new ComponentsToCsTypes(settings, codeCompileUnit, clientNamespace);
 			componentsToCsTypes.CreateCodeDom(components);
 
+			if (settings.GenerateModelsOnly)
+				return;
+
 			if (paths == null)
 				return;
 
@@ -133,8 +139,17 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeNamespaceImport("System.Collections.Generic"),
 				new CodeNamespaceImport("System.Threading.Tasks"),
 				new CodeNamespaceImport("System.Net.Http"),
-				new CodeNamespaceImport("Newtonsoft.Json"),
-				});
+			});
+
+			if (settings.UseSystemTextJson)
+			{
+				clientNamespace.Imports.Add(new CodeNamespaceImport("System.Text.Json"));
+				clientNamespace.Imports.Add(new CodeNamespaceImport("System.Text.Json.Serialization"));
+			}
+			else
+			{
+				clientNamespace.Imports.Add(new CodeNamespaceImport("Newtonsoft.Json"));
+			}
 
 			if (settings.UseEnsureSuccessStatusCodeEx)
 			{
@@ -254,7 +269,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		}
 
 
-		static void AddLocalFields(CodeTypeDeclaration targetClass)
+		void AddLocalFields(CodeTypeDeclaration targetClass)
 		{
 			CodeMemberField clientField = new CodeMemberField
 			{
@@ -268,7 +283,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				Attributes = MemberAttributes.Private,
 				Name = "jsonSerializerSettings",
-				Type = new CodeTypeReference("JsonSerializerSettings")
+				Type = settings.UseSystemTextJson ? new CodeTypeReference("JsonSerializerOptions") : new CodeTypeReference("JsonSerializerSettings")
 			};
 			targetClass.Members.Add(jsonSettingsField);
 		}
@@ -286,12 +301,12 @@ namespace Fonlow.OpenApiClientGen.CS
 				"System.Net.Http.HttpClient", "client"));
 
 			constructor.Parameters.Add(new CodeParameterDeclarationExpression(
-				"JsonSerializerSettings", "jsonSerializerSettings=null"));
+				settings.UseSystemTextJson ? "JsonSerializerOptions" : "JsonSerializerSettings", "jsonSerializerSettings=null"));
 
-			constructor.Statements.Add(new CodeSnippetStatement(@"			if (client == null)
+			constructor.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"if (client == null)
 				throw new ArgumentNullException(""Null HttpClient."", ""client"");
 "));
-			constructor.Statements.Add(new CodeSnippetStatement(@"			if (client.BaseAddress == null)
+			constructor.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"if (client.BaseAddress == null)
 				throw new ArgumentNullException(""HttpClient has no BaseAddress"", ""client"");
 "));
 			// Add field initialization logic

@@ -136,8 +136,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
-								TypeAliasDic.Add(item.Key, $"{newTypeName}[]");
-								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {newTypeName}[]) -- generated: {newTypeName}");
+								var typeNameX = $"{newTypeName}[]";
+								if (settings.ArrayAsICollection)
+									typeNameX = $"System.Collections.Generic.List<{newTypeName}>";
+								if (settings.ArrayAsICollection)
+									typeNameX = $"System.Collections.Generic.ICollection<{newTypeName}>";
+								TypeAliasDic.Add(item.Key, typeNameX);
+								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX}) -- generated: {newTypeName}");
 							}
 						}
 						else
@@ -161,13 +166,23 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					//Array type with ref to the other type
 					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
-						TypeAliasDic.Add(item.Key, $"{arrayTypeAlias}[]");
-						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
+						var typeNameX = $"{arrayTypeAlias}[]";
+						if (settings.ArrayAsICollection)
+							typeNameX = $"System.Collections.Generic.List<{arrayTypeAlias}>";
+						if (settings.ArrayAsICollection)
+							typeNameX = $"System.Collections.Generic.ICollection<{arrayTypeAlias}>";
+						TypeAliasDic.Add(item.Key, typeNameX);
+						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX}) with existing ({itemsRef.Id}, {arrayTypeAlias})");
 					}
 					else
 					{
-						TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
-						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
+						var typeNameX = $"{itemsRef.Id}[]";
+						if (settings.ArrayAsICollection)
+							typeNameX = $"System.Collections.Generic.List<{itemsRef.Id}>";
+						if (settings.ArrayAsICollection)
+							typeNameX = $"System.Collections.Generic.ICollection<{itemsRef.Id}>";
+						TypeAliasDic.Add(item.Key, typeNameX);
+						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX})");
 					}
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
@@ -216,9 +231,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (settings.DecorateDataModelWithDataContract)
 				{
 					typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract", new CodeAttributeArgument("Namespace", new CodeSnippetExpression($"\"{settings.DataContractNamespace}\""))));
+					//net 5.0 https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-customize-properties#enums-as-strings
 					if (settings.EnumToString)
 					{
-						typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(Newtonsoft.Json.Converters.StringEnumConverter)"))));
+						if (settings.UseSystemTextJson)
+						{
+							//[System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+							typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("System.Text.Json.Serialization.JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(System.Text.Json.Serialization.JsonStringEnumConverter)"))));
+						}
+						else
+						{
+							//[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+							typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(Newtonsoft.Json.Converters.StringEnumConverter)"))));
+						}
 					}
 				}
 
@@ -240,7 +265,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value);
+					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value, settings);
 					bool hasFunkyMemberName = memberName != stringMember.Value;
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
@@ -386,7 +411,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
 						bool isClass = r.Item2;
-						if (!isClass && !isRequired) //C#
+						if (!settings.DisableSystemNullableByDefault && !isClass && !isRequired || propertySchema.Nullable) //C#
 						{
 							clientProperty = CreateNullableProperty(r.Item1, propertyName);
 						}
@@ -430,7 +455,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference dicValueTypeRef;
 					if (propertySchema.AdditionalProperties.Properties.Count == 0 //not casual type
 						&& propertySchema.AdditionalProperties.Reference == null // not complex type
-						&& propertySchema.AdditionalProperties.Items ==null) // not casual array type
+						&& propertySchema.AdditionalProperties.Items == null) // not casual array type
 					{
 						dicValueTypeRef = new CodeTypeReference(typeof(object));
 					}
@@ -445,9 +470,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-					if (!simpleType.IsClass && !isRequired) //C#
+					if (!settings.DisableSystemNullableByDefault && !simpleType.IsClass && !isRequired || propertySchema.Nullable) //C#
 					{
-						clientProperty = CreateNullableProperty(propertyName, simpleType);
+						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
 					}
 					else
 					{
@@ -474,14 +499,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string existingTypeName = existingDeclaration.Name;
 						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
-						if (isRequired)
-						{
-							clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + defaultValue);
-						}
-						else
-						{
-							clientProperty = CreateNullableProperty(enumReference, propertyName);
-						}
+						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + defaultValue);
 					}
 					else
 					{
@@ -525,6 +543,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (settings.DataAnnotationsEnabled) //C#
 			{
 				AddValidationAttributes(propertySchema, clientProperty);
+			}
+
+			if (settings.DecorateDataModelWithPropertyName) //C#
+			{
+				string originalPropertyName = p.Key;
+				if (settings.UseSystemTextJson)
+				{
+					//[System.Text.Json.Serialization.JsonPropertyName("name")]
+					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Text.Json.Serialization.JsonPropertyName", new CodeAttributeArgument(new CodeSnippetExpression($"\"{originalPropertyName}\""))));
+				}
+				else
+				{
+					//[Newtonsoft.Json.JsonProperty(PropertyName = "name")]
+					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("Newtonsoft.Json.JsonProperty", new CodeAttributeArgument("PropertyName", new CodeSnippetExpression($"\"{originalPropertyName}\""))));
+				}
 			}
 
 			CreateMemberDocComment(p, clientProperty);
@@ -645,7 +678,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					if (settings.EnumToString)
 					{
-						r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(Newtonsoft.Json.Converters.StringEnumConverter)"))));
+						if (settings.UseSystemTextJson)
+						{
+							//[System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+							r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("System.Text.Json.Serialization.JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(System.Text.Json.Serialization.JsonStringEnumConverter)"))));
+
+						}
+						else
+						{
+							//[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+							r.Item2.CustomAttributes.Add(new CodeAttributeDeclaration("JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(Newtonsoft.Json.Converters.StringEnumConverter)"))));
+						}
 					}
 				}
 
@@ -655,16 +698,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			var isRequired = propertySchema.Required.Contains(propertyName);
-
-			if (isRequired)
-			{
-				return CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
-			}
-			else
-			{
-				return CreateNullableProperty(r.Item1, propertyName);
-			}
+			return CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
 		}
 
 		static string GetDefaultValue(OpenApiSchema s)
@@ -780,18 +814,31 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		static CodeMemberField CreateNullableProperty(string propertyName, Type type)
+		static CodeMemberField CreateNullableProperty(string propertyName, Type type, Settings settings, bool propertyNullable = false)
 		{
-			Debug.Assert(type.IsValueType);
+			if (!propertyNullable && !settings.UseCSharpNullable)
+			{
+				Debug.Assert(type.IsValueType);
+			}
+
 			// This is a little hack. Since you cant create auto properties in CodeDOM,
 			//  we make the getter and setter part of the member name.
 			// This leaves behind a trailing semicolon that we comment out.
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + " { get; set; }//";
 
-			CodeMemberField result = new CodeMemberField($"System.Nullable<{type.FullName}>", memberName)
+			var typeName = settings.UseCSharpNullable ? $"{type.FullName}?" : $"System.Nullable<{type.FullName}>";
+			//c# 8.0 - compat for types that don't support nullable and openapi is set to nullable and not using UseCSharpNullable
+			//i.e: OpenapiDirectoryTests Test_randommer, Test_vimeo and Test_wheretocredit
+			if (propertyNullable)
 			{
-				Attributes = MemberAttributes.Public | MemberAttributes.Final
+				if (typeof(String) == type)
+					typeName = $"{type.FullName}?";
+			}
+
+			CodeMemberField result = new CodeMemberField(typeName, memberName)
+			{
+				Attributes = MemberAttributes.Public | MemberAttributes.Final,
 			};
 			return result;
 		}

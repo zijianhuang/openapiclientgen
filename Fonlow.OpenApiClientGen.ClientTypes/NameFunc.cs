@@ -48,7 +48,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ToTitleCase(rs).Replace('-', '_').Replace('[', '_').Replace("]", ""); // for something like PartialFindResult[ActivityEntryForApiContract]
 		}
 
-		public static string RefineEnumMemberName(string s)
+		public static string RefineEnumMemberName(string s, Settings settings = null)
 		{
 			if (String.IsNullOrEmpty(s))
 			{
@@ -65,6 +65,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (int.TryParse(b, out _)) // some apis define negative value
 			{
 				b = "_" + b;
+			}
+
+			if (settings?.TitleCaseEnumValueNames == true && !b.StartsWith("_"))
+			{
+				b = System.Globalization.CultureInfo.InvariantCulture.TextInfo.ToTitleCase(b);
 			}
 
 			b = b.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')

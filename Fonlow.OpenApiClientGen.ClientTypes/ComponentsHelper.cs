@@ -61,14 +61,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ns.FindTypeDeclaration(typeName);
 		}
 
-		public static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
+		public static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank, Settings settings = null)
 		{
-			CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
-			CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
+			if (settings?.ArrayAsList == true || settings?.ArrayAsICollection == true)
 			{
-				ArrayElementType = elementTypeReference,
-			};
-			return typeReference;
+				var type = "System.Collections.Generic.List";
+				if (settings.ArrayAsICollection)
+					type = "System.Collections.Generic.ICollection";
+				CodeTypeReference typeReference = new CodeTypeReference(type, new[] { new CodeTypeReference(typeName) });
+				return typeReference;
+			}
+			else
+			{
+				CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
+				CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
+				{
+					ArrayElementType = elementTypeReference,
+				};
+				return typeReference;
+			}
+			
 		}
 
 		public static CodeTypeReference TranslateTypeNameToClientTypeReference(string typeName)
