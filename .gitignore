@@ -46,3 +46,4 @@ node_modules
 /fetchapi/coverage
 /jq/_reports
 /Tests/NG2TestBed/src/clientapi/ClientApiAuto.ts
+/Tests/openapi-directory
