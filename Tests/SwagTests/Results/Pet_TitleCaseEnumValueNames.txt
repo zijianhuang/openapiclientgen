@@ -44,13 +44,13 @@ namespace MyNS
 	public enum CatHuntingSkill
 	{
 		
-		clueless = 0,
+		Clueless = 0,
 		
-		lazy = 1,
+		Lazy = 1,
 		
-		adventurous = 2,
+		Adventurous = 2,
 		
-		aggressive = 3,
+		Aggressive = 3,
 	}
 	
 	public class Category
@@ -154,11 +154,11 @@ namespace MyNS
 	public enum OrderStatus
 	{
 		
-		placed = 0,
+		Placed = 0,
 		
-		approved = 1,
+		Approved = 1,
 		
-		delivered = 2,
+		Delivered = 2,
 	}
 	
 	public class Pet
@@ -227,11 +227,11 @@ namespace MyNS
 	public enum PetStatus
 	{
 		
-		available = 0,
+		Available = 0,
 		
-		pending = 1,
+		Pending = 1,
 		
-		sold = 2,
+		Sold = 2,
 	}
 	
 	public class User
@@ -535,9 +535,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
+		public async Task<Pet[]> FindPetsByStatusAsync(string[] status)
 		{
-			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
+			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -565,9 +565,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus(PetStatus[] status)
+		public Pet[] FindPetsByStatus(string[] status)
 		{
-			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
+			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

@@ -50,6 +50,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
 					return codeTypeReference;
 				}
+				else if (content.Schema.Enum.Count > 0)
+				{
+					var refinedTypeName = NameFunc.RefineTypeName(content.Schema.Type, content.Schema.Format);
+					schemaType = refinedTypeName;
+				}
 
 				string schemaFormat = content.Schema.Format;
 				return new CodeTypeReference(PrimitiveSwaggerTypeToClrType(schemaType, schemaFormat));

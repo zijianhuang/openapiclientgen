@@ -183,10 +183,10 @@
 		/// </summary>
 		public bool ArrayAsICollection { get; set; }
 
-		/// <summary>
-		/// TitleCase Enum value names, while OpenApiClientGen by default use whatever defined in OpenApi definitions, commonly in camel casing.
-		/// </summary>
-		public bool TitleCaseEnumValueNames { get; set; }
+		///// <summary>not working well, the references to default value and api parameters not yet valid.
+		///// TitleCase Enum value names, while OpenApiClientGen by default use whatever defined in OpenApi definitions, commonly in camel casing.
+		///// </summary>
+		//public bool TitleCaseEnumValueNames { get; set; }
 
 		/// <summary>
 		/// Create destination folder if not exists. Applied to both CS and TS.

@@ -128,7 +128,7 @@ namespace MyNS
 		/// <summary>
 		/// The type that defines the fields for a line item in an eBay guest checkout session. Maximum number of line items: 10
 		/// </summary>
-		public System.Collections.Generic.ICollection<LineItemInput> LineItemInputs { get; set; }
+		public System.Collections.Generic.List<LineItemInput> LineItemInputs { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
@@ -214,12 +214,12 @@ namespace MyNS
 		/// <summary>
 		/// The container that returns the payment methods that can be used to purchase the items.
 		/// </summary>
-		public System.Collections.Generic.ICollection<PaymentMethod> AcceptedPaymentMethods { get; set; }
+		public System.Collections.Generic.List<PaymentMethod> AcceptedPaymentMethods { get; set; }
 		
 		/// <summary>
 		/// The container that returns the information of the coupons that were applied in the checkout session.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Coupon> AppliedCoupons { get; set; }
+		public System.Collections.Generic.List<Coupon> AppliedCoupons { get; set; }
 		
 		/// <summary>
 		/// The checkoutSessionId submitted in the request.
@@ -234,7 +234,7 @@ namespace MyNS
 		/// <summary>
 		/// An array of line items associated with the checkout session.
 		/// </summary>
-		public System.Collections.Generic.ICollection<LineItem> LineItems { get; set; }
+		public System.Collections.Generic.List<LineItem> LineItems { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for the costs, discounts, and seller fees and adjustments of all the line items.
@@ -254,7 +254,7 @@ namespace MyNS
 		/// <summary>
 		/// An array of any process errors or warnings that were generated during the method processing.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Error> Warnings { get; set; }
+		public System.Collections.Generic.List<Error> Warnings { get; set; }
 	}
 	
 	/// <summary>
@@ -276,12 +276,12 @@ namespace MyNS
 		/// <summary>
 		/// An array of credit card brands that can be used as the payment method.
 		/// </summary>
-		public System.Collections.Generic.ICollection<PaymentMethodBrand> PaymentMethodBrands { get; set; }
+		public System.Collections.Generic.List<PaymentMethodBrand> PaymentMethodBrands { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for legal messages and buyer consent verification.
 		/// </summary>
-		public System.Collections.Generic.ICollection<PaymentMethodMessage> PaymentMethodMessages { get; set; }
+		public System.Collections.Generic.List<PaymentMethodMessage> PaymentMethodMessages { get; set; }
 		
 		/// <summary>
 		/// An enumeration value that indicates the method of payment, such as credit card. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/order/types/PaymentMethodTypeEnum.html'>eBay API documentation</a>
@@ -401,7 +401,7 @@ namespace MyNS
 		/// <summary>
 		/// An array of promotions applied to the item of this line item.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Promotion> Promotions { get; set; }
+		public System.Collections.Generic.List<Promotion> Promotions { get; set; }
 		
 		/// <summary>
 		/// The number of individual items ordered for this line item.
@@ -416,7 +416,7 @@ namespace MyNS
 		/// <summary>
 		/// An array of the shipping methods that are available for the line item. By default, the first one will be selected.
 		/// </summary>
-		public System.Collections.Generic.ICollection<ShippingOption> ShippingOptions { get; set; }
+		public System.Collections.Generic.List<ShippingOption> ShippingOptions { get; set; }
 		
 		/// <summary>
 		/// This text string is derived from the item condition, item title, and the item aspects (such as size, color, capacity, model, brand, etc.).
@@ -702,7 +702,7 @@ namespace MyNS
 		/// <summary>
 		/// An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned.
 		/// </summary>
-		public System.Collections.Generic.ICollection<ErrorParameter> Parameters { get; set; }
+		public System.Collections.Generic.List<ErrorParameter> Parameters { get; set; }
 		
 		/// <summary>
 		/// Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc.
@@ -768,7 +768,7 @@ namespace MyNS
 		/// <summary>
 		/// The type that defines the fields for a line item in an eBay guest checkout session. Maximum number of line items: 10
 		/// </summary>
-		public System.Collections.Generic.ICollection<LineItemInput> LineItemInputs { get; set; }
+		public System.Collections.Generic.List<LineItemInput> LineItemInputs { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
@@ -832,7 +832,7 @@ namespace MyNS
 		/// <summary>
 		/// The container for the line item information fields in an eBay member checkout session. Maximum number of line items: 10
 		/// </summary>
-		public System.Collections.Generic.ICollection<LineItemInput> LineItemInputs { get; set; }
+		public System.Collections.Generic.List<LineItemInput> LineItemInputs { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for a shipping address. For restrictions, see Shipping restrictions.
@@ -878,12 +878,12 @@ namespace MyNS
 		/// <summary>
 		/// The container that returns the payment methods that can be used to purchase the items.
 		/// </summary>
-		public System.Collections.Generic.ICollection<PaymentMethod> AcceptedPaymentMethods { get; set; }
+		public System.Collections.Generic.List<PaymentMethod> AcceptedPaymentMethods { get; set; }
 		
 		/// <summary>
 		/// The container that returns the information for the coupons that were applied in the checkout session.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Coupon> AppliedCoupons { get; set; }
+		public System.Collections.Generic.List<Coupon> AppliedCoupons { get; set; }
 		
 		/// <summary>
 		/// The checkoutSessionId submitted in the request.
@@ -898,12 +898,12 @@ namespace MyNS
 		/// <summary>
 		/// An array of line items associated with the checkout session.
 		/// </summary>
-		public System.Collections.Generic.ICollection<LineItem> LineItems { get; set; }
+		public System.Collections.Generic.List<LineItem> LineItems { get; set; }
 		
 		/// <summary>
 		/// The container that returns the marketing consent fields. These fields show the legal marketing consent message that is to be shown to the buyer when they place the order, and the marketing channels, for example email, and marketing types, for example promotions, the buyer can choose to receive.
 		/// </summary>
-		public System.Collections.Generic.ICollection<MarketingMessage> MarketingMessages { get; set; }
+		public System.Collections.Generic.List<MarketingMessage> MarketingMessages { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for the costs, discounts, and seller fees and adjustments of all the line items.
@@ -923,7 +923,7 @@ namespace MyNS
 		/// <summary>
 		/// An array of any process errors or warnings that were generated during the method processing.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Error> Warnings { get; set; }
+		public System.Collections.Generic.List<Error> Warnings { get; set; }
 	}
 	
 	/// <summary>
@@ -957,7 +957,7 @@ namespace MyNS
 		/// <summary>
 		/// The container for the marketing channels, the types of messages the buyer can choose to receive and the field to indicate whether the buyer wants to receive marketing materials from eBay. These fields are required for all marketplaces. See Marketing Consent Notice for details.
 		/// </summary>
-		public System.Collections.Generic.ICollection<MarketingTerms> MarketingTerms { get; set; }
+		public System.Collections.Generic.List<MarketingTerms> MarketingTerms { get; set; }
 	}
 	
 	/// <summary>
@@ -991,12 +991,12 @@ namespace MyNS
 		/// <summary>
 		/// The container that returns the information for the coupons that were applied in the order.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Coupon> AppliedCoupons { get; set; }
+		public System.Collections.Generic.List<Coupon> AppliedCoupons { get; set; }
 		
 		/// <summary>
 		/// An array of the line items in the order.
 		/// </summary>
-		public System.Collections.Generic.ICollection<OrderLineItem> LineItems { get; set; }
+		public System.Collections.Generic.List<OrderLineItem> LineItems { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for the costs, discounts, and seller fees and adjustments of all the line items.
@@ -1031,7 +1031,7 @@ namespace MyNS
 		/// <summary>
 		/// The container for any warning messages.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Error> Warnings { get; set; }
+		public System.Collections.Generic.List<Error> Warnings { get; set; }
 	}
 	
 	/// <summary>
@@ -1088,7 +1088,7 @@ namespace MyNS
 		/// <summary>
 		/// An array of promotions applied to the items in this line item.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Promotion> Promotions { get; set; }
+		public System.Collections.Generic.List<Promotion> Promotions { get; set; }
 		
 		/// <summary>
 		/// The number of individual items in this line item.
@@ -1220,12 +1220,12 @@ namespace MyNS
 		/// <summary>
 		/// The container that returns the information for the coupons that were applied in the order.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Coupon> AppliedCoupons { get; set; }
+		public System.Collections.Generic.List<Coupon> AppliedCoupons { get; set; }
 		
 		/// <summary>
 		/// An array of line items in the purchase order.
 		/// </summary>
-		public System.Collections.Generic.ICollection<OrderLineItem> LineItems { get; set; }
+		public System.Collections.Generic.List<OrderLineItem> LineItems { get; set; }
 		
 		/// <summary>
 		/// The type that defines the fields for the reference information about the payment method.
@@ -1270,12 +1270,12 @@ namespace MyNS
 		/// <summary>
 		/// An array of the shipping providers and the purchase order delivery details.
 		/// </summary>
-		public System.Collections.Generic.ICollection<ShippingFulfillment> ShippingFulfillments { get; set; }
+		public System.Collections.Generic.List<ShippingFulfillment> ShippingFulfillments { get; set; }
 		
 		/// <summary>
 		/// An array of warning messages. These type of errors do not prevent the call from executing but should be checked.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Error> Warnings { get; set; }
+		public System.Collections.Generic.List<Error> Warnings { get; set; }
 	}
 	
 	/// <summary>
@@ -1292,7 +1292,7 @@ namespace MyNS
 		/// <summary>
 		/// The container the returns the fields for the line item ID and the quantity.
 		/// </summary>
-		public System.Collections.Generic.ICollection<LineItemReference> LineItemReferences { get; set; }
+		public System.Collections.Generic.List<LineItemReference> LineItemReferences { get; set; }
 		
 		/// <summary>
 		/// The end of the date range in which the purchase order is expected to be delivered to the shipping address.
@@ -1307,7 +1307,7 @@ namespace MyNS
 		/// <summary>
 		/// The container that returns all the shipment tracking events.
 		/// </summary>
-		public System.Collections.Generic.ICollection<ShipmentTrackingEvents> ShipmentTrackingEvents { get; set; }
+		public System.Collections.Generic.List<ShipmentTrackingEvents> ShipmentTrackingEvents { get; set; }
 		
 		/// <summary>
 		/// The shipping provider number associated with the purchase order that can be used to track the package.
@@ -1386,7 +1386,7 @@ namespace MyNS
 		/// <summary>
 		/// An array of warning messages.
 		/// </summary>
-		public System.Collections.Generic.ICollection<Error> Warnings { get; set; }
+		public System.Collections.Generic.List<Error> Warnings { get; set; }
 	}
 	
 	/// <summary>
