@@ -132,6 +132,8 @@
     <None Remove="Results\buy_marketplace_insights.txt" />
     <None Remove="Results\buy_offer.txt" />
     <None Remove="Results\buy_order.txt" />
+    <None Remove="Results\buy_order_ArrayAsCollection.txt" />
+    <None Remove="Results\buy_order_ArrayAsList.txt" />
     <None Remove="Results\commerce_catalog.txt" />
     <None Remove="Results\commerce_identity.txt" />
     <None Remove="Results\commerce_taxonomy.txt" />
@@ -146,10 +148,14 @@
     <None Remove="Results\PetDelete.txt" />
     <None Remove="Results\PetFindByStatus.txt" />
     <None Remove="Results\PetGodClass.txt" />
+    <None Remove="Results\PetNullable.txt" />
     <None Remove="Results\PetPathAsContainer.txt" />
     <None Remove="Results\PetStore.txt" />
     <None Remove="Results\PetStoreExpanded.txt" />
     <None Remove="Results\PetTypes.txt" />
+    <None Remove="Results\Pet_DecorateDataModelWithPropertyName.txt" />
+    <None Remove="Results\Pet_DisableSystemNullableByDefault.txt" />
+    <None Remove="Results\Pet_TitleCaseEnumValueNames.txt" />
     <None Remove="Results\redocOpenApi200501.txt" />
     <None Remove="Results\sell_account.txt" />
     <None Remove="Results\sell_analytics.txt" />
@@ -671,6 +677,12 @@
     <Content Include="Results\buy_offer.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Results\buy_order_ArrayAsList.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\buy_order_ArrayAsCollection.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Results\buy_order.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -690,6 +702,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Results\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Pet_TitleCaseEnumValueNames.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Pet_DecorateDataModelWithPropertyName.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Pet_DisableSystemNullableByDefault.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\PetNullable.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Results\PetBackup.txt">

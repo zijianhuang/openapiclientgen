@@ -154,8 +154,12 @@
 		public bool DecorateDataModelWithPropertyName { get; set; }
 
 		/// <summary>
-		/// Disable property nullable by default. Set by the OpenApi v3 option nullable. 
-		/// Some Open API definition files do not define nullable for some premitive types and enum, however, the respective backends do not expect some properties presented in the payload of the request.
+		/// OpenApClinetGent declares all value type properties including enum properties as nullable by default in generated C#, and all properties as nullable by default in generated TypeScript codes, unless the property is required. 
+		/// This is to prevent serializer from creating payload for properties not assigned.  
+		/// There might be situations in which you don't want such default features and want the codegen to respect OpenApi v3 option nullable. Then turn this setting to true, which affects generated C# codes only.
+		/// Please note, Some Open API definition files do not define nullable for some premitive types and enum, however, the respective backends do not expect some properties presented in the payload of the request.
+		/// therefore you need to build some integration test suites to find out what the backend would like.
+		/// If the YAML file defines a reference type property as nullable, the codegen ignores this setting since in C# a nullable reference type property is invalid.
 		/// </summary>
 		public bool DisableSystemNullableByDefault { get; set; }
 
@@ -180,7 +184,7 @@
 		public bool ArrayAsICollection { get; set; }
 
 		/// <summary>
-		/// TitleCase Enum value names
+		/// TitleCase Enum value names, while OpenApiClientGen by default use whatever defined in OpenApi definitions, commonly in camel casing.
 		/// </summary>
 		public bool TitleCaseEnumValueNames { get; set; }
 

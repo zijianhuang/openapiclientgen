@@ -32,6 +32,38 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPet_DisableSystemNullableByDefault()
+		{
+			var settings = CodeGenSettings.Default;
+			settings.DisableSystemNullableByDefault = true;
+			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\Pet_DisableSystemNullableByDefault.txt");
+		}
+
+		[Fact]
+		public void TestPet_DecorateDataModelWithPropertyName()
+		{
+			var settings = CodeGenSettings.Default;
+			settings.DecorateDataModelWithPropertyName = true;
+			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\Pet_DecorateDataModelWithPropertyName.txt");
+		}
+
+		[Fact]
+		public void TestPet_UseCSharpNullable()
+		{
+			var settings = CodeGenSettings.Default;
+			settings.UseCSharpNullable = true;
+			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\PetNullable.txt", settings);
+		}
+
+		[Fact]
+		public void TestPet_TitleCaseEnumValueNames()
+		{
+			var settings = CodeGenSettings.Default;
+			settings.TitleCaseEnumValueNames = true;
+			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\Pet_TitleCaseEnumValueNames.txt", settings);
+		}
+
+		[Fact]
 		public void TestPetByTags()
 		{
 			helper.GenerateAndAssertAndBuild("SwagMock\\petByTags.yaml", "Results\\PetByTags.txt");
@@ -284,6 +316,22 @@ namespace SwagTests
 		public void TestEBay_buy_order()
 		{
 			helper.GenerateAndAssertAndBuild("SwagMock\\buy_order_v1_beta_oas3.json", "Results\\buy_order.txt");
+		}
+
+		[Fact]
+		public void TestEBay_buy_order_ArrayAsList()
+		{
+			var settings = CodeGenSettings.Default;
+			settings.ArrayAsList = true;
+			helper.GenerateAndAssertAndBuild("SwagMock\\buy_order_v1_beta_oas3.json", "Results\\buy_order_ArrayAsList.txt", settings);
+		}
+
+		[Fact]
+		public void TestEBay_buy_order_ArrayAsCollection()
+		{
+			var settings = CodeGenSettings.Default;
+			settings.ArrayAsICollection = true;
+			helper.GenerateAndAssertAndBuild("SwagMock\\buy_order_v1_beta_oas3.json", "Results\\buy_order_ArrayAsCollection.txt", settings);
 		}
 
 		[Fact]
