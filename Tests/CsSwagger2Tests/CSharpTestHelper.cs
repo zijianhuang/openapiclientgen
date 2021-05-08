@@ -36,7 +36,7 @@ namespace SwagTests
 		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings = null)
 		{
 			string s = TranslateDefToCode(openapiDir, mySettings);
-			var r = CSharpValidation.CompileThenSave(s, null);
+			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
 			if (!r.Success)
 			{
 				output.WriteLine("CSharp Compilation Errors:");

@@ -37,7 +37,7 @@ namespace MyNS
 	public class ServiceWithHealth
 	{
 		
-		public ServiceWithHealthHealth Health { get; set; }
+		public System.Nullable<ServiceWithHealthHealth> Health { get; set; }
 	}
 	
 	public enum ServiceWithHealthHealth
@@ -65,7 +65,7 @@ namespace MyNS
 	public class GeographyWithHealth
 	{
 		
-		public GeographyWithHealthHealth Health { get; set; }
+		public System.Nullable<GeographyWithHealthHealth> Health { get; set; }
 	}
 	
 	public enum GeographyWithHealthHealth
@@ -97,11 +97,11 @@ namespace MyNS
 		
 		public System.Nullable<System.DateTimeOffset> NextUpdateTime { get; set; }
 		
-		public LiveSiteEventSeverity Severity { get; set; }
+		public System.Nullable<LiveSiteEventSeverity> Severity { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> StartTime { get; set; }
 		
-		public LiveSiteEventState State { get; set; }
+		public System.Nullable<LiveSiteEventState> State { get; set; }
 		
 		public string Title { get; set; }
 	}
@@ -111,7 +111,7 @@ namespace MyNS
 		
 		public string ScopeName { get; set; }
 		
-		public LiveSiteEventImpactScopeType ScopeType { get; set; }
+		public System.Nullable<LiveSiteEventImpactScopeType> ScopeType { get; set; }
 		
 		public string ServiceId { get; set; }
 	}
@@ -141,9 +141,9 @@ namespace MyNS
 		
 		public System.Nullable<System.DateTimeOffset> LastUpdatedDateTime { get; set; }
 		
-		public LiveSiteEventLogScopeType ScopeType { get; set; }
+		public System.Nullable<LiveSiteEventLogScopeType> ScopeType { get; set; }
 		
-		public LiveSiteEventLogType Type { get; set; }
+		public System.Nullable<LiveSiteEventLogType> Type { get; set; }
 	}
 	
 	public class LiveSiteEventAuthor
@@ -205,7 +205,7 @@ namespace MyNS
 		
 		public string FileName { get; set; }
 		
-		public LiveSiteEventLogAttachmentScopeType ScopeType { get; set; }
+		public System.Nullable<LiveSiteEventLogAttachmentScopeType> ScopeType { get; set; }
 	}
 	
 	public enum LiveSiteEventLogAttachmentScopeType
@@ -267,7 +267,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> IsInternal { get; set; }
 		
-		public ServiceState State { get; set; }
+		public System.Nullable<ServiceState> State { get; set; }
 	}
 	
 	public enum ServiceState
@@ -305,7 +305,7 @@ namespace MyNS
 	public class StatusSummary
 	{
 		
-		public StatusSummaryHealth Health { get; set; }
+		public System.Nullable<StatusSummaryHealth> Health { get; set; }
 		
 		public string Message { get; set; }
 	}

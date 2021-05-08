@@ -44,7 +44,7 @@ namespace MyNS
 		/// <summary>
 		/// The information level this debug entry contains.
 		/// </summary>
-		public DebugEntryInformationLevel InformationLevel { get; set; }
+		public System.Nullable<DebugEntryInformationLevel> InformationLevel { get; set; }
 		
 		/// <summary>
 		/// The identifier of symbol request to which this debug entry belongs.
@@ -59,7 +59,7 @@ namespace MyNS
 		/// <summary>
 		/// The status of debug entry.
 		/// </summary>
-		public DebugEntryStatus Status { get; set; }
+		public System.Nullable<DebugEntryStatus> Status { get; set; }
 	}
 	
 	/// <summary>
@@ -138,7 +138,7 @@ namespace MyNS
 		/// <summary>
 		/// Defines what to do when a debug entry in the batch already exists.
 		/// </summary>
-		public DebugEntryCreateBatchCreateBehavior CreateBehavior { get; set; }
+		public System.Nullable<DebugEntryCreateBatchCreateBehavior> CreateBehavior { get; set; }
 		
 		/// <summary>
 		/// The debug entries.
@@ -185,7 +185,7 @@ namespace MyNS
 		/// <summary>
 		/// The status for this request.
 		/// </summary>
-		public RequestStatus Status { get; set; }
+		public System.Nullable<RequestStatus> Status { get; set; }
 	}
 	
 	public enum RequestStatus

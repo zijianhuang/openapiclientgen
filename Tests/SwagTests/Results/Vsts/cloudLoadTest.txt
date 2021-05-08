@@ -480,7 +480,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> Duration { get; set; }
 		
-		public LoadTestRunSettingsLoadGeneratorMachinesType LoadGeneratorMachinesType { get; set; }
+		public System.Nullable<LoadTestRunSettingsLoadGeneratorMachinesType> LoadGeneratorMachinesType { get; set; }
 		
 		public System.Nullable<System.Int32> SamplingInterval { get; set; }
 		
@@ -500,7 +500,7 @@ namespace MyNS
 	public class OverridableRunSettings
 	{
 		
-		public OverridableRunSettingsLoadGeneratorMachinesType LoadGeneratorMachinesType { get; set; }
+		public System.Nullable<OverridableRunSettingsLoadGeneratorMachinesType> LoadGeneratorMachinesType { get; set; }
 		
 		public StaticAgentRunSetting StaticAgentRunSettings { get; set; }
 	}
@@ -518,7 +518,7 @@ namespace MyNS
 	public class StaticAgentRunSetting
 	{
 		
-		public StaticAgentRunSettingLoadGeneratorMachinesType LoadGeneratorMachinesType { get; set; }
+		public System.Nullable<StaticAgentRunSettingLoadGeneratorMachinesType> LoadGeneratorMachinesType { get; set; }
 		
 		public string StaticAgentGroupName { get; set; }
 	}
@@ -666,7 +666,7 @@ namespace MyNS
 		
 		public System.Nullable<System.DateTimeOffset> LastModifiedDate { get; set; }
 		
-		public TestDefinitionBasicLoadTestType LoadTestType { get; set; }
+		public System.Nullable<TestDefinitionBasicLoadTestType> LoadTestType { get; set; }
 		
 		public string Name { get; set; }
 	}
@@ -845,7 +845,7 @@ namespace MyNS
 		/// <summary>
 		/// Retention state of the run
 		/// </summary>
-		public TestRunRetentionState RetentionState { get; set; }
+		public System.Nullable<TestRunRetentionState> RetentionState { get; set; }
 		
 		public string RunSourceIdentifier { get; set; }
 		
@@ -866,7 +866,7 @@ namespace MyNS
 		/// <summary>
 		/// SubState is more granular description of the state
 		/// </summary>
-		public TestRunSubState SubState { get; set; }
+		public System.Nullable<TestRunSubState> SubState { get; set; }
 		
 		public OverridableRunSettings SupersedeRunSettings { get; set; }
 		
@@ -951,7 +951,7 @@ namespace MyNS
 		/// <summary>
 		/// Processor Architecture chosen
 		/// </summary>
-		public TestSettingsHostProcessPlatform HostProcessPlatform { get; set; }
+		public System.Nullable<TestSettingsHostProcessPlatform> HostProcessPlatform { get; set; }
 		
 		/// <summary>
 		/// Setup command
@@ -1029,12 +1029,12 @@ namespace MyNS
 		/// <summary>
 		/// Run type like VisualStudioLoadTest or JMeterLoadTest
 		/// </summary>
-		public TestRunBasicRunType RunType { get; set; }
+		public System.Nullable<TestRunBasicRunType> RunType { get; set; }
 		
 		/// <summary>
 		/// State of the test run.
 		/// </summary>
-		public TestRunBasicState State { get; set; }
+		public System.Nullable<TestRunBasicState> State { get; set; }
 		
 		public string Url { get; set; }
 	}
@@ -1145,9 +1145,9 @@ namespace MyNS
 		/// </summary>
 		public string MessageId { get; set; }
 		
-		public TestRunMessageMessageSource MessageSource { get; set; }
+		public System.Nullable<TestRunMessageMessageSource> MessageSource { get; set; }
 		
-		public TestRunMessageMessageType MessageType { get; set; }
+		public System.Nullable<TestRunMessageMessageType> MessageType { get; set; }
 		
 		/// <summary>
 		/// Id of the test run
@@ -1205,7 +1205,7 @@ namespace MyNS
 		
 		public string MachineGroupId { get; set; }
 		
-		public WebApiLoadTestMachineInputMachineType MachineType { get; set; }
+		public System.Nullable<WebApiLoadTestMachineInputMachineType> MachineType { get; set; }
 		
 		public WebApiSetupParamaters SetupConfiguration { get; set; }
 		

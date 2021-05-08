@@ -126,7 +126,7 @@ namespace MyNS
 		/// <summary>
 		/// The employee’s gender
 		/// </summary>
-		public EmployeeGender Gender { get; set; }
+		public System.Nullable<EmployeeGender> Gender { get; set; }
 		
 		/// <summary>
 		/// Employee phone number
@@ -251,7 +251,7 @@ namespace MyNS
 		/// <summary>
 		/// The NI Category of the employee
 		/// </summary>
-		public EmploymentNiCategory NiCategory { get; set; }
+		public System.Nullable<EmploymentNiCategory> NiCategory { get; set; }
 	}
 	
 	public enum EmploymentNiCategory
@@ -470,7 +470,7 @@ namespace MyNS
 		/// <summary>
 		/// Period Status
 		/// </summary>
-		public LeavePeriodPeriodStatus PeriodStatus { get; set; }
+		public System.Nullable<LeavePeriodPeriodStatus> PeriodStatus { get; set; }
 	}
 	
 	public enum LeavePeriodPeriodStatus
@@ -563,7 +563,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of statutory leave
 		/// </summary>
-		public EmployeeStatutoryLeaveBalanceLeaveType LeaveType { get; set; }
+		public System.Nullable<EmployeeStatutoryLeaveBalanceLeaveType> LeaveType { get; set; }
 		
 		/// <summary>
 		/// The balance remaining for the corresponding leave type as of specified date.
@@ -573,7 +573,7 @@ namespace MyNS
 		/// <summary>
 		/// The units will be "Hours"
 		/// </summary>
-		public EmployeeStatutoryLeaveBalanceUnits Units { get; set; }
+		public System.Nullable<EmployeeStatutoryLeaveBalanceUnits> Units { get; set; }
 	}
 	
 	public enum EmployeeStatutoryLeaveBalanceLeaveType
@@ -645,7 +645,7 @@ namespace MyNS
 		/// <summary>
 		/// The status of the leave
 		/// </summary>
-		public EmployeeStatutoryLeaveSummaryStatus Status { get; set; }
+		public System.Nullable<EmployeeStatutoryLeaveSummaryStatus> Status { get; set; }
 	}
 	
 	public enum EmployeeStatutoryLeaveSummaryStatus
@@ -1200,7 +1200,7 @@ namespace MyNS
 		/// <summary>
 		/// Statutory Deduction Category
 		/// </summary>
-		public StatutoryDeductionStatutoryDeductionCategory StatutoryDeductionCategory { get; set; }
+		public System.Nullable<StatutoryDeductionStatutoryDeductionCategory> StatutoryDeductionCategory { get; set; }
 		
 		/// <summary>
 		/// Xero identifier for Liability Account
@@ -1628,7 +1628,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of the timesheet
 		/// </summary>
-		public TimesheetStatus Status { get; set; }
+		public System.Nullable<TimesheetStatus> Status { get; set; }
 		
 		/// <summary>
 		/// The Total Hours of the Timesheet
@@ -2004,12 +2004,12 @@ namespace MyNS
 		/// <summary>
 		/// Pay run status
 		/// </summary>
-		public PayRunPayRunStatus PayRunStatus { get; set; }
+		public System.Nullable<PayRunPayRunStatus> PayRunStatus { get; set; }
 		
 		/// <summary>
 		/// Pay run type
 		/// </summary>
-		public PayRunPayRunType PayRunType { get; set; }
+		public System.Nullable<PayRunPayRunType> PayRunType { get; set; }
 		
 		/// <summary>
 		/// Calendar type of the pay run
@@ -2500,7 +2500,7 @@ namespace MyNS
 		/// <summary>
 		/// The assigned AccountType
 		/// </summary>
-		public AccountType Type { get; set; }
+		public System.Nullable<AccountType> Type { get; set; }
 		
 		/// <summary>
 		/// A unique 3 digit number for each Account

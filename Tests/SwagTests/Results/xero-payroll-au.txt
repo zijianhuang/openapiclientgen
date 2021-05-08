@@ -70,7 +70,7 @@ namespace MyNS
 		/// <summary>
 		/// The employee’s gender. See Employee Gender
 		/// </summary>
-		public EmployeeGender Gender { get; set; }
+		public System.Nullable<EmployeeGender> Gender { get; set; }
 		
 		/// <summary>
 		/// Employee phone number
@@ -149,7 +149,7 @@ namespace MyNS
 		/// <summary>
 		/// Employee Status Types
 		/// </summary>
-		public EmployeeStatus Status { get; set; }
+		public System.Nullable<EmployeeStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Last modified timestamp
@@ -184,7 +184,7 @@ namespace MyNS
 		/// <summary>
 		/// State abbreviation for employee home address
 		/// </summary>
-		public HomeAddressRegion Region { get; set; }
+		public System.Nullable<HomeAddressRegion> Region { get; set; }
 		
 		/// <summary>
 		/// PostCode for employee home address
@@ -381,9 +381,9 @@ namespace MyNS
 		/// </summary>
 		public string SuperMembershipID { get; set; }
 		
-		public SuperLineContributionType ContributionType { get; set; }
+		public System.Nullable<SuperLineContributionType> ContributionType { get; set; }
 		
-		public SuperLineCalculationType CalculationType { get; set; }
+		public System.Nullable<SuperLineCalculationType> CalculationType { get; set; }
 		
 		/// <summary>
 		/// amount of mimimum earnings
@@ -470,11 +470,11 @@ namespace MyNS
 		/// <summary>
 		/// Calculation type for leave line for Opening Balance on Employee
 		/// </summary>
-		public LeaveLineCalculationType CalculationType { get; set; }
+		public System.Nullable<LeaveLineCalculationType> CalculationType { get; set; }
 		
-		public LeaveLineEntitlementFinalPayPayoutType EntitlementFinalPayPayoutType { get; set; }
+		public System.Nullable<LeaveLineEntitlementFinalPayPayoutType> EntitlementFinalPayPayoutType { get; set; }
 		
-		public LeaveLineEmploymentTerminationPaymentType EmploymentTerminationPaymentType { get; set; }
+		public System.Nullable<LeaveLineEmploymentTerminationPaymentType> EmploymentTerminationPaymentType { get; set; }
 		
 		/// <summary>
 		/// amount of leave line
@@ -553,7 +553,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public TaxDeclarationEmploymentBasis EmploymentBasis { get; set; }
 		
-		public TaxDeclarationTFNExemptionType TFNExemptionType { get; set; }
+		public System.Nullable<TaxDeclarationTFNExemptionType> TFNExemptionType { get; set; }
 		
 		/// <summary>
 		/// The tax file number e.g 123123123.
@@ -565,7 +565,7 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Boolean> AustralianResidentForTaxPurposes { get; set; }
 		
-		public TaxDeclarationResidencyStatus ResidencyStatus { get; set; }
+		public System.Nullable<TaxDeclarationResidencyStatus> ResidencyStatus { get; set; }
 		
 		/// <summary>
 		/// If tax free threshold claimed. e.g true or false
@@ -791,7 +791,7 @@ namespace MyNS
 		/// </summary>
 		public string PayPeriodStartDate { get; set; }
 		
-		public LeavePeriodLeavePeriodStatus LeavePeriodStatus { get; set; }
+		public System.Nullable<LeavePeriodLeavePeriodStatus> LeavePeriodStatus { get; set; }
 	}
 	
 	public enum LeavePeriodLeavePeriodStatus
@@ -865,14 +865,14 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Boolean> IsReportableAsW1 { get; set; }
 		
-		public EarningsRateEarningsType EarningsType { get; set; }
+		public System.Nullable<EarningsRateEarningsType> EarningsType { get; set; }
 		
 		/// <summary>
 		/// Xero identifier
 		/// </summary>
 		public string EarningsRateID { get; set; }
 		
-		public EarningsRateRateType RateType { get; set; }
+		public System.Nullable<EarningsRateRateType> RateType { get; set; }
 		
 		/// <summary>
 		/// Default rate per unit (optional). Only applicable if RateType is RATEPERUNIT.
@@ -906,7 +906,7 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Boolean> CurrentRecord { get; set; }
 		
-		public EarningsRateAllowanceType AllowanceType { get; set; }
+		public System.Nullable<EarningsRateAllowanceType> AllowanceType { get; set; }
 	}
 	
 	public enum EarningsRateEarningsType
@@ -997,7 +997,7 @@ namespace MyNS
 		/// </summary>
 		public string UpdatedDateUTC { get; set; }
 		
-		public DeductionTypeDeductionCategory DeductionCategory { get; set; }
+		public System.Nullable<DeductionTypeDeductionCategory> DeductionCategory { get; set; }
 		
 		/// <summary>
 		/// Is the current record
@@ -1111,7 +1111,7 @@ namespace MyNS
 		/// </summary>
 		public string Name { get; set; }
 		
-		public PayrollCalendarCalendarType CalendarType { get; set; }
+		public System.Nullable<PayrollCalendarCalendarType> CalendarType { get; set; }
 		
 		/// <summary>
 		/// The start date of the upcoming pay period. The end date will be calculated based upon this date, and the calendar type selected (YYYY-MM-DD)
@@ -1182,7 +1182,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string EndDate { get; set; }
 		
-		public TimesheetStatus Status { get; set; }
+		public System.Nullable<TimesheetStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Timesheet total hours
@@ -1277,7 +1277,7 @@ namespace MyNS
 		/// </summary>
 		public string PayRunPeriodEndDate { get; set; }
 		
-		public PayRunPayRunStatus PayRunStatus { get; set; }
+		public System.Nullable<PayRunPayRunStatus> PayRunStatus { get; set; }
 		
 		/// <summary>
 		/// Payment Date for the PayRun (YYYY-MM-DD)
@@ -1531,7 +1531,7 @@ namespace MyNS
 		/// </summary>
 		public string Description { get; set; }
 		
-		public TaxLineManualTaxType ManualTaxType { get; set; }
+		public System.Nullable<TaxLineManualTaxType> ManualTaxType { get; set; }
 		
 		/// <summary>
 		/// The tax line liability account code. For posted pay run you should be able to see liability account code
@@ -1672,7 +1672,7 @@ namespace MyNS
 		/// <summary>
 		/// See Account Types
 		/// </summary>
-		public AccountType Type { get; set; }
+		public System.Nullable<AccountType> Type { get; set; }
 		
 		/// <summary>
 		/// Customer defined account code

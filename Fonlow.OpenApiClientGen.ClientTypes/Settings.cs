@@ -154,7 +154,8 @@
 		public bool DecorateDataModelWithPropertyName { get; set; }
 
 		/// <summary>
-		/// Disable property nullable by default. Set by the OpenApi v3 option nullable 
+		/// Disable property nullable by default. Set by the OpenApi v3 option nullable. 
+		/// Some Open API definition files do not define nullable for some premitive types and enum, however, the respective backends do not expect some properties presented in the payload of the request.
 		/// </summary>
 		public bool DisableSystemNullableByDefault { get; set; }
 
@@ -178,10 +179,10 @@
 		/// </summary>
 		public bool ArrayAsICollection { get; set; }
 
-        /// <summary>
-        /// TitleCase Enum value names
-        /// </summary>
-        public bool TitleCaseEnumValueNames { get; set; }
+		/// <summary>
+		/// TitleCase Enum value names
+		/// </summary>
+		public bool TitleCaseEnumValueNames { get; set; }
 
 		/// <summary>
 		/// Create destination folder if not exists. Applied to both CS and TS.

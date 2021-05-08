@@ -170,7 +170,7 @@ namespace MyNS
 		
 		public string HelpLink { get; set; }
 		
-		public ValidationIssueIssueType IssueType { get; set; }
+		public System.Nullable<ValidationIssueIssueType> IssueType { get; set; }
 		
 		public System.Nullable<System.Int32> Line { get; set; }
 	}

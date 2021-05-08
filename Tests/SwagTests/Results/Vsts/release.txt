@@ -29,7 +29,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the artifact type.
 		/// </summary>
-		public AgentArtifactDefinitionArtifactType ArtifactType { get; set; }
+		public System.Nullable<AgentArtifactDefinitionArtifactType> ArtifactType { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the artifact definition details.
@@ -113,7 +113,7 @@ namespace MyNS
 		/// <summary>
 		/// Parallel execution type, for example MultiConfiguration or MultiMachine.
 		/// </summary>
-		public ExecutionInputParallelExecutionType ParallelExecutionType { get; set; }
+		public System.Nullable<ExecutionInputParallelExecutionType> ParallelExecutionType { get; set; }
 	}
 	
 	public enum ExecutionInputParallelExecutionType
@@ -154,7 +154,7 @@ namespace MyNS
 		/// <summary>
 		/// Approvals execution order.
 		/// </summary>
-		public ApprovalOptionsExecutionOrder ExecutionOrder { get; set; }
+		public System.Nullable<ApprovalOptionsExecutionOrder> ExecutionOrder { get; set; }
 		
 		/// <summary>
 		/// Specify whether the user requesting a release or deployment should allow to approver.
@@ -389,7 +389,7 @@ namespace MyNS
 		/// <summary>
 		/// Mode in which the value of this input should be entered
 		/// </summary>
-		public InputDescriptorInputMode InputMode { get; set; }
+		public System.Nullable<InputDescriptorInputMode> InputMode { get; set; }
 		
 		/// <summary>
 		/// Gets whether this input is confidential, such as for a password or application key
@@ -459,7 +459,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the data data type to validate.
 		/// </summary>
-		public InputValidationDataType DataType { get; set; }
+		public System.Nullable<InputValidationDataType> DataType { get; set; }
 		
 		/// <summary>
 		/// Gets or sets if this is a required field.
@@ -928,13 +928,13 @@ namespace MyNS
 		
 		public Issue Issue { get; set; }
 		
-		public AutoTriggerIssueIssueSource IssueSource { get; set; }
+		public System.Nullable<AutoTriggerIssueIssueSource> IssueSource { get; set; }
 		
 		public ProjectReference Project { get; set; }
 		
 		public ReleaseDefinitionShallowReference ReleaseDefinitionReference { get; set; }
 		
-		public AutoTriggerIssueReleaseTriggerType ReleaseTriggerType { get; set; }
+		public System.Nullable<AutoTriggerIssueReleaseTriggerType> ReleaseTriggerType { get; set; }
 	}
 	
 	public class Issue
@@ -1202,7 +1202,7 @@ namespace MyNS
 		/// <summary>
 		/// It can have value as ‘GitHub’, ‘Vsts’.
 		/// </summary>
-		public CodeRepositoryReferenceSystemType SystemType { get; set; }
+		public System.Nullable<CodeRepositoryReferenceSystemType> SystemType { get; set; }
 	}
 	
 	public class ReleaseManagementInputValue
@@ -1244,7 +1244,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the condition type.
 		/// </summary>
-		public ConditionConditionType ConditionType { get; set; }
+		public System.Nullable<ConditionConditionType> ConditionType { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the name of the condition. e.g. 'ReleaseStarted'.
@@ -1494,7 +1494,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets status of the deployment.
 		/// </summary>
-		public DeploymentDeploymentStatus DeploymentStatus { get; set; }
+		public System.Nullable<DeploymentDeploymentStatus> DeploymentStatus { get; set; }
 		
 		/// <summary>
 		/// Gets the unique identifier for deployment.
@@ -1511,7 +1511,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets operation status of deployment.
 		/// </summary>
-		public DeploymentOperationStatus OperationStatus { get; set; }
+		public System.Nullable<DeploymentOperationStatus> OperationStatus { get; set; }
 		
 		/// <summary>
 		/// Gets list of PostDeployApprovals.
@@ -1533,7 +1533,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets reason of deployment.
 		/// </summary>
-		public DeploymentReason Reason { get; set; }
+		public System.Nullable<DeploymentReason> Reason { get; set; }
 		
 		public ReleaseReference Release { get; set; }
 		
@@ -1624,7 +1624,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the type of approval.
 		/// </summary>
-		public ReleaseApprovalApprovalType ApprovalType { get; set; }
+		public System.Nullable<ReleaseApprovalApprovalType> ApprovalType { get; set; }
 		
 		public IdentityRef ApprovedBy { get; set; }
 		
@@ -1684,7 +1684,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the status of the approval.
 		/// </summary>
-		public ReleaseApprovalStatus Status { get; set; }
+		public System.Nullable<ReleaseApprovalStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Gets url to access the approval.
@@ -1852,7 +1852,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets reason for release.
 		/// </summary>
-		public ReleaseReferenceReason Reason { get; set; }
+		public System.Nullable<ReleaseReferenceReason> Reason { get; set; }
 		
 		public ReleaseDefinitionShallowReference ReleaseDefinition { get; set; }
 	}
@@ -1965,7 +1965,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets reason of release.
 		/// </summary>
-		public ReleaseReason Reason { get; set; }
+		public System.Nullable<ReleaseReason> Reason { get; set; }
 		
 		public ReleaseDefinitionShallowReference ReleaseDefinition { get; set; }
 		
@@ -1982,7 +1982,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets status.
 		/// </summary>
-		public ReleaseStatus Status { get; set; }
+		public System.Nullable<ReleaseStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Gets or sets list of tags.
@@ -2103,7 +2103,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets environment status.
 		/// </summary>
-		public ReleaseEnvironmentStatus Status { get; set; }
+		public System.Nullable<ReleaseEnvironmentStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Gets time to deploy.
@@ -2146,7 +2146,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates the deploy phase type.
 		/// </summary>
-		public DeployPhasePhaseType PhaseType { get; set; }
+		public System.Nullable<DeployPhasePhaseType> PhaseType { get; set; }
 		
 		/// <summary>
 		/// Gets and sets the rank of deploy phase.
@@ -2285,7 +2285,7 @@ namespace MyNS
 		/// <summary>
 		/// Deployment operation status.
 		/// </summary>
-		public DeploymentAttemptOperationStatus OperationStatus { get; set; }
+		public System.Nullable<DeploymentAttemptOperationStatus> OperationStatus { get; set; }
 		
 		public ReleaseGates PostDeploymentGates { get; set; }
 		
@@ -2299,7 +2299,7 @@ namespace MyNS
 		/// <summary>
 		/// Reason for the deployment.
 		/// </summary>
-		public DeploymentAttemptReason Reason { get; set; }
+		public System.Nullable<DeploymentAttemptReason> Reason { get; set; }
 		
 		/// <summary>
 		/// List of release deployphases executed in this deployment.
@@ -2313,7 +2313,7 @@ namespace MyNS
 		/// <summary>
 		/// status of the deployment.
 		/// </summary>
-		public DeploymentAttemptStatus Status { get; set; }
+		public System.Nullable<DeploymentAttemptStatus> Status { get; set; }
 	}
 	
 	public enum DeploymentAttemptOperationStatus
@@ -2401,7 +2401,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of release gates.
 		/// </summary>
-		public ReleaseGatesStatus Status { get; set; }
+		public System.Nullable<ReleaseGatesStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Date and time at which all gates executed successfully.
@@ -2481,7 +2481,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of release task.
 		/// </summary>
-		public ReleaseTaskStatus Status { get; set; }
+		public System.Nullable<ReleaseTaskStatus> Status { get; set; }
 		
 		public WorkflowTaskReference Task { get; set; }
 		
@@ -2609,7 +2609,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the phase.
 		/// </summary>
-		public ReleaseDeployPhasePhaseType PhaseType { get; set; }
+		public System.Nullable<ReleaseDeployPhasePhaseType> PhaseType { get; set; }
 		
 		/// <summary>
 		/// Rank of the phase.
@@ -2629,7 +2629,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of the phase.
 		/// </summary>
-		public ReleaseDeployPhaseStatus Status { get; set; }
+		public System.Nullable<ReleaseDeployPhaseStatus> Status { get; set; }
 	}
 	
 	public class ManualIntervention
@@ -2676,7 +2676,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the status of the manual intervention.
 		/// </summary>
-		public ManualInterventionStatus Status { get; set; }
+		public System.Nullable<ManualInterventionStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Get task instance identifier.
@@ -2939,7 +2939,7 @@ namespace MyNS
 		/// <summary>
 		/// Days of the week to release.
 		/// </summary>
-		public ReleaseScheduleDaysToRelease DaysToRelease { get; set; }
+		public System.Nullable<ReleaseScheduleDaysToRelease> DaysToRelease { get; set; }
 		
 		/// <summary>
 		/// Team Foundation Job Definition Job Id.
@@ -3186,7 +3186,7 @@ namespace MyNS
 		/// <summary>
 		/// Authorization header type, typically either RevalidateApproverIdentity or OnBehalfOf.
 		/// </summary>
-		public DeploymentAuthorizationInfoAuthorizationHeaderFor AuthorizationHeaderFor { get; set; }
+		public System.Nullable<DeploymentAuthorizationInfoAuthorizationHeaderFor> AuthorizationHeaderFor { get; set; }
 		
 		/// <summary>
 		/// List of resources.
@@ -3302,7 +3302,7 @@ namespace MyNS
 		/// <summary>
 		/// Query deployment based on deployment status.
 		/// </summary>
-		public DeploymentQueryParametersDeploymentStatus DeploymentStatus { get; set; }
+		public System.Nullable<DeploymentQueryParametersDeploymentStatus> DeploymentStatus { get; set; }
 		
 		/// <summary>
 		/// Query deployments of specified environments.
@@ -3312,7 +3312,7 @@ namespace MyNS
 		/// <summary>
 		/// Query deployments based specified expands.
 		/// </summary>
-		public DeploymentQueryParametersExpands Expands { get; set; }
+		public System.Nullable<DeploymentQueryParametersExpands> Expands { get; set; }
 		
 		/// <summary>
 		/// Specify deleted deployments should return or not.
@@ -3322,12 +3322,12 @@ namespace MyNS
 		/// <summary>
 		/// Query deployment based on deployment operation status.
 		/// </summary>
-		public DeploymentQueryParametersOperationStatus OperationStatus { get; set; }
+		public System.Nullable<DeploymentQueryParametersOperationStatus> OperationStatus { get; set; }
 		
 		/// <summary>
 		/// Query deployments based query type.
 		/// </summary>
-		public DeploymentQueryParametersQueryType QueryType { get; set; }
+		public System.Nullable<DeploymentQueryParametersQueryType> QueryType { get; set; }
 		
 		/// <summary>
 		/// Query deployments based specified source branch.
@@ -3498,7 +3498,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the trigger type.
 		/// </summary>
-		public EnvironmentTriggerTriggerType TriggerType { get; set; }
+		public System.Nullable<EnvironmentTriggerTriggerType> TriggerType { get; set; }
 	}
 	
 	public enum EnvironmentTriggerTriggerType
@@ -3731,7 +3731,7 @@ namespace MyNS
 		/// <summary>
 		/// Mail sender type.
 		/// </summary>
-		public MailMessageSenderType SenderType { get; set; }
+		public System.Nullable<MailMessageSenderType> SenderType { get; set; }
 		
 		/// <summary>
 		/// Subject of the mail.
@@ -3760,7 +3760,7 @@ namespace MyNS
 		/// <summary>
 		/// Sets the status of the manual intervention.
 		/// </summary>
-		public ManualInterventionUpdateMetadataStatus Status { get; set; }
+		public System.Nullable<ManualInterventionUpdateMetadataStatus> Status { get; set; }
 	}
 	
 	public enum ManualInterventionUpdateMetadataStatus
@@ -3839,7 +3839,7 @@ namespace MyNS
 		/// <summary>
 		/// Pipeline process type.
 		/// </summary>
-		public PipelineProcessType Type { get; set; }
+		public System.Nullable<PipelineProcessType> Type { get; set; }
 	}
 	
 	public enum PipelineProcessType
@@ -3861,7 +3861,7 @@ namespace MyNS
 		/// <summary>
 		/// Property selector type.
 		/// </summary>
-		public PropertySelectorSelectorType SelectorType { get; set; }
+		public System.Nullable<PropertySelectorSelectorType> SelectorType { get; set; }
 	}
 	
 	public enum PropertySelectorSelectorType
@@ -4106,7 +4106,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets source of release definition.
 		/// </summary>
-		public ReleaseDefinitionSource Source { get; set; }
+		public System.Nullable<ReleaseDefinitionSource> Source { get; set; }
 		
 		/// <summary>
 		/// Gets or sets list of tags.
@@ -4252,7 +4252,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of release trigger.
 		/// </summary>
-		public ReleaseTriggerBaseTriggerType TriggerType { get; set; }
+		public System.Nullable<ReleaseTriggerBaseTriggerType> TriggerType { get; set; }
 	}
 	
 	public enum ReleaseTriggerBaseTriggerType
@@ -4365,7 +4365,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets type of change.
 		/// </summary>
-		public ReleaseDefinitionRevisionChangeType ChangeType { get; set; }
+		public System.Nullable<ReleaseDefinitionRevisionChangeType> ChangeType { get; set; }
 		
 		/// <summary>
 		/// Gets comments for revision.
@@ -4440,7 +4440,7 @@ namespace MyNS
 		
 		public string ProjectName { get; set; }
 		
-		public ReleaseEnvironmentCompletedEventReason Reason { get; set; }
+		public System.Nullable<ReleaseEnvironmentCompletedEventReason> Reason { get; set; }
 		
 		public IdentityRef ReleaseCreatedBy { get; set; }
 		
@@ -4474,11 +4474,11 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> EnvironmentId { get; set; }
 		
-		public ReleaseEnvironmentStatusUpdatedEventEnvironmentStatus EnvironmentStatus { get; set; }
+		public System.Nullable<ReleaseEnvironmentStatusUpdatedEventEnvironmentStatus> EnvironmentStatus { get; set; }
 		
-		public ReleaseEnvironmentStatusUpdatedEventLatestDeploymentOperationStatus LatestDeploymentOperationStatus { get; set; }
+		public System.Nullable<ReleaseEnvironmentStatusUpdatedEventLatestDeploymentOperationStatus> LatestDeploymentOperationStatus { get; set; }
 		
-		public ReleaseEnvironmentStatusUpdatedEventLatestDeploymentStatus LatestDeploymentStatus { get; set; }
+		public System.Nullable<ReleaseEnvironmentStatusUpdatedEventLatestDeploymentStatus> LatestDeploymentStatus { get; set; }
 		
 		public System.Nullable<System.Int32> ReleaseId { get; set; }
 	}
@@ -4583,7 +4583,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets status of environment.
 		/// </summary>
-		public ReleaseEnvironmentUpdateMetadataStatus Status { get; set; }
+		public System.Nullable<ReleaseEnvironmentUpdateMetadataStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Sets list of environment variables to be overridden at deployment time.
@@ -4647,7 +4647,7 @@ namespace MyNS
 		
 		public string Message { get; set; }
 		
-		public ReleaseNotCreatedEventReleaseReason ReleaseReason { get; set; }
+		public System.Nullable<ReleaseNotCreatedEventReleaseReason> ReleaseReason { get; set; }
 		
 		public IdentityRef RequestedBy { get; set; }
 	}
@@ -4778,7 +4778,7 @@ namespace MyNS
 		/// <summary>
 		/// Sets reason to create a release.
 		/// </summary>
-		public ReleaseStartMetadataReason Reason { get; set; }
+		public System.Nullable<ReleaseStartMetadataReason> Reason { get; set; }
 		
 		/// <summary>
 		/// Sets list of release variables to be overridden at deployment time.
@@ -4895,7 +4895,7 @@ namespace MyNS
 		/// <summary>
 		/// Sets status of the release.
 		/// </summary>
-		public ReleaseUpdateMetadataStatus Status { get; set; }
+		public System.Nullable<ReleaseUpdateMetadataStatus> Status { get; set; }
 	}
 	
 	public enum ReleaseUpdateMetadataStatus
@@ -5022,7 +5022,7 @@ namespace MyNS
 		/// <summary>
 		/// Summary mail section type. MailSectionType has section types.
 		/// </summary>
-		public SummaryMailSectionSectionType SectionType { get; set; }
+		public System.Nullable<SummaryMailSectionSectionType> SectionType { get; set; }
 		
 		/// <summary>
 		/// Title of the summary mail.
@@ -5118,7 +5118,7 @@ namespace MyNS
 		/// </summary>
 		public System.Collections.Generic.Dictionary<string, YamlSourceReference> SourceReference { get; set; }
 		
-		public YamlFileSourceType Type { get; set; }
+		public System.Nullable<YamlFileSourceType> Type { get; set; }
 	}
 	
 	public class YamlSourceReference

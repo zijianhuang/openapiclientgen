@@ -24,7 +24,7 @@ namespace MyNS
 		/// <summary>
 		/// define the type of address
 		/// </summary>
-		public AddressAddressType AddressType { get; set; }
+		public System.Nullable<AddressAddressType> AddressType { get; set; }
 		
 		/// <summary>
 		/// max length = 500
@@ -103,7 +103,7 @@ namespace MyNS
 	public class Phone
 	{
 		
-		public PhonePhoneType PhoneType { get; set; }
+		public System.Nullable<PhonePhoneType> PhoneType { get; set; }
 		
 		/// <summary>
 		/// max length = 50
@@ -172,7 +172,7 @@ namespace MyNS
 		/// <summary>
 		/// See Account Types
 		/// </summary>
-		public AccountType Type { get; set; }
+		public System.Nullable<AccountType> Type { get; set; }
 		
 		/// <summary>
 		/// For bank accounts only (Account Type BANK)
@@ -182,7 +182,7 @@ namespace MyNS
 		/// <summary>
 		/// Accounts with a status of ACTIVE can be updated to ARCHIVED. See Account Status Codes
 		/// </summary>
-		public AccountStatus Status { get; set; }
+		public System.Nullable<AccountStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Description of the Account. Valid for all types of accounts except bank accounts (max length = 4000)
@@ -192,12 +192,12 @@ namespace MyNS
 		/// <summary>
 		/// For bank accounts only. See Bank Account types
 		/// </summary>
-		public AccountBankAccountType BankAccountType { get; set; }
+		public System.Nullable<AccountBankAccountType> BankAccountType { get; set; }
 		
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public AccountCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<AccountCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// The tax type from TaxRates
@@ -217,12 +217,12 @@ namespace MyNS
 		/// <summary>
 		/// See Account Class Types
 		/// </summary>
-		public AccountClass Class { get; set; }
+		public System.Nullable<AccountClass> Class { get; set; }
 		
 		/// <summary>
 		/// If this is a system account then this element is returned. See System Account types. Note that non-system accounts may have this element set as either �� or null.
 		/// </summary>
-		public AccountSystemAccount SystemAccount { get; set; }
+		public System.Nullable<AccountSystemAccount> SystemAccount { get; set; }
 		
 		/// <summary>
 		/// Shown if set
@@ -813,7 +813,7 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public BankTransactionCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<BankTransactionCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// Exchange rate to base currency when money is spent or received. e.g.0.7500 Only used for bank transactions in non base currency. If this isn�t specified for non base currency accounts then either the user-defined rate (preference) or the XE.com day rate will be used. Setting currency is only supported on overpayments.
@@ -828,12 +828,12 @@ namespace MyNS
 		/// <summary>
 		/// See Bank Transaction Status Codes
 		/// </summary>
-		public BankTransactionStatus Status { get; set; }
+		public System.Nullable<BankTransactionStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types
 		/// </summary>
-		public BankTransactionLineAmountTypes LineAmountTypes { get; set; }
+		public System.Nullable<BankTransactionLineAmountTypes> LineAmountTypes { get; set; }
 		
 		/// <summary>
 		/// Total of bank transaction excluding taxes
@@ -931,7 +931,7 @@ namespace MyNS
 		/// <summary>
 		/// Current status of a contact � see contact status types
 		/// </summary>
-		public ContactContactStatus ContactStatus { get; set; }
+		public System.Nullable<ContactContactStatus> ContactStatus { get; set; }
 		
 		/// <summary>
 		/// Full name of contact/organisation (max length = 255)
@@ -1016,7 +1016,7 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public ContactDefaultCurrency DefaultCurrency { get; set; }
+		public System.Nullable<ContactDefaultCurrency> DefaultCurrency { get; set; }
 		
 		/// <summary>
 		/// Store XeroNetworkKey for contacts.
@@ -1509,7 +1509,7 @@ namespace MyNS
 		/// </summary>
 		public System.Nullable<System.Int32> Day { get; set; }
 		
-		public BillType Type { get; set; }
+		public System.Nullable<BillType> Type { get; set; }
 	}
 	
 	public enum BillType
@@ -1535,7 +1535,7 @@ namespace MyNS
 		/// <summary>
 		/// The Status of a contact group. To delete a contact group update the status to DELETED. Only contact groups with a status of ACTIVE are returned on GETs.
 		/// </summary>
-		public ContactGroupStatus Status { get; set; }
+		public System.Nullable<ContactGroupStatus> Status { get; set; }
 		
 		/// <summary>
 		/// The Xero identifier for an contact group � specified as a string following the endpoint name. e.g. /297c2dc5-cc47-4afd-8ec8-74990b8761e9
@@ -1577,7 +1577,7 @@ namespace MyNS
 		/// <summary>
 		/// Always INVOICE
 		/// </summary>
-		public BrandingThemeType Type { get; set; }
+		public System.Nullable<BrandingThemeType> Type { get; set; }
 		
 		/// <summary>
 		/// Integer � ranked order of branding theme. The default branding theme has a value of 0
@@ -2216,7 +2216,7 @@ namespace MyNS
 		/// <summary>
 		/// PAYBATCH for bill payments or RECBATCH for sales invoice payments (read-only)
 		/// </summary>
-		public BatchPaymentType Type { get; set; }
+		public System.Nullable<BatchPaymentType> Type { get; set; }
 		
 		/// <summary>
 		/// AUTHORISED or DELETED (read-only). New batch payments will have a status of AUTHORISED. It is not possible to delete batch payments via the API.
@@ -2295,12 +2295,12 @@ namespace MyNS
 		/// <summary>
 		/// The status of the payment.
 		/// </summary>
-		public PaymentStatus Status { get; set; }
+		public System.Nullable<PaymentStatus> Status { get; set; }
 		
 		/// <summary>
 		/// See Payment Types.
 		/// </summary>
-		public PaymentPaymentType PaymentType { get; set; }
+		public System.Nullable<PaymentPaymentType> PaymentType { get; set; }
 		
 		/// <summary>
 		/// UTC timestamp of last update to the payment
@@ -2354,7 +2354,7 @@ namespace MyNS
 		/// <summary>
 		/// See Invoice Types
 		/// </summary>
-		public InvoiceType Type { get; set; }
+		public System.Nullable<InvoiceType> Type { get; set; }
 		
 		public Contact Contact { get; set; }
 		
@@ -2405,7 +2405,7 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public InvoiceCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<InvoiceCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used. (max length = [18].[6])
@@ -2415,7 +2415,7 @@ namespace MyNS
 		/// <summary>
 		/// See Invoice Status Codes
 		/// </summary>
-		public InvoiceStatus Status { get; set; }
+		public System.Nullable<InvoiceStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Boolean to set whether the invoice in the Xero app should be marked as �sent�. This can be set only on invoices that have been approved
@@ -2917,7 +2917,7 @@ namespace MyNS
 		/// <summary>
 		/// See Prepayment Types
 		/// </summary>
-		public PrepaymentType Type { get; set; }
+		public System.Nullable<PrepaymentType> Type { get; set; }
 		
 		public Contact Contact { get; set; }
 		
@@ -2929,7 +2929,7 @@ namespace MyNS
 		/// <summary>
 		/// See Prepayment Status Codes
 		/// </summary>
-		public PrepaymentStatus Status { get; set; }
+		public System.Nullable<PrepaymentStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types
@@ -2969,7 +2969,7 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public PrepaymentCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<PrepaymentCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// Xero generated unique identifier
@@ -3402,7 +3402,7 @@ namespace MyNS
 		/// <summary>
 		/// See Overpayment Types
 		/// </summary>
-		public OverpaymentType Type { get; set; }
+		public System.Nullable<OverpaymentType> Type { get; set; }
 		
 		public Contact Contact { get; set; }
 		
@@ -3449,7 +3449,7 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public OverpaymentCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<OverpaymentCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// Xero generated unique identifier
@@ -3840,7 +3840,7 @@ namespace MyNS
 		/// <summary>
 		/// See Credit Note Types
 		/// </summary>
-		public CreditNoteType Type { get; set; }
+		public System.Nullable<CreditNoteType> Type { get; set; }
 		
 		public Contact Contact { get; set; }
 		
@@ -3887,7 +3887,7 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public CreditNoteCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<CreditNoteCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// Date when credit note was fully paid(UTC format)
@@ -4509,7 +4509,7 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public CurrencyCode Code { get; set; }
+		public System.Nullable<CurrencyCode> Code { get; set; }
 		
 		/// <summary>
 		/// Name of Currency
@@ -4903,7 +4903,7 @@ namespace MyNS
 		/// <summary>
 		/// See External link types
 		/// </summary>
-		public ExternalLinkLinkType LinkType { get; set; }
+		public System.Nullable<ExternalLinkLinkType> LinkType { get; set; }
 		
 		/// <summary>
 		/// URL for service e.g. http://twitter.com/xeroapi
@@ -4944,7 +4944,7 @@ namespace MyNS
 		/// <summary>
 		/// Current status of an expense claim � see status types
 		/// </summary>
-		public ExpenseClaimStatus Status { get; set; }
+		public System.Nullable<ExpenseClaimStatus> Status { get; set; }
 		
 		/// <summary>
 		/// See Payments
@@ -5041,7 +5041,7 @@ namespace MyNS
 		/// <summary>
 		/// User role that defines permissions in Xero and via API (READONLY, INVOICEONLY, STANDARD, FINANCIALADVISER, etc)
 		/// </summary>
-		public UserOrganisationRole OrganisationRole { get; set; }
+		public System.Nullable<UserOrganisationRole> OrganisationRole { get; set; }
 	}
 	
 	public enum UserOrganisationRole
@@ -5109,7 +5109,7 @@ namespace MyNS
 		/// <summary>
 		/// Current status of receipt � see status types
 		/// </summary>
-		public ReceiptStatus Status { get; set; }
+		public System.Nullable<ReceiptStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Xero generated sequence number for receipt in current claim for a given user
@@ -5386,7 +5386,7 @@ namespace MyNS
 		/// <summary>
 		/// The journal source type. The type of transaction that created the journal
 		/// </summary>
-		public JournalSourceType SourceType { get; set; }
+		public System.Nullable<JournalSourceType> SourceType { get; set; }
 		
 		/// <summary>
 		/// See JournalLines
@@ -5618,12 +5618,12 @@ namespace MyNS
 		/// <summary>
 		/// Filter by the combination of ContactID and Status. Get all the linked transactions that have been assigned to a particular customer and have a particular status e.g. GET /LinkedTransactions?ContactID=4bb34b03-3378-4bb2-a0ed-6345abf3224e&Status=APPROVED.
 		/// </summary>
-		public LinkedTransactionStatus Status { get; set; }
+		public System.Nullable<LinkedTransactionStatus> Status { get; set; }
 		
 		/// <summary>
 		/// This will always be BILLABLEEXPENSE. More types may be added in future.
 		/// </summary>
-		public LinkedTransactionType Type { get; set; }
+		public System.Nullable<LinkedTransactionType> Type { get; set; }
 		
 		/// <summary>
 		/// The last modified date in UTC format
@@ -5633,7 +5633,7 @@ namespace MyNS
 		/// <summary>
 		/// The Type of the source tranasction. This will be ACCPAY if the linked transaction was created from an invoice and SPEND if it was created from a bank transaction.
 		/// </summary>
-		public LinkedTransactionSourceTransactionTypeCode SourceTransactionTypeCode { get; set; }
+		public System.Nullable<LinkedTransactionSourceTransactionTypeCode> SourceTransactionTypeCode { get; set; }
 		
 		/// <summary>
 		/// Displays array of validation error messages from the API
@@ -5702,7 +5702,7 @@ namespace MyNS
 		/// <summary>
 		/// See Manual Journal Status Codes
 		/// </summary>
-		public ManualJournalStatus Status { get; set; }
+		public System.Nullable<ManualJournalStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Url link to a source document � shown as �Go to [appName]� in the Xero app
@@ -5840,19 +5840,19 @@ namespace MyNS
 		/// <summary>
 		/// See Version Types
 		/// </summary>
-		public OrganisationVersion Version { get; set; }
+		public System.Nullable<OrganisationVersion> Version { get; set; }
 		
 		/// <summary>
 		/// Organisation Type
 		/// </summary>
-		public OrganisationOrganisationType OrganisationType { get; set; }
+		public System.Nullable<OrganisationOrganisationType> OrganisationType { get; set; }
 		
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public OrganisationBaseCurrency BaseCurrency { get; set; }
+		public System.Nullable<OrganisationBaseCurrency> BaseCurrency { get; set; }
 		
-		public OrganisationCountryCode CountryCode { get; set; }
+		public System.Nullable<OrganisationCountryCode> CountryCode { get; set; }
 		
 		/// <summary>
 		/// Boolean to describe if organisation is a demo company.
@@ -5892,12 +5892,12 @@ namespace MyNS
 		/// <summary>
 		/// The accounting basis used for tax returns. See Sales Tax Basis
 		/// </summary>
-		public OrganisationSalesTaxBasis SalesTaxBasis { get; set; }
+		public System.Nullable<OrganisationSalesTaxBasis> SalesTaxBasis { get; set; }
 		
 		/// <summary>
 		/// The frequency with which tax returns are processed. See Sales Tax Period
 		/// </summary>
-		public OrganisationSalesTaxPeriod SalesTaxPeriod { get; set; }
+		public System.Nullable<OrganisationSalesTaxPeriod> SalesTaxPeriod { get; set; }
 		
 		/// <summary>
 		/// The default for LineAmountTypes on sales transactions
@@ -5927,7 +5927,7 @@ namespace MyNS
 		/// <summary>
 		/// Timezone specifications
 		/// </summary>
-		public OrganisationTimezone Timezone { get; set; }
+		public System.Nullable<OrganisationTimezone> Timezone { get; set; }
 		
 		/// <summary>
 		/// Organisation Type
@@ -5942,12 +5942,12 @@ namespace MyNS
 		/// <summary>
 		/// Organisation Classes describe which plan the Xero organisation is on (e.g. DEMO, TRIAL, PREMIUM)
 		/// </summary>
-		public OrganisationClass Class { get; set; }
+		public System.Nullable<OrganisationClass> Class { get; set; }
 		
 		/// <summary>
 		/// BUSINESS or PARTNER. Partner edition organisations are sold exclusively through accounting partners and have restricted functionality (e.g. no access to invoicing)
 		/// </summary>
-		public OrganisationEdition Edition { get; set; }
+		public System.Nullable<OrganisationEdition> Edition { get; set; }
 		
 		/// <summary>
 		/// Description of business type as defined in Organisation settings
@@ -7940,12 +7940,12 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public PurchaseOrderCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<PurchaseOrderCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// See Purchase Order Status Codes
 		/// </summary>
-		public PurchaseOrderStatus Status { get; set; }
+		public System.Nullable<PurchaseOrderStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Boolean to set whether the purchase order should be marked as �sent�. This can be set only on purchase orders that have been approved or billed
@@ -8449,12 +8449,12 @@ namespace MyNS
 		/// <summary>
 		/// The status of the quote.
 		/// </summary>
-		public QuoteStatus Status { get; set; }
+		public System.Nullable<QuoteStatus> Status { get; set; }
 		
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public QuoteCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<QuoteCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// The currency rate for a multicurrency quote
@@ -8508,7 +8508,7 @@ namespace MyNS
 		/// <summary>
 		/// Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types
 		/// </summary>
-		public QuoteLineAmountTypes LineAmountTypes { get; set; }
+		public System.Nullable<QuoteLineAmountTypes> LineAmountTypes { get; set; }
 		
 		/// <summary>
 		/// A string to indicate if a invoice status
@@ -8912,7 +8912,7 @@ namespace MyNS
 		/// <summary>
 		/// See Invoice Types
 		/// </summary>
-		public RepeatingInvoiceType Type { get; set; }
+		public System.Nullable<RepeatingInvoiceType> Type { get; set; }
 		
 		public Contact Contact { get; set; }
 		
@@ -8941,12 +8941,12 @@ namespace MyNS
 		/// <summary>
 		/// 3 letter alpha code for the currency � see list of currency codes
 		/// </summary>
-		public RepeatingInvoiceCurrencyCode CurrencyCode { get; set; }
+		public System.Nullable<RepeatingInvoiceCurrencyCode> CurrencyCode { get; set; }
 		
 		/// <summary>
 		/// One of the following - DRAFT or AUTHORISED � See Invoice Status Codes
 		/// </summary>
-		public RepeatingInvoiceStatus Status { get; set; }
+		public System.Nullable<RepeatingInvoiceStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Total of invoice excluding taxes
@@ -9003,7 +9003,7 @@ namespace MyNS
 		/// <summary>
 		/// One of the following - WEEKLY or MONTHLY
 		/// </summary>
-		public ScheduleUnit Unit { get; set; }
+		public System.Nullable<ScheduleUnit> Unit { get; set; }
 		
 		/// <summary>
 		/// Integer used with due date type e.g 20 (of following month), 31 (of current month)
@@ -9013,7 +9013,7 @@ namespace MyNS
 		/// <summary>
 		/// the payment terms
 		/// </summary>
-		public ScheduleDueDateType DueDateType { get; set; }
+		public System.Nullable<ScheduleDueDateType> DueDateType { get; set; }
 		
 		/// <summary>
 		/// Date the first invoice of the current version of the repeating schedule was generated (changes when repeating invoice is edited)
@@ -9449,7 +9449,7 @@ namespace MyNS
 	public class ReportRows
 	{
 		
-		public ReportRowsRowType RowType { get; set; }
+		public System.Nullable<ReportRowsRowType> RowType { get; set; }
 		
 		public string Title { get; set; }
 		
@@ -9540,7 +9540,7 @@ namespace MyNS
 		/// <summary>
 		/// See Prepayment Types
 		/// </summary>
-		public ReportReportType ReportType { get; set; }
+		public System.Nullable<ReportReportType> ReportType { get; set; }
 		
 		/// <summary>
 		/// See Prepayment Types
@@ -9707,12 +9707,12 @@ namespace MyNS
 		/// <summary>
 		/// See Status Codes
 		/// </summary>
-		public TaxRateStatus Status { get; set; }
+		public System.Nullable<TaxRateStatus> Status { get; set; }
 		
 		/// <summary>
 		/// See ReportTaxTypes
 		/// </summary>
-		public TaxRateReportTaxType ReportTaxType { get; set; }
+		public System.Nullable<TaxRateReportTaxType> ReportTaxType { get; set; }
 		
 		/// <summary>
 		/// Boolean to describe if tax rate can be used for asset accounts i.e.  true,false

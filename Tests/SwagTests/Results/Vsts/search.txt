@@ -230,7 +230,7 @@ namespace MyNS
 		/// <summary>
 		/// Version control type of the result file.
 		/// </summary>
-		public RepositoryType Type { get; set; }
+		public System.Nullable<RepositoryType> Type { get; set; }
 	}
 	
 	public enum RepositoryType
@@ -649,7 +649,7 @@ namespace MyNS
 		/// <summary>
 		/// Scope of the settings page, either organization, project or user
 		/// </summary>
-		public SettingResultScope Scope { get; set; }
+		public System.Nullable<SettingResultScope> Scope { get; set; }
 		
 		/// <summary>
 		/// Title of the settings page

@@ -51,7 +51,7 @@
 						"type": "boolean",
 						"readOnly": true,
 						"description": "Indicates whenever order was completed or not",
-						"default": "false"
+						"default": "true"
 					},
 					"requestId": {
 						"type": "string",

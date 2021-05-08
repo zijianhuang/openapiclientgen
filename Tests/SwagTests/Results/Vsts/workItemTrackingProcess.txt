@@ -217,7 +217,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of action to take when the rule is triggered.
 		/// </summary>
-		public RuleActionActionType ActionType { get; set; }
+		public System.Nullable<RuleActionActionType> ActionType { get; set; }
 		
 		/// <summary>
 		/// Field on which the action should be taken.
@@ -271,7 +271,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of condition. $When. This condition limits the execution of its children to cases when another field has a particular value, i.e. when the Is value of the referenced field is equal to the given literal value. $WhenNot.This condition limits the execution of its children to cases when another field does not have a particular value, i.e.when the Is value of the referenced field is not equal to the given literal value. $WhenChanged.This condition limits the execution of its children to cases when another field has changed, i.e.when the Is value of the referenced field is not equal to the Was value of that field. $WhenNotChanged.This condition limits the execution of its children to cases when another field has not changed, i.e.when the Is value of the referenced field is equal to the Was value of that field.
 		/// </summary>
-		public RuleConditionConditionType ConditionType { get; set; }
+		public System.Nullable<RuleConditionConditionType> ConditionType { get; set; }
 		
 		/// <summary>
 		/// Field that defines condition.
@@ -372,7 +372,7 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public FieldModelType Type { get; set; }
+		public System.Nullable<FieldModelType> Type { get; set; }
 		
 		public string Url { get; set; }
 	}
@@ -519,7 +519,7 @@ namespace MyNS
 		/// <summary>
 		/// The icon for the page.
 		/// </summary>
-		public PagePageType PageType { get; set; }
+		public System.Nullable<PagePageType> PageType { get; set; }
 		
 		/// <summary>
 		/// The sections of the page.
@@ -693,7 +693,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates the type of customization on this work item. System behaviors are inherited from parent process but not modified. Inherited behaviors are modified modified behaviors that were inherited from parent process. Custom behaviors are behaviors created by user in current process.
 		/// </summary>
-		public ProcessBehaviorCustomization Customization { get; set; }
+		public System.Nullable<ProcessBehaviorCustomization> Customization { get; set; }
 		
 		/// <summary>
 		/// . Description
@@ -833,7 +833,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates the type of customization on this process. System Process is default process. Inherited Process is modified process that was System process before.
 		/// </summary>
-		public ProcessInfoCustomizationType CustomizationType { get; set; }
+		public System.Nullable<ProcessInfoCustomizationType> CustomizationType { get; set; }
 		
 		/// <summary>
 		/// Description of the process.
@@ -956,7 +956,7 @@ namespace MyNS
 		/// <summary>
 		/// Class of the process.
 		/// </summary>
-		public ProcessPropertiesClass Class { get; set; }
+		public System.Nullable<ProcessPropertiesClass> Class { get; set; }
 		
 		/// <summary>
 		/// Is the process default process.
@@ -998,7 +998,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates if the rule is system generated or created by user.
 		/// </summary>
-		public ProcessRuleCustomizationType CustomizationType { get; set; }
+		public System.Nullable<ProcessRuleCustomizationType> CustomizationType { get; set; }
 		
 		/// <summary>
 		/// Id to uniquely identify the rule.
@@ -1037,7 +1037,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates the type of customization on this work item System work item types are inherited from parent process but not modified Inherited work item types are modified work item that were inherited from parent process Custom work item types are work item types that were created in the current process
 		/// </summary>
-		public ProcessWorkItemTypeCustomization Customization { get; set; }
+		public System.Nullable<ProcessWorkItemTypeCustomization> Customization { get; set; }
 		
 		/// <summary>
 		/// Description of the work item type
@@ -1145,7 +1145,7 @@ namespace MyNS
 		/// <summary>
 		/// Work item state customization type.
 		/// </summary>
-		public WorkItemStateResultModelCustomizationType CustomizationType { get; set; }
+		public System.Nullable<WorkItemStateResultModelCustomizationType> CustomizationType { get; set; }
 		
 		/// <summary>
 		/// If the Work item state is hidden.
@@ -1207,7 +1207,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates the type of customization on this work item.
 		/// </summary>
-		public ProcessWorkItemTypeFieldCustomization Customization { get; set; }
+		public System.Nullable<ProcessWorkItemTypeFieldCustomization> Customization { get; set; }
 		
 		/// <summary>
 		/// The default value of the field.
@@ -1242,7 +1242,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the field.
 		/// </summary>
-		public ProcessWorkItemTypeFieldType Type { get; set; }
+		public System.Nullable<ProcessWorkItemTypeFieldType> Type { get; set; }
 		
 		/// <summary>
 		/// Resource URL of the field.
@@ -1474,7 +1474,7 @@ namespace MyNS
 		
 		public WorkItemTypeBehavior[] Behaviors { get; set; }
 		
-		public WorkItemTypeModelClass Class { get; set; }
+		public System.Nullable<WorkItemTypeModelClass> Class { get; set; }
 		
 		public string Color { get; set; }
 		

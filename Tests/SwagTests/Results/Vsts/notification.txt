@@ -54,7 +54,7 @@ namespace MyNS
 	public class BatchNotificationOperation
 	{
 		
-		public BatchNotificationOperationNotificationOperation NotificationOperation { get; set; }
+		public System.Nullable<BatchNotificationOperationNotificationOperation> NotificationOperation { get; set; }
 		
 		public NotificationQueryCondition[] NotificationQueryConditions { get; set; }
 	}
@@ -661,7 +661,7 @@ namespace MyNS
 		/// <summary>
 		/// The default group delivery preference for groups in this collection
 		/// </summary>
-		public NotificationAdminSettingsDefaultGroupDeliveryPreference DefaultGroupDeliveryPreference { get; set; }
+		public System.Nullable<NotificationAdminSettingsDefaultGroupDeliveryPreference> DefaultGroupDeliveryPreference { get; set; }
 	}
 	
 	public enum NotificationAdminSettingsDefaultGroupDeliveryPreference
@@ -675,7 +675,7 @@ namespace MyNS
 	public class NotificationAdminSettingsUpdateParameters
 	{
 		
-		public NotificationAdminSettingsUpdateParametersDefaultGroupDeliveryPreference DefaultGroupDeliveryPreference { get; set; }
+		public System.Nullable<NotificationAdminSettingsUpdateParametersDefaultGroupDeliveryPreference> DefaultGroupDeliveryPreference { get; set; }
 	}
 	
 	public enum NotificationAdminSettingsUpdateParametersDefaultGroupDeliveryPreference
@@ -831,7 +831,7 @@ namespace MyNS
 		/// </summary>
 		public NotificationEventFieldOperator[] Operators { get; set; }
 		
-		public NotificationEventFieldTypeSubscriptionFieldType SubscriptionFieldType { get; set; }
+		public System.Nullable<NotificationEventFieldTypeSubscriptionFieldType> SubscriptionFieldType { get; set; }
 		
 		/// <summary>
 		/// Encapsulates the properties of a field value definition. It has the information needed to retrieve the list of possible values for a certain field and how to handle that field values in the UI. This information includes what type of object this value represents, which property to use for UI display and which property to use for saving the subscription
@@ -1058,7 +1058,7 @@ namespace MyNS
 	public class NotificationReason
 	{
 		
-		public NotificationReasonNotificationReasonType NotificationReasonType { get; set; }
+		public System.Nullable<NotificationReasonNotificationReasonType> NotificationReasonType { get; set; }
 		
 		public IdentityRef[] TargetIdentities { get; set; }
 	}
@@ -1112,7 +1112,7 @@ namespace MyNS
 		
 		public string Path { get; set; }
 		
-		public NotificationStatisticType Type { get; set; }
+		public System.Nullable<NotificationStatisticType> Type { get; set; }
 		
 		public IdentityRef User { get; set; }
 	}
@@ -1196,7 +1196,7 @@ namespace MyNS
 		
 		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
 		
-		public NotificationStatisticsQueryConditionsType Type { get; set; }
+		public System.Nullable<NotificationStatisticsQueryConditionsType> Type { get; set; }
 		
 		public IdentityRef User { get; set; }
 	}
@@ -1272,9 +1272,9 @@ namespace MyNS
 		/// <summary>
 		/// Indicates how the subscriber should be notified by default.
 		/// </summary>
-		public NotificationSubscriberDeliveryPreference DeliveryPreference { get; set; }
+		public System.Nullable<NotificationSubscriberDeliveryPreference> DeliveryPreference { get; set; }
 		
-		public NotificationSubscriberFlags Flags { get; set; }
+		public System.Nullable<NotificationSubscriberFlags> Flags { get; set; }
 		
 		/// <summary>
 		/// Identifier of the subscriber.
@@ -1328,7 +1328,7 @@ namespace MyNS
 		/// <summary>
 		/// New delivery preference for the subscriber (indicates how the subscriber should be notified).
 		/// </summary>
-		public NotificationSubscriberUpdateParametersDeliveryPreference DeliveryPreference { get; set; }
+		public System.Nullable<NotificationSubscriberUpdateParametersDeliveryPreference> DeliveryPreference { get; set; }
 		
 		/// <summary>
 		/// New preferred email address for the subscriber. Specify an empty string to clear the current address.
@@ -1386,7 +1386,7 @@ namespace MyNS
 		/// <summary>
 		/// Read-only indicators that further describe the subscription.
 		/// </summary>
-		public NotificationSubscriptionFlags Flags { get; set; }
+		public System.Nullable<NotificationSubscriptionFlags> Flags { get; set; }
 		
 		/// <summary>
 		/// Subscription identifier.
@@ -1403,7 +1403,7 @@ namespace MyNS
 		/// <summary>
 		/// The permissions the user have for this subscriptions.
 		/// </summary>
-		public NotificationSubscriptionPermissions Permissions { get; set; }
+		public System.Nullable<NotificationSubscriptionPermissions> Permissions { get; set; }
 		
 		/// <summary>
 		/// A resource, typically an account or project, in which events are published from.
@@ -1413,7 +1413,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of the subscription. Typically indicates whether the subscription is enabled or not.
 		/// </summary>
-		public NotificationSubscriptionStatus Status { get; set; }
+		public System.Nullable<NotificationSubscriptionStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Message that provides more details about the status of the subscription.
@@ -1619,7 +1619,7 @@ namespace MyNS
 		/// </summary>
 		public NotificationEventType NotificationEventInformation { get; set; }
 		
-		public NotificationSubscriptionTemplateType Type { get; set; }
+		public System.Nullable<NotificationSubscriptionTemplateType> Type { get; set; }
 	}
 	
 	public enum NotificationSubscriptionTemplateType
@@ -1662,7 +1662,7 @@ namespace MyNS
 		/// <summary>
 		/// Updated status for the subscription. Typically used to enable or disable a subscription.
 		/// </summary>
-		public NotificationSubscriptionUpdateParametersStatus Status { get; set; }
+		public System.Nullable<NotificationSubscriptionUpdateParametersStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Optional message that provides more details about the updated status.
@@ -1851,7 +1851,7 @@ namespace MyNS
 		/// <summary>
 		/// Subscription evaluation job status
 		/// </summary>
-		public SubscriptionEvaluationResultEvaluationJobStatus EvaluationJobStatus { get; set; }
+		public System.Nullable<SubscriptionEvaluationResultEvaluationJobStatus> EvaluationJobStatus { get; set; }
 		
 		/// <summary>
 		/// Encapsulates events result properties. It defines the total number of events used and the number of matched events.
@@ -1930,7 +1930,7 @@ namespace MyNS
 		/// <summary>
 		/// Flags the refine the types of subscriptions that will be returned from the query.
 		/// </summary>
-		public SubscriptionQueryQueryFlags QueryFlags { get; set; }
+		public System.Nullable<SubscriptionQueryQueryFlags> QueryFlags { get; set; }
 	}
 	
 	/// <summary>
@@ -1944,7 +1944,7 @@ namespace MyNS
 		/// <summary>
 		/// Flags to specify the the type subscriptions to query for.
 		/// </summary>
-		public SubscriptionQueryConditionFlags Flags { get; set; }
+		public System.Nullable<SubscriptionQueryConditionFlags> Flags { get; set; }
 		
 		/// <summary>
 		/// Scope that matching subscriptions must have.

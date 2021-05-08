@@ -122,7 +122,7 @@ namespace MyNS
 		
 		public string GroupByValue { get; set; }
 		
-		public AggregatedResultsByOutcomeOutcome Outcome { get; set; }
+		public System.Nullable<AggregatedResultsByOutcomeOutcome> Outcome { get; set; }
 		
 		public System.Nullable<System.Int32> RerunResultCount { get; set; }
 	}
@@ -168,7 +168,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> RunsCount { get; set; }
 		
-		public AggregatedRunsByStateState State { get; set; }
+		public System.Nullable<AggregatedRunsByStateState> State { get; set; }
 	}
 	
 	public enum AggregatedRunsByStateState
@@ -197,7 +197,7 @@ namespace MyNS
 		/// </summary>
 		public BuildReference Build { get; set; }
 		
-		public TestResultsContextContextType ContextType { get; set; }
+		public System.Nullable<TestResultsContextContextType> ContextType { get; set; }
 		
 		/// <summary>
 		/// Pipeline reference
@@ -416,7 +416,7 @@ namespace MyNS
 		/// <summary>
 		/// Test result outcome
 		/// </summary>
-		public AggregatedResultDetailsByOutcomeOutcome Outcome { get; set; }
+		public System.Nullable<AggregatedResultDetailsByOutcomeOutcome> Outcome { get; set; }
 		
 		/// <summary>
 		/// Number of results on rerun
@@ -497,7 +497,7 @@ namespace MyNS
 	public class AggregatedRunsByOutcome
 	{
 		
-		public AggregatedRunsByOutcomeOutcome Outcome { get; set; }
+		public System.Nullable<AggregatedRunsByOutcomeOutcome> Outcome { get; set; }
 		
 		public System.Nullable<System.Int32> RunsCount { get; set; }
 	}
@@ -521,7 +521,7 @@ namespace MyNS
 		
 		public Response[] Responses { get; set; }
 		
-		public BatchResponseStatus Status { get; set; }
+		public System.Nullable<BatchResponseStatus> Status { get; set; }
 	}
 	
 	public class Response
@@ -531,7 +531,7 @@ namespace MyNS
 		
 		public string Id { get; set; }
 		
-		public ResponseStatus Status { get; set; }
+		public System.Nullable<ResponseStatus> Status { get; set; }
 		
 		public string Url { get; set; }
 	}
@@ -1039,7 +1039,7 @@ namespace MyNS
 		
 		public string ActionPath { get; set; }
 		
-		public TestResultAttachmentAttachmentType AttachmentType { get; set; }
+		public System.Nullable<TestResultAttachmentAttachmentType> AttachmentType { get; set; }
 		
 		public string Comment { get; set; }
 		
@@ -1168,7 +1168,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> ResolutionStateId { get; set; }
 		
-		public LegacyTestCaseResultResultGroupType ResultGroupType { get; set; }
+		public System.Nullable<LegacyTestCaseResultResultGroupType> ResultGroupType { get; set; }
 		
 		public System.Nullable<System.Int32> Revision { get; set; }
 		
@@ -1272,7 +1272,7 @@ namespace MyNS
 		
 		public string Name { get; set; }
 		
-		public TestExtensionFieldDetailsType Type { get; set; }
+		public System.Nullable<TestExtensionFieldDetailsType> Type { get; set; }
 	}
 	
 	public enum TestExtensionFieldDetailsType
@@ -1460,7 +1460,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of the object generated as a result of the Clone operation
 		/// </summary>
-		public CloneOperationInformationResultObjectType ResultObjectType { get; set; }
+		public System.Nullable<CloneOperationInformationResultObjectType> ResultObjectType { get; set; }
 		
 		/// <summary>
 		/// An abstracted reference to some other resource. This class is used to provide the build data contracts with a uniform way to reference other resources in a way that provides easy traversal through links.
@@ -1480,7 +1480,7 @@ namespace MyNS
 		/// <summary>
 		/// Current state of the operation. When State reaches Succeeded or Failed, the operation is complete
 		/// </summary>
-		public CloneOperationInformationState State { get; set; }
+		public System.Nullable<CloneOperationInformationState> State { get; set; }
 		
 		/// <summary>
 		/// Url for getting the clone information
@@ -1660,7 +1660,7 @@ namespace MyNS
 		/// <summary>
 		/// Uri of build against which difference in coverage is computed
 		/// </summary>
-		public CodeCoverageSummaryStatus Status { get; set; }
+		public System.Nullable<CodeCoverageSummaryStatus> Status { get; set; }
 	}
 	
 	public enum CodeCoverageSummaryStatus
@@ -2046,9 +2046,9 @@ namespace MyNS
 		
 		public string FieldName { get; set; }
 		
-		public CustomTestFieldDefinitionFieldType FieldType { get; set; }
+		public System.Nullable<CustomTestFieldDefinitionFieldType> FieldType { get; set; }
 		
-		public CustomTestFieldDefinitionScope Scope { get; set; }
+		public System.Nullable<CustomTestFieldDefinitionScope> Scope { get; set; }
 	}
 	
 	public enum CustomTestFieldDefinitionFieldType
@@ -2249,7 +2249,7 @@ namespace MyNS
 		/// <summary>
 		/// FlakyDetectionType defines Detection type i.e. 1. System or 2. Manual.
 		/// </summary>
-		public FlakyDetectionFlakyDetectionType FlakyDetectionType { get; set; }
+		public System.Nullable<FlakyDetectionFlakyDetectionType> FlakyDetectionType { get; set; }
 	}
 	
 	public class FlakyDetectionPipelines
@@ -3141,7 +3141,7 @@ namespace MyNS
 		
 		public string Branch { get; set; }
 		
-		public ResultsFilterExecutedIn ExecutedIn { get; set; }
+		public System.Nullable<ResultsFilterExecutedIn> ExecutedIn { get; set; }
 		
 		public string GroupBy { get; set; }
 		
@@ -3544,7 +3544,7 @@ namespace MyNS
 		/// <summary>
 		/// Summary is based on outcome
 		/// </summary>
-		public RunSummaryModelTestOutcome TestOutcome { get; set; }
+		public System.Nullable<RunSummaryModelTestOutcome> TestOutcome { get; set; }
 	}
 	
 	public enum RunSummaryModelTestOutcome
@@ -3617,7 +3617,7 @@ namespace MyNS
 		/// <summary>
 		/// ResultMetadata for the given outcome/count.
 		/// </summary>
-		public RunStatisticResultMetadata ResultMetadata { get; set; }
+		public System.Nullable<RunStatisticResultMetadata> ResultMetadata { get; set; }
 		
 		/// <summary>
 		/// State of the test run
@@ -3749,7 +3749,7 @@ namespace MyNS
 		/// <summary>
 		/// The types of sub states for test run.
 		/// </summary>
-		public RunUpdateModelSubstate Substate { get; set; }
+		public System.Nullable<RunUpdateModelSubstate> Substate { get; set; }
 		
 		/// <summary>
 		/// Tags to attach with the test run.
@@ -4042,7 +4042,7 @@ namespace MyNS
 		/// <summary>
 		/// Project state.
 		/// </summary>
-		public TeamProjectReferenceState State { get; set; }
+		public System.Nullable<TeamProjectReferenceState> State { get; set; }
 		
 		/// <summary>
 		/// Url to the full version of the object.
@@ -4052,7 +4052,7 @@ namespace MyNS
 		/// <summary>
 		/// Project visibility.
 		/// </summary>
-		public TeamProjectReferenceVisibility Visibility { get; set; }
+		public System.Nullable<TeamProjectReferenceVisibility> Visibility { get; set; }
 	}
 	
 	public enum TeamProjectReferenceState
@@ -4119,7 +4119,7 @@ namespace MyNS
 		/// <summary>
 		/// Attachment type.
 		/// </summary>
-		public TestAttachmentAttachmentType AttachmentType { get; set; }
+		public System.Nullable<TestAttachmentAttachmentType> AttachmentType { get; set; }
 		
 		/// <summary>
 		/// Comment associated with attachment.
@@ -4221,7 +4221,7 @@ namespace MyNS
 		
 		public string RunBy { get; set; }
 		
-		public TestAuthoringDetailsState State { get; set; }
+		public System.Nullable<TestAuthoringDetailsState> State { get; set; }
 		
 		public System.Nullable<System.Int32> SuiteId { get; set; }
 		
@@ -4466,7 +4466,7 @@ namespace MyNS
 		/// <summary>
 		/// Hierarchy type of the result, default value of None means its leaf node.
 		/// </summary>
-		public TestCaseResultResultGroupType ResultGroupType { get; set; }
+		public System.Nullable<TestCaseResultResultGroupType> ResultGroupType { get; set; }
 		
 		/// <summary>
 		/// Revision number of test result.
@@ -4723,7 +4723,7 @@ namespace MyNS
 		/// <summary>
 		/// Hierarchy type of the result, default value of None means its leaf node.
 		/// </summary>
-		public TestSubResultResultGroupType ResultGroupType { get; set; }
+		public System.Nullable<TestSubResultResultGroupType> ResultGroupType { get; set; }
 		
 		/// <summary>
 		/// Index number of sub result.
@@ -4821,7 +4821,7 @@ namespace MyNS
 		/// <summary>
 		/// State of the configuration
 		/// </summary>
-		public TestConfigurationState State { get; set; }
+		public System.Nullable<TestConfigurationState> State { get; set; }
 		
 		/// <summary>
 		/// Url of Configuration Resource
@@ -4954,7 +4954,7 @@ namespace MyNS
 		/// <summary>
 		/// Group the result on the basis of TestResultGroupBy. This can be Branch, Environment or null(if results are fetched by BuildDefinitionId)
 		/// </summary>
-		public TestHistoryQueryGroupBy GroupBy { get; set; }
+		public System.Nullable<TestHistoryQueryGroupBy> GroupBy { get; set; }
 		
 		/// <summary>
 		/// History to get between time interval MaxCompleteDate and  (MaxCompleteDate - TrendDays). Default is current date time.
@@ -5078,7 +5078,7 @@ namespace MyNS
 		/// <summary>
 		/// Test Log Scope
 		/// </summary>
-		public TestLogReferenceScope Scope { get; set; }
+		public System.Nullable<TestLogReferenceScope> Scope { get; set; }
 		
 		/// <summary>
 		/// SubResultid for test log, if context is run and log is related to subresult
@@ -5088,7 +5088,7 @@ namespace MyNS
 		/// <summary>
 		/// Log Type
 		/// </summary>
-		public TestLogReferenceType Type { get; set; }
+		public System.Nullable<TestLogReferenceType> Type { get; set; }
 	}
 	
 	public enum TestLogReferenceScope
@@ -5117,7 +5117,7 @@ namespace MyNS
 		/// <summary>
 		/// Test Log Status code
 		/// </summary>
-		public TestLogStatusStatus Status { get; set; }
+		public System.Nullable<TestLogStatusStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Blob Transfer Error code
@@ -5177,12 +5177,12 @@ namespace MyNS
 		/// <summary>
 		/// Test log store endpoint type.
 		/// </summary>
-		public TestLogStoreEndpointDetailsEndpointType EndpointType { get; set; }
+		public System.Nullable<TestLogStoreEndpointDetailsEndpointType> EndpointType { get; set; }
 		
 		/// <summary>
 		/// Test log store status code
 		/// </summary>
-		public TestLogStoreEndpointDetailsStatus Status { get; set; }
+		public System.Nullable<TestLogStoreEndpointDetailsStatus> Status { get; set; }
 	}
 	
 	public enum TestLogStoreEndpointDetailsEndpointType
@@ -5684,7 +5684,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> Id { get; set; }
 		
-		public TestPointReferenceState State { get; set; }
+		public System.Nullable<TestPointReferenceState> State { get; set; }
 	}
 	
 	public enum TestPointReferenceState
@@ -6352,7 +6352,7 @@ namespace MyNS
 		/// <summary>
 		/// TestRun Substate.
 		/// </summary>
-		public TestRunSubstate Substate { get; set; }
+		public System.Nullable<TestRunSubstate> Substate { get; set; }
 		
 		/// <summary>
 		/// Tags attached with this test run.
@@ -6717,7 +6717,7 @@ namespace MyNS
 		/// <summary>
 		/// Source of the test session
 		/// </summary>
-		public TestSessionSource Source { get; set; }
+		public System.Nullable<TestSessionSource> Source { get; set; }
 		
 		/// <summary>
 		/// Start date
@@ -6727,7 +6727,7 @@ namespace MyNS
 		/// <summary>
 		/// State of the test session
 		/// </summary>
-		public TestSessionState State { get; set; }
+		public System.Nullable<TestSessionState> State { get; set; }
 		
 		/// <summary>
 		/// Title of the test session
@@ -7062,7 +7062,7 @@ namespace MyNS
 	public class WorkItemToTestLinks
 	{
 		
-		public WorkItemToTestLinksExecutedIn ExecutedIn { get; set; }
+		public System.Nullable<WorkItemToTestLinksExecutedIn> ExecutedIn { get; set; }
 		
 		public TestMethod[] Tests { get; set; }
 		

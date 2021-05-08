@@ -71,7 +71,7 @@ namespace MyNS
 		/// <summary>
 		/// Bugs behavior
 		/// </summary>
-		public BacklogConfigurationBugsBehavior BugsBehavior { get; set; }
+		public System.Nullable<BacklogConfigurationBugsBehavior> BugsBehavior { get; set; }
 		
 		/// <summary>
 		/// Hidden Backlog
@@ -165,7 +165,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of this backlog level
 		/// </summary>
-		public BacklogLevelConfigurationType Type { get; set; }
+		public System.Nullable<BacklogLevelConfigurationType> Type { get; set; }
 		
 		/// <summary>
 		/// Max number of work items to show in the given backlog
@@ -330,7 +330,7 @@ namespace MyNS
 	public class BoardColumn
 	{
 		
-		public BoardColumnColumnType ColumnType { get; set; }
+		public System.Nullable<BoardColumnColumnType> ColumnType { get; set; }
 		
 		public string Description { get; set; }
 		
@@ -579,7 +579,7 @@ namespace MyNS
 		/// <summary>
 		/// Display format for the assigned to field
 		/// </summary>
-		public CardFieldSettingsAssignedToDisplayFormat AssignedToDisplayFormat { get; set; }
+		public System.Nullable<CardFieldSettingsAssignedToDisplayFormat> AssignedToDisplayFormat { get; set; }
 		
 		/// <summary>
 		/// A collection of field information of rendered core fields on cards.
@@ -626,7 +626,7 @@ namespace MyNS
 		/// <summary>
 		/// The additional field type
 		/// </summary>
-		public FieldInfoFieldType FieldType { get; set; }
+		public System.Nullable<FieldInfoFieldType> FieldType { get; set; }
 		
 		/// <summary>
 		/// Indicates if the field definition is for an identity field.
@@ -722,7 +722,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of plan to create.
 		/// </summary>
-		public CreatePlanType Type { get; set; }
+		public System.Nullable<CreatePlanType> Type { get; set; }
 	}
 	
 	public enum CreatePlanType
@@ -770,7 +770,7 @@ namespace MyNS
 		
 		public string Message { get; set; }
 		
-		public TimelineCriteriaStatusType Type { get; set; }
+		public System.Nullable<TimelineCriteriaStatusType> Type { get; set; }
 	}
 	
 	public enum TimelineCriteriaStatusType
@@ -900,7 +900,7 @@ namespace MyNS
 		
 		public string Message { get; set; }
 		
-		public TimelineIterationStatusType Type { get; set; }
+		public System.Nullable<TimelineIterationStatusType> Type { get; set; }
 	}
 	
 	public enum TimelineIterationStatusType
@@ -916,7 +916,7 @@ namespace MyNS
 		
 		public string Message { get; set; }
 		
-		public TimelineTeamStatusType Type { get; set; }
+		public System.Nullable<TimelineTeamStatusType> Type { get; set; }
 	}
 	
 	public enum TimelineTeamStatusType
@@ -1212,7 +1212,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the plan
 		/// </summary>
-		public PlanType Type { get; set; }
+		public System.Nullable<PlanType> Type { get; set; }
 		
 		/// <summary>
 		/// The resource url to locate the plan via rest api
@@ -1222,7 +1222,7 @@ namespace MyNS
 		/// <summary>
 		/// Bit flag indicating set of permissions a user has to the plan.
 		/// </summary>
-		public PlanUserPermissions UserPermissions { get; set; }
+		public System.Nullable<PlanUserPermissions> UserPermissions { get; set; }
 	}
 	
 	public enum PlanType
@@ -1268,7 +1268,7 @@ namespace MyNS
 		/// <summary>
 		/// Bit flag indicating set of permissions a user has to the plan.
 		/// </summary>
-		public PlanMetadataUserPermissions UserPermissions { get; set; }
+		public System.Nullable<PlanMetadataUserPermissions> UserPermissions { get; set; }
 	}
 	
 	public enum PlanMetadataUserPermissions
@@ -1654,7 +1654,7 @@ namespace MyNS
 		/// <summary>
 		/// Time frame of the iteration, such as past, current or future.
 		/// </summary>
-		public TeamIterationAttributesTimeFrame TimeFrame { get; set; }
+		public System.Nullable<TeamIterationAttributesTimeFrame> TimeFrame { get; set; }
 	}
 	
 	public enum TeamIterationAttributesTimeFrame
@@ -1704,7 +1704,7 @@ namespace MyNS
 		/// <summary>
 		/// BugsBehavior (Off, AsTasks, AsRequirements, ...)
 		/// </summary>
-		public TeamSettingBugsBehavior BugsBehavior { get; set; }
+		public System.Nullable<TeamSettingBugsBehavior> BugsBehavior { get; set; }
 		
 		/// <summary>
 		/// Represents a shallow ref for a single iteration.
@@ -1795,7 +1795,7 @@ namespace MyNS
 		
 		public System.Collections.Generic.Dictionary<string, object> BacklogVisibilities { get; set; }
 		
-		public TeamSettingsPatchBugsBehavior BugsBehavior { get; set; }
+		public System.Nullable<TeamSettingsPatchBugsBehavior> BugsBehavior { get; set; }
 		
 		public string DefaultIteration { get; set; }
 		
@@ -1840,7 +1840,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the plan
 		/// </summary>
-		public UpdatePlanType Type { get; set; }
+		public System.Nullable<UpdatePlanType> Type { get; set; }
 	}
 	
 	public enum UpdatePlanType

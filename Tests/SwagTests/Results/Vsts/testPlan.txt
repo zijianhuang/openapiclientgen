@@ -74,7 +74,7 @@ namespace MyNS
 		/// <summary>
 		/// Clone operation state
 		/// </summary>
-		public CloneOperationCommonResponseState State { get; set; }
+		public System.Nullable<CloneOperationCommonResponseState> State { get; set; }
 	}
 	
 	/// <summary>
@@ -280,7 +280,7 @@ namespace MyNS
 		/// <summary>
 		/// Project state.
 		/// </summary>
-		public TeamProjectReferenceState State { get; set; }
+		public System.Nullable<TeamProjectReferenceState> State { get; set; }
 		
 		/// <summary>
 		/// Url to the full version of the object.
@@ -290,7 +290,7 @@ namespace MyNS
 		/// <summary>
 		/// Project visibility.
 		/// </summary>
-		public TeamProjectReferenceVisibility Visibility { get; set; }
+		public System.Nullable<TeamProjectReferenceVisibility> Visibility { get; set; }
 	}
 	
 	public enum TeamProjectReferenceState
@@ -621,7 +621,7 @@ namespace MyNS
 		/// <summary>
 		/// Specifies if there was an error while execution of data provider.
 		/// </summary>
-		public LibraryWorkItemsDataReturnCode ReturnCode { get; set; }
+		public System.Nullable<LibraryWorkItemsDataReturnCode> ReturnCode { get; set; }
 		
 		/// <summary>
 		/// List of work items returned when OrderByField is sent something other than Id.
@@ -688,7 +688,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of query to run.
 		/// </summary>
-		public LibraryWorkItemsDataProviderRequestLibraryQueryType LibraryQueryType { get; set; }
+		public System.Nullable<LibraryWorkItemsDataProviderRequestLibraryQueryType> LibraryQueryType { get; set; }
 		
 		/// <summary>
 		/// Work item field on which to order the results. When not supplied, defaults to work item IDs.
@@ -720,7 +720,7 @@ namespace MyNS
 		/// <summary>
 		/// Mode of the filter.
 		/// </summary>
-		public TestPlansLibraryWorkItemFilterFilterMode FilterMode { get; set; }
+		public System.Nullable<TestPlansLibraryWorkItemFilterFilterMode> FilterMode { get; set; }
 	}
 	
 	public enum TestPlansLibraryWorkItemFilterFilterMode
@@ -811,7 +811,7 @@ namespace MyNS
 		/// <summary>
 		/// Outcome of the Test Point
 		/// </summary>
-		public ResultsOutcome Outcome { get; set; }
+		public System.Nullable<ResultsOutcome> Outcome { get; set; }
 	}
 	
 	public enum ResultsOutcome
@@ -881,7 +881,7 @@ namespace MyNS
 		/// <summary>
 		/// Defines whether the entry is of type test case or suite.
 		/// </summary>
-		public SuiteEntryUpdateParamsSuiteEntryType SuiteEntryType { get; set; }
+		public System.Nullable<SuiteEntryUpdateParamsSuiteEntryType> SuiteEntryType { get; set; }
 	}
 	
 	public enum SuiteEntryUpdateParamsSuiteEntryType
@@ -990,7 +990,7 @@ namespace MyNS
 		/// </summary>
 		public TestConfigurationReference Configuration { get; set; }
 		
-		public TestCaseAssociatedResultOutcome Outcome { get; set; }
+		public System.Nullable<TestCaseAssociatedResultOutcome> Outcome { get; set; }
 		
 		/// <summary>
 		/// The test plan reference resource.
@@ -1175,7 +1175,7 @@ namespace MyNS
 		/// <summary>
 		/// State of the configuration
 		/// </summary>
-		public TestConfigurationCreateUpdateParametersState State { get; set; }
+		public System.Nullable<TestConfigurationCreateUpdateParametersState> State { get; set; }
 		
 		/// <summary>
 		/// Dictionary of Test Variable, Selected Value
@@ -1441,12 +1441,12 @@ namespace MyNS
 		/// <summary>
 		/// Failure Type for the Test Point
 		/// </summary>
-		public TestPointResultsFailureType FailureType { get; set; }
+		public System.Nullable<TestPointResultsFailureType> FailureType { get; set; }
 		
 		/// <summary>
 		/// Last Resolution State Id for the Test Point
 		/// </summary>
-		public TestPointResultsLastResolutionState LastResolutionState { get; set; }
+		public System.Nullable<TestPointResultsLastResolutionState> LastResolutionState { get; set; }
 		
 		/// <summary>
 		/// Last result details of test point.
@@ -1461,7 +1461,7 @@ namespace MyNS
 		/// <summary>
 		/// Last Result State of the Test Point
 		/// </summary>
-		public TestPointResultsLastResultState LastResultState { get; set; }
+		public System.Nullable<TestPointResultsLastResultState> LastResultState { get; set; }
 		
 		/// <summary>
 		/// Last RUn Build Number for the Test Point
@@ -1476,12 +1476,12 @@ namespace MyNS
 		/// <summary>
 		/// Outcome of the Test Point
 		/// </summary>
-		public TestPointResultsOutcome Outcome { get; set; }
+		public System.Nullable<TestPointResultsOutcome> Outcome { get; set; }
 		
 		/// <summary>
 		/// State of the Test Point
 		/// </summary>
-		public TestPointResultsState State { get; set; }
+		public System.Nullable<TestPointResultsState> State { get; set; }
 	}
 	
 	public enum TestPointResultsFailureType
@@ -1768,7 +1768,7 @@ namespace MyNS
 		/// <summary>
 		/// Test suite type.
 		/// </summary>
-		public TestSuiteCreateParamsSuiteType SuiteType { get; set; }
+		public System.Nullable<TestSuiteCreateParamsSuiteType> SuiteType { get; set; }
 	}
 	
 	public enum TestSuiteCreateParamsSuiteType

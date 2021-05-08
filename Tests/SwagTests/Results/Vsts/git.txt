@@ -231,7 +231,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of change that was made to the item.
 		/// </summary>
-		public ChangeChangeType ChangeType { get; set; }
+		public System.Nullable<ChangeChangeType> ChangeType { get; set; }
 		
 		/// <summary>
 		/// Current version.
@@ -290,7 +290,7 @@ namespace MyNS
 		
 		public string Content { get; set; }
 		
-		public ItemContentContentType ContentType { get; set; }
+		public System.Nullable<ItemContentContentType> ContentType { get; set; }
 	}
 	
 	public enum ItemContentContentType
@@ -429,7 +429,7 @@ namespace MyNS
 		/// <summary>
 		/// The comment type at the time of creation.
 		/// </summary>
-		public CommentCommentType CommentType { get; set; }
+		public System.Nullable<CommentCommentType> CommentType { get; set; }
 		
 		/// <summary>
 		/// The comment content.
@@ -564,7 +564,7 @@ namespace MyNS
 		/// <summary>
 		/// The status of the comment thread.
 		/// </summary>
-		public CommentThreadStatus Status { get; set; }
+		public System.Nullable<CommentThreadStatus> Status { get; set; }
 		
 		public CommentThreadContext ThreadContext { get; set; }
 	}
@@ -702,7 +702,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of change that was made to the block.
 		/// </summary>
-		public LineDiffBlockChangeType ChangeType { get; set; }
+		public System.Nullable<LineDiffBlockChangeType> ChangeType { get; set; }
 		
 		/// <summary>
 		/// Line number where this block starts in modified file.
@@ -851,7 +851,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of object (Commit, Tree, Blob, Tag)
 		/// </summary>
-		public GitObjectObjectType ObjectType { get; set; }
+		public System.Nullable<GitObjectObjectType> ObjectType { get; set; }
 	}
 	
 	public enum GitObjectObjectType
@@ -892,7 +892,7 @@ namespace MyNS
 		/// </summary>
 		public GitAsyncRefOperationParameters Parameters { get; set; }
 		
-		public GitAsyncRefOperationStatus Status { get; set; }
+		public System.Nullable<GitAsyncRefOperationStatus> Status { get; set; }
 		
 		/// <summary>
 		/// A URL that can be used to make further requests for status about the operation
@@ -929,7 +929,7 @@ namespace MyNS
 		/// <summary>
 		/// Provides a status code that indicates the reason the cherry pick or revert failed.
 		/// </summary>
-		public GitAsyncRefOperationDetailStatus Status { get; set; }
+		public System.Nullable<GitAsyncRefOperationDetailStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Indicates if the operation went beyond the maximum time allowed for a cherry pick or revert operation.
@@ -1124,7 +1124,7 @@ namespace MyNS
 		/// <summary>
 		/// Project state.
 		/// </summary>
-		public TeamProjectReferenceState State { get; set; }
+		public System.Nullable<TeamProjectReferenceState> State { get; set; }
 		
 		/// <summary>
 		/// Url to the full version of the object.
@@ -1134,7 +1134,7 @@ namespace MyNS
 		/// <summary>
 		/// Project visibility.
 		/// </summary>
-		public TeamProjectReferenceVisibility Visibility { get; set; }
+		public System.Nullable<TeamProjectReferenceVisibility> Visibility { get; set; }
 	}
 	
 	public enum TeamProjectReferenceState
@@ -1334,7 +1334,7 @@ namespace MyNS
 		/// <summary>
 		/// State of the status.
 		/// </summary>
-		public GitStatusState State { get; set; }
+		public System.Nullable<GitStatusState> State { get; set; }
 		
 		/// <summary>
 		/// URL with status details.
@@ -1413,12 +1413,12 @@ namespace MyNS
 		/// <summary>
 		/// Version options - Specify additional modifiers to version (e.g Previous)
 		/// </summary>
-		public GitBaseVersionDescriptorBaseVersionOptions BaseVersionOptions { get; set; }
+		public System.Nullable<GitBaseVersionDescriptorBaseVersionOptions> BaseVersionOptions { get; set; }
 		
 		/// <summary>
 		/// Version type (branch, tag, or commit). Determines how Id is interpreted
 		/// </summary>
-		public GitBaseVersionDescriptorBaseVersionType BaseVersionType { get; set; }
+		public System.Nullable<GitBaseVersionDescriptorBaseVersionType> BaseVersionType { get; set; }
 	}
 	
 	public enum GitBaseVersionDescriptorBaseVersionOptions
@@ -1575,7 +1575,7 @@ namespace MyNS
 	public class GitPathAction
 	{
 		
-		public GitPathActionAction Action { get; set; }
+		public System.Nullable<GitPathActionAction> Action { get; set; }
 		
 		public string Base64Content { get; set; }
 		
@@ -1612,7 +1612,7 @@ namespace MyNS
 		
 		public string ConflictPath { get; set; }
 		
-		public GitConflictConflictType ConflictType { get; set; }
+		public System.Nullable<GitConflictConflictType> ConflictType { get; set; }
 		
 		/// <summary>
 		/// Provides properties that describe a Git commit and associated metadata.
@@ -1631,9 +1631,9 @@ namespace MyNS
 		/// </summary>
 		public GitCommitRef MergeTargetCommit { get; set; }
 		
-		public GitConflictResolutionError ResolutionError { get; set; }
+		public System.Nullable<GitConflictResolutionError> ResolutionError { get; set; }
 		
-		public GitConflictResolutionStatus ResolutionStatus { get; set; }
+		public System.Nullable<GitConflictResolutionStatus> ResolutionStatus { get; set; }
 		
 		public IdentityRef ResolvedBy { get; set; }
 		
@@ -1730,7 +1730,7 @@ namespace MyNS
 	public class GitResolutionMergeContent
 	{
 		
-		public GitResolutionMergeContentMergeType MergeType { get; set; }
+		public System.Nullable<GitResolutionMergeContentMergeType> MergeType { get; set; }
 		
 		public GitBlobRef UserMergedBlob { get; set; }
 		
@@ -1771,7 +1771,7 @@ namespace MyNS
 	public class GitResolutionPathConflict
 	{
 		
-		public GitResolutionPathConflictAction Action { get; set; }
+		public System.Nullable<GitResolutionPathConflictAction> Action { get; set; }
 		
 		public string RenamePath { get; set; }
 	}
@@ -1806,7 +1806,7 @@ namespace MyNS
 	public class GitResolutionPickOneAction
 	{
 		
-		public GitResolutionPickOneActionAction Action { get; set; }
+		public System.Nullable<GitResolutionPickOneActionAction> Action { get; set; }
 	}
 	
 	public enum GitResolutionPickOneActionAction
@@ -1882,7 +1882,7 @@ namespace MyNS
 		/// <summary>
 		/// Blob or tree
 		/// </summary>
-		public GitTreeEntryRefGitObjectType GitObjectType { get; set; }
+		public System.Nullable<GitTreeEntryRefGitObjectType> GitObjectType { get; set; }
 		
 		/// <summary>
 		/// Mode represented as octal string
@@ -1993,7 +1993,7 @@ namespace MyNS
 	public class GitResolutionRename1to2
 	{
 		
-		public GitResolutionRename1to2Action Action { get; set; }
+		public System.Nullable<GitResolutionRename1to2Action> Action { get; set; }
 	}
 	
 	public enum GitResolutionRename1to2Action
@@ -2096,7 +2096,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of the update on the server
 		/// </summary>
-		public GitConflictUpdateResultUpdateStatus UpdateStatus { get; set; }
+		public System.Nullable<GitConflictUpdateResultUpdateStatus> UpdateStatus { get; set; }
 	}
 	
 	public enum GitConflictUpdateResultUpdateStatus
@@ -2204,7 +2204,7 @@ namespace MyNS
 		/// </summary>
 		public SourceToTargetRef[] SourceToTargetRefs { get; set; }
 		
-		public GitForkSyncRequestStatus Status { get; set; }
+		public System.Nullable<GitForkSyncRequestStatus> Status { get; set; }
 	}
 	
 	/// <summary>
@@ -2334,7 +2334,7 @@ namespace MyNS
 		/// <summary>
 		/// Current status of the import.
 		/// </summary>
-		public GitImportRequestStatus Status { get; set; }
+		public System.Nullable<GitImportRequestStatus> Status { get; set; }
 		
 		/// <summary>
 		/// A link back to this import request resource.
@@ -2446,7 +2446,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of object (Commit, Tree, Blob, Tag, ...)
 		/// </summary>
-		public GitItemGitObjectType GitObjectType { get; set; }
+		public System.Nullable<GitItemGitObjectType> GitObjectType { get; set; }
 		
 		/// <summary>
 		/// Provides properties that describe a Git commit and associated metadata.
@@ -2495,7 +2495,7 @@ namespace MyNS
 		/// <summary>
 		/// Specifies whether to include children (OneLevel), all descendants (Full), or None
 		/// </summary>
-		public GitItemDescriptorRecursionLevel RecursionLevel { get; set; }
+		public System.Nullable<GitItemDescriptorRecursionLevel> RecursionLevel { get; set; }
 		
 		/// <summary>
 		/// Version string (interpretation based on VersionType defined in subclass
@@ -2505,12 +2505,12 @@ namespace MyNS
 		/// <summary>
 		/// Version modifiers (e.g. previous)
 		/// </summary>
-		public GitItemDescriptorVersionOptions VersionOptions { get; set; }
+		public System.Nullable<GitItemDescriptorVersionOptions> VersionOptions { get; set; }
 		
 		/// <summary>
 		/// How to interpret version (branch,tag,commit)
 		/// </summary>
-		public GitItemDescriptorVersionType VersionType { get; set; }
+		public System.Nullable<GitItemDescriptorVersionType> VersionType { get; set; }
 	}
 	
 	public enum GitItemDescriptorRecursionLevel
@@ -2623,7 +2623,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of the merge operation.
 		/// </summary>
-		public GitMergeStatus Status { get; set; }
+		public System.Nullable<GitMergeStatus> Status { get; set; }
 	}
 	
 	/// <summary>
@@ -2830,7 +2830,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of failure (if any) of the pull request merge.
 		/// </summary>
-		public GitPullRequestMergeFailureType MergeFailureType { get; set; }
+		public System.Nullable<GitPullRequestMergeFailureType> MergeFailureType { get; set; }
 		
 		/// <summary>
 		/// The ID of the job used to run the pull request merge. Used internally.
@@ -2845,7 +2845,7 @@ namespace MyNS
 		/// <summary>
 		/// The current status of the pull request merge.
 		/// </summary>
-		public GitPullRequestMergeStatus MergeStatus { get; set; }
+		public System.Nullable<GitPullRequestMergeStatus> MergeStatus { get; set; }
 		
 		/// <summary>
 		/// The ID of the pull request.
@@ -2872,7 +2872,7 @@ namespace MyNS
 		/// <summary>
 		/// The status of the pull request.
 		/// </summary>
-		public GitPullRequestStatus Status { get; set; }
+		public System.Nullable<GitPullRequestStatus> Status { get; set; }
 		
 		/// <summary>
 		/// If true, this pull request supports multiple iterations. Iteration support means individual pushes to the source branch of the pull request can be reviewed and comments left in one iteration will be tracked across future iterations.
@@ -2934,7 +2934,7 @@ namespace MyNS
 		/// <summary>
 		/// Specify the strategy used to merge the pull request during completion. If MergeStrategy is not set to any value, a no-FF merge will be created if SquashMerge == false. If MergeStrategy is not set to any value, the pull request commits will be squashed if SquashMerge == true. The SquashMerge property is deprecated. It is recommended that you explicitly set MergeStrategy in all cases. If an explicit value is provided for MergeStrategy, the SquashMerge property will be ignored.
 		/// </summary>
-		public GitPullRequestCompletionOptionsMergeStrategy MergeStrategy { get; set; }
+		public System.Nullable<GitPullRequestCompletionOptionsMergeStrategy> MergeStrategy { get; set; }
 		
 		/// <summary>
 		/// SquashMerge is deprecated. You should explicitly set the value of MergeStrategy. If MergeStrategy is set to any value, the SquashMerge value will be ignored. If MergeStrategy is not set, the merge strategy will be no-fast-forward if this flag is false, or squash if true.
@@ -3193,7 +3193,7 @@ namespace MyNS
 		/// <summary>
 		/// The reason for which the pull request iteration was created.
 		/// </summary>
-		public GitPullRequestIterationReason Reason { get; set; }
+		public System.Nullable<GitPullRequestIterationReason> Reason { get; set; }
 		
 		/// <summary>
 		/// Provides properties that describe a Git commit and associated metadata.
@@ -3280,7 +3280,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of query to perform.
 		/// </summary>
-		public GitPullRequestQueryInputType Type { get; set; }
+		public System.Nullable<GitPullRequestQueryInputType> Type { get; set; }
 	}
 	
 	public enum GitPullRequestQueryInputType
@@ -3351,7 +3351,7 @@ namespace MyNS
 		/// <summary>
 		/// If set, search for pull requests that are in this state. Defaults to Active if unset.
 		/// </summary>
-		public GitPullRequestSearchCriteriaStatus Status { get; set; }
+		public System.Nullable<GitPullRequestSearchCriteriaStatus> Status { get; set; }
 		
 		/// <summary>
 		/// If set, search for pull requests into this branch.
@@ -3449,12 +3449,12 @@ namespace MyNS
 		/// <summary>
 		/// Version options - Specify additional modifiers to version (e.g Previous)
 		/// </summary>
-		public GitVersionDescriptorVersionOptions VersionOptions { get; set; }
+		public System.Nullable<GitVersionDescriptorVersionOptions> VersionOptions { get; set; }
 		
 		/// <summary>
 		/// Version type (branch, tag, or commit). Determines how Id is interpreted
 		/// </summary>
-		public GitVersionDescriptorVersionType VersionType { get; set; }
+		public System.Nullable<GitVersionDescriptorVersionType> VersionType { get; set; }
 	}
 	
 	public enum GitVersionDescriptorVersionOptions
@@ -3515,7 +3515,7 @@ namespace MyNS
 		/// <summary>
 		/// What Git history mode should be used. This only applies to the search criteria when Ids = null and an itemPath is specified.
 		/// </summary>
-		public GitQueryCommitsCriteriaHistoryMode HistoryMode { get; set; }
+		public System.Nullable<GitQueryCommitsCriteriaHistoryMode> HistoryMode { get; set; }
 		
 		/// <summary>
 		/// If provided, specifies the exact commit ids of the commits to fetch. May not be combined with other parameters.
@@ -3598,7 +3598,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of search on refNames, if provided
 		/// </summary>
-		public GitQueryRefsCriteriaSearchType SearchType { get; set; }
+		public System.Nullable<GitQueryRefsCriteriaSearchType> SearchType { get; set; }
 	}
 	
 	public enum GitQueryRefsCriteriaSearchType
@@ -3636,7 +3636,7 @@ namespace MyNS
 		
 		public string RepositoryId { get; set; }
 		
-		public GitRefFavoriteType Type { get; set; }
+		public System.Nullable<GitRefFavoriteType> Type { get; set; }
 		
 		public string Url { get; set; }
 	}
@@ -3697,7 +3697,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of the update from the TFS server.
 		/// </summary>
-		public GitRefUpdateResultUpdateStatus UpdateStatus { get; set; }
+		public System.Nullable<GitRefUpdateResultUpdateStatus> UpdateStatus { get; set; }
 	}
 	
 	public enum GitRefUpdateResultUpdateStatus
@@ -3801,12 +3801,12 @@ namespace MyNS
 		/// <summary>
 		/// Version options - Specify additional modifiers to version (e.g Previous)
 		/// </summary>
-		public GitTargetVersionDescriptorTargetVersionOptions TargetVersionOptions { get; set; }
+		public System.Nullable<GitTargetVersionDescriptorTargetVersionOptions> TargetVersionOptions { get; set; }
 		
 		/// <summary>
 		/// Version type (branch, tag, or commit). Determines how Id is interpreted
 		/// </summary>
-		public GitTargetVersionDescriptorTargetVersionType TargetVersionType { get; set; }
+		public System.Nullable<GitTargetVersionDescriptorTargetVersionType> TargetVersionType { get; set; }
 	}
 	
 	public enum GitTargetVersionDescriptorTargetVersionOptions
@@ -3864,12 +3864,12 @@ namespace MyNS
 		/// <summary>
 		/// Type of change that affected this entry.
 		/// </summary>
-		public GitTreeDiffEntryChangeType ChangeType { get; set; }
+		public System.Nullable<GitTreeDiffEntryChangeType> ChangeType { get; set; }
 		
 		/// <summary>
 		/// Object type of the tree entry. Blob, Tree or Commit("submodule")
 		/// </summary>
-		public GitTreeDiffEntryObjectType ObjectType { get; set; }
+		public System.Nullable<GitTreeDiffEntryObjectType> ObjectType { get; set; }
 		
 		/// <summary>
 		/// Relative path in base and target trees.
@@ -3979,7 +3979,7 @@ namespace MyNS
 		/// <summary>
 		/// The change made to the item from this change list (only relevant for File history, not folders)
 		/// </summary>
-		public HistoryEntryItemChangeType ItemChangeType { get; set; }
+		public System.Nullable<HistoryEntryItemChangeType> ItemChangeType { get; set; }
 		
 		/// <summary>
 		/// The path of the item at this point in history (only relevant for File history, not folders)
@@ -4072,7 +4072,7 @@ namespace MyNS
 		/// <summary>
 		/// Specifies whether to include children (OneLevel), all descendants (Full) or None for folder items
 		/// </summary>
-		public ItemDetailsOptionsRecursionLevel RecursionLevel { get; set; }
+		public System.Nullable<ItemDetailsOptionsRecursionLevel> RecursionLevel { get; set; }
 	}
 	
 	public enum ItemDetailsOptionsRecursionLevel
@@ -4129,7 +4129,7 @@ namespace MyNS
 		/// <summary>
 		/// The patch operation
 		/// </summary>
-		public JsonPatchOperationOp Op { get; set; }
+		public System.Nullable<JsonPatchOperationOp> Op { get; set; }
 		
 		/// <summary>
 		/// The path for the operation. In the case of an array, a zero based index can be used to specify the position in the array (e.g. /biscuits/0/name). The "-" character can be used instead of an index to insert at the end of the array (e.g. /biscuits/-).
@@ -4338,7 +4338,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of the IDE.
 		/// </summary>
-		public SupportedIdeIdeType IdeType { get; set; }
+		public System.Nullable<SupportedIdeIdeType> IdeType { get; set; }
 		
 		/// <summary>
 		/// The name of the IDE.
@@ -4825,7 +4825,7 @@ namespace MyNS
 		/// <summary>
 		/// Defaults to OneLevel.
 		/// </summary>
-		public TfvcItemDescriptorRecursionLevel RecursionLevel { get; set; }
+		public System.Nullable<TfvcItemDescriptorRecursionLevel> RecursionLevel { get; set; }
 		
 		/// <summary>
 		/// Specify the desired version, can be null or empty string only if VersionType is latest or tip.
@@ -4835,12 +4835,12 @@ namespace MyNS
 		/// <summary>
 		/// Defaults to None.
 		/// </summary>
-		public TfvcItemDescriptorVersionOption VersionOption { get; set; }
+		public System.Nullable<TfvcItemDescriptorVersionOption> VersionOption { get; set; }
 		
 		/// <summary>
 		/// Defaults to Latest.
 		/// </summary>
-		public TfvcItemDescriptorVersionType VersionType { get; set; }
+		public System.Nullable<TfvcItemDescriptorVersionType> VersionType { get; set; }
 	}
 	
 	public enum TfvcItemDescriptorRecursionLevel
@@ -5126,9 +5126,9 @@ namespace MyNS
 		/// </summary>
 		public string Version { get; set; }
 		
-		public TfvcVersionDescriptorVersionOption VersionOption { get; set; }
+		public System.Nullable<TfvcVersionDescriptorVersionOption> VersionOption { get; set; }
 		
-		public TfvcVersionDescriptorVersionType VersionType { get; set; }
+		public System.Nullable<TfvcVersionDescriptorVersionType> VersionType { get; set; }
 	}
 	
 	public enum TfvcVersionDescriptorVersionOption
@@ -5173,7 +5173,7 @@ namespace MyNS
 		
 		public GitRefUpdate[] RefUpdateRequests { get; set; }
 		
-		public UpdateRefsRequestUpdateMode UpdateMode { get; set; }
+		public System.Nullable<UpdateRefsRequestUpdateMode> UpdateMode { get; set; }
 	}
 	
 	public enum UpdateRefsRequestUpdateMode
@@ -5187,7 +5187,7 @@ namespace MyNS
 	public class VersionControlProjectInfo
 	{
 		
-		public VersionControlProjectInfoDefaultSourceControlType DefaultSourceControlType { get; set; }
+		public System.Nullable<VersionControlProjectInfoDefaultSourceControlType> DefaultSourceControlType { get; set; }
 		
 		/// <summary>
 		/// Represents a shallow reference to a TeamProject.

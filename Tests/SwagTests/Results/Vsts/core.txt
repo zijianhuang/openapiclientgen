@@ -220,7 +220,7 @@ namespace MyNS
 		/// <summary>
 		/// The patch operation
 		/// </summary>
-		public JsonPatchOperationOp Op { get; set; }
+		public System.Nullable<JsonPatchOperationOp> Op { get; set; }
 		
 		/// <summary>
 		/// The path for the operation. In the case of an array, a zero based index can be used to specify the position in the array (e.g. /biscuits/0/name). The "-" character can be used instead of an index to insert at the end of the array (e.g. /biscuits/-).
@@ -268,7 +268,7 @@ namespace MyNS
 		/// <summary>
 		/// The current status of the operation.
 		/// </summary>
-		public OperationReferenceStatus Status { get; set; }
+		public System.Nullable<OperationReferenceStatus> Status { get; set; }
 		
 		/// <summary>
 		/// URL to get the full operation object.
@@ -306,7 +306,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> IsDefault { get; set; }
 		
-		public ProcessType Type { get; set; }
+		public System.Nullable<ProcessType> Type { get; set; }
 	}
 	
 	public enum ProcessType
@@ -383,7 +383,7 @@ namespace MyNS
 		/// <summary>
 		/// The current state of the project.
 		/// </summary>
-		public ProjectInfoState State { get; set; }
+		public System.Nullable<ProjectInfoState> State { get; set; }
 		
 		/// <summary>
 		/// A Uri that can be used to refer to this project.
@@ -398,7 +398,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates whom the project is visible to.
 		/// </summary>
-		public ProjectInfoVisibility Visibility { get; set; }
+		public System.Nullable<ProjectInfoVisibility> Visibility { get; set; }
 	}
 	
 	/// <summary>
@@ -452,7 +452,7 @@ namespace MyNS
 		/// </summary>
 		public ProjectInfo Project { get; set; }
 		
-		public ProjectMessageProjectChangeType ProjectChangeType { get; set; }
+		public System.Nullable<ProjectMessageProjectChangeType> ProjectChangeType { get; set; }
 		
 		public System.Nullable<System.Boolean> ShouldInvalidateSystemStore { get; set; }
 	}
@@ -644,7 +644,7 @@ namespace MyNS
 		/// <summary>
 		/// Process customization type on this collection. It can be Xml or Inherited.
 		/// </summary>
-		public TeamProjectCollectionProcessCustomizationType ProcessCustomizationType { get; set; }
+		public System.Nullable<TeamProjectCollectionProcessCustomizationType> ProcessCustomizationType { get; set; }
 		
 		/// <summary>
 		/// Project collection state.
@@ -728,7 +728,7 @@ namespace MyNS
 		/// <summary>
 		/// Project state.
 		/// </summary>
-		public TeamProjectReferenceState State { get; set; }
+		public System.Nullable<TeamProjectReferenceState> State { get; set; }
 		
 		/// <summary>
 		/// Url to the full version of the object.
@@ -738,7 +738,7 @@ namespace MyNS
 		/// <summary>
 		/// Project visibility.
 		/// </summary>
-		public TeamProjectReferenceVisibility Visibility { get; set; }
+		public System.Nullable<TeamProjectReferenceVisibility> Visibility { get; set; }
 	}
 	
 	public enum TeamProjectReferenceState

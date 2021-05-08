@@ -48,7 +48,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of change that was made to the item.
 		/// </summary>
-		public ChangeChangeType ChangeType { get; set; }
+		public System.Nullable<ChangeChangeType> ChangeType { get; set; }
 		
 		/// <summary>
 		/// Current version.
@@ -107,7 +107,7 @@ namespace MyNS
 		
 		public string Content { get; set; }
 		
-		public ItemContentContentType ContentType { get; set; }
+		public System.Nullable<ItemContentContentType> ContentType { get; set; }
 	}
 	
 	public enum ItemContentContentType
@@ -293,7 +293,7 @@ namespace MyNS
 		/// <summary>
 		/// Project state.
 		/// </summary>
-		public TeamProjectReferenceState State { get; set; }
+		public System.Nullable<TeamProjectReferenceState> State { get; set; }
 		
 		/// <summary>
 		/// Url to the full version of the object.
@@ -303,7 +303,7 @@ namespace MyNS
 		/// <summary>
 		/// Project visibility.
 		/// </summary>
-		public TeamProjectReferenceVisibility Visibility { get; set; }
+		public System.Nullable<TeamProjectReferenceVisibility> Visibility { get; set; }
 	}
 	
 	public enum TeamProjectReferenceState
@@ -827,7 +827,7 @@ namespace MyNS
 		/// <summary>
 		/// Defaults to OneLevel.
 		/// </summary>
-		public TfvcItemDescriptorRecursionLevel RecursionLevel { get; set; }
+		public System.Nullable<TfvcItemDescriptorRecursionLevel> RecursionLevel { get; set; }
 		
 		/// <summary>
 		/// Specify the desired version, can be null or empty string only if VersionType is latest or tip.
@@ -837,12 +837,12 @@ namespace MyNS
 		/// <summary>
 		/// Defaults to None.
 		/// </summary>
-		public TfvcItemDescriptorVersionOption VersionOption { get; set; }
+		public System.Nullable<TfvcItemDescriptorVersionOption> VersionOption { get; set; }
 		
 		/// <summary>
 		/// Defaults to Latest.
 		/// </summary>
-		public TfvcItemDescriptorVersionType VersionType { get; set; }
+		public System.Nullable<TfvcItemDescriptorVersionType> VersionType { get; set; }
 	}
 	
 	public enum TfvcItemDescriptorRecursionLevel
@@ -1116,9 +1116,9 @@ namespace MyNS
 		/// </summary>
 		public string Version { get; set; }
 		
-		public TfvcVersionDescriptorVersionOption VersionOption { get; set; }
+		public System.Nullable<TfvcVersionDescriptorVersionOption> VersionOption { get; set; }
 		
-		public TfvcVersionDescriptorVersionType VersionType { get; set; }
+		public System.Nullable<TfvcVersionDescriptorVersionType> VersionType { get; set; }
 	}
 	
 	public enum TfvcVersionDescriptorVersionOption
@@ -1154,7 +1154,7 @@ namespace MyNS
 	public class VersionControlProjectInfo
 	{
 		
-		public VersionControlProjectInfoDefaultSourceControlType DefaultSourceControlType { get; set; }
+		public System.Nullable<VersionControlProjectInfoDefaultSourceControlType> DefaultSourceControlType { get; set; }
 		
 		/// <summary>
 		/// Represents a shallow reference to a TeamProject.

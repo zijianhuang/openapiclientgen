@@ -39,12 +39,12 @@ namespace MyNS
 		/// <summary>
 		/// Current account status
 		/// </summary>
-		public AccountAccountStatus AccountStatus { get; set; }
+		public System.Nullable<AccountAccountStatus> AccountStatus { get; set; }
 		
 		/// <summary>
 		/// Type of account: Personal, Organization
 		/// </summary>
-		public AccountAccountType AccountType { get; set; }
+		public System.Nullable<AccountAccountType> AccountType { get; set; }
 		
 		/// <summary>
 		/// Uri for an account

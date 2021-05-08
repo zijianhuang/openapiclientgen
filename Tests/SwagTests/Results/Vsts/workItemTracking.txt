@@ -128,7 +128,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the activity
 		/// </summary>
-		public AccountRecentActivityWorkItemModelBaseActivityType ActivityType { get; set; }
+		public System.Nullable<AccountRecentActivityWorkItemModelBaseActivityType> ActivityType { get; set; }
 		
 		/// <summary>
 		/// Last changed date of the work item
@@ -380,7 +380,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the reaction.
 		/// </summary>
-		public CommentReactionType Type { get; set; }
+		public System.Nullable<CommentReactionType> Type { get; set; }
 	}
 	
 	public enum CommentReactionType
@@ -663,7 +663,7 @@ namespace MyNS
 		/// <summary>
 		/// The patch operation
 		/// </summary>
-		public JsonPatchOperationOp Op { get; set; }
+		public System.Nullable<JsonPatchOperationOp> Op { get; set; }
 		
 		/// <summary>
 		/// The path for the operation. In the case of an array, a zero based index can be used to specify the position in the array (e.g. /biscuits/0/name). The "-" character can be used instead of an index to insert at the end of the array (e.g. /biscuits/-).
@@ -820,12 +820,12 @@ namespace MyNS
 		/// <summary>
 		/// The expand parameters for queries. Possible options are { None, Wiql, Clauses, All, Minimal }
 		/// </summary>
-		public QueryBatchGetRequestExpand Expand { get; set; }
+		public System.Nullable<QueryBatchGetRequestExpand> Expand { get; set; }
 		
 		/// <summary>
 		/// The flag to control error policy in a query batch request. Possible options are { Fail, Omit }.
 		/// </summary>
-		public QueryBatchGetRequestErrorPolicy ErrorPolicy { get; set; }
+		public System.Nullable<QueryBatchGetRequestErrorPolicy> ErrorPolicy { get; set; }
 		
 		/// <summary>
 		/// The requested query ids
@@ -889,7 +889,7 @@ namespace MyNS
 		/// <summary>
 		/// The link query mode.
 		/// </summary>
-		public QueryHierarchyItemFilterOptions FilterOptions { get; set; }
+		public System.Nullable<QueryHierarchyItemFilterOptions> FilterOptions { get; set; }
 		
 		/// <summary>
 		/// If this is a query folder, indicates if it contains any children.
@@ -959,12 +959,12 @@ namespace MyNS
 		/// <summary>
 		/// The recursion option for use in a tree query.
 		/// </summary>
-		public QueryHierarchyItemQueryRecursionOption QueryRecursionOption { get; set; }
+		public System.Nullable<QueryHierarchyItemQueryRecursionOption> QueryRecursionOption { get; set; }
 		
 		/// <summary>
 		/// The type of query.
 		/// </summary>
-		public QueryHierarchyItemQueryType QueryType { get; set; }
+		public System.Nullable<QueryHierarchyItemQueryType> QueryType { get; set; }
 		
 		/// <summary>
 		/// The sort columns of the query.
@@ -1016,7 +1016,7 @@ namespace MyNS
 		/// <summary>
 		/// Logical operator separating the condition clause
 		/// </summary>
-		public WorkItemQueryClauseLogicalOperator LogicalOperator { get; set; }
+		public System.Nullable<WorkItemQueryClauseLogicalOperator> LogicalOperator { get; set; }
 		
 		/// <summary>
 		/// Describes a work item field operation.
@@ -1365,7 +1365,7 @@ namespace MyNS
 		/// <summary>
 		/// The expand parameters for work item attributes. Possible options are { None, Relations, Fields, Links, All }
 		/// </summary>
-		public WorkItemBatchGetRequestExpand Expand { get; set; }
+		public System.Nullable<WorkItemBatchGetRequestExpand> Expand { get; set; }
 		
 		/// <summary>
 		/// AsOf UTC date time string
@@ -1375,7 +1375,7 @@ namespace MyNS
 		/// <summary>
 		/// The flag to control error policy in a bulk get work items request. Possible options are {Fail, Omit}.
 		/// </summary>
-		public WorkItemBatchGetRequestErrorPolicy ErrorPolicy { get; set; }
+		public System.Nullable<WorkItemBatchGetRequestErrorPolicy> ErrorPolicy { get; set; }
 		
 		/// <summary>
 		/// The requested fields
@@ -1454,7 +1454,7 @@ namespace MyNS
 		/// <summary>
 		/// Node structure type.
 		/// </summary>
-		public WorkItemClassificationNodeStructureType StructureType { get; set; }
+		public System.Nullable<WorkItemClassificationNodeStructureType> StructureType { get; set; }
 	}
 	
 	public enum WorkItemClassificationNodeStructureType
@@ -1681,12 +1681,12 @@ namespace MyNS
 		/// <summary>
 		/// The type of the field.
 		/// </summary>
-		public WorkItemFieldType Type { get; set; }
+		public System.Nullable<WorkItemFieldType> Type { get; set; }
 		
 		/// <summary>
 		/// The usage of the field.
 		/// </summary>
-		public WorkItemFieldUsage Usage { get; set; }
+		public System.Nullable<WorkItemFieldUsage> Usage { get; set; }
 	}
 	
 	public enum WorkItemFieldType
@@ -1852,12 +1852,12 @@ namespace MyNS
 		/// <summary>
 		/// The result type
 		/// </summary>
-		public WorkItemQueryResultQueryResultType QueryResultType { get; set; }
+		public System.Nullable<WorkItemQueryResultQueryResultType> QueryResultType { get; set; }
 		
 		/// <summary>
 		/// The type of the query
 		/// </summary>
-		public WorkItemQueryResultQueryType QueryType { get; set; }
+		public System.Nullable<WorkItemQueryResultQueryType> QueryType { get; set; }
 		
 		/// <summary>
 		/// The sort columns of the query.
@@ -2250,7 +2250,7 @@ namespace MyNS
 		/// <summary>
 		/// Describes the type of the action for the update request.
 		/// </summary>
-		public WorkItemTypeTemplateUpdateModelActionType ActionType { get; set; }
+		public System.Nullable<WorkItemTypeTemplateUpdateModelActionType> ActionType { get; set; }
 		
 		/// <summary>
 		/// Methodology to which the template belongs, eg. Agile, Scrum, CMMI.
@@ -2265,7 +2265,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of the template described in the request body.
 		/// </summary>
-		public WorkItemTypeTemplateUpdateModelTemplateType TemplateType { get; set; }
+		public System.Nullable<WorkItemTypeTemplateUpdateModelTemplateType> TemplateType { get; set; }
 	}
 	
 	public enum WorkItemTypeTemplateUpdateModelActionType

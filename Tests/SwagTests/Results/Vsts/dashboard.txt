@@ -32,7 +32,7 @@ namespace MyNS
 		/// <summary>
 		/// Entity to which the dashboard is scoped.
 		/// </summary>
-		public DashboardDashboardScope DashboardScope { get; set; }
+		public System.Nullable<DashboardDashboardScope> DashboardScope { get; set; }
 		
 		/// <summary>
 		/// Description of the dashboard.
@@ -264,12 +264,12 @@ namespace MyNS
 		/// <summary>
 		/// Deprecated: The old permission model describing the level of permissions for the current team. Pre-M125.
 		/// </summary>
-		public DashboardGroupPermission Permission { get; set; }
+		public System.Nullable<DashboardGroupPermission> Permission { get; set; }
 		
 		/// <summary>
 		/// A permissions bit mask describing the security permissions of the current team for dashboards. When this permission is the value None, use GroupMemberPermission. Permissions are evaluated based on the presence of a value other than None, else the GroupMemberPermission will be saved.
 		/// </summary>
-		public DashboardGroupTeamDashboardPermission TeamDashboardPermission { get; set; }
+		public System.Nullable<DashboardGroupTeamDashboardPermission> TeamDashboardPermission { get; set; }
 		
 		public string Url { get; set; }
 	}

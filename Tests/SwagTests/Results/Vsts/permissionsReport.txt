@@ -36,7 +36,7 @@ namespace MyNS
 		/// </summary>
 		public string ReportName { get; set; }
 		
-		public PermissionsReportReportStatus ReportStatus { get; set; }
+		public System.Nullable<PermissionsReportReportStatus> ReportStatus { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> ReportStatusLastUpdatedTime { get; set; }
 		
@@ -98,7 +98,7 @@ namespace MyNS
 		/// <summary>
 		/// Specify the type of resource to report permissions on
 		/// </summary>
-		public PermissionsReportResourceResourceType ResourceType { get; set; }
+		public System.Nullable<PermissionsReportResourceResourceType> ResourceType { get; set; }
 	}
 	
 	public enum PermissionsReportResourceResourceType

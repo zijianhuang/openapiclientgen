@@ -84,22 +84,22 @@ namespace MyNS
 		/// <summary>
 		/// High level bank account type - BANK CREDITCARD BANK encompasses all bank account types other than credit cards.
 		/// </summary>
-		public FeedConnectionAccountType AccountType { get; set; }
+		public System.Nullable<FeedConnectionAccountType> AccountType { get; set; }
 		
 		/// <summary>
 		/// 3 letter alpha code for the ISO-4217 currency code, e.g. USD, AUD.
 		/// </summary>
-		public FeedConnectionCurrency Currency { get; set; }
+		public System.Nullable<FeedConnectionCurrency> Currency { get; set; }
 		
 		/// <summary>
 		/// ISO-3166 alpha-2 country code, e.g. US, AU This element is required only when the Application supports multi-region. Talk to your Partner Manager to confirm if this is the case.
 		/// </summary>
-		public FeedConnectionCountry Country { get; set; }
+		public System.Nullable<FeedConnectionCountry> Country { get; set; }
 		
 		/// <summary>
 		/// the current status of the feed connection
 		/// </summary>
-		public FeedConnectionStatus Status { get; set; }
+		public System.Nullable<FeedConnectionStatus> Status { get; set; }
 		
 		/// <summary>
 		/// On error, the API consumer will receive an HTTP response with a HTTP Status Code of 4xx or 5xx and a Content-Type of application/problem+json.
@@ -965,7 +965,7 @@ namespace MyNS
 		/// <summary>
 		/// Identifies the type of error.
 		/// </summary>
-		public ErrorType Type { get; set; }
+		public System.Nullable<ErrorType> Type { get; set; }
 	}
 	
 	public enum ErrorType
@@ -1014,7 +1014,7 @@ namespace MyNS
 		/// <summary>
 		/// Current status of statements
 		/// </summary>
-		public StatementStatus Status { get; set; }
+		public System.Nullable<StatementStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Opening balance date (can be no older than one year from the current date) ISO-8601 YYYY-MM-DD
@@ -1067,7 +1067,7 @@ namespace MyNS
 		/// <summary>
 		/// If the statement balances are credit or debit, the CreditDebitIndicator should be specified from the perspective of the Customer.
 		/// </summary>
-		public StartBalanceCreditDebitIndicator CreditDebitIndicator { get; set; }
+		public System.Nullable<StartBalanceCreditDebitIndicator> CreditDebitIndicator { get; set; }
 	}
 	
 	public enum StartBalanceCreditDebitIndicator

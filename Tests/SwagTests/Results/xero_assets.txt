@@ -68,7 +68,7 @@ namespace MyNS
 		/// <summary>
 		/// See Asset Status Codes.
 		/// </summary>
-		public AssetAssetStatus AssetStatus { get; set; }
+		public System.Nullable<AssetAssetStatus> AssetStatus { get; set; }
 		
 		/// <summary>
 		/// The date the asset’s warranty expires (if needed) YYYY-MM-DD
@@ -192,12 +192,12 @@ namespace MyNS
 		/// <summary>
 		/// The method of depreciation applied to this asset. See Depreciation Methods
 		/// </summary>
-		public BookDepreciationSettingDepreciationMethod DepreciationMethod { get; set; }
+		public System.Nullable<BookDepreciationSettingDepreciationMethod> DepreciationMethod { get; set; }
 		
 		/// <summary>
 		/// The method of averaging applied to this asset. See Averaging Methods
 		/// </summary>
-		public BookDepreciationSettingAveragingMethod AveragingMethod { get; set; }
+		public System.Nullable<BookDepreciationSettingAveragingMethod> AveragingMethod { get; set; }
 		
 		/// <summary>
 		/// The rate of depreciation (e.g. 0.05)
@@ -212,7 +212,7 @@ namespace MyNS
 		/// <summary>
 		/// See Depreciation Calculation Methods
 		/// </summary>
-		public BookDepreciationSettingDepreciationCalculationMethod DepreciationCalculationMethod { get; set; }
+		public System.Nullable<BookDepreciationSettingDepreciationCalculationMethod> DepreciationCalculationMethod { get; set; }
 		
 		/// <summary>
 		/// Unique Xero identifier for the depreciable object

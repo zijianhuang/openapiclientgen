@@ -155,7 +155,7 @@ namespace MyNS
 		/// <summary>
 		/// The role for this identity on a feed.
 		/// </summary>
-		public FeedPermissionRole Role { get; set; }
+		public System.Nullable<FeedPermissionRole> Role { get; set; }
 	}
 	
 	/// <summary>
@@ -196,7 +196,7 @@ namespace MyNS
 		
 		public FeedBatchOperationData Data { get; set; }
 		
-		public FeedBatchDataOperation Operation { get; set; }
+		public System.Nullable<FeedBatchDataOperation> Operation { get; set; }
 	}
 	
 	public class FeedBatchOperationData
@@ -218,7 +218,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of operation.
 		/// </summary>
-		public FeedChangeChangeType ChangeType { get; set; }
+		public System.Nullable<FeedChangeChangeType> ChangeType { get; set; }
 		
 		/// <summary>
 		/// A container for artifacts.
@@ -282,7 +282,7 @@ namespace MyNS
 		/// <summary>
 		/// Supported capabilities of a feed.
 		/// </summary>
-		public FeedCoreCapabilities Capabilities { get; set; }
+		public System.Nullable<FeedCoreCapabilities> Capabilities { get; set; }
 		
 		/// <summary>
 		/// This will either be the feed GUID or the feed GUID and view GUID depending on how the feed was accessed.
@@ -427,7 +427,7 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the status of the upstream.
 		/// </summary>
-		public UpstreamSourceStatus Status { get; set; }
+		public System.Nullable<UpstreamSourceStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Provides a human-readable reason for the status of the upstream.
@@ -437,7 +437,7 @@ namespace MyNS
 		/// <summary>
 		/// Source type, such as Public or Internal.
 		/// </summary>
-		public UpstreamSourceUpstreamSourceType UpstreamSourceType { get; set; }
+		public System.Nullable<UpstreamSourceUpstreamSourceType> UpstreamSourceType { get; set; }
 	}
 	
 	public enum UpstreamSourceStatus
@@ -489,7 +489,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of view.
 		/// </summary>
-		public FeedViewType Type { get; set; }
+		public System.Nullable<FeedViewType> Type { get; set; }
 		
 		/// <summary>
 		/// Url of the view.
@@ -499,7 +499,7 @@ namespace MyNS
 		/// <summary>
 		/// Visibility status of the view.
 		/// </summary>
-		public FeedViewVisibility Visibility { get; set; }
+		public System.Nullable<FeedViewVisibility> Visibility { get; set; }
 	}
 	
 	public enum FeedViewType
@@ -617,7 +617,7 @@ namespace MyNS
 		/// <summary>
 		/// Role associated with the Identity.
 		/// </summary>
-		public GlobalPermissionRole Role { get; set; }
+		public System.Nullable<GlobalPermissionRole> Role { get; set; }
 	}
 	
 	public enum GlobalPermissionRole
@@ -653,7 +653,7 @@ namespace MyNS
 		/// <summary>
 		/// The patch operation
 		/// </summary>
-		public JsonPatchOperationOp Op { get; set; }
+		public System.Nullable<JsonPatchOperationOp> Op { get; set; }
 		
 		/// <summary>
 		/// The path for the operation. In the case of an array, a zero based index can be used to specify the position in the array (e.g. /biscuits/0/name). The "-" character can be used instead of an index to insert at the end of the array (e.g. /biscuits/-).
@@ -827,7 +827,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of change that was performed.
 		/// </summary>
-		public PackageVersionChangeChangeType ChangeType { get; set; }
+		public System.Nullable<PackageVersionChangeChangeType> ChangeType { get; set; }
 		
 		/// <summary>
 		/// Token marker for this change, allowing the caller to send this value back to the service and receive changes beyond this one.

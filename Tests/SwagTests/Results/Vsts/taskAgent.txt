@@ -181,7 +181,7 @@ namespace MyNS
 		/// <summary>
 		/// Whether or not the agent is online.
 		/// </summary>
-		public TaskAgentReferenceStatus Status { get; set; }
+		public System.Nullable<TaskAgentReferenceStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Agent version.
@@ -303,12 +303,12 @@ namespace MyNS
 		/// <summary>
 		/// Additional pool settings and details
 		/// </summary>
-		public TaskAgentPoolReferenceOptions Options { get; set; }
+		public System.Nullable<TaskAgentPoolReferenceOptions> Options { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the type of the pool
 		/// </summary>
-		public TaskAgentPoolReferencePoolType PoolType { get; set; }
+		public System.Nullable<TaskAgentPoolReferencePoolType> PoolType { get; set; }
 		
 		public string Scope { get; set; }
 		
@@ -448,7 +448,7 @@ namespace MyNS
 		/// <summary>
 		/// The result of this request.
 		/// </summary>
-		public TaskAgentJobRequestResult Result { get; set; }
+		public System.Nullable<TaskAgentJobRequestResult> Result { get; set; }
 		
 		/// <summary>
 		/// Scope of the pipeline; matches the project ID.
@@ -580,7 +580,7 @@ namespace MyNS
 	public class TaskAgentUpdateReason
 	{
 		
-		public TaskAgentUpdateReasonCode Code { get; set; }
+		public System.Nullable<TaskAgentUpdateReasonCode> Code { get; set; }
 	}
 	
 	public enum TaskAgentUpdateReasonCode
@@ -1104,7 +1104,7 @@ namespace MyNS
 		
 		public string SourceName { get; set; }
 		
-		public DemandSourceSourceType SourceType { get; set; }
+		public System.Nullable<DemandSourceSourceType> SourceType { get; set; }
 		
 		public string SourceVersion { get; set; }
 	}
@@ -1446,7 +1446,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the resource.
 		/// </summary>
-		public EnvironmentResourceReferenceType Type { get; set; }
+		public System.Nullable<EnvironmentResourceReferenceType> Type { get; set; }
 	}
 	
 	public enum EnvironmentResourceReferenceType
@@ -1515,7 +1515,7 @@ namespace MyNS
 		/// <summary>
 		/// Operating system type of the machines in the pool
 		/// </summary>
-		public ElasticPoolOsType OsType { get; set; }
+		public System.Nullable<ElasticPoolOsType> OsType { get; set; }
 		
 		/// <summary>
 		/// Id of the associated TaskAgentPool
@@ -1674,7 +1674,7 @@ namespace MyNS
 		/// <summary>
 		/// Result of the environment deployment execution
 		/// </summary>
-		public EnvironmentDeploymentExecutionRecordResult Result { get; set; }
+		public System.Nullable<EnvironmentDeploymentExecutionRecordResult> Result { get; set; }
 		
 		/// <summary>
 		/// Project Id
@@ -1808,7 +1808,7 @@ namespace MyNS
 		/// <summary>
 		/// Environment resource type
 		/// </summary>
-		public EnvironmentResourceType Type { get; set; }
+		public System.Nullable<EnvironmentResourceType> Type { get; set; }
 	}
 	
 	public enum EnvironmentResourceType
@@ -1852,7 +1852,7 @@ namespace MyNS
 		/// <summary>
 		/// Result of the environment deployment execution
 		/// </summary>
-		public EnvironmentResourceDeploymentExecutionRecordResult Result { get; set; }
+		public System.Nullable<EnvironmentResourceDeploymentExecutionRecordResult> Result { get; set; }
 		
 		/// <summary>
 		/// Start time of the environment resource deployment execution
@@ -1976,7 +1976,7 @@ namespace MyNS
 		/// <summary>
 		/// Mode in which the value of this input should be entered
 		/// </summary>
-		public InputDescriptorInputMode InputMode { get; set; }
+		public System.Nullable<InputDescriptorInputMode> InputMode { get; set; }
 		
 		/// <summary>
 		/// Gets whether this input is confidential, such as for a password or application key
@@ -2046,7 +2046,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the data data type to validate.
 		/// </summary>
-		public InputValidationDataType DataType { get; set; }
+		public System.Nullable<InputValidationDataType> DataType { get; set; }
 		
 		/// <summary>
 		/// Gets or sets if this is a required field.
@@ -2221,7 +2221,7 @@ namespace MyNS
 		
 		public string Message { get; set; }
 		
-		public IssueType Type { get; set; }
+		public System.Nullable<IssueType> Type { get; set; }
 	}
 	
 	public enum IssueType
@@ -2256,7 +2256,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int64> RequestId { get; set; }
 		
-		public JobCompletedEventResult Result { get; set; }
+		public System.Nullable<JobCompletedEventResult> Result { get; set; }
 	}
 	
 	public enum JobCompletedEventResult
@@ -2364,7 +2364,7 @@ namespace MyNS
 	public class MaskHint
 	{
 		
-		public MaskHintType Type { get; set; }
+		public System.Nullable<MaskHintType> Type { get; set; }
 		
 		public string Value { get; set; }
 	}
@@ -2999,7 +2999,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets the result of service endpoint execution.
 		/// </summary>
-		public ServiceEndpointExecutionDataResult Result { get; set; }
+		public System.Nullable<ServiceEndpointExecutionDataResult> Result { get; set; }
 		
 		/// <summary>
 		/// Gets the start time of service endpoint execution.
@@ -3068,7 +3068,7 @@ namespace MyNS
 		/// </summary>
 		public JToken Result { get; set; }
 		
-		public ServiceEndpointRequestResultStatusCode StatusCode { get; set; }
+		public System.Nullable<ServiceEndpointRequestResultStatusCode> StatusCode { get; set; }
 	}
 	
 	public enum ServiceEndpointRequestResultStatusCode
@@ -3330,7 +3330,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> TimeoutInMinutes { get; set; }
 		
-		public TaskAgentJobStepType Type { get; set; }
+		public System.Nullable<TaskAgentJobStepType> Type { get; set; }
 	}
 	
 	public class TaskAgentJobTask
@@ -3458,7 +3458,7 @@ namespace MyNS
 		/// <summary>
 		/// Days for a build (flags enum for days of the week)
 		/// </summary>
-		public TaskAgentPoolMaintenanceScheduleDaysToBuild DaysToBuild { get; set; }
+		public System.Nullable<TaskAgentPoolMaintenanceScheduleDaysToBuild> DaysToBuild { get; set; }
 		
 		/// <summary>
 		/// The Job Id of the Scheduled job that will queue the pool maintenance job.
@@ -3548,7 +3548,7 @@ namespace MyNS
 		/// <summary>
 		/// The maintenance job result
 		/// </summary>
-		public TaskAgentPoolMaintenanceJobResult Result { get; set; }
+		public System.Nullable<TaskAgentPoolMaintenanceJobResult> Result { get; set; }
 		
 		/// <summary>
 		/// Time that the maintenance job was started
@@ -3558,7 +3558,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of the maintenance job
 		/// </summary>
-		public TaskAgentPoolMaintenanceJobStatus Status { get; set; }
+		public System.Nullable<TaskAgentPoolMaintenanceJobStatus> Status { get; set; }
 		
 		public TaskAgentPoolMaintenanceJobTargetAgent[] TargetAgents { get; set; }
 		
@@ -3600,9 +3600,9 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> JobId { get; set; }
 		
-		public TaskAgentPoolMaintenanceJobTargetAgentResult Result { get; set; }
+		public System.Nullable<TaskAgentPoolMaintenanceJobTargetAgentResult> Result { get; set; }
 		
-		public TaskAgentPoolMaintenanceJobTargetAgentStatus Status { get; set; }
+		public System.Nullable<TaskAgentPoolMaintenanceJobTargetAgentStatus> Status { get; set; }
 	}
 	
 	public enum TaskAgentPoolMaintenanceJobTargetAgentResult
@@ -3739,7 +3739,7 @@ namespace MyNS
 	public class TaskCompletedEvent
 	{
 		
-		public TaskCompletedEventResult Result { get; set; }
+		public System.Nullable<TaskCompletedEventResult> Result { get; set; }
 	}
 	
 	public enum TaskCompletedEventResult
@@ -4012,7 +4012,7 @@ namespace MyNS
 		
 		public System.Nullable<System.DateTimeOffset> ChangedDate { get; set; }
 		
-		public TaskGroupRevisionChangeType ChangeType { get; set; }
+		public System.Nullable<TaskGroupRevisionChangeType> ChangeType { get; set; }
 		
 		public string Comment { get; set; }
 		
@@ -4243,7 +4243,7 @@ namespace MyNS
 	public class TaskOrchestrationItem
 	{
 		
-		public TaskOrchestrationItemItemType ItemType { get; set; }
+		public System.Nullable<TaskOrchestrationItemItemType> ItemType { get; set; }
 	}
 	
 	public enum TaskOrchestrationItemItemType
@@ -4293,13 +4293,13 @@ namespace MyNS
 		
 		public string RequestedForId { get; set; }
 		
-		public TaskOrchestrationPlanResult Result { get; set; }
+		public System.Nullable<TaskOrchestrationPlanResult> Result { get; set; }
 		
 		public string ResultCode { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> StartTime { get; set; }
 		
-		public TaskOrchestrationPlanState State { get; set; }
+		public System.Nullable<TaskOrchestrationPlanState> State { get; set; }
 		
 		public TimelineReference Timeline { get; set; }
 	}
@@ -4347,7 +4347,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> Count { get; set; }
 		
-		public TaskOrchestrationPlanGroupsQueueMetricsStatus Status { get; set; }
+		public System.Nullable<TaskOrchestrationPlanGroupsQueueMetricsStatus> Status { get; set; }
 	}
 	
 	public enum TaskOrchestrationPlanGroupsQueueMetricsStatus
@@ -4491,13 +4491,13 @@ namespace MyNS
 		
 		public string RefName { get; set; }
 		
-		public TimelineRecordResult Result { get; set; }
+		public System.Nullable<TimelineRecordResult> Result { get; set; }
 		
 		public string ResultCode { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> StartTime { get; set; }
 		
-		public TimelineRecordState State { get; set; }
+		public System.Nullable<TimelineRecordState> State { get; set; }
 		
 		public TaskReference Task { get; set; }
 		

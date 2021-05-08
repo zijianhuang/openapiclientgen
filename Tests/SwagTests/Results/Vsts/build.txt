@@ -197,7 +197,7 @@ namespace MyNS
 		
 		public string GroupByValue { get; set; }
 		
-		public AggregatedResultsByOutcomeOutcome Outcome { get; set; }
+		public System.Nullable<AggregatedResultsByOutcomeOutcome> Outcome { get; set; }
 		
 		public System.Nullable<System.Int32> RerunResultCount { get; set; }
 	}
@@ -244,7 +244,7 @@ namespace MyNS
 		/// </summary>
 		public BuildReference Build { get; set; }
 		
-		public TestResultsContextContextType ContextType { get; set; }
+		public System.Nullable<TestResultsContextContextType> ContextType { get; set; }
 		
 		/// <summary>
 		/// Pipeline reference
@@ -298,7 +298,7 @@ namespace MyNS
 		/// <summary>
 		/// The build result.
 		/// </summary>
-		public BuildReferenceResult Result { get; set; }
+		public System.Nullable<BuildReferenceResult> Result { get; set; }
 		
 		/// <summary>
 		/// The time that the build was started.
@@ -308,7 +308,7 @@ namespace MyNS
 		/// <summary>
 		/// The build status.
 		/// </summary>
-		public BuildReferenceStatus Status { get; set; }
+		public System.Nullable<BuildReferenceStatus> Status { get; set; }
 	}
 	
 	public class IdentityRef
@@ -550,7 +550,7 @@ namespace MyNS
 	public class AggregatedRunsByOutcome
 	{
 		
-		public AggregatedRunsByOutcomeOutcome Outcome { get; set; }
+		public System.Nullable<AggregatedRunsByOutcomeOutcome> Outcome { get; set; }
 		
 		public System.Nullable<System.Int32> RunsCount { get; set; }
 	}
@@ -574,7 +574,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> RunsCount { get; set; }
 		
-		public AggregatedRunsByStateState State { get; set; }
+		public System.Nullable<AggregatedRunsByStateState> State { get; set; }
 	}
 	
 	public enum AggregatedRunsByStateState
@@ -778,7 +778,7 @@ namespace MyNS
 		/// <summary>
 		/// The build's priority.
 		/// </summary>
-		public BuildPriority Priority { get; set; }
+		public System.Nullable<BuildPriority> Priority { get; set; }
 		
 		/// <summary>
 		/// Represents a shallow reference to a TeamProject.
@@ -803,7 +803,7 @@ namespace MyNS
 		/// <summary>
 		/// Additional options for queueing the build.
 		/// </summary>
-		public BuildQueueOptions QueueOptions { get; set; }
+		public System.Nullable<BuildQueueOptions> QueueOptions { get; set; }
 		
 		/// <summary>
 		/// The current position of the build in the queue.
@@ -818,7 +818,7 @@ namespace MyNS
 		/// <summary>
 		/// The reason that the build was created.
 		/// </summary>
-		public BuildReason Reason { get; set; }
+		public System.Nullable<BuildReason> Reason { get; set; }
 		
 		/// <summary>
 		/// Represents a repository used by a build definition.
@@ -832,7 +832,7 @@ namespace MyNS
 		/// <summary>
 		/// The build result.
 		/// </summary>
-		public BuildResult Result { get; set; }
+		public System.Nullable<BuildResult> Result { get; set; }
 		
 		/// <summary>
 		/// Indicates whether the build is retained by a release.
@@ -857,7 +857,7 @@ namespace MyNS
 		/// <summary>
 		/// The status of the build.
 		/// </summary>
-		public BuildStatus Status { get; set; }
+		public System.Nullable<BuildStatus> Status { get; set; }
 		
 		public string[] Tags { get; set; }
 		
@@ -910,7 +910,7 @@ namespace MyNS
 		/// <summary>
 		/// The status of the controller.
 		/// </summary>
-		public BuildControllerStatus Status { get; set; }
+		public System.Nullable<BuildControllerStatus> Status { get; set; }
 		
 		/// <summary>
 		/// The date the controller was last updated.
@@ -967,7 +967,7 @@ namespace MyNS
 		/// <summary>
 		/// A value that indicates whether builds can be queued against this definition.
 		/// </summary>
-		public DefinitionReferenceQueueStatus QueueStatus { get; set; }
+		public System.Nullable<DefinitionReferenceQueueStatus> QueueStatus { get; set; }
 		
 		/// <summary>
 		/// The definition revision number.
@@ -977,7 +977,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of the definition.
 		/// </summary>
-		public DefinitionReferenceType Type { get; set; }
+		public System.Nullable<DefinitionReferenceType> Type { get; set; }
 		
 		/// <summary>
 		/// The definition's URI.
@@ -1034,7 +1034,7 @@ namespace MyNS
 		/// <summary>
 		/// Project state.
 		/// </summary>
-		public TeamProjectReferenceState State { get; set; }
+		public System.Nullable<TeamProjectReferenceState> State { get; set; }
 		
 		/// <summary>
 		/// Url to the full version of the object.
@@ -1044,7 +1044,7 @@ namespace MyNS
 		/// <summary>
 		/// Project visibility.
 		/// </summary>
-		public TeamProjectReferenceVisibility Visibility { get; set; }
+		public System.Nullable<TeamProjectReferenceVisibility> Visibility { get; set; }
 	}
 	
 	public enum TeamProjectReferenceState
@@ -1303,7 +1303,7 @@ namespace MyNS
 		/// <summary>
 		/// The result.
 		/// </summary>
-		public BuildRequestValidationResultResult Result { get; set; }
+		public System.Nullable<BuildRequestValidationResultResult> Result { get; set; }
 	}
 	
 	public enum BuildRequestValidationResultResult
@@ -1339,7 +1339,7 @@ namespace MyNS
 		
 		public XamlBuildServerReference Server { get; set; }
 		
-		public BuildAgentStatus Status { get; set; }
+		public System.Nullable<BuildAgentStatus> Status { get; set; }
 		
 		public string StatusMessage { get; set; }
 		
@@ -1685,7 +1685,7 @@ namespace MyNS
 		/// <summary>
 		/// The result.
 		/// </summary>
-		public TimelineRecordResult Result { get; set; }
+		public System.Nullable<TimelineRecordResult> Result { get; set; }
 		
 		/// <summary>
 		/// The result code.
@@ -1700,7 +1700,7 @@ namespace MyNS
 		/// <summary>
 		/// The state of the record.
 		/// </summary>
-		public TimelineRecordState State { get; set; }
+		public System.Nullable<TimelineRecordState> State { get; set; }
 		
 		/// <summary>
 		/// Represents a reference to a task.
@@ -1771,7 +1771,7 @@ namespace MyNS
 		/// <summary>
 		/// The type (error, warning) of the issue.
 		/// </summary>
-		public IssueType Type { get; set; }
+		public System.Nullable<IssueType> Type { get; set; }
 	}
 	
 	public enum IssueType
@@ -1901,7 +1901,7 @@ namespace MyNS
 		/// <summary>
 		/// The job authorization scope for builds queued against this definition.
 		/// </summary>
-		public BuildDefinitionJobAuthorizationScope JobAuthorizationScope { get; set; }
+		public System.Nullable<BuildDefinitionJobAuthorizationScope> JobAuthorizationScope { get; set; }
 		
 		/// <summary>
 		/// The job cancel timeout (in minutes) for builds cancelled by user for this definition.
@@ -2174,7 +2174,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of the trigger.
 		/// </summary>
-		public BuildTriggerTriggerType TriggerType { get; set; }
+		public System.Nullable<BuildTriggerTriggerType> TriggerType { get; set; }
 	}
 	
 	public enum BuildTriggerTriggerType
@@ -2283,7 +2283,7 @@ namespace MyNS
 		/// <summary>
 		/// The job authorization scope for builds which are queued against this definition
 		/// </summary>
-		public BuildDefinition3_2JobAuthorizationScope JobAuthorizationScope { get; set; }
+		public System.Nullable<BuildDefinition3_2JobAuthorizationScope> JobAuthorizationScope { get; set; }
 		
 		/// <summary>
 		/// The job cancel timeout in minutes for builds which are cancelled by user for this definition
@@ -2447,7 +2447,7 @@ namespace MyNS
 		/// <summary>
 		/// The quality of the definition document (draft, etc.)
 		/// </summary>
-		public BuildDefinitionReferenceQuality Quality { get; set; }
+		public System.Nullable<BuildDefinitionReferenceQuality> Quality { get; set; }
 		
 		/// <summary>
 		/// Represents a queue for running builds.
@@ -2518,7 +2518,7 @@ namespace MyNS
 		/// <summary>
 		/// The quality of the definition document (draft, etc.)
 		/// </summary>
-		public BuildDefinitionReference3_2Quality Quality { get; set; }
+		public System.Nullable<BuildDefinitionReference3_2Quality> Quality { get; set; }
 		
 		/// <summary>
 		/// Represents a queue for running builds.
@@ -2550,7 +2550,7 @@ namespace MyNS
 		/// <summary>
 		/// The change type (add, edit, delete).
 		/// </summary>
-		public BuildDefinitionRevisionChangeType ChangeType { get; set; }
+		public System.Nullable<BuildDefinitionRevisionChangeType> ChangeType { get; set; }
 		
 		/// <summary>
 		/// The comment associated with the change.
@@ -2614,7 +2614,7 @@ namespace MyNS
 		/// <summary>
 		/// Which trigger types are supported by this definition source provider
 		/// </summary>
-		public BuildDefinitionSourceProviderSupportedTriggerTypes SupportedTriggerTypes { get; set; }
+		public System.Nullable<BuildDefinitionSourceProviderSupportedTriggerTypes> SupportedTriggerTypes { get; set; }
 	}
 	
 	public enum BuildDefinitionSourceProviderSupportedTriggerTypes
@@ -2744,13 +2744,13 @@ namespace MyNS
 		
 		public string Quality { get; set; }
 		
-		public BuildSummaryReason Reason { get; set; }
+		public System.Nullable<BuildSummaryReason> Reason { get; set; }
 		
 		public IdentityRef RequestedFor { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> StartTime { get; set; }
 		
-		public BuildSummaryStatus Status { get; set; }
+		public System.Nullable<BuildSummaryStatus> Status { get; set; }
 	}
 	
 	public class XamlBuildReference
@@ -2944,7 +2944,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates the type of the input value.
 		/// </summary>
-		public BuildOptionInputDefinitionType Type { get; set; }
+		public System.Nullable<BuildOptionInputDefinitionType> Type { get; set; }
 		
 		/// <summary>
 		/// The rule that is applied to determine whether the input is visible in the UI.
@@ -3039,11 +3039,11 @@ namespace MyNS
 		
 		public string ServerPath { get; set; }
 		
-		public BuildProcessTemplateSupportedReasons SupportedReasons { get; set; }
+		public System.Nullable<BuildProcessTemplateSupportedReasons> SupportedReasons { get; set; }
 		
 		public string TeamProject { get; set; }
 		
-		public BuildProcessTemplateTemplateType TemplateType { get; set; }
+		public System.Nullable<BuildProcessTemplateTemplateType> TemplateType { get; set; }
 		
 		public string Url { get; set; }
 		
@@ -3182,7 +3182,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Boolean> RequireClientCertificates { get; set; }
 		
-		public BuildServerStatus Status { get; set; }
+		public System.Nullable<BuildServerStatus> Status { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> StatusChangedDate { get; set; }
 		
@@ -3477,7 +3477,7 @@ namespace MyNS
 		/// <summary>
 		/// The job authorization scope for builds queued against this definition.
 		/// </summary>
-		public PhaseJobAuthorizationScope JobAuthorizationScope { get; set; }
+		public System.Nullable<PhaseJobAuthorizationScope> JobAuthorizationScope { get; set; }
 		
 		/// <summary>
 		/// The cancellation timeout, in minutes, for builds queued against this definition.
@@ -3711,7 +3711,7 @@ namespace MyNS
 		/// <summary>
 		/// The patch operation
 		/// </summary>
-		public JsonPatchOperationOp Op { get; set; }
+		public System.Nullable<JsonPatchOperationOp> Op { get; set; }
 		
 		/// <summary>
 		/// The path for the operation. In the case of an array, a zero based index can be used to specify the position in the array (e.g. /biscuits/0/name). The "-" character can be used instead of an index to insert at the end of the array (e.g. /biscuits/-).
@@ -3974,7 +3974,7 @@ namespace MyNS
 		/// <summary>
 		/// Days for a build (flags enum for days of the week)
 		/// </summary>
-		public ScheduleDaysToBuild DaysToBuild { get; set; }
+		public System.Nullable<ScheduleDaysToBuild> DaysToBuild { get; set; }
 		
 		/// <summary>
 		/// The Job Id of the Scheduled job that will queue the scheduled build. Since a single trigger can have multiple schedules and we want a single job to process a single schedule (since each schedule has a list of branches to build), the schedule itself needs to define the Job Id. This value will be filled in when a definition is added or updated.  The UI does not provide it or use it.
@@ -4097,7 +4097,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of trigger.
 		/// </summary>
-		public SupportedTriggerType Type { get; set; }
+		public System.Nullable<SupportedTriggerType> Type { get; set; }
 	}
 	
 	public enum SupportedTriggerType
@@ -4372,7 +4372,7 @@ namespace MyNS
 	public class UpdateStageParameters
 	{
 		
-		public UpdateStageParametersState State { get; set; }
+		public System.Nullable<UpdateStageParametersState> State { get; set; }
 	}
 	
 	public enum UpdateStageParametersState
@@ -4460,7 +4460,7 @@ namespace MyNS
 		/// <summary>
 		/// type of workspace mapping
 		/// </summary>
-		public WorkspaceMappingMappingType MappingType { get; set; }
+		public System.Nullable<WorkspaceMappingMappingType> MappingType { get; set; }
 		
 		/// <summary>
 		/// Server location of the definition
@@ -4557,12 +4557,12 @@ namespace MyNS
 		/// <summary>
 		/// The reasons supported by the template
 		/// </summary>
-		public XamlBuildDefinitionSupportedReasons SupportedReasons { get; set; }
+		public System.Nullable<XamlBuildDefinitionSupportedReasons> SupportedReasons { get; set; }
 		
 		/// <summary>
 		/// How builds are triggered from this definition
 		/// </summary>
-		public XamlBuildDefinitionTriggerType TriggerType { get; set; }
+		public System.Nullable<XamlBuildDefinitionTriggerType> TriggerType { get; set; }
 	}
 	
 	public enum XamlBuildDefinitionSupportedReasons

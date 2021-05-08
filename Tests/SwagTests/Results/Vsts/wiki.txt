@@ -81,7 +81,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates the current state of the comment
 		/// </summary>
-		public CommentState State { get; set; }
+		public System.Nullable<CommentState> State { get; set; }
 		
 		/// <summary>
 		/// The plaintext/markdown version of the comment
@@ -161,7 +161,7 @@ namespace MyNS
 		/// <summary>
 		/// The context which represent where this mentioned was parsed from
 		/// </summary>
-		public CommentMentionType Type { get; set; }
+		public System.Nullable<CommentMentionType> Type { get; set; }
 	}
 	
 	public enum CommentMentionType
@@ -198,7 +198,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the reaction.
 		/// </summary>
-		public CommentReactionType Type { get; set; }
+		public System.Nullable<CommentReactionType> Type { get; set; }
 	}
 	
 	public enum CommentReactionType
@@ -310,7 +310,7 @@ namespace MyNS
 		/// <summary>
 		/// Set the current state of the comment
 		/// </summary>
-		public CommentUpdateParametersState State { get; set; }
+		public System.Nullable<CommentUpdateParametersState> State { get; set; }
 		
 		/// <summary>
 		/// The updated text of the comment
@@ -429,11 +429,11 @@ namespace MyNS
 		
 		public System.Nullable<System.Int64> Revision { get; set; }
 		
-		public TeamProjectReferenceState State { get; set; }
+		public System.Nullable<TeamProjectReferenceState> State { get; set; }
 		
 		public string Url { get; set; }
 		
-		public TeamProjectReferenceVisibility Visibility { get; set; }
+		public System.Nullable<TeamProjectReferenceVisibility> Visibility { get; set; }
 	}
 	
 	public enum TeamProjectReferenceState
@@ -473,12 +473,12 @@ namespace MyNS
 		/// <summary>
 		/// Version options - Specify additional modifiers to version (e.g Previous)
 		/// </summary>
-		public GitVersionDescriptorVersionOptions VersionOptions { get; set; }
+		public System.Nullable<GitVersionDescriptorVersionOptions> VersionOptions { get; set; }
 		
 		/// <summary>
 		/// Version type (branch, tag, or commit). Determines how Id is interpreted
 		/// </summary>
-		public GitVersionDescriptorVersionType VersionType { get; set; }
+		public System.Nullable<GitVersionDescriptorVersionType> VersionType { get; set; }
 	}
 	
 	public enum GitVersionDescriptorVersionOptions
@@ -622,7 +622,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of the wiki.
 		/// </summary>
-		public WikiCreateBaseParametersType Type { get; set; }
+		public System.Nullable<WikiCreateBaseParametersType> Type { get; set; }
 	}
 	
 	public enum WikiCreateBaseParametersType

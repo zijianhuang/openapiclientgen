@@ -131,7 +131,7 @@ namespace MyNS
 		/// <summary>
 		/// Pet status in the store
 		/// </summary>
-		public PetStatus Status { get; set; }
+		public System.Nullable<PetStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Type of a pet

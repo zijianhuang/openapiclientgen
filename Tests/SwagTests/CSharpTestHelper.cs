@@ -44,7 +44,7 @@ namespace SwagTests
 			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
-			var r = CSharpValidation.CompileThenSave(s, null);
+			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
 
 			if (!r.Success)
 			{

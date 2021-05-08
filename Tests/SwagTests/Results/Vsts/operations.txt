@@ -82,7 +82,7 @@ namespace MyNS
 		/// <summary>
 		/// The current status of the operation.
 		/// </summary>
-		public OperationReferenceStatus Status { get; set; }
+		public System.Nullable<OperationReferenceStatus> Status { get; set; }
 		
 		/// <summary>
 		/// URL to get the full operation object.

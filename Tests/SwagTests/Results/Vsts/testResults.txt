@@ -46,7 +46,7 @@ namespace MyNS
 		
 		public string GroupByValue { get; set; }
 		
-		public AggregatedResultsByOutcomeOutcome Outcome { get; set; }
+		public System.Nullable<AggregatedResultsByOutcomeOutcome> Outcome { get; set; }
 		
 		public System.Nullable<System.Int32> RerunResultCount { get; set; }
 	}
@@ -92,7 +92,7 @@ namespace MyNS
 		
 		public System.Nullable<System.Int32> RunsCount { get; set; }
 		
-		public AggregatedRunsByStateState State { get; set; }
+		public System.Nullable<AggregatedRunsByStateState> State { get; set; }
 	}
 	
 	public enum AggregatedRunsByStateState
@@ -121,7 +121,7 @@ namespace MyNS
 		/// </summary>
 		public BuildReference Build { get; set; }
 		
-		public TestResultsContextContextType ContextType { get; set; }
+		public System.Nullable<TestResultsContextContextType> ContextType { get; set; }
 		
 		/// <summary>
 		/// Pipeline reference
@@ -340,7 +340,7 @@ namespace MyNS
 		/// <summary>
 		/// Test result outcome
 		/// </summary>
-		public AggregatedResultDetailsByOutcomeOutcome Outcome { get; set; }
+		public System.Nullable<AggregatedResultDetailsByOutcomeOutcome> Outcome { get; set; }
 		
 		/// <summary>
 		/// Number of results on rerun
@@ -421,7 +421,7 @@ namespace MyNS
 	public class AggregatedRunsByOutcome
 	{
 		
-		public AggregatedRunsByOutcomeOutcome Outcome { get; set; }
+		public System.Nullable<AggregatedRunsByOutcomeOutcome> Outcome { get; set; }
 		
 		public System.Nullable<System.Int32> RunsCount { get; set; }
 	}
@@ -713,7 +713,7 @@ namespace MyNS
 		/// <summary>
 		/// Uri of build against which difference in coverage is computed
 		/// </summary>
-		public CodeCoverageSummaryStatus Status { get; set; }
+		public System.Nullable<CodeCoverageSummaryStatus> Status { get; set; }
 	}
 	
 	public enum CodeCoverageSummaryStatus
@@ -820,7 +820,7 @@ namespace MyNS
 		/// <summary>
 		/// FlakyDetectionType defines Detection type i.e. 1. System or 2. Manual.
 		/// </summary>
-		public FlakyDetectionFlakyDetectionType FlakyDetectionType { get; set; }
+		public System.Nullable<FlakyDetectionFlakyDetectionType> FlakyDetectionType { get; set; }
 	}
 	
 	public class FlakyDetectionPipelines
@@ -1082,7 +1082,7 @@ namespace MyNS
 		
 		public string Branch { get; set; }
 		
-		public ResultsFilterExecutedIn ExecutedIn { get; set; }
+		public System.Nullable<ResultsFilterExecutedIn> ExecutedIn { get; set; }
 		
 		public string GroupBy { get; set; }
 		
@@ -1333,7 +1333,7 @@ namespace MyNS
 		/// <summary>
 		/// Summary is based on outcome
 		/// </summary>
-		public RunSummaryModelTestOutcome TestOutcome { get; set; }
+		public System.Nullable<RunSummaryModelTestOutcome> TestOutcome { get; set; }
 	}
 	
 	public enum RunSummaryModelTestOutcome
@@ -1406,7 +1406,7 @@ namespace MyNS
 		/// <summary>
 		/// ResultMetadata for the given outcome/count.
 		/// </summary>
-		public RunStatisticResultMetadata ResultMetadata { get; set; }
+		public System.Nullable<RunStatisticResultMetadata> ResultMetadata { get; set; }
 		
 		/// <summary>
 		/// State of the test run
@@ -1560,7 +1560,7 @@ namespace MyNS
 		/// <summary>
 		/// The types of sub states for test run.
 		/// </summary>
-		public RunUpdateModelSubstate Substate { get; set; }
+		public System.Nullable<RunUpdateModelSubstate> Substate { get; set; }
 		
 		/// <summary>
 		/// Tags to attach with the test run.
@@ -1684,11 +1684,11 @@ namespace MyNS
 		
 		public System.Nullable<System.Int64> Revision { get; set; }
 		
-		public TeamProjectReferenceState State { get; set; }
+		public System.Nullable<TeamProjectReferenceState> State { get; set; }
 		
 		public string Url { get; set; }
 		
-		public TeamProjectReferenceVisibility Visibility { get; set; }
+		public System.Nullable<TeamProjectReferenceVisibility> Visibility { get; set; }
 	}
 	
 	public enum TeamProjectReferenceState
@@ -1755,7 +1755,7 @@ namespace MyNS
 		/// <summary>
 		/// Attachment type.
 		/// </summary>
-		public TestAttachmentAttachmentType AttachmentType { get; set; }
+		public System.Nullable<TestAttachmentAttachmentType> AttachmentType { get; set; }
 		
 		/// <summary>
 		/// Comment associated with attachment.
@@ -2010,7 +2010,7 @@ namespace MyNS
 		/// <summary>
 		/// Hierarchy type of the result, default value of None means its leaf node.
 		/// </summary>
-		public TestCaseResultResultGroupType ResultGroupType { get; set; }
+		public System.Nullable<TestCaseResultResultGroupType> ResultGroupType { get; set; }
 		
 		/// <summary>
 		/// Revision number of test result.
@@ -2304,7 +2304,7 @@ namespace MyNS
 		/// <summary>
 		/// Hierarchy type of the result, default value of None means its leaf node.
 		/// </summary>
-		public TestSubResultResultGroupType ResultGroupType { get; set; }
+		public System.Nullable<TestSubResultResultGroupType> ResultGroupType { get; set; }
 		
 		/// <summary>
 		/// Index number of sub result.
@@ -2426,7 +2426,7 @@ namespace MyNS
 		/// <summary>
 		/// Group the result on the basis of TestResultGroupBy. This can be Branch, Environment or null(if results are fetched by BuildDefinitionId)
 		/// </summary>
-		public TestHistoryQueryGroupBy GroupBy { get; set; }
+		public System.Nullable<TestHistoryQueryGroupBy> GroupBy { get; set; }
 		
 		/// <summary>
 		/// History to get between time interval MaxCompleteDate and  (MaxCompleteDate - TrendDays). Default is current date time.
@@ -2550,7 +2550,7 @@ namespace MyNS
 		/// <summary>
 		/// Test Log Scope
 		/// </summary>
-		public TestLogReferenceScope Scope { get; set; }
+		public System.Nullable<TestLogReferenceScope> Scope { get; set; }
 		
 		/// <summary>
 		/// SubResultid for test log, if context is run and log is related to subresult
@@ -2560,7 +2560,7 @@ namespace MyNS
 		/// <summary>
 		/// Log Type
 		/// </summary>
-		public TestLogReferenceType Type { get; set; }
+		public System.Nullable<TestLogReferenceType> Type { get; set; }
 	}
 	
 	public enum TestLogReferenceScope
@@ -2589,12 +2589,12 @@ namespace MyNS
 		/// <summary>
 		/// Test log store endpoint type.
 		/// </summary>
-		public TestLogStoreEndpointDetailsEndpointType EndpointType { get; set; }
+		public System.Nullable<TestLogStoreEndpointDetailsEndpointType> EndpointType { get; set; }
 		
 		/// <summary>
 		/// Test log store status code
 		/// </summary>
-		public TestLogStoreEndpointDetailsStatus Status { get; set; }
+		public System.Nullable<TestLogStoreEndpointDetailsStatus> Status { get; set; }
 	}
 	
 	public enum TestLogStoreEndpointDetailsEndpointType
@@ -3054,7 +3054,7 @@ namespace MyNS
 		/// <summary>
 		/// TestRun Substate.
 		/// </summary>
-		public TestRunSubstate Substate { get; set; }
+		public System.Nullable<TestRunSubstate> Substate { get; set; }
 		
 		/// <summary>
 		/// Tags attached with this test run.
@@ -3289,7 +3289,7 @@ namespace MyNS
 	public class WorkItemToTestLinks
 	{
 		
-		public WorkItemToTestLinksExecutedIn ExecutedIn { get; set; }
+		public System.Nullable<WorkItemToTestLinksExecutedIn> ExecutedIn { get; set; }
 		
 		public TestMethod[] Tests { get; set; }
 		

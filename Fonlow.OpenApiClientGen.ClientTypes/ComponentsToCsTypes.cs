@@ -137,10 +137,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
 								var typeNameX = $"{newTypeName}[]";
-								if (settings.ArrayAsICollection)
+								if (settings.ArrayAsList)
+								{
 									typeNameX = $"System.Collections.Generic.List<{newTypeName}>";
-								if (settings.ArrayAsICollection)
+								}
+								else if (settings.ArrayAsICollection)
+								{
 									typeNameX = $"System.Collections.Generic.ICollection<{newTypeName}>";
+								}
+
 								TypeAliasDic.Add(item.Key, typeNameX);
 								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX}) -- generated: {newTypeName}");
 							}
@@ -167,20 +172,30 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
 						var typeNameX = $"{arrayTypeAlias}[]";
-						if (settings.ArrayAsICollection)
+						if (settings.ArrayAsList)
+						{
 							typeNameX = $"System.Collections.Generic.List<{arrayTypeAlias}>";
-						if (settings.ArrayAsICollection)
+						}
+						else if (settings.ArrayAsICollection)
+						{
 							typeNameX = $"System.Collections.Generic.ICollection<{arrayTypeAlias}>";
+						}
+
 						TypeAliasDic.Add(item.Key, typeNameX);
 						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX}) with existing ({itemsRef.Id}, {arrayTypeAlias})");
 					}
 					else
 					{
 						var typeNameX = $"{itemsRef.Id}[]";
-						if (settings.ArrayAsICollection)
+						if (settings.ArrayAsList)
+						{
 							typeNameX = $"System.Collections.Generic.List<{itemsRef.Id}>";
-						if (settings.ArrayAsICollection)
+						}
+						else if (settings.ArrayAsICollection)
+						{
 							typeNameX = $"System.Collections.Generic.ICollection<{itemsRef.Id}>";
+						}
+
 						TypeAliasDic.Add(item.Key, typeNameX);
 						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX})");
 					}
@@ -405,13 +420,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue, !isRequired || propertySchema.Nullable);
 					}
 					else
 					{
 						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
 						bool isClass = r.Item2;
-						if (!settings.DisableSystemNullableByDefault && !isClass && !isRequired || propertySchema.Nullable) //C#
+						if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !isClass) //C#. vimeo yaml is silly, declaring a reference type as nullable.
 						{
 							clientProperty = CreateNullableProperty(r.Item1, propertyName);
 						}
@@ -470,7 +485,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
-					if (!settings.DisableSystemNullableByDefault && !simpleType.IsClass && !isRequired || propertySchema.Nullable) //C#
+					if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !simpleType.IsClass) //C#
 					{
 						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
 					}
@@ -503,7 +518,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue, !isRequired || propertySchema.Nullable);
 					}
 				}
 				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName)) //check TypeAliasDic
@@ -518,7 +533,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else // for casual enum
 				{
-					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue);
+					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue, !isRequired || propertySchema.Nullable);
 				}
 			}
 
@@ -667,7 +682,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, string defaultValue)
+		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, string defaultValue, bool isNullable)
 		{
 			Tuple<CodeTypeReference, CodeTypeDeclaration> r = GenerateCasualEnum(propertySchema, typeDeclarationName, propertyName, ns);
 			if (r.Item2 != null)
@@ -698,7 +713,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			return CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
+			return isNullable? CreateNullableProperty(r.Item1, propertyName) : CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
 		}
 
 		static string GetDefaultValue(OpenApiSchema s)

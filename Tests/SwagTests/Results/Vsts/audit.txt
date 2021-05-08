@@ -34,7 +34,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of action executed
 		/// </summary>
-		public AuditActionInfoCategory Category { get; set; }
+		public System.Nullable<AuditActionInfoCategory> Category { get; set; }
 	}
 	
 	public enum AuditActionInfoCategory
@@ -114,7 +114,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of the scope (Organization is only scope currently supported)
 		/// </summary>
-		public AuditLogEntryScopeType ScopeType { get; set; }
+		public System.Nullable<AuditLogEntryScopeType> ScopeType { get; set; }
 		
 		/// <summary>
 		/// The time when the event occurred in UTC
@@ -209,7 +209,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of action executed
 		/// </summary>
-		public DecoratedAuditLogEntryCategory Category { get; set; }
+		public System.Nullable<DecoratedAuditLogEntryCategory> Category { get; set; }
 		
 		/// <summary>
 		/// DisplayName of the category
@@ -264,7 +264,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of the scope (Organization is only scope currently supported)
 		/// </summary>
-		public DecoratedAuditLogEntryScopeType ScopeType { get; set; }
+		public System.Nullable<DecoratedAuditLogEntryScopeType> ScopeType { get; set; }
 		
 		/// <summary>
 		/// The time when the event occurred in UTC
@@ -341,7 +341,7 @@ namespace MyNS
 		/// <summary>
 		/// Status of the stream, Enabled, Disabled
 		/// </summary>
-		public AuditStreamStatus Status { get; set; }
+		public System.Nullable<AuditStreamStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Reason for the current stream status, i.e. Disabled by the system, Invalid credentials, etc.

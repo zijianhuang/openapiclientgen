@@ -69,7 +69,7 @@ namespace MyNS
 		
 		public SessionToken SessionToken { get; set; }
 		
-		public SessionTokenResultSessionTokenError SessionTokenError { get; set; }
+		public System.Nullable<SessionTokenResultSessionTokenError> SessionTokenError { get; set; }
 	}
 	
 	public enum SessionTokenResultSessionTokenError

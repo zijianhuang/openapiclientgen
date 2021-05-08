@@ -27,12 +27,12 @@ namespace MyNS
 		/// <summary>
 		/// Type of Account License (e.g. Express, Stakeholder etc.)
 		/// </summary>
-		public AccessLevelAccountLicenseType AccountLicenseType { get; set; }
+		public System.Nullable<AccessLevelAccountLicenseType> AccountLicenseType { get; set; }
 		
 		/// <summary>
 		/// Assignment Source of the License (e.g. Group, Unknown etc.
 		/// </summary>
-		public AccessLevelAssignmentSource AssignmentSource { get; set; }
+		public System.Nullable<AccessLevelAssignmentSource> AssignmentSource { get; set; }
 		
 		/// <summary>
 		/// Display name of the License
@@ -42,17 +42,17 @@ namespace MyNS
 		/// <summary>
 		/// Licensing Source (e.g. Account. MSDN etc.)
 		/// </summary>
-		public AccessLevelLicensingSource LicensingSource { get; set; }
+		public System.Nullable<AccessLevelLicensingSource> LicensingSource { get; set; }
 		
 		/// <summary>
 		/// Type of MSDN License (e.g. Visual Studio Professional, Visual Studio Enterprise etc.)
 		/// </summary>
-		public AccessLevelMsdnLicenseType MsdnLicenseType { get; set; }
+		public System.Nullable<AccessLevelMsdnLicenseType> MsdnLicenseType { get; set; }
 		
 		/// <summary>
 		/// User status in the account
 		/// </summary>
-		public AccessLevelStatus Status { get; set; }
+		public System.Nullable<AccessLevelStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Status message.
@@ -163,7 +163,7 @@ namespace MyNS
 		/// <summary>
 		/// Assignment source for this extension. I.e. explicitly assigned or from a group rule.
 		/// </summary>
-		public ExtensionAssignmentSource AssignmentSource { get; set; }
+		public System.Nullable<ExtensionAssignmentSource> AssignmentSource { get; set; }
 		
 		/// <summary>
 		/// Gallery Id of the Extension.
@@ -178,7 +178,7 @@ namespace MyNS
 		/// <summary>
 		/// Source of this extension assignment. Ex: msdn, account, none, etc.
 		/// </summary>
-		public ExtensionSource Source { get; set; }
+		public System.Nullable<ExtensionSource> Source { get; set; }
 	}
 	
 	public enum ExtensionAssignmentSource
@@ -236,7 +236,7 @@ namespace MyNS
 		/// <summary>
 		/// Minimum License Required for the Extension.
 		/// </summary>
-		public ExtensionSummaryDataMinimumLicenseRequired MinimumLicenseRequired { get; set; }
+		public System.Nullable<ExtensionSummaryDataMinimumLicenseRequired> MinimumLicenseRequired { get; set; }
 		
 		/// <summary>
 		/// Days remaining for the Trial to expire.
@@ -393,7 +393,7 @@ namespace MyNS
 		/// <summary>
 		/// Group Type
 		/// </summary>
-		public GroupGroupType GroupType { get; set; }
+		public System.Nullable<GroupGroupType> GroupType { get; set; }
 	}
 	
 	public enum GroupGroupType
@@ -449,7 +449,7 @@ namespace MyNS
 		/// <summary>
 		/// The status of the group rule.
 		/// </summary>
-		public GroupEntitlementStatus Status { get; set; }
+		public System.Nullable<GroupEntitlementStatus> Status { get; set; }
 	}
 	
 	/// <summary>
@@ -503,7 +503,7 @@ namespace MyNS
 		/// <summary>
 		/// Assignment Source (e.g. Group or Unknown).
 		/// </summary>
-		public ProjectEntitlementAssignmentSource AssignmentSource { get; set; }
+		public System.Nullable<ProjectEntitlementAssignmentSource> AssignmentSource { get; set; }
 		
 		/// <summary>
 		/// Project Group (e.g. Contributor, Reader etc.)
@@ -513,7 +513,7 @@ namespace MyNS
 		/// <summary>
 		/// Whether the user is inheriting permissions to a project through a Azure DevOps or AAD group membership.
 		/// </summary>
-		public ProjectEntitlementProjectPermissionInherited ProjectPermissionInherited { get; set; }
+		public System.Nullable<ProjectEntitlementProjectPermissionInherited> ProjectPermissionInherited { get; set; }
 		
 		/// <summary>
 		/// A reference to a project
@@ -663,7 +663,7 @@ namespace MyNS
 		/// <summary>
 		/// The patch operation
 		/// </summary>
-		public JsonPatchOperationOp Op { get; set; }
+		public System.Nullable<JsonPatchOperationOp> Op { get; set; }
 		
 		/// <summary>
 		/// The path for the operation. In the case of an array, a zero based index can be used to specify the position in the array (e.g. /biscuits/0/name). The "-" character can be used instead of an index to insert at the end of the array (e.g. /biscuits/-).
@@ -701,7 +701,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of Account License.
 		/// </summary>
-		public LicenseSummaryDataAccountLicenseType AccountLicenseType { get; set; }
+		public System.Nullable<LicenseSummaryDataAccountLicenseType> AccountLicenseType { get; set; }
 		
 		/// <summary>
 		/// Count of Disabled Licenses.
@@ -721,7 +721,7 @@ namespace MyNS
 		/// <summary>
 		/// Type of MSDN License.
 		/// </summary>
-		public LicenseSummaryDataMsdnLicenseType MsdnLicenseType { get; set; }
+		public System.Nullable<LicenseSummaryDataMsdnLicenseType> MsdnLicenseType { get; set; }
 		
 		/// <summary>
 		/// Specifies the date when billing will charge for paid licenses
@@ -731,7 +731,7 @@ namespace MyNS
 		/// <summary>
 		/// Source of the License.
 		/// </summary>
-		public LicenseSummaryDataSource Source { get; set; }
+		public System.Nullable<LicenseSummaryDataSource> Source { get; set; }
 		
 		/// <summary>
 		/// Total license count after next billing cycle
@@ -891,7 +891,7 @@ namespace MyNS
 		/// <summary>
 		/// The current status of the operation.
 		/// </summary>
-		public OperationReferenceStatus Status { get; set; }
+		public System.Nullable<OperationReferenceStatus> Status { get; set; }
 		
 		/// <summary>
 		/// URL to get the full operation object.

@@ -13,10 +13,10 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>Fonlow.OpenApiClientGen.ClientTypes</AssemblyName>
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
-    <AssemblyVersion>1.8.1.0</AssemblyVersion>
-    <FileVersion>1.8.1.0</FileVersion>
-    <Version>1.8.1</Version>
-    <PackageReleaseNotes>Enum properties if not required will be nullable in C#, just like other value types, and  what in TS</PackageReleaseNotes>
+    <AssemblyVersion>1.9.0.0</AssemblyVersion>
+    <FileVersion>1.9.0.0</FileVersion>
+    <Version>1.9</Version>
+    <PackageReleaseNotes>Enum properties if not required will be nullable in C#, just like other value types, and  what in TS.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

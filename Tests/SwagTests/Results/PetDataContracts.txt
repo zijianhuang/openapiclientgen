@@ -162,7 +162,7 @@ namespace MyNS
 		/// Order Status
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		public OrderStatus Status { get; set; }
+		public System.Nullable<OrderStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Indicates whenever order was completed or not
@@ -236,7 +236,7 @@ namespace MyNS
 		/// Pet status in the store
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		public PetStatus Status { get; set; }
+		public System.Nullable<PetStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Type of a pet

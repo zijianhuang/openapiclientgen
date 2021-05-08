@@ -24,12 +24,12 @@ namespace MyNS
 		/// <summary>
 		/// State of the the AcquisitionOperation for the current user
 		/// </summary>
-		public AcquisitionOperationOperationState OperationState { get; set; }
+		public System.Nullable<AcquisitionOperationOperationState> OperationState { get; set; }
 		
 		/// <summary>
 		/// AcquisitionOperationType: install, request, buy, etc...
 		/// </summary>
-		public AcquisitionOperationOperationType OperationType { get; set; }
+		public System.Nullable<AcquisitionOperationOperationType> OperationType { get; set; }
 		
 		/// <summary>
 		/// Optional reason to justify current state. Typically used with Disallow state.
@@ -342,7 +342,7 @@ namespace MyNS
 		/// <summary>
 		/// Query options tpo be used when fetching ContributionNodes
 		/// </summary>
-		public ContributionNodeQueryQueryOptions QueryOptions { get; set; }
+		public System.Nullable<ContributionNodeQueryQueryOptions> QueryOptions { get; set; }
 	}
 	
 	/// <summary>
@@ -414,7 +414,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of value used for this property
 		/// </summary>
-		public ContributionPropertyDescriptionType Type { get; set; }
+		public System.Nullable<ContributionPropertyDescriptionType> Type { get; set; }
 	}
 	
 	public enum ContributionPropertyDescriptionType
@@ -599,7 +599,7 @@ namespace MyNS
 		/// <summary>
 		/// How the item is being assigned
 		/// </summary>
-		public ExtensionAcquisitionRequestAssignmentType AssignmentType { get; set; }
+		public System.Nullable<ExtensionAcquisitionRequestAssignmentType> AssignmentType { get; set; }
 		
 		/// <summary>
 		/// The id of the subscription used for purchase
@@ -614,7 +614,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of operation, such as install, request, purchase
 		/// </summary>
-		public ExtensionAcquisitionRequestOperationType OperationType { get; set; }
+		public System.Nullable<ExtensionAcquisitionRequestOperationType> OperationType { get; set; }
 		
 		/// <summary>
 		/// Represents a JSON object.
@@ -820,7 +820,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of update that was made
 		/// </summary>
-		public ExtensionEventUpdateType UpdateType { get; set; }
+		public System.Nullable<ExtensionEventUpdateType> UpdateType { get; set; }
 	}
 	
 	public class PublishedExtension
@@ -828,7 +828,7 @@ namespace MyNS
 		
 		public string[] Categories { get; set; }
 		
-		public PublishedExtensionDeploymentType DeploymentType { get; set; }
+		public System.Nullable<PublishedExtensionDeploymentType> DeploymentType { get; set; }
 		
 		public string DisplayName { get; set; }
 		
@@ -836,7 +836,7 @@ namespace MyNS
 		
 		public string ExtensionName { get; set; }
 		
-		public PublishedExtensionFlags Flags { get; set; }
+		public System.Nullable<PublishedExtensionFlags> Flags { get; set; }
 		
 		public InstallationTarget[] InstallationTargets { get; set; }
 		
@@ -930,7 +930,7 @@ namespace MyNS
 		
 		public string DisplayName { get; set; }
 		
-		public PublisherFactsFlags Flags { get; set; }
+		public System.Nullable<PublisherFactsFlags> Flags { get; set; }
 		
 		public string PublisherId { get; set; }
 		
@@ -984,7 +984,7 @@ namespace MyNS
 		
 		public ExtensionFile[] Files { get; set; }
 		
-		public ExtensionVersionFlags Flags { get; set; }
+		public System.Nullable<ExtensionVersionFlags> Flags { get; set; }
 		
 		public System.Nullable<System.DateTimeOffset> LastUpdated { get; set; }
 		
@@ -1142,7 +1142,7 @@ namespace MyNS
 		/// <summary>
 		/// How the inclusion of this contribution should change based on licensing
 		/// </summary>
-		public LicensingOverrideBehavior Behavior { get; set; }
+		public System.Nullable<LicensingOverrideBehavior> Behavior { get; set; }
 		
 		/// <summary>
 		/// Fully qualified contribution id which we want to define licensing behavior for
@@ -1241,12 +1241,12 @@ namespace MyNS
 		/// <summary>
 		/// Permissions on 'Install' operation
 		/// </summary>
-		public ExtensionPolicyInstall Install { get; set; }
+		public System.Nullable<ExtensionPolicyInstall> Install { get; set; }
 		
 		/// <summary>
 		/// Permission on 'Request' operation
 		/// </summary>
-		public ExtensionPolicyRequest Request { get; set; }
+		public System.Nullable<ExtensionPolicyRequest> Request { get; set; }
 	}
 	
 	public enum ExtensionPolicyInstall
@@ -1311,7 +1311,7 @@ namespace MyNS
 		/// <summary>
 		/// Represents the state of the request
 		/// </summary>
-		public ExtensionRequestRequestState RequestState { get; set; }
+		public System.Nullable<ExtensionRequestRequestState> RequestState { get; set; }
 		
 		/// <summary>
 		/// Date at which the request was resolved
@@ -1353,7 +1353,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of update that was made
 		/// </summary>
-		public ExtensionRequestEventUpdateType UpdateType { get; set; }
+		public System.Nullable<ExtensionRequestEventUpdateType> UpdateType { get; set; }
 	}
 	
 	public class ExtensionRequestUrls
@@ -1394,7 +1394,7 @@ namespace MyNS
 		/// <summary>
 		/// The type of update that was made
 		/// </summary>
-		public ExtensionRequestsEventUpdateType UpdateType { get; set; }
+		public System.Nullable<ExtensionRequestsEventUpdateType> UpdateType { get; set; }
 	}
 	
 	public enum ExtensionRequestsEventUpdateType
@@ -1501,7 +1501,7 @@ namespace MyNS
 		/// <summary>
 		/// Extension flags relevant to contribution consumers
 		/// </summary>
-		public InstalledExtensionFlags Flags { get; set; }
+		public System.Nullable<InstalledExtensionFlags> Flags { get; set; }
 		
 		/// <summary>
 		/// The state of an installed extension
@@ -1551,7 +1551,7 @@ namespace MyNS
 		/// <summary>
 		/// States of an installed extension
 		/// </summary>
-		public InstalledExtensionStateFlags Flags { get; set; }
+		public System.Nullable<InstalledExtensionStateFlags> Flags { get; set; }
 		
 		/// <summary>
 		/// List of installation issues
@@ -1609,7 +1609,7 @@ namespace MyNS
 		/// <summary>
 		/// Installation issue type (Warning, Error)
 		/// </summary>
-		public InstalledExtensionStateIssueType Type { get; set; }
+		public System.Nullable<InstalledExtensionStateIssueType> Type { get; set; }
 	}
 	
 	public enum InstalledExtensionStateIssueType

@@ -653,7 +653,7 @@ namespace MyNS
 		/// <summary>
 		/// Mode in which the value of this input should be entered
 		/// </summary>
-		public InputDescriptorInputMode InputMode { get; set; }
+		public System.Nullable<InputDescriptorInputMode> InputMode { get; set; }
 		
 		/// <summary>
 		/// Gets whether this input is confidential, such as for a password or application key
@@ -723,7 +723,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the data data type to validate.
 		/// </summary>
-		public InputValidationDataType DataType { get; set; }
+		public System.Nullable<InputValidationDataType> DataType { get; set; }
 		
 		/// <summary>
 		/// Gets or sets if this is a required field.
@@ -1286,7 +1286,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets the result of service endpoint execution.
 		/// </summary>
-		public ServiceEndpointExecutionDataResult Result { get; set; }
+		public System.Nullable<ServiceEndpointExecutionDataResult> Result { get; set; }
 		
 		/// <summary>
 		/// Gets the start time of service endpoint execution.
@@ -1418,7 +1418,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the status code of the service endpoint request result.
 		/// </summary>
-		public ServiceEndpointRequestResultStatusCode StatusCode { get; set; }
+		public System.Nullable<ServiceEndpointRequestResultStatusCode> StatusCode { get; set; }
 	}
 	
 	public enum ServiceEndpointRequestResultStatusCode
