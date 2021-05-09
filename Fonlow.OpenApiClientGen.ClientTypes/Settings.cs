@@ -43,6 +43,21 @@
 		Path,
 	}
 
+	public enum ArrayAsIEnumerableDerived
+	{
+		Array,
+		IEnumable,
+		IList,
+		ICollection,
+		IReadOnlyList,
+		IReadOnlyCollection,
+
+		List,
+		Collection,
+		ReadOnlyCollection,
+
+	}
+
 	public class Settings
 	{
 		/// <summary>
@@ -174,14 +189,9 @@
 		public bool GenerateModelsOnly { get; set; }
 
 		/// <summary>
-		/// Create arrays as List<T>
+		/// By default, array type will be array in generated C#. You may generated IEnumerable and some of its derived types.
 		/// </summary>
-		public bool ArrayAsList { get; set; }
-
-		/// <summary>
-		/// Create arrays as ICollection<T>
-		/// </summary>
-		public bool ArrayAsICollection { get; set; }
+		public ArrayAsIEnumerableDerived ArrayAs { get; set; }
 
 		///// <summary>not working well, the references to default value and api parameters not yet valid.
 		///// TitleCase Enum value names, while OpenApiClientGen by default use whatever defined in OpenApi definitions, commonly in camel casing.

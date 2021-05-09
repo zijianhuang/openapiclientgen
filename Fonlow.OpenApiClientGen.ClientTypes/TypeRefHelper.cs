@@ -198,6 +198,33 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ts.Contains(typeName);
 		}
 
+		public static string ArrayAsIEnumerableDerivedToType(string newTypeName, ArrayAsIEnumerableDerived a)
+		{
+			switch (a)
+			{
+				case ArrayAsIEnumerableDerived.Array:
+					return $"{newTypeName}[]";
+				case ArrayAsIEnumerableDerived.IEnumable:
+					return $"System.Collections.Generic.IEnumable<{newTypeName}>";
+				case ArrayAsIEnumerableDerived.IList:
+					return $"System.Collections.Generic.IList<{newTypeName}>";
+				case ArrayAsIEnumerableDerived.ICollection:
+					return $"System.Collections.Generic.ICollection<{newTypeName}>";
+				case ArrayAsIEnumerableDerived.IReadOnlyList:
+					return $"System.Collections.Generic.IReadOnlyList<{newTypeName}>";
+				case ArrayAsIEnumerableDerived.IReadOnlyCollection:
+					return $"System.Collections.Generic.IReadOnlyCollection<{newTypeName}>";
+				case ArrayAsIEnumerableDerived.List:
+					return $"System.Collections.Generic.List<{newTypeName}>";
+				case ArrayAsIEnumerableDerived.Collection:
+					return $"System.Collections.ObjectModel.Collection<{newTypeName}>";
+				case ArrayAsIEnumerableDerived.ReadOnlyCollection:
+					return $"System.Collections.ObjectModel.ReadOnlyCollection<{newTypeName}>";
+				default:
+					throw new ArgumentOutOfRangeException(nameof(a), "Fix ArrayAsIEnumerableDerivedToType!");
+			}
+		}
+
 
 
 	}

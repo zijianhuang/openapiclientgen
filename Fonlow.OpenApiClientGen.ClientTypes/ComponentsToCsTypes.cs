@@ -136,16 +136,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
-								var typeNameX = $"{newTypeName}[]";
-								if (settings.ArrayAsList)
-								{
-									typeNameX = $"System.Collections.Generic.List<{newTypeName}>";
-								}
-								else if (settings.ArrayAsICollection)
-								{
-									typeNameX = $"System.Collections.Generic.ICollection<{newTypeName}>";
-								}
-
+								var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(newTypeName, settings.ArrayAs);
 								TypeAliasDic.Add(item.Key, typeNameX);
 								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX}) -- generated: {newTypeName}");
 							}
@@ -171,31 +162,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					//Array type with ref to the other type
 					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
-						var typeNameX = $"{arrayTypeAlias}[]";
-						if (settings.ArrayAsList)
-						{
-							typeNameX = $"System.Collections.Generic.List<{arrayTypeAlias}>";
-						}
-						else if (settings.ArrayAsICollection)
-						{
-							typeNameX = $"System.Collections.Generic.ICollection<{arrayTypeAlias}>";
-						}
-
+						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(arrayTypeAlias, settings.ArrayAs);
 						TypeAliasDic.Add(item.Key, typeNameX);
 						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX}) with existing ({itemsRef.Id}, {arrayTypeAlias})");
 					}
 					else
 					{
-						var typeNameX = $"{itemsRef.Id}[]";
-						if (settings.ArrayAsList)
-						{
-							typeNameX = $"System.Collections.Generic.List<{itemsRef.Id}>";
-						}
-						else if (settings.ArrayAsICollection)
-						{
-							typeNameX = $"System.Collections.Generic.ICollection<{itemsRef.Id}>";
-						}
-
+						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(itemsRef.Id, settings.ArrayAs);
 						TypeAliasDic.Add(item.Key, typeNameX);
 						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {typeNameX})");
 					}

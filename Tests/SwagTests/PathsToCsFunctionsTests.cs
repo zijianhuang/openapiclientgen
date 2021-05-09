@@ -322,7 +322,7 @@ namespace SwagTests
 		public void TestEBay_buy_order_ArrayAsList()
 		{
 			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
-			settings.ArrayAsList = true;
+			settings.ArrayAs = ArrayAsIEnumerableDerived.List;
 			helper.GenerateAndAssertAndBuild("SwagMock\\buy_order_v1_beta_oas3.json", "Results\\buy_order_ArrayAsList.txt", settings);
 		}
 
@@ -330,7 +330,7 @@ namespace SwagTests
 		public void TestEBay_buy_order_ArrayAsCollection()
 		{
 			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
-			settings.ArrayAsICollection = true;
+			settings.ArrayAs = ArrayAsIEnumerableDerived.ICollection;
 			helper.GenerateAndAssertAndBuild("SwagMock\\buy_order_v1_beta_oas3.json", "Results\\buy_order_ArrayAsCollection.txt", settings);
 		}
 
