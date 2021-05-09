@@ -399,7 +399,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
 						bool isClass = r.Item2;
-						if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !isClass) //C#. vimeo yaml is silly, declaring a reference type as nullable.
+						if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !isClass) //C#. 
+																															  //if (!settings.DisableSystemNullableByDefault && !isClass && !isRequired || propertySchema.Nullable) //C#
+						{
+							clientProperty = CreateNullableProperty(r.Item1, propertyName);
+						}
+						else if (isClass && propertySchema.Nullable && settings.UseNullableReferenceType) //vimeo yaml declares a reference type as nullable.
 						{
 							clientProperty = CreateNullableProperty(r.Item1, propertyName);
 						}
@@ -459,6 +464,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 					if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !simpleType.IsClass) //C#
+					{
+						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
+					}
+					else if (propertySchema.Nullable && simpleType.IsClass && settings.UseNullableReferenceType)
 					{
 						clientProperty = CreateNullableProperty(propertyName, simpleType, settings, propertySchema.Nullable);
 					}
@@ -686,7 +695,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			return isNullable? CreateNullableProperty(r.Item1, propertyName) : CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
+			return isNullable ? CreateNullableProperty(r.Item1, propertyName) : CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
 		}
 
 		static string GetDefaultValue(OpenApiSchema s)
@@ -804,10 +813,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		static CodeMemberField CreateNullableProperty(string propertyName, Type type, Settings settings, bool propertyNullable = false)
 		{
-			if (!propertyNullable && !settings.UseCSharpNullable)
-			{
-				Debug.Assert(type.IsValueType);
-			}
+			//if (!propertyNullable && !settings.UseNullableValueType)
+			//{
+			//	Debug.Assert(type.IsValueType);
+			//}
 
 			// This is a little hack. Since you cant create auto properties in CodeDOM,
 			//  we make the getter and setter part of the member name.
@@ -815,7 +824,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + " { get; set; }//";
 
-			var typeName = settings.UseCSharpNullable ? $"{type.FullName}?" : $"System.Nullable<{type.FullName}>";
+			var typeName = settings.UseNullableQuestionMark ? $"{type.FullName}?" : $"System.Nullable<{type.FullName}>";
 			//c# 8.0 - compat for types that don't support nullable and openapi is set to nullable and not using UseCSharpNullable
 			//i.e: OpenapiDirectoryTests Test_randommer, Test_vimeo and Test_wheretocredit
 			if (propertyNullable)
@@ -831,7 +840,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		static CodeMemberField CreateNullableProperty(CodeTypeReference codeTypeReference, string propertyName)
+		CodeMemberField CreateNullableProperty(CodeTypeReference codeTypeReference, string propertyName)
 		{
 			// This is a little hack. Since you cant create auto properties in CodeDOM,
 			//  we make the getter and setter part of the member name.
@@ -839,7 +848,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + " { get; set; }//";
 
-			CodeMemberField result = new CodeMemberField($"System.Nullable<{codeTypeReference.BaseType}>", memberName)
+			CodeMemberField result = new CodeMemberField(settings.UseNullableQuestionMark ? $"{codeTypeReference.BaseType}?" : $"System.Nullable<{codeTypeReference.BaseType}>", memberName)
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};

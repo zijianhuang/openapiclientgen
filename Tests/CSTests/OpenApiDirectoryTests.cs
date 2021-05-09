@@ -40,7 +40,11 @@ namespace SwagTests
 		[Fact]
 		public void Test_vimeo()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\vimeo.com\3.4");
+			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
+			settings.UseNullableReferenceType = true;
+			var errorText = helper.GenerateFromOpenApiAndBuildWithError(@"..\..\..\..\openapi-directory\APIs\vimeo.com\3.4", settings);
+			Assert.Contains("warning CS8669", errorText);
+			Assert.Contains("error CS0453", errorText);
 		}
 
 		//[Fact]System.ArgumentException : Not yet supported enumMember of Microsoft.OpenApi.Any.OpenApiBoolean with HideReplyByIdBodyHidden

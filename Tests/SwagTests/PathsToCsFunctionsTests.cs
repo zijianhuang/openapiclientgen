@@ -51,7 +51,7 @@ namespace SwagTests
 		public void TestPet_UseCSharpNullable()
 		{
 			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
-			settings.UseCSharpNullable = true;
+			settings.UseNullableQuestionMark = true;
 			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\PetNullable.txt", settings);
 		}
 

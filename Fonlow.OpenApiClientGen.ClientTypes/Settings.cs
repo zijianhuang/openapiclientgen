@@ -179,9 +179,17 @@
 		public bool DisableSystemNullableByDefault { get; set; }
 
 		/// <summary>
-		/// Use T? instead of System.Nullable<T>. C# 8.0 feature
+		/// Use T? instead of System.Nullable<T> for value types, while by default System.Nullable<T> is used. C# 2.0 feature
 		/// </summary>
-		public bool UseCSharpNullable { get; set; }
+		public bool UseNullableQuestionMark { get; set; }
+
+		/// <summary>
+		/// Use T? for reference types. C# 8.0 feature: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types
+		/// https://docs.microsoft.com/en-us/dotnet/csharp/nullable-migration-strategies: The global nullable context does not apply for generated code files.
+		/// https://github.com/AArnott/CodeGeneration.Roslyn/issues/183
+		/// Check test case: Test_vimeo()
+		/// </summary>
+		public bool UseNullableReferenceType { get; set; }
 
 		/// <summary>
 		/// Create the Model classes only
