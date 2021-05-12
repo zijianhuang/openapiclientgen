@@ -33,6 +33,14 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPet_EnumToString()
+		{
+			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
+			settings.EnumToString = true;
+			helper.GenerateAndAssert("SwagMock\\pet.yaml", "NG2Results\\Pet_EnumToString.txt", settings);
+		}
+
+		[Fact]
 		public void TestPetWithPathAsContainerName()
 		{
 			helper.GenerateAndAssert("SwagMock\\pet.yaml", "NG2Results\\PetPathAsContainer.txt", new Settings()

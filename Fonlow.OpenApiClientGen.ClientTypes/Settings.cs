@@ -186,7 +186,7 @@
 		/// <summary>
 		/// Use T? for reference types. C# 8.0 feature: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types
 		/// https://docs.microsoft.com/en-us/dotnet/csharp/nullable-migration-strategies: The global nullable context does not apply for generated code files.
-		/// https://github.com/AArnott/CodeGeneration.Roslyn/issues/183
+		/// Therefore it is up to you application programmers to make the compiler recognize the generated file is not generated.
 		/// Check test case: Test_vimeo()
 		/// </summary>
 		public bool UseNullableReferenceType { get; set; }

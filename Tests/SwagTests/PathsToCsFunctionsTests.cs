@@ -48,6 +48,15 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPet_EnumToString()
+		{
+			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
+			settings.DecorateDataModelWithDataContract = true;
+			settings.EnumToString = true;
+			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\Pet_EnumToString.txt", settings);
+		}
+
+		[Fact]
 		public void TestPet_UseCSharpNullable()
 		{
 			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
