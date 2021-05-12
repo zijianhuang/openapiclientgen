@@ -230,7 +230,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						else
 						{
 							//[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-							typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(Newtonsoft.Json.Converters.StringEnumConverter)"))));
+							typeDeclaration.CustomAttributes.Add(new CodeAttributeDeclaration("Newtonsoft.Json.JsonConverter", new CodeAttributeArgument(new CodeSnippetExpression("typeof(Newtonsoft.Json.Converters.StringEnumConverter)"))));
 						}
 					}
 				}
