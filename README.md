@@ -123,12 +123,14 @@ public class Settings
 	public string ClientLibraryFileName { get; set; } = "OpenApiClientAuto.cs";
 
 	/// <summary>
-	/// Generated data types will be decorated with DataContractAttribute and DataMemberAttribute.
+	/// Generated data types will be decorated with DataContractAttribute and DataMemberAttribute in C#.
 	/// </summary>
 	public bool DecorateDataModelWithDataContract { get; set; }
 
 	/// <summary>
-	/// Serialize enum to strng. For C#, effective if DecorateDataModelWithDataContract is true, and the enum type is decorated by [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]. For TypeScript, the output is string enums.
+	/// Serialize enum to string. For C#, effective if DecorateDataModelWithDataContract is true, and the enum type is decorated by
+	/// [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] or [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))].
+	/// For TypeScript, the output is string enums.
 	/// </summary>
 	public bool EnumToString { get; set; }
 
@@ -137,6 +139,9 @@ public class Settings
 	/// </summary>
 	public string DataContractNamespace { get; set; }
 
+	/// <summary>
+	/// Decorate the Data Model with the System.SerializableAttribute attribute
+	/// </summary>
 	public bool DecorateDataModelWithSerializable { get; set; }
 
 	/// <summary>
@@ -172,6 +177,49 @@ public class Settings
 	/// Function parameters contain a callback to handle HTTP request headers
 	/// </summary>
 	public bool HandleHttpRequestHeaders { get; set; }
+
+	/// <summary>
+	/// Use System.Text.Json instead of Newtonsoft.Json
+	/// </summary>
+	public bool UseSystemTextJson { get; set; }
+
+	/// <summary>
+	/// Generated data types will be decorated with JsonProperty with the PropertyName in C#.
+	/// </summary>
+	public bool DecorateDataModelWithPropertyName { get; set; }
+
+	/// <summary>
+	/// OpenApClinetGent declares all value type properties including enum properties as nullable by default in generated C#, and all properties as nullable by default in generated TypeScript codes, unless the property is required. 
+	/// This is to prevent serializer from creating payload for properties not assigned.  
+	/// There might be situations in which you don't want such default features and want the codegen to respect OpenApi v3 option nullable. Then turn this setting to true, which affects generated C# codes only.
+	/// Please note, Some Open API definition files do not define nullable for some premitive types and enum, however, the respective backends do not expect some properties presented in the payload of the request.
+	/// therefore you need to build some integration test suites to find out what the backend would like.
+	/// If the YAML file defines a reference type property as nullable, the codegen ignores this setting since in C# a nullable reference type property is invalid.
+	/// </summary>
+	public bool DisableSystemNullableByDefault { get; set; }
+
+	/// <summary>
+	/// Use T? instead of System.Nullable<T> for value types, while by default System.Nullable<T> is used. C# 2.0 feature
+	/// </summary>
+	public bool UseNullableQuestionMark { get; set; }
+
+	/// <summary>
+	/// Use T? for reference types. C# 8.0 feature: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types
+	/// https://docs.microsoft.com/en-us/dotnet/csharp/nullable-migration-strategies: The global nullable context does not apply for generated code files.
+	/// Therefore it is up to you application programmers to make the compiler recognize the generated file is not generated.
+	/// Check test case: Test_vimeo()
+	/// </summary>
+	public bool UseNullableReferenceType { get; set; }
+
+	/// <summary>
+	/// Create the Model classes only
+	/// </summary>
+	public bool GenerateModelsOnly { get; set; }
+
+	/// <summary>
+	/// By default, array type will be array in generated C#. You may generated IEnumerable and some of its derived types.
+	/// </summary>
+	public ArrayAsIEnumerableDerived ArrayAs { get; set; }
 
 	/// <summary>
 	/// Create destination folder if not exists. Applied to both CS and TS.
@@ -228,6 +276,20 @@ public enum ContainerNameStrategy
 	/// Use path as resource for grouping, as a container class name.
 	/// </summary>
 	Path,
+}
+
+public enum ArrayAsIEnumerableDerived
+{
+	Array,
+	IEnumerable,
+	IList,
+	ICollection,
+	IReadOnlyList,
+	IReadOnlyCollection,
+
+	List,
+	Collection,
+	ReadOnlyCollection,
 }
 
 public class JSPlugin

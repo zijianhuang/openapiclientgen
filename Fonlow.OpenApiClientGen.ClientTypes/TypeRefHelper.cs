@@ -204,8 +204,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				case ArrayAsIEnumerableDerived.Array:
 					return $"{newTypeName}[]";
-				case ArrayAsIEnumerableDerived.IEnumable:
-					return $"System.Collections.Generic.IEnumable<{newTypeName}>";
+				case ArrayAsIEnumerableDerived.IEnumerable:
+					return $"System.Collections.Generic.IEnumerable<{newTypeName}>";
 				case ArrayAsIEnumerableDerived.IList:
 					return $"System.Collections.Generic.IList<{newTypeName}>";
 				case ArrayAsIEnumerableDerived.ICollection:

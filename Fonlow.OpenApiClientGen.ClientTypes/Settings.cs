@@ -46,7 +46,7 @@
 	public enum ArrayAsIEnumerableDerived
 	{
 		Array,
-		IEnumable,
+		IEnumerable,
 		IList,
 		ICollection,
 		IReadOnlyList,
