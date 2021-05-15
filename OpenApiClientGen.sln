@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientCodesValidation", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidateClientApi", "Tests\ValidateClientApi\ValidateClientApi.csproj", "{DEDC07C3-C25F-4C88-A874-243E79746A08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TsTestHelpers", "Tests\TsTestHelpers\TsTestHelpers.csproj", "{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TsTestHelpers", "Tests\TsTestHelpers\TsTestHelpers.csproj", "{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

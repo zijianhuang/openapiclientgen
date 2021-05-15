@@ -1,7 +1,7 @@
 # OpenApiClientGen
 Reading an Open API / Swagger YAML/JSON definition file, OpenApiClientGen generates strongly typed client API codes in C# and in TypeScript for Angular, Axios, Fetch API, Aurelia and jQuery.
 
-This program is based on Fonlow.TypeScriptCodeDomCore and Fonlow.Poco2TsCore which are core components of [WebApiClientGen](https://github.com/zijianhuang/webapiclientgen), thus the codes generated share the same characteristics.
+This program is based on Fonlow.TypeScriptCodeDomCore and Fonlow.Poco2TsCore which are core components of [WebApiClientGen](https://github.com/zijianhuang/webapiclientgen), thus the codes generated share similar characteristics.
 
 **Hints**
 
@@ -12,11 +12,12 @@ OpenApiClientGen is a .NET Core console app.
 
 **Prerequisites**
 
-* .NET Core 3.1.
+* .NET 5.
 
 **Remarks**
 
-The generated C# codes could be built with .NET Frameworks in addition to .NET Core.
+* The generated C# codes could be built with .NET Frameworks in addition to .NET.
+
 
 ### Source Installation
 Check out this repository or one of its tags, then do a release build or a Visual Stuido's Publish.
@@ -113,7 +114,7 @@ public class Settings
 	public string ContainerNameSuffix { get; set; } = "Client";
 
 	/// <summary>
-	/// Assuming the client API project is the sibling of Web API project. Relative path to the WebApi project should be fine.
+	/// Assuming the client API project is the sibling of Web API project. Relative path to the WebApi project should be fine. C# only.
 	/// </summary>
 	public string ClientLibraryProjectFolderName { get; set; }
 
@@ -128,6 +129,11 @@ public class Settings
 	public bool DecorateDataModelWithDataContract { get; set; }
 
 	/// <summary>
+	/// When DecorateDataModelWithDataContract is true, this is the namespace of DataContractAttribute. For example, "http://mybusiness.com/09/2019
+	/// </summary>
+	public string DataContractNamespace { get; set; }
+
+	/// <summary>
 	/// Serialize enum to string. For C#, effective if DecorateDataModelWithDataContract is true, and the enum type is decorated by
 	/// [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] or [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))].
 	/// For TypeScript, the output is string enums.
@@ -135,17 +141,12 @@ public class Settings
 	public bool EnumToString { get; set; }
 
 	/// <summary>
-	/// When DecorateDataModelWithDataContract is true, this is the namespace of DataContractAttribute. For example, "http://mybusiness.com/09/2019
-	/// </summary>
-	public string DataContractNamespace { get; set; }
-
-	/// <summary>
 	/// Decorate the Data Model with the System.SerializableAttribute attribute
 	/// </summary>
 	public bool DecorateDataModelWithSerializable { get; set; }
 
 	/// <summary>
-	/// For .NET client, generate both async and sync functions for each Web API function
+	/// For .NET client, generate both async and sync functions for each Web API function. When false, only async.
 	/// </summary>
 	public bool GenerateBothAsyncAndSync { get; set; }
 
@@ -184,17 +185,17 @@ public class Settings
 	public bool UseSystemTextJson { get; set; }
 
 	/// <summary>
-	/// Generated data types will be decorated with JsonProperty with the PropertyName in C#.
+	/// Generated data types will be decorated with System.Text.Json.Serialization.JsonPropertyNameAttribute or Newtonsoft.Json.JsonPropertyAttribute with the original property name defined in YAML.
 	/// </summary>
 	public bool DecorateDataModelWithPropertyName { get; set; }
 
 	/// <summary>
-	/// OpenApClinetGent declares all value type properties including enum properties as nullable by default in generated C#, and all properties as nullable by default in generated TypeScript codes, unless the property is required. 
+	/// OpenApClinetGen declares all value type properties including enum properties as nullable by default in generated C#, and all properties as nullable by default in generated TypeScript codes, unless the property is required. 
 	/// This is to prevent serializer from creating payload for properties not assigned.  
 	/// There might be situations in which you don't want such default features and want the codegen to respect OpenApi v3 option nullable. Then turn this setting to true, which affects generated C# codes only.
 	/// Please note, Some Open API definition files do not define nullable for some premitive types and enum, however, the respective backends do not expect some properties presented in the payload of the request.
 	/// therefore you need to build some integration test suites to find out what the backend would like.
-	/// If the YAML file defines a reference type property as nullable, the codegen ignores this setting since in C# a nullable reference type property is invalid.
+	/// If the YAML file defines a reference type property as nullable, the codegen ignores this setting since in C# a nullable reference type property is invalid, unless you set UseNullableReferenceType to true.
 	/// </summary>
 	public bool DisableSystemNullableByDefault { get; set; }
 
@@ -206,7 +207,7 @@ public class Settings
 	/// <summary>
 	/// Use T? for reference types. C# 8.0 feature: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types
 	/// https://docs.microsoft.com/en-us/dotnet/csharp/nullable-migration-strategies: The global nullable context does not apply for generated code files.
-	/// Therefore it is up to you application programmers to make the compiler recognize the generated file is not generated.
+	/// Therefore it is up to you application programmers to make the compiler recognize the generated file is not of generated codes.
 	/// Check test case: Test_vimeo()
 	/// </summary>
 	public bool UseNullableReferenceType { get; set; }
@@ -227,12 +228,9 @@ public class Settings
 	public bool CreateFolder { get; set; }
 
 	/// <summary>
-	/// Optional file output of generated codes compilation. If not defined, the compilation is done in memory.
+	/// Meta for plugins that generate TypeScript/JavaScript codes.
 	/// </summary>
-	public string AssemblyPath { get; set; }
-
 	public JSPlugin[] Plugins { get; set; }
-
 }
 
 public enum ActionNameStrategy
@@ -315,7 +313,7 @@ public class JSPlugin
 }
 ```
 
-
+For more details, especially the contexts of using these settings, please check [Settings Explained](https://github.com/zijianhuang/openapiclientgen/wiki/Settings-Explained).
 
 ## Examples of Generated Codes
 
