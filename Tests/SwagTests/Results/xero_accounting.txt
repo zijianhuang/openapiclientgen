@@ -7881,6 +7881,7 @@ namespace MyNS
 		/// <summary>
 		/// The status of the payment.
 		/// </summary>
+		[System.ComponentModel.DefaultValue("DELETED")]
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; } = "DELETED";
 	}

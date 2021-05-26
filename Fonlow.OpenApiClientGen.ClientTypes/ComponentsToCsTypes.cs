@@ -808,6 +808,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			CodeMemberField result = new CodeMemberField() { Type = TypeRefHelper.TranslateToClientTypeReference(type), Name = memberName };
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
+
+			if (!String.IsNullOrEmpty(defaultValue))
+			{
+				result.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DefaultValue", new CodeAttributeArgument(new CodeSnippetExpression(defaultValue))));
+			}
+
 			return result;
 		}
 
@@ -872,6 +878,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
+
+			if (!String.IsNullOrEmpty(defaultValue))
+			{
+				result.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DefaultValue", new CodeAttributeArgument(new CodeSnippetExpression(defaultValue))));
+			}
+
 			return result;
 		}
 

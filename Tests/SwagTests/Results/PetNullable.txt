@@ -37,6 +37,7 @@ namespace MyNS
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
+		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
 	}
@@ -59,7 +60,7 @@ namespace MyNS
 		/// <summary>
 		/// Category ID
 		/// </summary>
-		public System.Nullable<System.Int64> Id { get; set; }
+		public System.Int64? Id { get; set; }
 		
 		/// <summary>
 		/// Category name
@@ -93,6 +94,7 @@ namespace MyNS
 		/// The size of the pack the dog is from
 		/// Minimum: 1
 		/// </summary>
+		[System.ComponentModel.DefaultValue(1)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
 		public int PackSize { get; set; } = 1;
@@ -117,12 +119,12 @@ namespace MyNS
 		/// <summary>
 		/// Order ID
 		/// </summary>
-		public System.Nullable<System.Int64> Id { get; set; }
+		public System.Int64? Id { get; set; }
 		
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		public System.Nullable<System.Int64> PetId { get; set; }
+		public System.Int64? PetId { get; set; }
 		
 		/// <summary>
 		/// Minimum: 1
@@ -138,7 +140,7 @@ namespace MyNS
 		/// <summary>
 		/// Order Status
 		/// </summary>
-		public System.Nullable<OrderStatus> Status { get; set; }
+		public OrderStatus? Status { get; set; }
 		
 		/// <summary>
 		/// Indicates whenever order was completed or not
@@ -167,7 +169,7 @@ namespace MyNS
 		/// <summary>
 		/// Pet ID
 		/// </summary>
-		public System.Nullable<System.Int64> Id { get; set; }
+		public System.Int64? Id { get; set; }
 		
 		/// <summary>
 		/// Categories this pet belongs to
@@ -200,7 +202,7 @@ namespace MyNS
 		/// <summary>
 		/// Pet status in the store
 		/// </summary>
-		public System.Nullable<PetStatus> Status { get; set; }
+		public PetStatus? Status { get; set; }
 		
 		/// <summary>
 		/// Type of a pet
@@ -214,7 +216,7 @@ namespace MyNS
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		public System.Nullable<System.Int64> Id { get; set; }
+		public System.Int64? Id { get; set; }
 		
 		/// <summary>
 		/// Tag name

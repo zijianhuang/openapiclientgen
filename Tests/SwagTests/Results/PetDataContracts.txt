@@ -43,6 +43,7 @@ namespace MyNS
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
+		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="huntingSkill")]
 		public CatHuntingSkill HuntingSkill { get; set; }
@@ -111,6 +112,7 @@ namespace MyNS
 		/// <summary>
 		/// The size of the pack the dog is from
 		/// </summary>
+		[System.ComponentModel.DefaultValue(1)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="packSize")]
 		public int PackSize { get; set; }

@@ -37,6 +37,7 @@ namespace MyNS
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
+		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
 	}
@@ -93,6 +94,7 @@ namespace MyNS
 		/// The size of the pack the dog is from
 		/// Minimum: 1
 		/// </summary>
+		[System.ComponentModel.DefaultValue(1)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
 		public int PackSize { get; set; } = 1;
@@ -127,6 +129,7 @@ namespace MyNS
 		/// <summary>
 		/// Minimum: 1
 		/// </summary>
+		[System.ComponentModel.DefaultValue(1)]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
 		public int Quantity { get; set; } = 1;
 		
@@ -143,6 +146,7 @@ namespace MyNS
 		/// <summary>
 		/// Indicates whenever order was completed or not
 		/// </summary>
+		[System.ComponentModel.DefaultValue(false)]
 		public bool Complete { get; set; } = false;
 		
 		/// <summary>

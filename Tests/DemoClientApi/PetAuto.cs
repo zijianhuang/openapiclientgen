@@ -42,6 +42,7 @@ namespace My.Pet.Client
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
+		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="huntingSkill")]
 		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
@@ -110,6 +111,7 @@ namespace My.Pet.Client
 		/// The size of the pack the dog is from
 		/// Minimum: 1
 		/// </summary>
+		[System.ComponentModel.DefaultValue(1)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="packSize")]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
@@ -164,7 +166,7 @@ namespace My.Pet.Client
 		/// Order Status
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		public OrderStatus Status { get; set; }
+		public System.Nullable<OrderStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Indicates whenever order was completed or not
@@ -240,7 +242,7 @@ namespace My.Pet.Client
 		/// Pet status in the store
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		public PetStatus Status { get; set; }
+		public System.Nullable<PetStatus> Status { get; set; }
 		
 		/// <summary>
 		/// Type of a pet

@@ -30,6 +30,7 @@ namespace MyNS
 		/// <summary>
 		/// The measured skill for hunting
 		/// </summary>
+		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
 	}
@@ -86,6 +87,7 @@ namespace MyNS
 		/// The size of the pack the dog is from
 		/// Minimum: 1.0
 		/// </summary>
+		[System.ComponentModel.DefaultValue(1)]
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.Range(1.0, System.Int32.MaxValue)]
 		public int PackSize { get; set; } = 1;
