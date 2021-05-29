@@ -63,11 +63,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank, Settings settings = null)
 		{
-			if (settings != null && arrayRank > 1)
+			if (settings != null)
 			{
-				var type = TypeRefHelper.ArrayAsIEnumerableDerivedToType(typeName, settings.ArrayAs);
-				CodeTypeReference typeReference = new CodeTypeReference(type, new[] { new CodeTypeReference(typeName) });
-				return typeReference;
+				if (arrayRank > 1)
+				{
+					var type = TypeRefHelper.ArrayAsIEnumerableDerivedToType(typeName, settings.ArrayAs);
+					CodeTypeReference typeReference =
+						new CodeTypeReference(type, new[] { new CodeTypeReference(typeName) });
+					return typeReference;
+				}
+				else
+				{
+					var type = TypeRefHelper.ArrayAsIEnumerableDerivedToType(typeName, settings.ArrayAs);
+					CodeTypeReference typeReference = new CodeTypeReference(type);
+					return typeReference;
+				}
 			}
 			else
 			{
