@@ -30,32 +30,32 @@
 		/// <summary>
 		/// All client functions will be constructed in a god class named after ContainerClassName
 		/// </summary>
-		None,
+		None = 0,
 
 		/// <summary>
 		/// Use tags
 		/// </summary>
-		Tags,
+		Tags = 1,
 
 		/// <summary>
 		/// Use path as resource for grouping, as a container class name.
 		/// </summary>
-		Path,
+		Path = 2,
 	}
 
 	public enum ArrayAsIEnumerableDerived
 	{
-		Array,
+		Array = 0,
 
-		IEnumerable,
-		IList,
-		ICollection,
-		IReadOnlyList,
-		IReadOnlyCollection,
+		IEnumerable = 1,
+		IList = 2,
+		ICollection = 3,
+		IReadOnlyList = 4,
+		IReadOnlyCollection = 5,
 
-		List,
-		Collection,
-		ReadOnlyCollection,
+		List = 6,
+		Collection = 7,
+		ReadOnlyCollection = 8,
 	}
 
 	public class Settings
