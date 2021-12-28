@@ -209,7 +209,7 @@ namespace My.Pet.Client
 		/// Categories this pet belongs to
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="category")]
-		public Category Category { get; set; }
+		public Category? Category { get; set; }
 		
 		/// <summary>
 		/// The name given to a pet

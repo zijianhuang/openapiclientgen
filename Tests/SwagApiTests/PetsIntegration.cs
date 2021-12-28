@@ -10,7 +10,7 @@ namespace IntegrationTests
 	{
 		public PetsFixture()
 		{
-			Uri baseUri = new Uri("http://localhost:5000/");
+			Uri baseUri = new Uri("http://localhost:5000");
 
 			httpClient = new System.Net.Http.HttpClient
 			{
@@ -18,9 +18,12 @@ namespace IntegrationTests
 			};
 			//httpClient.DefaultRequestHeaders
 			//  .Accept
-			//  .Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderPet("application/json"));//.net core has different behavior as described at https://github.com/zijianhuang/webapiclientgen/issues/26
+			//  .Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));//.net core has different behavior as described at https://github.com/zijianhuang/webapiclientgen/issues/26
 
-			Api = new PetClient(httpClient);
+			Api = new PetClient(httpClient, new Newtonsoft.Json.JsonSerializerSettings()
+			{
+				NullValueHandling= Newtonsoft.Json.NullValueHandling.Ignore
+			});
 		}
 
 		public PetClient Api { get; private set; }
@@ -80,7 +83,7 @@ namespace IntegrationTests
 			await api.AddPetAsync(new Pet()
 			{
 				//Id=339,
-				Name = "KKK",
+				Name = "KKK", //required
 				PhotoUrls = new string[] { "http://somewhere.com/mydog.jpg" }, //required,
 				Tags = new Tag[] { //not required. However, when presented, it must contain at least one item.
 					new Tag()

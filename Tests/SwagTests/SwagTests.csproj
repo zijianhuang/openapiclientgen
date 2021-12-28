@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
 
@@ -106,6 +106,7 @@
     <None Remove="NG2Results\PetPathAsContainer.txt" />
     <None Remove="NG2Results\PetStore.txt" />
     <None Remove="NG2Results\PetStoreExpanded.txt" />
+    <None Remove="NG2Results\Pet_EnumToString.txt" />
     <None Remove="NG2Results\redocOpenApi200501.txt" />
     <None Remove="NG2Results\sell_account.txt" />
     <None Remove="NG2Results\sell_analytics.txt" />
@@ -155,6 +156,7 @@
     <None Remove="Results\PetTypes.txt" />
     <None Remove="Results\Pet_DecorateDataModelWithPropertyName.txt" />
     <None Remove="Results\Pet_DisableSystemNullableByDefault.txt" />
+    <None Remove="Results\Pet_EnumToString.txt" />
     <None Remove="Results\Pet_TitleCaseEnumValueNames.txt" />
     <None Remove="Results\redocOpenApi200501.txt" />
     <None Remove="Results\sell_account.txt" />
@@ -581,6 +583,9 @@
     <Content Include="NG2Results\mcp.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="NG2Results\Pet_EnumToString.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="NG2Results\redocOpenApi200501.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -702,6 +707,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Results\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Results\Pet_EnumToString.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Results\Pet_TitleCaseEnumValueNames.txt">
@@ -1211,13 +1219,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="3.0.3">
+    <PackageReference Include="coverlet.collector" Version="3.1.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

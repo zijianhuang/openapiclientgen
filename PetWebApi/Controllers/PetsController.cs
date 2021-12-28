@@ -10,7 +10,7 @@ using System.Net.Http;
 namespace MyNamespace
 {
     [ApiController]
-    //[Route("[controller]")]
+    //[Route("[controller]")] do not use this, since the proeotypes of API functions are generated
     public partial class PetController : ControllerBase
     {
         public PetController()

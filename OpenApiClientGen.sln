@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fonlow.OpenApiClientGen", "Fonlow.OpenApiClientGen\Fonlow.OpenApiClientGen.csproj", "{9960005C-A00E-49AD-8EC4-A719367C5AA2}"
 EndProject
@@ -54,6 +54,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidateClientApi", "Tests\ValidateClientApi\ValidateClientApi.csproj", "{DEDC07C3-C25F-4C88-A874-243E79746A08}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TsTestHelpers", "Tests\TsTestHelpers\TsTestHelpers.csproj", "{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetWebApi6", "PetWebApi6\PetWebApi6.csproj", "{051C0D17-DAD0-432C-9FF8-EB333E22564C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E8AB7A5-EDB8-4EEF-9586-6795843B1483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051C0D17-DAD0-432C-9FF8-EB333E22564C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051C0D17-DAD0-432C-9FF8-EB333E22564C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051C0D17-DAD0-432C-9FF8-EB333E22564C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051C0D17-DAD0-432C-9FF8-EB333E22564C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
