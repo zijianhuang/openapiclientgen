@@ -164,6 +164,11 @@
 		public bool UseSystemTextJson { get; set; }
 
 		/// <summary>
+		/// For date type, generate DateOnly property. Default true. If false, generate DateTimeOffset decorated by System.ComponentModel.DataAnnotations.DataTypeAttribute(System.ComponentModel.DataAnnotationsDataType.Date)
+		/// </summary>
+		public bool DateToDateOnly { get; set; } = true;
+
+		/// <summary>
 		/// Generated data types will be decorated with System.Text.Json.Serialization.JsonPropertyNameAttribute or Newtonsoft.Json.JsonPropertyAttribute with the original property name defined in YAML.
 		/// </summary>
 		public bool DecorateDataModelWithPropertyName { get; set; }

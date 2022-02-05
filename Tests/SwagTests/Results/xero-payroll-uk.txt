@@ -114,7 +114,7 @@ namespace MyNS
 		/// <summary>
 		/// Date of birth of the employee (YYYY-MM-DD)
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> DateOfBirth { get; set; }
+		public System.Nullable<System.DateOnly> DateOfBirth { get; set; }
 		
 		public Address Address { get; set; }
 		
@@ -136,12 +136,12 @@ namespace MyNS
 		/// <summary>
 		/// Employment start date of the employee at the time it was requested
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
+		public System.Nullable<System.DateOnly> StartDate { get; set; }
 		
 		/// <summary>
 		/// Employment end date of the employee at the time it was requested
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> EndDate { get; set; }
+		public System.Nullable<System.DateOnly> EndDate { get; set; }
 		
 		/// <summary>
 		/// Xero unique identifier for the payroll calendar of the employee
@@ -241,7 +241,7 @@ namespace MyNS
 		/// <summary>
 		/// Start date of the employment (YYYY-MM-DD)
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
+		public System.Nullable<System.DateOnly> StartDate { get; set; }
 		
 		/// <summary>
 		/// The employment number of the employee
@@ -338,7 +338,7 @@ namespace MyNS
 		/// <summary>
 		/// The directorship start date
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> DirectorshipStartDate { get; set; }
+		public System.Nullable<System.DateOnly> DirectorshipStartDate { get; set; }
 		
 		/// <summary>
 		/// NICs calculation method
@@ -430,13 +430,13 @@ namespace MyNS
 		/// Start date of the leave (YYYY-MM-DD)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset StartDate { get; set; }
+		public System.DateOnly StartDate { get; set; }
 		
 		/// <summary>
 		/// End date of the leave (YYYY-MM-DD)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset EndDate { get; set; }
+		public System.DateOnly EndDate { get; set; }
 		
 		/// <summary>
 		/// The leave period information. The StartDate, EndDate and NumberOfUnits needs to be specified when you do not want to calculate NumberOfUnits automatically. Using incorrect period StartDate and EndDate will result in automatic computation of the NumberOfUnits.
@@ -455,12 +455,12 @@ namespace MyNS
 		/// <summary>
 		/// The Pay Period Start Date (YYYY-MM-DD)
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PeriodStartDate { get; set; }
+		public System.Nullable<System.DateOnly> PeriodStartDate { get; set; }
 		
 		/// <summary>
 		/// The Pay Period End Date (YYYY-MM-DD)
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PeriodEndDate { get; set; }
+		public System.Nullable<System.DateOnly> PeriodEndDate { get; set; }
 		
 		/// <summary>
 		/// The Number of Units for the leave
@@ -630,12 +630,12 @@ namespace MyNS
 		/// <summary>
 		/// The date when the leave starts
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
+		public System.Nullable<System.DateOnly> StartDate { get; set; }
 		
 		/// <summary>
 		/// The date when the leave ends
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> EndDate { get; set; }
+		public System.Nullable<System.DateOnly> EndDate { get; set; }
 		
 		/// <summary>
 		/// Whether the leave was entitled to receive payment
@@ -695,13 +695,13 @@ namespace MyNS
 		/// The date when the leave starts
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset StartDate { get; set; }
+		public System.DateOnly StartDate { get; set; }
 		
 		/// <summary>
 		/// The date when the leave ends
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset EndDate { get; set; }
+		public System.DateOnly EndDate { get; set; }
 		
 		/// <summary>
 		/// the type of statutory leave
@@ -1617,13 +1617,13 @@ namespace MyNS
 		/// The Start Date of the Timesheet period (YYYY-MM-DD)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset StartDate { get; set; }
+		public System.DateOnly StartDate { get; set; }
 		
 		/// <summary>
 		/// The End Date of the Timesheet period (YYYY-MM-DD)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset EndDate { get; set; }
+		public System.DateOnly EndDate { get; set; }
 		
 		/// <summary>
 		/// Status of the timesheet
@@ -1665,7 +1665,7 @@ namespace MyNS
 		/// The Date that this Timesheet Line is for (YYYY-MM-DD)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset Date { get; set; }
+		public System.DateOnly Date { get; set; }
 		
 		/// <summary>
 		/// The Xero identifier for the Earnings Rate that the Timesheet is for
@@ -1748,18 +1748,18 @@ namespace MyNS
 		/// Period start date of the calendar
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset PeriodStartDate { get; set; }
+		public System.DateOnly PeriodStartDate { get; set; }
 		
 		/// <summary>
 		/// Period end date of the calendar
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PeriodEndDate { get; set; }
+		public System.Nullable<System.DateOnly> PeriodEndDate { get; set; }
 		
 		/// <summary>
 		/// Payment date of the calendar
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset PaymentDate { get; set; }
+		public System.DateOnly PaymentDate { get; set; }
 		
 		/// <summary>
 		/// UTC timestamp of the last update to the pay run calendar
@@ -1902,7 +1902,7 @@ namespace MyNS
 		/// The effective date of the corresponding salary and wages
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset EffectiveFrom { get; set; }
+		public System.DateOnly EffectiveFrom { get; set; }
 		
 		/// <summary>
 		/// The annual salary
@@ -1979,17 +1979,17 @@ namespace MyNS
 		/// <summary>
 		/// Period start date of the payroll calendar
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PeriodStartDate { get; set; }
+		public System.Nullable<System.DateOnly> PeriodStartDate { get; set; }
 		
 		/// <summary>
 		/// Period end date of the payroll calendar
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PeriodEndDate { get; set; }
+		public System.Nullable<System.DateOnly> PeriodEndDate { get; set; }
 		
 		/// <summary>
 		/// Payment date of the pay run
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PaymentDate { get; set; }
+		public System.Nullable<System.DateOnly> PaymentDate { get; set; }
 		
 		/// <summary>
 		/// Total cost of the pay run
@@ -2019,7 +2019,7 @@ namespace MyNS
 		/// <summary>
 		/// Posted date time of the pay run
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PostedDateTime { get; set; }
+		public System.Nullable<System.DateOnly> PostedDateTime { get; set; }
 		
 		public Payslip[] PaySlips { get; set; }
 	}
@@ -2063,7 +2063,7 @@ namespace MyNS
 		/// <summary>
 		/// The date payslip was last updated
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> LastEdited { get; set; }
+		public System.Nullable<System.DateOnly> LastEdited { get; set; }
 		
 		/// <summary>
 		/// Employee first name
@@ -3561,9 +3561,9 @@ namespace MyNS
 		/// <param name="LeaveType">Filter by the type of statutory leave</param>
 		/// <param name="AsOfDate">The date from which to calculate balance remaining. If not specified, current date UTC is used.</param>
 		/// <returns>search results matching criteria</returns>
-		public async Task<EmployeeStatutoryLeaveBalanceObject> GetEmployeeStatutoryLeaveBalancesAsync(string EmployeeId, string LeaveType, System.DateTimeOffset AsOfDate)
+		public async Task<EmployeeStatutoryLeaveBalanceObject> GetEmployeeStatutoryLeaveBalancesAsync(string EmployeeId, string LeaveType, System.DateOnly AsOfDate)
 		{
-			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId))+"/StatutoryLeaveBalance&LeaveType=" + (LeaveType==null? "" : Uri.EscapeDataString(LeaveType))+"&AsOfDate=" + AsOfDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId))+"/StatutoryLeaveBalance&LeaveType=" + (LeaveType==null? "" : Uri.EscapeDataString(LeaveType))+"&AsOfDate="+AsOfDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3592,9 +3592,9 @@ namespace MyNS
 		/// <param name="LeaveType">Filter by the type of statutory leave</param>
 		/// <param name="AsOfDate">The date from which to calculate balance remaining. If not specified, current date UTC is used.</param>
 		/// <returns>search results matching criteria</returns>
-		public EmployeeStatutoryLeaveBalanceObject GetEmployeeStatutoryLeaveBalances(string EmployeeId, string LeaveType, System.DateTimeOffset AsOfDate)
+		public EmployeeStatutoryLeaveBalanceObject GetEmployeeStatutoryLeaveBalances(string EmployeeId, string LeaveType, System.DateOnly AsOfDate)
 		{
-			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId))+"/StatutoryLeaveBalance&LeaveType=" + (LeaveType==null? "" : Uri.EscapeDataString(LeaveType))+"&AsOfDate=" + AsOfDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId))+"/StatutoryLeaveBalance&LeaveType=" + (LeaveType==null? "" : Uri.EscapeDataString(LeaveType))+"&AsOfDate="+AsOfDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3811,9 +3811,9 @@ namespace MyNS
 		/// <param name="startDate">Filter by start date</param>
 		/// <param name="endDate">Filter by end date</param>
 		/// <returns>search results matching criteria</returns>
-		public async Task<LeavePeriods> GetEmployeeLeavePeriodsAsync(string EmployeeId, System.DateTimeOffset startDate, System.DateTimeOffset endDate)
+		public async Task<LeavePeriods> GetEmployeeLeavePeriodsAsync(string EmployeeId, System.DateOnly startDate, System.DateOnly endDate)
 		{
-			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId))+"/LeavePeriods&startDate=" + startDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endDate=" + endDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId))+"/LeavePeriods&startDate="+startDate+"&endDate="+endDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3842,9 +3842,9 @@ namespace MyNS
 		/// <param name="startDate">Filter by start date</param>
 		/// <param name="endDate">Filter by end date</param>
 		/// <returns>search results matching criteria</returns>
-		public LeavePeriods GetEmployeeLeavePeriods(string EmployeeId, System.DateTimeOffset startDate, System.DateTimeOffset endDate)
+		public LeavePeriods GetEmployeeLeavePeriods(string EmployeeId, System.DateOnly startDate, System.DateOnly endDate)
 		{
-			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId))+"/LeavePeriods&startDate=" + startDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endDate=" + endDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId))+"/LeavePeriods&startDate="+startDate+"&endDate="+endDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

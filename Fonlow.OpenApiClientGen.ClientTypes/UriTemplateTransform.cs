@@ -24,9 +24,11 @@ namespace Fonlow.CodeDom.Web
 
 		static readonly Type typeofString = typeof(string);
 		static readonly Type typeofDateTime = typeof(DateTime);
+		static readonly Type typeofDateOnly = typeof(DateOnly);
 		static readonly Type typeofDateTimeNullable = typeof(DateTime?);
 		static readonly Type typeofDateTimeOffset = typeof(DateTimeOffset);
 		static readonly Type typeofDateTimeOffsetNullable = typeof(DateTimeOffset?);
+		static readonly Type typeofDateOnlyNullable = typeof(DateOnly?);
 		static readonly Type typeOfNullableDefinition = typeof(Nullable<>);
 
 		public static string Transform(string newUriText, ParameterDescriptionEx d)
@@ -164,7 +166,7 @@ namespace Fonlow.CodeDom.Web
 						return newUriText += $"{d.Name}=' + {d.Name} + '";
 					}
 				}
-				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset)
+				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset || d.ParameterDescriptor.ParameterType == typeofDateOnly)
 				{
 					return newUriText += $"{d.Name}=' + {d.Name}.toISOString() + '";
 				}
@@ -199,11 +201,11 @@ namespace Fonlow.CodeDom.Web
 						return newUriText.Replace($"{{{d.Name}}}", $"' + {d.Name} + '");
 					}
 				}
-				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset)
+				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset || d.ParameterDescriptor.ParameterType == typeofDateOnly)
 				{
 					return newUriText.Replace($"{{{d.Name}}}", $"' + {d.Name}.toISOString() + '");
 				}
-				else if (d.ParameterDescriptor.ParameterType == typeofDateTimeNullable || d.ParameterDescriptor.ParameterType == typeofDateTimeOffsetNullable)
+				else if (d.ParameterDescriptor.ParameterType == typeofDateTimeNullable || d.ParameterDescriptor.ParameterType == typeofDateTimeOffsetNullable || d.ParameterDescriptor.ParameterType == typeofDateOnlyNullable)
 				{
 					string replaced = newUriText.Replace($"'&{d.QName}={{{d.Name}}}", $"({d.Name} ? '&{d.QName}=' + {d.Name}.toISOString() : '') + '");
 					if (replaced == newUriText)

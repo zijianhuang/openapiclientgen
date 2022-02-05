@@ -803,7 +803,7 @@ namespace MyNS
 		/// <summary>
 		/// Date of transaction � YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// Reference for the transaction. Only supported for SPEND and RECEIVE transactions.
@@ -2107,7 +2107,7 @@ namespace MyNS
 		/// <summary>
 		/// The date of the Transfer YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// The identifier of the Bank Transfer
@@ -2204,7 +2204,7 @@ namespace MyNS
 		/// <summary>
 		/// Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice e.g. 200.00
@@ -2270,7 +2270,7 @@ namespace MyNS
 		/// <summary>
 		/// Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// Exchange rate when payment is received. Only used for non base currency invoices and credit notes e.g. 0.7500
@@ -2366,12 +2366,12 @@ namespace MyNS
 		/// <summary>
 		/// Date invoice was issued � YYYY-MM-DD. If the Date element is not specified it will default to the current date based on the timezone setting of the organisation
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// Date invoice is due � YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> DueDate { get; set; }
+		public System.Nullable<System.DateOnly> DueDate { get; set; }
 		
 		/// <summary>
 		/// Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types
@@ -2425,12 +2425,12 @@ namespace MyNS
 		/// <summary>
 		/// Shown on sales invoices (Accounts Receivable) when this has been set
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> ExpectedPaymentDate { get; set; }
+		public System.Nullable<System.DateOnly> ExpectedPaymentDate { get; set; }
 		
 		/// <summary>
 		/// Shown on bills (Accounts Payable) when this has been set
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PlannedPaymentDate { get; set; }
+		public System.Nullable<System.DateOnly> PlannedPaymentDate { get; set; }
 		
 		/// <summary>
 		/// CIS deduction for UK contractors
@@ -2500,7 +2500,7 @@ namespace MyNS
 		/// <summary>
 		/// The date the invoice was fully paid. Only returned on fully paid invoices
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> FullyPaidOnDate { get; set; }
+		public System.Nullable<System.DateOnly> FullyPaidOnDate { get; set; }
 		
 		/// <summary>
 		/// Sum of all credit notes, over-payments and pre-payments applied to invoice
@@ -2924,7 +2924,7 @@ namespace MyNS
 		/// <summary>
 		/// The date the prepayment is created YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// See Prepayment Status Codes
@@ -3383,7 +3383,7 @@ namespace MyNS
 		/// the date the allocation is applied YYYY-MM-DD.
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset Date { get; set; }
+		public System.DateOnly Date { get; set; }
 		
 		/// <summary>
 		/// A string to indicate if a invoice status
@@ -3409,7 +3409,7 @@ namespace MyNS
 		/// <summary>
 		/// The date the overpayment is created YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// See Overpayment Status Codes
@@ -3847,7 +3847,7 @@ namespace MyNS
 		/// <summary>
 		/// The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// See Credit Note Status Codes
@@ -3892,7 +3892,7 @@ namespace MyNS
 		/// <summary>
 		/// Date when credit note was fully paid(UTC format)
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> FullyPaidOnDate { get; set; }
+		public System.Nullable<System.DateOnly> FullyPaidOnDate { get; set; }
 		
 		/// <summary>
 		/// Xero generated unique identifier
@@ -4978,12 +4978,12 @@ namespace MyNS
 		/// <summary>
 		/// The date when the expense claim is due to be paid YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PaymentDueDate { get; set; }
+		public System.Nullable<System.DateOnly> PaymentDueDate { get; set; }
 		
 		/// <summary>
 		/// The date the expense claim will be reported in Xero YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> ReportingDate { get; set; }
+		public System.Nullable<System.DateOnly> ReportingDate { get; set; }
 		
 		/// <summary>
 		/// The Xero identifier for the Receipt e.g.  e59a2c7f-1306-4078-a0f3-73537afcbba9
@@ -5068,7 +5068,7 @@ namespace MyNS
 		/// <summary>
 		/// Date of receipt � YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		public Contact Contact { get; set; }
 		
@@ -5361,7 +5361,7 @@ namespace MyNS
 		/// <summary>
 		/// Date the journal was posted
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> JournalDate { get; set; }
+		public System.Nullable<System.DateOnly> JournalDate { get; set; }
 		
 		/// <summary>
 		/// Xero generated journal number
@@ -5692,7 +5692,7 @@ namespace MyNS
 		/// <summary>
 		/// Date journal was posted � YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types
@@ -5912,12 +5912,12 @@ namespace MyNS
 		/// <summary>
 		/// Shown if set. See lock dates
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PeriodLockDate { get; set; }
+		public System.Nullable<System.DateOnly> PeriodLockDate { get; set; }
 		
 		/// <summary>
 		/// Shown if set. See lock dates
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> EndOfYearLockDate { get; set; }
+		public System.Nullable<System.DateOnly> EndOfYearLockDate { get; set; }
 		
 		/// <summary>
 		/// Timestamp when the organisation was created in Xero
@@ -7911,12 +7911,12 @@ namespace MyNS
 		/// <summary>
 		/// Date purchase order was issued � YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// Date the goods are to be delivered � YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> DeliveryDate { get; set; }
+		public System.Nullable<System.DateOnly> DeliveryDate { get; set; }
 		
 		/// <summary>
 		/// Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types
@@ -7976,7 +7976,7 @@ namespace MyNS
 		/// <summary>
 		/// The date the goods are expected to arrive.
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> ExpectedArrivalDate { get; set; }
+		public System.Nullable<System.DateOnly> ExpectedArrivalDate { get; set; }
 		
 		/// <summary>
 		/// Xero generated unique identifier for purchase order
@@ -8430,7 +8430,7 @@ namespace MyNS
 		/// <summary>
 		/// Date quote was issued � YYYY-MM-DD. If the Date element is not specified it will default to the current date based on the timezone setting of the organisation
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> Date { get; set; }
+		public System.Nullable<System.DateOnly> Date { get; set; }
 		
 		/// <summary>
 		/// Date the quote was issued (YYYY-MM-DD)
@@ -8440,7 +8440,7 @@ namespace MyNS
 		/// <summary>
 		/// Date the quote expires � YYYY-MM-DD.
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> ExpiryDate { get; set; }
+		public System.Nullable<System.DateOnly> ExpiryDate { get; set; }
 		
 		/// <summary>
 		/// Date the quote expires � YYYY-MM-DD.
@@ -9019,17 +9019,17 @@ namespace MyNS
 		/// <summary>
 		/// Date the first invoice of the current version of the repeating schedule was generated (changes when repeating invoice is edited)
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
+		public System.Nullable<System.DateOnly> StartDate { get; set; }
 		
 		/// <summary>
 		/// The calendar date of the next invoice in the schedule to be generated
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> NextScheduledDate { get; set; }
+		public System.Nullable<System.DateOnly> NextScheduledDate { get; set; }
 		
 		/// <summary>
 		/// Invoice end date � only returned if the template has an end date set
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> EndDate { get; set; }
+		public System.Nullable<System.DateOnly> EndDate { get; set; }
 	}
 	
 	public enum ScheduleUnit
@@ -19244,9 +19244,9 @@ namespace MyNS
 		/// <param name="page">e.g. page=1 � Up to 100 Quotes will be returned in a single API call with line items shown for each quote</param>
 		/// <param name="order">Order by an any element</param>
 		/// <returns>Success - return response of type quotes array with all quotes</returns>
-		public async Task<Quotes> GetQuotesAsync(System.DateTimeOffset DateFrom, System.DateTimeOffset DateTo, System.DateTimeOffset ExpiryDateFrom, System.DateTimeOffset ExpiryDateTo, string ContactID, string Status, int page, string order)
+		public async Task<Quotes> GetQuotesAsync(System.DateOnly DateFrom, System.DateOnly DateTo, System.DateOnly ExpiryDateFrom, System.DateOnly ExpiryDateTo, string ContactID, string Status, int page, string order)
 		{
-			var requestUri = "Quotes?DateFrom=" + DateFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DateTo=" + DateTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&ExpiryDateFrom=" + ExpiryDateFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&ExpiryDateTo=" + ExpiryDateTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&ContactID=" + (ContactID==null? "" : Uri.EscapeDataString(ContactID))+"&Status=" + (Status==null? "" : Uri.EscapeDataString(Status))+"&page="+page+"&order=" + (order==null? "" : Uri.EscapeDataString(order));
+			var requestUri = "Quotes?DateFrom="+DateFrom+"&DateTo="+DateTo+"&ExpiryDateFrom="+ExpiryDateFrom+"&ExpiryDateTo="+ExpiryDateTo+"&ContactID=" + (ContactID==null? "" : Uri.EscapeDataString(ContactID))+"&Status=" + (Status==null? "" : Uri.EscapeDataString(Status))+"&page="+page+"&order=" + (order==null? "" : Uri.EscapeDataString(order));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -19280,9 +19280,9 @@ namespace MyNS
 		/// <param name="page">e.g. page=1 � Up to 100 Quotes will be returned in a single API call with line items shown for each quote</param>
 		/// <param name="order">Order by an any element</param>
 		/// <returns>Success - return response of type quotes array with all quotes</returns>
-		public Quotes GetQuotes(System.DateTimeOffset DateFrom, System.DateTimeOffset DateTo, System.DateTimeOffset ExpiryDateFrom, System.DateTimeOffset ExpiryDateTo, string ContactID, string Status, int page, string order)
+		public Quotes GetQuotes(System.DateOnly DateFrom, System.DateOnly DateTo, System.DateOnly ExpiryDateFrom, System.DateOnly ExpiryDateTo, string ContactID, string Status, int page, string order)
 		{
-			var requestUri = "Quotes?DateFrom=" + DateFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&DateTo=" + DateTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&ExpiryDateFrom=" + ExpiryDateFrom.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&ExpiryDateTo=" + ExpiryDateTo.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&ContactID=" + (ContactID==null? "" : Uri.EscapeDataString(ContactID))+"&Status=" + (Status==null? "" : Uri.EscapeDataString(Status))+"&page="+page+"&order=" + (order==null? "" : Uri.EscapeDataString(order));
+			var requestUri = "Quotes?DateFrom="+DateFrom+"&DateTo="+DateTo+"&ExpiryDateFrom="+ExpiryDateFrom+"&ExpiryDateTo="+ExpiryDateTo+"&ContactID=" + (ContactID==null? "" : Uri.EscapeDataString(ContactID))+"&Status=" + (Status==null? "" : Uri.EscapeDataString(Status))+"&page="+page+"&order=" + (order==null? "" : Uri.EscapeDataString(order));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -20938,9 +20938,9 @@ namespace MyNS
 		/// <param name="fromDate">The from date of the Aged Payables By Contact report</param>
 		/// <param name="toDate">The to date of the Aged Payables By Contact report</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public async Task<ReportWithRows> GetReportAgedPayablesByContactAsync(string contactId, System.DateTimeOffset date, System.DateTimeOffset fromDate, System.DateTimeOffset toDate)
+		public async Task<ReportWithRows> GetReportAgedPayablesByContactAsync(string contactId, System.DateOnly date, System.DateOnly fromDate, System.DateOnly toDate)
 		{
-			var requestUri = "Reports/AgedPayablesByContact?contactId=" + (contactId==null? "" : Uri.EscapeDataString(contactId))+"&date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&fromDate=" + fromDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toDate=" + toDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Reports/AgedPayablesByContact?contactId=" + (contactId==null? "" : Uri.EscapeDataString(contactId))+"&date="+date+"&fromDate="+fromDate+"&toDate="+toDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -20970,9 +20970,9 @@ namespace MyNS
 		/// <param name="fromDate">The from date of the Aged Payables By Contact report</param>
 		/// <param name="toDate">The to date of the Aged Payables By Contact report</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public ReportWithRows GetReportAgedPayablesByContact(string contactId, System.DateTimeOffset date, System.DateTimeOffset fromDate, System.DateTimeOffset toDate)
+		public ReportWithRows GetReportAgedPayablesByContact(string contactId, System.DateOnly date, System.DateOnly fromDate, System.DateOnly toDate)
 		{
-			var requestUri = "Reports/AgedPayablesByContact?contactId=" + (contactId==null? "" : Uri.EscapeDataString(contactId))+"&date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&fromDate=" + fromDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toDate=" + toDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Reports/AgedPayablesByContact?contactId=" + (contactId==null? "" : Uri.EscapeDataString(contactId))+"&date="+date+"&fromDate="+fromDate+"&toDate="+toDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -21002,9 +21002,9 @@ namespace MyNS
 		/// <param name="fromDate">The from date of the Aged Receivables By Contact report</param>
 		/// <param name="toDate">The to date of the Aged Receivables By Contact report</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public async Task<ReportWithRows> GetReportAgedReceivablesByContactAsync(string contactId, System.DateTimeOffset date, System.DateTimeOffset fromDate, System.DateTimeOffset toDate)
+		public async Task<ReportWithRows> GetReportAgedReceivablesByContactAsync(string contactId, System.DateOnly date, System.DateOnly fromDate, System.DateOnly toDate)
 		{
-			var requestUri = "Reports/AgedReceivablesByContact?contactId=" + (contactId==null? "" : Uri.EscapeDataString(contactId))+"&date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&fromDate=" + fromDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toDate=" + toDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Reports/AgedReceivablesByContact?contactId=" + (contactId==null? "" : Uri.EscapeDataString(contactId))+"&date="+date+"&fromDate="+fromDate+"&toDate="+toDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -21034,9 +21034,9 @@ namespace MyNS
 		/// <param name="fromDate">The from date of the Aged Receivables By Contact report</param>
 		/// <param name="toDate">The to date of the Aged Receivables By Contact report</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public ReportWithRows GetReportAgedReceivablesByContact(string contactId, System.DateTimeOffset date, System.DateTimeOffset fromDate, System.DateTimeOffset toDate)
+		public ReportWithRows GetReportAgedReceivablesByContact(string contactId, System.DateOnly date, System.DateOnly fromDate, System.DateOnly toDate)
 		{
-			var requestUri = "Reports/AgedReceivablesByContact?contactId=" + (contactId==null? "" : Uri.EscapeDataString(contactId))+"&date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&fromDate=" + fromDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toDate=" + toDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Reports/AgedReceivablesByContact?contactId=" + (contactId==null? "" : Uri.EscapeDataString(contactId))+"&date="+date+"&fromDate="+fromDate+"&toDate="+toDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -21134,9 +21134,9 @@ namespace MyNS
 		/// <param name="fromDate">The from date for the Bank Summary report e.g. 2018-03-31</param>
 		/// <param name="toDate">The to date for the Bank Summary report e.g. 2018-03-31</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public async Task<ReportWithRows> GetReportBankSummaryAsync(System.DateTimeOffset fromDate, System.DateTimeOffset toDate)
+		public async Task<ReportWithRows> GetReportBankSummaryAsync(System.DateOnly fromDate, System.DateOnly toDate)
 		{
-			var requestUri = "Reports/BankSummary?fromDate=" + fromDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toDate=" + toDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Reports/BankSummary?fromDate="+fromDate+"&toDate="+toDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -21164,9 +21164,9 @@ namespace MyNS
 		/// <param name="fromDate">The from date for the Bank Summary report e.g. 2018-03-31</param>
 		/// <param name="toDate">The to date for the Bank Summary report e.g. 2018-03-31</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public ReportWithRows GetReportBankSummary(System.DateTimeOffset fromDate, System.DateTimeOffset toDate)
+		public ReportWithRows GetReportBankSummary(System.DateOnly fromDate, System.DateOnly toDate)
 		{
-			var requestUri = "Reports/BankSummary?fromDate=" + fromDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toDate=" + toDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Reports/BankSummary?fromDate="+fromDate+"&toDate="+toDate;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -21309,9 +21309,9 @@ namespace MyNS
 		/// <param name="period">The number of periods to compare (integer between 1 and 12)</param>
 		/// <param name="timeframe">The period size to compare to (1=month, 3=quarter, 12=year)</param>
 		/// <returns>success- return a Report with Rows object</returns>
-		public async Task<ReportWithRows> GetReportBudgetSummaryAsync(System.DateTimeOffset date, int period, int timeframe)
+		public async Task<ReportWithRows> GetReportBudgetSummaryAsync(System.DateOnly date, int period, int timeframe)
 		{
-			var requestUri = "Reports/BudgetSummary?date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&period="+period+"&timeframe="+timeframe;
+			var requestUri = "Reports/BudgetSummary?date="+date+"&period="+period+"&timeframe="+timeframe;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -21340,9 +21340,9 @@ namespace MyNS
 		/// <param name="period">The number of periods to compare (integer between 1 and 12)</param>
 		/// <param name="timeframe">The period size to compare to (1=month, 3=quarter, 12=year)</param>
 		/// <returns>success- return a Report with Rows object</returns>
-		public ReportWithRows GetReportBudgetSummary(System.DateTimeOffset date, int period, int timeframe)
+		public ReportWithRows GetReportBudgetSummary(System.DateOnly date, int period, int timeframe)
 		{
-			var requestUri = "Reports/BudgetSummary?date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&period="+period+"&timeframe="+timeframe;
+			var requestUri = "Reports/BudgetSummary?date="+date+"&period="+period+"&timeframe="+timeframe;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -21369,9 +21369,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="date">The date for the Bank Summary report e.g. 2018-03-31</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public async Task<ReportWithRows> GetReportExecutiveSummaryAsync(System.DateTimeOffset date)
+		public async Task<ReportWithRows> GetReportExecutiveSummaryAsync(System.DateOnly date)
 		{
-			var requestUri = "Reports/ExecutiveSummary?date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Reports/ExecutiveSummary?date="+date;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -21398,9 +21398,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="date">The date for the Bank Summary report e.g. 2018-03-31</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public ReportWithRows GetReportExecutiveSummary(System.DateTimeOffset date)
+		public ReportWithRows GetReportExecutiveSummary(System.DateOnly date)
 		{
-			var requestUri = "Reports/ExecutiveSummary?date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "Reports/ExecutiveSummary?date="+date;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -21436,9 +21436,9 @@ namespace MyNS
 		/// <param name="standardLayout">Return the standard layout for the ProfitAndLoss report</param>
 		/// <param name="paymentsOnly">Return cash only basis for the ProfitAndLoss report</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public async Task<ReportWithRows> GetReportProfitAndLossAsync(System.DateTimeOffset fromDate, System.DateTimeOffset toDate, int periods, GetReportBalanceSheetTimeframe timeframe, string trackingCategoryID, string trackingCategoryID2, string trackingOptionID, string trackingOptionID2, bool standardLayout, bool paymentsOnly)
+		public async Task<ReportWithRows> GetReportProfitAndLossAsync(System.DateOnly fromDate, System.DateOnly toDate, int periods, GetReportBalanceSheetTimeframe timeframe, string trackingCategoryID, string trackingCategoryID2, string trackingOptionID, string trackingOptionID2, bool standardLayout, bool paymentsOnly)
 		{
-			var requestUri = "Reports/ProfitAndLoss?fromDate=" + fromDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toDate=" + toDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&periods="+periods+"&timeframe=" + timeframe+"&trackingCategoryID=" + (trackingCategoryID==null? "" : Uri.EscapeDataString(trackingCategoryID))+"&trackingCategoryID2=" + (trackingCategoryID2==null? "" : Uri.EscapeDataString(trackingCategoryID2))+"&trackingOptionID=" + (trackingOptionID==null? "" : Uri.EscapeDataString(trackingOptionID))+"&trackingOptionID2=" + (trackingOptionID2==null? "" : Uri.EscapeDataString(trackingOptionID2))+"&standardLayout="+standardLayout+"&paymentsOnly="+paymentsOnly;
+			var requestUri = "Reports/ProfitAndLoss?fromDate="+fromDate+"&toDate="+toDate+"&periods="+periods+"&timeframe=" + timeframe+"&trackingCategoryID=" + (trackingCategoryID==null? "" : Uri.EscapeDataString(trackingCategoryID))+"&trackingCategoryID2=" + (trackingCategoryID2==null? "" : Uri.EscapeDataString(trackingCategoryID2))+"&trackingOptionID=" + (trackingOptionID==null? "" : Uri.EscapeDataString(trackingOptionID))+"&trackingOptionID2=" + (trackingOptionID2==null? "" : Uri.EscapeDataString(trackingOptionID2))+"&standardLayout="+standardLayout+"&paymentsOnly="+paymentsOnly;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -21474,9 +21474,9 @@ namespace MyNS
 		/// <param name="standardLayout">Return the standard layout for the ProfitAndLoss report</param>
 		/// <param name="paymentsOnly">Return cash only basis for the ProfitAndLoss report</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public ReportWithRows GetReportProfitAndLoss(System.DateTimeOffset fromDate, System.DateTimeOffset toDate, int periods, GetReportBalanceSheetTimeframe timeframe, string trackingCategoryID, string trackingCategoryID2, string trackingOptionID, string trackingOptionID2, bool standardLayout, bool paymentsOnly)
+		public ReportWithRows GetReportProfitAndLoss(System.DateOnly fromDate, System.DateOnly toDate, int periods, GetReportBalanceSheetTimeframe timeframe, string trackingCategoryID, string trackingCategoryID2, string trackingOptionID, string trackingOptionID2, bool standardLayout, bool paymentsOnly)
 		{
-			var requestUri = "Reports/ProfitAndLoss?fromDate=" + fromDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toDate=" + toDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&periods="+periods+"&timeframe=" + timeframe+"&trackingCategoryID=" + (trackingCategoryID==null? "" : Uri.EscapeDataString(trackingCategoryID))+"&trackingCategoryID2=" + (trackingCategoryID2==null? "" : Uri.EscapeDataString(trackingCategoryID2))+"&trackingOptionID=" + (trackingOptionID==null? "" : Uri.EscapeDataString(trackingOptionID))+"&trackingOptionID2=" + (trackingOptionID2==null? "" : Uri.EscapeDataString(trackingOptionID2))+"&standardLayout="+standardLayout+"&paymentsOnly="+paymentsOnly;
+			var requestUri = "Reports/ProfitAndLoss?fromDate="+fromDate+"&toDate="+toDate+"&periods="+periods+"&timeframe=" + timeframe+"&trackingCategoryID=" + (trackingCategoryID==null? "" : Uri.EscapeDataString(trackingCategoryID))+"&trackingCategoryID2=" + (trackingCategoryID2==null? "" : Uri.EscapeDataString(trackingCategoryID2))+"&trackingOptionID=" + (trackingOptionID==null? "" : Uri.EscapeDataString(trackingOptionID))+"&trackingOptionID2=" + (trackingOptionID2==null? "" : Uri.EscapeDataString(trackingOptionID2))+"&standardLayout="+standardLayout+"&paymentsOnly="+paymentsOnly;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -21504,9 +21504,9 @@ namespace MyNS
 		/// <param name="date">The date for the Trial Balance report e.g. 2018-03-31</param>
 		/// <param name="paymentsOnly">Return cash only basis for the Trial Balance report</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public async Task<ReportWithRows> GetReportTrialBalanceAsync(System.DateTimeOffset date, bool paymentsOnly)
+		public async Task<ReportWithRows> GetReportTrialBalanceAsync(System.DateOnly date, bool paymentsOnly)
 		{
-			var requestUri = "Reports/TrialBalance?date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&paymentsOnly="+paymentsOnly;
+			var requestUri = "Reports/TrialBalance?date="+date+"&paymentsOnly="+paymentsOnly;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -21534,9 +21534,9 @@ namespace MyNS
 		/// <param name="date">The date for the Trial Balance report e.g. 2018-03-31</param>
 		/// <param name="paymentsOnly">Return cash only basis for the Trial Balance report</param>
 		/// <returns>Success - return response of type ReportWithRows</returns>
-		public ReportWithRows GetReportTrialBalance(System.DateTimeOffset date, bool paymentsOnly)
+		public ReportWithRows GetReportTrialBalance(System.DateOnly date, bool paymentsOnly)
 		{
-			var requestUri = "Reports/TrialBalance?date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&paymentsOnly="+paymentsOnly;
+			var requestUri = "Reports/TrialBalance?date="+date+"&paymentsOnly="+paymentsOnly;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

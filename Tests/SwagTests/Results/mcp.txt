@@ -30,7 +30,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(6, MinimumLength=6)]
 		public string ClaimId { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> LodgementDate { get; set; }
+		public System.Nullable<System.DateOnly> LodgementDate { get; set; }
 	}
 	
 	public class ProviderType
@@ -67,7 +67,7 @@ namespace MyNS
 		
 		public string PayerName { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> RunDate { get; set; }
+		public System.Nullable<System.DateOnly> RunDate { get; set; }
 		
 		public string RunNumber { get; set; }
 	}
@@ -126,7 +126,7 @@ namespace MyNS
 		
 		public string ClaimId { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> LodgementDate { get; set; }
+		public System.Nullable<System.DateOnly> LodgementDate { get; set; }
 		
 		public string TransactionId { get; set; }
 	}
@@ -215,7 +215,7 @@ namespace MyNS
 		
 		public string Id { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> EventDate { get; set; }
+		public System.Nullable<System.DateOnly> EventDate { get; set; }
 	}
 	
 	public class MembershipStatusType
@@ -227,7 +227,7 @@ namespace MyNS
 		
 		public IdentityType CurrentMember { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> ProcessDate { get; set; }
+		public System.Nullable<System.DateOnly> ProcessDate { get; set; }
 	}
 	
 	public class StatusType
@@ -259,7 +259,7 @@ namespace MyNS
 	public class IdentityType
 	{
 		
-		public System.Nullable<System.DateTimeOffset> DateOfBirth { get; set; }
+		public System.Nullable<System.DateOnly> DateOfBirth { get; set; }
 		
 		public string FamilyName { get; set; }
 		
@@ -360,13 +360,13 @@ namespace MyNS
 		public string Id { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset AuthorisationDate { get; set; }
+		public System.DateOnly AuthorisationDate { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateTimeOffset CreateDateTime { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset MedicalEventDate { get; set; }
+		public System.DateOnly MedicalEventDate { get; set; }
 		
 		/// <summary>
 		/// Pattern: ^([0-1][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)([.][0-9]*)?(Z|z|(([+]|-)([0-1][0-9]|2[0-3]):[0-5][0-9]))?$
@@ -415,7 +415,7 @@ namespace MyNS
 	{
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset IssueDate { get; set; }
+		public System.DateOnly IssueDate { get; set; }
 		
 		/// <summary>
 		/// Max length: 2
@@ -621,9 +621,9 @@ namespace MyNS
 		public AcceptedDisabilityType AcceptedDisability { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset AuthorisationDate { get; set; }
+		public System.DateOnly AuthorisationDate { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> BreakInEpisodeEndDate { get; set; }
+		public System.Nullable<System.DateOnly> BreakInEpisodeEndDate { get; set; }
 		
 		/// <summary>
 		/// Max length: 1
@@ -632,7 +632,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string BreakInEpisodeOfCareNumber { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> BreakInEpisodeStartDate { get; set; }
+		public System.Nullable<System.DateOnly> BreakInEpisodeStartDate { get; set; }
 		
 		/// <summary>
 		/// Max length: 5
@@ -673,7 +673,7 @@ namespace MyNS
 		public string FacilityId { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset MedicalEventDate { get; set; }
+		public System.DateOnly MedicalEventDate { get; set; }
 		
 		/// <summary>
 		/// Pattern: ^([0-1][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)([.][0-9]*)?(Z|z|(([+]|-)([0-1][0-9]|2[0-3]):[0-5][0-9]))?$
@@ -769,7 +769,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=1)]
 		public string AccountReferenceNumber { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> AdmissionDate { get; set; }
+		public System.Nullable<System.DateOnly> AdmissionDate { get; set; }
 		
 		/// <summary>
 		/// Max length: 7
@@ -778,7 +778,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(7, MinimumLength=3)]
 		public string ChargeAmount { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> DischargeDate { get; set; }
+		public System.Nullable<System.DateOnly> DischargeDate { get; set; }
 		
 		public System.Nullable<System.Int32> DistanceKilometres { get; set; }
 		
@@ -989,7 +989,7 @@ namespace MyNS
 		public string Id { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset AuthorisationDate { get; set; }
+		public System.DateOnly AuthorisationDate { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateTimeOffset CreateDateTime { get; set; }
@@ -1002,7 +1002,7 @@ namespace MyNS
 		public string FacilityId { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset MedicalEventDate { get; set; }
+		public System.DateOnly MedicalEventDate { get; set; }
 		
 		/// <summary>
 		/// Pattern: ^([0-1][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)([.][0-9]*)?(Z|z|(([+]|-)([0-1][0-9]|2[0-3]):[0-5][0-9]))?$
@@ -1082,7 +1082,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(6, MinimumLength=6)]
 		public string ClaimId { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> LodgementDate { get; set; }
+		public System.Nullable<System.DateOnly> LodgementDate { get; set; }
 	}
 	
 	public class DVAPaymentReportResponseType
@@ -1147,7 +1147,7 @@ namespace MyNS
 		
 		public string Id { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> EventDate { get; set; }
+		public System.Nullable<System.DateOnly> EventDate { get; set; }
 	}
 	
 	public class VeteranMembershipStatusType
@@ -1159,7 +1159,7 @@ namespace MyNS
 		
 		public StatusType Status { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> ProcessDate { get; set; }
+		public System.Nullable<System.DateOnly> ProcessDate { get; set; }
 	}
 	
 	public class DVAServiceAssessmentType
@@ -1219,7 +1219,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		public MedicarePatientType Patient { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> DateOfService { get; set; }
+		public System.Nullable<System.DateOnly> DateOfService { get; set; }
 	}
 	
 	public class EnterpriseConcessionVerificationResponseType
@@ -1257,7 +1257,7 @@ namespace MyNS
 		
 		public StatusType Status { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> ProcessDate { get; set; }
+		public System.Nullable<System.DateOnly> ProcessDate { get; set; }
 	}
 	
 	public class EnterprisePatientVerificationRequestType
@@ -1288,7 +1288,7 @@ namespace MyNS
 		
 		public ProviderType Provider { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> DateOfService { get; set; }
+		public System.Nullable<System.DateOnly> DateOfService { get; set; }
 		
 		/// <summary>
 		/// Max length: 3
@@ -1371,7 +1371,7 @@ namespace MyNS
 		
 		public IdentityType CurrentMember { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> ProcessDate { get; set; }
+		public System.Nullable<System.DateOnly> ProcessDate { get; set; }
 	}
 	
 	public class EnterpriseVeteranVerificationRequestType
@@ -1482,7 +1482,7 @@ namespace MyNS
 		public string SubmissionAuthorityInd { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset AuthorisationDate { get; set; }
+		public System.DateOnly AuthorisationDate { get; set; }
 	}
 	
 	public class PCIMedicalEventType
@@ -1504,7 +1504,7 @@ namespace MyNS
 		public string Id { get; set; }
 		
 		[System.ComponentModel.DataAnnotations.Required()]
-		public System.DateTimeOffset MedicalEventDate { get; set; }
+		public System.DateOnly MedicalEventDate { get; set; }
 		
 		/// <summary>
 		/// Pattern: ^([0-1][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)([.][0-9]*)?(Z|z|(([+]|-)([0-1][0-9]|2[0-3]):[0-5][0-9]))?$
@@ -1612,7 +1612,7 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ServiceResponseType[] Service { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> EventDate { get; set; }
+		public System.Nullable<System.DateOnly> EventDate { get; set; }
 		
 		public string Id { get; set; }
 	}

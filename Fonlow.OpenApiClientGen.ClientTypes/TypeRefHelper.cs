@@ -160,7 +160,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{"number", typeof(float) },
 			{"string", typeof(string) },
 			{"boolean", typeof(bool) },
-			{"string_date", typeof(DateTimeOffset) },
+			{"string_date", typeof(DateOnly) },
 			{"string_date-time", typeof(DateTimeOffset) },
 //			{"object", typeof(object) },
 		};

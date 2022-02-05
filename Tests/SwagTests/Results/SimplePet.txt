@@ -24,6 +24,6 @@ namespace MyNS
 		/// </summary>
 		public string PetType { get; set; }
 		
-		public System.Nullable<System.DateTimeOffset> BirthDateTime { get; set; }
+		public System.Nullable<System.DateOnly> BirthDate { get; set; }
 	}
 }

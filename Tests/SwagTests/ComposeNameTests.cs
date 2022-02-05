@@ -89,7 +89,7 @@ namespace SwagTests
 			Assert.Equal(typeof(long), TypeRefHelper.PrimitiveSwaggerTypeToClrType("integer", "int64"));
 			Assert.Equal(typeof(double), TypeRefHelper.PrimitiveSwaggerTypeToClrType("number", "double"));
 			Assert.Equal(typeof(string), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", ""));
-			Assert.Equal(typeof(DateTimeOffset), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", "date"));
+			Assert.Equal(typeof(DateOnly), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", "date"));
 			Assert.Equal(typeof(DateTimeOffset), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", "date-time"));
 		}
 

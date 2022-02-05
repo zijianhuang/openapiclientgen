@@ -232,7 +232,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			else
 			{
-				if (propertySchema.Type == "array") // for array
+				if (primitivePropertyType == "array") // for array
 				{
 					var r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
 					CodeTypeReference arrayCodeTypeReference = r.Item1;
@@ -252,7 +252,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
 					clientProperty = CreateProperty(ctr, propertyName, isRequired);
 				}
-				else if (propertySchema.Type == "object" && propertySchema.AdditionalProperties != null) // for dictionary
+				else if (primitivePropertyType == "object" && propertySchema.AdditionalProperties != null) // for dictionary
 				{
 					CodeTypeReference dicKeyTypeRef = TypeRefHelper.TranslateToClientTypeReference(typeof(string));
 					CodeTypeReference dicValueTypeRef;
@@ -275,19 +275,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 					clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired);
 				}
-				else if (propertySchema.Enum.Count > 0 && propertySchema.Type == "string") // for enum
+				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for enum
 				{
 					string[] enumMemberNames;
 					try
 					{
-						enumMemberNames = (String.IsNullOrEmpty(propertySchema.Type) || propertySchema.Type == "string")
+						enumMemberNames = (String.IsNullOrEmpty(primitivePropertyType) || primitivePropertyType == "string")
 							? propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
 					}
 					catch (InvalidCastException ex)
 					{
-						throw new CodeGenException($"When dealing with {propertyName} of {propertySchema.Type}, error: {ex.Message}");
+						throw new CodeGenException($"When dealing with {propertyName} of {primitivePropertyType}, error: {ex.Message}");
 					}
 
 					CodeTypeDeclaration existingDeclaration = FindEnumDeclaration(enumMemberNames);
@@ -302,7 +302,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
 					}
 				}
-				else if (propertySchema.Type != "string" && TypeAliasDic.TryGet(propertySchema.Type, out string aliasTypeName)) //check TypeAliasDic
+				else if (primitivePropertyType != "string" && TypeAliasDic.TryGet(primitivePropertyType, out string aliasTypeName)) //check TypeAliasDic
 				{
 					var r = new CodeTypeReference(aliasTypeName);
 					clientProperty = CreateProperty(r, propertyName, isRequired);

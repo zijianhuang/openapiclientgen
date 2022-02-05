@@ -1019,12 +1019,12 @@ namespace MyNS
 		/// <summary>
 		/// Opening balance date (can be no older than one year from the current date) ISO-8601 YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> StartDate { get; set; }
+		public System.Nullable<System.DateOnly> StartDate { get; set; }
 		
 		/// <summary>
 		/// Closing balance date ISO-8601 YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> EndDate { get; set; }
+		public System.Nullable<System.DateOnly> EndDate { get; set; }
 		
 		/// <summary>
 		/// The starting balance of the statement
@@ -1101,7 +1101,7 @@ namespace MyNS
 		/// <summary>
 		/// The date that the transaction was processed or cleared as seen in internet banking ISO-8601 YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PostedDate { get; set; }
+		public System.Nullable<System.DateOnly> PostedDate { get; set; }
 		
 		/// <summary>
 		/// Transaction description

@@ -24,7 +24,7 @@ namespace SwagTests
 
 		/** Type of a pet */
 		petType?: string;
-		BirthDateTime?: Date;
+		BirthDate?: Date;
 	}
 
 }

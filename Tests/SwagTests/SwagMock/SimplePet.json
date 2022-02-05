@@ -33,9 +33,9 @@
 						"type": "string",
 						"description": "Type of a pet"
 					},
-					"BirthDateTime": {
+					"BirthDate": {
 						"type": "string",
-						"format":  "date-time"
+						"format":  "date"
 					}
 				}
 			}

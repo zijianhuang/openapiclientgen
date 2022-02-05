@@ -53,7 +53,7 @@ namespace MyNS
 		/// <summary>
 		/// The date the asset was purchased YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> PurchaseDate { get; set; }
+		public System.Nullable<System.DateOnly> PurchaseDate { get; set; }
 		
 		/// <summary>
 		/// The purchase price of the asset
@@ -280,7 +280,7 @@ namespace MyNS
 		/// <summary>
 		/// YYYY-MM-DD
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> DepreciationStartDate { get; set; }
+		public System.Nullable<System.DateOnly> DepreciationStartDate { get; set; }
 		
 		/// <summary>
 		/// The value of the asset you want to depreciate, if this is less than the cost of the asset.
@@ -319,12 +319,12 @@ namespace MyNS
 		/// <summary>
 		/// The date depreciation calculations started on registered fixed assets in Xero
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> AssetStartDate { get; set; }
+		public System.Nullable<System.DateOnly> AssetStartDate { get; set; }
 		
 		/// <summary>
 		/// The last depreciation date
 		/// </summary>
-		public System.Nullable<System.DateTimeOffset> LastDepreciationDate { get; set; }
+		public System.Nullable<System.DateOnly> LastDepreciationDate { get; set; }
 		
 		/// <summary>
 		/// Default account that gains are posted to
