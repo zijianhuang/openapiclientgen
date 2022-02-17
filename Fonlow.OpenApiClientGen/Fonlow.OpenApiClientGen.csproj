@@ -10,12 +10,10 @@
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
-    <Copyright>Copyright © Zijian Huang 2021</Copyright>
-    <Version>1.10.1</Version>
-    <AssemblyVersion>1.10.1.0</AssemblyVersion>
-    <FileVersion>1.10.1.0</FileVersion>
+    <Copyright>Copyright © Zijian Huang 2021-2022</Copyright>
+    <Version>2.0</Version>
     <PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
-    <PackageReleaseNotes>https://github.com/zijianhuang/openapiclientgen/pull/33</PackageReleaseNotes>
+    <PackageReleaseNotes>Support DateOnly. Date is mapped to DateOnly by default.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
