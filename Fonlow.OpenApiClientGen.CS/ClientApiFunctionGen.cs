@@ -238,9 +238,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				));
 			}
 
-			method.Statements.Add(new CodeVariableDeclarationStatement(
-				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(httpRequestMessage)") : new CodeSnippetExpression("client.SendAsync(httpRequestMessage).Result")));
-
+			AddResponseMessageSendAsync(method);
 
 			CodeVariableReferenceExpression resultReference = new CodeVariableReferenceExpression("responseMessage");
 
@@ -257,7 +255,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			try1.FinallyStatements.Add(new CodeMethodInvokeExpression(resultReference, "Dispose"));
 
-			method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
+			Add3TEndBacket(method);
 		}
 
 		static void AddNewtonSoftJsonTextReader(CodeStatementCollection statementCollection)
@@ -267,15 +265,21 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		void AddNewtonSoftJsonSerializerDeserialize(CodeStatementCollection statementCollection)
 		{
-					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-						new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
-						new CodeSnippetExpression("jsonReader"))));
+			statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+				new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
+				new CodeSnippetExpression("jsonReader"))));
 		}
 
 		static void AddNewtonSoftJsonSerializer(CodeStatementCollection statementCollection)
 		{
 			statementCollection.Add(new CodeVariableDeclarationStatement(
 				new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("JsonSerializer.Create(jsonSerializerSettings)")));
+		}
+
+		void AddResponseMessageSendAsync(CodeMemberMethod method)
+		{
+			method.Statements.Add(new CodeVariableDeclarationStatement(
+				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(httpRequestMessage)") : new CodeSnippetExpression("client.SendAsync(httpRequestMessage).Result")));
 		}
 
 		void RenderPostOrPutImplementation(OperationType httpMethod, bool forAsync)
@@ -360,16 +364,9 @@ namespace Fonlow.OpenApiClientGen.CS
 "));
 				}
 
-				method.Statements.Add(new CodeVariableDeclarationStatement(
-					new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(httpRequestMessage)") : new CodeSnippetExpression("client.SendAsync(httpRequestMessage).Result")));
-
 			}
-			else
-			{
-				method.Statements.Add(new CodeVariableDeclarationStatement(
-					new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(httpRequestMessage)") : new CodeSnippetExpression("client.SendAsync(httpRequestMessage).Result")));
 
-			}
+			AddResponseMessageSendAsync(method);
 
 			CodeVariableReferenceExpression resultReference = new CodeVariableReferenceExpression("responseMessage");
 
@@ -386,12 +383,35 @@ namespace Fonlow.OpenApiClientGen.CS
 			try1.FinallyStatements.Add(new CodeMethodInvokeExpression(resultReference, "Dispose"));
 
 			if (requestBodyCodeTypeReference != null && !settings.UseSystemTextJson)
-				method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
+			{
+				Add3TEndBacket(method);
+			}
 
+			Add3TEndBacket(method);
+		}
+
+		static void Add3TEndBacket(CodeMemberMethod method)
+		{
 			method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
 		}
 
-		//const string typeNameOfHttpResponseMessage = "System.Net.Http.HttpResponseMessage";
+		static void Add4TEndBacket(CodeStatementCollection statementCollection)
+		{
+			statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+		}
+
+		static void Add4TStartBacket(CodeStatementCollection statementCollection)
+		{
+			statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
+		}
+
+		void DeserializeContentString(CodeStatementCollection statementCollection)
+		{
+			statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+				new CodeMethodReferenceExpression(
+				new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", returnTypeReference),
+				new CodeSnippetExpression("contentString"), new CodeSnippetExpression("jsonSerializerSettings"))));
+		}
 
 		void AddReturnStatement(CodeStatementCollection statementCollection)
 		{
@@ -418,9 +438,9 @@ namespace Fonlow.OpenApiClientGen.CS
 				if (this.stringAsString)
 				{
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (System.IO.StreamReader streamReader = new System.IO.StreamReader(stream))"));
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
+					Add4TStartBacket(statementCollection);
 					statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("streamReader.ReadToEnd();")));
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+					Add4TEndBacket(statementCollection);
 				}
 				else
 				{
@@ -435,9 +455,9 @@ namespace Fonlow.OpenApiClientGen.CS
 					else
 					{
 						AddNewtonSoftJsonTextReader(statementCollection);
-						statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
+						Add4TStartBacket(statementCollection);
 						statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("jsonReader.ReadAsString()")));
-						statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+						Add4TEndBacket(statementCollection);
 					}
 				}
 			}
@@ -445,37 +465,30 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				if (settings.UseSystemTextJson)
 				{
-					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-						new CodeMethodReferenceExpression(
-							new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", returnTypeReference),
-						new CodeSnippetExpression("contentString"),
-						new CodeSnippetExpression("jsonSerializerSettings"))));
+					DeserializeContentString(statementCollection);
 				}
 				else
 				{
 					AddNewtonSoftJsonTextReader(statementCollection);
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
+					Add4TStartBacket(statementCollection);
 					AddNewtonSoftJsonSerializer(statementCollection);
 					AddNewtonSoftJsonSerializerDeserialize(statementCollection);
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+					Add4TEndBacket(statementCollection);
 				}
 			}
 			else // then is complex.
 			{
 				if (settings.UseSystemTextJson)
 				{
-					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-						new CodeMethodReferenceExpression(
-							new CodeVariableReferenceExpression("JsonSerializer"), "Deserialize", returnTypeReference),
-						new CodeSnippetExpression("contentString"), new CodeSnippetExpression("jsonSerializerSettings"))));
+					DeserializeContentString(statementCollection);
 				}
 				else
 				{
 					AddNewtonSoftJsonTextReader(statementCollection);
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
+					Add4TStartBacket(statementCollection);
 					AddNewtonSoftJsonSerializer(statementCollection);
 					AddNewtonSoftJsonSerializerDeserialize(statementCollection);
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
+					Add4TEndBacket(statementCollection);
 				}
 			}
 
