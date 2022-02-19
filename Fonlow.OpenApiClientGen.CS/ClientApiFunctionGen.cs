@@ -260,6 +260,24 @@ namespace Fonlow.OpenApiClientGen.CS
 			method.Statements.Add(new CodeSnippetStatement("\t\t\t}"));
 		}
 
+		static void AddNewtonSoftJsonTextReader(CodeStatementCollection statementCollection)
+		{
+			statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
+		}
+
+		void AddNewtonSoftJsonSerializerDeserialize(CodeStatementCollection statementCollection)
+		{
+					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
+						new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
+						new CodeSnippetExpression("jsonReader"))));
+		}
+
+		static void AddNewtonSoftJsonSerializer(CodeStatementCollection statementCollection)
+		{
+			statementCollection.Add(new CodeVariableDeclarationStatement(
+				new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("JsonSerializer.Create(jsonSerializerSettings)")));
+		}
+
 		void RenderPostOrPutImplementation(OperationType httpMethod, bool forAsync)
 		{
 			//Create function parameters in prototype
@@ -416,7 +434,7 @@ namespace Fonlow.OpenApiClientGen.CS
 					}
 					else
 					{
-						statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
+						AddNewtonSoftJsonTextReader(statementCollection);
 						statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
 						statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("jsonReader.ReadAsString()")));
 						statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
@@ -435,12 +453,10 @@ namespace Fonlow.OpenApiClientGen.CS
 				}
 				else
 				{
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
+					AddNewtonSoftJsonTextReader(statementCollection);
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
-					statementCollection.Add(new CodeVariableDeclarationStatement(new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("JsonSerializer.Create(jsonSerializerSettings)")));
-					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-						new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
-						new CodeSnippetExpression("jsonReader"))));
+					AddNewtonSoftJsonSerializer(statementCollection);
+					AddNewtonSoftJsonSerializerDeserialize(statementCollection);
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
 				}
 			}
@@ -455,12 +471,10 @@ namespace Fonlow.OpenApiClientGen.CS
 				}
 				else
 				{
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
+					AddNewtonSoftJsonTextReader(statementCollection);
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t{"));
-					statementCollection.Add(new CodeVariableDeclarationStatement(new CodeTypeReference("var"), "serializer", new CodeSnippetExpression("JsonSerializer.Create(jsonSerializerSettings)")));
-					statementCollection.Add(new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-						new CodeMethodReferenceExpression(new CodeVariableReferenceExpression("serializer"), "Deserialize", returnTypeReference),
-						new CodeSnippetExpression("jsonReader"))));
+					AddNewtonSoftJsonSerializer(statementCollection);
+					AddNewtonSoftJsonSerializerDeserialize(statementCollection);
 					statementCollection.Add(new CodeSnippetStatement("\t\t\t\t}"));
 				}
 			}
