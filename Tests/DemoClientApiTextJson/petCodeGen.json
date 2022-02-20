@@ -1,0 +1,15 @@
+{
+	"ClientNamespace": "My.Pet.Client",
+	"ClientLibraryProjectFolderName": "",
+	"ContainerClassName": "PetClient",
+	"ClientLibraryFileName": "PetAuto.cs",
+	"ActionNameStrategy": 4,
+	"UseEnsureSuccessStatusCodeEx": true,
+	"DecorateDataModelWithDataContract": true,
+	"DataContractNamespace": "http://pet.domain/2020/03",
+	"DataAnnotationsEnabled": true,
+	"DataAnnotationsToComments": true,
+	"HandleHttpRequestHeaders": true,
+	"UseSystemTextJson":  true
+
+}

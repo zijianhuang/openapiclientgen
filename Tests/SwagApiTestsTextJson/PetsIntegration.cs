@@ -17,9 +17,10 @@ namespace IntegrationTests
 				BaseAddress = baseUri
 			};
 
-			Api = new PetClient(httpClient, new Newtonsoft.Json.JsonSerializerSettings()
+			Api = new PetClient(httpClient, new System.Text.Json.JsonSerializerOptions
 			{
-				NullValueHandling= Newtonsoft.Json.NullValueHandling.Ignore
+				DefaultIgnoreCondition= System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault,
+				PropertyNameCaseInsensitive= true
 			});
 		}
 

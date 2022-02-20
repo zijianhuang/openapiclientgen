@@ -413,7 +413,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeSnippetExpression("contentString"), new CodeSnippetExpression("jsonSerializerSettings"))));
 		}
 
-		void AddReturnStatement(CodeStatementCollection statementCollection)
+		void AddResponseMessageRead(CodeStatementCollection statementCollection)
 		{
 			if (settings.UseSystemTextJson)
 			{
@@ -427,10 +427,11 @@ namespace Fonlow.OpenApiClientGen.CS
 					? "\t\t\t\tvar stream = await responseMessage.Content.ReadAsStreamAsync();"
 					: "\t\t\t\tvar stream = responseMessage.Content.ReadAsStreamAsync().Result;"));
 			}
+		}
 
-
-
-			//  statementCollection.Add(new CodeSnippetStatement("            using (System.IO.StreamReader reader = new System.IO.StreamReader(stream))"));
+		void AddReturnStatement(CodeStatementCollection statementCollection)
+		{
+			AddResponseMessageRead(statementCollection);
 
 			if (returnTypeReference != null && returnTypeReference.BaseType == "System.String" &&
 				returnTypeReference.ArrayElementType == null)
