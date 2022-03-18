@@ -9,9 +9,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public static class ComponentsHelper
 	{
-		public static List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema)
+		public static List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema, string key, OpenApiSchema modelSchema)
 		{
 			List<string> ss = new List<string>();
+			if (modelSchema.Required.Count > 0)
+			{
+				bool isRequired = modelSchema.Required.Contains(key);
+				if (isRequired)
+				{
+					ss.Add("Required");
+				}
+			}
+
 			if (fieldSchema.MaxLength.HasValue)
 			{
 				ss.Add(String.Format(CultureInfo.CurrentCulture, "Max length: {0}", fieldSchema.MaxLength.Value));

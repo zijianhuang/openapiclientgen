@@ -241,7 +241,10 @@ namespace SwagTests
 			string expected = @"export namespace MyNS {
 	export interface Pet {
 
-		/** The name given to a pet */
+		/**
+		 * The name given to a pet
+		 * Required
+		 */
 		name: string;
 
 		/** Type of a pet */
@@ -252,7 +255,10 @@ namespace SwagTests
 	/** A representation of a cat */
 	export interface Cat extends Pet {
 
-		/** The measured skill for hunting */
+		/**
+		 * The measured skill for hunting
+		 * Required
+		 */
 		huntingSkill: string;
 	}
 

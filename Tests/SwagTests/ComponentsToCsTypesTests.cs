@@ -19,6 +19,7 @@ namespace SwagTests
 			return TranslateJsonToCodeWithSettings(filePath, new Settings()
 			{
 				ClientNamespace = "MyNS",
+				DataAnnotationsToComments=true
 			});
 		}
 
@@ -315,6 +316,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
+		/// Maximum items: 20
 		/// </summary>
 		public string[] PhotoUrls { get; set; }//;
 	}
@@ -355,6 +357,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Tags attached to the pet
+		/// Minimum items: 1
 		/// </summary>
 		public Tag[] Tags { get; set; }//;
 	}
@@ -369,6 +372,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Tag name
+		/// Min length: 1
 		/// </summary>
 		public string Name { get; set; }//;
 	}
@@ -397,6 +401,9 @@ namespace MyNS
 	public class Order
 	{
 		
+		/// <summary>
+		/// Minimum: 1.0
+		/// </summary>
 		public System.Nullable<System.Int32> Quantity { get; set; }//;
 		
 		/// <summary>
@@ -461,6 +468,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Tag name
+		/// Min length: 1
 		/// </summary>
 		public string Name { get; set; }//;
 	}
@@ -534,6 +542,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name given to a pet
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }//;
@@ -552,6 +561,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// The measured skill for hunting
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string HuntingSkill { get; set; }//;

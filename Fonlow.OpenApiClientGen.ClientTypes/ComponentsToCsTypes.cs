@@ -573,7 +573,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			CreateMemberDocComment(p, clientProperty);
+			CreateMemberDocComment(p, clientProperty, schema);
 			typeDeclaration.Members.Add(clientProperty);
 		}
 
@@ -762,12 +762,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		protected override void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property)
+		protected override void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property, OpenApiSchema modelSchema)
 		{
 			string typeComment = item.Value.Description;
 			if (settings.DataAnnotationsToComments)
 			{
-				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(item.Value);
+				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(item.Value, item.Key, modelSchema);
 				if (!String.IsNullOrEmpty(typeComment))
 				{
 					ss.Insert(0, typeComment);

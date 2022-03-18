@@ -320,7 +320,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected abstract void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration);
 
-		protected abstract void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField propertyField);
+		protected abstract void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField propertyField, OpenApiSchema modelSchema);
 
 		/// <summary>
 		/// Find in ClientNamespace if ns is not defined, or in ClassNamespaces and ClientNamespace.
