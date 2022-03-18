@@ -1,5 +1,4 @@
-﻿using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi.Models;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	{
 		public static List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema, string key, OpenApiSchema modelSchema)
 		{
-			List<string> ss = new List<string>();
+			List<string> ss = new();
 			if (modelSchema.Required.Count > 0)
 			{
 				bool isRequired = modelSchema.Required.Contains(key);
@@ -78,20 +77,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					var type = TypeRefHelper.ArrayAsIEnumerableDerivedToType(typeName, settings.ArrayAs);
 					CodeTypeReference typeReference =
-						new CodeTypeReference(type, new[] { new CodeTypeReference(typeName) });
+						new(type, new[] { new CodeTypeReference(typeName) });
 					return typeReference;
 				}
 				else
 				{
 					var type = TypeRefHelper.ArrayAsIEnumerableDerivedToType(typeName, settings.ArrayAs);
-					CodeTypeReference typeReference = new CodeTypeReference(type);
+					CodeTypeReference typeReference = new(type);
 					return typeReference;
 				}
 			}
 			else
 			{
-				CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
-				CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
+				CodeTypeReference elementTypeReference = new(typeName);
+				CodeTypeReference typeReference = new(new CodeTypeReference(), arrayRank)
 				{
 					ArrayElementType = elementTypeReference,
 				};

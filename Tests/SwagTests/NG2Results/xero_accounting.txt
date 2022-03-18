@@ -210,11 +210,17 @@ export namespace MyNS {
 
 	export interface BankTransaction {
 
-		/** See Bank Transaction Types */
+		/**
+		 * See Bank Transaction Types
+		 * Required
+		 */
 		Type: BankTransactionType;
 		Contact: Contact;
 
-		/** See LineItems */
+		/**
+		 * See LineItems
+		 * Required
+		 */
 		LineItems: Array<LineItem>;
 		BankAccount: Account;
 
@@ -589,7 +595,10 @@ export namespace MyNS {
 		FromBankAccount: Account;
 		ToBankAccount: Account;
 
-		/** amount of the transaction */
+		/**
+		 * amount of the transaction
+		 * Required
+		 */
 		Amount: number;
 
 		/** The date of the Transfer YYYY-MM-DD */
@@ -945,10 +954,16 @@ export namespace MyNS {
 		Prepayment?: Prepayment;
 		CreditNote?: CreditNote;
 
-		/** the amount being applied to the invoice */
+		/**
+		 * the amount being applied to the invoice
+		 * Required
+		 */
 		Amount: number;
 
-		/** the date the allocation is applied YYYY-MM-DD. */
+		/**
+		 * the date the allocation is applied YYYY-MM-DD.
+		 * Required
+		 */
 		Date: Date;
 
 		/** A string to indicate if a invoice status */
@@ -1445,6 +1460,7 @@ export namespace MyNS {
 
 		/**
 		 * User defined item code (max length = 30)
+		 * Required
 		 * Max length: 30
 		 */
 		Code: string;
@@ -1684,7 +1700,10 @@ export namespace MyNS {
 
 	export interface ManualJournal {
 
-		/** Description of journal being posted */
+		/**
+		 * Description of journal being posted
+		 * Required
+		 */
 		Narration: string;
 
 		/** See JournalLines */
@@ -1891,7 +1910,10 @@ export namespace MyNS {
 
 	export interface PaymentDelete {
 
-		/** The status of the payment. */
+		/**
+		 * The status of the payment.
+		 * Required
+		 */
 		Status: string;
 	}
 

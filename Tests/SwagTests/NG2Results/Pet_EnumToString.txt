@@ -12,7 +12,10 @@ export namespace MyNS {
 	/** A representation of a cat */
 	export interface Cat extends Pet {
 
-		/** The measured skill for hunting */
+		/**
+		 * The measured skill for hunting
+		 * Required
+		 */
 		huntingSkill: CatHuntingSkill;
 	}
 
@@ -45,6 +48,7 @@ export namespace MyNS {
 
 		/**
 		 * The size of the pack the dog is from
+		 * Required
 		 * Minimum: 1
 		 */
 		packSize: number;
@@ -54,7 +58,10 @@ export namespace MyNS {
 	/** A representation of a honey bee */
 	export interface HoneyBee extends Pet {
 
-		/** Average amount of honey produced per day in ounces */
+		/**
+		 * Average amount of honey produced per day in ounces
+		 * Required
+		 */
 		honeyPerDay: number;
 	}
 
@@ -90,11 +97,15 @@ export namespace MyNS {
 		/** Categories this pet belongs to */
 		category?: Category;
 
-		/** The name given to a pet */
+		/**
+		 * The name given to a pet
+		 * Required
+		 */
 		name: string;
 
 		/**
 		 * The list of URL to a cute photos featuring pet
+		 * Required
 		 * Maximum items: 20
 		 */
 		photoUrls: Array<string>;
