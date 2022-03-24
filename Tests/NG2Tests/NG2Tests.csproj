@@ -401,7 +401,8 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(ProjectDir)NG2BuildResults\*.ts $(TargetDir)NG2BuildResults\ /D&#xD;&#xA;xcopy $(ProjectDir)Results\*.ts $(TargetDir)Results\ /D&#xD;&#xA;" />
+    <Exec Command="xcopy $(ProjectDir)NG2BuildResults\*.ts $(TargetDir)NG2BuildResults\ /D&#xD;&#xA;xcopy $(ProjectDir)Results\*.ts $(TargetDir)Results\ /D&#xD;&#xA;" Condition="$([MSBuild]::IsOSPlatform('Windows'))"/>
+    <Exec Command="cp $(ProjectDir)NG2BuildResults/*.ts $(TargetDir)NG2BuildResults/ ;mkdir -p $(TargetDir)Results &#x0A;&#x0A; cp $(ProjectDir)Results/*.ts $_;" Condition="!$([MSBuild]::IsOSPlatform('Windows'))"/>
   </Target>
 
 </Project>

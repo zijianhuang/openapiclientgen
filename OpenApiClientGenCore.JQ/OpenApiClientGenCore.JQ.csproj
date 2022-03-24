@@ -13,7 +13,8 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" />
+    <Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" Condition="$([MSBuild]::IsOSPlatform('Windows'))"/>
+    <Exec Command="cp $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen/$(OutDir)" Condition="!$([MSBuild]::IsOSPlatform('Windows'))"/>
   </Target>
 
   <ItemGroup>
