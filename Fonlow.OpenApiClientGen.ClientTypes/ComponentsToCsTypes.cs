@@ -258,8 +258,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value, settings);
-					bool hasFunkyMemberName = memberName != stringMember.Value;
+					var stringMemberValue = stringMember.Value;
+					if (settings.UsePascalCase)
+					{
+						stringMemberValue = stringMemberValue.ToPascalCase();
+					}
+					
+					string memberName = NameFunc.RefineEnumMemberName(stringMemberValue, settings);
+					bool hasFunkyMemberName = memberName != stringMemberValue;
 					int intValue = k;
 					CodeMemberField clientField = new CodeMemberField()
 					{
@@ -271,7 +277,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						if (hasFunkyMemberName || settings.EnumToString)
 						{
-							clientField.CustomAttributes.Add(new CodeAttributeDeclaration($"System.Runtime.Serialization.EnumMemberAttribute", new CodeAttributeArgument("Value", new CodeSnippetExpression($"\"{stringMember.Value}\""))));
+							clientField.CustomAttributes.Add(new CodeAttributeDeclaration($"System.Runtime.Serialization.EnumMemberAttribute", new CodeAttributeArgument("Value", new CodeSnippetExpression($"\"{stringMemberValue}\""))));
 						}
 						else
 						{
@@ -517,6 +523,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							? propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
+						// It's also needed here to provide enums in correct case for the FindEnumDeclaration function
 						if (settings.UsePascalCase)
 						{
 							for (var i = 0; i < propertySchema.Enum.Count; i++)
