@@ -283,7 +283,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 				{
-					string casualTypeName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName);
+					var casualTypeName = NameFunc.RefinePropertyName(propertyName);
+					if (settings.PrefixWithTypeName)
+					{
+						casualTypeName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName);
+					}
+					
 					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
 					AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
 					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1), casualTypeName);

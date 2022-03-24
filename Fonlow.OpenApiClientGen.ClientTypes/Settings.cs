@@ -221,6 +221,15 @@
 		/// </summary>
 		public JSPlugin[] Plugins { get; set; }
 
+		/// <summary>
+		/// Use pascal case for properties and model class names
+		/// </summary>
+		public bool UsePascalCase { get; set; }
+
+		/// <summary>
+		/// Prefix class names with enclosing Type name
+		/// </summary>
+		public bool PrefixWithTypeName { get; set; }
 	}
 
 	/// <summary>

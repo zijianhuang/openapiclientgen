@@ -78,6 +78,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			string ns = NameFunc.GetNamespaceOfClassName(item.Key);
 			string currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
+			if (settings.UsePascalCase)
+			{
+				currentTypeName = currentTypeName.ToPascalCase();
+			}
+			
 			RegisterSchemaRefIdToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 
@@ -359,6 +364,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		protected override void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			string propertyName = NameFunc.RefinePropertyName(p.Key);
+			
+			if (settings.UsePascalCase)
+			{
+				propertyName = propertyName.ToPascalCase();
+			}
+			
 			if (propertyName == currentTypeName)
 			{
 				Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
@@ -431,7 +442,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
-					string casualTypeName = currentTypeName + NameFunc.RefinePropertyName(propertyName);
+					var casualTypeName = NameFunc.RefinePropertyName(propertyName);
+					if (settings.PrefixWithTypeName)
+					{
+						casualTypeName = currentTypeName + NameFunc.RefinePropertyName(propertyName);
+					}
+					
 					CodeTypeDeclaration found = FindTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
 					if (found == null)
 					{
@@ -500,6 +516,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						enumMemberNames = (String.IsNullOrEmpty(primitivePropertyType) || primitivePropertyType == "string")
 							? propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
+
+						if (settings.UsePascalCase)
+						{
+							for (var i = 0; i < propertySchema.Enum.Count; i++)
+							{
+								if (propertySchema.Enum[i] is OpenApiString str)
+								{
+									propertySchema.Enum[i] = new OpenApiString(str.Value.ToPascalCase());
+								}
+							}
+							enumMemberNames = enumMemberNames.Select(e => e.ToPascalCase()).ToArray();
+						}
 
 					}
 					catch (InvalidCastException ex)
