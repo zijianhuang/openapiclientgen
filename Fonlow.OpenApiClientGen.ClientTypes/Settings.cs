@@ -234,7 +234,7 @@
 		/// <summary>
 		/// Prefix class names with enclosing Type name
 		/// </summary>
-		public bool PrefixWithTypeName { get; set; }
+		public bool PrefixWithTypeName { get; set; } = true;
 	}
 
 	/// <summary>
