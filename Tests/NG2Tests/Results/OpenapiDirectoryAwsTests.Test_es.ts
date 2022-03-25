@@ -26,6 +26,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -58,6 +59,7 @@ export namespace MyNS {
 
 		/**
 		 * A string of length from 1 to 128 characters that specifies the key for a Tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
@@ -65,6 +67,7 @@ export namespace MyNS {
 
 		/**
 		 * A string of length from 0 to 256 characters that specifies the value for a Tag. Tag values can be null and do not have to be unique in a tag set.
+		 * Required
 		 * Max length: 256
 		 * Min length: 0
 		 */
@@ -160,6 +163,7 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for an Elasticsearch domain.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -167,13 +171,17 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
 		ARN: string;
 		Created?: boolean;
 		Deleted?: boolean;
@@ -185,7 +193,10 @@ export namespace MyNS {
 		UpgradeProcessing?: boolean;
 		ElasticsearchVersion?: string;
 
-		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
+		/**
+		 * Specifies the configuration for the domain cluster, such as the type and number of instances.
+		 * Required
+		 */
 		ElasticsearchClusterConfig: ElasticsearchClusterConfig;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
@@ -457,7 +468,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status of the domain specified in the request. */
 	export interface DescribeElasticsearchDomainResponse {
 
-		/** The current status of an Elasticsearch domain. */
+		/**
+		 * The current status of an Elasticsearch domain.
+		 * Required
+		 */
 		DomainStatus: ElasticsearchDomainStatus;
 	}
 
@@ -465,7 +479,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain. */
 	export interface DescribeElasticsearchDomainConfigResponse {
 
-		/** The configuration of an Elasticsearch domain. */
+		/**
+		 * The configuration of an Elasticsearch domain.
+		 * Required
+		 */
 		DomainConfig: ElasticsearchDomainConfig;
 	}
 
@@ -518,7 +535,10 @@ export namespace MyNS {
 	export interface ElasticsearchVersionStatus {
 		Options: string;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -529,7 +549,10 @@ export namespace MyNS {
 		UpdateDate: Date;
 		UpdateVersion?: number;
 
-		/** <p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul> */
+		/**
+		 * <p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul>
+		 * Required
+		 */
 		State: OptionStatusState;
 		PendingDeletion?: boolean;
 	}
@@ -540,10 +563,16 @@ export namespace MyNS {
 	/**  Specifies the configuration status for the specified Elasticsearch domain. */
 	export interface ElasticsearchClusterConfigStatus {
 
-		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
+		/**
+		 * Specifies the configuration for the domain cluster, such as the type and number of instances.
+		 * Required
+		 */
 		Options: ElasticsearchClusterConfig;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -551,10 +580,16 @@ export namespace MyNS {
 	/**  Status of the EBS options for the specified Elasticsearch domain. */
 	export interface EBSOptionsStatus {
 
-		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
+		/**
+		 * Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>.
+		 * Required
+		 */
 		Options: EBSOptions;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -562,10 +597,16 @@ export namespace MyNS {
 	/** The configured access rules for the domain's document and search endpoints, and the current status of those rules. */
 	export interface AccessPoliciesStatus {
 
-		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
+		/**
+		 * Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB.
+		 * Required
+		 */
 		Options: string;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -573,10 +614,16 @@ export namespace MyNS {
 	/** Status of a daily automated snapshot. */
 	export interface SnapshotOptionsStatus {
 
-		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
+		/**
+		 * Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.
+		 * Required
+		 */
 		Options: SnapshotOptions;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -584,10 +631,16 @@ export namespace MyNS {
 	/**  Status of the VPC options for the specified Elasticsearch domain. */
 	export interface VPCDerivedInfoStatus {
 
-		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
+		/**
+		 * Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
+		 * Required
+		 */
 		Options: VPCDerivedInfo;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -595,10 +648,16 @@ export namespace MyNS {
 	/** Status of the Cognito options for the specified Elasticsearch domain. */
 	export interface CognitoOptionsStatus {
 
-		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
+		/**
+		 * Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.
+		 * Required
+		 */
 		Options: CognitoOptions;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -606,10 +665,16 @@ export namespace MyNS {
 	/**  Status of the Encryption At Rest options for the specified Elasticsearch domain. */
 	export interface EncryptionAtRestOptionsStatus {
 
-		/** Specifies the Encryption At Rest Options. */
+		/**
+		 * Specifies the Encryption At Rest Options.
+		 * Required
+		 */
 		Options: EncryptionAtRestOptions;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -617,10 +682,16 @@ export namespace MyNS {
 	/** Status of the node-to-node encryption options for the specified Elasticsearch domain. */
 	export interface NodeToNodeEncryptionOptionsStatus {
 
-		/** Specifies the node-to-node encryption options. */
+		/**
+		 * Specifies the node-to-node encryption options.
+		 * Required
+		 */
 		Options: NodeToNodeEncryptionOptions;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -628,10 +699,16 @@ export namespace MyNS {
 	/** <p> Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
 	export interface AdvancedOptionsStatus {
 
-		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
+		/**
+		 * <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p>
+		 * Required
+		 */
 		Options: AdvancedOptions;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -648,10 +725,16 @@ export namespace MyNS {
 	/** The configured endpoint options for the domain and their current status. */
 	export interface DomainEndpointOptionsStatus {
 
-		/** Options to configure endpoint for the Elasticsearch domain. */
+		/**
+		 * Options to configure endpoint for the Elasticsearch domain.
+		 * Required
+		 */
 		Options: DomainEndpointOptions;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -659,10 +742,16 @@ export namespace MyNS {
 	/**  Specifies the status of advanced security options for the specified Elasticsearch domain. */
 	export interface AdvancedSecurityOptionsStatus {
 
-		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. */
+		/**
+		 * Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled.
+		 * Required
+		 */
 		Options: AdvancedSecurityOptions;
 
-		/** Provides the current status of the entity. */
+		/**
+		 * Provides the current status of the entity.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -670,7 +759,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account. */
 	export interface DescribeElasticsearchDomainsResponse {
 
-		/** A list that contains the status of each requested Elasticsearch domain. */
+		/**
+		 * A list that contains the status of each requested Elasticsearch domain.
+		 * Required
+		 */
 		DomainStatusList: Array<ElasticsearchDomainStatus>;
 	}
 
@@ -941,7 +1033,10 @@ export namespace MyNS {
 	/** The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status of the Elasticsearch domain being updated. */
 	export interface UpdateElasticsearchDomainConfigResponse {
 
-		/** The configuration of an Elasticsearch domain. */
+		/**
+		 * The configuration of an Elasticsearch domain.
+		 * Required
+		 */
 		DomainConfig: ElasticsearchDomainConfig;
 	}
 
@@ -969,10 +1064,16 @@ export namespace MyNS {
 	/** Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain. */
 	export interface AddTagsRequest {
 
-		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
 		ARN: string;
 
-		/** A list of <code>Tag</code> */
+		/**
+		 * A list of <code>Tag</code>
+		 * Required
+		 */
 		TagList: Array<Tag>;
 	}
 
@@ -1004,6 +1105,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1022,6 +1124,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1088,7 +1191,10 @@ export namespace MyNS {
 		PackageType: CreatePackageRequestPackageType;
 		PackageDescription?: string;
 
-		/** The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> */
+		/**
+		 * The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code>
+		 * Required
+		 */
 		PackageSource: PackageSource;
 	}
 
@@ -1130,7 +1236,10 @@ export namespace MyNS {
 	/** Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains. */
 	export interface DescribeElasticsearchDomainsRequest {
 
-		/** A list of Elasticsearch domain names. */
+		/**
+		 * A list of Elasticsearch domain names.
+		 * Required
+		 */
 		DomainNames: Array<string>;
 	}
 
@@ -1331,7 +1440,10 @@ export namespace MyNS {
 	/** Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>. */
 	export interface RemoveTagsRequest {
 
-		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
 		ARN: string;
 		TagKeys: Array<string>;
 	}
@@ -1344,6 +1456,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1390,6 +1503,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1794,10 +1908,16 @@ export namespace MyNS {
 
 	export interface AddTagsPostBody {
 
-		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
 		ARN: string;
 
-		/** A list of <code>Tag</code> */
+		/**
+		 * A list of <code>Tag</code>
+		 * Required
+		 */
 		TagList: Array<Tag>;
 	}
 
@@ -1805,6 +1925,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1816,6 +1937,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1934,14 +2056,21 @@ export namespace MyNS {
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBody {
 
-		/** Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain. */
+		/**
+		 * Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.
+		 * Required
+		 */
 		SourceDomainInfo: CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfo;
 
-		/** Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain. */
+		/**
+		 * Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.
+		 * Required
+		 */
 		DestinationDomainInfo: CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfo;
 
 		/**
 		 * Specifies the connection alias that will be used by the customer for this connection.
+		 * Required
 		 * Max length: 20
 		 */
 		ConnectionAlias: string;
@@ -1977,13 +2106,17 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the package.
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName: string;
 
-		/** Type of package. Currently supports only TXT-DICTIONARY. */
+		/**
+		 * Type of package. Currently supports only TXT-DICTIONARY.
+		 * Required
+		 */
 		PackageType: CreatePackagePostBodyPackageType;
 
 		/**
@@ -1992,7 +2125,10 @@ export namespace MyNS {
 		 */
 		PackageDescription?: string;
 
-		/** The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> */
+		/**
+		 * The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code>
+		 * Required
+		 */
 		PackageSource: CreatePackagePostBodyPackageSource;
 	}
 
@@ -2099,7 +2235,10 @@ export namespace MyNS {
 
 	export interface DescribeElasticsearchDomainsPostBody {
 
-		/** A list of Elasticsearch domain names. */
+		/**
+		 * A list of Elasticsearch domain names.
+		 * Required
+		 */
 		DomainNames: Array<string>;
 	}
 
@@ -2154,12 +2293,14 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the reserved Elasticsearch instance offering to purchase.
+		 * Required
 		 * Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}
 		 */
 		ReservedElasticsearchInstanceOfferingId: string;
 
 		/**
 		 * A customer-specified identifier to track this reservation.
+		 * Required
 		 * Max length: 64
 		 * Min length: 5
 		 */
@@ -2174,10 +2315,16 @@ export namespace MyNS {
 
 	export interface RemoveTagsPostBody {
 
-		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
 		ARN: string;
 
-		/** Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain. */
+		/**
+		 * Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.
+		 * Required
+		 */
 		TagKeys: Array<string>;
 	}
 
@@ -2185,6 +2332,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -2196,13 +2344,17 @@ export namespace MyNS {
 
 		/**
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** The version of Elasticsearch that you intend to upgrade the domain to. */
+		/**
+		 * The version of Elasticsearch that you intend to upgrade the domain to.
+		 * Required
+		 */
 		TargetVersion: string;
 
 		/** This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. */

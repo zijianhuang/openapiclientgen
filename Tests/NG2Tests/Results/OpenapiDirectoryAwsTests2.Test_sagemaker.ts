@@ -42,7 +42,10 @@ export namespace MyNS {
 		AlgorithmName: string;
 		AlgorithmDescription?: string;
 
-		/** Defines how the algorithm is used for a training job. */
+		/**
+		 * Defines how the algorithm is used for a training job.
+		 * Required
+		 */
 		TrainingSpecification: TrainingSpecification;
 
 		/** Defines how to perform inference generation after a training job is run. */
@@ -185,7 +188,10 @@ export namespace MyNS {
 	export interface AlgorithmValidationProfile {
 		ProfileName: string;
 
-		/** Defines the input needed to run a training job using the algorithm. */
+		/**
+		 * Defines the input needed to run a training job using the algorithm.
+		 * Required
+		 */
 		TrainingJobDefinition: TrainingJobDefinition;
 
 		/** Defines the input needed to run a transform job using the inference specification specified in the algorithm. */
@@ -199,13 +205,22 @@ export namespace MyNS {
 		HyperParameters?: HyperParameters;
 		InputDataConfig: Array<Channel>;
 
-		/** Provides information about how to store model training results (model artifacts). */
+		/**
+		 * Provides information about how to store model training results (model artifacts).
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 
-		/** Describes the resources, including ML compute instances and ML storage volumes, to use for model training. */
+		/**
+		 * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
+		 * Required
+		 */
 		ResourceConfig: ResourceConfig;
 
-		/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
+		/**
+		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
+		 * Required
+		 */
 		StoppingCondition: StoppingCondition;
 	}
 
@@ -217,7 +232,10 @@ export namespace MyNS {
 	export interface Channel {
 		ChannelName: string;
 
-		/** Describes the location of the channel data. */
+		/**
+		 * Describes the location of the channel data.
+		 * Required
+		 */
 		DataSource: DataSource;
 		ContentType?: string;
 		CompressionType?: CompressionType;
@@ -306,13 +324,22 @@ export namespace MyNS {
 		BatchStrategy?: TransformJobDefinitionBatchStrategy;
 		Environment?: TransformEnvironmentMap;
 
-		/** Describes the input source of a transform job and the way the transform job consumes it. */
+		/**
+		 * Describes the input source of a transform job and the way the transform job consumes it.
+		 * Required
+		 */
 		TransformInput: TransformInput;
 
-		/** Describes the results of a transform job. */
+		/**
+		 * Describes the results of a transform job.
+		 * Required
+		 */
 		TransformOutput: TransformOutput;
 
-		/** Describes the resources, including ML instance types and ML instance count, to use for transform job. */
+		/**
+		 * Describes the resources, including ML instance types and ML instance count, to use for transform job.
+		 * Required
+		 */
 		TransformResources: TransformResources;
 	}
 
@@ -325,7 +352,10 @@ export namespace MyNS {
 	/** Describes the input source of a transform job and the way the transform job consumes it. */
 	export interface TransformInput {
 
-		/** Describes the location of the channel data. */
+		/**
+		 * Describes the location of the channel data.
+		 * Required
+		 */
 		DataSource: TransformDataSource;
 		ContentType?: string;
 		CompressionType?: CompressionType;
@@ -336,7 +366,10 @@ export namespace MyNS {
 	/** Describes the location of the channel data. */
 	export interface TransformDataSource {
 
-		/** Describes the S3 data source. */
+		/**
+		 * Describes the S3 data source.
+		 * Required
+		 */
 		S3DataSource: TransformS3DataSource;
 	}
 
@@ -407,7 +440,10 @@ export namespace MyNS {
 		AutoMLJobName: string;
 		InputDataConfig: Array<AutoMLChannel>;
 
-		/** The output data configuration. */
+		/**
+		 * The output data configuration.
+		 * Required
+		 */
 		OutputDataConfig: AutoMLOutputDataConfig;
 		ProblemType?: CreateAutoMLJobRequestProblemType;
 
@@ -425,7 +461,10 @@ export namespace MyNS {
 	/** Similar to Channel. A channel is a named input source that training algorithms can consume. Refer to Channel for detailed descriptions. */
 	export interface AutoMLChannel {
 
-		/** The data source for the AutoPilot job. */
+		/**
+		 * The data source for the AutoPilot job.
+		 * Required
+		 */
 		DataSource: AutoMLDataSource;
 		CompressionType?: CompressionType;
 		TargetAttributeName: string;
@@ -435,7 +474,10 @@ export namespace MyNS {
 	/** The data source for the AutoPilot job. */
 	export interface AutoMLDataSource {
 
-		/** The Amazon S3 data source. */
+		/**
+		 * The Amazon S3 data source.
+		 * Required
+		 */
 		S3DataSource: AutoMLS3DataSource;
 	}
 
@@ -508,7 +550,10 @@ export namespace MyNS {
 	export interface CreateCodeRepositoryInput {
 		CodeRepositoryName: string;
 
-		/** Specifies configuration details for a Git repository in your AWS account. */
+		/**
+		 * Specifies configuration details for a Git repository in your AWS account.
+		 * Required
+		 */
 		GitConfig: GitConfig;
 	}
 
@@ -528,13 +573,22 @@ export namespace MyNS {
 		CompilationJobName: string;
 		RoleArn: string;
 
-		/** Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained. */
+		/**
+		 * Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.
+		 * Required
+		 */
 		InputConfig: InputConfig;
 
-		/** Contains information about the output location for the compiled model and the device (target) that the model runs on. */
+		/**
+		 * Contains information about the output location for the compiled model and the device (target) that the model runs on.
+		 * Required
+		 */
 		OutputConfig: OutputConfig;
 
-		/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
+		/**
+		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
+		 * Required
+		 */
 		StoppingCondition: StoppingCondition;
 	}
 
@@ -566,7 +620,10 @@ export namespace MyNS {
 		DomainName: string;
 		AuthMode: CreateDomainRequestAuthMode;
 
-		/** A collection of settings. */
+		/**
+		 * A collection of settings.
+		 * Required
+		 */
 		DefaultUserSettings: UserSettings;
 		SubnetIds: Array<string>;
 		VpcId: string;
@@ -718,10 +775,16 @@ export namespace MyNS {
 		/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
 		HumanLoopActivationConfig?: HumanLoopActivationConfig;
 
-		/** Describes the work to be performed by human workers. */
+		/**
+		 * Describes the work to be performed by human workers.
+		 * Required
+		 */
 		HumanLoopConfig: HumanLoopConfig;
 
-		/** Contains information about where human output will be stored. */
+		/**
+		 * Contains information about where human output will be stored.
+		 * Required
+		 */
 		OutputConfig: FlowDefinitionOutputConfig;
 		RoleArn: string;
 		Tags?: Array<Tag>;
@@ -739,7 +802,10 @@ export namespace MyNS {
 	/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
 	export interface HumanLoopActivationConfig {
 
-		/** Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation conditions. */
+		/**
+		 * Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation conditions.
+		 * Required
+		 */
 		HumanLoopActivationConditionsConfig: HumanLoopActivationConditionsConfig;
 	}
 
@@ -795,7 +861,10 @@ export namespace MyNS {
 	export interface CreateHumanTaskUiRequest {
 		HumanTaskUiName: string;
 
-		/** The Liquid template for the worker user interface. */
+		/**
+		 * The Liquid template for the worker user interface.
+		 * Required
+		 */
 		UiTemplate: UiTemplate;
 		Tags?: Array<Tag>;
 	}
@@ -813,7 +882,10 @@ export namespace MyNS {
 	export interface CreateHyperParameterTuningJobRequest {
 		HyperParameterTuningJobName: string;
 
-		/** Configures a hyperparameter tuning job. */
+		/**
+		 * Configures a hyperparameter tuning job.
+		 * Required
+		 */
 		HyperParameterTuningJobConfig: HyperParameterTuningJobConfig;
 
 		/** Defines the training jobs launched by a hyperparameter tuning job. */
@@ -829,13 +901,19 @@ export namespace MyNS {
 	/** Configures a hyperparameter tuning job. */
 	export interface HyperParameterTuningJobConfig {
 
-		/** The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>. */
+		/**
+		 * The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
+		 * Required
+		 */
 		Strategy: HyperParameterTuningJobConfigStrategy;
 
 		/** Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter. */
 		HyperParameterTuningJobObjective?: HyperParameterTuningJobObjective;
 
-		/** Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch. */
+		/**
+		 * Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.
+		 * Required
+		 */
 		ResourceLimits: ResourceLimits;
 
 		/** <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note> */
@@ -910,7 +988,10 @@ export namespace MyNS {
 		HyperParameterRanges?: ParameterRanges;
 		StaticHyperParameters?: HyperParameters;
 
-		/** Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor. */
+		/**
+		 * Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.
+		 * Required
+		 */
 		AlgorithmSpecification: HyperParameterAlgorithmSpecification;
 		RoleArn: string;
 		InputDataConfig?: Array<Channel>;
@@ -918,13 +999,22 @@ export namespace MyNS {
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
 		VpcConfig?: VpcConfig;
 
-		/** Provides information about how to store model training results (model artifacts). */
+		/**
+		 * Provides information about how to store model training results (model artifacts).
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 
-		/** Describes the resources, including ML compute instances and ML storage volumes, to use for model training. */
+		/**
+		 * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
+		 * Required
+		 */
 		ResourceConfig: ResourceConfig;
 
-		/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
+		/**
+		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
+		 * Required
+		 */
 		StoppingCondition: StoppingCondition;
 		EnableNetworkIsolation?: boolean;
 		EnableInterContainerTrafficEncryption?: boolean;
@@ -973,10 +1063,16 @@ export namespace MyNS {
 		LabelingJobName: string;
 		LabelAttributeName: string;
 
-		/** Input configuration information for a labeling job. */
+		/**
+		 * Input configuration information for a labeling job.
+		 * Required
+		 */
 		InputConfig: LabelingJobInputConfig;
 
-		/** Output configuration information for a labeling job. */
+		/**
+		 * Output configuration information for a labeling job.
+		 * Required
+		 */
 		OutputConfig: LabelingJobOutputConfig;
 		RoleArn: string;
 		LabelCategoryConfigS3Uri?: string;
@@ -987,7 +1083,10 @@ export namespace MyNS {
 		/** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling. */
 		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig;
 
-		/** Information required for human workers to complete a labeling task. */
+		/**
+		 * Information required for human workers to complete a labeling task.
+		 * Required
+		 */
 		HumanTaskConfig: HumanTaskConfig;
 		Tags?: Array<Tag>;
 	}
@@ -996,7 +1095,10 @@ export namespace MyNS {
 	/** Input configuration information for a labeling job. */
 	export interface LabelingJobInputConfig {
 
-		/** Provides information about the location of input data. */
+		/**
+		 * Provides information about the location of input data.
+		 * Required
+		 */
 		DataSource: LabelingJobDataSource;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
@@ -1007,7 +1109,10 @@ export namespace MyNS {
 	/** Provides information about the location of input data. */
 	export interface LabelingJobDataSource {
 
-		/** The Amazon S3 location of the input data objects. */
+		/**
+		 * The Amazon S3 location of the input data objects.
+		 * Required
+		 */
 		S3DataSource: LabelingJobS3DataSource;
 	}
 
@@ -1060,7 +1165,10 @@ export namespace MyNS {
 	export interface HumanTaskConfig {
 		WorkteamArn: string;
 
-		/** Provided configuration information for the worker UI for a labeling job. */
+		/**
+		 * Provided configuration information for the worker UI for a labeling job.
+		 * Required
+		 */
 		UiConfig: UiConfig;
 		PreHumanTaskLambdaArn: string;
 		TaskKeywords?: Array<string>;
@@ -1071,7 +1179,10 @@ export namespace MyNS {
 		TaskAvailabilityLifetimeInSeconds?: number;
 		MaxConcurrentTaskCount?: number;
 
-		/** Configures how labels are consolidated across human workers. */
+		/**
+		 * Configures how labels are consolidated across human workers.
+		 * Required
+		 */
 		AnnotationConsolidationConfig: AnnotationConsolidationConfig;
 
 		/** <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p> <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p> <ul> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p> <ul> <li> <p>0.012</p> </li> <li> <p>0.024</p> </li> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p> <ul> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>2.400 </p> </li> <li> <p>2.280 </p> </li> <li> <p>2.160 </p> </li> <li> <p>2.040 </p> </li> <li> <p>1.920 </p> </li> <li> <p>1.800 </p> </li> <li> <p>1.680 </p> </li> <li> <p>1.560 </p> </li> <li> <p>1.440 </p> </li> <li> <p>1.320 </p> </li> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> */
@@ -1156,7 +1267,10 @@ export namespace MyNS {
 	export interface ModelPackageValidationProfile {
 		ProfileName: string;
 
-		/** Defines the input needed to run a transform job using the inference specification specified in the algorithm. */
+		/**
+		 * Defines the input needed to run a transform job using the inference specification specified in the algorithm.
+		 * Required
+		 */
 		TransformJobDefinition: TransformJobDefinition;
 	}
 
@@ -1180,7 +1294,10 @@ export namespace MyNS {
 	export interface CreateMonitoringScheduleRequest {
 		MonitoringScheduleName: string;
 
-		/** Configures the monitoring schedule and defines the monitoring job. */
+		/**
+		 * Configures the monitoring schedule and defines the monitoring job.
+		 * Required
+		 */
 		MonitoringScheduleConfig: MonitoringScheduleConfig;
 		Tags?: Array<Tag>;
 	}
@@ -1192,7 +1309,10 @@ export namespace MyNS {
 		/** Configuration details about the monitoring schedule. */
 		ScheduleConfig?: ScheduleConfig;
 
-		/** Defines the monitoring job. */
+		/**
+		 * Defines the monitoring job.
+		 * Required
+		 */
 		MonitoringJobDefinition: MonitoringJobDefinition;
 	}
 
@@ -1210,13 +1330,22 @@ export namespace MyNS {
 		BaselineConfig?: MonitoringBaselineConfig;
 		MonitoringInputs: Array<MonitoringInput>;
 
-		/** The output configuration for monitoring jobs. */
+		/**
+		 * The output configuration for monitoring jobs.
+		 * Required
+		 */
 		MonitoringOutputConfig: MonitoringOutputConfig;
 
-		/** Identifies the resources to deploy for a monitoring job. */
+		/**
+		 * Identifies the resources to deploy for a monitoring job.
+		 * Required
+		 */
 		MonitoringResources: MonitoringResources;
 
-		/** Container image configuration object for the monitoring job. */
+		/**
+		 * Container image configuration object for the monitoring job.
+		 * Required
+		 */
 		MonitoringAppSpecification: MonitoringAppSpecification;
 
 		/** A time limit for how long the monitoring job is allowed to run before stopping. */
@@ -1255,7 +1384,10 @@ export namespace MyNS {
 	/** The inputs for a monitoring job. */
 	export interface MonitoringInput {
 
-		/** Input object for the endpoint */
+		/**
+		 * Input object for the endpoint
+		 * Required
+		 */
 		EndpointInput: EndpointInput;
 	}
 
@@ -1279,7 +1411,10 @@ export namespace MyNS {
 	/** The output object for a monitoring job. */
 	export interface MonitoringOutput {
 
-		/** Information about where and how you want to store the results of a monitoring job. */
+		/**
+		 * Information about where and how you want to store the results of a monitoring job.
+		 * Required
+		 */
 		S3Output: MonitoringS3Output;
 	}
 
@@ -1297,7 +1432,10 @@ export namespace MyNS {
 	/** Identifies the resources to deploy for a monitoring job. */
 	export interface MonitoringResources {
 
-		/** Configuration for the cluster used to run model monitoring jobs. */
+		/**
+		 * Configuration for the cluster used to run model monitoring jobs.
+		 * Required
+		 */
 		ClusterConfig: MonitoringClusterConfig;
 	}
 
@@ -1414,13 +1552,19 @@ export namespace MyNS {
 		ProcessingOutputConfig?: ProcessingOutputConfig;
 		ProcessingJobName: string;
 
-		/** Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance. */
+		/**
+		 * Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.
+		 * Required
+		 */
 		ProcessingResources: ProcessingResources;
 
 		/** Specifies a time limit for how long the processing job is allowed to run. */
 		StoppingCondition?: ProcessingStoppingCondition;
 
-		/** Configuration to run a processing job in a specified container image. */
+		/**
+		 * Configuration to run a processing job in a specified container image.
+		 * Required
+		 */
 		AppSpecification: AppSpecification;
 		Environment?: ProcessingEnvironmentMap;
 
@@ -1438,7 +1582,10 @@ export namespace MyNS {
 	export interface ProcessingInput {
 		InputName: string;
 
-		/** Information about where and how you want to obtain the inputs for an processing job. */
+		/**
+		 * Information about where and how you want to obtain the inputs for an processing job.
+		 * Required
+		 */
 		S3Input: ProcessingS3Input;
 	}
 
@@ -1465,7 +1612,10 @@ export namespace MyNS {
 	export interface ProcessingOutput {
 		OutputName: string;
 
-		/** Information about where and how you want to store the results of an processing job. */
+		/**
+		 * Information about where and how you want to store the results of an processing job.
+		 * Required
+		 */
 		S3Output: ProcessingS3Output;
 	}
 
@@ -1481,7 +1631,10 @@ export namespace MyNS {
 	/** Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance. */
 	export interface ProcessingResources {
 
-		/** Configuration for the cluster used to run a processing job. */
+		/**
+		 * Configuration for the cluster used to run a processing job.
+		 * Required
+		 */
 		ClusterConfig: ProcessingClusterConfig;
 	}
 
@@ -1529,21 +1682,33 @@ export namespace MyNS {
 		TrainingJobName: string;
 		HyperParameters?: HyperParameters;
 
-		/** <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> */
+		/**
+		 * <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+		 * Required
+		 */
 		AlgorithmSpecification: AlgorithmSpecification;
 		RoleArn: string;
 		InputDataConfig?: Array<Channel>;
 
-		/** Provides information about how to store model training results (model artifacts). */
+		/**
+		 * Provides information about how to store model training results (model artifacts).
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 
-		/** Describes the resources, including ML compute instances and ML storage volumes, to use for model training. */
+		/**
+		 * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
+		 * Required
+		 */
 		ResourceConfig: ResourceConfig;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
 		VpcConfig?: VpcConfig;
 
-		/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
+		/**
+		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
+		 * Required
+		 */
 		StoppingCondition: StoppingCondition;
 		Tags?: Array<Tag>;
 		EnableNetworkIsolation?: boolean;
@@ -1632,13 +1797,22 @@ export namespace MyNS {
 		BatchStrategy?: TransformJobDefinitionBatchStrategy;
 		Environment?: TransformEnvironmentMap;
 
-		/** Describes the input source of a transform job and the way the transform job consumes it. */
+		/**
+		 * Describes the input source of a transform job and the way the transform job consumes it.
+		 * Required
+		 */
 		TransformInput: TransformInput;
 
-		/** Describes the results of a transform job. */
+		/**
+		 * Describes the results of a transform job.
+		 * Required
+		 */
 		TransformOutput: TransformOutput;
 
-		/** Describes the resources, including ML instance types and ML instance count, to use for transform job. */
+		/**
+		 * Describes the resources, including ML instance types and ML instance count, to use for transform job.
+		 * Required
+		 */
 		TransformResources: TransformResources;
 
 		/** The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>. */
@@ -1870,7 +2044,10 @@ export namespace MyNS {
 		AlgorithmDescription?: string;
 		CreationTime: Date;
 
-		/** Defines how the algorithm is used for a training job. */
+		/**
+		 * Defines how the algorithm is used for a training job.
+		 * Required
+		 */
 		TrainingSpecification: TrainingSpecification;
 
 		/** Defines how to perform inference generation after a training job is run. */
@@ -1880,7 +2057,10 @@ export namespace MyNS {
 		ValidationSpecification?: AlgorithmValidationSpecification;
 		AlgorithmStatus: DescribeAlgorithmOutputAlgorithmStatus;
 
-		/** Specifies the validation and image scan statuses of the algorithm. */
+		/**
+		 * Specifies the validation and image scan statuses of the algorithm.
+		 * Required
+		 */
 		AlgorithmStatusDetails: AlgorithmStatusDetails;
 		ProductId?: string;
 		CertifyForMarketplace?: boolean;
@@ -1939,7 +2119,10 @@ export namespace MyNS {
 		AutoMLJobArn: string;
 		InputDataConfig: Array<AutoMLChannel>;
 
-		/** The output data configuration. */
+		/**
+		 * The output data configuration.
+		 * Required
+		 */
 		OutputDataConfig: AutoMLOutputDataConfig;
 		RoleArn: string;
 
@@ -2060,20 +2243,32 @@ export namespace MyNS {
 		CompilationStartTime?: Date;
 		CompilationEndTime?: Date;
 
-		/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
+		/**
+		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
+		 * Required
+		 */
 		StoppingCondition: StoppingCondition;
 		CreationTime: Date;
 		LastModifiedTime: Date;
 		FailureReason: string;
 
-		/** <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.</p> */
+		/**
+		 * <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.</p>
+		 * Required
+		 */
 		ModelArtifacts: ModelArtifacts;
 		RoleArn: string;
 
-		/** Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained. */
+		/**
+		 * Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.
+		 * Required
+		 */
 		InputConfig: InputConfig;
 
-		/** Contains information about the output location for the compiled model and the device (target) that the model runs on. */
+		/**
+		 * Contains information about the output location for the compiled model and the device (target) that the model runs on.
+		 * Required
+		 */
 		OutputConfig: OutputConfig;
 	}
 
@@ -2230,10 +2425,16 @@ export namespace MyNS {
 		/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
 		HumanLoopActivationConfig?: HumanLoopActivationConfig;
 
-		/** Describes the work to be performed by human workers. */
+		/**
+		 * Describes the work to be performed by human workers.
+		 * Required
+		 */
 		HumanLoopConfig: HumanLoopConfig;
 
-		/** Contains information about where human output will be stored. */
+		/**
+		 * Contains information about where human output will be stored.
+		 * Required
+		 */
 		OutputConfig: FlowDefinitionOutputConfig;
 		RoleArn: string;
 		FailureReason?: string;
@@ -2250,7 +2451,10 @@ export namespace MyNS {
 		HumanTaskUiName: string;
 		CreationTime: Date;
 
-		/** Container for user interface template information. */
+		/**
+		 * Container for user interface template information.
+		 * Required
+		 */
 		UiTemplate: UiTemplateInfo;
 	}
 
@@ -2269,7 +2473,10 @@ export namespace MyNS {
 		HyperParameterTuningJobName: string;
 		HyperParameterTuningJobArn: string;
 
-		/** Configures a hyperparameter tuning job. */
+		/**
+		 * Configures a hyperparameter tuning job.
+		 * Required
+		 */
 		HyperParameterTuningJobConfig: HyperParameterTuningJobConfig;
 
 		/** Defines the training jobs launched by a hyperparameter tuning job. */
@@ -2280,10 +2487,16 @@ export namespace MyNS {
 		HyperParameterTuningEndTime?: Date;
 		LastModifiedTime?: Date;
 
-		/** The numbers of training jobs launched by a hyperparameter tuning job, categorized by status. */
+		/**
+		 * The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
+		 * Required
+		 */
 		TrainingJobStatusCounters: TrainingJobStatusCounters;
 
-		/** Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process. */
+		/**
+		 * Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.
+		 * Required
+		 */
 		ObjectiveStatusCounters: ObjectiveStatusCounters;
 
 		/** Specifies summary information about a training job. */
@@ -2349,7 +2562,10 @@ export namespace MyNS {
 	export interface DescribeLabelingJobResponse {
 		LabelingJobStatus: TrialComponentStatusPrimaryStatus;
 
-		/** Provides a breakdown of the number of objects labeled. */
+		/**
+		 * Provides a breakdown of the number of objects labeled.
+		 * Required
+		 */
 		LabelCounters: LabelCounters;
 		FailureReason?: string;
 		CreationTime: Date;
@@ -2359,10 +2575,16 @@ export namespace MyNS {
 		LabelingJobArn: string;
 		LabelAttributeName?: string;
 
-		/** Input configuration information for a labeling job. */
+		/**
+		 * Input configuration information for a labeling job.
+		 * Required
+		 */
 		InputConfig: LabelingJobInputConfig;
 
-		/** Output configuration information for a labeling job. */
+		/**
+		 * Output configuration information for a labeling job.
+		 * Required
+		 */
 		OutputConfig: LabelingJobOutputConfig;
 		RoleArn: string;
 		LabelCategoryConfigS3Uri?: string;
@@ -2373,7 +2595,10 @@ export namespace MyNS {
 		/** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling. */
 		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig;
 
-		/** Information required for human workers to complete a labeling task. */
+		/**
+		 * Information required for human workers to complete a labeling task.
+		 * Required
+		 */
 		HumanTaskConfig: HumanTaskConfig;
 		Tags?: Array<Tag>;
 
@@ -2437,7 +2662,10 @@ export namespace MyNS {
 		ValidationSpecification?: ModelPackageValidationSpecification;
 		ModelPackageStatus: DescribeAlgorithmOutputAlgorithmStatus;
 
-		/** Specifies the validation and image scan statuses of the model package. */
+		/**
+		 * Specifies the validation and image scan statuses of the model package.
+		 * Required
+		 */
 		ModelPackageStatusDetails: ModelPackageStatusDetails;
 		CertifyForMarketplace?: boolean;
 	}
@@ -2469,7 +2697,10 @@ export namespace MyNS {
 		CreationTime: Date;
 		LastModifiedTime: Date;
 
-		/** Configures the monitoring schedule and defines the monitoring job. */
+		/**
+		 * Configures the monitoring schedule and defines the monitoring job.
+		 * Required
+		 */
 		MonitoringScheduleConfig: MonitoringScheduleConfig;
 		EndpointName?: string;
 
@@ -2549,13 +2780,19 @@ export namespace MyNS {
 		ProcessingOutputConfig?: ProcessingOutputConfig;
 		ProcessingJobName: string;
 
-		/** Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance. */
+		/**
+		 * Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.
+		 * Required
+		 */
 		ProcessingResources: ProcessingResources;
 
 		/** Specifies a time limit for how long the processing job is allowed to run. */
 		StoppingCondition?: ProcessingStoppingCondition;
 
-		/** Configuration to run a processing job in a specified container image. */
+		/**
+		 * Configuration to run a processing job in a specified container image.
+		 * Required
+		 */
 		AppSpecification: AppSpecification;
 		Environment?: ProcessingEnvironmentMap;
 
@@ -2584,7 +2821,10 @@ export namespace MyNS {
 
 	export interface DescribeSubscribedWorkteamResponse {
 
-		/** Describes a work team of a vendor that does the a labelling job. */
+		/**
+		 * Describes a work team of a vendor that does the a labelling job.
+		 * Required
+		 */
 		SubscribedWorkteam: SubscribedWorkteam;
 	}
 
@@ -2609,14 +2849,20 @@ export namespace MyNS {
 		LabelingJobArn?: string;
 		AutoMLJobArn?: string;
 
-		/** <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.</p> */
+		/**
+		 * <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.</p>
+		 * Required
+		 */
 		ModelArtifacts: ModelArtifacts;
 		TrainingJobStatus: TrialComponentStatusPrimaryStatus;
 		SecondaryStatus: DescribeTrainingJobResponseSecondaryStatus;
 		FailureReason?: string;
 		HyperParameters?: HyperParameters;
 
-		/** <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> */
+		/**
+		 * <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+		 * Required
+		 */
 		AlgorithmSpecification: AlgorithmSpecification;
 		RoleArn?: string;
 		InputDataConfig?: Array<Channel>;
@@ -2624,13 +2870,19 @@ export namespace MyNS {
 		/** Provides information about how to store model training results (model artifacts). */
 		OutputDataConfig?: OutputDataConfig;
 
-		/** Describes the resources, including ML compute instances and ML storage volumes, to use for model training. */
+		/**
+		 * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
+		 * Required
+		 */
 		ResourceConfig: ResourceConfig;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
 		VpcConfig?: VpcConfig;
 
-		/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
+		/**
+		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
+		 * Required
+		 */
 		StoppingCondition: StoppingCondition;
 		CreationTime: Date;
 		TrainingStartTime?: Date;
@@ -2705,13 +2957,19 @@ export namespace MyNS {
 		BatchStrategy?: TransformJobDefinitionBatchStrategy;
 		Environment?: TransformEnvironmentMap;
 
-		/** Describes the input source of a transform job and the way the transform job consumes it. */
+		/**
+		 * Describes the input source of a transform job and the way the transform job consumes it.
+		 * Required
+		 */
 		TransformInput: TransformInput;
 
 		/** Describes the results of a transform job. */
 		TransformOutput?: TransformOutput;
 
-		/** Describes the resources, including ML instance types and ML instance count, to use for transform job. */
+		/**
+		 * Describes the resources, including ML instance types and ML instance count, to use for transform job.
+		 * Required
+		 */
 		TransformResources: TransformResources;
 		CreationTime: Date;
 		TransformStartTime?: Date;
@@ -2833,7 +3091,10 @@ export namespace MyNS {
 
 	export interface DescribeWorkforceResponse {
 
-		/** A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>. */
+		/**
+		 * A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.
+		 * Required
+		 */
 		Workforce: Workforce;
 	}
 
@@ -2860,7 +3121,10 @@ export namespace MyNS {
 
 	export interface DescribeWorkteamResponse {
 
-		/** Provides details about a labeling work team. */
+		/**
+		 * Provides details about a labeling work team.
+		 * Required
+		 */
 		Workteam: Workteam;
 	}
 
@@ -3251,16 +3515,25 @@ export namespace MyNS {
 		HyperParameterTuningJobArn: string;
 		HyperParameterTuningJobStatus: AutoMLCandidateCandidateStatus;
 
-		/** The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>. */
+		/**
+		 * The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
+		 * Required
+		 */
 		Strategy: HyperParameterTuningJobConfigStrategy;
 		CreationTime: Date;
 		HyperParameterTuningEndTime?: Date;
 		LastModifiedTime?: Date;
 
-		/** The numbers of training jobs launched by a hyperparameter tuning job, categorized by status. */
+		/**
+		 * The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
+		 * Required
+		 */
 		TrainingJobStatusCounters: TrainingJobStatusCounters;
 
-		/** Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process. */
+		/**
+		 * Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.
+		 * Required
+		 */
 		ObjectiveStatusCounters: ObjectiveStatusCounters;
 
 		/** Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch. */
@@ -3296,7 +3569,10 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 		LabelingJobStatus: TrialComponentStatusPrimaryStatus;
 
-		/** Provides a breakdown of the number of objects labeled. */
+		/**
+		 * Provides a breakdown of the number of objects labeled.
+		 * Required
+		 */
 		LabelCounters: LabelCounters;
 		WorkteamArn: string;
 		PreHumanTaskLambdaArn: string;
@@ -3781,7 +4057,10 @@ export namespace MyNS {
 		/** The Liquid template for the worker user interface. */
 		UiTemplate?: UiTemplate;
 
-		/** Contains input values for a task. */
+		/**
+		 * Contains input values for a task.
+		 * Required
+		 */
 		Task: RenderableTask;
 		RoleArn: string;
 		HumanTaskUiArn?: string;
@@ -4190,7 +4469,10 @@ export namespace MyNS {
 	export interface UpdateMonitoringScheduleRequest {
 		MonitoringScheduleName: string;
 
-		/** Configures the monitoring schedule and defines the monitoring job. */
+		/**
+		 * Configures the monitoring schedule and defines the monitoring job.
+		 * Required
+		 */
 		MonitoringScheduleConfig: MonitoringScheduleConfig;
 	}
 
@@ -4267,7 +4549,10 @@ export namespace MyNS {
 
 	export interface UpdateWorkforceResponse {
 
-		/** A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>. */
+		/**
+		 * A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.
+		 * Required
+		 */
 		Workforce: Workforce;
 	}
 
@@ -4280,7 +4565,10 @@ export namespace MyNS {
 
 	export interface UpdateWorkteamResponse {
 
-		/** Provides details about a labeling work team. */
+		/**
+		 * Provides details about a labeling work team.
+		 * Required
+		 */
 		Workteam: Workteam;
 	}
 

@@ -248,10 +248,16 @@ export namespace MyNS {
 		timestamp: string;
 		status: string;
 
-		/** Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>. */
+		/**
+		 * Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
+		 * Required
+		 */
 		resourcesSummary: TrustedAdvisorResourcesSummary;
 
-		/** The container for summary information that relates to the category of the Trusted Advisor check. */
+		/**
+		 * The container for summary information that relates to the category of the Trusted Advisor check.
+		 * Required
+		 */
 		categorySpecificSummary: TrustedAdvisorCategorySpecificSummary;
 		flaggedResources: Array<TrustedAdvisorResourceDetail>;
 	}
@@ -311,10 +317,16 @@ export namespace MyNS {
 		status: string;
 		hasFlaggedResources?: boolean;
 
-		/** Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>. */
+		/**
+		 * Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
+		 * Required
+		 */
 		resourcesSummary: TrustedAdvisorResourcesSummary;
 
-		/** The container for summary information that relates to the category of the Trusted Advisor check. */
+		/**
+		 * The container for summary information that relates to the category of the Trusted Advisor check.
+		 * Required
+		 */
 		categorySpecificSummary: TrustedAdvisorCategorySpecificSummary;
 	}
 
@@ -348,7 +360,10 @@ export namespace MyNS {
 	/** The current refresh status of a Trusted Advisor check. */
 	export interface RefreshTrustedAdvisorCheckResponse {
 
-		/** The refresh status of a Trusted Advisor check. */
+		/**
+		 * The refresh status of a Trusted Advisor check.
+		 * Required
+		 */
 		status: TrustedAdvisorCheckRefreshStatus;
 	}
 

@@ -9,10 +9,16 @@ export namespace MyNS {
 	/** The combination of an attribute key and an attribute value. */
 	export interface AttributeKeyAndValue {
 
-		/** A unique identifier for an attribute. */
+		/**
+		 * A unique identifier for an attribute.
+		 * Required
+		 */
 		Key: AttributeKey;
 
-		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
+		/**
+		 * Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value.
+		 * Required
+		 */
 		Value: TypedAttributeValue;
 	}
 
@@ -105,13 +111,22 @@ export namespace MyNS {
 	/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
 	export interface TypedLinkSpecifier {
 
-		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
+		/**
+		 * Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.
+		 * Required
+		 */
 		TypedLinkFacet: TypedLinkSchemaAndFacetName;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		SourceObjectReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetObjectReference: ObjectReference;
 		IdentityAttributeValues: Array<AttributeNameAndValue>;
 	}
@@ -134,7 +149,10 @@ export namespace MyNS {
 	export interface AttributeNameAndValue {
 		AttributeName: string;
 
-		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
+		/**
+		 * Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value.
+		 * Required
+		 */
 		Value: TypedAttributeValue;
 	}
 
@@ -396,7 +414,10 @@ export namespace MyNS {
 	/** Represents the output of a <a>ListObjectAttributes</a> operation. */
 	export interface BatchListObjectAttributes {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -409,7 +430,10 @@ export namespace MyNS {
 	/** Represents the output of a <a>ListObjectChildren</a> operation. */
 	export interface BatchListObjectChildren {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -419,7 +443,10 @@ export namespace MyNS {
 	/** Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListAttachedIndices {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -429,7 +456,10 @@ export namespace MyNS {
 	/** Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListObjectParentPaths {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -439,7 +469,10 @@ export namespace MyNS {
 	/** Retrieves metadata about an object inside a <a>BatchRead</a> operation. For more information, see <a>GetObjectInformation</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchGetObjectInformation {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -447,17 +480,26 @@ export namespace MyNS {
 	/** Retrieves attributes within a facet that are associated with an object inside an <a>BatchRead</a> operation. For more information, see <a>GetObjectAttributes</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchGetObjectAttributes {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: SchemaFacet;
 		AttributeNames: Array<string>;
 	}
 
 	export interface BatchListObjectParents {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -467,7 +509,10 @@ export namespace MyNS {
 	/** Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListObjectPolicies {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -477,7 +522,10 @@ export namespace MyNS {
 	/** Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListPolicyAttachments {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -487,7 +535,10 @@ export namespace MyNS {
 	/** Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchLookupPolicy {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -498,7 +549,10 @@ export namespace MyNS {
 	export interface BatchListIndex {
 		RangesOnIndexedValues?: Array<ObjectAttributeRange>;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: ObjectReference;
 		MaxResults?: number;
 		NextToken?: string;
@@ -534,7 +588,10 @@ export namespace MyNS {
 	/** Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListOutgoingTypedLinks {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
 
@@ -549,7 +606,10 @@ export namespace MyNS {
 	export interface TypedLinkAttributeRange {
 		AttributeName?: string;
 
-		/** A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>. */
+		/**
+		 * A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>.
+		 * Required
+		 */
 		Range: TypedAttributeValueRange;
 	}
 
@@ -557,7 +617,10 @@ export namespace MyNS {
 	/** Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListIncomingTypedLinks {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
 
@@ -571,7 +634,10 @@ export namespace MyNS {
 	/** Retrieves attributes that are associated with a typed link inside a <a>BatchRead</a> operation. For more information, see <a>GetLinkAttributes</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchGetLinkAttributes {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
 		AttributeNames: Array<string>;
 	}
@@ -781,10 +847,16 @@ export namespace MyNS {
 	/** Represents the output of an <a>AttachObject</a> operation. */
 	export interface BatchAttachObject {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ParentReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ChildReference: ObjectReference;
 		LinkName: string;
 	}
@@ -793,7 +865,10 @@ export namespace MyNS {
 	/** Represents the output of a <a>DetachObject</a> operation. */
 	export interface BatchDetachObject {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ParentReference: ObjectReference;
 		LinkName: string;
 		BatchReferenceName?: string;
@@ -803,7 +878,10 @@ export namespace MyNS {
 	/** Represents the output of a <code>BatchUpdate</code> operation.  */
 	export interface BatchUpdateObjectAttributes {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		AttributeUpdates: Array<ObjectAttributeUpdate>;
 	}
@@ -834,7 +912,10 @@ export namespace MyNS {
 	/** Represents the output of a <a>DeleteObject</a> operation. */
 	export interface BatchDeleteObject {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -842,11 +923,17 @@ export namespace MyNS {
 	/** Represents the output of a batch add facet to object operation. */
 	export interface BatchAddFacetToObject {
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: SchemaFacet;
 		ObjectAttributeList: Array<AttributeKeyAndValue>;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -854,10 +941,16 @@ export namespace MyNS {
 	/** A batch operation to remove a facet from an object. */
 	export interface BatchRemoveFacetFromObject {
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: SchemaFacet;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -865,10 +958,16 @@ export namespace MyNS {
 	/** Attaches a policy object to a regular object inside a <a>BatchRead</a> operation. For more information, see <a>AttachPolicy</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchAttachPolicy {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -876,10 +975,16 @@ export namespace MyNS {
 	/** Detaches the specified policy from the specified directory inside a <a>BatchWrite</a> operation. For more information, see <a>DetachPolicy</a> and <a>BatchWriteRequest$Operations</a>. */
 	export interface BatchDetachPolicy {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -899,10 +1004,16 @@ export namespace MyNS {
 	/** Attaches the specified object to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>AttachToIndex</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchAttachToIndex {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: ObjectReference;
 	}
 
@@ -910,10 +1021,16 @@ export namespace MyNS {
 	/** Detaches the specified object from the specified index inside a <a>BatchRead</a> operation. For more information, see <a>DetachFromIndex</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchDetachFromIndex {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: ObjectReference;
 	}
 
@@ -921,13 +1038,22 @@ export namespace MyNS {
 	/** Attaches a typed link to a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>AttachTypedLink</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchAttachTypedLink {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		SourceObjectReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetObjectReference: ObjectReference;
 
-		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
+		/**
+		 * Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.
+		 * Required
+		 */
 		TypedLinkFacet: TypedLinkSchemaAndFacetName;
 		Attributes: Array<AttributeNameAndValue>;
 	}
@@ -936,7 +1062,10 @@ export namespace MyNS {
 	/** Detaches a typed link from a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>DetachTypedLink</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchDetachTypedLink {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
 	}
 
@@ -944,7 +1073,10 @@ export namespace MyNS {
 	/** Updates a given typed link’s attributes inside a <a>BatchRead</a> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <a>UpdateLinkAttributes</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchUpdateLinkAttributes {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
 		AttributeUpdates: Array<LinkAttributeUpdate>;
 	}
@@ -1126,7 +1258,10 @@ export namespace MyNS {
 
 	export interface GetDirectoryResponse {
 
-		/** Directory structure that includes the directory name and directory ARN. */
+		/**
+		 * Directory structure that includes the directory name and directory ARN.
+		 * Required
+		 */
 		Directory: Directory;
 	}
 
@@ -1362,7 +1497,10 @@ export namespace MyNS {
 	/** A typed link facet attribute update. */
 	export interface TypedLinkFacetAttributeUpdate {
 
-		/** A typed link attribute definition. */
+		/**
+		 * A typed link attribute definition.
+		 * Required
+		 */
 		Attribute: TypedLinkAttributeDefinition;
 		Action: ObjectAttributeActionObjectAttributeActionType;
 	}
@@ -1381,11 +1519,17 @@ export namespace MyNS {
 
 	export interface AddFacetToObjectRequest {
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: SchemaFacet;
 		ObjectAttributeList?: Array<AttributeKeyAndValue>;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -1395,41 +1539,68 @@ export namespace MyNS {
 
 	export interface AttachObjectRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ParentReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ChildReference: ObjectReference;
 		LinkName: string;
 	}
 
 	export interface AttachPolicyRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
 	export interface AttachToIndexRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: ObjectReference;
 	}
 
 	export interface AttachTypedLinkRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		SourceObjectReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetObjectReference: ObjectReference;
 
-		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
+		/**
+		 * Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.
+		 * Required
+		 */
 		TypedLinkFacet: TypedLinkSchemaAndFacetName;
 		Attributes: Array<AttributeNameAndValue>;
 	}
@@ -1491,7 +1662,10 @@ export namespace MyNS {
 
 	export interface CreateTypedLinkFacetRequest {
 
-		/** Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API. */
+		/**
+		 * Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API.
+		 * Required
+		 */
 		Facet: TypedLinkFacet;
 	}
 
@@ -1504,7 +1678,10 @@ export namespace MyNS {
 
 	export interface DeleteObjectRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -1517,32 +1694,50 @@ export namespace MyNS {
 
 	export interface DetachFromIndexRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: ObjectReference;
 	}
 
 	export interface DetachObjectRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ParentReference: ObjectReference;
 		LinkName: string;
 	}
 
 	export interface DetachPolicyRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: ObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
 	export interface DetachTypedLinkRequest {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
 	}
 
@@ -1571,7 +1766,10 @@ export namespace MyNS {
 
 	export interface GetLinkAttributesRequest {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
 		AttributeNames: Array<string>;
 		ConsistencyLevel?: ConsistencyLevel;
@@ -1579,17 +1777,26 @@ export namespace MyNS {
 
 	export interface GetObjectAttributesRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: SchemaFacet;
 		AttributeNames: Array<string>;
 	}
 
 	export interface GetObjectInformationRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -1609,7 +1816,10 @@ export namespace MyNS {
 
 	export interface ListAttachedIndicesRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -1639,7 +1849,10 @@ export namespace MyNS {
 
 	export interface ListIncomingTypedLinksRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
 
@@ -1653,7 +1866,10 @@ export namespace MyNS {
 	export interface ListIndexRequest {
 		RangesOnIndexedValues?: Array<ObjectAttributeRange>;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: ObjectReference;
 		MaxResults?: number;
 		NextToken?: string;
@@ -1667,7 +1883,10 @@ export namespace MyNS {
 
 	export interface ListObjectAttributesRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -1678,7 +1897,10 @@ export namespace MyNS {
 
 	export interface ListObjectChildrenRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -1686,7 +1908,10 @@ export namespace MyNS {
 
 	export interface ListObjectParentPathsRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -1694,7 +1919,10 @@ export namespace MyNS {
 
 	export interface ListObjectParentsRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -1703,7 +1931,10 @@ export namespace MyNS {
 
 	export interface ListObjectPoliciesRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -1711,7 +1942,10 @@ export namespace MyNS {
 
 	export interface ListOutgoingTypedLinksRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
 
@@ -1724,7 +1958,10 @@ export namespace MyNS {
 
 	export interface ListPolicyAttachmentsRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -1755,7 +1992,10 @@ export namespace MyNS {
 
 	export interface LookupPolicyRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string;
 		MaxResults?: number;
@@ -1775,10 +2015,16 @@ export namespace MyNS {
 
 	export interface RemoveFacetFromObjectRequest {
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: SchemaFacet;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 	}
 
@@ -1812,14 +2058,20 @@ export namespace MyNS {
 
 	export interface UpdateLinkAttributesRequest {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
 		AttributeUpdates: Array<LinkAttributeUpdate>;
 	}
 
 	export interface UpdateObjectAttributesRequest {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ObjectReference;
 		AttributeUpdates: Array<ObjectAttributeUpdate>;
 	}
@@ -2487,13 +2739,19 @@ export namespace MyNS {
 
 	export interface AddFacetToObjectPutBody {
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: AddFacetToObjectPutBodySchemaFacet;
 
 		/** Attributes on the facet that you are adding to the object. */
 		ObjectAttributeList?: Array<AttributeKeyAndValue>;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: AddFacetToObjectPutBodyObjectReference;
 	}
 
@@ -2508,20 +2766,30 @@ export namespace MyNS {
 
 	export interface ApplySchemaPutBody {
 
-		/** Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <a>arns</a>. */
+		/**
+		 * Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <a>arns</a>.
+		 * Required
+		 */
 		PublishedSchemaArn: string;
 	}
 
 	export interface AttachObjectPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ParentReference: AttachObjectPutBodyParentReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ChildReference: AttachObjectPutBodyChildReference;
 
 		/**
 		 * The link name with which the child object is attached to the parent.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
@@ -2539,10 +2807,16 @@ export namespace MyNS {
 
 	export interface AttachPolicyPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: AttachPolicyPutBodyPolicyReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: AttachPolicyPutBodyObjectReference;
 	}
 
@@ -2556,10 +2830,16 @@ export namespace MyNS {
 
 	export interface AttachToIndexPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: AttachToIndexPutBodyIndexReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: AttachToIndexPutBodyTargetReference;
 	}
 
@@ -2573,16 +2853,28 @@ export namespace MyNS {
 
 	export interface AttachTypedLinkPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		SourceObjectReference: AttachTypedLinkPutBodySourceObjectReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetObjectReference: AttachTypedLinkPutBodyTargetObjectReference;
 
-		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
+		/**
+		 * Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.
+		 * Required
+		 */
 		TypedLinkFacet: AttachTypedLinkPutBodyTypedLinkFacet;
 
-		/** A set of attributes that are associated with the typed link. */
+		/**
+		 * A set of attributes that are associated with the typed link.
+		 * Required
+		 */
 		Attributes: Array<AttributeNameAndValue>;
 	}
 
@@ -2601,13 +2893,19 @@ export namespace MyNS {
 
 	export interface BatchReadPostBody {
 
-		/** A list of operations that are part of the batch. */
+		/**
+		 * A list of operations that are part of the batch.
+		 * Required
+		 */
 		Operations: Array<BatchReadOperation>;
 	}
 
 	export interface BatchWritePutBody {
 
-		/** A list of operations that are part of the batch. */
+		/**
+		 * A list of operations that are part of the batch.
+		 * Required
+		 */
 		Operations: Array<BatchWriteOperation>;
 	}
 
@@ -2615,6 +2913,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the <a>Directory</a>. Should be unique per account, per region.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -2626,6 +2925,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the <a>Facet</a>, which is unique for a given schema.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -2644,10 +2944,16 @@ export namespace MyNS {
 
 	export interface CreateIndexPutBody {
 
-		/** Specifies the attributes that should be indexed on. Currently only a single attribute is supported. */
+		/**
+		 * Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
+		 * Required
+		 */
 		OrderedIndexedAttributeList: Array<AttributeKey>;
 
-		/** Indicates whether the attribute that is being indexed has unique values or not. */
+		/**
+		 * Indicates whether the attribute that is being indexed has unique values or not.
+		 * Required
+		 */
 		IsUnique: boolean;
 
 		/** The reference that identifies an object. */
@@ -2668,7 +2974,10 @@ export namespace MyNS {
 
 	export interface CreateObjectPutBody {
 
-		/** A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details. */
+		/**
+		 * A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.
+		 * Required
+		 */
 		SchemaFacets: Array<SchemaFacet>;
 
 		/** The attribute map whose attribute ARN contains the key and attribute value as the map value. */
@@ -2694,6 +3003,7 @@ export namespace MyNS {
 
 		/**
 		 * The name that is associated with the schema. This is unique to each account and in each region.
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -2703,7 +3013,10 @@ export namespace MyNS {
 
 	export interface CreateTypedLinkFacetPutBody {
 
-		/** Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API. */
+		/**
+		 * Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API.
+		 * Required
+		 */
 		Facet: CreateTypedLinkFacetPutBodyFacet;
 	}
 
@@ -2717,6 +3030,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the facet to delete.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -2726,7 +3040,10 @@ export namespace MyNS {
 
 	export interface DeleteObjectPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: DeleteObjectPutBodyObjectReference;
 	}
 
@@ -2738,6 +3055,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the typed link facet.
+		 * Required
 		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
@@ -2745,10 +3063,16 @@ export namespace MyNS {
 
 	export interface DetachFromIndexPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: DetachFromIndexPutBodyIndexReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: DetachFromIndexPutBodyTargetReference;
 	}
 
@@ -2762,11 +3086,15 @@ export namespace MyNS {
 
 	export interface DetachObjectPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ParentReference: DetachObjectPutBodyParentReference;
 
 		/**
 		 * The link name associated with the object that needs to be detached.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
@@ -2780,10 +3108,16 @@ export namespace MyNS {
 
 	export interface DetachPolicyPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: DetachPolicyPutBodyPolicyReference;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: DetachPolicyPutBodyObjectReference;
 	}
 
@@ -2797,7 +3131,10 @@ export namespace MyNS {
 
 	export interface DetachTypedLinkPutBody {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: DetachTypedLinkPutBodyTypedLinkSpecifier;
 	}
 
@@ -2816,7 +3153,10 @@ export namespace MyNS {
 
 	export interface GetAppliedSchemaVersionPostBody {
 
-		/** The ARN of the applied schema. */
+		/**
+		 * The ARN of the applied schema.
+		 * Required
+		 */
 		SchemaArn: string;
 	}
 
@@ -2824,6 +3164,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the facet to retrieve.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -2835,6 +3176,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the facet.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -2850,10 +3192,16 @@ export namespace MyNS {
 
 	export interface GetLinkAttributesPostBody {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: GetLinkAttributesPostBodyTypedLinkSpecifier;
 
-		/** A list of attribute names whose values will be retrieved. */
+		/**
+		 * A list of attribute names whose values will be retrieved.
+		 * Required
+		 */
 		AttributeNames: Array<string>;
 
 		/** The consistency level at which to retrieve the attributes on a typed link. */
@@ -2875,13 +3223,22 @@ export namespace MyNS {
 
 	export interface GetObjectAttributesPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: GetObjectAttributesPostBodyObjectReference;
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: GetObjectAttributesPostBodySchemaFacet;
 
-		/** List of attribute names whose values will be retrieved. */
+		/**
+		 * List of attribute names whose values will be retrieved.
+		 * Required
+		 */
 		AttributeNames: Array<string>;
 	}
 
@@ -2896,7 +3253,10 @@ export namespace MyNS {
 
 	export interface GetObjectInformationPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: GetObjectInformationPostBodyObjectReference;
 	}
 
@@ -2906,7 +3266,10 @@ export namespace MyNS {
 
 	export interface PutSchemaFromJsonPutBody {
 
-		/** The replacement JSON schema. */
+		/**
+		 * The replacement JSON schema.
+		 * Required
+		 */
 		Document: string;
 	}
 
@@ -2914,6 +3277,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the typed link facet.
+		 * Required
 		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
@@ -2921,7 +3285,10 @@ export namespace MyNS {
 
 	export interface ListAppliedSchemaArnsPostBody {
 
-		/** The ARN of the directory you are listing. */
+		/**
+		 * The ARN of the directory you are listing.
+		 * Required
+		 */
 		DirectoryArn: string;
 
 		/** The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version. */
@@ -2939,7 +3306,10 @@ export namespace MyNS {
 
 	export interface ListAttachedIndicesPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		TargetReference: ListAttachedIndicesPostBodyTargetReference;
 
 		/** The pagination token. */
@@ -2987,6 +3357,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the facet whose attributes will be retrieved.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -3017,7 +3388,10 @@ export namespace MyNS {
 
 	export interface ListIncomingTypedLinksPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ListIncomingTypedLinksPostBodyObjectReference;
 
 		/** Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. */
@@ -3053,7 +3427,10 @@ export namespace MyNS {
 		/** Specifies the ranges of indexed values that you want to query. */
 		RangesOnIndexedValues?: Array<ObjectAttributeRange>;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		IndexReference: ListIndexPostBodyIndexReference;
 
 		/**
@@ -3087,7 +3464,10 @@ export namespace MyNS {
 
 	export interface ListObjectAttributesPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ListObjectAttributesPostBodyObjectReference;
 
 		/** The pagination token. */
@@ -3114,7 +3494,10 @@ export namespace MyNS {
 
 	export interface ListObjectChildrenPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ListObjectChildrenPostBodyObjectReference;
 
 		/** The pagination token. */
@@ -3133,7 +3516,10 @@ export namespace MyNS {
 
 	export interface ListObjectParentPathsPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ListObjectParentPathsPostBodyObjectReference;
 
 		/** The pagination token. */
@@ -3152,7 +3538,10 @@ export namespace MyNS {
 
 	export interface ListObjectParentsPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ListObjectParentsPostBodyObjectReference;
 
 		/** The pagination token. */
@@ -3174,7 +3563,10 @@ export namespace MyNS {
 
 	export interface ListObjectPoliciesPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ListObjectPoliciesPostBodyObjectReference;
 
 		/** The pagination token. */
@@ -3193,7 +3585,10 @@ export namespace MyNS {
 
 	export interface ListOutgoingTypedLinksPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: ListOutgoingTypedLinksPostBodyObjectReference;
 
 		/** Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. */
@@ -3226,7 +3621,10 @@ export namespace MyNS {
 
 	export interface ListPolicyAttachmentsPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		PolicyReference: ListPolicyAttachmentsPostBodyPolicyReference;
 
 		/** The pagination token. */
@@ -3260,7 +3658,10 @@ export namespace MyNS {
 
 	export interface ListTagsForResourcePostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
+		 * Required
+		 */
 		ResourceArn: string;
 
 		/** The pagination token. This is for future use. Currently pagination is not supported for tagging. */
@@ -3277,6 +3678,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the typed link facet.
+		 * Required
 		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
@@ -3305,7 +3707,10 @@ export namespace MyNS {
 
 	export interface LookupPolicyPostBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: LookupPolicyPostBodyObjectReference;
 
 		/** The token to request the next page of results. */
@@ -3326,6 +3731,7 @@ export namespace MyNS {
 
 		/**
 		 * The major version under which the schema will be published. Schemas have both a major and minor version associated with them.
+		 * Required
 		 * Max length: 10
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -3351,10 +3757,16 @@ export namespace MyNS {
 
 	export interface RemoveFacetFromObjectPutBody {
 
-		/** A facet. */
+		/**
+		 * A facet.
+		 * Required
+		 */
 		SchemaFacet: RemoveFacetFromObjectPutBodySchemaFacet;
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: RemoveFacetFromObjectPutBodyObjectReference;
 	}
 
@@ -3369,28 +3781,46 @@ export namespace MyNS {
 
 	export interface TagResourcePutBody {
 
-		/** The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
+		 * Required
+		 */
 		ResourceArn: string;
 
-		/** A list of tag key-value pairs. */
+		/**
+		 * A list of tag key-value pairs.
+		 * Required
+		 */
 		Tags: Array<Tag>;
 	}
 
 	export interface UntagResourcePutBody {
 
-		/** The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
+		 * Required
+		 */
 		ResourceArn: string;
 
-		/** Keys of the tag that need to be removed from the resource. */
+		/**
+		 * Keys of the tag that need to be removed from the resource.
+		 * Required
+		 */
 		TagKeys: Array<string>;
 	}
 
 	export interface UpdateLinkAttributesPostBody {
 
-		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
+		/**
+		 * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+		 * Required
+		 */
 		TypedLinkSpecifier: UpdateLinkAttributesPostBodyTypedLinkSpecifier;
 
-		/** The attributes update structure. */
+		/**
+		 * The attributes update structure.
+		 * Required
+		 */
 		AttributeUpdates: Array<LinkAttributeUpdate>;
 	}
 
@@ -3409,10 +3839,16 @@ export namespace MyNS {
 
 	export interface UpdateObjectAttributesPutBody {
 
-		/** The reference that identifies an object. */
+		/**
+		 * The reference that identifies an object.
+		 * Required
+		 */
 		ObjectReference: UpdateObjectAttributesPutBodyObjectReference;
 
-		/** The attributes update structure. */
+		/**
+		 * The attributes update structure.
+		 * Required
+		 */
 		AttributeUpdates: Array<ObjectAttributeUpdate>;
 	}
 
@@ -3424,6 +3860,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the schema.
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
@@ -3435,23 +3872,36 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the typed link facet.
+		 * Required
 		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 
-		/** Attributes update structure. */
+		/**
+		 * Attributes update structure.
+		 * Required
+		 */
 		AttributeUpdates: Array<TypedLinkFacetAttributeUpdate>;
 
-		/** The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>. */
+		/**
+		 * The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.
+		 * Required
+		 */
 		IdentityAttributeOrder: Array<string>;
 	}
 
 	export interface UpgradeAppliedSchemaPutBody {
 
-		/** The revision of the published schema to upgrade the directory to. */
+		/**
+		 * The revision of the published schema to upgrade the directory to.
+		 * Required
+		 */
 		PublishedSchemaArn: string;
 
-		/** The ARN for the directory to which the upgraded schema will be applied. */
+		/**
+		 * The ARN for the directory to which the upgraded schema will be applied.
+		 * Required
+		 */
 		DirectoryArn: string;
 
 		/** Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional. */
@@ -3460,14 +3910,21 @@ export namespace MyNS {
 
 	export interface UpgradePublishedSchemaPutBody {
 
-		/** The ARN of the development schema with the changes used for the upgrade. */
+		/**
+		 * The ARN of the development schema with the changes used for the upgrade.
+		 * Required
+		 */
 		DevelopmentSchemaArn: string;
 
-		/** The ARN of the published schema to be upgraded. */
+		/**
+		 * The ARN of the published schema to be upgraded.
+		 * Required
+		 */
 		PublishedSchemaArn: string;
 
 		/**
 		 * Identifies the minor version of the published schema that will be created. This parameter is NOT optional.
+		 * Required
 		 * Max length: 10
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$

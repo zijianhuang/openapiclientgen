@@ -518,7 +518,10 @@ export namespace MyNS {
 	export interface UpdateServiceRequest {
 		Id: string;
 
-		/** A complex type that contains changes to an existing service. */
+		/**
+		 * A complex type that contains changes to an existing service.
+		 * Required
+		 */
 		Service: ServiceChange;
 	}
 

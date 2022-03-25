@@ -74,7 +74,10 @@ export namespace MyNS {
 	export interface CountOpenWorkflowExecutionsInput {
 		domain: string;
 
-		/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> */
+		/**
+		 * Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code>
+		 * Required
+		 */
 		startTimeFilter: ExecutionTimeFilter;
 
 		/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
@@ -97,7 +100,10 @@ export namespace MyNS {
 	export interface CountPendingActivityTasksInput {
 		domain: string;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 	}
 
@@ -110,14 +116,20 @@ export namespace MyNS {
 	export interface CountPendingDecisionTasksInput {
 		domain: string;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 	}
 
 	export interface DeprecateActivityTypeInput {
 		domain: string;
 
-		/** Represents an activity type. */
+		/**
+		 * Represents an activity type.
+		 * Required
+		 */
 		activityType: ActivityType;
 	}
 
@@ -141,7 +153,10 @@ export namespace MyNS {
 	export interface DeprecateWorkflowTypeInput {
 		domain: string;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 	}
 
@@ -156,10 +171,16 @@ export namespace MyNS {
 	/** Detailed information about an activity type. */
 	export interface ActivityTypeDetail {
 
-		/** Detailed information about an activity type. */
+		/**
+		 * Detailed information about an activity type.
+		 * Required
+		 */
 		typeInfo: ActivityTypeInfo;
 
-		/** Configuration settings registered with the activity type. */
+		/**
+		 * Configuration settings registered with the activity type.
+		 * Required
+		 */
 		configuration: ActivityTypeConfiguration;
 	}
 
@@ -167,7 +188,10 @@ export namespace MyNS {
 	/** Detailed information about an activity type. */
 	export interface ActivityTypeInfo {
 
-		/** Represents an activity type. */
+		/**
+		 * Represents an activity type.
+		 * Required
+		 */
 		activityType: ActivityType;
 		status: ActivityTypeInfoStatus;
 		description?: string;
@@ -193,7 +217,10 @@ export namespace MyNS {
 	export interface DescribeActivityTypeInput {
 		domain: string;
 
-		/** Represents an activity type. */
+		/**
+		 * Represents an activity type.
+		 * Required
+		 */
 		activityType: ActivityType;
 	}
 
@@ -201,10 +228,16 @@ export namespace MyNS {
 	/** Contains details of a domain. */
 	export interface DomainDetail {
 
-		/** Contains general information about a domain. */
+		/**
+		 * Contains general information about a domain.
+		 * Required
+		 */
 		domainInfo: DomainInfo;
 
-		/** Contains the configuration settings of a domain. */
+		/**
+		 * Contains the configuration settings of a domain.
+		 * Required
+		 */
 		configuration: DomainConfiguration;
 	}
 
@@ -231,13 +264,22 @@ export namespace MyNS {
 	/** Contains details about a workflow execution. */
 	export interface WorkflowExecutionDetail {
 
-		/** Contains information about a workflow execution. */
+		/**
+		 * Contains information about a workflow execution.
+		 * Required
+		 */
 		executionInfo: WorkflowExecutionInfo;
 
-		/** The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution. */
+		/**
+		 * The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.
+		 * Required
+		 */
 		executionConfiguration: WorkflowExecutionConfiguration;
 
-		/** Contains the counts of open tasks, child workflow executions and timers for a workflow execution. */
+		/**
+		 * Contains the counts of open tasks, child workflow executions and timers for a workflow execution.
+		 * Required
+		 */
 		openCounts: WorkflowExecutionOpenCounts;
 		latestActivityTaskTimestamp?: Date;
 		latestExecutionContext?: string;
@@ -247,10 +289,16 @@ export namespace MyNS {
 	/** Contains information about a workflow execution. */
 	export interface WorkflowExecutionInfo {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		execution: WorkflowExecution;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		startTimestamp: Date;
 		closeTimestamp?: Date;
@@ -278,7 +326,10 @@ export namespace MyNS {
 		taskStartToCloseTimeout: string;
 		executionStartToCloseTimeout: string;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 		taskPriority?: string;
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
@@ -300,7 +351,10 @@ export namespace MyNS {
 	export interface DescribeWorkflowExecutionInput {
 		domain: string;
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		execution: WorkflowExecution;
 	}
 
@@ -308,10 +362,16 @@ export namespace MyNS {
 	/** Contains details about a workflow type. */
 	export interface WorkflowTypeDetail {
 
-		/** Contains information about a workflow type. */
+		/**
+		 * Contains information about a workflow type.
+		 * Required
+		 */
 		typeInfo: WorkflowTypeInfo;
 
-		/** The configuration settings of a workflow type. */
+		/**
+		 * The configuration settings of a workflow type.
+		 * Required
+		 */
 		configuration: WorkflowTypeConfiguration;
 	}
 
@@ -319,7 +379,10 @@ export namespace MyNS {
 	/** Contains information about a workflow type. */
 	export interface WorkflowTypeInfo {
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		status: ActivityTypeInfoStatus;
 		description?: string;
@@ -343,7 +406,10 @@ export namespace MyNS {
 	export interface DescribeWorkflowTypeInput {
 		domain: string;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 	}
 
@@ -534,11 +600,17 @@ export namespace MyNS {
 		taskStartToCloseTimeout?: string;
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 		taskPriority?: string;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		tagList?: Array<string>;
 		continuedExecutionRunId?: string;
@@ -611,14 +683,20 @@ export namespace MyNS {
 		newExecutionRunId: string;
 		executionStartToCloseTimeout?: string;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 		taskPriority?: string;
 		taskStartToCloseTimeout?: string;
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
 		tagList?: Array<string>;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		lambdaRole?: string;
 	}
@@ -659,7 +737,10 @@ export namespace MyNS {
 	/** Provides details about the <code>DecisionTaskScheduled</code> event. */
 	export interface DecisionTaskScheduledEventAttributes {
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 		taskPriority?: string;
 		startToCloseTimeout?: string;
@@ -692,7 +773,10 @@ export namespace MyNS {
 	/** Provides the details of the <code>ActivityTaskScheduled</code> event. */
 	export interface ActivityTaskScheduledEventAttributes {
 
-		/** Represents an activity type. */
+		/**
+		 * Represents an activity type.
+		 * Required
+		 */
 		activityType: ActivityType;
 		activityId: string;
 		input?: string;
@@ -701,7 +785,10 @@ export namespace MyNS {
 		scheduleToCloseTimeout?: string;
 		startToCloseTimeout?: string;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 		taskPriority?: string;
 		decisionTaskCompletedEventId: number;
@@ -817,13 +904,19 @@ export namespace MyNS {
 	export interface StartChildWorkflowExecutionInitiatedEventAttributes {
 		workflowId: string;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		control?: string;
 		input?: string;
 		executionStartToCloseTimeout?: string;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 		taskPriority?: string;
 		decisionTaskCompletedEventId: number;
@@ -837,10 +930,16 @@ export namespace MyNS {
 	/** Provides the details of the <code>ChildWorkflowExecutionStarted</code> event. */
 	export interface ChildWorkflowExecutionStartedEventAttributes {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		initiatedEventId: number;
 	}
@@ -849,10 +948,16 @@ export namespace MyNS {
 	/** Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event. */
 	export interface ChildWorkflowExecutionCompletedEventAttributes {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		result?: string;
 		initiatedEventId: number;
@@ -863,10 +968,16 @@ export namespace MyNS {
 	/** Provides the details of the <code>ChildWorkflowExecutionFailed</code> event. */
 	export interface ChildWorkflowExecutionFailedEventAttributes {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		reason?: string;
 		details?: string;
@@ -878,10 +989,16 @@ export namespace MyNS {
 	/** Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event. */
 	export interface ChildWorkflowExecutionTimedOutEventAttributes {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		timeoutType: WorkflowExecutionTimedOutEventAttributesTimeoutType;
 		initiatedEventId: number;
@@ -892,10 +1009,16 @@ export namespace MyNS {
 	/** Provide details of the <code>ChildWorkflowExecutionCanceled</code> event. */
 	export interface ChildWorkflowExecutionCanceledEventAttributes {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		details?: string;
 		initiatedEventId: number;
@@ -906,10 +1029,16 @@ export namespace MyNS {
 	/** Provides the details of the <code>ChildWorkflowExecutionTerminated</code> event. */
 	export interface ChildWorkflowExecutionTerminatedEventAttributes {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		initiatedEventId: number;
 		startedEventId: number;
@@ -930,7 +1059,10 @@ export namespace MyNS {
 	/** Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event. */
 	export interface ExternalWorkflowExecutionSignaledEventAttributes {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 		initiatedEventId: number;
 	}
@@ -952,7 +1084,10 @@ export namespace MyNS {
 	/** Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event. */
 	export interface ExternalWorkflowExecutionCancelRequestedEventAttributes {
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 		initiatedEventId: number;
 	}
@@ -983,7 +1118,10 @@ export namespace MyNS {
 	/** Provides the details of the <code>ScheduleActivityTaskFailed</code> event. */
 	export interface ScheduleActivityTaskFailedEventAttributes {
 
-		/** Represents an activity type. */
+		/**
+		 * Represents an activity type.
+		 * Required
+		 */
 		activityType: ActivityType;
 		activityId: string;
 		cause: ScheduleActivityTaskFailedEventAttributesCause;
@@ -1026,7 +1164,10 @@ export namespace MyNS {
 	/** Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event. */
 	export interface StartChildWorkflowExecutionFailedEventAttributes {
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		cause: StartChildWorkflowExecutionFailedEventAttributesCause;
 		workflowId: string;
@@ -1103,7 +1244,10 @@ export namespace MyNS {
 	export interface GetWorkflowExecutionHistoryInput {
 		domain: string;
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		execution: WorkflowExecution;
 		nextPageToken?: string;
 		maximumPageSize?: number;
@@ -1175,7 +1319,10 @@ export namespace MyNS {
 	export interface ListOpenWorkflowExecutionsInput {
 		domain: string;
 
-		/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> */
+		/**
+		 * Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code>
+		 * Required
+		 */
 		startTimeFilter: ExecutionTimeFilter;
 
 		/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
@@ -1232,10 +1379,16 @@ export namespace MyNS {
 		activityId: string;
 		startedEventId: number;
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 
-		/** Represents an activity type. */
+		/**
+		 * Represents an activity type.
+		 * Required
+		 */
 		activityType: ActivityType;
 		input?: string;
 	}
@@ -1243,7 +1396,10 @@ export namespace MyNS {
 	export interface PollForActivityTaskInput {
 		domain: string;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 		identity?: string;
 	}
@@ -1254,10 +1410,16 @@ export namespace MyNS {
 		taskToken: string;
 		startedEventId: number;
 
-		/** Represents a workflow execution. */
+		/**
+		 * Represents a workflow execution.
+		 * Required
+		 */
 		workflowExecution: WorkflowExecution;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		events: Array<HistoryEvent>;
 		nextPageToken?: string;
@@ -1267,7 +1429,10 @@ export namespace MyNS {
 	export interface PollForDecisionTaskInput {
 		domain: string;
 
-		/** Represents a task list. */
+		/**
+		 * Represents a task list.
+		 * Required
+		 */
 		taskList: TaskList;
 		identity?: string;
 		nextPageToken?: string;
@@ -1413,7 +1578,10 @@ export namespace MyNS {
 	/** <p>Provides the details of the <code>ScheduleActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p> <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface ScheduleActivityTaskDecisionAttributes {
 
-		/** Represents an activity type. */
+		/**
+		 * Represents an activity type.
+		 * Required
+		 */
 		activityType: ActivityType;
 		activityId: string;
 		control?: string;
@@ -1512,7 +1680,10 @@ export namespace MyNS {
 	/** <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tagList.member.N</code> – The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface StartChildWorkflowExecutionDecisionAttributes {
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 		workflowId: string;
 		control?: string;
@@ -1556,7 +1727,10 @@ export namespace MyNS {
 		domain: string;
 		workflowId: string;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 
 		/** Represents a task list. */
@@ -1593,7 +1767,10 @@ export namespace MyNS {
 	export interface UndeprecateActivityTypeInput {
 		domain: string;
 
-		/** Represents an activity type. */
+		/**
+		 * Represents an activity type.
+		 * Required
+		 */
 		activityType: ActivityType;
 	}
 
@@ -1604,7 +1781,10 @@ export namespace MyNS {
 	export interface UndeprecateWorkflowTypeInput {
 		domain: string;
 
-		/** Represents a workflow type. */
+		/**
+		 * Represents a workflow type.
+		 * Required
+		 */
 		workflowType: WorkflowType;
 	}
 

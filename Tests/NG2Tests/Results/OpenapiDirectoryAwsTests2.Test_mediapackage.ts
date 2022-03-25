@@ -137,7 +137,10 @@ export namespace MyNS {
 	export interface CmafEncryption {
 		KeyRotationIntervalSeconds?: number;
 
-		/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
+		/**
+		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+		 * Required
+		 */
 		SpekeKeyProvider: SpekeKeyProvider;
 	}
 
@@ -226,7 +229,10 @@ export namespace MyNS {
 	export interface DashEncryption {
 		KeyRotationIntervalSeconds?: number;
 
-		/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
+		/**
+		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+		 * Required
+		 */
 		SpekeKeyProvider: SpekeKeyProvider;
 	}
 
@@ -283,7 +289,10 @@ export namespace MyNS {
 		KeyRotationIntervalSeconds?: number;
 		RepeatExtXKey?: boolean;
 
-		/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
+		/**
+		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+		 * Required
+		 */
 		SpekeKeyProvider: SpekeKeyProvider;
 	}
 
@@ -306,7 +315,10 @@ export namespace MyNS {
 	/** A Microsoft Smooth Streaming (MSS) encryption configuration. */
 	export interface MssEncryption {
 
-		/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
+		/**
+		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+		 * Required
+		 */
 		SpekeKeyProvider: SpekeKeyProvider;
 	}
 
@@ -618,6 +630,7 @@ export namespace MyNS {
 
 		/**
 		 * Configuration parameters for where in an S3 bucket to place the harvested content
+		 * Required
 		 */
 		S3Destination: S3Destination;
 		StartTime: string;
@@ -933,6 +946,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the Channel. The ID must be unique within the region and it
 		 * cannot be changed after a Channel is created.
+		 * Required
 		 */
 		id: string;
 
@@ -944,28 +958,33 @@ export namespace MyNS {
 
 		/**
 		 * The end of the time-window which will be harvested
+		 * Required
 		 */
 		endTime: string;
 
 		/**
 		 * The ID of the HarvestJob. The ID must be unique within the region
 		 * and it cannot be changed after the HarvestJob is submitted
+		 * Required
 		 */
 		id: string;
 
 		/**
 		 * The ID of the OriginEndpoint that the HarvestJob will harvest from.
 		 * This cannot be changed after the HarvestJob is submitted.
+		 * Required
 		 */
 		originEndpointId: string;
 
 		/**
 		 * Configuration parameters for where in an S3 bucket to place the harvested content
+		 * Required
 		 */
 		s3Destination: CreateHarvestJobPostBodyS3Destination;
 
 		/**
 		 * The start of the time-window which will be harvested
+		 * Required
 		 */
 		startTime: string;
 	}
@@ -984,6 +1003,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the Channel that the OriginEndpoint will be associated with.
 		 * This cannot be changed after the OriginEndpoint is created.
+		 * Required
 		 */
 		channelId: string;
 
@@ -1002,6 +1022,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the OriginEndpoint.  The ID must be unique within the region
 		 * and it cannot be changed after the OriginEndpoint is created.
+		 * Required
 		 */
 		id: string;
 

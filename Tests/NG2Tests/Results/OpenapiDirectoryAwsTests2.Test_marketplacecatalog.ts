@@ -126,7 +126,10 @@ export namespace MyNS {
 	export interface Change {
 		ChangeType: string;
 
-		/** A product entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. */
+		/**
+		 * A product entity contains data that describes your product, its supported features, and how it can be used or launched by your customer.
+		 * Required
+		 */
 		Entity: Entity;
 		Details: string;
 	}
@@ -254,6 +257,7 @@ export namespace MyNS {
 
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z]+$
@@ -295,6 +299,7 @@ export namespace MyNS {
 
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z]+$
@@ -303,6 +308,7 @@ export namespace MyNS {
 
 		/**
 		 * The type of entities to retrieve.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z]+$
@@ -344,6 +350,7 @@ export namespace MyNS {
 
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z]+$
@@ -352,6 +359,7 @@ export namespace MyNS {
 
 		/**
 		 * Array of <code>change</code> object.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 20
 		 */

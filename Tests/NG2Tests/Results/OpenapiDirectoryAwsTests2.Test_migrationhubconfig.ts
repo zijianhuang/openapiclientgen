@@ -31,7 +31,10 @@ export namespace MyNS {
 	export interface CreateHomeRegionControlRequest {
 		HomeRegion: string;
 
-		/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
+		/**
+		 * The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.
+		 * Required
+		 */
 		Target: Target;
 		DryRun?: boolean;
 	}

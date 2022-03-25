@@ -272,6 +272,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p> <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
@@ -281,6 +282,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the behavior graph to invite the member accounts to contribute their data to.
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
@@ -294,6 +296,7 @@ export namespace MyNS {
 
 		/**
 		 * The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the account list contains the account identifier and the AWS account root user email address.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -304,6 +307,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the behavior graph to disable.
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
@@ -313,12 +317,14 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the behavior graph to delete members from.
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 
 		/**
 		 * The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -329,6 +335,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ARN of the behavior graph to remove the member account from.</p> <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
@@ -338,12 +345,14 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the behavior graph for which to request the member details.
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 
 		/**
 		 * <p>The list of AWS account identifiers for the member account for which to return member details.</p> <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -388,6 +397,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the behavior graph for which to retrieve the list of member accounts.
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
@@ -411,6 +421,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ARN of the behavior graph to reject the invitation to.</p> <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
@@ -420,12 +431,14 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the behavior graph.
+		 * Required
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 
 		/**
 		 * <p>The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: ^[0-9]+$

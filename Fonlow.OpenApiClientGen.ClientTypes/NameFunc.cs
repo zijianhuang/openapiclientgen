@@ -67,11 +67,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				b = "_" + b;
 			}
 
-			//if (settings?.TitleCaseEnumValueNames == true && !b.StartsWith("_"))not working well, the references to default value and api parameters not yet valid.
-			//{
-			//	b = System.Globalization.CultureInfo.InvariantCulture.TextInfo.ToTitleCase(b);
-			//}
-
 			b = b.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
 						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
 						.Replace(":", "")//atlassian api has this.

@@ -93,16 +93,25 @@ export namespace MyNS {
 
 	export interface Address {
 
-		/** Address line 1 for employee home address */
+		/**
+		 * Address line 1 for employee home address
+		 * Required
+		 */
 		addressLine1: string;
 
 		/** Address line 2 for employee home address */
 		addressLine2?: string;
 
-		/** Suburb for employee home address */
+		/**
+		 * Suburb for employee home address
+		 * Required
+		 */
 		city: string;
 
-		/** PostCode for employee home address */
+		/**
+		 * PostCode for employee home address
+		 * Required
+		 */
 		postCode: string;
 
 		/** Country of HomeAddress */
@@ -230,16 +239,28 @@ export namespace MyNS {
 		/** The Xero identifier for LeaveType */
 		leaveID?: string;
 
-		/** The Xero identifier for LeaveType */
+		/**
+		 * The Xero identifier for LeaveType
+		 * Required
+		 */
 		leaveTypeID: string;
 
-		/** The description of the leave  (max length = 50) */
+		/**
+		 * The description of the leave  (max length = 50)
+		 * Required
+		 */
 		description: string;
 
-		/** Start date of the leave (YYYY-MM-DD) */
+		/**
+		 * Start date of the leave (YYYY-MM-DD)
+		 * Required
+		 */
 		startDate: Date;
 
-		/** End date of the leave (YYYY-MM-DD) */
+		/**
+		 * End date of the leave (YYYY-MM-DD)
+		 * Required
+		 */
 		endDate: Date;
 
 		/** The leave period information. The StartDate, EndDate and NumberOfUnits needs to be specified when you do not want to calculate NumberOfUnits automatically. Using incorrect period StartDate and EndDate will result in automatic computation of the NumberOfUnits. */
@@ -376,16 +397,28 @@ export namespace MyNS {
 		/** The unique identifier (guid) of a statutory leave */
 		statutoryLeaveID?: string;
 
-		/** The unique identifier (guid) of the employee */
+		/**
+		 * The unique identifier (guid) of the employee
+		 * Required
+		 */
 		employeeID: string;
 
-		/** The unique identifier (guid) of the "Statutory Sick Leave (non-pensionable)" pay item */
+		/**
+		 * The unique identifier (guid) of the "Statutory Sick Leave (non-pensionable)" pay item
+		 * Required
+		 */
 		leaveTypeID: string;
 
-		/** The date when the leave starts */
+		/**
+		 * The date when the leave starts
+		 * Required
+		 */
 		startDate: Date;
 
-		/** The date when the leave ends */
+		/**
+		 * The date when the leave ends
+		 * Required
+		 */
 		endDate: Date;
 
 		/** the type of statutory leave */
@@ -394,13 +427,22 @@ export namespace MyNS {
 		/** the type of statutory leave */
 		status?: string;
 
-		/** The days of the work week the employee is scheduled to work at the time the leave is taken */
+		/**
+		 * The days of the work week the employee is scheduled to work at the time the leave is taken
+		 * Required
+		 */
 		workPattern: Array<string>;
 
-		/** Whether the sick leave was pregnancy related */
+		/**
+		 * Whether the sick leave was pregnancy related
+		 * Required
+		 */
 		isPregnancyRelated: boolean;
 
-		/** Whether the employee provided sufficent notice and documentation as required by the employer supporting the sick leave request */
+		/**
+		 * Whether the employee provided sufficent notice and documentation as required by the employer supporting the sick leave request
+		 * Required
+		 */
 		sufficientNotice: boolean;
 
 		/** Whether the leave was entitled to receive payment */
@@ -440,10 +482,16 @@ export namespace MyNS {
 
 	export interface EmployeeLeaveType {
 
-		/** The Xero identifier for leave type */
+		/**
+		 * The Xero identifier for leave type
+		 * Required
+		 */
 		leaveTypeID: string;
 
-		/** The schedule of accrual */
+		/**
+		 * The schedule of accrual
+		 * Required
+		 */
 		scheduleOfAccrual: EmployeeLeaveTypeScheduleOfAccrual;
 
 		/** The number of hours accrued for the leave annually. This is 0 when the scheduleOfAccrual chosen is "OnHourWorked" */
@@ -534,25 +582,46 @@ export namespace MyNS {
 		/** unique identifier in Xero */
 		id?: string;
 
-		/** Name of the employer pension */
+		/**
+		 * Name of the employer pension
+		 * Required
+		 */
 		name: string;
 
-		/** Category type of the employer pension */
+		/**
+		 * Category type of the employer pension
+		 * Required
+		 */
 		category: BenefitCategory;
 
-		/** Xero identifier for Liability Account */
+		/**
+		 * Xero identifier for Liability Account
+		 * Required
+		 */
 		liabilityAccountId: string;
 
-		/** Xero identifier for Expense Account */
+		/**
+		 * Xero identifier for Expense Account
+		 * Required
+		 */
 		expenseAccountId: string;
 
-		/** Standard amount of the employer pension */
+		/**
+		 * Standard amount of the employer pension
+		 * Required
+		 */
 		standardAmount: number;
 
-		/** Percentage of gross of the employer pension */
+		/**
+		 * Percentage of gross of the employer pension
+		 * Required
+		 */
 		percentage: number;
 
-		/** Calculation Type of the employer pension (FixedAmount or PercentageOfGross). */
+		/**
+		 * Calculation Type of the employer pension (FixedAmount or PercentageOfGross).
+		 * Required
+		 */
 		calculationType: BenefitCalculationType;
 
 		/** Identifier of a record is active or not. */
@@ -599,13 +668,22 @@ export namespace MyNS {
 		/** The Xero identifier for Deduction */
 		deductionId?: string;
 
-		/** Name of the deduction */
+		/**
+		 * Name of the deduction
+		 * Required
+		 */
 		deductionName: string;
 
-		/** Deduction Category type */
+		/**
+		 * Deduction Category type
+		 * Required
+		 */
 		deductionCategory: DeductionDeductionCategory;
 
-		/** Xero identifier for Liability Account */
+		/**
+		 * Xero identifier for Liability Account
+		 * Required
+		 */
 		liabilityAccountId: string;
 
 		/** Identifier of a record is active or not. */
@@ -620,7 +698,10 @@ export namespace MyNS {
 		/** Identifier of reduces tax liability */
 		reducesTaxLiability?: boolean;
 
-		/** determine the calculation type whether fixed amount or percentage of gross */
+		/**
+		 * determine the calculation type whether fixed amount or percentage of gross
+		 * Required
+		 */
 		calculationType: BenefitCalculationType;
 
 		/** Percentage of gross */
@@ -692,7 +773,10 @@ export namespace MyNS {
 		/** Xero unique identifier for an earning rate */
 		id?: string;
 
-		/** Name of the earning order */
+		/**
+		 * Name of the earning order
+		 * Required
+		 */
 		name: string;
 
 		/** Statutory Deduction Category */
@@ -726,22 +810,37 @@ export namespace MyNS {
 		/** Xero unique identifier for an earning rate */
 		earningsRateID?: string;
 
-		/** Name of the earning rate */
+		/**
+		 * Name of the earning rate
+		 * Required
+		 */
 		name: string;
 
-		/** Indicates how an employee will be paid when taking this type of earning */
+		/**
+		 * Indicates how an employee will be paid when taking this type of earning
+		 * Required
+		 */
 		earningsType: EarningsRateEarningsType;
 
-		/** Indicates the type of the earning rate */
+		/**
+		 * Indicates the type of the earning rate
+		 * Required
+		 */
 		rateType: EarningsRateRateType;
 
-		/** The type of units used to record earnings */
+		/**
+		 * The type of units used to record earnings
+		 * Required
+		 */
 		typeOfUnits: string;
 
 		/** Indicates whether an earning type is active */
 		currentRecord?: boolean;
 
-		/** The account that will be used for the earnings rate */
+		/**
+		 * The account that will be used for the earnings rate
+		 * Required
+		 */
 		expenseAccountID: string;
 
 		/** Default rate per unit (optional). Only applicable if RateType is RatePerUnit */
@@ -782,13 +881,22 @@ export namespace MyNS {
 		/** Xero unique identifier for the leave type */
 		leaveTypeID?: string;
 
-		/** Name of the leave type */
+		/**
+		 * Name of the leave type
+		 * Required
+		 */
 		name: string;
 
-		/** Indicate that an employee will be paid when taking this type of leave */
+		/**
+		 * Indicate that an employee will be paid when taking this type of leave
+		 * Required
+		 */
 		isPaidLeave: boolean;
 
-		/** Indicate that a balance for this leave type to be shown on the employee’s payslips */
+		/**
+		 * Indicate that a balance for this leave type to be shown on the employee’s payslips
+		 * Required
+		 */
 		showOnPayslip: boolean;
 
 		/** UTC timestamp of last update to the leave type note */
@@ -822,10 +930,16 @@ export namespace MyNS {
 		/** Xero unique identifier for a reimbursement */
 		reimbursementID?: string;
 
-		/** Name of the reimbursement */
+		/**
+		 * Name of the reimbursement
+		 * Required
+		 */
 		name: string;
 
-		/** Xero unique identifier for the account used for the reimbursement */
+		/**
+		 * Xero unique identifier for the account used for the reimbursement
+		 * Required
+		 */
 		accountID: string;
 
 		/** Indicates that whether the reimbursement is active */
@@ -853,16 +967,28 @@ export namespace MyNS {
 		/** The Xero identifier for a Timesheet */
 		timesheetID?: string;
 
-		/** The Xero identifier for the Payroll Calandar that the Timesheet applies to */
+		/**
+		 * The Xero identifier for the Payroll Calandar that the Timesheet applies to
+		 * Required
+		 */
 		payrollCalendarID: string;
 
-		/** The Xero identifier for the Employee that the Timesheet is for */
+		/**
+		 * The Xero identifier for the Employee that the Timesheet is for
+		 * Required
+		 */
 		employeeID: string;
 
-		/** The Start Date of the Timesheet period (YYYY-MM-DD) */
+		/**
+		 * The Start Date of the Timesheet period (YYYY-MM-DD)
+		 * Required
+		 */
 		startDate: Date;
 
-		/** The End Date of the Timesheet period (YYYY-MM-DD) */
+		/**
+		 * The End Date of the Timesheet period (YYYY-MM-DD)
+		 * Required
+		 */
 		endDate: Date;
 
 		/** Status of the timesheet */
@@ -883,16 +1009,25 @@ export namespace MyNS {
 		/** The Xero identifier for a Timesheet Line */
 		timesheetLineID?: string;
 
-		/** The Date that this Timesheet Line is for (YYYY-MM-DD) */
+		/**
+		 * The Date that this Timesheet Line is for (YYYY-MM-DD)
+		 * Required
+		 */
 		date: Date;
 
-		/** The Xero identifier for the Earnings Rate that the Timesheet is for */
+		/**
+		 * The Xero identifier for the Earnings Rate that the Timesheet is for
+		 * Required
+		 */
 		earningsRateID: string;
 
 		/** The Xero identifier for the Tracking Item that the Timesheet is for */
 		trackingItemID?: string;
 
-		/** The Number of Units of the Timesheet Line */
+		/**
+		 * The Number of Units of the Timesheet Line
+		 * Required
+		 */
 		numberOfUnits: number;
 	}
 
@@ -925,19 +1060,31 @@ export namespace MyNS {
 		/** Xero unique identifier for the payroll calendar */
 		payrollCalendarID?: string;
 
-		/** Name of the calendar */
+		/**
+		 * Name of the calendar
+		 * Required
+		 */
 		name: string;
 
-		/** Type of the calendar */
+		/**
+		 * Type of the calendar
+		 * Required
+		 */
 		calendarType: PayRunCalendarCalendarType;
 
-		/** Period start date of the calendar */
+		/**
+		 * Period start date of the calendar
+		 * Required
+		 */
 		periodStartDate: Date;
 
 		/** Period end date of the calendar */
 		periodEndDate?: Date;
 
-		/** Payment date of the calendar */
+		/**
+		 * Payment date of the calendar
+		 * Required
+		 */
 		paymentDate: Date;
 
 		/** UTC timestamp of the last update to the pay run calendar */
@@ -964,7 +1111,10 @@ export namespace MyNS {
 
 	export interface PaymentMethod {
 
-		/** The payment method code */
+		/**
+		 * The payment method code
+		 * Required
+		 */
 		paymentMethod: PaymentMethodPaymentMethod;
 		bankAccounts?: Array<BankAccount>;
 	}
@@ -973,13 +1123,22 @@ export namespace MyNS {
 
 	export interface BankAccount {
 
-		/** Bank account name (max length = 32) */
+		/**
+		 * Bank account name (max length = 32)
+		 * Required
+		 */
 		accountName: string;
 
-		/** Bank account number (digits only; max length = 8) */
+		/**
+		 * Bank account number (digits only; max length = 8)
+		 * Required
+		 */
 		accountNumber: string;
 
-		/** Bank account sort code (6 digits) */
+		/**
+		 * Bank account sort code (6 digits)
+		 * Required
+		 */
 		sortCode: string;
 	}
 
@@ -996,28 +1155,52 @@ export namespace MyNS {
 		/** Xero unique identifier for a salary and wages record */
 		salaryAndWagesID?: string;
 
-		/** Xero unique identifier for an earnings rate */
+		/**
+		 * Xero unique identifier for an earnings rate
+		 * Required
+		 */
 		earningsRateID: string;
 
-		/** The Number of Units per week for the corresponding salary and wages */
+		/**
+		 * The Number of Units per week for the corresponding salary and wages
+		 * Required
+		 */
 		numberOfUnitsPerWeek: number;
 
-		/** The rate of each unit for the corresponding salary and wages */
+		/**
+		 * The rate of each unit for the corresponding salary and wages
+		 * Required
+		 */
 		ratePerUnit: number;
 
-		/** The Number of Units per day for the corresponding salary and wages */
+		/**
+		 * The Number of Units per day for the corresponding salary and wages
+		 * Required
+		 */
 		numberOfUnitsPerDay: number;
 
-		/** The effective date of the corresponding salary and wages */
+		/**
+		 * The effective date of the corresponding salary and wages
+		 * Required
+		 */
 		effectiveFrom: Date;
 
-		/** The annual salary */
+		/**
+		 * The annual salary
+		 * Required
+		 */
 		annualSalary: number;
 
-		/** The current status of the corresponding salary and wages */
+		/**
+		 * The current status of the corresponding salary and wages
+		 * Required
+		 */
 		status: SalaryAndWageStatus;
 
-		/** The type of the payment of the corresponding salary and wages */
+		/**
+		 * The type of the payment of the corresponding salary and wages
+		 * Required
+		 */
 		paymentType: SalaryAndWagePaymentType;
 	}
 

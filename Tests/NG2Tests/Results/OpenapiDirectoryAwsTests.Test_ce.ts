@@ -18,12 +18,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the Cost Category.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
 		Name: string;
 
-		/** The rule schema version in this particular Cost Category. */
+		/**
+		 * The rule schema version in this particular Cost Category.
+		 * Required
+		 */
 		RuleVersion: CreateCostCategoryDefinitionRequestRuleVersion;
 		Rules: Array<CostCategoryRule>;
 	}
@@ -36,12 +40,16 @@ export namespace MyNS {
 
 		/**
 		 * The value a line item will be categorized as, if it matches the rule.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
 		Value: string;
 
-		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
+		/**
+		 * <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note>
+		 * Required
+		 */
 		Rule: Expression;
 	}
 
@@ -135,6 +143,7 @@ export namespace MyNS {
 
 		/**
 		 * The time period that you want the usage and costs for.
+		 * Required
 		 * Max length: 25
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
@@ -151,12 +160,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of the Cost Category.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
 		Name: string;
 
-		/** The rule schema version in this particular Cost Category. */
+		/**
+		 * The rule schema version in this particular Cost Category.
+		 * Required
+		 */
 		RuleVersion: CostCategoryRuleVersion;
 		Rules: Array<CostCategoryRule>;
 	}
@@ -220,7 +233,10 @@ export namespace MyNS {
 
 	export interface GetCostAndUsageRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		Granularity?: GetCostAndUsageRequestGranularity;
 
@@ -253,7 +269,10 @@ export namespace MyNS {
 
 	export interface GetCostAndUsageWithResourcesRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		Granularity?: GetCostAndUsageRequestGranularity;
 
@@ -291,7 +310,10 @@ export namespace MyNS {
 
 	export interface GetCostForecastRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		Metric: GetCostForecastRequestMetric;
 		Granularity: GetCostAndUsageRequestGranularity;
@@ -323,7 +345,10 @@ export namespace MyNS {
 	export interface GetDimensionValuesRequest {
 		SearchString?: string;
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		Dimension: DimensionValuesKey;
 		Context?: GetDimensionValuesRequestContext;
@@ -403,7 +428,10 @@ export namespace MyNS {
 	/** You can use the following request parameters to query for how much of your instance usage a reservation covered. */
 	export interface GetReservationCoverageRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		GroupBy?: Array<GroupDefinition>;
 		Granularity?: GetCostAndUsageRequestGranularity;
@@ -647,7 +675,10 @@ export namespace MyNS {
 
 	export interface GetReservationUtilizationRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		GroupBy?: Array<GroupDefinition>;
 		Granularity?: GetCostAndUsageRequestGranularity;
@@ -840,7 +871,10 @@ export namespace MyNS {
 
 	export interface GetSavingsPlansCoverageRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		GroupBy?: Array<GroupDefinition>;
 		Granularity?: GetCostAndUsageRequestGranularity;
@@ -948,7 +982,10 @@ export namespace MyNS {
 	export interface GetSavingsPlansUtilizationResponse {
 		SavingsPlansUtilizationsByTime?: Array<SavingsPlansUtilizationByTime>;
 
-		/** The aggregated utilization metrics for your Savings Plans usage. */
+		/**
+		 * The aggregated utilization metrics for your Savings Plans usage.
+		 * Required
+		 */
 		Total: SavingsPlansUtilizationAggregates;
 	}
 
@@ -956,10 +993,16 @@ export namespace MyNS {
 	/** The amount of Savings Plans utilization, in hours. */
 	export interface SavingsPlansUtilizationByTime {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 
-		/** The measurement of how well you are using your existing Savings Plans. */
+		/**
+		 * The measurement of how well you are using your existing Savings Plans.
+		 * Required
+		 */
 		Utilization: SavingsPlansUtilization;
 
 		/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
@@ -997,7 +1040,10 @@ export namespace MyNS {
 	/** The aggregated utilization metrics for your Savings Plans usage. */
 	export interface SavingsPlansUtilizationAggregates {
 
-		/** The measurement of how well you are using your existing Savings Plans. */
+		/**
+		 * The measurement of how well you are using your existing Savings Plans.
+		 * Required
+		 */
 		Utilization: SavingsPlansUtilization;
 
 		/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
@@ -1009,7 +1055,10 @@ export namespace MyNS {
 
 	export interface GetSavingsPlansUtilizationRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		Granularity?: GetCostAndUsageRequestGranularity;
 
@@ -1023,7 +1072,10 @@ export namespace MyNS {
 		/** The aggregated utilization metrics for your Savings Plans usage. */
 		Total?: SavingsPlansUtilizationAggregates;
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		NextToken?: string;
 	}
@@ -1046,7 +1098,10 @@ export namespace MyNS {
 
 	export interface GetSavingsPlansUtilizationDetailsRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
@@ -1065,7 +1120,10 @@ export namespace MyNS {
 	export interface GetTagsRequest {
 		SearchString?: string;
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		TagKey?: string;
 		NextPageToken?: string;
@@ -1080,7 +1138,10 @@ export namespace MyNS {
 
 	export interface GetUsageForecastRequest {
 
-		/** The time period that you want the usage and costs for. */
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 */
 		TimePeriod: DateInterval;
 		Metric: GetCostForecastRequestMetric;
 		Granularity: GetCostAndUsageRequestGranularity;
@@ -1156,7 +1217,10 @@ export namespace MyNS {
 	export interface UpdateCostCategoryDefinitionRequest {
 		CostCategoryArn: string;
 
-		/** The rule schema version in this particular Cost Category. */
+		/**
+		 * The rule schema version in this particular Cost Category.
+		 * Required
+		 */
 		RuleVersion: UpdateCostCategoryDefinitionRequestRuleVersion;
 		Rules: Array<CostCategoryRule>;
 	}

@@ -381,10 +381,16 @@ export namespace MyNS {
 
 	export interface StartEntitiesDetectionV2JobRequest {
 
-		/** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information. */
+		/**
+		 * The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** The output properties for a detection job. */
+		/**
+		 * The output properties for a detection job.
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;
@@ -399,10 +405,16 @@ export namespace MyNS {
 
 	export interface StartICD10CMInferenceJobRequest {
 
-		/** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information. */
+		/**
+		 * The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** The output properties for a detection job. */
+		/**
+		 * The output properties for a detection job.
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;
@@ -417,10 +429,16 @@ export namespace MyNS {
 
 	export interface StartPHIDetectionJobRequest {
 
-		/** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information. */
+		/**
+		 * The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** The output properties for a detection job. */
+		/**
+		 * The output properties for a detection job.
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;
@@ -435,10 +453,16 @@ export namespace MyNS {
 
 	export interface StartRxNormInferenceJobRequest {
 
-		/** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information. */
+		/**
+		 * The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** The output properties for a detection job. */
+		/**
+		 * The output properties for a detection job.
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;

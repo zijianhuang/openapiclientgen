@@ -208,7 +208,10 @@ export namespace MyNS {
 	export interface SubscribeRequest {
 		Arn: string;
 
-		/** Information about the SNS topics associated with a notification rule. */
+		/**
+		 * Information about the SNS topics associated with a notification rule.
+		 * Required
+		 */
 		Target: Target;
 		ClientRequestToken?: string;
 	}
@@ -372,28 +375,37 @@ export namespace MyNS {
 
 		/**
 		 * The name for the notification rule. Notifictaion rule names must be unique in your AWS account.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name: string;
 
-		/** A list of event types associated with this notification rule. For a list of allowed events, see <a>EventTypeSummary</a>. */
+		/**
+		 * A list of event types associated with this notification rule. For a list of allowed events, see <a>EventTypeSummary</a>.
+		 * Required
+		 */
 		EventTypeIds: Array<string>;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$
 		 */
 		Resource: string;
 
 		/**
 		 * A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.
+		 * Required
 		 * Maximum items: 10
 		 */
 		Targets: Array<Target>;
 
-		/** The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created. */
+		/**
+		 * The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.
+		 * Required
+		 */
 		DetailType: DescribeNotificationRuleResultDetailType;
 
 		/**
@@ -415,6 +427,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule you want to delete.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
@@ -424,6 +437,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the SNS topic to delete.
+		 * Required
 		 * Max length: 320
 		 * Min length: 1
 		 */
@@ -437,6 +451,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
@@ -484,6 +499,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for the notification rule.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
@@ -512,11 +528,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
-		/** Information about the SNS topics associated with a notification rule. */
+		/**
+		 * Information about the SNS topics associated with a notification rule.
+		 * Required
+		 */
 		Target: SubscribePostBodyTarget;
 
 		/**
@@ -537,11 +557,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule to tag.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
-		/** The list of tags to associate with the resource. Tag key names cannot start with "aws". */
+		/**
+		 * The list of tags to associate with the resource. Tag key names cannot start with "aws".
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 
@@ -549,12 +573,14 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
 		/**
 		 * The ARN of the SNS topic to unsubscribe from the notification rule.
+		 * Required
 		 * Max length: 320
 		 * Min length: 1
 		 */
@@ -565,11 +591,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
-		/** The key names of the tags to remove. */
+		/**
+		 * The key names of the tags to remove.
+		 * Required
+		 */
 		TagKeys: Array<string>;
 	}
 
@@ -577,6 +607,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
+		 * Required
 		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;

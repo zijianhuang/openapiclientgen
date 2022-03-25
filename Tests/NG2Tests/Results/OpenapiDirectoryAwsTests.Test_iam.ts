@@ -36,7 +36,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>CreateAccessKey</a> request.  */
 	export interface CreateAccessKeyResponse {
 
-		/** <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations. </p> <note> <p>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.</p> </note> */
+		/**
+		 * <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations. </p> <note> <p>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.</p> </note>
+		 * Required
+		 */
 		AccessKey: AccessKey;
 	}
 
@@ -56,7 +59,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>CreateGroup</a> request.  */
 	export interface CreateGroupResponse {
 
-		/** <p>Contains information about an IAM group entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p> <a>ListGroups</a> </p> </li> </ul> */
+		/**
+		 * <p>Contains information about an IAM group entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p> <a>ListGroups</a> </p> </li> </ul>
+		 * Required
+		 */
 		Group: Group;
 	}
 
@@ -69,6 +75,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -80,7 +87,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>CreateInstanceProfile</a> request.  */
 	export interface CreateInstanceProfileResponse {
 
-		/** <p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul> */
+		/**
+		 * <p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul>
+		 * Required
+		 */
 		InstanceProfile: InstanceProfile;
 	}
 
@@ -93,13 +103,17 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
 		Arn: string;
 		CreateDate: Date;
 
-		/** <p>Contains a list of IAM roles.</p> <p>This data type is used as a response element in the <a>ListRoles</a> operation.</p> */
+		/**
+		 * <p>Contains a list of IAM roles.</p> <p>This data type is used as a response element in the <a>ListRoles</a> operation.</p>
+		 * Required
+		 */
 		Roles: Array<Role>;
 	}
 
@@ -112,6 +126,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -162,7 +177,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>CreateLoginProfile</a> request.  */
 	export interface CreateLoginProfileResponse {
 
-		/** <p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations. </p> */
+		/**
+		 * <p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations. </p>
+		 * Required
+		 */
 		LoginProfile: LoginProfile;
 	}
 
@@ -240,7 +258,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>CreateRole</a> request.  */
 	export interface CreateRoleResponse {
 
-		/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
+		/**
+		 * Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles.
+		 * Required
+		 */
 		Role: Role;
 	}
 
@@ -303,6 +324,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -319,7 +341,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>CreateVirtualMFADevice</a> request.  */
 	export interface CreateVirtualMFADeviceResponse {
 
-		/** Contains information about a virtual MFA device. */
+		/**
+		 * Contains information about a virtual MFA device.
+		 * Required
+		 */
 		VirtualMFADevice: VirtualMFADevice;
 	}
 
@@ -512,7 +537,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>GetAccountPasswordPolicy</a> request.  */
 	export interface GetAccountPasswordPolicyResponse {
 
-		/** <p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation. </p> */
+		/**
+		 * <p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation. </p>
+		 * Required
+		 */
 		PasswordPolicy: PasswordPolicy;
 	}
 
@@ -569,10 +597,16 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>GetGroup</a> request.  */
 	export interface GetGroupResponse {
 
-		/** <p>Contains information about an IAM group entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p> <a>ListGroups</a> </p> </li> </ul> */
+		/**
+		 * <p>Contains information about an IAM group entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p> <a>ListGroups</a> </p> </li> </ul>
+		 * Required
+		 */
 		Group: Group;
 
-		/** <p>Contains a list of users.</p> <p>This data type is used as a response element in the <a>GetGroup</a> and <a>ListUsers</a> operations. </p> */
+		/**
+		 * <p>Contains a list of users.</p> <p>This data type is used as a response element in the <a>GetGroup</a> and <a>ListUsers</a> operations. </p>
+		 * Required
+		 */
 		Users: Array<User>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -590,7 +624,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>GetInstanceProfile</a> request.  */
 	export interface GetInstanceProfileResponse {
 
-		/** <p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul> */
+		/**
+		 * <p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul>
+		 * Required
+		 */
 		InstanceProfile: InstanceProfile;
 	}
 
@@ -598,7 +635,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>GetLoginProfile</a> request.  */
 	export interface GetLoginProfileResponse {
 
-		/** <p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations. </p> */
+		/**
+		 * <p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations. </p>
+		 * Required
+		 */
 		LoginProfile: LoginProfile;
 	}
 
@@ -673,7 +713,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>GetRole</a> request.  */
 	export interface GetRoleResponse {
 
-		/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
+		/**
+		 * Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles.
+		 * Required
+		 */
 		Role: Role;
 	}
 
@@ -719,7 +762,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>GetServerCertificate</a> request.  */
 	export interface GetServerCertificateResponse {
 
-		/** <p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> operation. </p> */
+		/**
+		 * <p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> operation. </p>
+		 * Required
+		 */
 		ServerCertificate: ServerCertificate;
 	}
 
@@ -727,7 +773,10 @@ export namespace MyNS {
 	/** <p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> operation. </p> */
 	export interface ServerCertificate {
 
-		/** <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations. </p> */
+		/**
+		 * <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations. </p>
+		 * Required
+		 */
 		ServerCertificateMetadata: ServerCertificateMetadata;
 		CertificateBody: string;
 		CertificateChain?: string;
@@ -742,6 +791,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -814,7 +864,10 @@ export namespace MyNS {
 	/** <p>An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified AWS service.</p> <p>This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.</p> */
 	export interface EntityDetails {
 
-		/** <p>Contains details about the specified entity (user or role).</p> <p>This data type is an element of the <a>EntityDetails</a> object.</p> */
+		/**
+		 * <p>Contains details about the specified entity (user or role).</p> <p>This data type is an element of the <a>EntityDetails</a> object.</p>
+		 * Required
+		 */
 		EntityInfo: EntityInfo;
 		LastAuthenticated?: Date;
 	}
@@ -825,6 +878,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -864,7 +918,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>GetUser</a> request.  */
 	export interface GetUserResponse {
 
-		/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
+		/**
+		 * <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul>
+		 * Required
+		 */
 		User: User;
 	}
 
@@ -880,7 +937,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListAccessKeys</a> request.  */
 	export interface ListAccessKeysResponse {
 
-		/** <p>Contains a list of access key metadata.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> operation.</p> */
+		/**
+		 * <p>Contains a list of access key metadata.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> operation.</p>
+		 * Required
+		 */
 		AccessKeyMetadata: Array<AccessKeyMetadata>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -962,7 +1022,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListGroupPolicies</a> request.  */
 	export interface ListGroupPoliciesResponse {
 
-		/** <p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a>ListPolicies</a> operation.</p> */
+		/**
+		 * <p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a>ListPolicies</a> operation.</p>
+		 * Required
+		 */
 		PolicyNames: Array<string>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -972,7 +1035,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListGroups</a> request.  */
 	export interface ListGroupsResponse {
 
-		/** <p>Contains a list of IAM groups.</p> <p>This data type is used as a response element in the <a>ListGroups</a> operation.</p> */
+		/**
+		 * <p>Contains a list of IAM groups.</p> <p>This data type is used as a response element in the <a>ListGroups</a> operation.</p>
+		 * Required
+		 */
 		Groups: Array<Group>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -982,7 +1048,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListGroupsForUser</a> request.  */
 	export interface ListGroupsForUserResponse {
 
-		/** <p>Contains a list of IAM groups.</p> <p>This data type is used as a response element in the <a>ListGroups</a> operation.</p> */
+		/**
+		 * <p>Contains a list of IAM groups.</p> <p>This data type is used as a response element in the <a>ListGroups</a> operation.</p>
+		 * Required
+		 */
 		Groups: Array<Group>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -992,7 +1061,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListInstanceProfiles</a> request.  */
 	export interface ListInstanceProfilesResponse {
 
-		/** Contains a list of instance profiles. */
+		/**
+		 * Contains a list of instance profiles.
+		 * Required
+		 */
 		InstanceProfiles: Array<InstanceProfile>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -1002,7 +1074,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListInstanceProfilesForRole</a> request.  */
 	export interface ListInstanceProfilesForRoleResponse {
 
-		/** Contains a list of instance profiles. */
+		/**
+		 * Contains a list of instance profiles.
+		 * Required
+		 */
 		InstanceProfiles: Array<InstanceProfile>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -1012,7 +1087,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListMFADevices</a> request.  */
 	export interface ListMFADevicesResponse {
 
-		/** <p>Contains a list of MFA devices.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> and <a>ListVirtualMFADevices</a> operations. </p> */
+		/**
+		 * <p>Contains a list of MFA devices.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> and <a>ListVirtualMFADevices</a> operations. </p>
+		 * Required
+		 */
 		MFADevices: Array<MFADevice>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -1097,7 +1175,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListRolePolicies</a> request.  */
 	export interface ListRolePoliciesResponse {
 
-		/** <p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a>ListPolicies</a> operation.</p> */
+		/**
+		 * <p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a>ListPolicies</a> operation.</p>
+		 * Required
+		 */
 		PolicyNames: Array<string>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -1113,7 +1194,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListRoles</a> request.  */
 	export interface ListRolesResponse {
 
-		/** <p>Contains a list of IAM roles.</p> <p>This data type is used as a response element in the <a>ListRoles</a> operation.</p> */
+		/**
+		 * <p>Contains a list of IAM roles.</p> <p>This data type is used as a response element in the <a>ListRoles</a> operation.</p>
+		 * Required
+		 */
 		Roles: Array<Role>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -1183,7 +1267,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListSigningCertificates</a> request.  */
 	export interface ListSigningCertificatesResponse {
 
-		/** <p>Contains a list of signing certificates.</p> <p>This data type is used as a response element in the <a>ListSigningCertificates</a> operation.</p> */
+		/**
+		 * <p>Contains a list of signing certificates.</p> <p>This data type is used as a response element in the <a>ListSigningCertificates</a> operation.</p>
+		 * Required
+		 */
 		Certificates: Array<SigningCertificate>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -1203,7 +1290,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListUserPolicies</a> request.  */
 	export interface ListUserPoliciesResponse {
 
-		/** <p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a>ListPolicies</a> operation.</p> */
+		/**
+		 * <p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a>ListPolicies</a> operation.</p>
+		 * Required
+		 */
 		PolicyNames: Array<string>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -1219,7 +1309,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListUsers</a> request.  */
 	export interface ListUsersResponse {
 
-		/** <p>Contains a list of users.</p> <p>This data type is used as a response element in the <a>GetGroup</a> and <a>ListUsers</a> operations. </p> */
+		/**
+		 * <p>Contains a list of users.</p> <p>This data type is used as a response element in the <a>GetGroup</a> and <a>ListUsers</a> operations. </p>
+		 * Required
+		 */
 		Users: Array<User>;
 		IsTruncated?: boolean;
 		Marker?: string;
@@ -1383,7 +1476,10 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>UploadSigningCertificate</a> request.  */
 	export interface UploadSigningCertificateResponse {
 
-		/** <p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations. </p> */
+		/**
+		 * <p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations. </p>
+		 * Required
+		 */
 		Certificate: SigningCertificate;
 	}
 
@@ -1401,6 +1497,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1423,6 +1520,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1434,6 +1532,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1445,6 +1544,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1488,13 +1588,17 @@ export namespace MyNS {
 
 		/**
 		 * Contains a URL that specifies the endpoint for an OpenID Connect provider.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
 		Url: string;
 		ClientIDList?: Array<string>;
 
-		/** Contains a list of thumbprints of identity provider server certificates. */
+		/**
+		 * Contains a list of thumbprints of identity provider server certificates.
+		 * Required
+		 */
 		ThumbprintList: Array<string>;
 	}
 
@@ -1509,6 +1613,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1602,6 +1707,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1612,6 +1718,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1622,6 +1729,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1646,6 +1754,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1699,6 +1808,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1710,6 +1820,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1721,6 +1832,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1749,6 +1861,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1774,6 +1887,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1806,6 +1920,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1827,6 +1942,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1837,6 +1953,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1857,6 +1974,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1941,6 +2059,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1998,6 +2117,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -2022,6 +2142,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -2115,6 +2236,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -2132,6 +2254,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -2148,6 +2271,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -2181,6 +2305,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -2212,6 +2337,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -2288,12 +2414,16 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
 		OpenIDConnectProviderArn: string;
 
-		/** Contains a list of thumbprints of identity provider server certificates. */
+		/**
+		 * Contains a list of thumbprints of identity provider server certificates.
+		 * Required
+		 */
 		ThumbprintList: Array<string>;
 	}
 
@@ -2313,6 +2443,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */

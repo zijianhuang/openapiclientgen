@@ -11,7 +11,10 @@ export namespace MyNS {
 	export interface AddInstanceFleetInput {
 		ClusterId: string;
 
-		/** <p>The configuration that defines an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
+		/**
+		 * <p>The configuration that defines an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
+		 * Required
+		 */
 		InstanceFleet: InstanceFleetConfig;
 	}
 
@@ -54,7 +57,10 @@ export namespace MyNS {
 	/** Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance. */
 	export interface EbsBlockDeviceConfig {
 
-		/** EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster. */
+		/**
+		 * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.
+		 * Required
+		 */
 		VolumeSpecification: VolumeSpecification;
 		VolumesPerInstance?: number;
 	}
@@ -82,7 +88,10 @@ export namespace MyNS {
 	/** <p>The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning timeout behavior.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetProvisioningSpecifications {
 
-		/** <p>The launch specification for Spot instances in the instance fleet, which determines the defined duration and provisioning timeout behavior.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
+		/**
+		 * <p>The launch specification for Spot instances in the instance fleet, which determines the defined duration and provisioning timeout behavior.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
+		 * Required
+		 */
 		SpotSpecification: SpotProvisioningSpecification;
 	}
 
@@ -141,7 +150,10 @@ export namespace MyNS {
 	/** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>. */
 	export interface AutoScalingPolicy {
 
-		/** The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits. */
+		/**
+		 * The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.
+		 * Required
+		 */
 		Constraints: ScalingConstraints;
 		Rules: Array<ScalingRule>;
 	}
@@ -159,10 +171,16 @@ export namespace MyNS {
 		Name: string;
 		Description?: string;
 
-		/** The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment. */
+		/**
+		 * The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
+		 * Required
+		 */
 		Action: ScalingAction;
 
-		/** The conditions that trigger an automatic scaling activity. */
+		/**
+		 * The conditions that trigger an automatic scaling activity.
+		 * Required
+		 */
 		Trigger: ScalingTrigger;
 	}
 
@@ -171,7 +189,10 @@ export namespace MyNS {
 	export interface ScalingAction {
 		Market?: InstanceGroupConfigMarket;
 
-		/** An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied. */
+		/**
+		 * An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.
+		 * Required
+		 */
 		SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
 	}
 
@@ -189,7 +210,10 @@ export namespace MyNS {
 	/** The conditions that trigger an automatic scaling activity. */
 	export interface ScalingTrigger {
 
-		/** The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins. */
+		/**
+		 * The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.
+		 * Required
+		 */
 		CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
 	}
 
@@ -242,7 +266,10 @@ export namespace MyNS {
 		Name: string;
 		ActionOnFailure?: StepConfigActionOnFailure;
 
-		/** A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. */
+		/**
+		 * A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
+		 * Required
+		 */
 		HadoopJarStep: HadoopJarStepConfig;
 	}
 
@@ -467,10 +494,16 @@ export namespace MyNS {
 		LogEncryptionKmsKeyId?: string;
 		AmiVersion?: string;
 
-		/** Describes the status of the cluster (job flow). */
+		/**
+		 * Describes the status of the cluster (job flow).
+		 * Required
+		 */
 		ExecutionStatusDetail: JobFlowExecutionStatusDetail;
 
-		/** Specify the type of Amazon EC2 instances that the cluster (job flow) runs on. */
+		/**
+		 * Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.
+		 * Required
+		 */
 		Instances: JobFlowInstancesDetail;
 		Steps?: Array<StepDetail>;
 		BootstrapActions?: Array<BootstrapActionDetail>;
@@ -486,7 +519,10 @@ export namespace MyNS {
 	/** Describes the status of the cluster (job flow). */
 	export interface JobFlowExecutionStatusDetail {
 
-		/** The type of instance. */
+		/**
+		 * The type of instance.
+		 * Required
+		 */
 		State: JobFlowExecutionStatusDetailState;
 		CreationDateTime: Date;
 		StartDateTime?: Date;
@@ -549,10 +585,16 @@ export namespace MyNS {
 	/** Combines the execution state and configuration of a step. */
 	export interface StepDetail {
 
-		/** Specification of a cluster (job flow) step. */
+		/**
+		 * Specification of a cluster (job flow) step.
+		 * Required
+		 */
 		StepConfig: StepConfig;
 
-		/** The execution state of a step. */
+		/**
+		 * The execution state of a step.
+		 * Required
+		 */
 		ExecutionStatusDetail: StepExecutionStatusDetail;
 	}
 
@@ -581,7 +623,10 @@ export namespace MyNS {
 	export interface BootstrapActionConfig {
 		Name: string;
 
-		/** Configuration of the script to run during a bootstrap action. */
+		/**
+		 * Configuration of the script to run during a bootstrap action.
+		 * Required
+		 */
 		ScriptBootstrapAction: ScriptBootstrapActionConfig;
 	}
 
@@ -697,10 +742,16 @@ export namespace MyNS {
 
 	export interface GetBlockPublicAccessConfigurationOutput {
 
-		/** A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>. */
+		/**
+		 * A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.
+		 * Required
+		 */
 		BlockPublicAccessConfiguration: BlockPublicAccessConfiguration;
 
-		/** Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata. */
+		/**
+		 * Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.
+		 * Required
+		 */
 		BlockPublicAccessConfigurationMetadata: BlockPublicAccessConfigurationMetadata;
 	}
 
@@ -1149,7 +1200,10 @@ export namespace MyNS {
 	export interface ModifyInstanceFleetInput {
 		ClusterId: string;
 
-		/** <p>Configuration parameters for an instance fleet modification request.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
+		/**
+		 * <p>Configuration parameters for an instance fleet modification request.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
+		 * Required
+		 */
 		InstanceFleet: InstanceFleetModifyConfig;
 	}
 
@@ -1193,7 +1247,10 @@ export namespace MyNS {
 		ClusterId: string;
 		InstanceGroupId: string;
 
-		/** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>. */
+		/**
+		 * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+		 * Required
+		 */
 		AutoScalingPolicy: AutoScalingPolicy;
 	}
 
@@ -1202,7 +1259,10 @@ export namespace MyNS {
 
 	export interface PutBlockPublicAccessConfigurationInput {
 
-		/** A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>. */
+		/**
+		 * A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.
+		 * Required
+		 */
 		BlockPublicAccessConfiguration: BlockPublicAccessConfiguration;
 	}
 
@@ -1212,7 +1272,10 @@ export namespace MyNS {
 	export interface PutManagedScalingPolicyInput {
 		ClusterId: string;
 
-		/** Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. */
+		/**
+		 * Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+		 * Required
+		 */
 		ManagedScalingPolicy: ManagedScalingPolicy;
 	}
 
@@ -1260,7 +1323,10 @@ export namespace MyNS {
 		AmiVersion?: string;
 		ReleaseLabel?: string;
 
-		/** A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration. */
+		/**
+		 * A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
+		 * Required
+		 */
 		Instances: JobFlowInstancesConfig;
 		Steps?: Array<StepConfig>;
 		BootstrapActions?: Array<BootstrapActionConfig>;

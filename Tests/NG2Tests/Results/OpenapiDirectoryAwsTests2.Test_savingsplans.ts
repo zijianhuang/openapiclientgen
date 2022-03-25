@@ -372,10 +372,16 @@ export namespace MyNS {
 
 	export interface CreateSavingsPlanPostBody {
 
-		/** The ID of the offering. */
+		/**
+		 * The ID of the offering.
+		 * Required
+		 */
 		savingsPlanOfferingId: string;
 
-		/** The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point. */
+		/**
+		 * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.
+		 * Required
+		 */
 		commitment: string;
 
 		/** The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>. */
@@ -390,7 +396,10 @@ export namespace MyNS {
 
 	export interface DescribeSavingsPlanRatesPostBody {
 
-		/** The ID of the Savings Plan. */
+		/**
+		 * The ID of the Savings Plan.
+		 * Required
+		 */
 		savingsPlanId: string;
 
 		/** The filters. */
@@ -538,6 +547,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource.
+		 * Required
 		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
 		 */
 		resourceArn: string;
@@ -547,11 +557,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource.
+		 * Required
 		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
 		 */
 		resourceArn: string;
 
-		/** One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }. */
+		/**
+		 * One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
@@ -559,11 +573,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource.
+		 * Required
 		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
 		 */
 		resourceArn: string;
 
-		/** The tag keys. */
+		/**
+		 * The tag keys.
+		 * Required
+		 */
 		tagKeys: Array<string>;
 	}
 

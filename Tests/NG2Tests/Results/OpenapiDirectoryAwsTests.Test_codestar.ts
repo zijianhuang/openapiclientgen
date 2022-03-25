@@ -58,10 +58,16 @@ export namespace MyNS {
 	/** Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation. */
 	export interface Code {
 
-		/** The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation. */
+		/**
+		 * The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.
+		 * Required
+		 */
 		source: CodeSource;
 
-		/** The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository. */
+		/**
+		 * The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.
+		 * Required
+		 */
 		destination: CodeDestination;
 	}
 
@@ -69,7 +75,10 @@ export namespace MyNS {
 	/** The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation. */
 	export interface CodeSource {
 
-		/** The Amazon S3 location where the source code files provided with the project request are stored. */
+		/**
+		 * The Amazon S3 location where the source code files provided with the project request are stored.
+		 * Required
+		 */
 		s3: S3Location;
 	}
 
@@ -113,7 +122,10 @@ export namespace MyNS {
 	/** The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation. */
 	export interface Toolchain {
 
-		/** The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation. */
+		/**
+		 * The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.
+		 * Required
+		 */
 		source: ToolchainSource;
 		roleArn?: string;
 		stackParameters?: TemplateParameterMap;
@@ -123,7 +135,10 @@ export namespace MyNS {
 	/** The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation. */
 	export interface ToolchainSource {
 
-		/** The Amazon S3 location where the source code files provided with the project request are stored. */
+		/**
+		 * The Amazon S3 location where the source code files provided with the project request are stored.
+		 * Required
+		 */
 		s3: S3Location;
 	}
 

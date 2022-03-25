@@ -62,13 +62,22 @@ export namespace MyNS {
 	/** An object that defines the dimension configuration to use when you send Amazon Pinpoint email events to Amazon CloudWatch. */
 	export interface CloudWatchDimensionConfiguration {
 
-		/** <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li> </ul> */
+		/**
+		 * <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+		 * Required
+		 */
 		DimensionName: string;
 
-		/** The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>. */
+		/**
+		 * The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.
+		 * Required
+		 */
 		DimensionValueSource: CloudWatchDimensionConfigurationDimensionValueSource;
 
-		/** <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li> </ul> */
+		/**
+		 * <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+		 * Required
+		 */
 		DefaultDimensionValue: string;
 	}
 
@@ -95,10 +104,16 @@ export namespace MyNS {
 	/** Information about the predictive inbox placement test that you created. */
 	export interface CreateDeliverabilityTestReportResponse {
 
-		/** A unique string that identifies a Deliverability dashboard report. */
+		/**
+		 * A unique string that identifies a Deliverability dashboard report.
+		 * Required
+		 */
 		ReportId: string;
 
-		/** The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test. */
+		/**
+		 * The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+		 * Required
+		 */
 		DeliverabilityTestStatus: CreateDeliverabilityTestReportResponseDeliverabilityTestStatus;
 	}
 
@@ -108,10 +123,16 @@ export namespace MyNS {
 	/** Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body. */
 	export interface Message {
 
-		/** An object that represents the content of the email, and optionally a character set specification. */
+		/**
+		 * An object that represents the content of the email, and optionally a character set specification.
+		 * Required
+		 */
 		Subject: Content;
 
-		/** Represents the body of the email message. */
+		/**
+		 * Represents the body of the email message.
+		 * Required
+		 */
 		Body: Body;
 	}
 
@@ -137,7 +158,10 @@ export namespace MyNS {
 	/** The raw email message. */
 	export interface RawMessage {
 
-		/** <p>The raw email message. The message has to meet the following criteria:</p> <ul> <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> <li> <p>All of the required header fields must be present in the message.</p> </li> <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li> <li> <p>The entire message must be Base64 encoded.</p> </li> <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul> */
+		/**
+		 * <p>The raw email message. The message has to meet the following criteria:</p> <ul> <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> <li> <p>All of the required header fields must be present in the message.</p> </li> <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li> <li> <p>The entire message must be Base64 encoded.</p> </li> <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>
+		 * Required
+		 */
 		Data: string;
 	}
 
@@ -258,7 +282,10 @@ export namespace MyNS {
 	/** <p>An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> <p>These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.</p> */
 	export interface TrackingOptions {
 
-		/** The domain that you want to use for tracking open and click events. */
+		/**
+		 * The domain that you want to use for tracking open and click events.
+		 * Required
+		 */
 		CustomRedirectDomain: string;
 	}
 
@@ -298,7 +325,10 @@ export namespace MyNS {
 	/** In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage. */
 	export interface EventDestination {
 
-		/** <p>The name of an event destination.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p> */
+		/**
+		 * <p>The name of an event destination.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+		 * Required
+		 */
 		Name: string;
 		Enabled?: boolean;
 		MatchingEventTypes: Array<EventType>;
@@ -328,10 +358,16 @@ export namespace MyNS {
 	/** <p>Contains information about a dedicated IP address that is associated with your Amazon Pinpoint account.</p> <p/> */
 	export interface DedicatedIp {
 
-		/** A dedicated IP address that is associated with your Amazon Pinpoint account. */
+		/**
+		 * A dedicated IP address that is associated with your Amazon Pinpoint account.
+		 * Required
+		 */
 		Ip: string;
 
-		/** The warmup status of a dedicated IP. */
+		/**
+		 * The warmup status of a dedicated IP.
+		 * Required
+		 */
 		WarmupStatus: DedicatedIpWarmupStatus;
 		WarmupPercentage: number;
 
@@ -389,10 +425,16 @@ export namespace MyNS {
 	/** The results of the predictive inbox placement test. */
 	export interface GetDeliverabilityTestReportResponse {
 
-		/** An object that contains metadata related to a predictive inbox placement test. */
+		/**
+		 * An object that contains metadata related to a predictive inbox placement test.
+		 * Required
+		 */
 		DeliverabilityTestReport: DeliverabilityTestReport;
 
-		/** An object that contains inbox placement data for an email provider. */
+		/**
+		 * An object that contains inbox placement data for an email provider.
+		 * Required
+		 */
 		OverallPlacement: PlacementStatistics;
 		IspPlacements: Array<IspPlacement>;
 
@@ -455,7 +497,10 @@ export namespace MyNS {
 	/** An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation). */
 	export interface GetDomainDeliverabilityCampaignResponse {
 
-		/** An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation). */
+		/**
+		 * An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
+		 * Required
+		 */
 		DomainDeliverabilityCampaign: DomainDeliverabilityCampaign;
 	}
 
@@ -494,7 +539,10 @@ export namespace MyNS {
 	/** An object that includes statistics that are related to the domain that you specified. */
 	export interface GetDomainStatisticsReportResponse {
 
-		/** An object that contains information about email that was sent from the selected domain. */
+		/**
+		 * An object that contains information about email that was sent from the selected domain.
+		 * Required
+		 */
 		OverallVolume: OverallVolume;
 		DailyVolumes: Array<DailyVolume>;
 	}
@@ -579,13 +627,22 @@ export namespace MyNS {
 	/** A list of attributes that are associated with a MAIL FROM domain. */
 	export interface MailFromAttributes {
 
-		/** The domain that you want to use as a MAIL FROM domain. */
+		/**
+		 * The domain that you want to use as a MAIL FROM domain.
+		 * Required
+		 */
 		MailFromDomain: string;
 
-		/** <p>The status of the MAIL FROM domain. This status can have the following values:</p> <ul> <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> </ul> */
+		/**
+		 * <p>The status of the MAIL FROM domain. This status can have the following values:</p> <ul> <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> </ul>
+		 * Required
+		 */
 		MailFromDomainStatus: MailFromAttributesMailFromDomainStatus;
 
-		/** <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p> */
+		/**
+		 * <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+		 * Required
+		 */
 		BehaviorOnMxFailure: MailFromAttributesBehaviorOnMxFailure;
 	}
 
@@ -620,7 +677,10 @@ export namespace MyNS {
 	/** An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation) for the domain. */
 	export interface ListDomainDeliverabilityCampaignsResponse {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		DomainDeliverabilityCampaigns: Array<DomainDeliverabilityCampaign>;
 		NextToken?: string;
 	}
@@ -716,10 +776,16 @@ export namespace MyNS {
 	/** Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events.  */
 	export interface MessageTag {
 
-		/** <p>The name of the message tag. The message tag name has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li> </ul> */
+		/**
+		 * <p>The name of the message tag. The message tag name has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+		 * Required
+		 */
 		Name: string;
 
-		/** <p>The value of the message tag. The message tag value has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li> </ul> */
+		/**
+		 * <p>The value of the message tag. The message tag value has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+		 * Required
+		 */
 		Value: string;
 	}
 
@@ -777,10 +843,16 @@ export namespace MyNS {
 	/** A request to add an event destination to a configuration set. */
 	export interface CreateConfigurationSetEventDestinationRequest {
 
-		/** <p>The name of an event destination.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p> */
+		/**
+		 * <p>The name of an event destination.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+		 * Required
+		 */
 		EventDestinationName: string;
 
-		/** An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination. */
+		/**
+		 * An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
+		 * Required
+		 */
 		EventDestination: EventDestinationDefinition;
 	}
 
@@ -788,7 +860,10 @@ export namespace MyNS {
 	/** A request to create a configuration set. */
 	export interface CreateConfigurationSetRequest {
 
-		/** <p>The name of a configuration set.</p> <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p> */
+		/**
+		 * <p>The name of a configuration set.</p> <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
+		 * Required
+		 */
 		ConfigurationSetName: string;
 
 		/** <p>An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> <p>These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.</p> */
@@ -809,7 +884,10 @@ export namespace MyNS {
 	/** A request to create a new dedicated IP pool. */
 	export interface CreateDedicatedIpPoolRequest {
 
-		/** The name of a dedicated IP pool. */
+		/**
+		 * The name of a dedicated IP pool.
+		 * Required
+		 */
 		PoolName: string;
 		Tags?: Array<Tag>;
 	}
@@ -834,7 +912,10 @@ export namespace MyNS {
 		ReportName?: string;
 		FromEmailAddress: string;
 
-		/** An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers. */
+		/**
+		 * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
+		 * Required
+		 */
 		Content: EmailContent;
 		Tags?: Array<Tag>;
 	}
@@ -1028,7 +1109,10 @@ export namespace MyNS {
 	/** A request to move a dedicated IP address to a dedicated IP pool. */
 	export interface PutDedicatedIpInPoolRequest {
 
-		/** The name of a dedicated IP pool. */
+		/**
+		 * The name of a dedicated IP pool.
+		 * Required
+		 */
 		DestinationPoolName: string;
 	}
 
@@ -1075,12 +1159,18 @@ export namespace MyNS {
 	export interface SendEmailRequest {
 		FromEmailAddress?: string;
 
-		/** An object that describes the recipients for an email. */
+		/**
+		 * An object that describes the recipients for an email.
+		 * Required
+		 */
 		Destination: Destination;
 		ReplyToAddresses?: Array<string>;
 		FeedbackForwardingEmailAddress?: string;
 
-		/** An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers. */
+		/**
+		 * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
+		 * Required
+		 */
 		Content: EmailContent;
 
 		/** A list of message tags. */
@@ -1102,7 +1192,10 @@ export namespace MyNS {
 	/** A request to change the settings for an event destination for a configuration set. */
 	export interface UpdateConfigurationSetEventDestinationRequest {
 
-		/** An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination. */
+		/**
+		 * An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
+		 * Required
+		 */
 		EventDestination: EventDestinationDefinition;
 	}
 
@@ -1538,7 +1631,10 @@ export namespace MyNS {
 
 	export interface CreateConfigurationSetPostBody {
 
-		/** <p>The name of a configuration set.</p> <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p> */
+		/**
+		 * <p>The name of a configuration set.</p> <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
+		 * Required
+		 */
 		ConfigurationSetName: string;
 
 		/** <p>An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> <p>These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.</p> */
@@ -1585,10 +1681,16 @@ export namespace MyNS {
 
 	export interface CreateConfigurationSetEventDestinationPostBody {
 
-		/** <p>The name of an event destination.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p> */
+		/**
+		 * <p>The name of an event destination.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+		 * Required
+		 */
 		EventDestinationName: string;
 
-		/** An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination. */
+		/**
+		 * An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
+		 * Required
+		 */
 		EventDestination: CreateConfigurationSetEventDestinationPostBodyEventDestination;
 	}
 
@@ -1611,7 +1713,10 @@ export namespace MyNS {
 
 	export interface CreateDedicatedIpPoolPostBody {
 
-		/** The name of a dedicated IP pool. */
+		/**
+		 * The name of a dedicated IP pool.
+		 * Required
+		 */
 		PoolName: string;
 
 		/** An object that defines the tags (keys and values) that you want to associate with the pool. */
@@ -1623,10 +1728,16 @@ export namespace MyNS {
 		/** A name that helps you identify a report generated by the Deliverability dashboard. */
 		ReportName?: string;
 
-		/** The email address that the predictive inbox placement test email was sent from. */
+		/**
+		 * The email address that the predictive inbox placement test email was sent from.
+		 * Required
+		 */
 		FromEmailAddress: string;
 
-		/** An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers. */
+		/**
+		 * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
+		 * Required
+		 */
 		Content: CreateDeliverabilityTestReportPostBodyContent;
 
 		/** An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test. */
@@ -1645,7 +1756,10 @@ export namespace MyNS {
 
 	export interface CreateEmailIdentityPostBody {
 
-		/** The email address or domain that you want to verify. */
+		/**
+		 * The email address or domain that you want to verify.
+		 * Required
+		 */
 		EmailIdentity: string;
 
 		/** An array of objects that define the tags (keys and values) that you want to associate with the email identity. */
@@ -1654,7 +1768,10 @@ export namespace MyNS {
 
 	export interface UpdateConfigurationSetEventDestinationPutBody {
 
-		/** An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination. */
+		/**
+		 * An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
+		 * Required
+		 */
 		EventDestination: UpdateConfigurationSetEventDestinationPutBodyEventDestination;
 	}
 
@@ -1677,7 +1794,10 @@ export namespace MyNS {
 
 	export interface PutDeliverabilityDashboardOptionPutBody {
 
-		/** Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>. */
+		/**
+		 * Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.
+		 * Required
+		 */
 		DashboardEnabled: boolean;
 
 		/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
@@ -1725,13 +1845,19 @@ export namespace MyNS {
 
 	export interface PutDedicatedIpInPoolPutBody {
 
-		/** The name of a dedicated IP pool. */
+		/**
+		 * The name of a dedicated IP pool.
+		 * Required
+		 */
 		DestinationPoolName: string;
 	}
 
 	export interface PutDedicatedIpWarmupAttributesPutBody {
 
-		/** The warm-up percentage that you want to associate with the dedicated IP address. */
+		/**
+		 * The warm-up percentage that you want to associate with the dedicated IP address.
+		 * Required
+		 */
 		WarmupPercentage: number;
 	}
 
@@ -1761,7 +1887,10 @@ export namespace MyNS {
 		/** The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. */
 		FromEmailAddress?: string;
 
-		/** An object that describes the recipients for an email. */
+		/**
+		 * An object that describes the recipients for an email.
+		 * Required
+		 */
 		Destination: SendEmailPostBodyDestination;
 
 		/** The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply. */
@@ -1770,7 +1899,10 @@ export namespace MyNS {
 		/** The address that Amazon Pinpoint should send bounce and complaint notifications to. */
 		FeedbackForwardingEmailAddress?: string;
 
-		/** An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers. */
+		/**
+		 * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
+		 * Required
+		 */
 		Content: SendEmailPostBodyContent;
 
 		/** A list of message tags. */
@@ -1798,10 +1930,16 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.
+		 * Required
+		 */
 		ResourceArn: string;
 
-		/** A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters. */
+		/**
+		 * A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+		 * Required
+		 */
 		Tags: Array<Tag>;
 	}
 

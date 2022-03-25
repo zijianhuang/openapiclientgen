@@ -531,13 +531,22 @@ export namespace MyNS {
 		modelEndpoint: string;
 		modelSource: ExternalModelModelSource;
 
-		/** The role used to invoke external model endpoints. */
+		/**
+		 * The role used to invoke external model endpoints.
+		 * Required
+		 */
 		role: Role;
 
-		/** The model input configuration. */
+		/**
+		 * The model input configuration.
+		 * Required
+		 */
 		inputConfiguration: ModelInputConfiguration;
 
-		/** Provides the model output configuration. */
+		/**
+		 * Provides the model output configuration.
+		 * Required
+		 */
 		outputConfiguration: ModelOutputConfiguration;
 		modelEndpointStatus: ExternalModelModelEndpointStatus;
 	}
@@ -550,11 +559,17 @@ export namespace MyNS {
 		modelType: ModelVersionModelType;
 		description?: string;
 
-		/** The training data source. */
+		/**
+		 * The training data source.
+		 * Required
+		 */
 		trainingDataSource: TrainingDataSource;
 		modelVariables: Array<ModelVariable>;
 
-		/** The label schema. */
+		/**
+		 * The label schema.
+		 * Required
+		 */
 		labelSchema: LabelSchema;
 	}
 
@@ -615,7 +630,10 @@ export namespace MyNS {
 
 	export interface UpdateRuleMetadataRequest {
 
-		/** A rule. */
+		/**
+		 * A rule.
+		 * Required
+		 */
 		rule: Rule;
 		description: string;
 	}
@@ -628,7 +646,10 @@ export namespace MyNS {
 
 	export interface UpdateRuleVersionRequest {
 
-		/** A rule. */
+		/**
+		 * A rule.
+		 * Required
+		 */
 		rule: Rule;
 		description?: string;
 		expression: string;

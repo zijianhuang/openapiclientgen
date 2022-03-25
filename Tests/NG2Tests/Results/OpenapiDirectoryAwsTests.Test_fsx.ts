@@ -44,19 +44,26 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.
+		 * Required
 		 * Max length: 128
 		 * Min length: 12
 		 * Pattern: ^(backup-[0-9a-f]{8,})$
 		 */
 		BackupId: string;
 
-		/** The lifecycle status of the backup. */
+		/**
+		 * The lifecycle status of the backup.
+		 * Required
+		 */
 		Lifecycle: BackupLifecycle;
 
 		/** If backup creation fails, this structure contains the details of that failure. */
 		FailureDetails?: BackupFailureDetails;
 
-		/** The type of the backup. */
+		/**
+		 * The type of the backup.
+		 * Required
+		 */
 		Type: BackupType;
 
 		/**
@@ -66,7 +73,10 @@ export namespace MyNS {
 		 */
 		ProgressPercent?: number;
 
-		/** The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time. */
+		/**
+		 * The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.
+		 * Required
+		 */
 		CreationTime: Date;
 
 		/**
@@ -92,7 +102,10 @@ export namespace MyNS {
 		 */
 		Tags?: Array<Tag>;
 
-		/** A description of a specific Amazon FSx file system. */
+		/**
+		 * A description of a specific Amazon FSx file system.
+		 * Required
+		 */
 		FileSystem: FileSystem;
 
 		/** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system. */
@@ -416,6 +429,7 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
 		 * Max length: 21
 		 * Min length: 11
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
@@ -463,7 +477,10 @@ export namespace MyNS {
 		Lifecycle: CancelDataRepositoryTaskResponseLifecycle;
 		Type: DataRepositoryTaskType;
 
-		/** The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time. */
+		/**
+		 * The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.
+		 * Required
+		 */
 		CreationTime: Date;
 		StartTime?: Date;
 		EndTime?: Date;
@@ -485,6 +502,7 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
 		 * Max length: 21
 		 * Min length: 11
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
@@ -544,13 +562,17 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
 		 * Max length: 21
 		 * Min length: 11
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
 		 */
 		FileSystemId: string;
 
-		/** Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter. */
+		/**
+		 * Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.
+		 * Required
+		 */
 		Report: CompletionReport;
 
 		/**
@@ -592,11 +614,15 @@ export namespace MyNS {
 		 */
 		ClientRequestToken?: string;
 
-		/** The type of file system. */
+		/**
+		 * The type of file system.
+		 * Required
+		 */
 		FileSystemType: FileSystemFileSystemType;
 
 		/**
 		 * The storage capacity for your Amazon FSx file system, in gibibytes.
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
@@ -607,6 +633,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of subnet IDs. Currently, you can specify only one subnet ID in a call to the <code>CreateFileSystem</code> operation.
+		 * Required
 		 * Maximum items: 50
 		 */
 		SubnetIds: Array<string>;
@@ -658,6 +685,7 @@ export namespace MyNS {
 
 		/**
 		 * Sustained throughput of an Amazon FSx file system in MBps.
+		 * Required
 		 * Minimum: 8
 		 * Maximum: 2048
 		 */
@@ -749,6 +777,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.
+		 * Required
 		 * Max length: 128
 		 * Min length: 12
 		 * Pattern: ^(backup-[0-9a-f]{8,})$
@@ -765,6 +794,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of subnet IDs. Currently, you can specify only one subnet ID in a call to the <code>CreateFileSystem</code> operation.
+		 * Required
 		 * Maximum items: 50
 		 */
 		SubnetIds: Array<string>;
@@ -814,6 +844,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.
+		 * Required
 		 * Max length: 128
 		 * Min length: 12
 		 * Pattern: ^(backup-[0-9a-f]{8,})$
@@ -877,6 +908,7 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
 		 * Max length: 21
 		 * Min length: 11
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
@@ -1087,6 +1119,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Required
 		 * Max length: 512
 		 * Min length: 8
 		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
@@ -1129,6 +1162,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Required
 		 * Max length: 512
 		 * Min length: 8
 		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
@@ -1137,6 +1171,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -1154,6 +1189,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Required
 		 * Max length: 512
 		 * Min length: 8
 		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
@@ -1162,6 +1198,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of <code>TagKey</code> values, with a maximum of 50 elements.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -1182,6 +1219,7 @@ export namespace MyNS {
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
 		 * Max length: 21
 		 * Min length: 11
 		 * Pattern: ^(fs-[0-9a-f]{8,})$

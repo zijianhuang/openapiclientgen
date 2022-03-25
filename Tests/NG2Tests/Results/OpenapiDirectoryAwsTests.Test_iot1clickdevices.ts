@@ -352,6 +352,7 @@ export namespace MyNS {
 		 * "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
 		 * Tagging Strategies</a>.</p><p>
 		 * </p>
+		 * Required
 		 */
 		tags: {[id: string]: string };
 	}

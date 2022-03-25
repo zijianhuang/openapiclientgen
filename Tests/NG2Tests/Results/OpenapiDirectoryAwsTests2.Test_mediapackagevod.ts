@@ -81,7 +81,10 @@ export namespace MyNS {
 	/** A CMAF encryption configuration. */
 	export interface CmafEncryption {
 
-		/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
+		/**
+		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+		 * Required
+		 */
 		SpekeKeyProvider: SpekeKeyProvider;
 	}
 
@@ -150,7 +153,10 @@ export namespace MyNS {
 	/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
 	export interface DashEncryption {
 
-		/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
+		/**
+		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+		 * Required
+		 */
 		SpekeKeyProvider: SpekeKeyProvider;
 	}
 
@@ -175,7 +181,10 @@ export namespace MyNS {
 		ConstantInitializationVector?: string;
 		EncryptionMethod?: HlsEncryptionEncryptionMethod;
 
-		/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
+		/**
+		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+		 * Required
+		 */
 		SpekeKeyProvider: SpekeKeyProvider;
 	}
 
@@ -195,7 +204,10 @@ export namespace MyNS {
 	/** A Microsoft Smooth Streaming (MSS) encryption configuration. */
 	export interface MssEncryption {
 
-		/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
+		/**
+		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+		 * Required
+		 */
 		SpekeKeyProvider: SpekeKeyProvider;
 	}
 
@@ -650,19 +662,31 @@ export namespace MyNS {
 
 	export interface CreateAssetPostBody {
 
-		/** The unique identifier for the Asset. */
+		/**
+		 * The unique identifier for the Asset.
+		 * Required
+		 */
 		id: string;
 
-		/** The ID of the PackagingGroup for the Asset. */
+		/**
+		 * The ID of the PackagingGroup for the Asset.
+		 * Required
+		 */
 		packagingGroupId: string;
 
 		/** The resource ID to include in SPEKE key requests. */
 		resourceId?: string;
 
-		/** ARN of the source object in S3. */
+		/**
+		 * ARN of the source object in S3.
+		 * Required
+		 */
 		sourceArn: string;
 
-		/** The IAM role ARN used to access the source S3 bucket. */
+		/**
+		 * The IAM role ARN used to access the source S3 bucket.
+		 * Required
+		 */
 		sourceRoleArn: string;
 
 		/** A collection of tags associated with a resource */
@@ -680,13 +704,19 @@ export namespace MyNS {
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
 		hlsPackage?: CreatePackagingConfigurationPostBodyHlsPackage;
 
-		/** The ID of the PackagingConfiguration. */
+		/**
+		 * The ID of the PackagingConfiguration.
+		 * Required
+		 */
 		id: string;
 
 		/** A Microsoft Smooth Streaming (MSS) PackagingConfiguration. */
 		mssPackage?: CreatePackagingConfigurationPostBodyMssPackage;
 
-		/** The ID of a PackagingGroup. */
+		/**
+		 * The ID of a PackagingGroup.
+		 * Required
+		 */
 		packagingGroupId: string;
 
 		/** A collection of tags associated with a resource */
@@ -733,7 +763,10 @@ export namespace MyNS {
 		/** CDN Authorization credentials */
 		authorization?: CreatePackagingGroupPostBodyAuthorization;
 
-		/** The ID of the PackagingGroup. */
+		/**
+		 * The ID of the PackagingGroup.
+		 * Required
+		 */
 		id: string;
 
 		/** A collection of tags associated with a resource */
@@ -758,7 +791,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** A collection of tags associated with a resource */
+		/**
+		 * A collection of tags associated with a resource
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

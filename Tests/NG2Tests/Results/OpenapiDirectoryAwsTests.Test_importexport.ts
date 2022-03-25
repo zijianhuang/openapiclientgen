@@ -310,7 +310,10 @@ export namespace MyNS {
 	/** Input structure for the CancelJob operation. */
 	export interface CancelJobInput {
 
-		/** A unique identifier which refers to a particular job. */
+		/**
+		 * A unique identifier which refers to a particular job.
+		 * Required
+		 */
 		JobId: string;
 
 		/** Specifies the version of the client tool. */
@@ -325,16 +328,25 @@ export namespace MyNS {
 	/** Input structure for the CreateJob operation. */
 	export interface CreateJobInput {
 
-		/** Specifies whether the job to initiate is an import or export job. */
+		/**
+		 * Specifies whether the job to initiate is an import or export job.
+		 * Required
+		 */
 		JobType: CreateJobOutputJobType;
 
-		/** The UTF-8 encoded text of the manifest file. */
+		/**
+		 * The UTF-8 encoded text of the manifest file.
+		 * Required
+		 */
 		Manifest: string;
 
 		/** For internal use only. */
 		ManifestAddendum?: string;
 
-		/** Validate the manifest and parameter values in the request but do not actually create a job. */
+		/**
+		 * Validate the manifest and parameter values in the request but do not actually create a job.
+		 * Required
+		 */
 		ValidateOnly: boolean;
 
 		/** Specifies the version of the client tool. */
@@ -382,7 +394,10 @@ export namespace MyNS {
 	/** Input structure for the GetStatus operation. */
 	export interface GetStatusInput {
 
-		/** A unique identifier which refers to a particular job. */
+		/**
+		 * A unique identifier which refers to a particular job.
+		 * Required
+		 */
 		JobId: string;
 
 		/** Specifies the version of the client tool. */
@@ -407,16 +422,28 @@ export namespace MyNS {
 	/** Input structure for the UpateJob operation. */
 	export interface UpdateJobInput {
 
-		/** A unique identifier which refers to a particular job. */
+		/**
+		 * A unique identifier which refers to a particular job.
+		 * Required
+		 */
 		JobId: string;
 
-		/** The UTF-8 encoded text of the manifest file. */
+		/**
+		 * The UTF-8 encoded text of the manifest file.
+		 * Required
+		 */
 		Manifest: string;
 
-		/** Specifies whether the job to initiate is an import or export job. */
+		/**
+		 * Specifies whether the job to initiate is an import or export job.
+		 * Required
+		 */
 		JobType: CreateJobOutputJobType;
 
-		/** Validate the manifest and parameter values in the request but do not actually create a job. */
+		/**
+		 * Validate the manifest and parameter values in the request but do not actually create a job.
+		 * Required
+		 */
 		ValidateOnly: boolean;
 
 		/** Specifies the version of the client tool. */

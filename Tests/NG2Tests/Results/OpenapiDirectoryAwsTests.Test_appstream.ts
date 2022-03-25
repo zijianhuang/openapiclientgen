@@ -112,7 +112,10 @@ export namespace MyNS {
 		DirectoryName: string;
 		OrganizationalUnitDistinguishedNames: Array<string>;
 
-		/** Describes the credentials for the service account used by the fleet or image builder to connect to the directory. */
+		/**
+		 * Describes the credentials for the service account used by the fleet or image builder to connect to the directory.
+		 * Required
+		 */
 		ServiceAccountCredentials: ServiceAccountCredentials;
 	}
 
@@ -134,7 +137,10 @@ export namespace MyNS {
 		InstanceType: string;
 		FleetType?: FleetFleetType;
 
-		/** Describes the capacity status for a fleet. */
+		/**
+		 * Describes the capacity status for a fleet.
+		 * Required
+		 */
 		ComputeCapacityStatus: ComputeCapacityStatus;
 		MaxUserDurationInSeconds?: number;
 		DisconnectTimeoutInSeconds?: number;
@@ -202,7 +208,10 @@ export namespace MyNS {
 		InstanceType: string;
 		FleetType?: FleetFleetType;
 
-		/** Describes the capacity for a fleet. */
+		/**
+		 * Describes the capacity for a fleet.
+		 * Required
+		 */
 		ComputeCapacity: ComputeCapacity;
 
 		/** Describes VPC configuration information for fleets and image builders. */
@@ -373,7 +382,10 @@ export namespace MyNS {
 	/** Describes a connector that enables persistent storage for users. */
 	export interface StorageConnector {
 
-		/** The type of storage connector. */
+		/**
+		 * The type of storage connector.
+		 * Required
+		 */
 		ConnectorType: StorageConnectorConnectorType;
 
 		/**
@@ -647,7 +659,10 @@ export namespace MyNS {
 	export interface SharedImagePermissions {
 		sharedAccountId: string;
 
-		/** Describes the permissions for an image. */
+		/**
+		 * Describes the permissions for an image.
+		 * Required
+		 */
 		imagePermissions: ImagePermissions;
 	}
 
@@ -686,7 +701,10 @@ export namespace MyNS {
 		StackName: string;
 		FleetName: string;
 
-		/** Possible values for the state of a streaming session. */
+		/**
+		 * Possible values for the state of a streaming session.
+		 * Required
+		 */
 		State: SessionState;
 		ConnectionState?: SessionConnectionState;
 		StartTime?: Date;
@@ -955,7 +973,10 @@ export namespace MyNS {
 		Name: string;
 		SharedAccountId: string;
 
-		/** Describes the permissions for an image. */
+		/**
+		 * Describes the permissions for an image.
+		 * Required
+		 */
 		ImagePermissions: ImagePermissions;
 	}
 

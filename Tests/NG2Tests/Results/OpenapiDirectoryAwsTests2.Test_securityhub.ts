@@ -77,7 +77,10 @@ export namespace MyNS {
 		CreatedAt: string;
 		UpdatedAt: string;
 
-		/** The severity of the finding. */
+		/**
+		 * The severity of the finding.
+		 * Required
+		 */
 		Severity: Severity;
 		Confidence?: number;
 		Criticality?: number;
@@ -907,7 +910,10 @@ export namespace MyNS {
 	/** A finding from a <code>BatchUpdateFindings</code> request that Security Hub was unable to update. */
 	export interface BatchUpdateFindingsUnprocessedFinding {
 
-		/** Identifies a finding to update using <code>BatchUpdateFindings</code>. */
+		/**
+		 * Identifies a finding to update using <code>BatchUpdateFindings</code>.
+		 * Required
+		 */
 		FindingIdentifier: AwsSecurityFindingIdentifier;
 		ErrorCode: string;
 		ErrorMessage: string;
@@ -1140,7 +1146,10 @@ export namespace MyNS {
 
 	export interface GetInsightResultsResponse {
 
-		/** The insight results returned by the <code>GetInsightResults</code> operation. */
+		/**
+		 * The insight results returned by the <code>GetInsightResults</code> operation.
+		 * Required
+		 */
 		InsightResults: InsightResults;
 	}
 
@@ -1170,7 +1179,10 @@ export namespace MyNS {
 		InsightArn: string;
 		Name: string;
 
-		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
+		/**
+		 * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
+		 * Required
+		 */
 		Filters: AwsSecurityFindingFilters;
 		GroupByAttribute: string;
 	}
@@ -1421,7 +1433,10 @@ export namespace MyNS {
 	export interface CreateInsightRequest {
 		Name: string;
 
-		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
+		/**
+		 * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
+		 * Required
+		 */
 		Filters: AwsSecurityFindingFilters;
 		GroupByAttribute: string;
 	}
@@ -1560,7 +1575,10 @@ export namespace MyNS {
 
 	export interface UpdateFindingsRequest {
 
-		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
+		/**
+		 * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
+		 * Required
+		 */
 		Filters: AwsSecurityFindingFilters;
 
 		/** The updated note. */
@@ -2003,12 +2021,14 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the Security Hub master account that sent the invitation.
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		MasterId: string;
 
 		/**
 		 * The ID of the invitation sent from the Security Hub master account.
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		InvitationId: string;
@@ -2018,6 +2038,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARNs of the standards subscriptions to disable.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 25
 		 */
@@ -2028,6 +2049,7 @@ export namespace MyNS {
 
 		/**
 		 * The list of standards checks to enable.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 25
 		 */
@@ -2036,13 +2058,19 @@ export namespace MyNS {
 
 	export interface BatchImportFindingsPostBody {
 
-		/** A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS Security Finding Format</a>. Maximum of 100 findings per request. */
+		/**
+		 * A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS Security Finding Format</a>. Maximum of 100 findings per request.
+		 * Required
+		 */
 		Findings: Array<AwsSecurityFinding>;
 	}
 
 	export interface BatchUpdateFindingsPatchBody {
 
-		/** <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p> <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p> */
+		/**
+		 * <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p> <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
+		 * Required
+		 */
 		FindingIdentifiers: Array<AwsSecurityFindingIdentifier>;
 
 		/** The updated note. */
@@ -2100,18 +2128,21 @@ export namespace MyNS {
 
 		/**
 		 * The name of the custom action target.
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
 		/**
 		 * The description for the custom action target.
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		Description: string;
 
 		/**
 		 * The ID for the custom action target.
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		Id: string;
@@ -2121,15 +2152,20 @@ export namespace MyNS {
 
 		/**
 		 * The name of the custom insight to create.
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
-		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
+		/**
+		 * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
+		 * Required
+		 */
 		Filters: CreateInsightPostBodyFilters;
 
 		/**
 		 * The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		GroupByAttribute: string;
@@ -2230,7 +2266,10 @@ export namespace MyNS {
 
 	export interface DeclineInvitationsPostBody {
 
-		/** The list of account IDs for the accounts from which to decline the invitations to Security Hub. */
+		/**
+		 * The list of account IDs for the accounts from which to decline the invitations to Security Hub.
+		 * Required
+		 */
 		AccountIds: Array<string>;
 	}
 
@@ -2356,7 +2395,10 @@ export namespace MyNS {
 
 	export interface DeleteInvitationsPostBody {
 
-		/** The list of the account IDs that sent the invitations to delete. */
+		/**
+		 * The list of the account IDs that sent the invitations to delete.
+		 * Required
+		 */
 		AccountIds: Array<string>;
 	}
 
@@ -2401,6 +2443,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the product to enable the integration for.
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		ProductArn: string;
@@ -2534,7 +2577,10 @@ export namespace MyNS {
 
 	export interface UpdateFindingsPatchBody {
 
-		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
+		/**
+		 * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
+		 * Required
+		 */
 		Filters: UpdateFindingsPatchBodyFilters;
 
 		/** The updated note. */
@@ -2654,7 +2700,10 @@ export namespace MyNS {
 
 	export interface GetMembersPostBody {
 
-		/** The list of account IDs for the Security Hub member accounts to return the details for. */
+		/**
+		 * The list of account IDs for the Security Hub member accounts to return the details for.
+		 * Required
+		 */
 		AccountIds: Array<string>;
 	}
 
@@ -2666,7 +2715,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The tags to add to the resource. */
+		/**
+		 * The tags to add to the resource.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 

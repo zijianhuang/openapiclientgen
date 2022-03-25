@@ -278,7 +278,10 @@ export namespace MyNS {
 
 	export interface PostContentPostBody {
 
-		/** <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p> <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p> */
+		/**
+		 * <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p> <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
+		 * Required
+		 */
 		inputStream: string;
 	}
 
@@ -292,6 +295,7 @@ export namespace MyNS {
 
 		/**
 		 * The text that the user entered (Amazon Lex interprets this text).
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 */

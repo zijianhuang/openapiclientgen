@@ -1232,7 +1232,10 @@ export namespace MyNS {
 
 	export interface AddResourcePermissionsPostBody {
 
-		/** The users, groups, or organization being granted permission. */
+		/**
+		 * The users, groups, or organization being granted permission.
+		 * Required
+		 */
 		Principals: Array<SharePrincipal>;
 
 		/** Set of options which defines notification preferences of given action. */
@@ -1264,6 +1267,7 @@ export namespace MyNS {
 
 		/**
 		 * The text of the comment.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 1
 		 */
@@ -1278,7 +1282,10 @@ export namespace MyNS {
 
 	export interface CreateCustomMetadataPutBody {
 
-		/** Custom metadata in the form of name-value pairs. */
+		/**
+		 * Custom metadata in the form of name-value pairs.
+		 * Required
+		 */
 		CustomMetadata: {[id: string]: string };
 	}
 
@@ -1294,6 +1301,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the parent folder.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: [\w+-.@]+
@@ -1305,6 +1313,7 @@ export namespace MyNS {
 
 		/**
 		 * List of labels to add to the resource.
+		 * Required
 		 * Maximum items: 20
 		 */
 		Labels: Array<string>;
@@ -1314,15 +1323,22 @@ export namespace MyNS {
 
 		/**
 		 * The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
 		Endpoint: string;
 
-		/** The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST. */
+		/**
+		 * The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
+		 * Required
+		 */
 		Protocol: SubscriptionProtocol;
 
-		/** The notification type. */
+		/**
+		 * The notification type.
+		 * Required
+		 */
 		SubscriptionType: SubscriptionType;
 	}
 
@@ -1338,6 +1354,7 @@ export namespace MyNS {
 
 		/**
 		 * The login name of the user.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?
@@ -1354,6 +1371,7 @@ export namespace MyNS {
 
 		/**
 		 * The given name of the user.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -1361,6 +1379,7 @@ export namespace MyNS {
 
 		/**
 		 * The surname of the user.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -1368,6 +1387,7 @@ export namespace MyNS {
 
 		/**
 		 * The password of the user.
+		 * Required
 		 * Max length: 32
 		 * Min length: 4
 		 * Pattern: [\u0020-\u00FF]+
@@ -1513,6 +1533,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the parent folder.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: [\w+-.@]+

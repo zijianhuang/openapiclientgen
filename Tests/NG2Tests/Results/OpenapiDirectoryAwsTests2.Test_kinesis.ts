@@ -75,7 +75,10 @@ export namespace MyNS {
 	/** Represents the output for <code>DescribeStream</code>. */
 	export interface DescribeStreamOutput {
 
-		/** Represents the output for <a>DescribeStream</a>. */
+		/**
+		 * Represents the output for <a>DescribeStream</a>.
+		 * Required
+		 */
 		StreamDescription: StreamDescription;
 	}
 
@@ -103,10 +106,16 @@ export namespace MyNS {
 		ParentShardId?: string;
 		AdjacentParentShardId?: string;
 
-		/** The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers. */
+		/**
+		 * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
+		 * Required
+		 */
 		HashKeyRange: HashKeyRange;
 
-		/** The range of possible sequence numbers for the shard. */
+		/**
+		 * The range of possible sequence numbers for the shard.
+		 * Required
+		 */
 		SequenceNumberRange: SequenceNumberRange;
 	}
 
@@ -144,7 +153,10 @@ export namespace MyNS {
 
 	export interface DescribeStreamConsumerOutput {
 
-		/** An object that represents the details of a registered consumer. */
+		/**
+		 * An object that represents the details of a registered consumer.
+		 * Required
+		 */
 		ConsumerDescription: ConsumerDescription;
 	}
 
@@ -168,7 +180,10 @@ export namespace MyNS {
 
 	export interface DescribeStreamSummaryOutput {
 
-		/** Represents the output for <a>DescribeStreamSummary</a> */
+		/**
+		 * Represents the output for <a>DescribeStreamSummary</a>
+		 * Required
+		 */
 		StreamDescriptionSummary: StreamDescriptionSummary;
 	}
 
@@ -447,7 +462,10 @@ export namespace MyNS {
 
 	export interface RegisterStreamConsumerOutput {
 
-		/** An object that represents the details of the consumer you registered. */
+		/**
+		 * An object that represents the details of the consumer you registered.
+		 * Required
+		 */
 		Consumer: Consumer;
 	}
 
@@ -527,7 +545,10 @@ export namespace MyNS {
 
 	export interface SubscribeToShardEventStream {
 
-		/** After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of this type to your consumer. */
+		/**
+		 * After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of this type to your consumer.
+		 * Required
+		 */
 		SubscribeToShardEvent: SubscribeToShardEvent;
 	}
 

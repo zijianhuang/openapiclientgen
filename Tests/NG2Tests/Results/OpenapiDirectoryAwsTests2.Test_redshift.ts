@@ -1617,7 +1617,10 @@ export namespace MyNS {
 	export interface CreateScheduledActionMessage {
 		ScheduledActionName: string;
 
-		/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. */
+		/**
+		 * The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler.
+		 * Required
+		 */
 		TargetAction: ScheduledActionType;
 		Schedule: string;
 		IamRole: string;

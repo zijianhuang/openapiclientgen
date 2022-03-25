@@ -281,7 +281,10 @@ export namespace MyNS {
 		RoleARN: string;
 		ClusterJDBCURL: string;
 
-		/** Describes a <code>COPY</code> command for Amazon Redshift. */
+		/**
+		 * Describes a <code>COPY</code> command for Amazon Redshift.
+		 * Required
+		 */
 		CopyCommand: CopyCommand;
 		Username: string;
 		Password: string;
@@ -289,7 +292,10 @@ export namespace MyNS {
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
 		RetryOptions?: RedshiftRetryOptions;
 
-		/** Describes the configuration of a destination in Amazon S3. */
+		/**
+		 * Describes the configuration of a destination in Amazon S3.
+		 * Required
+		 */
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
@@ -334,7 +340,10 @@ export namespace MyNS {
 		RetryOptions?: ElasticsearchRetryOptions;
 		S3BackupMode?: ElasticsearchDestinationConfigurationS3BackupMode;
 
-		/** Describes the configuration of a destination in Amazon S3. */
+		/**
+		 * Describes the configuration of a destination in Amazon S3.
+		 * Required
+		 */
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
@@ -384,7 +393,10 @@ export namespace MyNS {
 		RetryOptions?: SplunkRetryOptions;
 		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode;
 
-		/** Describes the configuration of a destination in Amazon S3. */
+		/**
+		 * Describes the configuration of a destination in Amazon S3.
+		 * Required
+		 */
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
@@ -436,7 +448,10 @@ export namespace MyNS {
 
 	export interface DescribeDeliveryStreamOutput {
 
-		/** Contains information about a delivery stream. */
+		/**
+		 * Contains information about a delivery stream.
+		 * Required
+		 */
 		DeliveryStreamDescription: DeliveryStreamDescription;
 	}
 
@@ -532,11 +547,17 @@ export namespace MyNS {
 		Prefix?: string;
 		ErrorOutputPrefix?: string;
 
-		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
+		/**
+		 * Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.
+		 * Required
+		 */
 		BufferingHints: BufferingHints;
 		CompressionFormat: S3DestinationConfigurationCompressionFormat;
 
-		/** Describes the encryption for a destination in Amazon S3. */
+		/**
+		 * Describes the encryption for a destination in Amazon S3.
+		 * Required
+		 */
 		EncryptionConfiguration: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
@@ -551,11 +572,17 @@ export namespace MyNS {
 		Prefix?: string;
 		ErrorOutputPrefix?: string;
 
-		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
+		/**
+		 * Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.
+		 * Required
+		 */
 		BufferingHints: BufferingHints;
 		CompressionFormat: S3DestinationConfigurationCompressionFormat;
 
-		/** Describes the encryption for a destination in Amazon S3. */
+		/**
+		 * Describes the encryption for a destination in Amazon S3.
+		 * Required
+		 */
 		EncryptionConfiguration: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
@@ -578,14 +605,20 @@ export namespace MyNS {
 		RoleARN: string;
 		ClusterJDBCURL: string;
 
-		/** Describes a <code>COPY</code> command for Amazon Redshift. */
+		/**
+		 * Describes a <code>COPY</code> command for Amazon Redshift.
+		 * Required
+		 */
 		CopyCommand: CopyCommand;
 		Username: string;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
 		RetryOptions?: RedshiftRetryOptions;
 
-		/** Describes a destination in Amazon S3. */
+		/**
+		 * Describes a destination in Amazon S3.
+		 * Required
+		 */
 		S3DestinationDescription: S3DestinationDescription;
 
 		/** Describes a data processing configuration. */
@@ -696,7 +729,10 @@ export namespace MyNS {
 	export interface PutRecordInput {
 		DeliveryStreamName: string;
 
-		/** The unit of data in a delivery stream. */
+		/**
+		 * The unit of data in a delivery stream.
+		 * Required
+		 */
 		Record: Record;
 	}
 

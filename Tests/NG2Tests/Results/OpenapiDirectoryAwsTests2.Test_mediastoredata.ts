@@ -121,7 +121,10 @@ export namespace MyNS {
 
 	export interface PutObjectPutBody {
 
-		/** The bytes to be stored. */
+		/**
+		 * The bytes to be stored.
+		 * Required
+		 */
 		Body: string;
 	}
 

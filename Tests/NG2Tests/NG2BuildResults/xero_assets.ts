@@ -12,7 +12,10 @@ export namespace MyNS {
 		/** The Xero-generated Id for the asset */
 		assetId?: string;
 
-		/** The name of the asset */
+		/**
+		 * The name of the asset
+		 * Required
+		 */
 		assetName: string;
 
 		/** The Xero-generated Id for the asset type */
@@ -73,7 +76,10 @@ export namespace MyNS {
 		/** Xero generated unique identifier for asset types */
 		assetTypeId?: string;
 
-		/** The name of the asset type */
+		/**
+		 * The name of the asset type
+		 * Required
+		 */
 		assetTypeName: string;
 
 		/** The asset account for fixed assets of this type */

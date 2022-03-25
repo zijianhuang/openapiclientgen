@@ -332,6 +332,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -346,6 +347,7 @@ export namespace MyNS {
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -353,6 +355,7 @@ export namespace MyNS {
 
 		/**
 		 * The SQL statement to run.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 0
 		 */
@@ -377,6 +380,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -391,6 +395,7 @@ export namespace MyNS {
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -401,6 +406,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -408,6 +414,7 @@ export namespace MyNS {
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -415,6 +422,7 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the transaction to end and commit.
+		 * Required
 		 * Max length: 192
 		 * Min length: 0
 		 */
@@ -425,6 +433,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -439,6 +448,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the Aurora Serverless DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -453,6 +463,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>One or more SQL statements to run on the DB cluster.</p> <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
+		 * Required
 		 * Max length: 65536
 		 * Min length: 0
 		 */
@@ -479,6 +490,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -496,6 +508,7 @@ export namespace MyNS {
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -503,6 +516,7 @@ export namespace MyNS {
 
 		/**
 		 * The SQL statement to run.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 0
 		 */
@@ -524,6 +538,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -531,6 +546,7 @@ export namespace MyNS {
 
 		/**
 		 * The name or ARN of the secret that enables access to the DB cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 11
 		 */
@@ -538,6 +554,7 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the transaction to roll back.
+		 * Required
 		 * Max length: 192
 		 * Min length: 0
 		 */

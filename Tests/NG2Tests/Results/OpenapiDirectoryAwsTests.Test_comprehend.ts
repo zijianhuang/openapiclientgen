@@ -216,7 +216,10 @@ export namespace MyNS {
 		DataAccessRoleArn: string;
 		Tags?: Array<Tag>;
 
-		/** <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p> */
+		/**
+		 * <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p>
+		 * Required
+		 */
 		InputDataConfig: DocumentClassifierInputDataConfig;
 
 		/** Provides output results configuration parameters for custom classifier jobs. */
@@ -301,7 +304,10 @@ export namespace MyNS {
 		DataAccessRoleArn: string;
 		Tags?: Array<Tag>;
 
-		/** Specifies the format and location of the input data. */
+		/**
+		 * Specifies the format and location of the input data.
+		 * Required
+		 */
 		InputDataConfig: EntityRecognizerInputDataConfig;
 		ClientRequestToken?: string;
 		LanguageCode: CreateEntityRecognizerRequestLanguageCode;
@@ -316,7 +322,10 @@ export namespace MyNS {
 	export interface EntityRecognizerInputDataConfig {
 		EntityTypes: Array<EntityTypesListItem>;
 
-		/** Describes the training documents submitted with an entity recognizer. */
+		/**
+		 * Describes the training documents submitted with an entity recognizer.
+		 * Required
+		 */
 		Documents: EntityRecognizerDocuments;
 
 		/** Describes the annotations associated with a entity recognizer. */
@@ -1032,10 +1041,16 @@ export namespace MyNS {
 		JobName?: string;
 		DocumentClassifierArn: string;
 
-		/** The input properties for a topic detection job. */
+		/**
+		 * The input properties for a topic detection job.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
+		/**
+		 * <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/>
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		ClientRequestToken?: string;
@@ -1052,10 +1067,16 @@ export namespace MyNS {
 
 	export interface StartDominantLanguageDetectionJobRequest {
 
-		/** The input properties for a topic detection job. */
+		/**
+		 * The input properties for a topic detection job.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
+		/**
+		 * <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/>
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;
@@ -1073,10 +1094,16 @@ export namespace MyNS {
 
 	export interface StartEntitiesDetectionJobRequest {
 
-		/** The input properties for a topic detection job. */
+		/**
+		 * The input properties for a topic detection job.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
+		/**
+		 * <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/>
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;
@@ -1098,10 +1125,16 @@ export namespace MyNS {
 
 	export interface StartKeyPhrasesDetectionJobRequest {
 
-		/** The input properties for a topic detection job. */
+		/**
+		 * The input properties for a topic detection job.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
+		/**
+		 * <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/>
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;
@@ -1122,10 +1155,16 @@ export namespace MyNS {
 
 	export interface StartSentimentDetectionJobRequest {
 
-		/** The input properties for a topic detection job. */
+		/**
+		 * The input properties for a topic detection job.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
+		/**
+		 * <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/>
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;
@@ -1146,10 +1185,16 @@ export namespace MyNS {
 
 	export interface StartTopicsDetectionJobRequest {
 
-		/** The input properties for a topic detection job. */
+		/**
+		 * The input properties for a topic detection job.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
+		/**
+		 * <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/>
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		JobName?: string;

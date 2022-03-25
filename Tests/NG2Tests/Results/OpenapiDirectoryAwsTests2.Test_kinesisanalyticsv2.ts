@@ -20,7 +20,10 @@ export namespace MyNS {
 		ApplicationName: string;
 		CurrentApplicationVersionId: number;
 
-		/** Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN). */
+		/**
+		 * Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN).
+		 * Required
+		 */
 		CloudWatchLoggingOption: CloudWatchLoggingOption;
 	}
 
@@ -113,7 +116,10 @@ export namespace MyNS {
 	/** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.  */
 	export interface SourceSchema {
 
-		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream. */
+		/**
+		 * For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
+		 * Required
+		 */
 		RecordFormat: RecordFormat;
 		RecordEncoding?: string;
 		RecordColumns: Array<RecordColumn>;
@@ -180,7 +186,10 @@ export namespace MyNS {
 		ApplicationName: string;
 		CurrentApplicationVersionId: number;
 
-		/** When you configure the application input for an SQL-based Amazon Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. */
+		/**
+		 * When you configure the application input for an SQL-based Amazon Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two.
+		 * Required
+		 */
 		Input: Input;
 	}
 
@@ -201,7 +210,10 @@ export namespace MyNS {
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source. */
 		InputParallelism?: InputParallelism;
 
-		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
+		/**
+		 * For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
+		 * Required
+		 */
 		InputSchema: SourceSchema;
 	}
 
@@ -209,7 +221,10 @@ export namespace MyNS {
 	/** For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>. */
 	export interface InputProcessingConfiguration {
 
-		/** An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream in an SQL-based Amazon Kinesis Data Analytics application. */
+		/**
+		 * An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream in an SQL-based Amazon Kinesis Data Analytics application.
+		 * Required
+		 */
 		InputLambdaProcessor: InputLambdaProcessor;
 	}
 
@@ -248,7 +263,10 @@ export namespace MyNS {
 		CurrentApplicationVersionId: number;
 		InputId: string;
 
-		/** For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>. */
+		/**
+		 * For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+		 * Required
+		 */
 		InputProcessingConfiguration: InputProcessingConfiguration;
 	}
 
@@ -308,7 +326,10 @@ export namespace MyNS {
 		ApplicationName: string;
 		CurrentApplicationVersionId: number;
 
-		/** <p> Describes an SQL-based Amazon Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream. </p> <p/> */
+		/**
+		 * <p> Describes an SQL-based Amazon Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream. </p> <p/>
+		 * Required
+		 */
 		Output: Output;
 	}
 
@@ -326,7 +347,10 @@ export namespace MyNS {
 		/** When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function. */
 		LambdaOutput?: LambdaOutput;
 
-		/** Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application. */
+		/**
+		 * Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application.
+		 * Required
+		 */
 		DestinationSchema: DestinationSchema;
 	}
 
@@ -360,7 +384,10 @@ export namespace MyNS {
 		ReferenceId: string;
 		TableName: string;
 
-		/** For an SQL-based Amazon Kinesis Data Analytics application, provides the bucket name and object key name that stores the reference data. */
+		/**
+		 * For an SQL-based Amazon Kinesis Data Analytics application, provides the bucket name and object key name that stores the reference data.
+		 * Required
+		 */
 		S3ReferenceDataSourceDescription: S3ReferenceDataSourceDescription;
 
 		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
@@ -379,7 +406,10 @@ export namespace MyNS {
 		ApplicationName: string;
 		CurrentApplicationVersionId: number;
 
-		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table. */
+		/**
+		 * For an SQL-based Amazon Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.
+		 * Required
+		 */
 		ReferenceDataSource: ReferenceDataSource;
 	}
 
@@ -391,7 +421,10 @@ export namespace MyNS {
 		/** <p>For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.</p> <p>A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application. </p> */
 		S3ReferenceDataSource?: S3ReferenceDataSource;
 
-		/** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
+		/**
+		 * For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
+		 * Required
+		 */
 		ReferenceSchema: SourceSchema;
 	}
 
@@ -423,7 +456,10 @@ export namespace MyNS {
 		ApplicationName: string;
 		CurrentApplicationVersionId: number;
 
-		/** Describes the parameters of a VPC used by the application. */
+		/**
+		 * Describes the parameters of a VPC used by the application.
+		 * Required
+		 */
 		VpcConfiguration: VpcConfiguration;
 	}
 
@@ -436,7 +472,10 @@ export namespace MyNS {
 
 	export interface CreateApplicationResponse {
 
-		/** Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations. */
+		/**
+		 * Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.
+		 * Required
+		 */
 		ApplicationDetail: ApplicationDetail;
 	}
 
@@ -638,7 +677,10 @@ export namespace MyNS {
 		/** Describes execution properties for a Java-based Kinesis Data Analytics application. */
 		EnvironmentProperties?: EnvironmentProperties;
 
-		/** Describes code configuration for a Java-based Kinesis Data Analytics application. */
+		/**
+		 * Describes code configuration for a Java-based Kinesis Data Analytics application.
+		 * Required
+		 */
 		ApplicationCodeConfiguration: ApplicationCodeConfiguration;
 
 		/** Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application. */
@@ -832,7 +874,10 @@ export namespace MyNS {
 
 	export interface DescribeApplicationResponse {
 
-		/** Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations. */
+		/**
+		 * Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.
+		 * Required
+		 */
 		ApplicationDetail: ApplicationDetail;
 	}
 
@@ -843,7 +888,10 @@ export namespace MyNS {
 
 	export interface DescribeApplicationSnapshotResponse {
 
-		/** Provides details about a snapshot of application state. */
+		/**
+		 * Provides details about a snapshot of application state.
+		 * Required
+		 */
 		SnapshotDetails: SnapshotDetails;
 	}
 
@@ -949,7 +997,10 @@ export namespace MyNS {
 	export interface StartApplicationRequest {
 		ApplicationName: string;
 
-		/** Describes the starting parameters for an Amazon Kinesis Data Analytics application. */
+		/**
+		 * Describes the starting parameters for an Amazon Kinesis Data Analytics application.
+		 * Required
+		 */
 		RunConfiguration: RunConfiguration;
 	}
 
@@ -976,7 +1027,10 @@ export namespace MyNS {
 	export interface SqlRunConfiguration {
 		InputId: string;
 
-		/** Describes the point at which the application reads from the streaming source. */
+		/**
+		 * Describes the point at which the application reads from the streaming source.
+		 * Required
+		 */
 		InputStartingPositionConfiguration: InputStartingPositionConfiguration;
 	}
 
@@ -1005,7 +1059,10 @@ export namespace MyNS {
 
 	export interface UpdateApplicationResponse {
 
-		/** Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations. */
+		/**
+		 * Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.
+		 * Required
+		 */
 		ApplicationDetail: ApplicationDetail;
 	}
 
@@ -1077,7 +1134,10 @@ export namespace MyNS {
 	/** For an SQL-based Amazon Kinesis Data Analytics application, describes updates to an <a>InputProcessingConfiguration</a>. */
 	export interface InputProcessingConfigurationUpdate {
 
-		/** For an SQL-based Amazon Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream. */
+		/**
+		 * For an SQL-based Amazon Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream.
+		 * Required
+		 */
 		InputLambdaProcessorUpdate: InputLambdaProcessorUpdate;
 	}
 

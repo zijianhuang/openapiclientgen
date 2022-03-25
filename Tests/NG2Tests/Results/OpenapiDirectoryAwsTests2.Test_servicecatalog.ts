@@ -293,7 +293,10 @@ export namespace MyNS {
 		ProductType: ProductViewSummaryType;
 		Tags?: Array<Tag>;
 
-		/** Information about a provisioning artifact (also known as a version) for a product. */
+		/**
+		 * Information about a provisioning artifact (also known as a version) for a product.
+		 * Required
+		 */
 		ProvisioningArtifactParameters: ProvisioningArtifactProperties;
 		IdempotencyToken: string;
 	}
@@ -355,7 +358,10 @@ export namespace MyNS {
 		AcceptLanguage?: string;
 		ProductId: string;
 
-		/** Information about a provisioning artifact (also known as a version) for a product. */
+		/**
+		 * Information about a provisioning artifact (also known as a version) for a product.
+		 * Required
+		 */
 		Parameters: ProvisioningArtifactProperties;
 		IdempotencyToken: string;
 	}

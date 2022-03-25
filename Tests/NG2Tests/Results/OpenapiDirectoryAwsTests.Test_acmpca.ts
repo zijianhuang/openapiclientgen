@@ -8,7 +8,10 @@ export namespace MyNS {
 
 	export interface CreateCertificateAuthorityRequest {
 
-		/** Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> action. */
+		/**
+		 * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> action.
+		 * Required
+		 */
 		CertificateAuthorityConfiguration: CertificateAuthorityConfiguration;
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
@@ -24,7 +27,10 @@ export namespace MyNS {
 		KeyAlgorithm: CertificateAuthorityConfigurationKeyAlgorithm;
 		SigningAlgorithm: CertificateAuthorityConfigurationSigningAlgorithm;
 
-		/** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity. */
+		/**
+		 * Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.
+		 * Required
+		 */
 		Subject: ASN1Subject;
 	}
 
@@ -244,7 +250,10 @@ export namespace MyNS {
 		SigningAlgorithm: CertificateAuthorityConfigurationSigningAlgorithm;
 		TemplateArn?: string;
 
-		/** Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> action. */
+		/**
+		 * Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> action.
+		 * Required
+		 */
 		Validity: Validity;
 		IdempotencyToken?: string;
 	}

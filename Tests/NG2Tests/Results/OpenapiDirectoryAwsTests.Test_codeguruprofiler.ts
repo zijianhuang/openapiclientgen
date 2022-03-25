@@ -6,7 +6,10 @@ export namespace MyNS {
 	/** The structure representing the configureAgentResponse. */
 	export interface ConfigureAgentResponse {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		configuration: AgentConfiguration;
 	}
 
@@ -33,7 +36,10 @@ export namespace MyNS {
 	/** The structure representing the createProfilingGroupResponse. */
 	export interface CreateProfilingGroupResponse {
 
-		/** The description of a profiling group. */
+		/**
+		 * The description of a profiling group.
+		 * Required
+		 */
 		profilingGroup: ProfilingGroupDescription;
 	}
 
@@ -92,7 +98,10 @@ export namespace MyNS {
 	/** The structure representing the describeProfilingGroupResponse. */
 	export interface DescribeProfilingGroupResponse {
 
-		/** The description of a profiling group. */
+		/**
+		 * The description of a profiling group.
+		 * Required
+		 */
 		profilingGroup: ProfilingGroupDescription;
 	}
 
@@ -153,7 +162,10 @@ export namespace MyNS {
 	/** The structure representing the updateProfilingGroupResponse. */
 	export interface UpdateProfilingGroupResponse {
 
-		/** The description of a profiling group. */
+		/**
+		 * The description of a profiling group.
+		 * Required
+		 */
 		profilingGroup: ProfilingGroupDescription;
 	}
 
@@ -230,7 +242,10 @@ export namespace MyNS {
 	/** The structure representing the updateProfilingGroupRequest. */
 	export interface UpdateProfilingGroupRequest {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		agentOrchestrationConfig: AgentOrchestrationConfig;
 	}
 
@@ -394,6 +409,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the profiling group.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: ^[\w-]+$
@@ -407,7 +423,10 @@ export namespace MyNS {
 
 	export interface UpdateProfilingGroupPutBody {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		agentOrchestrationConfig: UpdateProfilingGroupPutBodyAgentOrchestrationConfig;
 	}
 
@@ -417,7 +436,10 @@ export namespace MyNS {
 
 	export interface PostAgentProfilePostBody {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		agentProfile: string;
 	}
 
@@ -425,6 +447,7 @@ export namespace MyNS {
 
 		/**
 		 * The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */

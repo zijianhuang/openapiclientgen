@@ -243,7 +243,10 @@ export namespace MyNS {
 
 	export interface AssociateRepositoryRequest {
 
-		/** Information about a repository. */
+		/**
+		 * Information about a repository.
+		 * Required
+		 */
 		Repository: Repository;
 		ClientRequestToken?: string;
 	}
@@ -404,7 +407,10 @@ export namespace MyNS {
 
 	export interface AssociateRepositoryPostBody {
 
-		/** Information about a repository. */
+		/**
+		 * Information about a repository.
+		 * Required
+		 */
 		Repository: AssociateRepositoryPostBodyRepository;
 
 		/**
@@ -429,6 +435,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) that identifies the code review.
+		 * Required
 		 * Max length: 1600
 		 * Min length: 1
 		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
@@ -437,6 +444,7 @@ export namespace MyNS {
 
 		/**
 		 * The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -444,6 +452,7 @@ export namespace MyNS {
 
 		/**
 		 * List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
+		 * Required
 		 * Minimum items: 0
 		 * Maximum items: 1
 		 */

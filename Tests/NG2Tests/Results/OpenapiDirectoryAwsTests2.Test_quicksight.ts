@@ -202,7 +202,10 @@ export namespace MyNS {
 		Alias: string;
 		DataTransforms?: Array<TransformOperation>;
 
-		/** Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
+		/**
+		 * Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+		 * Required
+		 */
 		Source: LogicalTableSource;
 	}
 
@@ -430,7 +433,10 @@ export namespace MyNS {
 	/** S3 parameters. */
 	export interface S3Parameters {
 
-		/** Amazon S3 manifest file location. */
+		/**
+		 * Amazon S3 manifest file location.
+		 * Required
+		 */
 		ManifestFileLocation: ManifestFileLocation;
 	}
 
@@ -1486,7 +1492,10 @@ export namespace MyNS {
 		Parameters?: Parameters;
 		Permissions?: Array<ResourcePermission>;
 
-		/** Dashboard source entity. */
+		/**
+		 * Dashboard source entity.
+		 * Required
+		 */
 		SourceEntity: DashboardSourceEntity;
 		Tags?: Array<Tag>;
 		VersionDescription?: string;
@@ -1580,7 +1589,10 @@ export namespace MyNS {
 		Name?: string;
 		Permissions?: Array<ResourcePermission>;
 
-		/** The source entity of the template. */
+		/**
+		 * The source entity of the template.
+		 * Required
+		 */
 		SourceEntity: TemplateSourceEntity;
 		Tags?: Array<Tag>;
 		VersionDescription?: string;
@@ -1759,7 +1771,10 @@ export namespace MyNS {
 	export interface UpdateDashboardRequest {
 		Name: string;
 
-		/** Dashboard source entity. */
+		/**
+		 * Dashboard source entity.
+		 * Required
+		 */
 		SourceEntity: DashboardSourceEntity;
 
 		/** Parameters. */
@@ -1828,7 +1843,10 @@ export namespace MyNS {
 
 	export interface UpdateTemplateRequest {
 
-		/** The source entity of the template. */
+		/**
+		 * The source entity of the template.
+		 * Required
+		 */
 		SourceEntity: TemplateSourceEntity;
 		VersionDescription?: string;
 		Name?: string;
@@ -2648,6 +2666,7 @@ export namespace MyNS {
 
 		/**
 		 * The display name of the dashboard.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 1
 		 * Pattern: [\u0020-\u00FF]+
@@ -2664,7 +2683,10 @@ export namespace MyNS {
 		 */
 		Permissions?: Array<ResourcePermission>;
 
-		/** Dashboard source entity. */
+		/**
+		 * Dashboard source entity.
+		 * Required
+		 */
 		SourceEntity: CreateDashboardPostBodySourceEntity;
 
 		/**
@@ -2714,13 +2736,17 @@ export namespace MyNS {
 
 		/**
 		 * The display name of the dashboard.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 1
 		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Name: string;
 
-		/** Dashboard source entity. */
+		/**
+		 * Dashboard source entity.
+		 * Required
+		 */
 		SourceEntity: UpdateDashboardPutBodySourceEntity;
 
 		/** Parameters. */
@@ -2764,23 +2790,33 @@ export namespace MyNS {
 
 	export interface CreateDataSetPostBody {
 
-		/** An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account. */
+		/**
+		 * An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+		 * Required
+		 */
 		DataSetId: string;
 
 		/**
 		 * The display name for the dataset.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
 		Name: string;
 
-		/** Declares the physical tables that are available in the underlying data sources. */
+		/**
+		 * Declares the physical tables that are available in the underlying data sources.
+		 * Required
+		 */
 		PhysicalTableMap: {[id: string]: PhysicalTable };
 
 		/** Configures the combination and transformation of the data from the physical tables. */
 		LogicalTableMap?: {[id: string]: LogicalTable };
 
-		/** Indicates whether you want to import the data into SPICE. */
+		/**
+		 * Indicates whether you want to import the data into SPICE.
+		 * Required
+		 */
 		ImportMode: DataSetImportMode;
 
 		/**
@@ -2815,17 +2851,24 @@ export namespace MyNS {
 
 	export interface CreateDataSourcePostBody {
 
-		/** An ID for the data source. This ID is unique per AWS Region for each AWS account. */
+		/**
+		 * An ID for the data source. This ID is unique per AWS Region for each AWS account.
+		 * Required
+		 */
 		DataSourceId: string;
 
 		/**
 		 * A display name for the data source.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
 		Name: string;
 
-		/** The type of the data source. Currently, the supported types for this operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data sources. */
+		/**
+		 * The type of the data source. Currently, the supported types for this operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data sources.
+		 * Required
+		 */
 		Type: DataSourceType;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
@@ -2933,6 +2976,7 @@ export namespace MyNS {
 
 		/**
 		 * A name for the group that you want to create.
+		 * Required
 		 * Min length: 1
 		 * Pattern: [\u0020-\u00FF]+
 		 */
@@ -2950,12 +2994,16 @@ export namespace MyNS {
 
 		/**
 		 * The name of the assignment. It must be unique within an AWS account.
+		 * Required
 		 * Min length: 1
 		 * Pattern: (?=^.{2,256}$)(?!.*\s)[0-9a-zA-Z-_.:=+@]*$
 		 */
 		AssignmentName: string;
 
-		/** <p>The status of the assignment. Possible values are as follows:</p> <ul> <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> </ul> */
+		/**
+		 * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> </ul>
+		 * Required
+		 */
 		AssignmentStatus: CreateIAMPolicyAssignmentResponseAssignmentStatus;
 
 		/** The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment. */
@@ -2982,7 +3030,10 @@ export namespace MyNS {
 		 */
 		Permissions?: Array<ResourcePermission>;
 
-		/** The source entity of the template. */
+		/**
+		 * The source entity of the template.
+		 * Required
+		 */
 		SourceEntity: CreateTemplatePostBodySourceEntity;
 
 		/**
@@ -3011,7 +3062,10 @@ export namespace MyNS {
 
 	export interface UpdateTemplatePutBody {
 
-		/** The source entity of the template. */
+		/**
+		 * The source entity of the template.
+		 * Required
+		 */
 		SourceEntity: UpdateTemplatePutBodySourceEntity;
 
 		/**
@@ -3043,6 +3097,7 @@ export namespace MyNS {
 
 		/**
 		 * The version number of the template.
+		 * Required
 		 * Minimum: 1
 		 */
 		TemplateVersionNumber: number;
@@ -3052,6 +3107,7 @@ export namespace MyNS {
 
 		/**
 		 * The version number of the template.
+		 * Required
 		 * Minimum: 1
 		 */
 		TemplateVersionNumber: number;
@@ -3061,18 +3117,25 @@ export namespace MyNS {
 
 		/**
 		 * The display name for the dataset.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
 		Name: string;
 
-		/** Declares the physical tables that are available in the underlying data sources. */
+		/**
+		 * Declares the physical tables that are available in the underlying data sources.
+		 * Required
+		 */
 		PhysicalTableMap: {[id: string]: PhysicalTable };
 
 		/** Configures the combination and transformation of the data from the physical tables. */
 		LogicalTableMap?: {[id: string]: LogicalTable };
 
-		/** Indicates whether you want to import the data into SPICE. */
+		/**
+		 * Indicates whether you want to import the data into SPICE.
+		 * Required
+		 */
 		ImportMode: DataSetImportMode;
 
 		/**
@@ -3095,6 +3158,7 @@ export namespace MyNS {
 
 		/**
 		 * A display name for the data source.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
@@ -3199,10 +3263,16 @@ export namespace MyNS {
 
 	export interface UpdateUserPutBody {
 
-		/** The email address of the user that you want to update. */
+		/**
+		 * The email address of the user that you want to update.
+		 * Required
+		 */
 		Email: string;
 
-		/** <p>The Amazon QuickSight role of the user. The user role can be one of the following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li> </ul> */
+		/**
+		 * <p>The Amazon QuickSight role of the user. The user role can be one of the following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li> </ul>
+		 * Required
+		 */
 		Role: UserRole;
 	}
 
@@ -3290,6 +3360,7 @@ export namespace MyNS {
 
 		/**
 		 * Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
@@ -3298,13 +3369,22 @@ export namespace MyNS {
 
 	export interface RegisterUserPostBody {
 
-		/** <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li> <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li> </ul> */
+		/**
+		 * <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li> <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li> </ul>
+		 * Required
+		 */
 		IdentityType: UserIdentityType;
 
-		/** The email address of the user that you want to register. */
+		/**
+		 * The email address of the user that you want to register.
+		 * Required
+		 */
 		Email: string;
 
-		/** <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li> </ul> */
+		/**
+		 * <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li> </ul>
+		 * Required
+		 */
 		UserRole: UserRole;
 
 		/** The ARN of the IAM user or role that you are registering with Amazon QuickSight. */
@@ -3330,6 +3410,7 @@ export namespace MyNS {
 
 		/**
 		 * The filters to apply to the search. Currently, you can search only by user name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code>
+		 * Required
 		 * Maximum items: 1
 		 */
 		Filters: Array<DashboardSearchFilter>;

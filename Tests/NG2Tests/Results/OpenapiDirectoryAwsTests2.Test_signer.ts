@@ -123,10 +123,16 @@ export namespace MyNS {
 	/** The configuration of a code signing operation. */
 	export interface SigningConfiguration {
 
-		/** The encryption algorithm options that are available to a code signing job. */
+		/**
+		 * The encryption algorithm options that are available to a code signing job.
+		 * Required
+		 */
 		encryptionAlgorithmOptions: EncryptionAlgorithmOptions;
 
-		/** The hash algorithms that are available to a code signing job. */
+		/**
+		 * The hash algorithms that are available to a code signing job.
+		 * Required
+		 */
 		hashAlgorithmOptions: HashAlgorithmOptions;
 	}
 
@@ -314,7 +320,10 @@ export namespace MyNS {
 
 	export interface PutSigningProfileRequest {
 
-		/** The ACM certificate that is used to sign your code. */
+		/**
+		 * The ACM certificate that is used to sign your code.
+		 * Required
+		 */
 		signingMaterial: SigningMaterial;
 		platformId: string;
 
@@ -326,10 +335,16 @@ export namespace MyNS {
 
 	export interface StartSigningJobRequest {
 
-		/** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code. */
+		/**
+		 * An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.
+		 * Required
+		 */
 		source: Source;
 
-		/** Points to an <code>S3Destination</code> object that contains information about your S3 bucket. */
+		/**
+		 * Points to an <code>S3Destination</code> object that contains information about your S3 bucket.
+		 * Required
+		 */
 		destination: Destination;
 		profileName?: string;
 		clientRequestToken: string;
@@ -480,10 +495,16 @@ export namespace MyNS {
 
 	export interface PutSigningProfilePutBody {
 
-		/** The ACM certificate that is used to sign your code. */
+		/**
+		 * The ACM certificate that is used to sign your code.
+		 * Required
+		 */
 		signingMaterial: PutSigningProfilePutBodySigningMaterial;
 
-		/** The ID of the signing platform to be created. */
+		/**
+		 * The ID of the signing platform to be created.
+		 * Required
+		 */
 		platformId: string;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
@@ -509,10 +530,16 @@ export namespace MyNS {
 
 	export interface StartSigningJobPostBody {
 
-		/** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code. */
+		/**
+		 * An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.
+		 * Required
+		 */
 		source: StartSigningJobPostBodySource;
 
-		/** Points to an <code>S3Destination</code> object that contains information about your S3 bucket. */
+		/**
+		 * Points to an <code>S3Destination</code> object that contains information about your S3 bucket.
+		 * Required
+		 */
 		destination: StartSigningJobPostBodyDestination;
 
 		/**
@@ -523,7 +550,10 @@ export namespace MyNS {
 		 */
 		profileName?: string;
 
-		/** String that identifies the signing request. All calls after the first that use this token return the same response as the first call. */
+		/**
+		 * String that identifies the signing request. All calls after the first that use this token return the same response as the first call.
+		 * Required
+		 */
 		clientRequestToken: string;
 	}
 
@@ -541,7 +571,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** One or more tags to be associated with the signing profile. */
+		/**
+		 * One or more tags to be associated with the signing profile.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

@@ -810,19 +810,31 @@ export namespace MyNS {
 
 	export interface CancelJobPostBody {
 
-		/** The AWS Batch job ID of the job to cancel. */
+		/**
+		 * The AWS Batch job ID of the job to cancel.
+		 * Required
+		 */
 		jobId: string;
 
-		/** A message to attach to the job that explains the reason for canceling it. This message is returned by future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs. */
+		/**
+		 * A message to attach to the job that explains the reason for canceling it. This message is returned by future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
+		 * Required
+		 */
 		reason: string;
 	}
 
 	export interface CreateComputeEnvironmentPostBody {
 
-		/** The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. */
+		/**
+		 * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+		 * Required
+		 */
 		computeEnvironmentName: string;
 
-		/** The type of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>AWS Batch User Guide</i>. */
+		/**
+		 * The type of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>AWS Batch User Guide</i>.
+		 * Required
+		 */
 		type: ComputeEnvironmentDetailType;
 
 		/** The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts jobs from a queue and can scale out automatically based on queues. */
@@ -831,7 +843,10 @@ export namespace MyNS {
 		/** An object representing an AWS Batch compute resource. */
 		computeResources?: CreateComputeEnvironmentPostBodyComputeResources;
 
-		/** <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf.</p> <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path.</p> <note> <p>Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p> </note> */
+		/**
+		 * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf.</p> <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path.</p> <note> <p>Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p> </note>
+		 * Required
+		 */
 		serviceRole: string;
 	}
 
@@ -858,34 +873,52 @@ export namespace MyNS {
 
 	export interface CreateJobQueuePostBody {
 
-		/** The name of the job queue. */
+		/**
+		 * The name of the job queue.
+		 * Required
+		 */
 		jobQueueName: string;
 
 		/** The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. */
 		state?: ComputeEnvironmentDetailState;
 
-		/** The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. */
+		/**
+		 * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
+		 * Required
+		 */
 		priority: number;
 
-		/** The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment should execute a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute environments with a job queue. */
+		/**
+		 * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment should execute a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute environments with a job queue.
+		 * Required
+		 */
 		computeEnvironmentOrder: Array<ComputeEnvironmentOrder>;
 	}
 
 	export interface DeleteComputeEnvironmentPostBody {
 
-		/** The name or Amazon Resource Name (ARN) of the compute environment to delete. */
+		/**
+		 * The name or Amazon Resource Name (ARN) of the compute environment to delete.
+		 * Required
+		 */
 		computeEnvironment: string;
 	}
 
 	export interface DeleteJobQueuePostBody {
 
-		/** The short name or full Amazon Resource Name (ARN) of the queue to delete. */
+		/**
+		 * The short name or full Amazon Resource Name (ARN) of the queue to delete.
+		 * Required
+		 */
 		jobQueue: string;
 	}
 
 	export interface DeregisterJobDefinitionPostBody {
 
-		/** The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister. */
+		/**
+		 * The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.
+		 * Required
+		 */
 		jobDefinition: string;
 	}
 
@@ -933,7 +966,10 @@ export namespace MyNS {
 
 	export interface DescribeJobsPostBody {
 
-		/** A list of up to 100 job IDs. */
+		/**
+		 * A list of up to 100 job IDs.
+		 * Required
+		 */
 		jobs: Array<string>;
 	}
 
@@ -960,10 +996,16 @@ export namespace MyNS {
 
 	export interface RegisterJobDefinitionPostBody {
 
-		/** The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. */
+		/**
+		 * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+		 * Required
+		 */
 		jobDefinitionName: string;
 
-		/** The type of job definition. */
+		/**
+		 * The type of job definition.
+		 * Required
+		 */
 		type: JobDefinitionType;
 
 		/** Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition. */
@@ -1018,10 +1060,16 @@ export namespace MyNS {
 
 	export interface SubmitJobPostBody {
 
-		/** The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. */
+		/**
+		 * The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+		 * Required
+		 */
 		jobName: string;
 
-		/** The job queue into which the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue. */
+		/**
+		 * The job queue into which the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.
+		 * Required
+		 */
 		jobQueue: string;
 
 		/** An object representing an AWS Batch array job. */
@@ -1030,7 +1078,10 @@ export namespace MyNS {
 		/** A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin. */
 		dependsOn?: Array<JobDependency>;
 
-		/** The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used. */
+		/**
+		 * The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used.
+		 * Required
+		 */
 		jobDefinition: string;
 
 		/** Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition. */
@@ -1077,16 +1128,25 @@ export namespace MyNS {
 
 	export interface TerminateJobPostBody {
 
-		/** The AWS Batch job ID of the job to terminate. */
+		/**
+		 * The AWS Batch job ID of the job to terminate.
+		 * Required
+		 */
 		jobId: string;
 
-		/** A message to attach to the job that explains the reason for canceling it. This message is returned by future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs. */
+		/**
+		 * A message to attach to the job that explains the reason for canceling it. This message is returned by future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
+		 * Required
+		 */
 		reason: string;
 	}
 
 	export interface UpdateComputeEnvironmentPostBody {
 
-		/** The name or full Amazon Resource Name (ARN) of the compute environment to update. */
+		/**
+		 * The name or full Amazon Resource Name (ARN) of the compute environment to update.
+		 * Required
+		 */
 		computeEnvironment: string;
 
 		/** The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs from a queue and scale in or out automatically based on the workload demand of its associated queues. */
@@ -1107,7 +1167,10 @@ export namespace MyNS {
 
 	export interface UpdateJobQueuePostBody {
 
-		/** The name or the Amazon Resource Name (ARN) of the job queue. */
+		/**
+		 * The name or the Amazon Resource Name (ARN) of the job queue.
+		 * Required
+		 */
 		jobQueue: string;
 
 		/** Describes the queue's ability to accept new jobs. */

@@ -21,6 +21,7 @@ export namespace MyNS {
 
 		/**
 		 * The name you configured for your gateway.
+		 * Required
 		 * Max length: 255
 		 * Min length: 2
 		 * Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
@@ -61,6 +62,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -95,6 +97,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -120,6 +123,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -149,6 +153,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -171,6 +176,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -190,6 +196,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -206,6 +213,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -249,6 +257,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -264,6 +273,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -271,6 +281,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the backend storage used for storing file data.
+		 * Required
 		 * Max length: 310
 		 * Min length: 16
 		 */
@@ -335,6 +346,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -350,6 +362,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -357,6 +370,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the backend storage used for storing file data.
+		 * Required
 		 * Max length: 310
 		 * Min length: 16
 		 */
@@ -435,6 +449,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -467,6 +482,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -499,6 +515,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -533,6 +550,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -557,6 +575,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -596,6 +615,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -621,6 +641,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -647,6 +668,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -696,6 +718,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -722,6 +745,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -748,6 +772,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -863,6 +888,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -892,6 +918,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1121,6 +1148,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1253,6 +1281,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1295,6 +1324,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1323,6 +1353,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1370,6 +1401,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1400,6 +1432,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1437,6 +1470,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1462,6 +1496,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1642,6 +1677,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1736,6 +1772,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1809,6 +1846,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1840,6 +1878,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1875,6 +1914,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1894,6 +1934,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1913,6 +1954,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1935,6 +1977,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1958,6 +2001,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -1983,6 +2027,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2003,6 +2048,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2027,6 +2073,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2048,6 +2095,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2072,6 +2120,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2113,6 +2162,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2147,6 +2197,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2171,6 +2222,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2199,6 +2251,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2263,6 +2316,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */
@@ -2311,6 +2365,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
 		 * Max length: 500
 		 * Min length: 50
 		 */

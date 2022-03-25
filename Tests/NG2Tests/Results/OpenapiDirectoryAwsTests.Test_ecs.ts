@@ -53,7 +53,10 @@ export namespace MyNS {
 	export interface CreateCapacityProviderRequest {
 		name: string;
 
-		/** The details of the Auto Scaling group for the capacity provider. */
+		/**
+		 * The details of the Auto Scaling group for the capacity provider.
+		 * Required
+		 */
 		autoScalingGroupProvider: AutoScalingGroupProvider;
 		tags?: Array<Tag>;
 	}
@@ -1588,7 +1591,10 @@ export namespace MyNS {
 		service: string;
 		taskSet: string;
 
-		/** A floating-point percentage of the desired number of tasks to place and keep running in the task set. */
+		/**
+		 * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+		 * Required
+		 */
 		scale: Scale;
 	}
 

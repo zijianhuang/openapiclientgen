@@ -179,7 +179,10 @@ export namespace MyNS {
 		Description: string;
 		State: SettablePolicyStateValues;
 
-		/** Specifies the configuration of a lifecycle policy. */
+		/**
+		 * Specifies the configuration of a lifecycle policy.
+		 * Required
+		 */
 		PolicyDetails: PolicyDetails;
 		Tags?: TagMap;
 	}
@@ -312,6 +315,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 0
 		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
@@ -320,16 +324,23 @@ export namespace MyNS {
 
 		/**
 		 * A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.
+		 * Required
 		 * Max length: 500
 		 * Min length: 0
 		 * Pattern: [0-9A-Za-z _-]+
 		 */
 		Description: string;
 
-		/** The desired activation state of the lifecycle policy after creation. */
+		/**
+		 * The desired activation state of the lifecycle policy after creation.
+		 * Required
+		 */
 		State: SettablePolicyStateValues;
 
-		/** Specifies the configuration of a lifecycle policy. */
+		/**
+		 * Specifies the configuration of a lifecycle policy.
+		 * Required
+		 */
 		PolicyDetails: CreateLifecyclePolicyPostBodyPolicyDetails;
 
 		/** The tags to apply to the lifecycle policy during creation. */
@@ -348,7 +359,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** One or more tags. */
+		/**
+		 * One or more tags.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 

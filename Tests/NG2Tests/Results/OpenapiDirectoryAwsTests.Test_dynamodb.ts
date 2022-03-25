@@ -391,7 +391,10 @@ export namespace MyNS {
 		IndexName: string;
 		KeySchema: Array<KeySchemaElement>;
 
-		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
+		/**
+		 * Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.
+		 * Required
+		 */
 		Projection: Projection;
 	}
 
@@ -401,7 +404,10 @@ export namespace MyNS {
 		IndexName: string;
 		KeySchema: Array<KeySchemaElement>;
 
-		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
+		/**
+		 * Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.
+		 * Required
+		 */
 		Projection: Projection;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
@@ -463,7 +469,10 @@ export namespace MyNS {
 		KeySchema: Array<KeySchemaElement>;
 		TableCreationDateTime: Date;
 
-		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
+		/**
+		 * <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+		 * Required
+		 */
 		ProvisionedThroughput: ProvisionedThroughput;
 		ItemCount?: number;
 		BillingMode?: BillingModeSummaryBillingMode;
@@ -1152,7 +1161,10 @@ export namespace MyNS {
 	/** Specifies an item to be retrieved as part of the transaction. */
 	export interface TransactGetItem {
 
-		/** Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object. */
+		/**
+		 * Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object.
+		 * Required
+		 */
 		Get: Get;
 	}
 
@@ -1266,7 +1278,10 @@ export namespace MyNS {
 	export interface UpdateContinuousBackupsInput {
 		TableName: string;
 
-		/** Represents the settings used to enable point in time recovery. */
+		/**
+		 * Represents the settings used to enable point in time recovery.
+		 * Required
+		 */
 		PointInTimeRecoverySpecification: PointInTimeRecoverySpecification;
 	}
 
@@ -1363,7 +1378,10 @@ export namespace MyNS {
 	export interface AutoScalingPolicyUpdate {
 		PolicyName?: string;
 
-		/** Represents the settings of a target tracking scaling policy that will be modified. */
+		/**
+		 * Represents the settings of a target tracking scaling policy that will be modified.
+		 * Required
+		 */
 		TargetTrackingScalingPolicyConfiguration: AutoScalingTargetTrackingScalingPolicyConfigurationUpdate;
 	}
 
@@ -1490,7 +1508,10 @@ export namespace MyNS {
 	export interface UpdateGlobalSecondaryIndexAction {
 		IndexName: string;
 
-		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
+		/**
+		 * <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+		 * Required
+		 */
 		ProvisionedThroughput: ProvisionedThroughput;
 	}
 
@@ -1500,7 +1521,10 @@ export namespace MyNS {
 		IndexName: string;
 		KeySchema: Array<KeySchemaElement>;
 
-		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
+		/**
+		 * Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.
+		 * Required
+		 */
 		Projection: Projection;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
@@ -1625,7 +1649,10 @@ export namespace MyNS {
 	export interface UpdateTimeToLiveInput {
 		TableName: string;
 
-		/** Represents the settings used to enable or disable Time to Live (TTL) for the specified table. */
+		/**
+		 * Represents the settings used to enable or disable Time to Live (TTL) for the specified table.
+		 * Required
+		 */
 		TimeToLiveSpecification: TimeToLiveSpecification;
 	}
 

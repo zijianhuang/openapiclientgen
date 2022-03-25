@@ -180,6 +180,11 @@ public class Settings
 	public bool HandleHttpRequestHeaders { get; set; }
 
 	/// <summary>
+	/// Allow cancellation in Send
+	/// </summary>
+	public bool CancellationTokenEnabled { get; set; }
+
+	/// <summary>
 	/// Use System.Text.Json instead of Newtonsoft.Json
 	/// </summary>
 	public bool UseSystemTextJson { get; set; }
@@ -226,6 +231,16 @@ public class Settings
 	/// By default, array type will be array in generated C#. You may generated IEnumerable and some of its derived types.
 	/// </summary>
 	public ArrayAsIEnumerableDerived ArrayAs { get; set; }
+
+	/// <summary>
+	/// Use pascal case for properties and model class names
+	/// </summary>
+	public bool UsePascalCase { get; set; }
+
+	/// <summary>
+	/// Prefix class names with enclosing Type name. Default True.
+	/// </summary>
+	public bool PrefixWithTypeName { get; set; } = true;
 
 	/// <summary>
 	/// Create destination folder if not exists. Applied to both CS and TS.

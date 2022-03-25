@@ -60,10 +60,16 @@ export namespace MyNS {
 		InProgressInvalidationBatches: number;
 		DomainName: string;
 
-		/** <p>A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p> <p>The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
+		/**
+		 * <p>A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p> <p>The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+		 * Required
+		 */
 		ActiveTrustedSigners: ActiveTrustedSigners;
 
-		/** A distribution configuration. */
+		/**
+		 * A distribution configuration.
+		 * Required
+		 */
 		DistributionConfig: DistributionConfig;
 		AliasICPRecordals?: Array<AliasICPRecordal>;
 	}
@@ -101,13 +107,19 @@ export namespace MyNS {
 		Aliases?: Aliases;
 		DefaultRootObject?: string;
 
-		/** A complex type that contains information about origins and origin groups for this distribution. */
+		/**
+		 * A complex type that contains information about origins and origin groups for this distribution.
+		 * Required
+		 */
 		Origins: Origins;
 
 		/** A complex data type for the origin groups specified for a distribution. */
 		OriginGroups?: OriginGroups;
 
-		/** A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior. */
+		/**
+		 * A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
+		 * Required
+		 */
 		DefaultCacheBehavior: DefaultCacheBehavior;
 
 		/** A complex type that contains zero or more <code>CacheBehavior</code> elements. */
@@ -223,10 +235,16 @@ export namespace MyNS {
 	export interface OriginGroup {
 		Id: string;
 
-		/** A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin. */
+		/**
+		 * A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.
+		 * Required
+		 */
 		FailoverCriteria: OriginGroupFailoverCriteria;
 
-		/** A complex data type for the origins included in an origin group. */
+		/**
+		 * A complex data type for the origins included in an origin group.
+		 * Required
+		 */
 		Members: OriginGroupMembers;
 	}
 
@@ -234,7 +252,10 @@ export namespace MyNS {
 	/** A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin. */
 	export interface OriginGroupFailoverCriteria {
 
-		/** A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin. */
+		/**
+		 * A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.
+		 * Required
+		 */
 		StatusCodes: StatusCodes;
 	}
 
@@ -245,6 +266,7 @@ export namespace MyNS {
 
 		/**
 		 * List of status codes for origin failover.
+		 * Required
 		 * Minimum items: 1
 		 */
 		Items: Array<number>;
@@ -257,6 +279,7 @@ export namespace MyNS {
 
 		/**
 		 * List of origins in an origin group.
+		 * Required
 		 * Minimum items: 2
 		 * Maximum items: 2
 		 */
@@ -274,10 +297,16 @@ export namespace MyNS {
 	export interface DefaultCacheBehavior {
 		TargetOriginId: string;
 
-		/** A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers. */
+		/**
+		 * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+		 * Required
+		 */
 		ForwardedValues: ForwardedValues;
 
-		/** <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p> */
+		/**
+		 * <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p>
+		 * Required
+		 */
 		TrustedSigners: TrustedSigners;
 		ViewerProtocolPolicy: DefaultCacheBehaviorViewerProtocolPolicy;
 		MinTTL: number;
@@ -299,7 +328,10 @@ export namespace MyNS {
 	export interface ForwardedValues {
 		QueryString: boolean;
 
-		/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>. */
+		/**
+		 * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+		 * Required
+		 */
 		Cookies: CookiePreference;
 
 		/** <p>A complex type that specifies the request headers, if any, that you want CloudFront to base caching on for this cache behavior. </p> <p>For the headers that you specify, CloudFront caches separate versions of a specified object based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure CloudFront to cache your content based on values in the <code>product</code> header. CloudFront forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. For more information about caching based on header values, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How CloudFront Forwards and Caches Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
@@ -400,10 +432,16 @@ export namespace MyNS {
 		PathPattern: string;
 		TargetOriginId: string;
 
-		/** A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers. */
+		/**
+		 * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+		 * Required
+		 */
 		ForwardedValues: ForwardedValues;
 
-		/** <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p> */
+		/**
+		 * <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p>
+		 * Required
+		 */
 		TrustedSigners: TrustedSigners;
 		ViewerProtocolPolicy: CacheBehaviorViewerProtocolPolicy;
 		MinTTL: number;
@@ -471,7 +509,10 @@ export namespace MyNS {
 	/** A complex type that identifies ways in which you want to restrict distribution of your content. */
 	export interface Restrictions {
 
-		/** A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases. */
+		/**
+		 * A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.
+		 * Required
+		 */
 		GeoRestriction: GeoRestriction;
 	}
 
@@ -643,6 +684,7 @@ export namespace MyNS {
 
 		/**
 		 * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
@@ -666,7 +708,10 @@ export namespace MyNS {
 		Id: string;
 		LastModifiedTime: Date;
 
-		/** A complex data type that includes the profile configurations specified for field-level encryption. */
+		/**
+		 * A complex data type that includes the profile configurations specified for field-level encryption.
+		 * Required
+		 */
 		FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
 	}
 
@@ -762,7 +807,10 @@ export namespace MyNS {
 		Id: string;
 		LastModifiedTime: Date;
 
-		/** A complex data type of profiles for the field-level encryption. */
+		/**
+		 * A complex data type of profiles for the field-level encryption.
+		 * Required
+		 */
 		FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
 	}
 
@@ -773,7 +821,10 @@ export namespace MyNS {
 		CallerReference: string;
 		Comment?: string;
 
-		/** Complex data type for field-level encryption profiles that includes all of the encryption entities. */
+		/**
+		 * Complex data type for field-level encryption profiles that includes all of the encryption entities.
+		 * Required
+		 */
 		EncryptionEntities: EncryptionEntities;
 	}
 
@@ -790,7 +841,10 @@ export namespace MyNS {
 		PublicKeyId: string;
 		ProviderId: string;
 
-		/** A complex data type that includes the field patterns to match for field-level encryption. */
+		/**
+		 * A complex data type that includes the field patterns to match for field-level encryption.
+		 * Required
+		 */
 		FieldPatterns: FieldPatterns;
 	}
 
@@ -834,7 +888,10 @@ export namespace MyNS {
 		Status: string;
 		CreateTime: Date;
 
-		/** An invalidation batch. */
+		/**
+		 * An invalidation batch.
+		 * Required
+		 */
 		InvalidationBatch: InvalidationBatch;
 	}
 
@@ -842,7 +899,10 @@ export namespace MyNS {
 	/** An invalidation batch. */
 	export interface InvalidationBatch {
 
-		/** A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. */
+		/**
+		 * A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
+		 * Required
+		 */
 		Paths: Paths;
 		CallerReference: string;
 	}
@@ -875,7 +935,10 @@ export namespace MyNS {
 		Id: string;
 		CreatedTime: Date;
 
-		/** Information about a public key you add to CloudFront to use with features like field-level encryption. */
+		/**
+		 * Information about a public key you add to CloudFront to use with features like field-level encryption.
+		 * Required
+		 */
 		PublicKeyConfig: PublicKeyConfig;
 	}
 
@@ -911,10 +974,16 @@ export namespace MyNS {
 		LastModifiedTime?: Date;
 		DomainName: string;
 
-		/** <p>A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p> <p>The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
+		/**
+		 * <p>A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p> <p>The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+		 * Required
+		 */
 		ActiveTrustedSigners: ActiveTrustedSigners;
 
-		/** The RTMP distribution's configuration information. */
+		/**
+		 * The RTMP distribution's configuration information.
+		 * Required
+		 */
 		StreamingDistributionConfig: StreamingDistributionConfig;
 	}
 
@@ -923,7 +992,10 @@ export namespace MyNS {
 	export interface StreamingDistributionConfig {
 		CallerReference: string;
 
-		/** A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution. */
+		/**
+		 * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
+		 * Required
+		 */
 		S3Origin: S3Origin;
 
 		/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
@@ -933,7 +1005,10 @@ export namespace MyNS {
 		/** A complex type that controls whether access logs are written for this streaming distribution. */
 		Logging?: StreamingLoggingConfig;
 
-		/** <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p> */
+		/**
+		 * <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p>
+		 * Required
+		 */
 		TrustedSigners: TrustedSigners;
 		PriceClass?: DistributionConfigPriceClass;
 		Enabled: boolean;
@@ -1151,31 +1226,52 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 		DomainName: string;
 
-		/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
+		/**
+		 * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+		 * Required
+		 */
 		Aliases: Aliases;
 
-		/** A complex type that contains information about origins and origin groups for this distribution. */
+		/**
+		 * A complex type that contains information about origins and origin groups for this distribution.
+		 * Required
+		 */
 		Origins: Origins;
 
 		/** A complex data type for the origin groups specified for a distribution. */
 		OriginGroups?: OriginGroups;
 
-		/** A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior. */
+		/**
+		 * A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
+		 * Required
+		 */
 		DefaultCacheBehavior: DefaultCacheBehavior;
 
-		/** A complex type that contains zero or more <code>CacheBehavior</code> elements. */
+		/**
+		 * A complex type that contains zero or more <code>CacheBehavior</code> elements.
+		 * Required
+		 */
 		CacheBehaviors: CacheBehaviors;
 
-		/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
+		/**
+		 * <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+		 * Required
+		 */
 		CustomErrorResponses: CustomErrorResponses;
 		Comment: string;
 		PriceClass: DistributionConfigPriceClass;
 		Enabled: boolean;
 
-		/** <p>A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.</p> <p>If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.</p> <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:</p> <ul> <li> <p>Which viewers the distribution accepts HTTPS connections from: only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all viewers including those that don’t support SNI.</p> <ul> <li> <p>To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients released after 2010 support SNI. </p> </li> <li> <p>To accept HTTPS connections from all viewers, including those that don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront. </p> </li> </ul> </li> <li> <p>The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </li> <li> <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and Access Management (AWS IAM)</a>. You specify the location by setting a value in one of the following fields (not both):</p> <ul> <li> <p> <code>ACMCertificateArn</code> </p> </li> <li> <p> <code>IAMCertificateId</code> </p> </li> </ul> </li> </ul> <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html">Using HTTPS with CloudFront</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html"> Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
+		/**
+		 * <p>A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.</p> <p>If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.</p> <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:</p> <ul> <li> <p>Which viewers the distribution accepts HTTPS connections from: only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all viewers including those that don’t support SNI.</p> <ul> <li> <p>To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients released after 2010 support SNI. </p> </li> <li> <p>To accept HTTPS connections from all viewers, including those that don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront. </p> </li> </ul> </li> <li> <p>The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </li> <li> <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and Access Management (AWS IAM)</a>. You specify the location by setting a value in one of the following fields (not both):</p> <ul> <li> <p> <code>ACMCertificateArn</code> </p> </li> <li> <p> <code>IAMCertificateId</code> </p> </li> </ul> </li> </ul> <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html">Using HTTPS with CloudFront</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html"> Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+		 * Required
+		 */
 		ViewerCertificate: ViewerCertificate;
 
-		/** A complex type that identifies ways in which you want to restrict distribution of your content. */
+		/**
+		 * A complex type that identifies ways in which you want to restrict distribution of your content.
+		 * Required
+		 */
 		Restrictions: Restrictions;
 		WebACLId: string;
 		HttpVersion: DistributionSummaryHttpVersion;
@@ -1244,7 +1340,10 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 		Name: string;
 
-		/** Complex data type for field-level encryption profiles that includes all of the encryption entities. */
+		/**
+		 * Complex data type for field-level encryption profiles that includes all of the encryption entities.
+		 * Required
+		 */
 		EncryptionEntities: EncryptionEntities;
 		Comment?: string;
 	}
@@ -1329,13 +1428,22 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 		DomainName: string;
 
-		/** A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution. */
+		/**
+		 * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
+		 * Required
+		 */
 		S3Origin: S3Origin;
 
-		/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
+		/**
+		 * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+		 * Required
+		 */
 		Aliases: Aliases;
 
-		/** <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p> */
+		/**
+		 * <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p>
+		 * Required
+		 */
 		TrustedSigners: TrustedSigners;
 		Comment: string;
 		PriceClass: DistributionConfigPriceClass;
@@ -1346,7 +1454,10 @@ export namespace MyNS {
 	/**  The returned result of the corresponding request. */
 	export interface ListTagsForResourceResult {
 
-		/** A complex type that contains zero or more <code>Tag</code> elements. */
+		/**
+		 * A complex type that contains zero or more <code>Tag</code> elements.
+		 * Required
+		 */
 		Tags: Tags;
 	}
 
@@ -1415,7 +1526,10 @@ export namespace MyNS {
 	/** The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"> Restricting Access to Amazon S3 Content by Using an Origin Access Identity</a> in the <i>Amazon CloudFront Developer Guide</i>.  */
 	export interface CreateCloudFrontOriginAccessIdentityRequest {
 
-		/** Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource. */
+		/**
+		 * Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.
+		 * Required
+		 */
 		CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
 	}
 
@@ -1423,7 +1537,10 @@ export namespace MyNS {
 	/** The request to create a new distribution. */
 	export interface CreateDistributionRequest {
 
-		/** A distribution configuration. */
+		/**
+		 * A distribution configuration.
+		 * Required
+		 */
 		DistributionConfig: DistributionConfig;
 	}
 
@@ -1431,10 +1548,16 @@ export namespace MyNS {
 	/** A distribution Configuration and a list of tags to be associated with the distribution. */
 	export interface DistributionConfigWithTags {
 
-		/** A distribution configuration. */
+		/**
+		 * A distribution configuration.
+		 * Required
+		 */
 		DistributionConfig: DistributionConfig;
 
-		/** A complex type that contains zero or more <code>Tag</code> elements. */
+		/**
+		 * A complex type that contains zero or more <code>Tag</code> elements.
+		 * Required
+		 */
 		Tags: Tags;
 	}
 
@@ -1442,19 +1565,28 @@ export namespace MyNS {
 	/** The request to create a new distribution with tags.  */
 	export interface CreateDistributionWithTagsRequest {
 
-		/** A distribution Configuration and a list of tags to be associated with the distribution. */
+		/**
+		 * A distribution Configuration and a list of tags to be associated with the distribution.
+		 * Required
+		 */
 		DistributionConfigWithTags: DistributionConfigWithTags;
 	}
 
 	export interface CreateFieldLevelEncryptionConfigRequest {
 
-		/** A complex data type that includes the profile configurations specified for field-level encryption. */
+		/**
+		 * A complex data type that includes the profile configurations specified for field-level encryption.
+		 * Required
+		 */
 		FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
 	}
 
 	export interface CreateFieldLevelEncryptionProfileRequest {
 
-		/** A complex data type of profiles for the field-level encryption. */
+		/**
+		 * A complex data type of profiles for the field-level encryption.
+		 * Required
+		 */
 		FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
 	}
 
@@ -1462,13 +1594,19 @@ export namespace MyNS {
 	/** The request to create an invalidation. */
 	export interface CreateInvalidationRequest {
 
-		/** An invalidation batch. */
+		/**
+		 * An invalidation batch.
+		 * Required
+		 */
 		InvalidationBatch: InvalidationBatch;
 	}
 
 	export interface CreatePublicKeyRequest {
 
-		/** Information about a public key you add to CloudFront to use with features like field-level encryption. */
+		/**
+		 * Information about a public key you add to CloudFront to use with features like field-level encryption.
+		 * Required
+		 */
 		PublicKeyConfig: PublicKeyConfig;
 	}
 
@@ -1476,7 +1614,10 @@ export namespace MyNS {
 	/** The request to create a new streaming distribution. */
 	export interface CreateStreamingDistributionRequest {
 
-		/** The RTMP distribution's configuration information. */
+		/**
+		 * The RTMP distribution's configuration information.
+		 * Required
+		 */
 		StreamingDistributionConfig: StreamingDistributionConfig;
 	}
 
@@ -1484,10 +1625,16 @@ export namespace MyNS {
 	/** A streaming distribution Configuration and a list of tags to be associated with the streaming distribution. */
 	export interface StreamingDistributionConfigWithTags {
 
-		/** The RTMP distribution's configuration information. */
+		/**
+		 * The RTMP distribution's configuration information.
+		 * Required
+		 */
 		StreamingDistributionConfig: StreamingDistributionConfig;
 
-		/** A complex type that contains zero or more <code>Tag</code> elements. */
+		/**
+		 * A complex type that contains zero or more <code>Tag</code> elements.
+		 * Required
+		 */
 		Tags: Tags;
 	}
 
@@ -1495,7 +1642,10 @@ export namespace MyNS {
 	/** The request to create a new streaming distribution with tags. */
 	export interface CreateStreamingDistributionWithTagsRequest {
 
-		/** A streaming distribution Configuration and a list of tags to be associated with the streaming distribution. */
+		/**
+		 * A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.
+		 * Required
+		 */
 		StreamingDistributionConfigWithTags: StreamingDistributionConfigWithTags;
 	}
 
@@ -1635,7 +1785,10 @@ export namespace MyNS {
 	/**  The request to add tags to a CloudFront resource. */
 	export interface TagResourceRequest {
 
-		/** A complex type that contains zero or more <code>Tag</code> elements. */
+		/**
+		 * A complex type that contains zero or more <code>Tag</code> elements.
+		 * Required
+		 */
 		Tags: Tags;
 	}
 
@@ -1643,7 +1796,10 @@ export namespace MyNS {
 	/**  The request to remove tags from a CloudFront resource. */
 	export interface UntagResourceRequest {
 
-		/** A complex type that contains zero or more <code>Tag</code> elements. */
+		/**
+		 * A complex type that contains zero or more <code>Tag</code> elements.
+		 * Required
+		 */
 		TagKeys: TagKeys;
 	}
 
@@ -1651,7 +1807,10 @@ export namespace MyNS {
 	/** The request to update an origin access identity. */
 	export interface UpdateCloudFrontOriginAccessIdentityRequest {
 
-		/** Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource. */
+		/**
+		 * Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.
+		 * Required
+		 */
 		CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
 	}
 
@@ -1659,25 +1818,37 @@ export namespace MyNS {
 	/** The request to update a distribution. */
 	export interface UpdateDistributionRequest {
 
-		/** A distribution configuration. */
+		/**
+		 * A distribution configuration.
+		 * Required
+		 */
 		DistributionConfig: DistributionConfig;
 	}
 
 	export interface UpdateFieldLevelEncryptionConfigRequest {
 
-		/** A complex data type that includes the profile configurations specified for field-level encryption. */
+		/**
+		 * A complex data type that includes the profile configurations specified for field-level encryption.
+		 * Required
+		 */
 		FieldLevelEncryptionConfig: FieldLevelEncryptionConfig;
 	}
 
 	export interface UpdateFieldLevelEncryptionProfileRequest {
 
-		/** A complex data type of profiles for the field-level encryption. */
+		/**
+		 * A complex data type of profiles for the field-level encryption.
+		 * Required
+		 */
 		FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig;
 	}
 
 	export interface UpdatePublicKeyRequest {
 
-		/** Information about a public key you add to CloudFront to use with features like field-level encryption. */
+		/**
+		 * Information about a public key you add to CloudFront to use with features like field-level encryption.
+		 * Required
+		 */
 		PublicKeyConfig: PublicKeyConfig;
 	}
 
@@ -1685,7 +1856,10 @@ export namespace MyNS {
 	/** The request to update a streaming distribution. */
 	export interface UpdateStreamingDistributionRequest {
 
-		/** The RTMP distribution's configuration information. */
+		/**
+		 * The RTMP distribution's configuration information.
+		 * Required
+		 */
 		StreamingDistributionConfig: StreamingDistributionConfig;
 	}
 

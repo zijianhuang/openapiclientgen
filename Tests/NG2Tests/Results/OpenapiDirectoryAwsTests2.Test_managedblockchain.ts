@@ -432,7 +432,10 @@ export namespace MyNS {
 		Name: string;
 		Description?: string;
 
-		/** Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses. */
+		/**
+		 * Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.
+		 * Required
+		 */
 		FrameworkConfiguration: MemberFrameworkConfiguration;
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network. */
@@ -443,7 +446,10 @@ export namespace MyNS {
 		ClientRequestToken: string;
 		InvitationId: string;
 
-		/** Configuration properties of the member. */
+		/**
+		 * Configuration properties of the member.
+		 * Required
+		 */
 		MemberConfiguration: MemberConfiguration;
 	}
 
@@ -467,10 +473,16 @@ export namespace MyNS {
 		/** Configuration properties relevant to the network for the blockchain framework that the network uses. */
 		FrameworkConfiguration?: NetworkFrameworkConfiguration;
 
-		/** The voting rules for the network to decide if a proposal is accepted */
+		/**
+		 * The voting rules for the network to decide if a proposal is accepted
+		 * Required
+		 */
 		VotingPolicy: VotingPolicy;
 
-		/** Configuration properties of the member. */
+		/**
+		 * Configuration properties of the member.
+		 * Required
+		 */
 		MemberConfiguration: MemberConfiguration;
 	}
 
@@ -487,7 +499,10 @@ export namespace MyNS {
 	export interface CreateNodeInput {
 		ClientRequestToken: string;
 
-		/** Configuration properties of a peer node. */
+		/**
+		 * Configuration properties of a peer node.
+		 * Required
+		 */
 		NodeConfiguration: NodeConfiguration;
 	}
 
@@ -495,7 +510,10 @@ export namespace MyNS {
 		ClientRequestToken: string;
 		MemberId: string;
 
-		/** The actions to carry out if a proposal is <code>APPROVED</code>. */
+		/**
+		 * The actions to carry out if a proposal is <code>APPROVED</code>.
+		 * Required
+		 */
 		Actions: ProposalActions;
 		Description?: string;
 	}
@@ -812,6 +830,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -819,12 +838,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier of the invitation that is sent to the member to join the network.
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 */
 		InvitationId: string;
 
-		/** Configuration properties of the member. */
+		/**
+		 * Configuration properties of the member.
+		 * Required
+		 */
 		MemberConfiguration: CreateMemberPostBodyMemberConfiguration;
 	}
 
@@ -843,6 +866,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -850,6 +874,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the network.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: .*\S.*
@@ -862,11 +887,15 @@ export namespace MyNS {
 		 */
 		Description?: string;
 
-		/** The blockchain framework that the network uses. */
+		/**
+		 * The blockchain framework that the network uses.
+		 * Required
+		 */
 		Framework: NetworkFramework;
 
 		/**
 		 * The version of the blockchain framework that the network uses.
+		 * Required
 		 * Max length: 8
 		 * Min length: 1
 		 */
@@ -875,10 +904,16 @@ export namespace MyNS {
 		/** Configuration properties relevant to the network for the blockchain framework that the network uses. */
 		FrameworkConfiguration?: CreateNetworkPostBodyFrameworkConfiguration;
 
-		/** The voting rules for the network to decide if a proposal is accepted */
+		/**
+		 * The voting rules for the network to decide if a proposal is accepted
+		 * Required
+		 */
 		VotingPolicy: CreateNetworkPostBodyVotingPolicy;
 
-		/** Configuration properties of the member. */
+		/**
+		 * Configuration properties of the member.
+		 * Required
+		 */
 		MemberConfiguration: CreateNetworkPostBodyMemberConfiguration;
 	}
 
@@ -909,12 +944,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
 		ClientRequestToken: string;
 
-		/** Configuration properties of a peer node. */
+		/**
+		 * Configuration properties of a peer node.
+		 * Required
+		 */
 		NodeConfiguration: CreateNodePostBodyNodeConfiguration;
 	}
 
@@ -930,6 +969,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -937,12 +977,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 */
 		MemberId: string;
 
-		/** The actions to carry out if a proposal is <code>APPROVED</code>. */
+		/**
+		 * The actions to carry out if a proposal is <code>APPROVED</code>.
+		 * Required
+		 */
 		Actions: CreateProposalPostBodyActions;
 
 		/**
@@ -985,12 +1029,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier of the member casting the vote.
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 */
 		VoterMemberId: string;
 
-		/** The value of the vote. */
+		/**
+		 * The value of the vote.
+		 * Required
+		 */
 		Vote: VoteSummaryVote;
 	}
 

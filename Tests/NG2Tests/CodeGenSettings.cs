@@ -27,6 +27,9 @@ namespace SwagTests
 			};
 		}
 
+		/// <summary>
+		/// Set to true when there are sigificant changes to generated codes.
+		/// </summary>
 		public static readonly bool BuildToValidate = false;
 	}
 }

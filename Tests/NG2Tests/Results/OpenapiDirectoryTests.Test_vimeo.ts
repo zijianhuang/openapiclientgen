@@ -10,22 +10,34 @@ export namespace MyNS {
 		/** The channel that this event occurred for. This will be present for only "channel" activity types. */
 		channel?: Channel;
 
-		/** Video associated with ths activity. */
+		/**
+		 * Video associated with ths activity.
+		 * Required
+		 */
 		clip: Video;
 
 		/** The group that this event occurred for. This will be present for only "group" activity types. */
 		group?: Group;
 
-		/** The activity's metadata. */
+		/**
+		 * The activity's metadata.
+		 * Required
+		 */
 		metadata: Activity_3_1Metadata;
 
 		/** The tag that this event occurred for. This will be present for only "tag" activity types. */
 		tag?: Tag;
 
-		/** Time that the event occurred. */
+		/**
+		 * Time that the event occurred.
+		 * Required
+		 */
 		time: string;
 
-		/** Activity type */
+		/**
+		 * Activity type
+		 * Required
+		 */
 		type: Activity_3_1Type;
 
 		/** The user that this event occurred for. This will be present for "like", "appearance", and "share" activity types. */
@@ -37,49 +49,85 @@ export namespace MyNS {
 		/** The active icon for the category. */
 		icon?: Picture;
 
-		/** The last time, in ISO 8601 format, that a video was featured. */
+		/**
+		 * The last time, in ISO 8601 format, that a video was featured.
+		 * Required
+		 */
 		last_video_featured_time: string;
 
-		/** The URL to access the category in a browser. */
+		/**
+		 * The URL to access the category in a browser.
+		 * Required
+		 */
 		link: string;
 
-		/** Metadata about the category. */
+		/**
+		 * Metadata about the category.
+		 * Required
+		 */
 		metadata: CategoryMetadata;
 
-		/** The display name that identifies the category. */
+		/**
+		 * The display name that identifies the category.
+		 * Required
+		 */
 		name: string;
 
-		/** The container of this category's parent category, if the current category is a subcategory. */
+		/**
+		 * The container of this category's parent category, if the current category is a subcategory.
+		 * Required
+		 */
 		parent: CategoryParent;
 
-		/** The active picture for this category; defaults to vertical color bars. */
+		/**
+		 * The active picture for this category; defaults to vertical color bars.
+		 * Required
+		 */
 		pictures: Picture;
 
-		/** The resource key of the category. */
+		/**
+		 * The resource key of the category.
+		 * Required
+		 */
 		resource_key: string;
 
 		/** All the subcategories that belong to this category, if the current category is a top-level parent. */
 		CategorySubcategories?: Array<CategorySubcategories>;
 
-		/** Whether the category isn't a subcategory of another category. */
+		/**
+		 * Whether the category isn't a subcategory of another category.
+		 * Required
+		 */
 		top_level: boolean;
 
-		/** The unique identifier to access the category resource. */
+		/**
+		 * The unique identifier to access the category resource.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface Picture {
 
-		/** Whether this picture is the active picture for its parent resource. */
+		/**
+		 * Whether this picture is the active picture for its parent resource.
+		 * Required
+		 */
 		active: boolean;
 
 		/** The upload URL for the picture. This field appears when you create the picture resource for the first time. */
 		link?: string;
 
-		/** The picture's resource key string. */
+		/**
+		 * The picture's resource key string.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** An array containing reference information about all available image files. */
+		/**
+		 * An array containing reference information about all available image files.
+		 * Required
+		 */
 		PictureSizes: Array<PictureSizes>;
 
 		/**
@@ -88,25 +136,38 @@ export namespace MyNS {
 		 * * `caution` - An image that is appropriate for all ages.
 		 * * `custom` - A custom image for the video.
 		 * * `default` - The default image for the video.
+		 * Required
 		 */
 		type: PictureType;
 
-		/** The picture's URI. */
+		/**
+		 * The picture's URI.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface PictureSizes {
 
-		/** The height of the image. */
+		/**
+		 * The height of the image.
+		 * Required
+		 */
 		height: number;
 
-		/** The direct link to the image. */
+		/**
+		 * The direct link to the image.
+		 * Required
+		 */
 		link: string;
 
 		/** The direct link to the image with a play button overlay. */
 		link_with_play_button?: string;
 
-		/** The width of the image. */
+		/**
+		 * The width of the image.
+		 * Required
+		 */
 		width: number;
 	}
 
@@ -114,259 +175,457 @@ export namespace MyNS {
 
 	export interface CategoryMetadata {
 
-		/** A collection of information that is connected to this resource. */
+		/**
+		 * A collection of information that is connected to this resource.
+		 * Required
+		 */
 		connections: CategoryMetadataConnections;
 
-		/** The permissible actions related to the category. */
+		/**
+		 * The permissible actions related to the category.
+		 * Required
+		 */
 		interactions: CategoryMetadataInteractions;
 	}
 
 	export interface CategoryMetadataConnections {
 
-		/** Information about the channels related to this category. */
+		/**
+		 * Information about the channels related to this category.
+		 * Required
+		 */
 		channels: CategoryMetadataConnectionsChannels;
 
-		/** Information about the groups related to this category. */
+		/**
+		 * Information about the groups related to this category.
+		 * Required
+		 */
 		groups: CategoryMetadataConnectionsGroups;
 
-		/** Information about the users related to this category. */
+		/**
+		 * Information about the users related to this category.
+		 * Required
+		 */
 		users: CategoryMetadataConnectionsUsers;
 
-		/** Information about the videos related to this category. */
+		/**
+		 * Information about the videos related to this category.
+		 * Required
+		 */
 		videos: CategoryMetadataConnectionsVideos;
 	}
 
 	export interface CategoryMetadataConnectionsChannels {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of channels on this connection. */
+		/**
+		 * The total number of channels on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface CategoryMetadataConnectionsGroups {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of groups on this connection. */
+		/**
+		 * The total number of groups on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface CategoryMetadataConnectionsUsers {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of users on this connection. */
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface CategoryMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface CategoryMetadataInteractions {
 
-		/** An action indicating if the authenticated user has followed this category. */
+		/**
+		 * An action indicating if the authenticated user has followed this category.
+		 * Required
+		 */
 		follow: CategoryMetadataInteractionsFollow;
 	}
 
 	export interface CategoryMetadataInteractionsFollow {
 
-		/** Whether the authenticated user has followed this category. */
+		/**
+		 * Whether the authenticated user has followed this category.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format that the user followed this category, or the null value if the user hasn't followed this category. */
+		/**
+		 * The time in ISO 8601 format that the user followed this category, or the null value if the user hasn't followed this category.
+		 * Required
+		 */
 		added_time: string;
 
-		/** The URI for following or unfollowing this category: PUT to this URI to follow the category, or DELETE to this URI to unfollow the category. */
+		/**
+		 * The URI for following or unfollowing this category: PUT to this URI to follow the category, or DELETE to this URI to unfollow the category.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface CategoryParent {
 
-		/** The URL to access the parent category in a browser. */
+		/**
+		 * The URL to access the parent category in a browser.
+		 * Required
+		 */
 		link: string;
 
-		/** The display name that identifies the parent category. */
+		/**
+		 * The display name that identifies the parent category.
+		 * Required
+		 */
 		name: string;
 
-		/** The unique identifier to access the parent of this category resource. */
+		/**
+		 * The unique identifier to access the parent of this category resource.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface CategorySubcategories {
 
-		/** The URL to access the subcategory in a browser. */
+		/**
+		 * The URL to access the subcategory in a browser.
+		 * Required
+		 */
 		link: string;
 
-		/** The display name that identifies the subcategory. */
+		/**
+		 * The display name that identifies the subcategory.
+		 * Required
+		 */
 		name: string;
 
-		/** The unique identifier to access the subcategory resource. */
+		/**
+		 * The unique identifier to access the subcategory resource.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface Channel {
 
-		/** The categories to which this channel belongs as specified by the channel moderators. */
+		/**
+		 * The categories to which this channel belongs as specified by the channel moderators.
+		 * Required
+		 */
 		categories: Array<Category>;
 
-		/** The time in ISO 8601 format when the channel was created. */
+		/**
+		 * The time in ISO 8601 format when the channel was created.
+		 * Required
+		 */
 		created_time: string;
 
-		/** A brief explanation of the channel's content. */
+		/**
+		 * A brief explanation of the channel's content.
+		 * Required
+		 */
 		description: string;
 
-		/** The banner that appears by default at the top of the channel page. */
+		/**
+		 * The banner that appears by default at the top of the channel page.
+		 * Required
+		 */
 		header: Picture;
 
-		/** The URL to access the channel in a browser. */
+		/**
+		 * The URL to access the channel in a browser.
+		 * Required
+		 */
 		link: string;
 
-		/** Metadata about the channel. */
+		/**
+		 * Metadata about the channel.
+		 * Required
+		 */
 		metadata: ChannelMetadata;
 
-		/** The time in ISO 8601 format when the album was last modified. */
+		/**
+		 * The time in ISO 8601 format when the album was last modified.
+		 * Required
+		 */
 		modified_time: string;
 
-		/** The display name that identifies the channel. */
+		/**
+		 * The display name that identifies the channel.
+		 * Required
+		 */
 		name: string;
 
-		/** The active image for the channel; defaults to the thumbnail of the last video added to the channel. */
+		/**
+		 * The active image for the channel; defaults to the thumbnail of the last video added to the channel.
+		 * Required
+		 */
 		pictures: Picture;
 
-		/** The privacy settings of the channel. */
+		/**
+		 * The privacy settings of the channel.
+		 * Required
+		 */
 		privacy: ChannelPrivacy;
 
-		/** The channel resource key. */
+		/**
+		 * The channel resource key.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** An array of all tags assigned to this channel. */
+		/**
+		 * An array of all tags assigned to this channel.
+		 * Required
+		 */
 		tags: Array<Tag>;
 
-		/** The unique identifier to access the channel resource. */
+		/**
+		 * The unique identifier to access the channel resource.
+		 * Required
+		 */
 		uri: string;
 
-		/** The Vimeo user who owns the channel. */
+		/**
+		 * The Vimeo user who owns the channel.
+		 * Required
+		 */
 		user: User;
 	}
 
 	export interface ChannelMetadata {
 
-		/** A collection of information that is connected to this resource. */
+		/**
+		 * A collection of information that is connected to this resource.
+		 * Required
+		 */
 		connections: ChannelMetadataConnections;
 
-		/** A list of resource URIs related to the channel. */
+		/**
+		 * A list of resource URIs related to the channel.
+		 * Required
+		 */
 		interactions: ChannelMetadataInteractions;
 	}
 
 	export interface ChannelMetadataConnections {
 
-		/** Information provided to channel moderators about which users they have specifically permitted to access a private channel. This data requires a bearer token with the `private` scope. */
+		/**
+		 * Information provided to channel moderators about which users they have specifically permitted to access a private channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		privacy_users: ChannelMetadataConnectionsPrivacy_users;
 
-		/** Information about the users following or moderating this channel. */
+		/**
+		 * Information about the users following or moderating this channel.
+		 * Required
+		 */
 		users: ChannelMetadataConnectionsUsers;
 
-		/** Information about the videos that belong to this channel. */
+		/**
+		 * Information about the videos that belong to this channel.
+		 * Required
+		 */
 		videos: ChannelMetadataConnectionsVideos;
 	}
 
 	export interface ChannelMetadataConnectionsPrivacy_users {
 
-		/** An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of users on this connection. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The total number of users on this connection. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface ChannelMetadataConnectionsUsers {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of users on this connection. */
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface ChannelMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface ChannelMetadataInteractions {
 
-		/** An action indicating that the authenticated user is the owner of the channel and may therefore add other users as channel moderators. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An action indicating that the authenticated user is the owner of the channel and may therefore add other users as channel moderators. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		add_moderators: ChannelMetadataInteractionsAdd_moderators;
 
-		/** When a channel appears in the context of adding or removing a video from it (`/videos/{video_id}/available_channels`), include information about adding or removing the video. This data requires a bearer token with the `private` scope. */
+		/**
+		 * When a channel appears in the context of adding or removing a video from it (`/videos/{video_id}/available_channels`), include information about adding or removing the video. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		add_to: ChannelMetadataInteractionsAdd_to;
 
-		/** An action indicating if the authenticated user has followed this channel. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An action indicating if the authenticated user has followed this channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		follow: ChannelMetadataInteractionsFollow;
 
-		/** An action indicating that the authenticated user is a moderator of the channel and may therefore add or remove videos from the channel. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An action indicating that the authenticated user is a moderator of the channel and may therefore add or remove videos from the channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		moderate_videos: ChannelMetadataInteractionsModerate_videos;
 	}
 
 	export interface ChannelMetadataInteractionsAdd_moderators {
 
-		/** An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface ChannelMetadataInteractionsAdd_to {
 
-		/** An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface ChannelMetadataInteractionsFollow {
 
-		/** Whether the authenticated user has followed this channel. This data requires a bearer token with the `private` scope. */
+		/**
+		 * Whether the authenticated user has followed this channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format that the user followed this channel, or the null value if the user hasn't followed the channel. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The time in ISO 8601 format that the user followed this channel, or the null value if the user hasn't followed the channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		added_time: string;
 
 		/**
@@ -374,10 +633,14 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `moderator` - The authenticated user is a moderator.
 		 * * `subscriber` - The authenticated user is a subscriber.
+		 * Required
 		 */
 		type: ChannelMetadataInteractionsFollowType;
 
-		/** The URI for following or unfollowing this channel. PUT to this URI to follow the channel, or DELETE to this URI to unfollow the channel. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The URI for following or unfollowing this channel. PUT to this URI to follow the channel, or DELETE to this URI to unfollow the channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -385,10 +648,16 @@ export namespace MyNS {
 
 	export interface ChannelMetadataInteractionsModerate_videos {
 
-		/** An array of HTTP methods allowed on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods allowed on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -400,6 +669,7 @@ export namespace MyNS {
 		 * * `anybody` - Anyone can view the channel.
 		 * * `moderators` - Only moderators can view the channel.
 		 * * `users` - Only registered users can view the channel.
+		 * Required
 		 */
 		view: ChannelPrivacyView;
 	}
@@ -408,43 +678,73 @@ export namespace MyNS {
 
 	export interface Tag {
 
-		/** The normalized canonical tag name. */
+		/**
+		 * The normalized canonical tag name.
+		 * Required
+		 */
 		canonical: string;
 
-		/** Metadata about the group. */
+		/**
+		 * Metadata about the group.
+		 * Required
+		 */
 		metadata: TagMetadata;
 
-		/** The tag value. */
+		/**
+		 * The tag value.
+		 * Required
+		 */
 		name: string;
 
-		/** The tag's resource key string. */
+		/**
+		 * The tag's resource key string.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** The canonical relative URI of the tag. */
+		/**
+		 * The canonical relative URI of the tag.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface TagMetadata {
 
-		/** A collection of information that is connected to this resource. */
+		/**
+		 * A collection of information that is connected to this resource.
+		 * Required
+		 */
 		connections: TagMetadataConnections;
 	}
 
 	export interface TagMetadataConnections {
 
-		/** Information about the videos related to this tag. */
+		/**
+		 * Information about the videos related to this tag.
+		 * Required
+		 */
 		videos: TagMetadataConnectionsVideos;
 	}
 
 	export interface TagMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -462,10 +762,14 @@ export namespace MyNS {
 		 * * `pro` - The user has a Vimeo Pro subscription.
 		 * * `pro_unlimited` - The user has a Vimeo PRO Unlimited subscription.
 		 * * `producer` - The user has a Vimeo Producer subscription.
+		 * Required
 		 */
 		account: UserAccount;
 
-		/** The user's bio. */
+		/**
+		 * The user's bio.
+		 * Required
+		 */
 		bio: string;
 
 		/**
@@ -480,38 +784,68 @@ export namespace MyNS {
 		 */
 		content_filter?: Array<string>;
 
-		/** The time in ISO 8601 format when the user account was created. */
+		/**
+		 * The time in ISO 8601 format when the user account was created.
+		 * Required
+		 */
 		created_time: string;
 
 		/** The user's email address. This data requires a bearer token with the `email` scope. */
 		email?: string;
 
-		/** The absolute URL of this user's profile page. */
+		/**
+		 * The absolute URL of this user's profile page.
+		 * Required
+		 */
 		link: string;
 
-		/** The user's location. */
+		/**
+		 * The user's location.
+		 * Required
+		 */
 		location: string;
 
-		/** The user's metadata. */
+		/**
+		 * The user's metadata.
+		 * Required
+		 */
 		metadata: UserMetadata;
 
-		/** The user's display name. */
+		/**
+		 * The user's display name.
+		 * Required
+		 */
 		name: string;
 
-		/** The active portrait of this user. */
+		/**
+		 * The active portrait of this user.
+		 * Required
+		 */
 		pictures: Picture;
 		preferences?: UserPreferences;
 
-		/** The user's resource key string. */
+		/**
+		 * The user's resource key string.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** Appears only when the user has upload access and is looking at their own user record. */
+		/**
+		 * Appears only when the user has upload access and is looking at their own user record.
+		 * Required
+		 */
 		upload_quota: UserUpload_quota;
 
-		/** The user's canonical relative URI. */
+		/**
+		 * The user's canonical relative URI.
+		 * Required
+		 */
 		uri: string;
 
-		/** The user's websites. */
+		/**
+		 * The user's websites.
+		 * Required
+		 */
 		UserWebsites: Array<UserWebsites>;
 	}
 
@@ -519,321 +853,570 @@ export namespace MyNS {
 
 	export interface UserMetadata {
 
-		/** The list of resource URIs related to the user. */
+		/**
+		 * The list of resource URIs related to the user.
+		 * Required
+		 */
 		connections: UserMetadataConnections;
 		interactions: UserMetadataInteractions;
 	}
 
 	export interface UserMetadataConnections {
 
-		/** Information about the albums created by this user. */
+		/**
+		 * Information about the albums created by this user.
+		 * Required
+		 */
 		albums: UserMetadataConnectionsAlbums;
 
-		/** Information about the appearances of this user in other videos. */
+		/**
+		 * Information about the appearances of this user in other videos.
+		 * Required
+		 */
 		appearances: UserMetadataConnectionsAppearances;
 
-		/** Information on the users that the current user has blocked. This data requires a bearer token with the `private` scope. */
+		/**
+		 * Information on the users that the current user has blocked. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		block: UserMetadataConnectionsBlock;
 
-		/** Information about this user's followed categories. */
+		/**
+		 * Information about this user's followed categories.
+		 * Required
+		 */
 		categories: UserMetadataConnectionsCategories;
 
-		/** Information about this user's subscribed channels. */
+		/**
+		 * Information about this user's subscribed channels.
+		 * Required
+		 */
 		channels: UserMetadataConnectionsChannels;
 
-		/** Information about this user's feed. */
+		/**
+		 * Information about this user's feed.
+		 * Required
+		 */
 		feed: UserMetadataConnectionsFeed;
 
-		/** Information about this user's folders. */
+		/**
+		 * Information about this user's folders.
+		 * Required
+		 */
 		folders: UserMetadataConnectionsFolders;
 
-		/** Information about the user's followers. */
+		/**
+		 * Information about the user's followers.
+		 * Required
+		 */
 		followers: UserMetadataConnectionsFollowers;
 
-		/** Information about the users that the current user is following. */
+		/**
+		 * Information about the users that the current user is following.
+		 * Required
+		 */
 		following: UserMetadataConnectionsFollowing;
 
-		/** Information about the groups created by this user. */
+		/**
+		 * Information about the groups created by this user.
+		 * Required
+		 */
 		groups: UserMetadataConnectionsGroups;
 
-		/** Information about the videos that this user has liked. */
+		/**
+		 * Information about the videos that this user has liked.
+		 * Required
+		 */
 		likes: UserMetadataConnectionsLikes;
 
-		/** Information about the channels that this user moderates. */
+		/**
+		 * Information about the channels that this user moderates.
+		 * Required
+		 */
 		moderated_channels: UserMetadataConnectionsModerated_channels;
 
-		/** Information about this user's portraits. */
+		/**
+		 * Information about this user's portraits.
+		 * Required
+		 */
 		pictures: UserMetadataConnectionsPictures;
 
-		/** Information about this user's portfolios. */
+		/**
+		 * Information about this user's portfolios.
+		 * Required
+		 */
 		portfolios: UserMetadataConnectionsPortfolios;
 
-		/** A collection of recommended channels for the current user to follow. This data requires a bearer token with the `private` scope. */
+		/**
+		 * A collection of recommended channels for the current user to follow. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		recommended_channels: UserMetadataConnectionsRecommended_channels;
 
-		/** A Collection of recommended users for the current user to follow. This data requires a bearer token with the `private` scope. */
+		/**
+		 * A Collection of recommended users for the current user to follow. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		recommended_users: UserMetadataConnectionsRecommended_users;
 
-		/** Information about the videos that have been shared with this user. */
+		/**
+		 * Information about the videos that have been shared with this user.
+		 * Required
+		 */
 		shared: UserMetadataConnectionsShared;
 
-		/** Information about the videos uploaded by this user. */
+		/**
+		 * Information about the videos uploaded by this user.
+		 * Required
+		 */
 		videos: UserMetadataConnectionsVideos;
 
-		/** Information about the videos that this user has watched. */
+		/**
+		 * Information about the videos that this user has watched.
+		 * Required
+		 */
 		watched_videos: UserMetadataConnectionsWatched_videos;
 
-		/** Information about the videos that this user wants to watch later. */
+		/**
+		 * Information about the videos that this user wants to watch later.
+		 * Required
+		 */
 		watchlater: UserMetadataConnectionsWatchlater;
 	}
 
 	export interface UserMetadataConnectionsAlbums {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of albums on this connection. */
+		/**
+		 * The total number of albums on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsAppearances {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of appearances on this connection. */
+		/**
+		 * The total number of appearances on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsBlock {
 
-		/** An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of blocked users on this connection. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The total number of blocked users on this connection. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsCategories {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of categories on this connection. */
+		/**
+		 * The total number of categories on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsChannels {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of channels on this connection. */
+		/**
+		 * The total number of channels on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsFeed {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsFolders {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of folders on this connection. */
+		/**
+		 * The total number of folders on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsFollowers {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of followers on this connection. */
+		/**
+		 * The total number of followers on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsFollowing {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of users on this connection. */
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsGroups {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of groups on this connection. */
+		/**
+		 * The total number of groups on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsLikes {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of likes on this connection. */
+		/**
+		 * The total number of likes on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsModerated_channels {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of channels on this connection. */
+		/**
+		 * The total number of channels on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsPictures {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of pictures on this connection. */
+		/**
+		 * The total number of pictures on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsPortfolios {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of portfolios on this connection. */
+		/**
+		 * The total number of portfolios on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsRecommended_channels {
 
-		/** An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of channels on this connection. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The total number of channels on this connection. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsRecommended_users {
 
-		/** An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of users on this connection. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The total number of users on this connection. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsShared {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsWatched_videos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataConnectionsWatchlater {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataInteractions {
 		add_privacy_user?: UserMetadataInteractionsAdd_privacy_user;
 
-		/** Information related to the block status of this user. */
+		/**
+		 * Information related to the block status of this user.
+		 * Required
+		 */
 		block: UserMetadataInteractionsBlock;
 
-		/** Information related to the followed status of this user. */
+		/**
+		 * Information related to the followed status of this user.
+		 * Required
+		 */
 		follow: UserMetadataInteractionsFollow;
 
-		/** Information regarding where and how to report a user. */
+		/**
+		 * Information regarding where and how to report a user.
+		 * Required
+		 */
 		report: UserMetadataInteractionsReport;
 	}
 
@@ -848,40 +1431,70 @@ export namespace MyNS {
 
 	export interface UserMetadataInteractionsBlock {
 
-		/** Whether a user is blocking the current user. */
+		/**
+		 * Whether a user is blocking the current user.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format when the block occurred, or the null value if no block exists. */
+		/**
+		 * The time in ISO 8601 format when the block occurred, or the null value if no block exists.
+		 * Required
+		 */
 		added_time: string;
 
-		/** An array of the HTTP methods permitted on this URI. */
+		/**
+		 * An array of the HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The URI to block or unblock the user. */
+		/**
+		 * The URI to block or unblock the user.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataInteractionsFollow {
 
-		/** Whether a user is following the current user. */
+		/**
+		 * Whether a user is following the current user.
+		 * Required
+		 */
 		added: boolean;
 
-		/** An array of the HTTP methods permitted on this URI. */
+		/**
+		 * An array of the HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The URI to follow the user. */
+		/**
+		 * The URI to follow the user.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface UserMetadataInteractionsReport {
 
-		/** An array of the HTTP methods permitted on this URI. */
+		/**
+		 * An array of the HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** List of valid reasons for reporting a video. */
+		/**
+		 * List of valid reasons for reporting a video.
+		 * Required
+		 */
 		reason: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -941,55 +1554,97 @@ export namespace MyNS {
 
 	export interface UserUpload_quota {
 
-		/** Information about the user's lifetime upload usage. */
+		/**
+		 * Information about the user's lifetime upload usage.
+		 * Required
+		 */
 		lifetime: UserUpload_quotaLifetime;
 
-		/** Information about the user's usage for the current period. */
+		/**
+		 * Information about the user's usage for the current period.
+		 * Required
+		 */
 		periodic: UserUpload_quotaPeriodic;
 
-		/** Information about the user's upload space remaining for the current period. */
+		/**
+		 * Information about the user's upload space remaining for the current period.
+		 * Required
+		 */
 		space: UserUpload_quotaSpace;
 	}
 
 	export interface UserUpload_quotaLifetime {
 
-		/** The number of bytes remaining in your lifetime maximum. */
+		/**
+		 * The number of bytes remaining in your lifetime maximum.
+		 * Required
+		 */
 		free: number;
 
-		/** The total number of bytes that you can upload across the lifetime of your account. */
+		/**
+		 * The total number of bytes that you can upload across the lifetime of your account.
+		 * Required
+		 */
 		max: number;
 
-		/** The number of bytes that you've already uploaded against your lifetime limit. */
+		/**
+		 * The number of bytes that you've already uploaded against your lifetime limit.
+		 * Required
+		 */
 		used: number;
 	}
 
 	export interface UserUpload_quotaPeriodic {
 
-		/** The number of bytes remaining in your upload quota for the current period. */
+		/**
+		 * The number of bytes remaining in your upload quota for the current period.
+		 * Required
+		 */
 		free: number;
 
-		/** The total number of bytes that you can upload per period. */
+		/**
+		 * The total number of bytes that you can upload per period.
+		 * Required
+		 */
 		max: number;
 
-		/** The time in ISO 8601 format when your upload quota resets. */
+		/**
+		 * The time in ISO 8601 format when your upload quota resets.
+		 * Required
+		 */
 		reset_date: string;
 
-		/** The number of bytes that you've already uploaded against your quota in the current period. */
+		/**
+		 * The number of bytes that you've already uploaded against your quota in the current period.
+		 * Required
+		 */
 		used: number;
 	}
 
 	export interface UserUpload_quotaSpace {
 
-		/** The number of bytes remaining in your upload quota. */
+		/**
+		 * The number of bytes remaining in your upload quota.
+		 * Required
+		 */
 		free: number;
 
-		/** The maximum number of bytes allotted to your upload quota. */
+		/**
+		 * The maximum number of bytes allotted to your upload quota.
+		 * Required
+		 */
 		max: number;
 
-		/** Whether the values of the upload_quota.space fields are for the lifetime quota or the periodic quota. */
+		/**
+		 * Whether the values of the upload_quota.space fields are for the lifetime quota or the periodic quota.
+		 * Required
+		 */
 		showing: UserUpload_quotaSpaceShowing;
 
-		/** The number of bytes that you've already uploaded against your quota. */
+		/**
+		 * The number of bytes that you've already uploaded against your quota.
+		 * Required
+		 */
 		used: number;
 	}
 
@@ -997,43 +1652,79 @@ export namespace MyNS {
 
 	export interface UserWebsites {
 
-		/** The website's description. */
+		/**
+		 * The website's description.
+		 * Required
+		 */
 		description: string;
 
-		/** The URL of the website. */
+		/**
+		 * The URL of the website.
+		 * Required
+		 */
 		link: string;
 
-		/** The name of the website. */
+		/**
+		 * The name of the website.
+		 * Required
+		 */
 		name: string;
 	}
 
 	export interface Video {
 
-		/** The categories to which this video belongs. */
+		/**
+		 * The categories to which this video belongs.
+		 * Required
+		 */
 		categories: Array<Category>;
 
-		/** The content ratings of this video. */
+		/**
+		 * The content ratings of this video.
+		 * Required
+		 */
 		content_rating: Array<string>;
 
-		/** The context of the video's subscription, if this video is part of a subscription. */
+		/**
+		 * The context of the video's subscription, if this video is part of a subscription.
+		 * Required
+		 */
 		context: VideoContext;
 
-		/** The time in ISO 8601 format when the video was created. */
+		/**
+		 * The time in ISO 8601 format when the video was created.
+		 * Required
+		 */
 		created_time: string;
 
-		/** A brief explanation of the video's content. */
+		/**
+		 * A brief explanation of the video's content.
+		 * Required
+		 */
 		description: string;
 
-		/** The video's duration in seconds. */
+		/**
+		 * The video's duration in seconds.
+		 * Required
+		 */
 		duration: number;
 
-		/** Information about embedding this video. */
+		/**
+		 * Information about embedding this video.
+		 * Required
+		 */
 		embed: Embed_settings;
 
-		/** The video's height in pixels. */
+		/**
+		 * The video's height in pixels.
+		 * Required
+		 */
 		height: number;
 
-		/** The video's primary language. */
+		/**
+		 * The video's primary language.
+		 * Required
+		 */
 		language: string;
 
 		/** The time in ISO 8601 format when the user last modified the video. */
@@ -1049,19 +1740,32 @@ export namespace MyNS {
 		 * * `by-nd` - Attribution No Derivatives
 		 * * `by-sa` - Attribution Share Alike
 		 * * `cc0` - Public Domain Dedication
+		 * Required
 		 */
 		license: VideoLicense;
 
-		/** The link to the video. */
+		/**
+		 * The link to the video.
+		 * Required
+		 */
 		link: string;
 
-		/** The video's metadata. */
+		/**
+		 * The video's metadata.
+		 * Required
+		 */
 		metadata: VideoMetadata;
 
-		/** The time in ISO 8601 format when the video metadata was last modified. */
+		/**
+		 * The time in ISO 8601 format when the video metadata was last modified.
+		 * Required
+		 */
 		modified_time: string;
 
-		/** The video's title. */
+		/**
+		 * The video's title.
+		 * Required
+		 */
 		name: string;
 
 		/** Information about the folder that contains this video. */
@@ -1070,22 +1774,40 @@ export namespace MyNS {
 		/** The privacy-enabled password to watch this video. Only users can see their own video passwords. This data requires a bearer token with the `private` scope. */
 		password?: string;
 
-		/** The active picture for this video. */
+		/**
+		 * The active picture for this video.
+		 * Required
+		 */
 		pictures: Picture;
 
-		/** The video's privacy setting. */
+		/**
+		 * The video's privacy setting.
+		 * Required
+		 */
 		privacy: VideoPrivacy;
 
-		/** The time in ISO 8601 format when the video was released. */
+		/**
+		 * The time in ISO 8601 format when the video was released.
+		 * Required
+		 */
 		release_time: string;
 
-		/** The resource key string of the video. */
+		/**
+		 * The resource key string of the video.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** 360 spatial data. */
+		/**
+		 * 360 spatial data.
+		 * Required
+		 */
 		spatial: VideoSpatial;
 
-		/** A collection of stats associated with this video. */
+		/**
+		 * A collection of stats associated with this video.
+		 * Required
+		 */
 		stats: VideoStats;
 
 		/**
@@ -1100,25 +1822,44 @@ export namespace MyNS {
 		 * * `unavailable` - The video is unavailable.
 		 * * `uploading` - The video is being uploaded.
 		 * * `uploading_error` - There was an error in uploading the video.
+		 * Required
 		 */
 		status: VideoStatus;
 
-		/** An array of all tags assigned to this video. */
+		/**
+		 * An array of all tags assigned to this video.
+		 * Required
+		 */
 		tags: Array<Tag>;
 
-		/** The transcode information for a video upload. */
+		/**
+		 * The transcode information for a video upload.
+		 * Required
+		 */
 		transcode: VideoTranscode;
 
-		/** The upload information for this video. */
+		/**
+		 * The upload information for this video.
+		 * Required
+		 */
 		upload: VideoUpload;
 
-		/** The video's canonical relative URI. */
+		/**
+		 * The video's canonical relative URI.
+		 * Required
+		 */
 		uri: string;
 
-		/** The video owner. */
+		/**
+		 * The video owner.
+		 * Required
+		 */
 		user: User;
 
-		/** The video's width in pixels. */
+		/**
+		 * The video's width in pixels.
+		 * Required
+		 */
 		width: number;
 	}
 
@@ -1131,13 +1872,20 @@ export namespace MyNS {
 		 * * `Appearance by` - An Appearance By action.
 		 * * `Liked by` - A Liked By action.
 		 * * `Uploaded by` - An Unloaded By action.
+		 * Required
 		 */
 		action: VideoContextAction;
 
-		/** The contextual resource: a user, group, or channel representation, or an object of a tag. */
+		/**
+		 * The contextual resource: a user, group, or channel representation, or an object of a tag.
+		 * Required
+		 */
 		resource: string;
 
-		/** The contextual resource type. */
+		/**
+		 * The contextual resource type.
+		 * Required
+		 */
 		resource_type: string;
 	}
 
@@ -1145,73 +1893,130 @@ export namespace MyNS {
 
 	export interface Embed_settings {
 
-		/** A collection of information about the buttons that appear on the interface of the embeddable player. */
+		/**
+		 * A collection of information about the buttons that appear on the interface of the embeddable player.
+		 * Required
+		 */
 		buttons: Embed_settingsButtons;
 
-		/** The primary player color, which controls the color of the progress bar, buttons, and more. */
+		/**
+		 * The primary player color, which controls the color of the progress bar, buttons, and more.
+		 * Required
+		 */
 		color: string;
 
-		/** A collection of information about the logo in the corner of the embeddable player. */
+		/**
+		 * A collection of information about the logo in the corner of the embeddable player.
+		 * Required
+		 */
 		logos: Embed_settingsLogos;
 
-		/** Whether the playbar appears in the embeddable player for this video. */
+		/**
+		 * Whether the playbar appears in the embeddable player for this video.
+		 * Required
+		 */
 		playbar: boolean;
 
-		/** Whether the speed controls appear in the embeddable player for this video. */
+		/**
+		 * Whether the speed controls appear in the embeddable player for this video.
+		 * Required
+		 */
 		speed: boolean;
 
-		/** A collection of information relating to the embeddable player's title bar. */
+		/**
+		 * A collection of information relating to the embeddable player's title bar.
+		 * Required
+		 */
 		title: Embed_settingsTitle;
 
 		/** The URI of the embed preset. */
 		uri?: string;
 
-		/** Whether the volume controls appear in the embeddable player for this video. */
+		/**
+		 * Whether the volume controls appear in the embeddable player for this video.
+		 * Required
+		 */
 		volume: boolean;
 	}
 
 	export interface Embed_settingsButtons {
 
-		/** Whether the Embed button appears in the embeddable player for this video. */
+		/**
+		 * Whether the Embed button appears in the embeddable player for this video.
+		 * Required
+		 */
 		embed: boolean;
 
-		/** Whether the Fullscreen button appears in the embeddable player for this video. */
+		/**
+		 * Whether the Fullscreen button appears in the embeddable player for this video.
+		 * Required
+		 */
 		fullscreen: boolean;
 
-		/** Whether the HD button appears in the embeddable player for this video. */
+		/**
+		 * Whether the HD button appears in the embeddable player for this video.
+		 * Required
+		 */
 		hd: boolean;
 
-		/** Whether the Like button appears in the embeddable player for this video. */
+		/**
+		 * Whether the Like button appears in the embeddable player for this video.
+		 * Required
+		 */
 		like: boolean;
 
-		/** Whether the Scaling button appears in the embeddable player for this video. */
+		/**
+		 * Whether the Scaling button appears in the embeddable player for this video.
+		 * Required
+		 */
 		scaling: boolean;
 
-		/** Whether the Share button appears in the embeddable player for this video. */
+		/**
+		 * Whether the Share button appears in the embeddable player for this video.
+		 * Required
+		 */
 		share: boolean;
 
-		/** Whether the Watch Later button appears in the embeddable player for this video. */
+		/**
+		 * Whether the Watch Later button appears in the embeddable player for this video.
+		 * Required
+		 */
 		watchlater: boolean;
 	}
 
 	export interface Embed_settingsLogos {
 
-		/** A collection of information relating to custom logos in the embeddable player. */
+		/**
+		 * A collection of information relating to custom logos in the embeddable player.
+		 * Required
+		 */
 		custom: Embed_settingsLogosCustom;
 
-		/** Whether the Vimeo logo appears in the embeddable player for this video. */
+		/**
+		 * Whether the Vimeo logo appears in the embeddable player for this video.
+		 * Required
+		 */
 		vimeo: boolean;
 	}
 
 	export interface Embed_settingsLogosCustom {
 
-		/** Whether the custom logo appears in the embeddable player. */
+		/**
+		 * Whether the custom logo appears in the embeddable player.
+		 * Required
+		 */
 		active: boolean;
 
-		/** The URL that loads upon clicking the custom logo. */
+		/**
+		 * The URL that loads upon clicking the custom logo.
+		 * Required
+		 */
 		link: string;
 
-		/** Whether the custom logo appears even when the player interface is hidden. */
+		/**
+		 * Whether the custom logo appears even when the player interface is hidden.
+		 * Required
+		 */
 		sticky: boolean;
 	}
 
@@ -1222,6 +2027,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `hide` - The title is hidden.
 		 * * `show` - The title is shown.
+		 * Required
 		 */
 		name: Embed_settingsTitleName;
 
@@ -1230,6 +2036,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `hide` - The owner's information is hidden.
 		 * * `show` - The owner's information is shown.
+		 * Required
 		 */
 		owner: Embed_settingsTitleName;
 
@@ -1238,6 +2045,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `hide` - The owner's portrait is hidden
 		 * * `show` - The owner's portrait is shown.
+		 * Required
 		 */
 		portrait: Embed_settingsTitleName;
 	}
@@ -1248,64 +2056,118 @@ export namespace MyNS {
 
 	export interface VideoMetadata {
 
-		/** A list of resource URIs related to the video. */
+		/**
+		 * A list of resource URIs related to the video.
+		 * Required
+		 */
 		connections: VideoMetadataConnections;
 
-		/** A list of resource URIs related to the video. */
+		/**
+		 * A list of resource URIs related to the video.
+		 * Required
+		 */
 		interactions: VideoMetadataInteractions;
 	}
 
 	export interface VideoMetadataConnections {
 
-		/** Information about the comments on this video. */
+		/**
+		 * Information about the comments on this video.
+		 * Required
+		 */
 		comments: VideoMetadataConnectionsComments;
 
-		/** Information about the users credited in this video. */
+		/**
+		 * Information about the users credited in this video.
+		 * Required
+		 */
 		credits: VideoMetadataConnectionsCredits;
 
-		/** Information about the users who have liked this video. */
+		/**
+		 * Information about the users who have liked this video.
+		 * Required
+		 */
 		likes: VideoMetadataConnectionsLikes;
 
-		/** Information about this video's ondemand data. */
+		/**
+		 * Information about this video's ondemand data.
+		 * Required
+		 */
 		ondemand: VideoMetadataConnectionsOndemand;
 
-		/** Information about this video's thumbnails. */
+		/**
+		 * Information about this video's thumbnails.
+		 * Required
+		 */
 		pictures: VideoMetadataConnectionsPictures;
 
-		/** The DRM playback status connection for this video. */
+		/**
+		 * The DRM playback status connection for this video.
+		 * Required
+		 */
 		playback: VideoMetadataConnectionsPlayback;
 
-		/** The recommendations for this video. */
+		/**
+		 * The recommendations for this video.
+		 * Required
+		 */
 		recommendations: VideoMetadataConnectionsRecommendations;
 
-		/** Related content for this video. */
+		/**
+		 * Related content for this video.
+		 * Required
+		 */
 		related: VideoMetadataConnectionsRelated;
 
-		/** Information about the video's season. */
+		/**
+		 * Information about the video's season.
+		 * Required
+		 */
 		season: VideoMetadataConnectionsSeason;
 
-		/** Information about this video's text tracks. */
+		/**
+		 * Information about this video's text tracks.
+		 * Required
+		 */
 		texttracks: VideoMetadataConnectionsTexttracks;
 
-		/** Information about this video's VOD trailer. */
+		/**
+		 * Information about this video's VOD trailer.
+		 * Required
+		 */
 		trailer: VideoMetadataConnectionsTrailer;
 
-		/** Information about the user privacy of this video, if the video privacy is `users`. */
+		/**
+		 * Information about the user privacy of this video, if the video privacy is `users`.
+		 * Required
+		 */
 		users_with_access: VideoMetadataConnectionsUsers_with_access;
 
-		/** Information about the versions of this video. */
+		/**
+		 * Information about the versions of this video.
+		 * Required
+		 */
 		versions: VideoMetadataConnectionsVersions;
 	}
 
 	export interface VideoMetadataConnectionsComments {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of comments on this connection. */
+		/**
+		 * The total number of comments on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -1323,46 +2185,79 @@ export namespace MyNS {
 
 	export interface VideoMetadataConnectionsLikes {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of likes on this connection. */
+		/**
+		 * The total number of likes on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataConnectionsOndemand {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The On Demand connection resource key. */
+		/**
+		 * The On Demand connection resource key.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataConnectionsPictures {
 
-		/** An array of HTTP methods allowed on this URI. */
+		/**
+		 * An array of HTTP methods allowed on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** Total number of thumbnails on this connection. */
+		/**
+		 * Total number of thumbnails on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataConnectionsPlayback {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -1386,49 +2281,85 @@ export namespace MyNS {
 
 	export interface VideoMetadataConnectionsSeason {
 
-		/** The name of this season. */
+		/**
+		 * The name of this season.
+		 * Required
+		 */
 		name: string;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataConnectionsTexttracks {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of text tracks on this connection. */
+		/**
+		 * The total number of text tracks on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataConnectionsTrailer {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The trailer connection resource key. */
+		/**
+		 * The trailer connection resource key.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataConnectionsUsers_with_access {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of users on this connection. */
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -1437,49 +2368,85 @@ export namespace MyNS {
 		/** The URI of the current version of the video. */
 		current_uri?: string;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of versions on this connection. */
+		/**
+		 * The total number of versions on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataInteractions {
 
-		/** The Buy interaction for a On Demand video. */
+		/**
+		 * The Buy interaction for a On Demand video.
+		 * Required
+		 */
 		buy: VideoMetadataInteractionsBuy;
 
-		/** When a video is referenced by a channel URI, if the user is a moderator of the channel, include information about removing the video from the channel. */
+		/**
+		 * When a video is referenced by a channel URI, if the user is a moderator of the channel, include information about removing the video from the channel.
+		 * Required
+		 */
 		channel: VideoMetadataInteractionsChannel;
 
-		/** Information about whether the authenticated user has liked this video. */
+		/**
+		 * Information about whether the authenticated user has liked this video.
+		 * Required
+		 */
 		like: VideoMetadataInteractionsLike;
 
-		/** The Rent interaction for an On Demand video. */
+		/**
+		 * The Rent interaction for an On Demand video.
+		 * Required
+		 */
 		rent: VideoMetadataInteractionsRent;
 
-		/** Information about where and how to report a video. */
+		/**
+		 * Information about where and how to report a video.
+		 * Required
+		 */
 		report: VideoMetadataInteractionsReport;
 
 		/** Subscription information for an On Demand video. */
 		subscribe?: VideoMetadataInteractionsSubscribe;
 
-		/** Information about removing this video from the user's list of watched videos. */
+		/**
+		 * Information about removing this video from the user's list of watched videos.
+		 * Required
+		 */
 		watched: VideoMetadataInteractionsWatched;
 
-		/** Information about whether this video appears on the authenticated user's Watch Later list. */
+		/**
+		 * Information about whether this video appears on the authenticated user's Watch Later list.
+		 * Required
+		 */
 		watchlater: VideoMetadataInteractionsWatchlater;
 	}
 
 	export interface VideoMetadataInteractionsBuy {
 
-		/** The currency code for the current user's region. */
+		/**
+		 * The currency code for the current user's region.
+		 * Required
+		 */
 		currency: string;
 
-		/** Formatted price to display to buy an On Demand video. */
+		/**
+		 * Formatted price to display to buy an On Demand video.
+		 * Required
+		 */
 		display_price: string;
 
 		/**
@@ -1489,19 +2456,32 @@ export namespace MyNS {
 		 * * `purchased` - The user has purchased the video.
 		 * * `restricted` - The user isn't permitted to download the video.
 		 * * `unavailable` - The video isn't available for download.
+		 * Required
 		 */
 		download: VideoMetadataInteractionsBuyDownload;
 
-		/** Whether the video has DRM. */
+		/**
+		 * Whether the video has DRM.
+		 * Required
+		 */
 		drm: boolean;
 
-		/** The URL to buy the On Demand video on Vimeo. */
+		/**
+		 * The URL to buy the On Demand video on Vimeo.
+		 * Required
+		 */
 		link: string;
 
-		/** The numeric value of the price for buying the On Demand video. */
+		/**
+		 * The numeric value of the price for buying the On Demand video.
+		 * Required
+		 */
 		price: number;
 
-		/** The time in ISO 8601 format when the On Demand video was purchased. */
+		/**
+		 * The time in ISO 8601 format when the On Demand video was purchased.
+		 * Required
+		 */
 		purchase_time: string;
 
 		/**
@@ -1511,10 +2491,14 @@ export namespace MyNS {
 		 * * `purchased` - The user has purchased the video.
 		 * * `restricted` - The user isn't permitted to stream the video.
 		 * * `unavailable` - The video isn't available for streaming
+		 * Required
 		 */
 		stream: VideoMetadataInteractionsBuyDownload;
 
-		/** The product URI to purchase the On Demand video. */
+		/**
+		 * The product URI to purchase the On Demand video.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -1522,49 +2506,88 @@ export namespace MyNS {
 
 	export interface VideoMetadataInteractionsChannel {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataInteractionsLike {
 
-		/** Whether the user has liked the video. */
+		/**
+		 * Whether the user has liked the video.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format when the user liked the video. */
+		/**
+		 * The time in ISO 8601 format when the user liked the video.
+		 * Required
+		 */
 		added_time: string;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataInteractionsRent {
 
-		/** The currency code for the current user's region. */
+		/**
+		 * The currency code for the current user's region.
+		 * Required
+		 */
 		currency: string;
 
-		/** Formatted price to display to rent an On Demand video. */
+		/**
+		 * Formatted price to display to rent an On Demand video.
+		 * Required
+		 */
 		display_price: string;
 
-		/** Whether the video has DRM. */
+		/**
+		 * Whether the video has DRM.
+		 * Required
+		 */
 		drm: boolean;
 
-		/** The time in ISO 8601 format when the rental period for the video expires. */
+		/**
+		 * The time in ISO 8601 format when the rental period for the video expires.
+		 * Required
+		 */
 		expires_time: string;
 
-		/** The URL to rent the On Demand video on Vimeo. */
+		/**
+		 * The URL to rent the On Demand video on Vimeo.
+		 * Required
+		 */
 		link: string;
 
-		/** The numeric value of the price for buying the On Demand video. */
+		/**
+		 * The numeric value of the price for buying the On Demand video.
+		 * Required
+		 */
 		price: number;
 
-		/** The time in ISO 8601 format when the On Demand video was rented. */
+		/**
+		 * The time in ISO 8601 format when the On Demand video was rented.
+		 * Required
+		 */
 		purchase_time: string;
 
 		/**
@@ -1574,22 +2597,35 @@ export namespace MyNS {
 		 * * `purchased` - The user has purchased the video.
 		 * * `restricted` - The user isn't permitted to stream the video.
 		 * * `unavailable` - The video isn't available for streaming.
+		 * Required
 		 */
 		stream: VideoMetadataInteractionsBuyDownload;
 
-		/** The product URI to rent the On Demand video. */
+		/**
+		 * The product URI to rent the On Demand video.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataInteractionsReport {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** A list of valid reasons for reporting a video. */
+		/**
+		 * A list of valid reasons for reporting a video.
+		 * Required
+		 */
 		reason: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -1610,85 +2646,148 @@ export namespace MyNS {
 
 	export interface VideoMetadataInteractionsWatched {
 
-		/** Whether the user has watched the video. */
+		/**
+		 * Whether the user has watched the video.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format when the user watched the video. */
+		/**
+		 * The time in ISO 8601 format when the user watched the video.
+		 * Required
+		 */
 		added_time: string;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoMetadataInteractionsWatchlater {
 
-		/** Whether the user has added the video to their Watch later list. */
+		/**
+		 * Whether the user has added the video to their Watch later list.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format when the user added the video to their Watch Later list. */
+		/**
+		 * The time in ISO 8601 format when the user added the video to their Watch Later list.
+		 * Required
+		 */
 		added_time: string;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface Project {
 
-		/** The time in ISO 8601 format when the project was created. */
+		/**
+		 * The time in ISO 8601 format when the project was created.
+		 * Required
+		 */
 		created_time: string;
 
-		/** The project's metadata. */
+		/**
+		 * The project's metadata.
+		 * Required
+		 */
 		metadata: ProjectMetadata;
 
-		/** The time in ISO 8601 format when the project was last modified. */
+		/**
+		 * The time in ISO 8601 format when the project was last modified.
+		 * Required
+		 */
 		modified_time: string;
 
-		/** The name of the folder. */
+		/**
+		 * The name of the folder.
+		 * Required
+		 */
 		name: string;
 
-		/** The resource key string of the project. */
+		/**
+		 * The resource key string of the project.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** The URI of the project. */
+		/**
+		 * The URI of the project.
+		 * Required
+		 */
 		uri: string;
 
-		/** The owner of the project. */
+		/**
+		 * The owner of the project.
+		 * Required
+		 */
 		user: User;
 	}
 
 	export interface ProjectMetadata {
 
-		/** A list of resource URIs related to the project. */
+		/**
+		 * A list of resource URIs related to the project.
+		 * Required
+		 */
 		connections: ProjectMetadataConnections;
 	}
 
 	export interface ProjectMetadataConnections {
 
-		/** A standard connection object indicating how to get all the videos in this project. */
+		/**
+		 * A standard connection object indicating how to get all the videos in this project.
+		 * Required
+		 */
 		videos: ProjectMetadataConnectionsVideos;
 	}
 
 	export interface ProjectMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface VideoPrivacy {
 
-		/** Whether the video can be added to collections. */
+		/**
+		 * Whether the video can be added to collections.
+		 * Required
+		 */
 		add: boolean;
 
 		/**
@@ -1697,10 +2796,14 @@ export namespace MyNS {
 		 * * `anybody` - Anyone can comment on the video.
 		 * * `contacts` - Only contacts can comment on the video.
 		 * * `nobody` - No one can comment on the video.
+		 * Required
 		 */
 		comments: UserPreferencesVideosPrivacyComments;
 
-		/** The video's download permission setting. */
+		/**
+		 * The video's download permission setting.
+		 * Required
+		 */
 		download: boolean;
 
 		/**
@@ -1708,6 +2811,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `private` - The video is private.
 		 * * `public` - Anyone can embed the video.
+		 * Required
 		 */
 		embed: VideoPrivacyEmbed;
 
@@ -1721,6 +2825,7 @@ export namespace MyNS {
 		 * * `password` - Anyone with the video's password can view the video.
 		 * * `unlisted` - Not searchable from vimeo.com
 		 * * `users` - Only people with a Vimeo account can view the video.
+		 * Required
 		 */
 		view: UserPreferencesVideosPrivacyView;
 	}
@@ -1729,10 +2834,16 @@ export namespace MyNS {
 
 	export interface VideoSpatial {
 
-		/** 360 director timeline. */
+		/**
+		 * 360 director timeline.
+		 * Required
+		 */
 		VideoSpatialDirector_timeline: Array<VideoSpatialDirector_timeline>;
 
-		/** The 360 field of view, from 30 (minimum) to 90 (maximum). The default is 50. */
+		/**
+		 * The 360 field of view, from 30 (minimum) to 90 (maximum). The default is 50.
+		 * Required
+		 */
 		field_of_view: number;
 
 		/**
@@ -1743,6 +2854,7 @@ export namespace MyNS {
 		 * * `dome` - The spatial projection is dome-shaped.
 		 * * `equirectangular` - The spatial projection is equirectangular.
 		 * * `pyramid` - The spatial projection is pyramid-shaped.
+		 * Required
 		 */
 		projection: VideoSpatialProjection;
 
@@ -1752,6 +2864,7 @@ export namespace MyNS {
 		 * * `left-right` - The stereo format is left-right.
 		 * * `mono` - The audio is monaural.
 		 * * `top-bottom` - The stereo format is top-bottom.
+		 * Required
 		 */
 		stereo_format: VideoSpatialStereo_format;
 	}
@@ -1777,7 +2890,10 @@ export namespace MyNS {
 
 	export interface VideoStats {
 
-		/** The current total number of times that the video has been played. */
+		/**
+		 * The current total number of times that the video has been played.
+		 * Required
+		 */
 		plays: number;
 	}
 
@@ -1817,6 +2933,7 @@ export namespace MyNS {
 		 * * `complete` - The upload is complete.
 		 * * `error` - The upload ended with an error.
 		 * * `in_progress` - The upload is underway.
+		 * Required
 		 */
 		status: VideoTranscodeStatus;
 
@@ -1828,34 +2945,64 @@ export namespace MyNS {
 
 	export interface Group {
 
-		/** The time in ISO 8601 format when the group was created. */
+		/**
+		 * The time in ISO 8601 format when the group was created.
+		 * Required
+		 */
 		created_time: string;
 
-		/** The group's description. */
+		/**
+		 * The group's description.
+		 * Required
+		 */
 		description: string;
 
-		/** The link to the group. */
+		/**
+		 * The link to the group.
+		 * Required
+		 */
 		link: string;
 
-		/** Metadata about the group. */
+		/**
+		 * Metadata about the group.
+		 * Required
+		 */
 		metadata: GroupMetadata;
 
-		/** The time in ISO 8601 format when the group was last modified. */
+		/**
+		 * The time in ISO 8601 format when the group was last modified.
+		 * Required
+		 */
 		modified_time: string;
 
-		/** The group's display name. */
+		/**
+		 * The group's display name.
+		 * Required
+		 */
 		name: string;
 
-		/** The active picture for this group. */
+		/**
+		 * The active picture for this group.
+		 * Required
+		 */
 		pictures: Picture;
 
-		/** The group's privacy settings. */
+		/**
+		 * The group's privacy settings.
+		 * Required
+		 */
 		privacy: GroupPrivacy;
 
-		/** The resource key of the group. */
+		/**
+		 * The resource key of the group.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** The canonical relative URI of this group. */
+		/**
+		 * The canonical relative URI of this group.
+		 * Required
+		 */
 		uri: string;
 
 		/** The owner of the group. */
@@ -1864,61 +3011,103 @@ export namespace MyNS {
 
 	export interface GroupMetadata {
 
-		/** A collection of information that is connected to this resource. */
+		/**
+		 * A collection of information that is connected to this resource.
+		 * Required
+		 */
 		connections: GroupMetadataConnections;
 
-		/** User actions that have involved the group. This data requires a bearer token with the `private` scope. */
+		/**
+		 * User actions that have involved the group. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		interactions: GroupMetadataInteractions;
 	}
 
 	export interface GroupMetadataConnections {
 
-		/** Information about the members or moderators of this group. */
+		/**
+		 * Information about the members or moderators of this group.
+		 * Required
+		 */
 		users: GroupMetadataConnectionsUsers;
 
-		/** Information about the videos contained within this group. */
+		/**
+		 * Information about the videos contained within this group.
+		 * Required
+		 */
 		videos: GroupMetadataConnectionsVideos;
 	}
 
 	export interface GroupMetadataConnectionsUsers {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of users on this connection. */
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface GroupMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface GroupMetadataInteractions {
 
-		/** An action indicating that someone has joined the group. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An action indicating that someone has joined the group. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		join: GroupMetadataInteractionsJoin;
 	}
 
 	export interface GroupMetadataInteractionsJoin {
 
-		/** Whether the authenticated user has followed this group. This data requires a bearer token with the `private` scope. */
+		/**
+		 * Whether the authenticated user has followed this group. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format when the user joined this group. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The time in ISO 8601 format when the user joined this group. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		added_time: string;
 
-		/** The user's title, or the null value if not applicable. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The user's title, or the null value if not applicable. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		title: string;
 
 		/**
@@ -1926,10 +3115,14 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `member` - The authenticated user is a member.
 		 * * `moderator` - The authenticated user is a moderator.
+		 * Required
 		 */
 		type: GroupMetadataInteractionsJoinType;
 
-		/** The URI for following. PUT to this URI to follow, or DELETE to this URI to unfollow. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The URI for following. PUT to this URI to follow, or DELETE to this URI to unfollow. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -1942,6 +3135,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `all` - Anyone can comment on the group.
 		 * * `members` - Only members can comment on the group.
+		 * Required
 		 */
 		comment: GroupPrivacyComment;
 
@@ -1950,6 +3144,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `all` - Anyone can invite new members to join.
 		 * * `members` - Only group members can invite new members to join.
+		 * Required
 		 */
 		invite: GroupPrivacyComment;
 
@@ -1958,6 +3153,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `anybody` - Anyone can join the group.
 		 * * `members` - Only people with a Vimeo account can join the group.
+		 * Required
 		 */
 		join: GroupPrivacyJoin;
 
@@ -1966,6 +3162,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `all` - Anyone can add videos to the group.
 		 * * `members` - Only group members can add videos to the group.
+		 * Required
 		 */
 		videos: GroupPrivacyComment;
 
@@ -1974,6 +3171,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `anybody` - Anyone can view the group.
 		 * * `members` - Only group members can view the group.
+		 * Required
 		 */
 		view: GroupPrivacyJoin;
 	}
@@ -1984,22 +3182,34 @@ export namespace MyNS {
 
 	export interface Activity_3_1Metadata {
 
-		/** A list of resource URIs related to the activity. */
+		/**
+		 * A list of resource URIs related to the activity.
+		 * Required
+		 */
 		connections: Activity_3_1MetadataConnections;
 	}
 
 	export interface Activity_3_1MetadataConnections {
 
-		/** Related content for this activity. */
+		/**
+		 * Related content for this activity.
+		 * Required
+		 */
 		related: Activity_3_1MetadataConnectionsRelated;
 	}
 
 	export interface Activity_3_1MetadataConnectionsRelated {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -2007,103 +3217,199 @@ export namespace MyNS {
 
 	export interface Album {
 
-		/** Whether an album should allow continuous play. */
+		/**
+		 * Whether an album should allow continuous play.
+		 * Required
+		 */
 		allow_continuous_play: boolean;
 
-		/** Whether an album should allow downloads. */
+		/**
+		 * Whether an album should allow downloads.
+		 * Required
+		 */
 		allow_downloads: boolean;
 
-		/** Whether an album should allow sharing. */
+		/**
+		 * Whether an album should allow sharing.
+		 * Required
+		 */
 		allow_share: boolean;
 
-		/** Hexadecimal color code for the decorative color. For example, album videos use this color for player buttons. */
+		/**
+		 * Hexadecimal color code for the decorative color. For example, album videos use this color for player buttons.
+		 * Required
+		 */
 		brand_color: string;
 
-		/** The time in ISO 8601 format that the album was created. */
+		/**
+		 * The time in ISO 8601 format that the album was created.
+		 * Required
+		 */
 		created_time: string;
 
-		/** The custom logo for this album. */
+		/**
+		 * The custom logo for this album.
+		 * Required
+		 */
 		custom_logo: Picture;
 
-		/** A brief description of the album's content. */
+		/**
+		 * A brief description of the album's content.
+		 * Required
+		 */
 		description: string;
 
-		/** The custom domain a user has selected for their album. */
+		/**
+		 * The custom domain a user has selected for their album.
+		 * Required
+		 */
 		domain: string;
 
-		/** The total duration in seconds of all the videos in the album. */
+		/**
+		 * The total duration in seconds of all the videos in the album.
+		 * Required
+		 */
 		duration: number;
 
-		/** Embed data for the album. */
+		/**
+		 * Embed data for the album.
+		 * Required
+		 */
 		embed: AlbumEmbed;
 
-		/** Whether to show the album's custom brand color in the player of the album's embedded playlist. */
+		/**
+		 * Whether to show the album's custom brand color in the player of the album's embedded playlist.
+		 * Required
+		 */
 		embed_brand_color: boolean;
 
-		/** Whether to show the album's custom logo in the player of the album's embedded playlist. */
+		/**
+		 * Whether to show the album's custom logo in the player of the album's embedded playlist.
+		 * Required
+		 */
 		embed_custom_logo: boolean;
 
-		/** Whether to hide the Vimeo navigation when viewing the album. */
+		/**
+		 * Whether to hide the Vimeo navigation when viewing the album.
+		 * Required
+		 */
 		hide_nav: boolean;
 
-		/** Whether to hide the Vimeo logo in the player of the album's embedded playlist. */
+		/**
+		 * Whether to hide the Vimeo logo in the player of the album's embedded playlist.
+		 * Required
+		 */
 		hide_vimeo_logo: boolean;
 
-		/** The album's layout preference */
+		/**
+		 * The album's layout preference
+		 * Required
+		 */
 		layout: AlbumLayout;
 
-		/** The URL to access the album. */
+		/**
+		 * The URL to access the album.
+		 * Required
+		 */
 		link: string;
 
-		/** Metadata about the album. */
+		/**
+		 * Metadata about the album.
+		 * Required
+		 */
 		metadata: AlbumMetadata;
 
-		/** The time in ISO 8601 format when the album was last modified. */
+		/**
+		 * The time in ISO 8601 format when the album was last modified.
+		 * Required
+		 */
 		modified_time: string;
 
-		/** The album's display name. */
+		/**
+		 * The album's display name.
+		 * Required
+		 */
 		name: string;
 
-		/** The active image for the album; defaults to the thumbnail of the last video added to the album. */
+		/**
+		 * The active image for the album; defaults to the thumbnail of the last video added to the album.
+		 * Required
+		 */
 		pictures: Picture;
 
-		/** The privacy settings of the album. */
+		/**
+		 * The privacy settings of the album.
+		 * Required
+		 */
 		privacy: AlbumPrivacy;
 
-		/** The album resource key. */
+		/**
+		 * The album resource key.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** Whether album videos should use the review mode URL. */
+		/**
+		 * Whether album videos should use the review mode URL.
+		 * Required
+		 */
 		review_mode: boolean;
 
-		/** Sort type of the album. */
+		/**
+		 * Sort type of the album.
+		 * Required
+		 */
 		sort: AlbumSort;
 
-		/** The album's color theme preference */
+		/**
+		 * The album's color theme preference
+		 * Required
+		 */
 		theme: AlbumTheme;
 
-		/** The album's URI. */
+		/**
+		 * The album's URI.
+		 * Required
+		 */
 		uri: string;
 
-		/** The custom Vimeo URL a user has selected for their album. */
+		/**
+		 * The custom Vimeo URL a user has selected for their album.
+		 * Required
+		 */
 		url: string;
 
-		/** Whether the user has opted in to use a custom domain for their album. */
+		/**
+		 * Whether the user has opted in to use a custom domain for their album.
+		 * Required
+		 */
 		use_custom_domain: boolean;
 
-		/** The owner of the album. */
+		/**
+		 * The owner of the album.
+		 * Required
+		 */
 		user: User;
 
-		/** Whether an album should show the brand color in the web layout. */
+		/**
+		 * Whether an album should show the brand color in the web layout.
+		 * Required
+		 */
 		web_brand_color: boolean;
 
-		/** Whether an album's custom logo should be shown in the web layout. */
+		/**
+		 * Whether an album's custom logo should be shown in the web layout.
+		 * Required
+		 */
 		web_custom_logo: boolean;
 	}
 
 	export interface AlbumEmbed {
 
-		/** The responsive HTML code to embed the playlist on a website. This is present only when `privacy.view` isn't password and when the album has embeddable videos. */
+		/**
+		 * The responsive HTML code to embed the playlist on a website. This is present only when `privacy.view` isn't password and when the album has embeddable videos.
+		 * Required
+		 */
 		html: string;
 	}
 
@@ -2111,67 +3417,112 @@ export namespace MyNS {
 
 	export interface AlbumMetadata {
 
-		/** A collection of information that is connected to this resource. */
+		/**
+		 * A collection of information that is connected to this resource.
+		 * Required
+		 */
 		connections: AlbumMetadataConnections;
 
-		/** A list of resource URIs related to the album. */
+		/**
+		 * A list of resource URIs related to the album.
+		 * Required
+		 */
 		interactions: AlbumMetadataInteractions;
 	}
 
 	export interface AlbumMetadataConnections {
 
-		/** Information about the videos that belong to this album. */
+		/**
+		 * Information about the videos that belong to this album.
+		 * Required
+		 */
 		videos: AlbumMetadataConnectionsVideos;
 	}
 
 	export interface AlbumMetadataConnectionsVideos {
 
-		/** An array of the HTTP methods permitted on this URI. */
+		/**
+		 * An array of the HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface AlbumMetadataInteractions {
 
-		/** An action indicating that the authenticated user is an admin of the album and may therefore add custom thumbnails. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An action indicating that the authenticated user is an admin of the album and may therefore add custom thumbnails. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		add_custom_thumbnails: AlbumMetadataInteractionsAdd_custom_thumbnails;
 
-		/** An action indicating that the authenticated user is an admin of the album and may therefore add custom logos. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An action indicating that the authenticated user is an admin of the album and may therefore add custom logos. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		add_logos: AlbumMetadataInteractionsAdd_logos;
 
-		/** An action indicating that the authenticated user is an admin of the album and may therefore add videos. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An action indicating that the authenticated user is an admin of the album and may therefore add videos. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		add_videos: AlbumMetadataInteractionsAdd_videos;
 	}
 
 	export interface AlbumMetadataInteractionsAdd_custom_thumbnails {
 
-		/** An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface AlbumMetadataInteractionsAdd_logos {
 
-		/** An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface AlbumMetadataInteractionsAdd_videos {
 
-		/** An array of HTTP methods allowed on this URI. This data requires a bearer token with the `private` scope. */
+		/**
+		 * An array of HTTP methods allowed on this URI. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -2186,6 +3537,7 @@ export namespace MyNS {
 		 * * `anybody` - Anyone can view the album.
 		 * * `embed_only` - Only owner can see album, can be embedded off-site
 		 * * `password` - Only those with the password can view the album.
+		 * Required
 		 */
 		view: AlbumPrivacyView;
 	}
@@ -2198,19 +3550,31 @@ export namespace MyNS {
 
 	export interface Api_app {
 
-		/** The name of the API app. */
+		/**
+		 * The name of the API app.
+		 * Required
+		 */
 		name: string;
 
-		/** The canonical URI of the API app. */
+		/**
+		 * The canonical URI of the API app.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface Auth {
 
-		/** The access token string. */
+		/**
+		 * The access token string.
+		 * Required
+		 */
 		access_token: string;
 
-		/** The API application associated with the token. */
+		/**
+		 * The API application associated with the token.
+		 * Required
+		 */
 		app: Api_app;
 
 		/** The date and time that the token expires. */
@@ -2219,13 +3583,17 @@ export namespace MyNS {
 		/** The refresh token string. */
 		refresh_token?: string;
 
-		/** The scope or scopes that the token supports. */
+		/**
+		 * The scope or scopes that the token supports.
+		 * Required
+		 */
 		scope: string;
 
 		/**
 		 * The token type:
 		 * Option descriptions:
 		 * * `bearer` - The token is of the `bearer` type.
+		 * Required
 		 */
 		token_type: AuthToken_type;
 
@@ -2237,36 +3605,58 @@ export namespace MyNS {
 
 	export interface Auth_error {
 
-		/** The name of the error. */
+		/**
+		 * The name of the error.
+		 * Required
+		 */
 		error: string;
 
-		/** The description of the error. */
+		/**
+		 * The description of the error.
+		 * Required
+		 */
 		error_description: string;
 	}
 
 	export interface Comment {
 
-		/** The time in ISO 8601 format when the comment was posted. */
+		/**
+		 * The time in ISO 8601 format when the comment was posted.
+		 * Required
+		 */
 		created_on: string;
 		metadata: CommentMetadata;
 
-		/** The resource key string for the comment. */
+		/**
+		 * The resource key string for the comment.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** The content of the comment. */
+		/**
+		 * The content of the comment.
+		 * Required
+		 */
 		text: string;
 
 		/**
 		 * The Vimeo content to which the comment relates:
 		 * Option descriptions:
 		 * * `video` - The comment is about a video.
+		 * Required
 		 */
 		type: CommentType;
 
-		/** The unique identifier to access the comment resource. */
+		/**
+		 * The unique identifier to access the comment resource.
+		 * Required
+		 */
 		uri: string;
 
-		/** The user who posted the comment. */
+		/**
+		 * The user who posted the comment.
+		 * Required
+		 */
 		user: User;
 	}
 
@@ -2276,19 +3666,31 @@ export namespace MyNS {
 
 	export interface CommentMetadataConnections {
 
-		/** Information about this comment's replies. */
+		/**
+		 * Information about this comment's replies.
+		 * Required
+		 */
 		replies: CommentMetadataConnectionsReplies;
 	}
 
 	export interface CommentMetadataConnectionsReplies {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of replies on this connection. */
+		/**
+		 * The total number of replies on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -2305,13 +3707,20 @@ export namespace MyNS {
 		 * * `safe` - Suitable for all audiences.
 		 * * `unrated` - No rating.
 		 * * `violence` - Violent or graphic content.
+		 * Required
 		 */
 		code: Content_ratingCode;
 
-		/** The description of this content rating. */
+		/**
+		 * The description of this content rating.
+		 * Required
+		 */
 		name: string;
 
-		/** The canonical relative URI of the content rating. */
+		/**
+		 * The canonical relative URI of the content rating.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -2329,13 +3738,20 @@ export namespace MyNS {
 		 * * `by-nd` - Attribution No Derivatives
 		 * * `by-sa` - Attribution Share Alike
 		 * * `cc0` - Public Domain Dedication
+		 * Required
 		 */
 		code: Creative_commonsCode;
 
-		/** The description of this Creative Commons license. */
+		/**
+		 * The description of this Creative Commons license.
+		 * Required
+		 */
 		name: string;
 
-		/** The canonical relative URI of the Creative Commons license. */
+		/**
+		 * The canonical relative URI of the Creative Commons license.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -2343,13 +3759,22 @@ export namespace MyNS {
 
 	export interface Credit {
 
-		/** The name of the person credited. */
+		/**
+		 * The name of the person credited.
+		 * Required
+		 */
 		name: string;
 
-		/** The character that this person portrayed, or the job that this person performed. */
+		/**
+		 * The character that this person portrayed, or the job that this person performed.
+		 * Required
+		 */
 		role: string;
 
-		/** The unique identifier to access the credits resource. */
+		/**
+		 * The unique identifier to access the credits resource.
+		 * Required
+		 */
 		uri: string;
 
 		/** The Vimeo user associated with this credit. */
@@ -2361,176 +3786,299 @@ export namespace MyNS {
 
 	export interface Domain {
 
-		/** Whether to permit HD embeds on this domain. */
+		/**
+		 * Whether to permit HD embeds on this domain.
+		 * Required
+		 */
 		allow_hd: boolean;
 
-		/** The domain name. */
+		/**
+		 * The domain name.
+		 * Required
+		 */
 		domain: string;
 
-		/** The URI of the domain. */
+		/**
+		 * The URI of the domain.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface Endpoint {
 
-		/** All HTTP methods permitted on this endpoint. */
+		/**
+		 * All HTTP methods permitted on this endpoint.
+		 * Required
+		 */
 		methods: Array<string>;
 
-		/** The path section of the URL, which, when appended to the API host `https:///api.vimeo.com`, builds a full API endpoint. */
+		/**
+		 * The path section of the URL, which, when appended to the API host `https:///api.vimeo.com`, builds a full API endpoint.
+		 * Required
+		 */
 		path: string;
 	}
 
 	export interface Error {
 
-		/** The error message that developers receive. */
+		/**
+		 * The error message that developers receive.
+		 * Required
+		 */
 		developer_message: string;
 
-		/** The error message that non-developer users receive. */
+		/**
+		 * The error message that non-developer users receive.
+		 * Required
+		 */
 		error: string;
 
-		/** The error code. */
+		/**
+		 * The error code.
+		 * Required
+		 */
 		error_code: number;
 
-		/** A link to more information about the error. */
+		/**
+		 * A link to more information about the error.
+		 * Required
+		 */
 		link: string;
 	}
 
 	export interface Language {
 
-		/** The code that represents this language. */
+		/**
+		 * The code that represents this language.
+		 * Required
+		 */
 		code: string;
 
-		/** The name of the language. */
+		/**
+		 * The name of the language.
+		 * Required
+		 */
 		name: string;
 	}
 
 	export interface Legacy_error {
 
-		/** User-friendly error message */
+		/**
+		 * User-friendly error message
+		 * Required
+		 */
 		error: string;
 	}
 
 	export interface On_demand_genre {
 
-		/** The canonical name or URL slug of the genre. */
+		/**
+		 * The canonical name or URL slug of the genre.
+		 * Required
+		 */
 		canonical: string;
 		interactions: On_demand_genreInteractions;
 
-		/** The Vimeo URL for this genre. */
+		/**
+		 * The Vimeo URL for this genre.
+		 * Required
+		 */
 		link: string;
 		metadata: On_demand_genreMetadata;
 
-		/** The descriptive name of the genre. */
+		/**
+		 * The descriptive name of the genre.
+		 * Required
+		 */
 		name: string;
 
-		/** The relative URI of the On Demand genre. */
+		/**
+		 * The relative URI of the On Demand genre.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_genreInteractions {
 
-		/** Interactions for On Demand pages that are in this genre. */
+		/**
+		 * Interactions for On Demand pages that are in this genre.
+		 * Required
+		 */
 		page: On_demand_genreInteractionsPage;
 	}
 
 	export interface On_demand_genreInteractionsPage {
 
-		/** Whether this On Demand genre was added. */
+		/**
+		 * Whether this On Demand genre was added.
+		 * Required
+		 */
 		added: boolean;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The URI to access the On Demand page. */
+		/**
+		 * The URI to access the On Demand page.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_genreMetadata {
 
-		/** A collection of information connected to this resource. */
+		/**
+		 * A collection of information connected to this resource.
+		 * Required
+		 */
 		connections: On_demand_genreMetadataConnections;
 	}
 
 	export interface On_demand_genreMetadataConnections {
 
-		/** Information about the On Demand pages related to this group. */
+		/**
+		 * Information about the On Demand pages related to this group.
+		 * Required
+		 */
 		pages: On_demand_genreMetadataConnectionsPages;
 	}
 
 	export interface On_demand_genreMetadataConnectionsPages {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_page {
 
-		/** The background image for the On Demand page on Vimeo. */
+		/**
+		 * The background image for the On Demand page on Vimeo.
+		 * Required
+		 */
 		background: Picture;
 
-		/** The primary and secondary colors used for rendering this On Demand page. */
+		/**
+		 * The primary and secondary colors used for rendering this On Demand page.
+		 * Required
+		 */
 		colors: On_demand_pageColors;
 
-		/** An array of the page's content ratings. */
+		/**
+		 * An array of the page's content ratings.
+		 * Required
+		 */
 		content_rating: Array<string>;
 
 		/** The time in ISO 8601 format when the page was created. */
 		created_time?: string;
 
-		/** The description of this On Demand page. */
+		/**
+		 * The description of this On Demand page.
+		 * Required
+		 */
 		description: string;
 
-		/** The link to this page on its own domain. */
+		/**
+		 * The link to this page on its own domain.
+		 * Required
+		 */
 		domain_link: string;
 
-		/** Information about this On Demand page's episodes, if the page is for a series. */
+		/**
+		 * Information about this On Demand page's episodes, if the page is for a series.
+		 * Required
+		 */
 		episodes: On_demand_pageEpisodes;
 
 		/** This On Demand page's film, if it is a film. */
 		film?: Video;
 
-		/** All the genres assigned to this page. */
+		/**
+		 * All the genres assigned to this page.
+		 * Required
+		 */
 		genres: Array<On_demand_genre>;
 
-		/** The link to the page on Vimeo. */
+		/**
+		 * The link to the page on Vimeo.
+		 * Required
+		 */
 		link: string;
 
-		/** Metadata about the On Demand page. */
+		/**
+		 * Metadata about the On Demand page.
+		 * Required
+		 */
 		metadata: On_demand_pageMetadata;
 
 		/** he time in ISO 8601 format when the page was last modified. */
 		modified_time?: string;
 
-		/** A descriptive title of this On Demand page. */
+		/**
+		 * A descriptive title of this On Demand page.
+		 * Required
+		 */
 		name: string;
 
-		/** The active poster for this On Demand page. */
+		/**
+		 * The active poster for this On Demand page.
+		 * Required
+		 */
 		pictures: Picture;
 		preorder: On_demand_pagePreorder;
 		published: On_demand_pagePublished;
 
-		/** The rating of this page. */
+		/**
+		 * The rating of this page.
+		 * Required
+		 */
 		rating: number;
 
-		/** The VOD resource key. */
+		/**
+		 * The VOD resource key.
+		 * Required
+		 */
 		resource_key: string;
 
 		/** The creator-designated SKU for this On Demand page. */
 		sku?: string;
 
-		/** Information about subscribing to this On Demand page, if enabled. */
+		/**
+		 * Information about subscribing to this On Demand page, if enabled.
+		 * Required
+		 */
 		subscription: On_demand_pageSubscription;
 
-		/** The graphical theme for this On Demand page. */
+		/**
+		 * The graphical theme for this On Demand page.
+		 * Required
+		 */
 		theme: string;
 
-		/** The thumbnail image for the On Demand page on Vimeo. */
+		/**
+		 * The thumbnail image for the On Demand page on Vimeo.
+		 * Required
+		 */
 		thumbnail: Picture;
 
-		/** The trailer for this On Demand page. */
+		/**
+		 * The trailer for this On Demand page.
+		 * Required
+		 */
 		trailer: Video;
 
 		/**
@@ -2538,22 +4086,35 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `film` - The On Demand page is for a film.
 		 * * `series` - The On Demand page is for a series.
+		 * Required
 		 */
 		type: On_demand_pageType;
 
-		/** The relative URI of the On Demand page. */
+		/**
+		 * The relative URI of the On Demand page.
+		 * Required
+		 */
 		uri: string;
 
-		/** The user who created this On Demand page. */
+		/**
+		 * The user who created this On Demand page.
+		 * Required
+		 */
 		user: User;
 	}
 
 	export interface On_demand_pageColors {
 
-		/** The hexadecimal color code for the page's primary color. */
+		/**
+		 * The hexadecimal color code for the page's primary color.
+		 * Required
+		 */
 		primary: string;
 
-		/** The hexadecimal color code for the page's secondary color. */
+		/**
+		 * The hexadecimal color code for the page's secondary color.
+		 * Required
+		 */
 		secondary: string;
 	}
 
@@ -2564,16 +4125,25 @@ export namespace MyNS {
 
 	export interface On_demand_pageEpisodesBuy {
 
-		/** Whether all the videos on this On Demand page can be purchased as a whole. */
+		/**
+		 * Whether all the videos on this On Demand page can be purchased as a whole.
+		 * Required
+		 */
 		active: boolean;
 
-		/** The default price to buy an episode. */
+		/**
+		 * The default price to buy an episode.
+		 * Required
+		 */
 		price: number;
 	}
 
 	export interface On_demand_pageEpisodesRent {
 
-		/** Whether all the videos on this On Demand page can be rented as a whole. */
+		/**
+		 * Whether all the videos on this On Demand page can be rented as a whole.
+		 * Required
+		 */
 		active: boolean;
 
 		/**
@@ -2593,10 +4163,14 @@ export namespace MyNS {
 		 * * `60 day` - The rental period is 60 days.
 		 * * `7 day` - The rental period is 7 days.
 		 * * `72 hour` - The rental period is 72 hours.
+		 * Required
 		 */
 		period: On_demand_pageEpisodesRentPeriod;
 
-		/** The default price to rent an episode. */
+		/**
+		 * The default price to rent an episode.
+		 * Required
+		 */
 		price: number;
 	}
 
@@ -2604,10 +4178,16 @@ export namespace MyNS {
 
 	export interface On_demand_pageMetadata {
 
-		/** A collection of information that is connected to this resource, including videos, genres, and pictures connections. */
+		/**
+		 * A collection of information that is connected to this resource, including videos, genres, and pictures connections.
+		 * Required
+		 */
 		connections: On_demand_pageMetadataConnections;
 
-		/** The user's available purchase interactions. */
+		/**
+		 * The user's available purchase interactions.
+		 * Required
+		 */
 		interactions: Purchase_interaction;
 	}
 
@@ -2621,103 +4201,184 @@ export namespace MyNS {
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnections {
 
-		/** Information about the comments associated with this page. */
+		/**
+		 * Information about the comments associated with this page.
+		 * Required
+		 */
 		comments: On_demand_pageMetadataConnectionsMetadataConnectionsComments;
 
-		/** Information about the genres associated with this page. */
+		/**
+		 * Information about the genres associated with this page.
+		 * Required
+		 */
 		genres: On_demand_pageMetadataConnectionsMetadataConnectionsGenres;
 
-		/** Information about the likes associated with this page. */
+		/**
+		 * Information about the likes associated with this page.
+		 * Required
+		 */
 		likes: On_demand_pageMetadataConnectionsMetadataConnectionsLikes;
 
-		/** Information about the pictures associated with this page. */
+		/**
+		 * Information about the pictures associated with this page.
+		 * Required
+		 */
 		pictures: On_demand_pageMetadataConnectionsMetadataConnectionsPictures;
 
-		/** Information about the seasons associated with this page. */
+		/**
+		 * Information about the seasons associated with this page.
+		 * Required
+		 */
 		seasons: On_demand_pageMetadataConnectionsMetadataConnectionsSeasons;
 
-		/** Information about the videos associated with this page. */
+		/**
+		 * Information about the videos associated with this page.
+		 * Required
+		 */
 		videos: On_demand_pageMetadataConnectionsMetadataConnectionsVideos;
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsComments {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of comments on this connection. */
+		/**
+		 * The total number of comments on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsGenres {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of genres on this connection. */
+		/**
+		 * The total number of genres on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsLikes {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of likes on this connection. */
+		/**
+		 * The total number of likes on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsPictures {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of pictures on this connection. */
+		/**
+		 * The total number of pictures on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsSeasons {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of seasons on this connection. */
+		/**
+		 * The total number of seasons on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsVideos {
 
-		/** The total number of extra videos. */
+		/**
+		 * The total number of extra videos.
+		 * Required
+		 */
 		extra_total: number;
 
-		/** The total number of main videos. */
+		/**
+		 * The total number of main videos.
+		 * Required
+		 */
 		main_total: number;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 
-		/** The total number of viewable videos. */
+		/**
+		 * The total number of viewable videos.
+		 * Required
+		 */
 		viewable_total: number;
 	}
 
@@ -2769,40 +4430,67 @@ export namespace MyNS {
 
 	export interface On_demand_pagePreorder {
 
-		/** Whether this page is available for preorder. */
+		/**
+		 * Whether this page is available for preorder.
+		 * Required
+		 */
 		active: boolean;
 
-		/** The time in ISO 8601 format when the preorder was cancelled. */
+		/**
+		 * The time in ISO 8601 format when the preorder was cancelled.
+		 * Required
+		 */
 		cancel_time: string;
 
-		/** The time in ISO 8601 format when the preorder was released to the public. */
+		/**
+		 * The time in ISO 8601 format when the preorder was released to the public.
+		 * Required
+		 */
 		publish_time: string;
 
-		/** The time in ISO 8601 format when the preorder started. */
+		/**
+		 * The time in ISO 8601 format when the preorder started.
+		 * Required
+		 */
 		time: string;
 	}
 
 	export interface On_demand_pagePublished {
 
-		/** Whether this On Demand page has been published. */
+		/**
+		 * Whether this On Demand page has been published.
+		 * Required
+		 */
 		enabled: boolean;
 
-		/** The time in IS 8601 format when this page was published. */
+		/**
+		 * The time in IS 8601 format when this page was published.
+		 * Required
+		 */
 		time: string;
 	}
 
 	export interface On_demand_pageSubscription {
 
-		/** Whether this product is active. */
+		/**
+		 * Whether this product is active.
+		 * Required
+		 */
 		active: boolean;
 
-		/** The link to this product on Vimeo. */
+		/**
+		 * The link to this product on Vimeo.
+		 * Required
+		 */
 		link: string;
 
 		/** The product's rental period. */
 		period?: string;
 
-		/** The accepted currencies and respective pricing for this product. */
+		/**
+		 * The accepted currencies and respective pricing for this product.
+		 * Required
+		 */
 		price: string;
 	}
 
@@ -2815,6 +4503,7 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `default` - Grants discounts on existing product offerings.
 		 * * `vip` - Grants free access either to VOD content before it is released or to access types that aren't part of the existing product offerings.
+		 * Required
 		 */
 		access_type: On_demand_promotionAccess_type;
 
@@ -2824,19 +4513,32 @@ export namespace MyNS {
 		 * * `dollars` - The discount is a certain fixed amount.
 		 * * `free` - The discount is the full purchase price. VIP access promotions always use this discount type.
 		 * * `percent` - The discount is a certain percentage of the full price.
+		 * Required
 		 */
 		discount_type: On_demand_promotionDiscount_type;
 
-		/** Whether this promotion grants download access to On Demand content. */
+		/**
+		 * Whether this promotion grants download access to On Demand content.
+		 * Required
+		 */
 		download: boolean;
 
-		/** The prefix string for batch codes, or the null value for single codes. */
+		/**
+		 * The prefix string for batch codes, or the null value for single codes.
+		 * Required
+		 */
 		label: string;
 
-		/** The video's metadata. */
+		/**
+		 * The video's metadata.
+		 * Required
+		 */
 		metadata: On_demand_promotionMetadata;
 
-		/** The percentage amount that is deducted from the product price. */
+		/**
+		 * The percentage amount that is deducted from the product price.
+		 * Required
+		 */
 		percent_off: number;
 
 		/**
@@ -2848,6 +4550,7 @@ export namespace MyNS {
 		 * * `rent` - The promotion can be applied to a rentable single video.
 		 * * `rent_episode` - The promotion can be applied to a rentable single episode.
 		 * * `subscribe` - The promotion can be applied to a subscription.
+		 * Required
 		 */
 		product_type: On_demand_promotionProduct_type;
 
@@ -2862,10 +4565,14 @@ export namespace MyNS {
 		 * * `48_hour` - Access lasts for 48 hours.
 		 * * `6_month` - Access lasts for 6 months.
 		 * * `72_hour` - Access lasts for 72 hours.
+		 * Required
 		 */
 		stream_period: On_demand_promotionStream_period;
 
-		/** The total amount of times that this promotion can be used. */
+		/**
+		 * The total amount of times that this promotion can be used.
+		 * Required
+		 */
 		total: number;
 
 		/**
@@ -2874,10 +4581,14 @@ export namespace MyNS {
 		 * * `batch` - Provides many unique promo codes that can only be used once each.
 		 * * `batch_prefix` - Similar to `batch`, except that all codes have a similar prefix string. This mode is deprecated, yet it may still appear for some users.
 		 * * `single` - Provides a single promo code with many uses.
+		 * Required
 		 */
 		type: On_demand_promotionType;
 
-		/** The promotion's canonical relative URI. */
+		/**
+		 * The promotion's canonical relative URI.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -2887,25 +4598,40 @@ export namespace MyNS {
 
 	export interface On_demand_promotionMetadata {
 
-		/** A list of resource URIs related to the On Demand promotion. */
+		/**
+		 * A list of resource URIs related to the On Demand promotion.
+		 * Required
+		 */
 		connections: On_demand_promotionMetadataConnections;
 	}
 
 	export interface On_demand_promotionMetadataConnections {
 
-		/** Information about the codes associated with this promotion. */
+		/**
+		 * Information about the codes associated with this promotion.
+		 * Required
+		 */
 		codes: On_demand_promotionMetadataConnectionsCodes;
 	}
 
 	export interface On_demand_promotionMetadataConnectionsCodes {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of uses on this connection. */
+		/**
+		 * The total number of uses on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -2917,53 +4643,95 @@ export namespace MyNS {
 
 	export interface On_demand_promotion_code {
 
-		/** A promotion code that can be redeemed on Vimeo. */
+		/**
+		 * A promotion code that can be redeemed on Vimeo.
+		 * Required
+		 */
 		code: string;
 
-		/** A link to redeem the promotion code instantly. */
+		/**
+		 * A link to redeem the promotion code instantly.
+		 * Required
+		 */
 		link: string;
 
-		/** The total amount of times this code can be used. */
+		/**
+		 * The total amount of times this code can be used.
+		 * Required
+		 */
 		max_uses: number;
 
-		/** The number of times that this code has been used. */
+		/**
+		 * The number of times that this code has been used.
+		 * Required
+		 */
 		uses: number;
 	}
 
 	export interface On_demand_region {
 
-		/** The ISO 3166-1 alpha-2 code for this country. */
+		/**
+		 * The ISO 3166-1 alpha-2 code for this country.
+		 * Required
+		 */
 		country_code: string;
 
-		/** The descriptive name of this country. */
+		/**
+		 * The descriptive name of this country.
+		 * Required
+		 */
 		country_name: string;
 
-		/** The region container's relative URI. */
+		/**
+		 * The region container's relative URI.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_season {
 
-		/** The description for this season. */
+		/**
+		 * The description for this season.
+		 * Required
+		 */
 		description: string;
 		metadata: On_demand_seasonMetadata;
 
-		/** The descriptive name of the season. */
+		/**
+		 * The descriptive name of the season.
+		 * Required
+		 */
 		name: string;
 
-		/** The position of the season relative to other seasons in the series. */
+		/**
+		 * The position of the season relative to other seasons in the series.
+		 * Required
+		 */
 		position: number;
 
-		/** The unique identifier for this On Demand season. */
+		/**
+		 * The unique identifier for this On Demand season.
+		 * Required
+		 */
 		resource_key: string;
 
-		/** The type of season. */
+		/**
+		 * The type of season.
+		 * Required
+		 */
 		type: string;
 
-		/** The season container's relative URI. */
+		/**
+		 * The season container's relative URI.
+		 * Required
+		 */
 		uri: string;
 
-		/** The creator of this On Demand page. */
+		/**
+		 * The creator of this On Demand page.
+		 * Required
+		 */
 		user: User;
 	}
 
@@ -2973,25 +4741,40 @@ export namespace MyNS {
 
 	export interface On_demand_seasonMetadataConnections {
 
-		/** The Videos connection. */
+		/**
+		 * The Videos connection.
+		 * Required
+		 */
 		videos: On_demand_seasonMetadataConnectionsVideos;
 	}
 
 	export interface On_demand_seasonMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection ∂data. */
+		/**
+		 * The API URI that resolves to the connection ∂data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_video {
 
-		/** Information about purchasing this video. */
+		/**
+		 * Information about purchasing this video.
+		 * Required
+		 */
 		buy: On_demand_videoBuy;
 
 		/** Description of the On Demand video. */
@@ -3003,13 +4786,22 @@ export namespace MyNS {
 		/** The episode number of the On Demand video. */
 		episode?: number;
 
-		/** An object containing information about how the authenticated user can interact with this On Demand page. */
+		/**
+		 * An object containing information about how the authenticated user can interact with this On Demand page.
+		 * Required
+		 */
 		interactions: On_demand_videoInteractions;
 
-		/** The link to this video on Vimeo. */
+		/**
+		 * The link to this video on Vimeo.
+		 * Required
+		 */
 		link: string;
 
-		/** Metadata information about this video. */
+		/**
+		 * Metadata information about this video.
+		 * Required
+		 */
 		metadata: On_demand_videoMetadata;
 
 		/** The title of the On Demand video. */
@@ -3021,7 +4813,10 @@ export namespace MyNS {
 		/** The active picture for this video. */
 		pictures?: Picture;
 
-		/** The user's most recent play position in seconds for this video. */
+		/**
+		 * The user's most recent play position in seconds for this video.
+		 * Required
+		 */
 		play_progress: number;
 
 		/** Describes the manual position of this video relative to the other videos owned by this On Demand page. */
@@ -3030,10 +4825,16 @@ export namespace MyNS {
 		/** The time in ISO 8601 format when the On Demand video was created or published. */
 		release_date?: string;
 
-		/** The year that this On Demand video was released. */
+		/**
+		 * The year that this On Demand video was released.
+		 * Required
+		 */
 		release_year: number;
 
-		/** Information about renting this video. */
+		/**
+		 * Information about renting this video.
+		 * Required
+		 */
 		rent: On_demand_videoRent;
 
 		/**
@@ -3042,10 +4843,14 @@ export namespace MyNS {
 		 * * `extra` - The On Demand video is an extra feature.
 		 * * `main` - The On Demand video is a main feature.
 		 * * `trailer` - The On Demand video is a trailer.
+		 * Required
 		 */
 		type: On_demand_videoType;
 
-		/** The video container's relative URI. */
+		/**
+		 * The video container's relative URI.
+		 * Required
+		 */
 		uri: string;
 
 		/** The owner of the video. */
@@ -3054,10 +4859,16 @@ export namespace MyNS {
 
 	export interface On_demand_videoBuy {
 
-		/** Whether this On Demand video can be purchased. */
+		/**
+		 * Whether this On Demand video can be purchased.
+		 * Required
+		 */
 		active: boolean;
 
-		/** A map of currency type to price. */
+		/**
+		 * A map of currency type to price.
+		 * Required
+		 */
 		price: string;
 
 		/** Whether this On Demand video has been purchased. */
@@ -3066,19 +4877,31 @@ export namespace MyNS {
 
 	export interface On_demand_videoInteractions {
 
-		/** Information about how the authenticated user can interact with the connection to the video's On Demand page. */
+		/**
+		 * Information about how the authenticated user can interact with the connection to the video's On Demand page.
+		 * Required
+		 */
 		page: On_demand_videoInteractionsPage;
 	}
 
 	export interface On_demand_videoInteractionsPage {
 
-		/** Whether this On Demand page was added. */
+		/**
+		 * Whether this On Demand page was added.
+		 * Required
+		 */
 		added: boolean;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The URI to access the On Demand page. */
+		/**
+		 * The URI to access the On Demand page.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -3089,61 +4912,103 @@ export namespace MyNS {
 
 	export interface On_demand_videoMetadataConnections {
 
-		/** Information about this season. */
+		/**
+		 * Information about this season.
+		 * Required
+		 */
 		season: On_demand_videoMetadataConnectionsSeason;
 	}
 
 	export interface On_demand_videoMetadataConnectionsSeason {
 
-		/** The name of the season on this connection. */
+		/**
+		 * The name of the season on this connection.
+		 * Required
+		 */
 		name: string;
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_videoMetadataInteractions {
 
-		/** Information about the user's Like interactions with this video. */
+		/**
+		 * Information about the user's Like interactions with this video.
+		 * Required
+		 */
 		likes: On_demand_videoMetadataInteractionsLikes;
 
-		/** Information about the user's Watch Later interactions with this video. */
+		/**
+		 * Information about the user's Watch Later interactions with this video.
+		 * Required
+		 */
 		watchlater: On_demand_videoMetadataInteractionsWatchlater;
 	}
 
 	export interface On_demand_videoMetadataInteractionsLikes {
 
-		/** Whether the user has liked this video. */
+		/**
+		 * Whether the user has liked this video.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format when the user liked this video. */
+		/**
+		 * The time in ISO 8601 format when the user liked this video.
+		 * Required
+		 */
 		added_time: string;
 
-		/** The URI for the user to like this video. */
+		/**
+		 * The URI for the user to like this video.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_videoMetadataInteractionsWatchlater {
 
-		/** Whether the user has added this video to their Watch Later queue. */
+		/**
+		 * Whether the user has added this video to their Watch Later queue.
+		 * Required
+		 */
 		added: boolean;
 
-		/** The time in ISO 8601 format when the user added this video to their Watch Later queue. */
+		/**
+		 * The time in ISO 8601 format when the user added this video to their Watch Later queue.
+		 * Required
+		 */
 		added_time: string;
 
-		/** The URI for the user to add this video to their Watch Later queue. */
+		/**
+		 * The URI for the user to add this video to their Watch Later queue.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface On_demand_videoRent {
 
-		/** Whether this On Demand video can be rented. */
+		/**
+		 * Whether this On Demand video can be rented.
+		 * Required
+		 */
 		active: boolean;
 
-		/** A map of currency type to price. */
+		/**
+		 * A map of currency type to price.
+		 * Required
+		 */
 		price: string;
 
 		/** Whether this On Demand video has been rented. */
@@ -3164,34 +5029,56 @@ export namespace MyNS {
 		 * * `purchase_required` - The video must be purchased.
 		 * * `restricted` - Playback for the video is restricted.
 		 * * `unavailable` - The video is unavailable.
+		 * Required
 		 */
 		status: PlayStatus;
 	}
 
 	export interface PlayProgressive {
 
-		/** The time in ISO 8601 format when this video file was created. */
+		/**
+		 * The time in ISO 8601 format when this video file was created.
+		 * Required
+		 */
 		created_time: string;
 
-		/** The FPS of the video file. */
+		/**
+		 * The FPS of the video file.
+		 * Required
+		 */
 		fps: number;
 
-		/** The height in pixels of the video. */
+		/**
+		 * The height in pixels of the video.
+		 * Required
+		 */
 		height: number;
 
-		/** The direct link to this video file. */
+		/**
+		 * The direct link to this video file.
+		 * Required
+		 */
 		link: string;
 
-		/** The time in ISO 8601 format when the link to this video file expires. */
+		/**
+		 * The time in ISO 8601 format when the link to this video file expires.
+		 * Required
+		 */
 		link_expiration_time: string;
 
 		/** The URLs for logging events. */
 		log?: string;
 
-		/** The MD5 hash of the video file. */
+		/**
+		 * The MD5 hash of the video file.
+		 * Required
+		 */
 		md5: string;
 
-		/** The file size in bytes of this video. */
+		/**
+		 * The file size in bytes of this video.
+		 * Required
+		 */
 		size: number;
 
 		/**
@@ -3201,10 +5088,14 @@ export namespace MyNS {
 		 * * `video/mp4` - The video is in MP4 format.
 		 * * `video/webm` - The video is in WebM format.
 		 * * `vp6/x-video` - The video is in VP6 format.
+		 * Required
 		 */
 		type: PlayProgressiveType;
 
-		/** The width in pixels of the video. */
+		/**
+		 * The width in pixels of the video.
+		 * Required
+		 */
 		width: number;
 	}
 
@@ -3214,22 +5105,40 @@ export namespace MyNS {
 
 	export interface Portfolio {
 
-		/** The time in ISO 8601 format when the portfolio was created. */
+		/**
+		 * The time in ISO 8601 format when the portfolio was created.
+		 * Required
+		 */
 		created_time: string;
 
-		/** The portfolio's description. */
+		/**
+		 * The portfolio's description.
+		 * Required
+		 */
 		description: string;
 
-		/** The link to the portfolio. */
+		/**
+		 * The link to the portfolio.
+		 * Required
+		 */
 		link: string;
 
-		/** Metadata about the album. */
+		/**
+		 * Metadata about the album.
+		 * Required
+		 */
 		metadata: PortfolioMetadata;
 
-		/** The time in ISO 8601 format when the portfolio's data was last modified. */
+		/**
+		 * The time in ISO 8601 format when the portfolio's data was last modified.
+		 * Required
+		 */
 		modified_time: string;
 
-		/** The display name of the portfolio. */
+		/**
+		 * The display name of the portfolio.
+		 * Required
+		 */
 		name: string;
 
 		/**
@@ -3239,34 +5148,53 @@ export namespace MyNS {
 		 * * `clips` - The default sort order is video creation date.
 		 * * `modified` - The default sort order is the order in which the videos were modified.
 		 * * `recent` - The default sort order is the order in which the videos were added.
+		 * Required
 		 */
 		sort: PortfolioSort;
 
-		/** The canonical relative URI of the portfolio. */
+		/**
+		 * The canonical relative URI of the portfolio.
+		 * Required
+		 */
 		uri: string;
 	}
 
 	export interface PortfolioMetadata {
 
-		/** A list of resource URIs related to the album. */
+		/**
+		 * A list of resource URIs related to the album.
+		 * Required
+		 */
 		connections: PortfolioMetadataConnections;
 	}
 
 	export interface PortfolioMetadataConnections {
 
-		/** Information about the videos contained within this portfolio. */
+		/**
+		 * Information about the videos contained within this portfolio.
+		 * Required
+		 */
 		videos: PortfolioMetadataConnectionsVideos;
 	}
 
 	export interface PortfolioMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -3274,43 +5202,73 @@ export namespace MyNS {
 
 	export interface Presets {
 
-		/** Metadata about the album. */
+		/**
+		 * Metadata about the album.
+		 * Required
+		 */
 		metadata: PresetsMetadata;
 
-		/** The display name of the presets group. */
+		/**
+		 * The display name of the presets group.
+		 * Required
+		 */
 		name: string;
 
-		/** The contents of the presets group. */
+		/**
+		 * The contents of the presets group.
+		 * Required
+		 */
 		settings: PresetsSettings;
 
-		/** The canonical relative URI of the presets object. */
+		/**
+		 * The canonical relative URI of the presets object.
+		 * Required
+		 */
 		uri: string;
 
-		/** The owner of the preset. */
+		/**
+		 * The owner of the preset.
+		 * Required
+		 */
 		user: User;
 	}
 
 	export interface PresetsMetadata {
 
-		/** A list of resource URIs related to the album. */
+		/**
+		 * A list of resource URIs related to the album.
+		 * Required
+		 */
 		connections: PresetsMetadataConnections;
 	}
 
 	export interface PresetsMetadataConnections {
 
-		/** Information about the videos in this preset. */
+		/**
+		 * Information about the videos in this preset.
+		 * Required
+		 */
 		videos: PresetsMetadataConnectionsVideos;
 	}
 
 	export interface PresetsMetadataConnectionsVideos {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -3322,34 +5280,61 @@ export namespace MyNS {
 
 	export interface PresetsSettingsButtons {
 
-		/** Whether the preset includes Embed button settings. */
+		/**
+		 * Whether the preset includes Embed button settings.
+		 * Required
+		 */
 		embed: boolean;
 
-		/** Whether the preset includes HD button settings. */
+		/**
+		 * Whether the preset includes HD button settings.
+		 * Required
+		 */
 		hd: boolean;
 
-		/** Whether the preset includes Like button settings. */
+		/**
+		 * Whether the preset includes Like button settings.
+		 * Required
+		 */
 		like: boolean;
 
-		/** Whether the present includes Share button settings. */
+		/**
+		 * Whether the present includes Share button settings.
+		 * Required
+		 */
 		share: boolean;
 
-		/** Whether the preset includes Vote button settings. */
+		/**
+		 * Whether the preset includes Vote button settings.
+		 * Required
+		 */
 		vote: boolean;
 
-		/** Whether the preset includes Watch Later button settings. */
+		/**
+		 * Whether the preset includes Watch Later button settings.
+		 * Required
+		 */
 		watchlater: boolean;
 	}
 
 	export interface PresetsSettingsLogos {
 
-		/** Whether the preset includes custom logo settings. */
+		/**
+		 * Whether the preset includes custom logo settings.
+		 * Required
+		 */
 		custom: boolean;
 
-		/** Whether the present includes sticky custom logo settings. */
+		/**
+		 * Whether the present includes sticky custom logo settings.
+		 * Required
+		 */
 		sticky_custom: boolean;
 
-		/** Whether the preset includes Vimeo logo settings. */
+		/**
+		 * Whether the preset includes Vimeo logo settings.
+		 * Required
+		 */
 		vimeo: boolean;
 	}
 
@@ -3364,7 +5349,10 @@ export namespace MyNS {
 		/** The outro text. Present only if the type is `text`. */
 		text?: string;
 
-		/** The preset outro type: */
+		/**
+		 * The preset outro type:
+		 * Required
+		 */
 		type: PresetsSettingsOutroType;
 
 		/** A comma-separated list of video URIs. Present only if type is `no idea`. */
@@ -3384,28 +5372,47 @@ export namespace MyNS {
 
 	export interface Text_track {
 
-		/** Whether this text track is active. */
+		/**
+		 * Whether this text track is active.
+		 * Required
+		 */
 		active: boolean;
 
-		/** The read-only URL of the text track file, intended for use with HLS playback. */
+		/**
+		 * The read-only URL of the text track file, intended for use with HLS playback.
+		 * Required
+		 */
 		hls_link: string;
 
-		/** The time in ISO 8601 format when the read-only HLS playback text track file expires. */
+		/**
+		 * The time in ISO 8601 format when the read-only HLS playback text track file expires.
+		 * Required
+		 */
 		hls_link_expires_time: string;
 
 		/**
 		 * The language code for this text track. To see a full list, request
 		 * `/languages?filter=texttrack`.
+		 * Required
 		 */
 		language: string;
 
-		/** The read-only URL of the text track file. You can upload to this link when you create it for the first time. */
+		/**
+		 * The read-only URL of the text track file. You can upload to this link when you create it for the first time.
+		 * Required
+		 */
 		link: string;
 
-		/** The time in ISO 8601 format when the text track link expires. */
+		/**
+		 * The time in ISO 8601 format when the text track link expires.
+		 * Required
+		 */
 		link_expires_time: string;
 
-		/** The descriptive name of this text track. */
+		/**
+		 * The descriptive name of this text track.
+		 * Required
+		 */
 		name: string;
 
 		/**
@@ -3413,10 +5420,14 @@ export namespace MyNS {
 		 * Option descriptions:
 		 * * `captions` - The text track is for captions.
 		 * * `subtitles` - The text track is for subtitles.
+		 * Required
 		 */
 		type: Text_trackType;
 
-		/** The relative URI of the text track. */
+		/**
+		 * The relative URI of the text track.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -3433,58 +5444,109 @@ export namespace MyNS {
 		/** The HTML upload form. */
 		form?: string;
 
-		/** The ticket identifier string for the upload. */
+		/**
+		 * The ticket identifier string for the upload.
+		 * Required
+		 */
 		ticket_id: string;
 
-		/** The upload URL. */
+		/**
+		 * The upload URL.
+		 * Required
+		 */
 		upload_link: string;
 
-		/** The upload URI. */
+		/**
+		 * The upload URI.
+		 * Required
+		 */
 		uri: string;
 
-		/** The owner of the uploaded video. */
+		/**
+		 * The owner of the uploaded video.
+		 * Required
+		 */
 		user: User;
 	}
 
 	export interface Video_versions {
 
-		/** Whether this video version is the currently active one. */
+		/**
+		 * Whether this video version is the currently active one.
+		 * Required
+		 */
 		active: boolean;
 
-		/** The API app associated with the video version. */
+		/**
+		 * The API app associated with the video version.
+		 * Required
+		 */
 		app: Api_app;
 
-		/** The time in ISO 8601 for when the video version was created. */
+		/**
+		 * The time in ISO 8601 for when the video version was created.
+		 * Required
+		 */
 		created_time: string;
 
-		/** The duration of the video version in seconds. */
+		/**
+		 * The duration of the video version in seconds.
+		 * Required
+		 */
 		duration: number;
 
-		/** The file name of the video version. */
+		/**
+		 * The file name of the video version.
+		 * Required
+		 */
 		filename: string;
 
-		/** The size in byes of the video version file. */
+		/**
+		 * The size in byes of the video version file.
+		 * Required
+		 */
 		filesize: number;
 
-		/** The video version's metadata. */
+		/**
+		 * The video version's metadata.
+		 * Required
+		 */
 		metadata: Video_versionsMetadata;
 
-		/** The time in ISO 8601 format when the video version was last modified. */
+		/**
+		 * The time in ISO 8601 format when the video version was last modified.
+		 * Required
+		 */
 		modified_time: string;
 
-		/** The Play representation. */
+		/**
+		 * The Play representation.
+		 * Required
+		 */
 		play: Play;
 
-		/** The upload information for this version. */
+		/**
+		 * The upload information for this version.
+		 * Required
+		 */
 		upload: Video_versionsUpload;
 
-		/** The time in ISO 8601 format when the video version was uploaded. */
+		/**
+		 * The time in ISO 8601 format when the video version was uploaded.
+		 * Required
+		 */
 		upload_date: string;
 
-		/** The version's canonical relative URI. */
+		/**
+		 * The version's canonical relative URI.
+		 * Required
+		 */
 		uri: string;
 
-		/** The owner of the video version. */
+		/**
+		 * The owner of the video version.
+		 * Required
+		 */
 		user: User;
 	}
 
@@ -3494,19 +5556,31 @@ export namespace MyNS {
 
 	export interface Video_versionsMetadataConnections {
 
-		/** Data from video associated with version */
+		/**
+		 * Data from video associated with version
+		 * Required
+		 */
 		video: Video_versionsMetadataConnectionsVideo;
 	}
 
 	export interface Video_versionsMetadataConnectionsVideo {
 
-		/** An array of HTTP methods permitted on this URI. */
+		/**
+		 * An array of HTTP methods permitted on this URI.
+		 * Required
+		 */
 		options: Array<string>;
 
-		/** The total number of videos on this connection. */
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
 		total: number;
 
-		/** The API URI that resolves to the connection data. */
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
 		uri: string;
 	}
 
@@ -3536,6 +5610,7 @@ export namespace MyNS {
 		 * * `complete` - The upload is complete.
 		 * * `error` - The upload ended with an error.
 		 * * `in_progress` - The upload is underway.
+		 * Required
 		 */
 		status: VideoTranscodeStatus;
 
@@ -6935,7 +9010,10 @@ export namespace MyNS {
 
 	export interface Add_channel_categoriesPutBody {
 
-		/** The array of category URIs to add. */
+		/**
+		 * The array of category URIs to add.
+		 * Required
+		 */
 		channels: Array<string>;
 	}
 
@@ -6943,13 +9021,19 @@ export namespace MyNS {
 
 	export interface Replace_channel_moderatorsPatchBody {
 
-		/** The URI of the user to add as a moderator. */
+		/**
+		 * The URI of the user to add as a moderator.
+		 * Required
+		 */
 		user_uri: string;
 	}
 
 	export interface Add_channel_moderatorsPutBody {
 
-		/** The URI of a user to add as a moderator. */
+		/**
+		 * The URI of a user to add as a moderator.
+		 * Required
+		 */
 		user_uri: string;
 	}
 
@@ -6961,7 +9045,10 @@ export namespace MyNS {
 
 	export interface Add_videos_to_channelPutBody {
 
-		/** The URI of a video to add. */
+		/**
+		 * The URI of a video to add.
+		 * Required
+		 */
 		video_uri: string;
 	}
 
@@ -6975,7 +9062,10 @@ export namespace MyNS {
 
 	export interface Replace_videos_in_album_alt1PutBody {
 
-		/** A comma-separated list of video URIs. */
+		/**
+		 * A comma-separated list of video URIs.
+		 * Required
+		 */
 		videos: string;
 	}
 
@@ -6995,7 +9085,10 @@ export namespace MyNS {
 
 	export interface Follow_users_alt1PostBody {
 
-		/** An array of user URIs for the list of users to follow. */
+		/**
+		 * An array of user URIs for the list of users to follow.
+		 * Required
+		 */
 		users: Array<string>;
 	}
 
@@ -7022,10 +9115,16 @@ export namespace MyNS {
 		accepted_currencies?: Create_vod_alt1PostBodyAccepted_currencies;
 		buy?: Create_vod_alt1PostBodyBuy;
 
-		/** One or more ratings, either as a comma-separated list or as a JSON array depending on the request format. */
+		/**
+		 * One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.
+		 * Required
+		 */
 		content_rating: Content_ratingCode;
 
-		/** The description of the On Demand page. */
+		/**
+		 * The description of the On Demand page.
+		 * Required
+		 */
 		description: string;
 
 		/** The custom domain of the On Demand page. */
@@ -7035,12 +9134,18 @@ export namespace MyNS {
 		/** The custom string to use in this On Demand page's Vimeo URL. */
 		link?: string;
 
-		/** The name of the On Demand page. */
+		/**
+		 * The name of the On Demand page.
+		 * Required
+		 */
 		name: string;
 		rent?: Create_vod_alt1PostBodyRent;
 		subscription?: Create_vod_alt1PostBodySubscription;
 
-		/** The type of On Demand page. */
+		/**
+		 * The type of On Demand page.
+		 * Required
+		 */
 		type: On_demand_pageType;
 	}
 
@@ -7212,13 +9317,19 @@ export namespace MyNS {
 
 	export interface Create_project_alt1PostBody {
 
-		/** The name of the project. */
+		/**
+		 * The name of the project.
+		 * Required
+		 */
 		name: string;
 	}
 
 	export interface Edit_project_alt1PatchBody {
 
-		/** The name of the project. */
+		/**
+		 * The name of the project.
+		 * Required
+		 */
 		name: string;
 	}
 
@@ -7250,7 +9361,10 @@ export namespace MyNS {
 
 	export interface Replace_videos_in_albumPutBody {
 
-		/** A comma-separated list of video URIs. */
+		/**
+		 * A comma-separated list of video URIs.
+		 * Required
+		 */
 		videos: string;
 	}
 
@@ -7262,7 +9376,10 @@ export namespace MyNS {
 
 	export interface Follow_usersPostBody {
 
-		/** An array of user URIs for the list of users to follow. */
+		/**
+		 * An array of user URIs for the list of users to follow.
+		 * Required
+		 */
 		users: Array<string>;
 	}
 
@@ -7289,10 +9406,16 @@ export namespace MyNS {
 		accepted_currencies?: Create_vod_alt1PostBodyAccepted_currencies;
 		buy?: Create_vodPostBodyBuy;
 
-		/** One or more ratings, either as a comma-separated list or as a JSON array depending on the request format. */
+		/**
+		 * One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.
+		 * Required
+		 */
 		content_rating: Content_ratingCode;
 
-		/** The description of the On Demand page. */
+		/**
+		 * The description of the On Demand page.
+		 * Required
+		 */
 		description: string;
 
 		/** The custom domain of the On Demand page. */
@@ -7302,12 +9425,18 @@ export namespace MyNS {
 		/** The custom string to use in this On Demand page's Vimeo URL. */
 		link?: string;
 
-		/** The name of the On Demand page. */
+		/**
+		 * The name of the On Demand page.
+		 * Required
+		 */
 		name: string;
 		rent?: Create_vodPostBodyRent;
 		subscription?: Create_vodPostBodySubscription;
 
-		/** The type of On Demand page. */
+		/**
+		 * The type of On Demand page.
+		 * Required
+		 */
 		type: On_demand_pageType;
 	}
 
@@ -7473,13 +9602,19 @@ export namespace MyNS {
 
 	export interface Create_projectPostBody {
 
-		/** The name of the project. */
+		/**
+		 * The name of the project.
+		 * Required
+		 */
 		name: string;
 	}
 
 	export interface Edit_projectPatchBody {
 
-		/** The name of the project. */
+		/**
+		 * The name of the project.
+		 * Required
+		 */
 		name: string;
 	}
 

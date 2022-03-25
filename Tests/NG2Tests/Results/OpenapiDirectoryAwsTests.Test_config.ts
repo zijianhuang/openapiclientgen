@@ -412,7 +412,10 @@ export namespace MyNS {
 		/** Defines which resources trigger an evaluation for an AWS Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration. */
 		Scope?: Scope;
 
-		/** Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation of your AWS resources. */
+		/**
+		 * Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation of your AWS resources.
+		 * Required
+		 */
 		Source: Source;
 		InputParameters?: string;
 		MaximumExecutionFrequency?: SourceDetailMaximumExecutionFrequency;
@@ -1200,7 +1203,10 @@ export namespace MyNS {
 	export interface GetAggregateResourceConfigRequest {
 		ConfigurationAggregatorName: string;
 
-		/** The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region. */
+		/**
+		 * The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.
+		 * Required
+		 */
 		ResourceIdentifier: AggregateResourceIdentifier;
 	}
 
@@ -1295,7 +1301,10 @@ export namespace MyNS {
 	export interface ConformancePackEvaluationResult {
 		ComplianceType: ConformancePackRuleComplianceComplianceType;
 
-		/** Uniquely identifies an evaluation result. */
+		/**
+		 * Uniquely identifies an evaluation result.
+		 * Required
+		 */
 		EvaluationResultIdentifier: EvaluationResultIdentifier;
 		ConfigRuleInvokedTime: Date;
 		ResultRecordedTime: Date;
@@ -1541,7 +1550,10 @@ export namespace MyNS {
 
 	export interface PutConfigRuleRequest {
 
-		/** <p>An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).</p> <note> <p>You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> </note> <p>For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p> */
+		/**
+		 * <p>An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).</p> <note> <p>You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> </note> <p>For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p>
+		 * Required
+		 */
 		ConfigRule: ConfigRule;
 		Tags?: Array<Tag>;
 	}
@@ -1580,7 +1592,10 @@ export namespace MyNS {
 	/** The input for the <a>PutConfigurationRecorder</a> action. */
 	export interface PutConfigurationRecorderRequest {
 
-		/** An object that represents the recording of configuration changes of an AWS resource. */
+		/**
+		 * An object that represents the recording of configuration changes of an AWS resource.
+		 * Required
+		 */
 		ConfigurationRecorder: ConfigurationRecorder;
 	}
 
@@ -1616,7 +1631,10 @@ export namespace MyNS {
 	/** The input for the <a>PutDeliveryChannel</a> action. */
 	export interface PutDeliveryChannelRequest {
 
-		/** The channel through which AWS Config delivers notifications and updated configuration states. */
+		/**
+		 * The channel through which AWS Config delivers notifications and updated configuration states.
+		 * Required
+		 */
 		DeliveryChannel: DeliveryChannel;
 	}
 

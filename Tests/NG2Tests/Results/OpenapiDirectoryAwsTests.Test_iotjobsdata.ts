@@ -160,7 +160,10 @@ export namespace MyNS {
 
 	export interface UpdateJobExecutionPostBody {
 
-		/** The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update. */
+		/**
+		 * The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.
+		 * Required
+		 */
 		status: JobExecutionStatus;
 
 		/** Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. */

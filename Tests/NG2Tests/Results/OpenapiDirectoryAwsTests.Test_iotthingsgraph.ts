@@ -40,7 +40,10 @@ export namespace MyNS {
 
 	export interface CreateFlowTemplateRequest {
 
-		/** A document that defines an entity. */
+		/**
+		 * A document that defines an entity.
+		 * Required
+		 */
 		definition: DefinitionDocument;
 		compatibleNamespaceVersion?: number;
 	}
@@ -87,7 +90,10 @@ export namespace MyNS {
 	export interface CreateSystemInstanceRequest {
 		tags?: Array<Tag>;
 
-		/** A document that defines an entity. */
+		/**
+		 * A document that defines an entity.
+		 * Required
+		 */
 		definition: DefinitionDocument;
 		target: SystemInstanceSummaryTarget;
 		greengrassGroupName?: string;
@@ -129,7 +135,10 @@ export namespace MyNS {
 
 	export interface CreateSystemTemplateRequest {
 
-		/** A document that defines an entity. */
+		/**
+		 * A document that defines an entity.
+		 * Required
+		 */
 		definition: DefinitionDocument;
 		compatibleNamespaceVersion?: number;
 	}
@@ -168,7 +177,10 @@ export namespace MyNS {
 
 	export interface DeploySystemInstanceResponse {
 
-		/** An object that contains summary information about a system instance. */
+		/**
+		 * An object that contains summary information about a system instance.
+		 * Required
+		 */
 		summary: SystemInstanceSummary;
 		greengrassDeploymentId?: string;
 	}
@@ -564,7 +576,10 @@ export namespace MyNS {
 	export interface UpdateFlowTemplateRequest {
 		id: string;
 
-		/** A document that defines an entity. */
+		/**
+		 * A document that defines an entity.
+		 * Required
+		 */
 		definition: DefinitionDocument;
 		compatibleNamespaceVersion?: number;
 	}
@@ -578,7 +593,10 @@ export namespace MyNS {
 	export interface UpdateSystemTemplateRequest {
 		id: string;
 
-		/** A document that defines an entity. */
+		/**
+		 * A document that defines an entity.
+		 * Required
+		 */
 		definition: DefinitionDocument;
 		compatibleNamespaceVersion?: number;
 	}

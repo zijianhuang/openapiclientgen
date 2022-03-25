@@ -275,7 +275,10 @@ export namespace MyNS {
 		Id: string;
 		Name: string;
 
-		/** A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''. */
+		/**
+		 * A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
+		 * Required
+		 */
 		ResourceDataContainer: ResourceDataContainer;
 	}
 
@@ -340,7 +343,10 @@ export namespace MyNS {
 	export interface ResourceDownloadOwnerSetting {
 		GroupOwner: string;
 
-		/** The type of permission a function has to access a resource. */
+		/**
+		 * The type of permission a function has to access a resource.
+		 * Required
+		 */
 		GroupPermission: ResourceAccessPolicyPermission;
 	}
 
@@ -1049,7 +1055,10 @@ export namespace MyNS {
 	export interface CreateDeploymentRequest {
 		DeploymentId?: string;
 
-		/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
+		/**
+		 * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+		 * Required
+		 */
 		DeploymentType: GetDeploymentStatusResponseDeploymentType;
 		GroupVersionId?: string;
 	}
@@ -1156,22 +1165,37 @@ export namespace MyNS {
 
 	export interface CreateSoftwareUpdateJobRequest {
 
-		/** The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact. */
+		/**
+		 * The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+		 * Required
+		 */
 		S3UrlSignerRole: string;
 
-		/** The piece of software on the Greengrass core that will be updated. */
+		/**
+		 * The piece of software on the Greengrass core that will be updated.
+		 * Required
+		 */
 		SoftwareToUpdate: SoftwareToUpdate;
 
 		/** The minimum level of log statements that should be logged by the OTA Agent during an update. */
 		UpdateAgentLogLevel?: UpdateAgentLogLevel;
 
-		/** The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to. */
+		/**
+		 * The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
+		 * Required
+		 */
 		UpdateTargets: Array<string>;
 
-		/** The architecture of the cores which are the targets of an update. */
+		/**
+		 * The architecture of the cores which are the targets of an update.
+		 * Required
+		 */
 		UpdateTargetsArchitecture: UpdateTargetsArchitecture;
 
-		/** The operating system of the cores which are the targets of an update. */
+		/**
+		 * The operating system of the cores which are the targets of an update.
+		 * Required
+		 */
 		UpdateTargetsOperatingSystem: UpdateTargetsOperatingSystem;
 	}
 
@@ -2371,13 +2395,19 @@ export namespace MyNS {
 
 	export interface AssociateRoleToGroupPutBody {
 
-		/** The ARN of the role you wish to associate with this group. The existence of the role is not validated. */
+		/**
+		 * The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+		 * Required
+		 */
 		RoleArn: string;
 	}
 
 	export interface AssociateServiceRoleToAccountPutBody {
 
-		/** The ARN of the service role you wish to associate with your account. */
+		/**
+		 * The ARN of the service role you wish to associate with your account.
+		 * Required
+		 */
 		RoleArn: string;
 	}
 
@@ -2430,7 +2460,10 @@ export namespace MyNS {
 		/** The ID of the deployment if you wish to redeploy a previous deployment. */
 		DeploymentId?: string;
 
-		/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
+		/**
+		 * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+		 * Required
+		 */
 		DeploymentType: GetDeploymentStatusResponseDeploymentType;
 
 		/** The ID of the group version to be deployed. */
@@ -2585,22 +2618,37 @@ export namespace MyNS {
 
 	export interface CreateSoftwareUpdateJobPostBody {
 
-		/** The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact. */
+		/**
+		 * The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+		 * Required
+		 */
 		S3UrlSignerRole: string;
 
-		/** The piece of software on the Greengrass core that will be updated. */
+		/**
+		 * The piece of software on the Greengrass core that will be updated.
+		 * Required
+		 */
 		SoftwareToUpdate: SoftwareToUpdate;
 
 		/** The minimum level of log statements that should be logged by the OTA Agent during an update. */
 		UpdateAgentLogLevel?: UpdateAgentLogLevel;
 
-		/** The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to. */
+		/**
+		 * The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
+		 * Required
+		 */
 		UpdateTargets: Array<string>;
 
-		/** The architecture of the cores which are the targets of an update. */
+		/**
+		 * The architecture of the cores which are the targets of an update.
+		 * Required
+		 */
 		UpdateTargetsArchitecture: UpdateTargetsArchitecture;
 
-		/** The operating system of the cores which are the targets of an update. */
+		/**
+		 * The operating system of the cores which are the targets of an update.
+		 * Required
+		 */
 		UpdateTargetsOperatingSystem: UpdateTargetsOperatingSystem;
 	}
 
@@ -2688,10 +2736,16 @@ export namespace MyNS {
 
 	export interface StartBulkDeploymentPostBody {
 
-		/** The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file. */
+		/**
+		 * The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
+		 * Required
+		 */
 		ExecutionRoleArn: string;
 
-		/** The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types. */
+		/**
+		 * The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
+		 * Required
+		 */
 		InputFileUri: string;
 
 		/** The key-value pair for the resource tag. */

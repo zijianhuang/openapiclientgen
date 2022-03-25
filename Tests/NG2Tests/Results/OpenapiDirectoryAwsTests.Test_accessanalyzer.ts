@@ -80,7 +80,10 @@ export namespace MyNS {
 	/** The response to the request. */
 	export interface GetAnalyzerResponse {
 
-		/** Contains information about the analyzer. */
+		/**
+		 * Contains information about the analyzer.
+		 * Required
+		 */
 		analyzer: AnalyzerSummary;
 	}
 
@@ -119,7 +122,10 @@ export namespace MyNS {
 	/** The response to the request. */
 	export interface GetArchiveRuleResponse {
 
-		/** Contains information about an archive rule. */
+		/**
+		 * Contains information about an archive rule.
+		 * Required
+		 */
 		archiveRule: ArchiveRuleSummary;
 	}
 
@@ -602,6 +608,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the analyzer to create.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
@@ -617,7 +624,10 @@ export namespace MyNS {
 		/** The tags to apply to the analyzer. */
 		tags?: {[id: string]: string };
 
-		/** The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region. */
+		/**
+		 * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.
+		 * Required
+		 */
 		type: AnalyzerSummaryType;
 	}
 
@@ -626,11 +636,15 @@ export namespace MyNS {
 		/** A client token. */
 		clientToken?: string;
 
-		/** The criteria for the rule. */
+		/**
+		 * The criteria for the rule.
+		 * Required
+		 */
 		filter: {[id: string]: Criterion };
 
 		/**
 		 * The name of the rule to create.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
@@ -643,7 +657,10 @@ export namespace MyNS {
 		/** A client token. */
 		clientToken?: string;
 
-		/** A filter to match for the rules to update. Only rules that match the filter are updated. */
+		/**
+		 * A filter to match for the rules to update. Only rules that match the filter are updated.
+		 * Required
+		 */
 		filter: {[id: string]: Criterion };
 	}
 
@@ -651,6 +668,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the analyzer to retrieve a list of analyzed resources from.
+		 * Required
 		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: string;
@@ -671,6 +689,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the analyzer to retrieve findings from.
+		 * Required
 		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: string;
@@ -697,6 +716,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the analyzer that generated the findings to update.
+		 * Required
 		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: string;
@@ -713,13 +733,19 @@ export namespace MyNS {
 		 */
 		resourceArn?: string;
 
-		/** The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding. */
+		/**
+		 * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.
+		 * Required
+		 */
 		status: FindingStatusUpdate;
 	}
 
 	export interface TagResourcePostBody {
 
-		/** The tags to add to the resource. */
+		/**
+		 * The tags to add to the resource.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
@@ -727,12 +753,14 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the analyzer to use to scan the policies applied to the specified resource.
+		 * Required
 		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: string;
 
 		/**
 		 * The ARN of the resource to scan.
+		 * Required
 		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
 		 */
 		resourceArn: string;

@@ -197,7 +197,10 @@ export namespace MyNS {
 		Name: string;
 		Outputs: Array<Output>;
 
-		/** The settings for the source of the flow. */
+		/**
+		 * The settings for the source of the flow.
+		 * Required
+		 */
 		Source: Source;
 
 		/** The settings for source failover */
@@ -788,19 +791,28 @@ export namespace MyNS {
 
 	export interface AddFlowOutputsPostBody {
 
-		/** A list of outputs that you want to add. */
+		/**
+		 * A list of outputs that you want to add.
+		 * Required
+		 */
 		outputs: Array<AddOutputRequest>;
 	}
 
 	export interface AddFlowSourcesPostBody {
 
-		/** A list of sources that you want to add. */
+		/**
+		 * A list of sources that you want to add.
+		 * Required
+		 */
 		sources: Array<SetSourceRequest>;
 	}
 
 	export interface AddFlowVpcInterfacesPostBody {
 
-		/** A list of VPC interfaces that you want to add. */
+		/**
+		 * A list of VPC interfaces that you want to add.
+		 * Required
+		 */
 		vpcInterfaces: Array<VpcInterfaceRequest>;
 	}
 
@@ -812,7 +824,10 @@ export namespace MyNS {
 		/** The entitlements that you want to grant on a flow. */
 		entitlements?: Array<GrantEntitlementRequest>;
 
-		/** The name of the flow. */
+		/**
+		 * The name of the flow.
+		 * Required
+		 */
 		name: string;
 
 		/** The outputs that you want to add to this flow. */
@@ -865,13 +880,19 @@ export namespace MyNS {
 
 	export interface GrantFlowEntitlementsPostBody {
 
-		/** The list of entitlements that you want to grant. */
+		/**
+		 * The list of entitlements that you want to grant.
+		 * Required
+		 */
 		entitlements: Array<GrantEntitlementRequest>;
 	}
 
 	export interface TagResourcePostBody {
 
-		/** A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
+		/**
+		 * A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

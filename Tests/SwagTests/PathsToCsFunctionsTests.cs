@@ -104,14 +104,6 @@ namespace SwagTests
 			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\PetNullable.txt", settings);
 		}
 
-		//[Fact]
-		//public void TestPet_TitleCaseEnumValueNames() not working well, the references to default value and api parameters not yet valid.
-		//{
-		//	var settings = CodeGenSettings.Default;
-		//	settings.TitleCaseEnumValueNames = true;
-		//	helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\Pet_TitleCaseEnumValueNames.txt", settings);
-		//}
-
 		[Fact]
 		public void TestPetByTags()
 		{

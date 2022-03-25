@@ -47,7 +47,10 @@ export namespace MyNS {
 	/** Represents the output of a <code>CreateCustomActionType</code> operation. */
 	export interface CreateCustomActionTypeOutput {
 
-		/** Returns information about the details of an action type. */
+		/**
+		 * Returns information about the details of an action type.
+		 * Required
+		 */
 		actionType: ActionType;
 		tags?: Array<Tag>;
 	}
@@ -56,17 +59,26 @@ export namespace MyNS {
 	/** Returns information about the details of an action type. */
 	export interface ActionType {
 
-		/** Represents information about an action type. */
+		/**
+		 * Represents information about an action type.
+		 * Required
+		 */
 		id: ActionTypeId;
 
 		/** Returns information about the settings for an action type. */
 		settings?: ActionTypeSettings;
 		actionConfigurationProperties?: Array<ActionConfigurationProperty>;
 
-		/** Returns information about the details of an artifact. */
+		/**
+		 * Returns information about the details of an artifact.
+		 * Required
+		 */
 		inputArtifactDetails: ArtifactDetails;
 
-		/** Returns information about the details of an artifact. */
+		/**
+		 * Returns information about the details of an artifact.
+		 * Required
+		 */
 		outputArtifactDetails: ArtifactDetails;
 	}
 
@@ -131,10 +143,16 @@ export namespace MyNS {
 		settings?: ActionTypeSettings;
 		configurationProperties?: Array<ActionConfigurationProperty>;
 
-		/** Returns information about the details of an artifact. */
+		/**
+		 * Returns information about the details of an artifact.
+		 * Required
+		 */
 		inputArtifactDetails: ArtifactDetails;
 
-		/** Returns information about the details of an artifact. */
+		/**
+		 * Returns information about the details of an artifact.
+		 * Required
+		 */
 		outputArtifactDetails: ArtifactDetails;
 		tags?: Array<Tag>;
 	}
@@ -219,7 +237,10 @@ export namespace MyNS {
 	export interface ActionDeclaration {
 		name: string;
 
-		/** Represents information about an action type. */
+		/**
+		 * Represents information about an action type.
+		 * Required
+		 */
 		actionTypeId: ActionTypeId;
 		runOrder?: number;
 		configuration?: ActionConfigurationMap;
@@ -249,7 +270,10 @@ export namespace MyNS {
 	/** Represents the input of a <code>CreatePipeline</code> action. */
 	export interface CreatePipelineInput {
 
-		/** Represents the structure of actions and stages to be performed in the pipeline. */
+		/**
+		 * Represents the structure of actions and stages to be performed in the pipeline.
+		 * Required
+		 */
 		pipeline: PipelineDeclaration;
 		tags?: Array<Tag>;
 	}
@@ -867,7 +891,10 @@ export namespace MyNS {
 	/** The detail returned for each webhook after listing webhooks, such as the webhook URL, the webhook name, and the webhook ARN. */
 	export interface ListWebhookItem {
 
-		/** Represents information about a webhook and its definition. */
+		/**
+		 * Represents information about a webhook and its definition.
+		 * Required
+		 */
 		definition: WebhookDefinition;
 		url: string;
 		errorMessage?: string;
@@ -886,7 +913,10 @@ export namespace MyNS {
 		filters: Array<WebhookFilterRule>;
 		authentication: WebhookDefinitionAuthentication;
 
-		/** The authentication applied to incoming webhook trigger requests. */
+		/**
+		 * The authentication applied to incoming webhook trigger requests.
+		 * Required
+		 */
 		authenticationConfiguration: WebhookAuthConfiguration;
 	}
 
@@ -932,7 +962,10 @@ export namespace MyNS {
 	/** Represents the input of a <code>PollForJobs</code> action. */
 	export interface PollForJobsInput {
 
-		/** Represents information about an action type. */
+		/**
+		 * Represents information about an action type.
+		 * Required
+		 */
 		actionTypeId: ActionTypeId;
 		maxBatchSize?: number;
 		queryParam?: QueryParamMap;
@@ -961,7 +994,10 @@ export namespace MyNS {
 	/** Represents the input of a <code>PollForThirdPartyJobs</code> action. */
 	export interface PollForThirdPartyJobsInput {
 
-		/** Represents information about an action type. */
+		/**
+		 * Represents information about an action type.
+		 * Required
+		 */
 		actionTypeId: ActionTypeId;
 		maxBatchSize?: number;
 	}
@@ -980,7 +1016,10 @@ export namespace MyNS {
 		stageName: string;
 		actionName: string;
 
-		/** Represents information about the version (or revision) of an action. */
+		/**
+		 * Represents information about the version (or revision) of an action.
+		 * Required
+		 */
 		actionRevision: ActionRevision;
 	}
 
@@ -1000,7 +1039,10 @@ export namespace MyNS {
 		stageName: string;
 		actionName: string;
 
-		/** Represents information about the result of an approval request. */
+		/**
+		 * Represents information about the result of an approval request.
+		 * Required
+		 */
 		result: ApprovalResult;
 		token: string;
 	}
@@ -1025,7 +1067,10 @@ export namespace MyNS {
 	export interface PutJobFailureResultInput {
 		jobId: string;
 
-		/** Represents information about failure details. */
+		/**
+		 * Represents information about failure details.
+		 * Required
+		 */
 		failureDetails: FailureDetails;
 	}
 
@@ -1082,7 +1127,10 @@ export namespace MyNS {
 		jobId: string;
 		clientToken: string;
 
-		/** Represents information about failure details. */
+		/**
+		 * Represents information about failure details.
+		 * Required
+		 */
 		failureDetails: FailureDetails;
 	}
 
@@ -1108,7 +1156,10 @@ export namespace MyNS {
 
 	export interface PutWebhookInput {
 
-		/** Represents information about a webhook and its definition. */
+		/**
+		 * Represents information about a webhook and its definition.
+		 * Required
+		 */
 		webhook: WebhookDefinition;
 		tags?: Array<Tag>;
 	}
@@ -1207,7 +1258,10 @@ export namespace MyNS {
 	/** Represents the input of an <code>UpdatePipeline</code> action. */
 	export interface UpdatePipelineInput {
 
-		/** Represents the structure of actions and stages to be performed in the pipeline. */
+		/**
+		 * Represents the structure of actions and stages to be performed in the pipeline.
+		 * Required
+		 */
 		pipeline: PipelineDeclaration;
 	}
 

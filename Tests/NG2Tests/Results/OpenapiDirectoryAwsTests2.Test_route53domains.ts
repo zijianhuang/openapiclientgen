@@ -58,7 +58,10 @@ export namespace MyNS {
 	/** The CheckDomainTransferability response includes the following elements. */
 	export interface CheckDomainTransferabilityResponse {
 
-		/** A complex type that contains information about whether the specified domain can be transferred to Route 53. */
+		/**
+		 * A complex type that contains information about whether the specified domain can be transferred to Route 53.
+		 * Required
+		 */
 		Transferability: DomainTransferability;
 	}
 
@@ -151,13 +154,22 @@ export namespace MyNS {
 		Nameservers: Array<Nameserver>;
 		AutoRenew?: boolean;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		AdminContact: ContactDetail;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		RegistrantContact: ContactDetail;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		TechContact: ContactDetail;
 		AdminPrivacy?: boolean;
 		RegistrantPrivacy?: boolean;
@@ -339,13 +351,22 @@ export namespace MyNS {
 		DurationInYears: number;
 		AutoRenew?: boolean;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		AdminContact: ContactDetail;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		RegistrantContact: ContactDetail;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		TechContact: ContactDetail;
 		PrivacyProtectAdminContact?: boolean;
 		PrivacyProtectRegistrantContact?: boolean;
@@ -414,13 +435,22 @@ export namespace MyNS {
 		AuthCode?: string;
 		AutoRenew?: boolean;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		AdminContact: ContactDetail;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		RegistrantContact: ContactDetail;
 
-		/** ContactDetail includes the following elements. */
+		/**
+		 * ContactDetail includes the following elements.
+		 * Required
+		 */
 		TechContact: ContactDetail;
 		PrivacyProtectAdminContact?: boolean;
 		PrivacyProtectRegistrantContact?: boolean;

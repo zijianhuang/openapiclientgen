@@ -50,7 +50,10 @@ export namespace MyNS {
 		/** Unique identifier for this itinerary that will be passed back to help correlate a result. */
 		id?: string;
 
-		/** Every flight transfer or stopover should be considered a separate segment. */
+		/**
+		 * Every flight transfer or stopover should be considered a separate segment.
+		 * Required
+		 */
 		segments: Array<Segment>;
 
 		/** Two-letter IATA carrier code for the ticketing or plating airline.  This is used for revenue programs (i.e. UA, DL, B6).  Leaving this value blank will exclude revenue programs. */
@@ -59,19 +62,26 @@ export namespace MyNS {
 
 	export interface Segment {
 
-		/** Single-letter booking class used to determine the earning rate for the flight segment. */
+		/**
+		 * Single-letter booking class used to determine the earning rate for the flight segment.
+		 * Required
+		 */
 		bookingClass: string;
 
 		/**
 		 * Two-letter IATA carrier code for the marketing airline.  This is used to determine which earnings chart will be applied for this segment.
 		 * NOTE: Frequent flyer programs based on operating carrier, including but not limited to Star Alliance carriers, cannot be reliably mapped to a booking class and will not be accurately reflected in this API.
+		 * Required
 		 */
 		carrier: string;
 
 		/** The date on the flight will depart from the origin to go to the destination.  This is used to determine which earnings chart will be in effect at time of departure. */
 		departure?: Date;
 
-		/** Three-letter IATA airport code to which the flight is going. */
+		/**
+		 * Three-letter IATA airport code to which the flight is going.
+		 * Required
+		 */
 		destination: string;
 
 		/** The number of miles for this flight segment.  Otherwise, distance is calculated using the great-circle distance between the origin and destination and may not match other data sources exactly. */
@@ -83,7 +93,10 @@ export namespace MyNS {
 		/** Two-letter IATA carrier code for the operating airline.  This value is only used when earning is based on marketing carrier but restricted to a specific operating carrier.  Leaving this value blank will assume the flight is operated by the marketing carrier. */
 		operatingCarrier?: string;
 
-		/** Three-letter IATA airport code from which the flight will depart. */
+		/**
+		 * Three-letter IATA airport code from which the flight will depart.
+		 * Required
+		 */
 		origin: string;
 	}
 

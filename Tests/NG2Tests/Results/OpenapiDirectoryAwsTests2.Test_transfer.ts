@@ -117,7 +117,10 @@ export namespace MyNS {
 
 	export interface DescribeServerResponse {
 
-		/** Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected), the endpoint type and details, the authentication configuration and type, the logging role, the file transfer protocol or protocols, the server ID and state, and assigned tags or metadata. */
+		/**
+		 * Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected), the endpoint type and details, the authentication configuration and type, the logging role, the file transfer protocol or protocols, the server ID and state, and assigned tags or metadata.
+		 * Required
+		 */
 		Server: DescribedServer;
 	}
 
@@ -156,7 +159,10 @@ export namespace MyNS {
 	export interface DescribeUserResponse {
 		ServerId: string;
 
-		/** Returns properties of the user that you want to describe. */
+		/**
+		 * Returns properties of the user that you want to describe.
+		 * Required
+		 */
 		User: DescribedUser;
 	}
 

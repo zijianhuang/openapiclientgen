@@ -65,7 +65,10 @@ export namespace MyNS {
 		RetryCount?: number;
 		Role: string;
 
-		/** JobSettings contains all the transcode settings for a job. */
+		/**
+		 * JobSettings contains all the transcode settings for a job.
+		 * Required
+		 */
 		Settings: JobSettings;
 
 		/** Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default. */
@@ -86,7 +89,10 @@ export namespace MyNS {
 	/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
 	export interface AccelerationSettings {
 
-		/** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not. */
+		/**
+		 * Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not.
+		 * Required
+		 */
 		Mode: AccelerationSettingsMode;
 	}
 
@@ -2462,7 +2468,10 @@ export namespace MyNS {
 		Priority?: number;
 		Queue?: string;
 
-		/** JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it. */
+		/**
+		 * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+		 * Required
+		 */
 		Settings: JobTemplateSettings;
 
 		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
@@ -2553,7 +2562,10 @@ export namespace MyNS {
 		LastUpdated?: Date;
 		Name: string;
 
-		/** Settings for preset */
+		/**
+		 * Settings for preset
+		 * Required
+		 */
 		Settings: PresetSettings;
 		Type?: JobTemplateType;
 	}
@@ -3170,7 +3182,10 @@ export namespace MyNS {
 		Queue?: string;
 		Role: string;
 
-		/** JobSettings contains all the transcode settings for a job. */
+		/**
+		 * JobSettings contains all the transcode settings for a job.
+		 * Required
+		 */
 		Settings: JobSettings;
 
 		/** Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default. */
@@ -3193,7 +3208,10 @@ export namespace MyNS {
 		Priority?: number;
 		Queue?: string;
 
-		/** JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it. */
+		/**
+		 * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+		 * Required
+		 */
 		Settings: JobTemplateSettings;
 
 		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
@@ -3206,7 +3224,10 @@ export namespace MyNS {
 		Description?: string;
 		Name: string;
 
-		/** Settings for preset */
+		/**
+		 * Settings for preset
+		 * Required
+		 */
 		Settings: PresetSettings;
 		Tags?: __mapOf__string;
 	}
@@ -3219,10 +3240,16 @@ export namespace MyNS {
 	/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
 	export interface ReservationPlanSettings {
 
-		/** The length of the term of your reserved queue pricing plan commitment. */
+		/**
+		 * The length of the term of your reserved queue pricing plan commitment.
+		 * Required
+		 */
 		Commitment: ReservationPlanCommitment;
 
-		/** Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. */
+		/**
+		 * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
+		 * Required
+		 */
 		RenewalType: ReservationPlanRenewalType;
 		ReservedSlots: number;
 	}
@@ -4419,7 +4446,10 @@ export namespace MyNS {
 
 	export interface AssociateCertificatePostBody {
 
-		/** The ARN of the ACM certificate that you want to associate with your MediaConvert resource. */
+		/**
+		 * The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
+		 * Required
+		 */
 		arn: string;
 	}
 
@@ -4450,10 +4480,16 @@ export namespace MyNS {
 		/** Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html. */
 		queue?: string;
 
-		/** Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html. */
+		/**
+		 * Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+		 * Required
+		 */
 		role: string;
 
-		/** JobSettings contains all the transcode settings for a job. */
+		/**
+		 * JobSettings contains all the transcode settings for a job.
+		 * Required
+		 */
 		settings: CreateJobPostBodySettings;
 
 		/** Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default. */
@@ -4513,7 +4549,10 @@ export namespace MyNS {
 		/** Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide. */
 		hopDestinations?: Array<HopDestination>;
 
-		/** The name of the job template you are creating. */
+		/**
+		 * The name of the job template you are creating.
+		 * Required
+		 */
 		name: string;
 
 		/**
@@ -4526,7 +4565,10 @@ export namespace MyNS {
 		/** Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue. */
 		queue?: string;
 
-		/** JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it. */
+		/**
+		 * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+		 * Required
+		 */
 		settings: CreateJobTemplatePostBodySettings;
 
 		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
@@ -4574,10 +4616,16 @@ export namespace MyNS {
 		/** Optional. A description of the preset you are creating. */
 		description?: string;
 
-		/** The name of the preset you are creating. */
+		/**
+		 * The name of the preset you are creating.
+		 * Required
+		 */
 		name: string;
 
-		/** Settings for preset */
+		/**
+		 * Settings for preset
+		 * Required
+		 */
 		settings: CreatePresetPostBodySettings;
 
 		/** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
@@ -4600,7 +4648,10 @@ export namespace MyNS {
 		/** Optional. A description of the queue that you are creating. */
 		description?: string;
 
-		/** The name of the queue that you are creating. */
+		/**
+		 * The name of the queue that you are creating.
+		 * Required
+		 */
 		name: string;
 
 		/** Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. */
@@ -4752,10 +4803,16 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name.
+		 * Required
+		 */
 		arn: string;
 
-		/** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
+		/**
+		 * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

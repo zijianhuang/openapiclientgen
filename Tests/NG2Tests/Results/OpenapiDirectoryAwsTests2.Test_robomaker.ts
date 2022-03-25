@@ -68,7 +68,10 @@ export namespace MyNS {
 		application: string;
 		applicationVersion?: string;
 
-		/** Information about a launch configuration. */
+		/**
+		 * Information about a launch configuration.
+		 * Required
+		 */
 		launchConfig: LaunchConfig;
 	}
 
@@ -107,7 +110,10 @@ export namespace MyNS {
 		application: string;
 		applicationVersion?: string;
 
-		/** Information about a launch configuration. */
+		/**
+		 * Information about a launch configuration.
+		 * Required
+		 */
 		launchConfig: LaunchConfig;
 	}
 
@@ -195,7 +201,10 @@ export namespace MyNS {
 		application: string;
 		applicationVersion: string;
 
-		/** Configuration information for a deployment launch. */
+		/**
+		 * Configuration information for a deployment launch.
+		 * Required
+		 */
 		launchConfig: DeploymentLaunchConfig;
 	}
 
@@ -894,7 +903,10 @@ export namespace MyNS {
 		name: string;
 		sources: Array<SourceConfig>;
 
-		/** Information about a robot software suite (ROS distribution). */
+		/**
+		 * Information about a robot software suite (ROS distribution).
+		 * Required
+		 */
 		robotSoftwareSuite: RobotSoftwareSuite;
 		tags?: TagMap;
 	}
@@ -915,10 +927,16 @@ export namespace MyNS {
 		name: string;
 		sources: Array<SourceConfig>;
 
-		/** Information about a simulation software suite. */
+		/**
+		 * Information about a simulation software suite.
+		 * Required
+		 */
 		simulationSoftwareSuite: SimulationSoftwareSuite;
 
-		/** Information about a robot software suite (ROS distribution). */
+		/**
+		 * Information about a robot software suite (ROS distribution).
+		 * Required
+		 */
 		robotSoftwareSuite: RobotSoftwareSuite;
 
 		/** Information about a rendering engine. */
@@ -1100,7 +1118,10 @@ export namespace MyNS {
 		application: string;
 		sources: Array<SourceConfig>;
 
-		/** Information about a robot software suite (ROS distribution). */
+		/**
+		 * Information about a robot software suite (ROS distribution).
+		 * Required
+		 */
 		robotSoftwareSuite: RobotSoftwareSuite;
 		currentRevisionId?: string;
 	}
@@ -1109,10 +1130,16 @@ export namespace MyNS {
 		application: string;
 		sources: Array<SourceConfig>;
 
-		/** Information about a simulation software suite. */
+		/**
+		 * Information about a simulation software suite.
+		 * Required
+		 */
 		simulationSoftwareSuite: SimulationSoftwareSuite;
 
-		/** Information about a robot software suite (ROS distribution). */
+		/**
+		 * Information about a robot software suite (ROS distribution).
+		 * Required
+		 */
 		robotSoftwareSuite: RobotSoftwareSuite;
 
 		/** Information about a rendering engine. */
@@ -1508,6 +1535,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of Amazon Resource Names (ARNs) of simulation jobs to describe.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
@@ -1518,6 +1546,7 @@ export namespace MyNS {
 
 		/**
 		 * The deployment job ARN to cancel.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1529,6 +1558,7 @@ export namespace MyNS {
 
 		/**
 		 * The simulation job ARN to cancel.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1540,6 +1570,7 @@ export namespace MyNS {
 
 		/**
 		 * The id of the batch to cancel.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1554,6 +1585,7 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\-=]*
@@ -1562,6 +1594,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet to deploy.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1570,6 +1603,7 @@ export namespace MyNS {
 
 		/**
 		 * The deployment application configuration.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
@@ -1592,6 +1626,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the fleet.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\-]*
@@ -1606,17 +1641,22 @@ export namespace MyNS {
 
 		/**
 		 * The name for the robot.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\-]*
 		 */
 		name: string;
 
-		/** The target architecture of the robot. */
+		/**
+		 * The target architecture of the robot.
+		 * Required
+		 */
 		architecture: CreateRobotResponseArchitecture;
 
 		/**
 		 * The Greengrass group id.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: .*
@@ -1631,16 +1671,23 @@ export namespace MyNS {
 
 		/**
 		 * The name of the robot application.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\-]*
 		 */
 		name: string;
 
-		/** The sources of the robot application. */
+		/**
+		 * The sources of the robot application.
+		 * Required
+		 */
 		sources: Array<SourceConfig>;
 
-		/** Information about a robot software suite (ROS distribution). */
+		/**
+		 * Information about a robot software suite (ROS distribution).
+		 * Required
+		 */
 		robotSoftwareSuite: CreateRobotApplicationPostBodyRobotSoftwareSuite;
 
 		/** A map that contains tag keys and tag values that are attached to the robot application. */
@@ -1656,6 +1703,7 @@ export namespace MyNS {
 
 		/**
 		 * The application information for the robot application.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1675,19 +1723,29 @@ export namespace MyNS {
 
 		/**
 		 * The name of the simulation application.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\-]*
 		 */
 		name: string;
 
-		/** The sources of the simulation application. */
+		/**
+		 * The sources of the simulation application.
+		 * Required
+		 */
 		sources: Array<SourceConfig>;
 
-		/** Information about a simulation software suite. */
+		/**
+		 * Information about a simulation software suite.
+		 * Required
+		 */
 		simulationSoftwareSuite: CreateSimulationApplicationPostBodySimulationSoftwareSuite;
 
-		/** Information about a robot software suite (ROS distribution). */
+		/**
+		 * Information about a robot software suite (ROS distribution).
+		 * Required
+		 */
 		robotSoftwareSuite: CreateSimulationApplicationPostBodyRobotSoftwareSuite;
 
 		/** Information about a rendering engine. */
@@ -1716,6 +1774,7 @@ export namespace MyNS {
 
 		/**
 		 * The application information for the simulation application.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1747,11 +1806,15 @@ export namespace MyNS {
 		/** The logging configuration. */
 		loggingConfig?: CreateSimulationJobPostBodyLoggingConfig;
 
-		/** The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>. */
+		/**
+		 * The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.
+		 * Required
+		 */
 		maxJobDurationInSeconds: number;
 
 		/**
 		 * The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: arn:aws:iam::\w+:role/.*
@@ -1815,6 +1878,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1826,6 +1890,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1837,6 +1902,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the the robot application.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1856,6 +1922,7 @@ export namespace MyNS {
 
 		/**
 		 * The application information for the simulation application to delete.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1875,6 +1942,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1883,6 +1951,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1894,6 +1963,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the deployment job.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1905,6 +1975,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1916,6 +1987,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot to be described.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1927,6 +1999,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot application.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1946,6 +2019,7 @@ export namespace MyNS {
 
 		/**
 		 * The application information for the simulation application.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1965,6 +2039,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the simulation job to be described.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -1976,6 +2051,7 @@ export namespace MyNS {
 
 		/**
 		 * The id of the batch to describe.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -2148,7 +2224,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** A map that contains tag keys and tag values that are attached to the resource. */
+		/**
+		 * A map that contains tag keys and tag values that are attached to the resource.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
@@ -2156,6 +2235,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -2164,6 +2244,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -2175,6 +2256,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the simulation job.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -2197,6 +2279,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of simulation job requests to create in the batch.
+		 * Required
 		 * Minimum items: 1
 		 */
 		createSimulationJobRequests: Array<SimulationJobRequest>;
@@ -2214,6 +2297,7 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\-=]*
@@ -2222,6 +2306,7 @@ export namespace MyNS {
 
 		/**
 		 * The target fleet for the synchronization.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
@@ -2233,16 +2318,23 @@ export namespace MyNS {
 
 		/**
 		 * The application information for the robot application.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
 		 */
 		application: string;
 
-		/** The sources of the robot application. */
+		/**
+		 * The sources of the robot application.
+		 * Required
+		 */
 		sources: Array<SourceConfig>;
 
-		/** Information about a robot software suite (ROS distribution). */
+		/**
+		 * Information about a robot software suite (ROS distribution).
+		 * Required
+		 */
 		robotSoftwareSuite: UpdateRobotApplicationPostBodyRobotSoftwareSuite;
 
 		/**
@@ -2263,19 +2355,29 @@ export namespace MyNS {
 
 		/**
 		 * The application information for the simulation application.
+		 * Required
 		 * Max length: 1224
 		 * Min length: 1
 		 * Pattern: arn:.*
 		 */
 		application: string;
 
-		/** The sources of the simulation application. */
+		/**
+		 * The sources of the simulation application.
+		 * Required
+		 */
 		sources: Array<SourceConfig>;
 
-		/** Information about a simulation software suite. */
+		/**
+		 * Information about a simulation software suite.
+		 * Required
+		 */
 		simulationSoftwareSuite: UpdateSimulationApplicationPostBodySimulationSoftwareSuite;
 
-		/** Information about a robot software suite (ROS distribution). */
+		/**
+		 * Information about a robot software suite (ROS distribution).
+		 * Required
+		 */
 		robotSoftwareSuite: UpdateSimulationApplicationPostBodyRobotSoftwareSuite;
 
 		/** Information about a rendering engine. */

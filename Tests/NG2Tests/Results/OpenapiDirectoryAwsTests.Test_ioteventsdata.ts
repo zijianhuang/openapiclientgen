@@ -55,7 +55,10 @@ export namespace MyNS {
 		detectorModelName: string;
 		keyValue?: string;
 
-		/** The new state, variable values, and timer settings of the detector (instance). */
+		/**
+		 * The new state, variable values, and timer settings of the detector (instance).
+		 * Required
+		 */
 		state: DetectorStateDefinition;
 	}
 
@@ -217,6 +220,7 @@ export namespace MyNS {
 
 		/**
 		 * The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
+		 * Required
 		 * Minimum items: 1
 		 */
 		messages: Array<Message>;
@@ -226,6 +230,7 @@ export namespace MyNS {
 
 		/**
 		 * The list of detectors (instances) to update, along with the values to update.
+		 * Required
 		 * Minimum items: 1
 		 */
 		detectors: Array<UpdateDetectorRequest>;

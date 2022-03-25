@@ -354,7 +354,10 @@ export namespace MyNS {
 
 	export interface PutLexiconPutBody {
 
-		/** Content of the PLS lexicon as string data. */
+		/**
+		 * Content of the PLS lexicon as string data.
+		 * Required
+		 */
 		Content: string;
 	}
 
@@ -374,11 +377,15 @@ export namespace MyNS {
 		 */
 		LexiconNames?: Array<string>;
 
-		/** The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. */
+		/**
+		 * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.
+		 * Required
+		 */
 		OutputFormat: SynthesisTaskOutputFormat;
 
 		/**
 		 * Amazon S3 bucket name to which the output file will be saved.
+		 * Required
 		 * Pattern: ^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$
 		 */
 		OutputS3BucketName: string;
@@ -404,13 +411,19 @@ export namespace MyNS {
 		 */
 		SpeechMarkTypes?: Array<SpeechMarkType>;
 
-		/** The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. */
+		/**
+		 * The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.
+		 * Required
+		 */
 		Text: string;
 
 		/** Specifies whether the input text is plain text or SSML. The default value is plain text. */
 		TextType?: SynthesisTaskTextType;
 
-		/** Voice ID to use for the synthesis. */
+		/**
+		 * Voice ID to use for the synthesis.
+		 * Required
+		 */
 		VoiceId: VoiceId;
 	}
 
@@ -430,7 +443,10 @@ export namespace MyNS {
 		 */
 		LexiconNames?: Array<string>;
 
-		/** <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> */
+		/**
+		 * <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
+		 * Required
+		 */
 		OutputFormat: SynthesisTaskOutputFormat;
 
 		/** <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p> */
@@ -442,13 +458,19 @@ export namespace MyNS {
 		 */
 		SpeechMarkTypes?: Array<SpeechMarkType>;
 
-		/** Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. */
+		/**
+		 * Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.
+		 * Required
+		 */
 		Text: string;
 
 		/** Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>. */
 		TextType?: SynthesisTaskTextType;
 
-		/** Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. */
+		/**
+		 * Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.
+		 * Required
+		 */
 		VoiceId: VoiceId;
 	}
 

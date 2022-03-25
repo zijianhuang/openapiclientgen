@@ -497,7 +497,10 @@ export namespace MyNS {
 	export interface ConfigureHealthCheckInput {
 		LoadBalancerName: string;
 
-		/** Information about a health check. */
+		/**
+		 * Information about a health check.
+		 * Required
+		 */
 		HealthCheck: HealthCheck;
 	}
 
@@ -629,7 +632,10 @@ export namespace MyNS {
 	export interface ModifyLoadBalancerAttributesInput {
 		LoadBalancerName: string;
 
-		/** The attributes for a load balancer. */
+		/**
+		 * The attributes for a load balancer.
+		 * Required
+		 */
 		LoadBalancerAttributes: LoadBalancerAttributes;
 	}
 

@@ -1294,11 +1294,17 @@ export namespace MyNS {
 		description?: string;
 		initialRun?: boolean;
 
-		/** The schedule for running a classification job. Valid values are: */
+		/**
+		 * The schedule for running a classification job. Valid values are:
+		 * Required
+		 */
 		jobType: DescribeClassificationJobResponseJobType;
 		name: string;
 
-		/** Specifies which S3 buckets contain the objects that a classification job analyzes, and the scope of that analysis. */
+		/**
+		 * Specifies which S3 buckets contain the objects that a classification job analyzes, and the scope of that analysis.
+		 * Required
+		 */
 		s3JobDefinition: S3JobDefinition;
 		samplingPercentage?: number;
 
@@ -1328,12 +1334,18 @@ export namespace MyNS {
 
 	export interface CreateFindingsFilterRequest {
 
-		/** The action to perform on findings that meet the filter criteria. Valid values are: */
+		/**
+		 * The action to perform on findings that meet the filter criteria. Valid values are:
+		 * Required
+		 */
 		action: GetFindingsFilterResponseAction;
 		clientToken?: string;
 		description?: string;
 
-		/** Specifies, as a map, one or more property-based conditions that filter the results of a query for findings. */
+		/**
+		 * Specifies, as a map, one or more property-based conditions that filter the results of a query for findings.
+		 * Required
+		 */
 		findingCriteria: FindingCriteria;
 		name: string;
 		position?: number;
@@ -1350,7 +1362,10 @@ export namespace MyNS {
 
 	export interface CreateMemberRequest {
 
-		/** Specifies details for an account to associate with an Amazon Macie master account. */
+		/**
+		 * Specifies details for an account to associate with an Amazon Macie master account.
+		 * Required
+		 */
 		account: AccountDetail;
 
 		/** A string-to-string map of key-value pairs that specifies the tags (keys and values) for a classification job, custom data identifier, findings filter, or member account. */
@@ -1617,7 +1632,10 @@ export namespace MyNS {
 
 	export interface PutClassificationExportConfigurationRequest {
 
-		/** Specifies where to export data classification results to, and the encryption settings to use when storing results in that location. Currently, you can export classification results only to an S3 bucket. */
+		/**
+		 * Specifies where to export data classification results to, and the encryption settings to use when storing results in that location. Currently, you can export classification results only to an S3 bucket.
+		 * Required
+		 */
 		configuration: ClassificationExportConfiguration;
 	}
 
@@ -1633,7 +1651,10 @@ export namespace MyNS {
 
 	export interface TagResourceRequest {
 
-		/** A string-to-string map of key-value pairs that specifies the tags (keys and values) for a classification job, custom data identifier, findings filter, or member account. */
+		/**
+		 * A string-to-string map of key-value pairs that specifies the tags (keys and values) for a classification job, custom data identifier, findings filter, or member account.
+		 * Required
+		 */
 		tags: TagMap;
 	}
 
@@ -1658,7 +1679,10 @@ export namespace MyNS {
 
 	export interface UpdateClassificationJobRequest {
 
-		/** The current status of a classification job. Valid values are: */
+		/**
+		 * The current status of a classification job. Valid values are:
+		 * Required
+		 */
 		jobStatus: DescribeClassificationJobResponseJobStatus;
 	}
 
@@ -1685,7 +1709,10 @@ export namespace MyNS {
 
 	export interface UpdateMemberSessionRequest {
 
-		/** The status of an Amazon Macie account. Valid values are: */
+		/**
+		 * The status of an Amazon Macie account. Valid values are:
+		 * Required
+		 */
 		status: GetMacieSessionResponseStatus;
 	}
 
@@ -2207,16 +2234,25 @@ export namespace MyNS {
 
 	export interface AcceptInvitationPostBody {
 
-		/** The unique identifier for the invitation to accept. */
+		/**
+		 * The unique identifier for the invitation to accept.
+		 * Required
+		 */
 		invitationId: string;
 
-		/** The AWS account ID for the account that sent the invitation. */
+		/**
+		 * The AWS account ID for the account that sent the invitation.
+		 * Required
+		 */
 		masterAccount: string;
 	}
 
 	export interface ArchiveFindingsPostBody {
 
-		/** An array of strings that lists the unique identifiers for the findings to archive. */
+		/**
+		 * An array of strings that lists the unique identifiers for the findings to archive.
+		 * Required
+		 */
 		findingIds: Array<string>;
 	}
 
@@ -2228,7 +2264,10 @@ export namespace MyNS {
 
 	export interface CreateClassificationJobPostBody {
 
-		/** A unique, case-sensitive token that you provide to ensure the idempotency of the request. */
+		/**
+		 * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+		 * Required
+		 */
 		clientToken: string;
 
 		/** The custom data identifiers to use for data analysis and classification. */
@@ -2240,13 +2279,22 @@ export namespace MyNS {
 		/** Specifies whether to run the job immediately, after it's created. */
 		initialRun?: boolean;
 
-		/** The schedule for running a classification job. Valid values are: */
+		/**
+		 * The schedule for running a classification job. Valid values are:
+		 * Required
+		 */
 		jobType: DescribeClassificationJobResponseJobType;
 
-		/** A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters. */
+		/**
+		 * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+		 * Required
+		 */
 		name: string;
 
-		/** Specifies which S3 buckets contain the objects that a classification job analyzes, and the scope of that analysis. */
+		/**
+		 * Specifies which S3 buckets contain the objects that a classification job analyzes, and the scope of that analysis.
+		 * Required
+		 */
 		s3JobDefinition: CreateClassificationJobPostBodyS3JobDefinition;
 
 		/** The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects to analyze, up to the specified percentage. */
@@ -2307,7 +2355,10 @@ export namespace MyNS {
 
 	export interface CreateFindingsFilterPostBody {
 
-		/** The action to perform on findings that meet the filter criteria. Valid values are: */
+		/**
+		 * The action to perform on findings that meet the filter criteria. Valid values are:
+		 * Required
+		 */
 		action: GetFindingsFilterResponseAction;
 
 		/** A unique, case-sensitive token that you provide to ensure the idempotency of the request. */
@@ -2316,10 +2367,16 @@ export namespace MyNS {
 		/** <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see the filter's description, depending on the actions that they're allowed to perform in Amazon Macie.</p> */
 		description?: string;
 
-		/** Specifies, as a map, one or more property-based conditions that filter the results of a query for findings. */
+		/**
+		 * Specifies, as a map, one or more property-based conditions that filter the results of a query for findings.
+		 * Required
+		 */
 		findingCriteria: CreateFindingsFilterPostBodyFindingCriteria;
 
-		/** <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see the filter's name, depending on the actions that they're allowed to perform in Amazon Macie.</p> */
+		/**
+		 * <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see the filter's name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+		 * Required
+		 */
 		name: string;
 
 		/** The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings. */
@@ -2337,7 +2394,10 @@ export namespace MyNS {
 
 	export interface CreateInvitationsPostBody {
 
-		/** An array that lists AWS account IDs, one for each account to send the invitation to. */
+		/**
+		 * An array that lists AWS account IDs, one for each account to send the invitation to.
+		 * Required
+		 */
 		accountIds: Array<string>;
 
 		/** Specifies whether to send an email notification to the root user of each account that the invitation will be sent to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To send an email notification to the root user of each account, set this value to true. */
@@ -2349,7 +2409,10 @@ export namespace MyNS {
 
 	export interface CreateMemberPostBody {
 
-		/** Specifies details for an account to associate with an Amazon Macie master account. */
+		/**
+		 * Specifies details for an account to associate with an Amazon Macie master account.
+		 * Required
+		 */
 		account: CreateMemberPostBodyAccount;
 
 		/** A string-to-string map of key-value pairs that specifies the tags (keys and values) for a classification job, custom data identifier, findings filter, or member account. */
@@ -2369,7 +2432,10 @@ export namespace MyNS {
 
 	export interface DeclineInvitationsPostBody {
 
-		/** An array that lists AWS account IDs, one for each account that sent an invitation to decline. */
+		/**
+		 * An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+		 * Required
+		 */
 		accountIds: Array<string>;
 	}
 
@@ -2399,7 +2465,10 @@ export namespace MyNS {
 
 	export interface DeleteInvitationsPostBody {
 
-		/** An array that lists AWS account IDs, one for each account that sent an invitation to delete. */
+		/**
+		 * An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+		 * Required
+		 */
 		accountIds: Array<string>;
 	}
 
@@ -2425,13 +2494,19 @@ export namespace MyNS {
 
 	export interface UpdateClassificationJobPatchBody {
 
-		/** The current status of a classification job. Valid values are: */
+		/**
+		 * The current status of a classification job. Valid values are:
+		 * Required
+		 */
 		jobStatus: DescribeClassificationJobResponseJobStatus;
 	}
 
 	export interface UpdateOrganizationConfigurationPatchBody {
 
-		/** Specifies whether Amazon Macie is enabled automatically for each account, when the account is added to the AWS organization. */
+		/**
+		 * Specifies whether Amazon Macie is enabled automatically for each account, when the account is added to the AWS organization.
+		 * Required
+		 */
 		autoEnable: boolean;
 	}
 
@@ -2458,7 +2533,10 @@ export namespace MyNS {
 
 	export interface EnableOrganizationAdminAccountPostBody {
 
-		/** The AWS account ID for the account. */
+		/**
+		 * The AWS account ID for the account.
+		 * Required
+		 */
 		adminAccountId: string;
 
 		/** A unique, case-sensitive token that you provide to ensure the idempotency of the request. */
@@ -2473,7 +2551,10 @@ export namespace MyNS {
 
 	export interface PutClassificationExportConfigurationPutBody {
 
-		/** Specifies where to export data classification results to, and the encryption settings to use when storing results in that location. Currently, you can export classification results only to an S3 bucket. */
+		/**
+		 * Specifies where to export data classification results to, and the encryption settings to use when storing results in that location. Currently, you can export classification results only to an S3 bucket.
+		 * Required
+		 */
 		configuration: PutClassificationExportConfigurationPutBodyConfiguration;
 	}
 
@@ -2488,7 +2569,10 @@ export namespace MyNS {
 		/** Specifies, as a map, one or more property-based conditions that filter the results of a query for findings. */
 		findingCriteria?: GetFindingStatisticsPostBodyFindingCriteria;
 
-		/** <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul> */
+		/**
+		 * <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
+		 * Required
+		 */
 		groupBy: GetFindingStatisticsPostBodyGroupBy;
 
 		/** The maximum number of items to include in each page of the response. */
@@ -2515,7 +2599,10 @@ export namespace MyNS {
 
 	export interface GetFindingsPostBody {
 
-		/** An array of strings that lists the unique identifiers for the findings to retrieve information about. */
+		/**
+		 * An array of strings that lists the unique identifiers for the findings to retrieve information about.
+		 * Required
+		 */
 		findingIds: Array<string>;
 
 		/** Specifies criteria for sorting the results of a request for information about findings. */
@@ -2613,7 +2700,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** A string-to-string map of key-value pairs that specifies the tags (keys and values) for a classification job, custom data identifier, findings filter, or member account. */
+		/**
+		 * A string-to-string map of key-value pairs that specifies the tags (keys and values) for a classification job, custom data identifier, findings filter, or member account.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
@@ -2628,22 +2718,34 @@ export namespace MyNS {
 		/** The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300. */
 		maximumMatchDistance?: number;
 
-		/** The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500 characters. */
+		/**
+		 * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500 characters.
+		 * Required
+		 */
 		regex: string;
 
-		/** The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters. */
+		/**
+		 * The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.
+		 * Required
+		 */
 		sampleText: string;
 	}
 
 	export interface UnarchiveFindingsPostBody {
 
-		/** An array of strings that lists the unique identifiers for the findings to reactivate. */
+		/**
+		 * An array of strings that lists the unique identifiers for the findings to reactivate.
+		 * Required
+		 */
 		findingIds: Array<string>;
 	}
 
 	export interface UpdateMemberSessionPatchBody {
 
-		/** The status of an Amazon Macie account. Valid values are: */
+		/**
+		 * The status of an Amazon Macie account. Valid values are:
+		 * Required
+		 */
 		status: GetMacieSessionResponseStatus;
 	}
 

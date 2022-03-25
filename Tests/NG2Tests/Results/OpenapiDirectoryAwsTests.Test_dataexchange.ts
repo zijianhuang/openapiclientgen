@@ -108,13 +108,22 @@ export namespace MyNS {
 	/** The details of the export to signed URL response. */
 	export interface ExportAssetToSignedUrlResponseDetails {
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		AssetId: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 		SignedUrl?: string;
 
@@ -126,16 +135,25 @@ export namespace MyNS {
 	/** Details about the export to Amazon S3 response. */
 	export interface ExportAssetsToS3ResponseDetails {
 
-		/** The destination where the assets will be exported. */
+		/**
+		 * The destination where the assets will be exported.
+		 * Required
+		 */
 		AssetDestinations: Array<AssetDestinationEntry>;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 
 		/** Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type. */
 		Encryption?: ExportServerSideEncryption;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 	}
 
@@ -143,7 +161,10 @@ export namespace MyNS {
 	/** The destination for the asset. */
 	export interface AssetDestinationEntry {
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		AssetId: string;
 		Bucket: string;
 		Key?: string;
@@ -154,7 +175,10 @@ export namespace MyNS {
 	export interface ExportServerSideEncryption {
 		KmsKeyArn: string;
 
-		/** The types of encryption supported in export jobs to Amazon S3. */
+		/**
+		 * The types of encryption supported in export jobs to Amazon S3.
+		 * Required
+		 */
 		Type: ExportServerSideEncryptionType;
 	}
 
@@ -164,14 +188,23 @@ export namespace MyNS {
 	/** The details in the response for an import request, including the signed URL and other information. */
 	export interface ImportAssetFromSignedUrlResponseDetails {
 
-		/** The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. */
+		/**
+		 * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.
+		 * Required
+		 */
 		AssetName: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 		Md5Hash?: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 		SignedUrl?: string;
 
@@ -183,13 +216,22 @@ export namespace MyNS {
 	/** Details from an import from Amazon S3 response. */
 	export interface ImportAssetsFromS3ResponseDetails {
 
-		/** The list of sources for the assets. */
+		/**
+		 * The list of sources for the assets.
+		 * Required
+		 */
 		AssetSources: Array<AssetSourceEntry>;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 	}
 
@@ -227,7 +269,10 @@ export namespace MyNS {
 
 	export interface ImportAssetFromSignedUrlJobErrorDetails {
 
-		/** The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. */
+		/**
+		 * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.
+		 * Required
+		 */
 		AssetName: string;
 	}
 
@@ -243,13 +288,22 @@ export namespace MyNS {
 	/** Details of the operation to be performed by the job. */
 	export interface ExportAssetToSignedUrlRequestDetails {
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		AssetId: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 	}
 
@@ -257,16 +311,25 @@ export namespace MyNS {
 	/** Details of the operation to be performed by the job. */
 	export interface ExportAssetsToS3RequestDetails {
 
-		/** The destination where the assets will be exported. */
+		/**
+		 * The destination where the assets will be exported.
+		 * Required
+		 */
 		AssetDestinations: Array<AssetDestinationEntry>;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 
 		/** Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type. */
 		Encryption?: ExportServerSideEncryption;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 	}
 
@@ -274,14 +337,23 @@ export namespace MyNS {
 	/** Details of the operation to be performed by the job. */
 	export interface ImportAssetFromSignedUrlRequestDetails {
 
-		/** The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. */
+		/**
+		 * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.
+		 * Required
+		 */
 		AssetName: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 		Md5Hash: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 	}
 
@@ -289,13 +361,22 @@ export namespace MyNS {
 	/** Details of the operation to be performed by the job. */
 	export interface ImportAssetsFromS3RequestDetails {
 
-		/** The list of sources for the assets. */
+		/**
+		 * The list of sources for the assets.
+		 * Required
+		 */
 		AssetSources: Array<AssetSourceEntry>;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 	}
 
@@ -454,24 +535,39 @@ export namespace MyNS {
 	/** A revision is a container for one or more assets. */
 	export interface RevisionEntry {
 
-		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
+		/**
+		 * An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.
+		 * Required
+		 */
 		Arn: string;
 		Comment?: string;
 
-		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
+		/**
+		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
+		 * Required
+		 */
 		CreatedAt: Date;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 		Finalized?: boolean;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		Id: string;
 
 		/** A unique identifier. */
 		SourceId?: string;
 
-		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
+		/**
+		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
+		 * Required
+		 */
 		UpdatedAt: Date;
 	}
 
@@ -486,32 +582,56 @@ export namespace MyNS {
 	/** A data set is an AWS resource with one or more revisions. */
 	export interface DataSetEntry {
 
-		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
+		/**
+		 * An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.
+		 * Required
+		 */
 		Arn: string;
 
-		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
+		/**
+		 * The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+		 * Required
+		 */
 		AssetType: CreateDataSetResponseAssetType;
 
-		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
+		/**
+		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
+		 * Required
+		 */
 		CreatedAt: Date;
 
-		/** A description of a resource. */
+		/**
+		 * A description of a resource.
+		 * Required
+		 */
 		Description: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		Id: string;
 
-		/** The name of the model. */
+		/**
+		 * The name of the model.
+		 * Required
+		 */
 		Name: string;
 
-		/** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set. */
+		/**
+		 * A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.
+		 * Required
+		 */
 		Origin: CreateDataSetResponseOrigin;
 		OriginDetails?: OriginDetails;
 
 		/** A unique identifier. */
 		SourceId?: string;
 
-		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
+		/**
+		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
+		 * Required
+		 */
 		UpdatedAt: Date;
 	}
 
@@ -526,22 +646,37 @@ export namespace MyNS {
 	/** AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created. */
 	export interface JobEntry {
 
-		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
+		/**
+		 * An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.
+		 * Required
+		 */
 		Arn: string;
 
-		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
+		/**
+		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
+		 * Required
+		 */
 		CreatedAt: Date;
 
-		/** Details for the response. */
+		/**
+		 * Details for the response.
+		 * Required
+		 */
 		Details: ResponseDetails;
 		Errors?: Array<JobError>;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		Id: string;
 		State: CreateJobResponseState;
 		Type: CreateJobResponseType;
 
-		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
+		/**
+		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
+		 * Required
+		 */
 		UpdatedAt: Date;
 	}
 
@@ -556,32 +691,56 @@ export namespace MyNS {
 	/** An asset in AWS Data Exchange is a piece of data that can be stored as an S3 object. The asset can be a structured data file, an image file, or some other data file. When you create an import job for your files, you create an asset in AWS Data Exchange for each of those files. */
 	export interface AssetEntry {
 
-		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
+		/**
+		 * An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.
+		 * Required
+		 */
 		Arn: string;
 		AssetDetails: AssetDetails;
 
-		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
+		/**
+		 * The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+		 * Required
+		 */
 		AssetType: CreateDataSetResponseAssetType;
 
-		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
+		/**
+		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
+		 * Required
+		 */
 		CreatedAt: Date;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		DataSetId: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		Id: string;
 
-		/** The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. */
+		/**
+		 * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.
+		 * Required
+		 */
 		Name: string;
 
-		/** A unique identifier. */
+		/**
+		 * A unique identifier.
+		 * Required
+		 */
 		RevisionId: string;
 
 		/** A unique identifier. */
 		SourceId?: string;
 
-		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
+		/**
+		 * Dates and times in AWS Data Exchange are recorded in ISO 8601 format.
+		 * Required
+		 */
 		UpdatedAt: Date;
 	}
 
@@ -690,13 +849,22 @@ export namespace MyNS {
 	/** The request body for CreateDataSet. */
 	export interface CreateDataSetRequest {
 
-		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
+		/**
+		 * The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+		 * Required
+		 */
 		AssetType: CreateDataSetResponseAssetType;
 
-		/** A description of a resource. */
+		/**
+		 * A description of a resource.
+		 * Required
+		 */
 		Description: string;
 
-		/** The name of the model. */
+		/**
+		 * The name of the model.
+		 * Required
+		 */
 		Name: string;
 		Tags?: MapOf__string;
 	}
@@ -728,7 +896,10 @@ export namespace MyNS {
 	/** The request body for CreateJob. */
 	export interface CreateJobRequest {
 
-		/** The details for the request. */
+		/**
+		 * The details for the request.
+		 * Required
+		 */
 		Details: RequestDetails;
 		Type: CreateJobResponseType;
 	}
@@ -802,7 +973,10 @@ export namespace MyNS {
 	/** The request body for UpdateAsset. */
 	export interface UpdateAssetRequest {
 
-		/** The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. */
+		/**
+		 * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.
+		 * Required
+		 */
 		Name: string;
 	}
 
@@ -1078,13 +1252,22 @@ export namespace MyNS {
 
 	export interface CreateDataSetPostBody {
 
-		/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT. */
+		/**
+		 * The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+		 * Required
+		 */
 		AssetType: CreateDataSetResponseAssetType;
 
-		/** A description of a resource. */
+		/**
+		 * A description of a resource.
+		 * Required
+		 */
 		Description: string;
 
-		/** The name of the model. */
+		/**
+		 * The name of the model.
+		 * Required
+		 */
 		Name: string;
 
 		/** A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions. */
@@ -1093,10 +1276,16 @@ export namespace MyNS {
 
 	export interface CreateJobPostBody {
 
-		/** The details for the request. */
+		/**
+		 * The details for the request.
+		 * Required
+		 */
 		Details: CreateJobPostBodyDetails;
 
-		/** The type of job to be created. */
+		/**
+		 * The type of job to be created.
+		 * Required
+		 */
 		Type: CreateJobResponseType;
 	}
 
@@ -1130,7 +1319,10 @@ export namespace MyNS {
 
 	export interface UpdateAssetPatchBody {
 
-		/** The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. */
+		/**
+		 * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.
+		 * Required
+		 */
 		Name: string;
 	}
 
@@ -1158,7 +1350,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** A label that consists of a customer-defined key and an optional value. */
+		/**
+		 * A label that consists of a customer-defined key and an optional value.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

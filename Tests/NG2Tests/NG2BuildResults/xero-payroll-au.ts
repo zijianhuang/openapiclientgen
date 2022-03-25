@@ -8,13 +8,22 @@ export namespace MyNS {
 
 	export interface Employee {
 
-		/** First name of employee */
+		/**
+		 * First name of employee
+		 * Required
+		 */
 		FirstName: string;
 
-		/** Last name of employee */
+		/**
+		 * Last name of employee
+		 * Required
+		 */
 		LastName: string;
 
-		/** Date of birth of the employee (YYYY-MM-DD) */
+		/**
+		 * Date of birth of the employee (YYYY-MM-DD)
+		 * Required
+		 */
 		DateOfBirth: string;
 		HomeAddress?: HomeAddress;
 
@@ -88,7 +97,10 @@ export namespace MyNS {
 
 	export interface HomeAddress {
 
-		/** Address line 1 for employee home address */
+		/**
+		 * Address line 1 for employee home address
+		 * Required
+		 */
 		AddressLine1: string;
 
 		/** Address line 2 for employee home address */
@@ -142,7 +154,10 @@ export namespace MyNS {
 
 	export interface EarningsLine {
 
-		/** Xero unique id for earnings rate */
+		/**
+		 * Xero unique id for earnings rate
+		 * Required
+		 */
 		EarningsRateID: string;
 		CalculationType: EarningsLineCalculationType;
 
@@ -172,7 +187,10 @@ export namespace MyNS {
 
 	export interface DeductionLine {
 
-		/** Xero deduction type identifier */
+		/**
+		 * Xero deduction type identifier
+		 * Required
+		 */
 		DeductionTypeID: string;
 		CalculationType: DeductionLineCalculationType;
 
@@ -272,7 +290,10 @@ export namespace MyNS {
 
 	export interface TaxDeclaration {
 
-		/** Address line 1 for employee home address */
+		/**
+		 * Address line 1 for employee home address
+		 * Required
+		 */
 		EmployeeID: string;
 		EmploymentBasis: TaxDeclarationEmploymentBasis;
 		TFNExemptionType?: TaxDeclarationTFNExemptionType;
@@ -341,10 +362,16 @@ export namespace MyNS {
 		/** Xero unique identifier for Super membership */
 		SuperMembershipID?: string;
 
-		/** Xero identifier for super fund */
+		/**
+		 * Xero identifier for super fund
+		 * Required
+		 */
 		SuperFundID: string;
 
-		/** The memberhsip number assigned to the employee by the super fund. */
+		/**
+		 * The memberhsip number assigned to the employee by the super fund.
+		 * Required
+		 */
 		EmployeeNumber: number;
 	}
 
@@ -598,13 +625,22 @@ export namespace MyNS {
 
 	export interface Timesheet {
 
-		/** The Xero identifier for an employee */
+		/**
+		 * The Xero identifier for an employee
+		 * Required
+		 */
 		EmployeeID: string;
 
-		/** Period start date (YYYY-MM-DD) */
+		/**
+		 * Period start date (YYYY-MM-DD)
+		 * Required
+		 */
 		StartDate: string;
 
-		/** Period end date (YYYY-MM-DD) */
+		/**
+		 * Period end date (YYYY-MM-DD)
+		 * Required
+		 */
 		EndDate: string;
 		Status?: TimesheetStatus;
 
@@ -649,7 +685,10 @@ export namespace MyNS {
 
 	export interface PayRun {
 
-		/** Xero identifier for pay run */
+		/**
+		 * Xero identifier for pay run
+		 * Required
+		 */
 		PayrollCalendarID: string;
 
 		/** Xero identifier for pay run */

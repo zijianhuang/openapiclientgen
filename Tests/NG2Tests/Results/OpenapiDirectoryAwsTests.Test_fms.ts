@@ -97,7 +97,10 @@ export namespace MyNS {
 		PolicyName: string;
 		PolicyUpdateToken?: string;
 
-		/** Details about the security service that is being used to protect the resources. */
+		/**
+		 * Details about the security service that is being used to protect the resources.
+		 * Required
+		 */
 		SecurityServicePolicyData: SecurityServicePolicyData;
 		ResourceType: string;
 		ResourceTypeList?: Array<string>;
@@ -246,7 +249,10 @@ export namespace MyNS {
 
 	export interface PutPolicyRequest {
 
-		/** An AWS Firewall Manager policy. */
+		/**
+		 * An AWS Firewall Manager policy.
+		 * Required
+		 */
 		Policy: Policy;
 		TagList?: Array<Tag>;
 	}

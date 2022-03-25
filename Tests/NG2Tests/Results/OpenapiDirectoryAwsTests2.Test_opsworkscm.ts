@@ -11,6 +11,7 @@ export namespace MyNS {
 
 		/**
 		 * The node name that is used by <code>chef-client</code> or <code>puppet-agent</code>for a new node. We recommend to use a unique FQDN as hostname. For more information, see the <a href="https://docs.aws.amazon.com/https:/docs.chef.io/nodes.html#about-node-names">Chef</a> or <a href="https://docs.aws.amazon.com/https:/docs.puppet.com/puppet/4.10/man/agent.html">Puppet</a> documentation.
+		 * Required
 		 * Max length: 10000
 		 * Pattern: ^[\-\p{Alnum}_:.]+$
 		 */
@@ -291,6 +292,7 @@ export namespace MyNS {
 
 		/**
 		 * The node name that is used by <code>chef-client</code> or <code>puppet-agent</code>for a new node. We recommend to use a unique FQDN as hostname. For more information, see the <a href="https://docs.aws.amazon.com/https:/docs.chef.io/nodes.html#about-node-names">Chef</a> or <a href="https://docs.aws.amazon.com/https:/docs.puppet.com/puppet/4.10/man/agent.html">Puppet</a> documentation.
+		 * Required
 		 * Max length: 10000
 		 * Pattern: ^[\-\p{Alnum}_:.]+$
 		 */

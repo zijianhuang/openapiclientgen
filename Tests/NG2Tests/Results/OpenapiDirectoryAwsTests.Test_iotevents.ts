@@ -227,7 +227,10 @@ export namespace MyNS {
 		propertyId?: string;
 		propertyAlias?: string;
 
-		/** <p>A structure that contains value information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html">AssetPropertyValue</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options: </p> <ul> <li> <p>Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>quality</code> value can be <code>$input.TemperatureInput.sensorData.quality</code> .</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
+		/**
+		 * <p>A structure that contains value information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html">AssetPropertyValue</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options: </p> <ul> <li> <p>Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>quality</code> value can be <code>$input.TemperatureInput.sensorData.quality</code> .</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul>
+		 * Required
+		 */
 		propertyValue: AssetPropertyValue;
 	}
 
@@ -235,7 +238,10 @@ export namespace MyNS {
 	/** <p>A structure that contains value information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html">AssetPropertyValue</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options: </p> <ul> <li> <p>Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>quality</code> value can be <code>$input.TemperatureInput.sensorData.quality</code> .</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
 	export interface AssetPropertyValue {
 
-		/** <p>A structure that contains an asset property value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html">Variant</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <important> <p>You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html">AssetProperty</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> </important> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>doubleValue</code> value can be <code>'47.9'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>doubleValue</code> value can be <code>$input.TemperatureInput.sensorData.temperature</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
+		/**
+		 * <p>A structure that contains an asset property value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html">Variant</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <important> <p>You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html">AssetProperty</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> </important> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>doubleValue</code> value can be <code>'47.9'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>doubleValue</code> value can be <code>$input.TemperatureInput.sensorData.temperature</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul>
+		 * Required
+		 */
 		value: AssetPropertyVariant;
 
 		/** <p>A structure that contains timestamp information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html">TimeInNanos</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'${$input.TemperatureInput.sensorData.timestamp/1000}'</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
@@ -492,7 +498,10 @@ export namespace MyNS {
 	export interface CreateDetectorModelRequest {
 		detectorModelName: string;
 
-		/** Information that defines how a detector operates. */
+		/**
+		 * Information that defines how a detector operates.
+		 * Required
+		 */
 		detectorModelDefinition: DetectorModelDefinition;
 		detectorModelDescription?: string;
 		key?: string;
@@ -505,7 +514,10 @@ export namespace MyNS {
 		inputName: string;
 		inputDescription?: string;
 
-		/** The definition of the input. */
+		/**
+		 * The definition of the input.
+		 * Required
+		 */
 		inputDefinition: InputDefinition;
 		tags?: Array<Tag>;
 	}
@@ -543,7 +555,10 @@ export namespace MyNS {
 
 	export interface PutLoggingOptionsRequest {
 
-		/** The values of the AWS IoT Events logging options. */
+		/**
+		 * The values of the AWS IoT Events logging options.
+		 * Required
+		 */
 		loggingOptions: LoggingOptions;
 	}
 
@@ -556,7 +571,10 @@ export namespace MyNS {
 
 	export interface UpdateDetectorModelRequest {
 
-		/** Information that defines how a detector operates. */
+		/**
+		 * Information that defines how a detector operates.
+		 * Required
+		 */
 		detectorModelDefinition: DetectorModelDefinition;
 		detectorModelDescription?: string;
 		roleArn: string;
@@ -566,7 +584,10 @@ export namespace MyNS {
 	export interface UpdateInputRequest {
 		inputDescription?: string;
 
-		/** The definition of the input. */
+		/**
+		 * The definition of the input.
+		 * Required
+		 */
 		inputDefinition: InputDefinition;
 	}
 
@@ -742,13 +763,17 @@ export namespace MyNS {
 
 		/**
 		 * The name of the detector model.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: string;
 
-		/** Information that defines how a detector operates. */
+		/**
+		 * Information that defines how a detector operates.
+		 * Required
+		 */
 		detectorModelDefinition: CreateDetectorModelPostBodyDetectorModelDefinition;
 
 		/**
@@ -767,6 +792,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the role that grants permission to AWS IoT Events to perform its operations.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 1
 		 */
@@ -788,6 +814,7 @@ export namespace MyNS {
 
 		/**
 		 * The name you want to give to the input.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
@@ -800,7 +827,10 @@ export namespace MyNS {
 		 */
 		inputDescription?: string;
 
-		/** The definition of the input. */
+		/**
+		 * The definition of the input.
+		 * Required
+		 */
 		inputDefinition: CreateInputPostBodyInputDefinition;
 
 		/** Metadata that can be used to manage the input. */
@@ -813,7 +843,10 @@ export namespace MyNS {
 
 	export interface UpdateDetectorModelPostBody {
 
-		/** Information that defines how a detector operates. */
+		/**
+		 * Information that defines how a detector operates.
+		 * Required
+		 */
 		detectorModelDefinition: UpdateDetectorModelPostBodyDetectorModelDefinition;
 
 		/**
@@ -824,6 +857,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the role that grants permission to AWS IoT Events to perform its operations.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 1
 		 */
@@ -846,7 +880,10 @@ export namespace MyNS {
 		 */
 		inputDescription?: string;
 
-		/** The definition of the input. */
+		/**
+		 * The definition of the input.
+		 * Required
+		 */
 		inputDefinition: UpdateInputPutBodyInputDefinition;
 	}
 
@@ -856,7 +893,10 @@ export namespace MyNS {
 
 	export interface PutLoggingOptionsPutBody {
 
-		/** The values of the AWS IoT Events logging options. */
+		/**
+		 * The values of the AWS IoT Events logging options.
+		 * Required
+		 */
 		loggingOptions: PutLoggingOptionsPutBodyLoggingOptions;
 	}
 
@@ -869,7 +909,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The new or modified tags for the resource. */
+		/**
+		 * The new or modified tags for the resource.
+		 * Required
+		 */
 		tags: Array<Tag>;
 	}
 

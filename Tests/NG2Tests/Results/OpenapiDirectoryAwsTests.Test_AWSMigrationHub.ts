@@ -9,7 +9,10 @@ export namespace MyNS {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
 
-		/** An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.). */
+		/**
+		 * An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).
+		 * Required
+		 */
 		CreatedArtifact: CreatedArtifact;
 		DryRun?: boolean;
 	}
@@ -55,7 +58,10 @@ export namespace MyNS {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
 
-		/** Object representing the on-premises resource being migrated. */
+		/**
+		 * Object representing the on-premises resource being migrated.
+		 * Required
+		 */
 		DiscoveredResource: DiscoveredResource;
 		DryRun?: boolean;
 	}
@@ -266,7 +272,10 @@ export namespace MyNS {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
 
-		/** Task object encapsulating task information. */
+		/**
+		 * Task object encapsulating task information.
+		 * Required
+		 */
 		Task: Task_;
 		UpdateDateTime: Date;
 		NextUpdateSeconds: number;

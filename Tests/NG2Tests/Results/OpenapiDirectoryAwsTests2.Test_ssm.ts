@@ -482,7 +482,10 @@ export namespace MyNS {
 	/** Defines an approval rule for a patch baseline. */
 	export interface PatchRule {
 
-		/** A set of patch filters, typically used for approval rules. */
+		/**
+		 * A set of patch filters, typically used for approval rules.
+		 * Required
+		 */
 		PatchFilterGroup: PatchFilterGroup;
 		ComplianceLevel?: PatchRuleComplianceLevel;
 		ApproveAfterDays?: number;
@@ -3050,7 +3053,10 @@ export namespace MyNS {
 		ResourceType: string;
 		ComplianceType: string;
 
-		/** A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'. */
+		/**
+		 * A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
+		 * Required
+		 */
 		ExecutionSummary: ComplianceExecutionSummary;
 		Items: Array<ComplianceItemEntry>;
 		ItemContentHash?: string;
@@ -3455,7 +3461,10 @@ export namespace MyNS {
 		Name: string;
 		InstanceId: string;
 
-		/** Describes an association status. */
+		/**
+		 * Describes an association status.
+		 * Required
+		 */
 		AssociationStatus: AssociationStatus;
 	}
 
@@ -3667,7 +3676,10 @@ export namespace MyNS {
 		SyncName: string;
 		SyncType: string;
 
-		/** Information about the source of the data included in the resource data sync. */
+		/**
+		 * Information about the source of the data included in the resource data sync.
+		 * Required
+		 */
 		SyncSource: ResourceDataSyncSource;
 	}
 

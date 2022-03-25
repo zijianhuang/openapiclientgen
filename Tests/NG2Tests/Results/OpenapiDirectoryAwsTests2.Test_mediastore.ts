@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateContainerOutput {
 
-		/** This section describes operations that you can perform on an AWS Elemental MediaStore container. */
+		/**
+		 * This section describes operations that you can perform on an AWS Elemental MediaStore container.
+		 * Required
+		 */
 		Container: Container;
 	}
 
@@ -108,6 +111,7 @@ export namespace MyNS {
 
 		/**
 		 * The CORS policy of the container.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
@@ -140,7 +144,10 @@ export namespace MyNS {
 
 	export interface GetMetricPolicyOutput {
 
-		/** <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p> */
+		/**
+		 * <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p>
+		 * Required
+		 */
 		MetricPolicy: MetricPolicy;
 	}
 
@@ -198,6 +205,7 @@ export namespace MyNS {
 
 		/**
 		 * The CORS policy of the container.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
@@ -218,7 +226,10 @@ export namespace MyNS {
 	export interface PutMetricPolicyInput {
 		ContainerName: string;
 
-		/** <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p> */
+		/**
+		 * <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p>
+		 * Required
+		 */
 		MetricPolicy: MetricPolicy;
 	}
 

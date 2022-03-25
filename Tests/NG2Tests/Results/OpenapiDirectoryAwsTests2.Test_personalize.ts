@@ -12,10 +12,16 @@ export namespace MyNS {
 		filterArn?: string;
 		numResults?: number;
 
-		/** The input configuration of a batch inference job. */
+		/**
+		 * The input configuration of a batch inference job.
+		 * Required
+		 */
 		jobInput: BatchInferenceJobInput;
 
-		/** The output configuration parameters of a batch inference job. */
+		/**
+		 * The output configuration parameters of a batch inference job.
+		 * Required
+		 */
 		jobOutput: BatchInferenceJobOutput;
 		roleArn: string;
 	}
@@ -24,7 +30,10 @@ export namespace MyNS {
 	/** The input configuration of a batch inference job. */
 	export interface BatchInferenceJobInput {
 
-		/** The configuration details of an Amazon S3 input or output bucket. */
+		/**
+		 * The configuration details of an Amazon S3 input or output bucket.
+		 * Required
+		 */
 		s3DataSource: S3DataConfig;
 	}
 
@@ -39,7 +48,10 @@ export namespace MyNS {
 	/** The output configuration parameters of a batch inference job. */
 	export interface BatchInferenceJobOutput {
 
-		/** The configuration details of an Amazon S3 input or output bucket. */
+		/**
+		 * The configuration details of an Amazon S3 input or output bucket.
+		 * Required
+		 */
 		s3DataDestination: S3DataConfig;
 	}
 
@@ -97,7 +109,10 @@ export namespace MyNS {
 		jobName: string;
 		datasetArn: string;
 
-		/** Describes the data source that contains the data to upload to a dataset. */
+		/**
+		 * Describes the data source that contains the data to upload to a dataset.
+		 * Required
+		 */
 		dataSource: DataSource;
 		roleArn: string;
 	}

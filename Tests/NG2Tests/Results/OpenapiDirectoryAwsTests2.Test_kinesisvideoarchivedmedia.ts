@@ -101,7 +101,10 @@ export namespace MyNS {
 	export interface ClipFragmentSelector {
 		FragmentSelectorType: ClipFragmentSelectorType;
 
-		/** <p>The range of timestamps for which to return fragments.</p> <p>The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session. </p> */
+		/**
+		 * <p>The range of timestamps for which to return fragments.</p> <p>The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session. </p>
+		 * Required
+		 */
 		TimestampRange: ClipTimestampRange;
 	}
 
@@ -127,7 +130,10 @@ export namespace MyNS {
 	export interface FragmentSelector {
 		FragmentSelectorType: ClipFragmentSelectorType;
 
-		/** The range of timestamps for which to return fragments. */
+		/**
+		 * The range of timestamps for which to return fragments.
+		 * Required
+		 */
 		TimestampRange: TimestampRange;
 	}
 
@@ -135,7 +141,10 @@ export namespace MyNS {
 		StreamName?: string;
 		StreamARN?: string;
 
-		/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> */
+		/**
+		 * <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
+		 * Required
+		 */
 		ClipFragmentSelector: ClipFragmentSelector;
 	}
 
@@ -266,7 +275,10 @@ export namespace MyNS {
 		 */
 		StreamARN?: string;
 
-		/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> */
+		/**
+		 * <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
+		 * Required
+		 */
 		ClipFragmentSelector: GetClipPostBodyClipFragmentSelector;
 	}
 
@@ -388,6 +400,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve fragment media.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
@@ -396,6 +409,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of the numbers of fragments for which to retrieve media. You retrieve these values with <a>ListFragments</a>.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 1000
 		 */
@@ -406,6 +420,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the stream from which to retrieve a fragment list.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+

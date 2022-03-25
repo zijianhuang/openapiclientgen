@@ -194,6 +194,7 @@ export namespace MyNS {
 
 		/**
 		 * The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -243,7 +244,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The tags to add to the Elastic Inference Accelerator. */
+		/**
+		 * The tags to add to the Elastic Inference Accelerator.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

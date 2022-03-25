@@ -327,6 +327,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>Prometheus settings.</p>
+		 * Required
 		 */
 		Prometheus: Prometheus;
 	}
@@ -571,6 +572,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>Describes a configuration revision.</p>
+		 * Required
 		 */
 		LatestRevision: ConfigurationRevision;
 		Name: string;
@@ -711,6 +713,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>Prometheus settings.</p>
+		 * Required
 		 */
 		Prometheus: PrometheusInfo;
 	}
@@ -719,6 +722,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>Describes the setup to be used for Kafka broker nodes in the cluster.</p>
+		 * Required
 		 */
 		BrokerNodeGroupInfo: BrokerNodeGroupInfo;
 
@@ -830,6 +834,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
+		 * Required
 		 */
 		ConfigurationInfo: ConfigurationInfo;
 		CurrentVersion: string;
@@ -1215,6 +1220,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>Describes the setup to be used for Kafka broker nodes in the cluster.</p>
+		 * Required
 		 */
 		brokerNodeGroupInfo: CreateClusterPostBodyBrokerNodeGroupInfo;
 
@@ -1225,6 +1231,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the cluster.</p>
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -1252,6 +1259,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The version of Apache Kafka.</p>
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
@@ -1260,6 +1268,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The number of broker nodes in the cluster.</p>
+		 * Required
 		 * Minimum: 1
 		 * Maximum: 15
 		 */
@@ -1340,12 +1349,14 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the configuration.</p>
+		 * Required
 		 */
 		name: string;
 
 		/**
 		 * <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
 		 * When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+		 * Required
 		 */
 		serverProperties: string;
 	}
@@ -1354,6 +1365,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The key-value pair for the resource tag.</p>
+		 * Required
 		 */
 		tags: {[id: string]: string };
 	}
@@ -1362,11 +1374,13 @@ export namespace MyNS {
 
 		/**
 		 * <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+		 * Required
 		 */
 		currentVersion: string;
 
 		/**
 		 * <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
+		 * Required
 		 * Minimum: 1
 		 * Maximum: 15
 		 */
@@ -1377,11 +1391,13 @@ export namespace MyNS {
 
 		/**
 		 * <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+		 * Required
 		 */
 		currentVersion: string;
 
 		/**
 		 * <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
+		 * Required
 		 */
 		targetBrokerEBSVolumeInfo: Array<BrokerEBSVolumeInfo>;
 	}
@@ -1390,11 +1406,13 @@ export namespace MyNS {
 
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
+		 * Required
 		 */
 		configurationInfo: UpdateClusterConfigurationPutBodyConfigurationInfo;
 
 		/**
 		 * <p>The version of the cluster that needs to be updated.</p>
+		 * Required
 		 */
 		currentVersion: string;
 	}
@@ -1413,11 +1431,13 @@ export namespace MyNS {
 
 		/**
 		 * <p>Current cluster version.</p>
+		 * Required
 		 */
 		currentVersion: string;
 
 		/**
 		 * <p>Target Kafka version.</p>
+		 * Required
 		 */
 		targetKafkaVersion: string;
 	}
@@ -1431,6 +1451,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+		 * Required
 		 */
 		currentVersion: string;
 

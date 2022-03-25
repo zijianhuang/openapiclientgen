@@ -44,7 +44,10 @@ export namespace MyNS {
 
 	export interface DescribeAffectedEntitiesRequest {
 
-		/** The values to use to filter results from the <a>DescribeAffectedEntities</a> operation. */
+		/**
+		 * The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.
+		 * Required
+		 */
 		filter: EntityFilter;
 		locale?: string;
 		nextToken?: string;

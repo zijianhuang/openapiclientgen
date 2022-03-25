@@ -17,7 +17,10 @@ export namespace MyNS {
 	/** List of actions that have been created in the schedule. */
 	export interface BatchScheduleActionCreateResult {
 
-		/** Placeholder documentation for __listOfScheduleAction */
+		/**
+		 * Placeholder documentation for __listOfScheduleAction
+		 * Required
+		 */
 		ScheduleActions: Array<ScheduleAction>;
 	}
 
@@ -25,13 +28,22 @@ export namespace MyNS {
 	/** Contains information on a single schedule action. */
 	export interface ScheduleAction {
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		ActionName: string;
 
-		/** Holds the settings for a single schedule action. */
+		/**
+		 * Holds the settings for a single schedule action.
+		 * Required
+		 */
 		ScheduleActionSettings: ScheduleActionSettings;
 
-		/** Settings to specify when an action should occur. Only one of the options must be selected. */
+		/**
+		 * Settings to specify when an action should occur. Only one of the options must be selected.
+		 * Required
+		 */
 		ScheduleActionStartSettings: ScheduleActionStartSettings;
 	}
 
@@ -71,7 +83,10 @@ export namespace MyNS {
 	/** Settings for the action to insert a user-defined ID3 tag in each HLS segment */
 	export interface HlsId3SegmentTaggingScheduleActionSettings {
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		Tag: string;
 	}
 
@@ -79,7 +94,10 @@ export namespace MyNS {
 	/** Settings for the action to emit HLS metadata */
 	export interface HlsTimedMetadataScheduleActionSettings {
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		Id3: string;
 	}
 
@@ -87,7 +105,10 @@ export namespace MyNS {
 	/** Settings for the "switch input" action: to switch from ingesting one input to ingesting another input. */
 	export interface InputSwitchScheduleActionSettings {
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		InputAttachmentNameReference: string;
 
 		/** Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file. */
@@ -101,7 +122,10 @@ export namespace MyNS {
 	/** Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file. */
 	export interface InputClippingSettings {
 
-		/** Documentation update needed */
+		/**
+		 * Documentation update needed
+		 * Required
+		 */
 		InputTimecodeSource: InputClippingSettingsInputTimecodeSource;
 
 		/** Settings to identify the start of the clip. */
@@ -146,7 +170,10 @@ export namespace MyNS {
 	/** Settings for pausing a pipeline. */
 	export interface PipelinePauseStateSettings {
 
-		/** Pipeline ID */
+		/**
+		 * Pipeline ID
+		 * Required
+		 */
 		PipelineId: PipelinePauseStateSettingsPipelineId;
 	}
 
@@ -158,6 +185,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __longMin0Max4294967295
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 4294967295
 		 */
@@ -177,6 +205,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __longMin0Max4294967295
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 4294967295
 		 */
@@ -187,7 +216,10 @@ export namespace MyNS {
 	/** Settings for a SCTE-35 time_signal. */
 	export interface Scte35TimeSignalScheduleActionSettings {
 
-		/** Placeholder documentation for __listOfScte35Descriptor */
+		/**
+		 * Placeholder documentation for __listOfScte35Descriptor
+		 * Required
+		 */
 		Scte35Descriptors: Array<Scte35Descriptor>;
 	}
 
@@ -195,7 +227,10 @@ export namespace MyNS {
 	/** Holds one set of SCTE-35 Descriptor Settings. */
 	export interface Scte35Descriptor {
 
-		/** SCTE-35 Descriptor settings. */
+		/**
+		 * SCTE-35 Descriptor settings.
+		 * Required
+		 */
 		Scte35DescriptorSettings: Scte35DescriptorSettings;
 	}
 
@@ -203,7 +238,10 @@ export namespace MyNS {
 	/** SCTE-35 Descriptor settings. */
 	export interface Scte35DescriptorSettings {
 
-		/** Corresponds to SCTE-35 segmentation_descriptor. */
+		/**
+		 * Corresponds to SCTE-35 segmentation_descriptor.
+		 * Required
+		 */
 		SegmentationDescriptorScte35DescriptorSettings: Scte35SegmentationDescriptor;
 	}
 
@@ -221,7 +259,10 @@ export namespace MyNS {
 		 */
 		SegmentNum?: number;
 
-		/** Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel. */
+		/**
+		 * Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel.
+		 * Required
+		 */
 		SegmentationCancelIndicator: Scte35SegmentationDescriptorSegmentationCancelIndicator;
 
 		/**
@@ -233,6 +274,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __longMin0Max4294967295
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 4294967295
 		 */
@@ -281,16 +323,28 @@ export namespace MyNS {
 	/** Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare delivery restrictions, include this element and its four "restriction" flags. To declare that there are no restrictions, omit this element. */
 	export interface Scte35DeliveryRestrictions {
 
-		/** Corresponds to the archive_allowed parameter. A value of ARCHIVE_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them. */
+		/**
+		 * Corresponds to the archive_allowed parameter. A value of ARCHIVE_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
+		 * Required
+		 */
 		ArchiveAllowedFlag: Scte35DeliveryRestrictionsArchiveAllowedFlag;
 
-		/** Corresponds to the device_restrictions parameter in a segmentation_descriptor. If you include one of the "restriction" flags then you must include all four of them. */
+		/**
+		 * Corresponds to the device_restrictions parameter in a segmentation_descriptor. If you include one of the "restriction" flags then you must include all four of them.
+		 * Required
+		 */
 		DeviceRestrictions: Scte35DeliveryRestrictionsDeviceRestrictions;
 
-		/** Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them. */
+		/**
+		 * Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
+		 * Required
+		 */
 		NoRegionalBlackoutFlag: Scte35DeliveryRestrictionsNoRegionalBlackoutFlag;
 
-		/** Corresponds to the web_delivery_allowed_flag parameter. A value of WEB_DELIVERY_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them. */
+		/**
+		 * Corresponds to the web_delivery_allowed_flag parameter. A value of WEB_DELIVERY_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
+		 * Required
+		 */
 		WebDeliveryAllowedFlag: Scte35DeliveryRestrictionsWebDeliveryAllowedFlag;
 	}
 
@@ -332,7 +386,10 @@ export namespace MyNS {
 		 */
 		Height?: number;
 
-		/** Input Location */
+		/**
+		 * Input Location
+		 * Required
+		 */
 		Image: InputLocation;
 
 		/**
@@ -375,7 +432,10 @@ export namespace MyNS {
 		/** Placeholder documentation for __string */
 		PasswordParam?: string;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		Uri: string;
 
 		/** Placeholder documentation for __string */
@@ -418,7 +478,10 @@ export namespace MyNS {
 	/** Start time for the action. */
 	export interface FixedModeScheduleActionStartSettings {
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		Time: string;
 	}
 
@@ -426,10 +489,16 @@ export namespace MyNS {
 	/** Settings to specify if an action follows another. */
 	export interface FollowModeScheduleActionStartSettings {
 
-		/** Follow reference point. */
+		/**
+		 * Follow reference point.
+		 * Required
+		 */
 		FollowPoint: FollowModeScheduleActionStartSettingsFollowPoint;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		ReferenceActionName: string;
 	}
 
@@ -444,7 +513,10 @@ export namespace MyNS {
 	/** List of actions that have been deleted from the schedule. */
 	export interface BatchScheduleActionDeleteResult {
 
-		/** Placeholder documentation for __listOfScheduleAction */
+		/**
+		 * Placeholder documentation for __listOfScheduleAction
+		 * Required
+		 */
 		ScheduleActions: Array<ScheduleAction>;
 	}
 
@@ -606,7 +678,10 @@ export namespace MyNS {
 	/** Encoder Settings */
 	export interface EncoderSettings {
 
-		/** Placeholder documentation for __listOfAudioDescription */
+		/**
+		 * Placeholder documentation for __listOfAudioDescription
+		 * Required
+		 */
 		AudioDescriptions: Array<AudioDescription>;
 
 		/** Avail Blanking */
@@ -627,13 +702,22 @@ export namespace MyNS {
 		/** Nielsen Configuration */
 		NielsenConfiguration?: NielsenConfiguration;
 
-		/** Placeholder documentation for __listOfOutputGroup */
+		/**
+		 * Placeholder documentation for __listOfOutputGroup
+		 * Required
+		 */
 		OutputGroups: Array<OutputGroup>;
 
-		/** Timecode Config */
+		/**
+		 * Timecode Config
+		 * Required
+		 */
 		TimecodeConfig: TimecodeConfig;
 
-		/** Placeholder documentation for __listOfVideoDescription */
+		/**
+		 * Placeholder documentation for __listOfVideoDescription
+		 * Required
+		 */
 		VideoDescriptions: Array<VideoDescription>;
 	}
 
@@ -644,7 +728,10 @@ export namespace MyNS {
 		/** Audio Normalization Settings */
 		AudioNormalizationSettings?: AudioNormalizationSettings;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		AudioSelectorName: string;
 
 		/** Audio Type */
@@ -666,7 +753,10 @@ export namespace MyNS {
 		/** Audio Description Language Code Control */
 		LanguageCodeControl?: AudioDescriptionAudioTypeControl;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		Name: string;
 
 		/** Remix Settings */
@@ -914,7 +1004,10 @@ export namespace MyNS {
 	/** Remix Settings */
 	export interface RemixSettings {
 
-		/** Placeholder documentation for __listOfAudioChannelMapping */
+		/**
+		 * Placeholder documentation for __listOfAudioChannelMapping
+		 * Required
+		 */
 		ChannelMappings: Array<AudioChannelMapping>;
 
 		/**
@@ -936,11 +1029,15 @@ export namespace MyNS {
 	/** Audio Channel Mapping */
 	export interface AudioChannelMapping {
 
-		/** Placeholder documentation for __listOfInputChannelLevel */
+		/**
+		 * Placeholder documentation for __listOfInputChannelLevel
+		 * Required
+		 */
 		InputChannelLevels: Array<InputChannelLevel>;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max7
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 7
 		 */
@@ -953,6 +1050,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMinNegative60Max6
+		 * Required
 		 * Minimum: -60
 		 * Maximum: 6
 		 */
@@ -960,6 +1058,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin0Max15
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 15
 		 */
@@ -1062,7 +1161,10 @@ export namespace MyNS {
 	/** Caption Description */
 	export interface CaptionDescription {
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		CaptionSelectorName: string;
 
 		/** Caption Destination Settings */
@@ -1074,7 +1176,10 @@ export namespace MyNS {
 		/** Placeholder documentation for __string */
 		LanguageDescription?: string;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		Name: string;
 	}
 
@@ -1434,10 +1539,16 @@ export namespace MyNS {
 		 */
 		Name?: string;
 
-		/** Output Group Settings */
+		/**
+		 * Output Group Settings
+		 * Required
+		 */
 		OutputGroupSettings: OutputGroupSettings;
 
-		/** Placeholder documentation for __listOfOutput */
+		/**
+		 * Placeholder documentation for __listOfOutput
+		 * Required
+		 */
 		Outputs: Array<Output>;
 	}
 
@@ -1474,7 +1585,10 @@ export namespace MyNS {
 	/** Archive Group Settings */
 	export interface ArchiveGroupSettings {
 
-		/** Reference to an OutputDestination ID defined in the channel */
+		/**
+		 * Reference to an OutputDestination ID defined in the channel
+		 * Required
+		 */
 		Destination: OutputLocationRef;
 
 		/**
@@ -1496,7 +1610,10 @@ export namespace MyNS {
 	/** Frame Capture Group Settings */
 	export interface FrameCaptureGroupSettings {
 
-		/** Reference to an OutputDestination ID defined in the channel */
+		/**
+		 * Reference to an OutputDestination ID defined in the channel
+		 * Required
+		 */
 		Destination: OutputLocationRef;
 	}
 
@@ -1538,7 +1655,10 @@ export namespace MyNS {
 		 */
 		ConstantIv?: string;
 
-		/** Reference to an OutputDestination ID defined in the channel */
+		/**
+		 * Reference to an OutputDestination ID defined in the channel
+		 * Required
+		 */
 		Destination: OutputLocationRef;
 
 		/** Hls Directory Structure */
@@ -1664,6 +1784,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin1Max4
+		 * Required
 		 * Minimum: 1
 		 * Maximum: 4
 		 */
@@ -1671,6 +1792,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __stringMin3Max3
+		 * Required
 		 * Max length: 3
 		 * Min length: 3
 		 */
@@ -1678,6 +1800,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __stringMin1
+		 * Required
 		 * Min length: 1
 		 */
 		LanguageDescription: string;
@@ -1876,6 +1999,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __stringMin32Max32
+		 * Required
 		 * Max length: 32
 		 * Min length: 32
 		 */
@@ -1900,7 +2024,10 @@ export namespace MyNS {
 	/** Media Package Group Settings */
 	export interface MediaPackageGroupSettings {
 
-		/** Reference to an OutputDestination ID defined in the channel */
+		/**
+		 * Reference to an OutputDestination ID defined in the channel
+		 * Required
+		 */
 		Destination: OutputLocationRef;
 	}
 
@@ -1923,7 +2050,10 @@ export namespace MyNS {
 		 */
 		ConnectionRetryInterval?: number;
 
-		/** Reference to an OutputDestination ID defined in the channel */
+		/**
+		 * Reference to an OutputDestination ID defined in the channel
+		 * Required
+		 */
 		Destination: OutputLocationRef;
 
 		/** Placeholder documentation for __string */
@@ -2075,7 +2205,10 @@ export namespace MyNS {
 		 */
 		OutputName?: string;
 
-		/** Output Settings */
+		/**
+		 * Output Settings
+		 * Required
+		 */
 		OutputSettings: OutputSettings;
 
 		/** Placeholder documentation for __string */
@@ -2115,7 +2248,10 @@ export namespace MyNS {
 	/** Archive Output Settings */
 	export interface ArchiveOutputSettings {
 
-		/** Archive Container Settings */
+		/**
+		 * Archive Container Settings
+		 * Required
+		 */
 		ContainerSettings: ArchiveContainerSettings;
 
 		/** Placeholder documentation for __string */
@@ -2323,6 +2459,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65536
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 65536
 		 */
@@ -2330,6 +2467,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __stringMin1Max256
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -2415,7 +2553,10 @@ export namespace MyNS {
 		/** Hls H265 Packaging Type */
 		H265PackagingType?: HlsOutputSettingsH265PackagingType;
 
-		/** Hls Settings */
+		/**
+		 * Hls Settings
+		 * Required
+		 */
 		HlsSettings: HlsSettings;
 
 		/**
@@ -2486,7 +2627,10 @@ export namespace MyNS {
 		/** Placeholder documentation for __string */
 		AudioRenditionSets?: string;
 
-		/** Settings information for the .m3u8 container */
+		/**
+		 * Settings information for the .m3u8 container
+		 * Required
+		 */
 		M3u8Settings: M3u8Settings;
 	}
 
@@ -2589,7 +2733,10 @@ export namespace MyNS {
 	/** Multiplex Output Settings */
 	export interface MultiplexOutputSettings {
 
-		/** Reference to an OutputDestination ID defined in the channel */
+		/**
+		 * Reference to an OutputDestination ID defined in the channel
+		 * Required
+		 */
 		Destination: OutputLocationRef;
 	}
 
@@ -2606,7 +2753,10 @@ export namespace MyNS {
 		 */
 		ConnectionRetryInterval?: number;
 
-		/** Reference to an OutputDestination ID defined in the channel */
+		/**
+		 * Reference to an OutputDestination ID defined in the channel
+		 * Required
+		 */
 		Destination: OutputLocationRef;
 
 		/**
@@ -2627,10 +2777,16 @@ export namespace MyNS {
 		 */
 		BufferMsec?: number;
 
-		/** Udp Container Settings */
+		/**
+		 * Udp Container Settings
+		 * Required
+		 */
 		ContainerSettings: UdpContainerSettings;
 
-		/** Reference to an OutputDestination ID defined in the channel */
+		/**
+		 * Reference to an OutputDestination ID defined in the channel
+		 * Required
+		 */
 		Destination: OutputLocationRef;
 
 		/** Fec Output Settings */
@@ -2673,7 +2829,10 @@ export namespace MyNS {
 	/** Timecode Config */
 	export interface TimecodeConfig {
 
-		/** Timecode Config Source */
+		/**
+		 * Timecode Config Source
+		 * Required
+		 */
 		Source: TimecodeConfigSource;
 
 		/**
@@ -2696,7 +2855,10 @@ export namespace MyNS {
 		/** Placeholder documentation for __integer */
 		Height?: number;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		Name: string;
 
 		/** Video Description Respond To Afd */
@@ -2736,6 +2898,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin1Max3600000
+		 * Required
 		 * Minimum: 1
 		 * Maximum: 3600000
 		 */
@@ -3049,6 +3212,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin1Max3003
+		 * Required
 		 * Minimum: 1
 		 * Maximum: 3003
 		 */
@@ -3056,6 +3220,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin1
+		 * Required
 		 * Minimum: 1
 		 */
 		FramerateNumerator: number;
@@ -3217,7 +3382,10 @@ export namespace MyNS {
 		 */
 		InputPreference?: AutomaticInputFailoverSettingsInputPreference;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		SecondaryInputId: string;
 	}
 
@@ -3268,6 +3436,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __stringMin1
+		 * Required
 		 * Min length: 1
 		 */
 		Name: string;
@@ -3294,7 +3463,10 @@ export namespace MyNS {
 	/** Audio Language Selection */
 	export interface AudioLanguageSelection {
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		LanguageCode: string;
 
 		/** Audio Language Selection Policy */
@@ -3309,6 +3481,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin0Max8191
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 8191
 		 */
@@ -3319,7 +3492,10 @@ export namespace MyNS {
 	/** Audio Track Selection */
 	export interface AudioTrackSelection {
 
-		/** Placeholder documentation for __listOfAudioTrack */
+		/**
+		 * Placeholder documentation for __listOfAudioTrack
+		 * Required
+		 */
 		Tracks: Array<AudioTrack>;
 	}
 
@@ -3329,6 +3505,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin1
+		 * Required
 		 * Minimum: 1
 		 */
 		Track: number;
@@ -3343,6 +3520,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __stringMin1
+		 * Required
 		 * Min length: 1
 		 */
 		Name: string;
@@ -3896,6 +4074,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin1000000Max100000000
+		 * Required
 		 * Minimum: 1000000
 		 * Maximum: 100000000
 		 */
@@ -3903,6 +4082,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
@@ -3958,6 +4138,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
@@ -3978,12 +4159,14 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __stringMax256
+		 * Required
 		 * Max length: 256
 		 */
 		ProviderName: string;
 
 		/**
 		 * Placeholder documentation for __stringMax256
+		 * Required
 		 * Max length: 256
 		 */
 		ServiceName: string;
@@ -5395,7 +5578,10 @@ export namespace MyNS {
 	/** A list of schedule actions to create (in a request) or that have been created (in a response). */
 	export interface BatchScheduleActionCreateRequest {
 
-		/** Placeholder documentation for __listOfScheduleAction */
+		/**
+		 * Placeholder documentation for __listOfScheduleAction
+		 * Required
+		 */
 		ScheduleActions: Array<ScheduleAction>;
 	}
 
@@ -5403,7 +5589,10 @@ export namespace MyNS {
 	/** A list of schedule actions to delete. */
 	export interface BatchScheduleActionDeleteRequest {
 
-		/** Placeholder documentation for __listOf__string */
+		/**
+		 * Placeholder documentation for __listOf__string
+		 * Required
+		 */
 		ActionNames: Array<string>;
 	}
 
@@ -5508,7 +5697,10 @@ export namespace MyNS {
 		/** Placeholder documentation for __listOf__string */
 		SecurityGroupIds?: Array<string>;
 
-		/** Placeholder documentation for __listOf__string */
+		/**
+		 * Placeholder documentation for __listOf__string
+		 * Required
+		 */
 		SubnetIds: Array<string>;
 	}
 
@@ -5570,13 +5762,22 @@ export namespace MyNS {
 	/** A request to create a program in a multiplex. */
 	export interface CreateMultiplexProgramRequest {
 
-		/** Multiplex Program settings configuration. */
+		/**
+		 * Multiplex Program settings configuration.
+		 * Required
+		 */
 		MultiplexProgramSettings: MultiplexProgramSettings;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		ProgramName: string;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		RequestId: string;
 	}
 
@@ -5584,16 +5785,28 @@ export namespace MyNS {
 	/** A request to create a multiplex. */
 	export interface CreateMultiplexRequest {
 
-		/** Placeholder documentation for __listOf__string */
+		/**
+		 * Placeholder documentation for __listOf__string
+		 * Required
+		 */
 		AvailabilityZones: Array<string>;
 
-		/** Contains configuration for a Multiplex event */
+		/**
+		 * Contains configuration for a Multiplex event
+		 * Required
+		 */
 		MultiplexSettings: MultiplexSettings;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		Name: string;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		RequestId: string;
 
 		/** Placeholder documentation for Tags */
@@ -6347,6 +6560,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin1
+		 * Required
 		 * Minimum: 1
 		 */
 		Count: number;
@@ -6486,7 +6700,10 @@ export namespace MyNS {
 	/** Channel class that the channel should be updated to. */
 	export interface UpdateChannelClassRequest {
 
-		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
+		/**
+		 * A standard channel has two encoding pipelines and a single pipeline channel only has one.
+		 * Required
+		 */
 		ChannelClass: ChannelChannelClass;
 
 		/** Placeholder documentation for __listOfOutputDestination */
@@ -7255,16 +7472,28 @@ export namespace MyNS {
 
 	export interface CreateMultiplexPostBody {
 
-		/** Placeholder documentation for __listOf__string */
+		/**
+		 * Placeholder documentation for __listOf__string
+		 * Required
+		 */
 		availabilityZones: Array<string>;
 
-		/** Contains configuration for a Multiplex event */
+		/**
+		 * Contains configuration for a Multiplex event
+		 * Required
+		 */
 		multiplexSettings: CreateMultiplexPostBodyMultiplexSettings;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		name: string;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		requestId: string;
 
 		/** Placeholder documentation for Tags */
@@ -7304,13 +7533,22 @@ export namespace MyNS {
 
 	export interface CreateMultiplexProgramPostBody {
 
-		/** Multiplex Program settings configuration. */
+		/**
+		 * Multiplex Program settings configuration.
+		 * Required
+		 */
 		multiplexProgramSettings: CreateMultiplexProgramPostBodyMultiplexProgramSettings;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		programName: string;
 
-		/** Placeholder documentation for __string */
+		/**
+		 * Placeholder documentation for __string
+		 * Required
+		 */
 		requestId: string;
 	}
 
@@ -7548,6 +7786,7 @@ export namespace MyNS {
 
 		/**
 		 * Placeholder documentation for __integerMin1
+		 * Required
 		 * Minimum: 1
 		 */
 		count: number;
@@ -7567,7 +7806,10 @@ export namespace MyNS {
 
 	export interface UpdateChannelClassPutBody {
 
-		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
+		/**
+		 * A standard channel has two encoding pipelines and a single pipeline channel only has one.
+		 * Required
+		 */
 		channelClass: ChannelChannelClass;
 
 		/** Placeholder documentation for __listOfOutputDestination */

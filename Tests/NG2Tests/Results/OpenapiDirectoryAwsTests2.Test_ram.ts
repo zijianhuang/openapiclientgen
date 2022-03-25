@@ -718,7 +718,10 @@ export namespace MyNS {
 
 	export interface AcceptResourceShareInvitationPostBody {
 
-		/** The Amazon Resource Name (ARN) of the invitation. */
+		/**
+		 * The Amazon Resource Name (ARN) of the invitation.
+		 * Required
+		 */
 		resourceShareInvitationArn: string;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
@@ -727,7 +730,10 @@ export namespace MyNS {
 
 	export interface AssociateResourceSharePostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource share. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource share.
+		 * Required
+		 */
 		resourceShareArn: string;
 
 		/** The Amazon Resource Names (ARN) of the resources. */
@@ -742,10 +748,16 @@ export namespace MyNS {
 
 	export interface AssociateResourceSharePermissionPostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource share. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource share.
+		 * Required
+		 */
 		resourceShareArn: string;
 
-		/** The ARN of the AWS RAM permission to associate with the resource share. */
+		/**
+		 * The ARN of the AWS RAM permission to associate with the resource share.
+		 * Required
+		 */
 		permissionArn: string;
 
 		/** Indicates whether the permission should replace the permissions that are currently associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. */
@@ -757,7 +769,10 @@ export namespace MyNS {
 
 	export interface CreateResourceSharePostBody {
 
-		/** The name of the resource share. */
+		/**
+		 * The name of the resource share.
+		 * Required
+		 */
 		name: string;
 
 		/** The Amazon Resource Names (ARN) of the resources to associate with the resource share. */
@@ -781,7 +796,10 @@ export namespace MyNS {
 
 	export interface DisassociateResourceSharePostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource share. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource share.
+		 * Required
+		 */
 		resourceShareArn: string;
 
 		/** The Amazon Resource Names (ARNs) of the resources. */
@@ -796,10 +814,16 @@ export namespace MyNS {
 
 	export interface DisassociateResourceSharePermissionPostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource share. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource share.
+		 * Required
+		 */
 		resourceShareArn: string;
 
-		/** The ARN of the permission to disassociate from the resource share. */
+		/**
+		 * The ARN of the permission to disassociate from the resource share.
+		 * Required
+		 */
 		permissionArn: string;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
@@ -808,7 +832,10 @@ export namespace MyNS {
 
 	export interface GetPermissionPostBody {
 
-		/** The ARN of the permission. */
+		/**
+		 * The ARN of the permission.
+		 * Required
+		 */
 		permissionArn: string;
 
 		/** The identifier for the version of the permission. */
@@ -817,7 +844,10 @@ export namespace MyNS {
 
 	export interface GetResourcePoliciesPostBody {
 
-		/** The Amazon Resource Names (ARN) of the resources. */
+		/**
+		 * The Amazon Resource Names (ARN) of the resources.
+		 * Required
+		 */
 		resourceArns: Array<string>;
 
 		/** The principal. */
@@ -836,7 +866,10 @@ export namespace MyNS {
 
 	export interface GetResourceShareAssociationsPostBody {
 
-		/** The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the specified resource share. */
+		/**
+		 * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the specified resource share.
+		 * Required
+		 */
 		associationType: ResourceShareAssociationAssociationType;
 
 		/** The Amazon Resource Names (ARN) of the resource shares. */
@@ -889,7 +922,10 @@ export namespace MyNS {
 		/** The status of the resource share. */
 		resourceShareStatus?: ResourceShareStatus;
 
-		/** The type of owner. */
+		/**
+		 * The type of owner.
+		 * Required
+		 */
 		resourceOwner: GetResourceSharesPostBodyResourceOwner;
 
 		/** The name of the resource share. */
@@ -913,7 +949,10 @@ export namespace MyNS {
 
 	export interface ListPendingInvitationResourcesPostBody {
 
-		/** The Amazon Resource Name (ARN) of the invitation. */
+		/**
+		 * The Amazon Resource Name (ARN) of the invitation.
+		 * Required
+		 */
 		resourceShareInvitationArn: string;
 
 		/** The token for the next page of results. */
@@ -945,7 +984,10 @@ export namespace MyNS {
 
 	export interface ListPrincipalsPostBody {
 
-		/** The type of owner. */
+		/**
+		 * The type of owner.
+		 * Required
+		 */
 		resourceOwner: ListPrincipalsPostBodyResourceOwner;
 
 		/** The Amazon Resource Name (ARN) of the resource. */
@@ -975,7 +1017,10 @@ export namespace MyNS {
 
 	export interface ListResourceSharePermissionsPostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource share. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource share.
+		 * Required
+		 */
 		resourceShareArn: string;
 
 		/** The token for the next page of results. */
@@ -1004,7 +1049,10 @@ export namespace MyNS {
 
 	export interface ListResourcesPostBody {
 
-		/** The type of owner. */
+		/**
+		 * The type of owner.
+		 * Required
+		 */
 		resourceOwner: ListResourcesPostBodyResourceOwner;
 
 		/** The principal. */
@@ -1034,7 +1082,10 @@ export namespace MyNS {
 
 	export interface RejectResourceShareInvitationPostBody {
 
-		/** The Amazon Resource Name (ARN) of the invitation. */
+		/**
+		 * The Amazon Resource Name (ARN) of the invitation.
+		 * Required
+		 */
 		resourceShareInvitationArn: string;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
@@ -1043,25 +1094,40 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource share. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource share.
+		 * Required
+		 */
 		resourceShareArn: string;
 
-		/** One or more tags. */
+		/**
+		 * One or more tags.
+		 * Required
+		 */
 		tags: Array<Tag>;
 	}
 
 	export interface UntagResourcePostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource share. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource share.
+		 * Required
+		 */
 		resourceShareArn: string;
 
-		/** The tag keys of the tags to remove. */
+		/**
+		 * The tag keys of the tags to remove.
+		 * Required
+		 */
 		tagKeys: Array<string>;
 	}
 
 	export interface UpdateResourceSharePostBody {
 
-		/** The Amazon Resource Name (ARN) of the resource share. */
+		/**
+		 * The Amazon Resource Name (ARN) of the resource share.
+		 * Required
+		 */
 		resourceShareArn: string;
 
 		/** The name of the resource share. */

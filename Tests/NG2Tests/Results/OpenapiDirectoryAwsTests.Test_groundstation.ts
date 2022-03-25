@@ -31,7 +31,10 @@ export namespace MyNS {
 	/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
 	export interface AntennaDownlinkConfig {
 
-		/** Object that describes a spectral <code>Config</code>. */
+		/**
+		 * Object that describes a spectral <code>Config</code>.
+		 * Required
+		 */
 		spectrumConfig: SpectrumConfig;
 	}
 
@@ -39,10 +42,16 @@ export namespace MyNS {
 	/** Object that describes a spectral <code>Config</code>. */
 	export interface SpectrumConfig {
 
-		/** Object that describes the frequency bandwidth. */
+		/**
+		 * Object that describes the frequency bandwidth.
+		 * Required
+		 */
 		bandwidth: FrequencyBandwidth;
 
-		/** Object that describes the frequency. */
+		/**
+		 * Object that describes the frequency.
+		 * Required
+		 */
 		centerFrequency: Frequency;
 		polarization?: SpectrumConfigPolarization;
 	}
@@ -69,13 +78,22 @@ export namespace MyNS {
 	/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
 	export interface AntennaDownlinkDemodDecodeConfig {
 
-		/** Information about the decode <code>Config</code>. */
+		/**
+		 * Information about the decode <code>Config</code>.
+		 * Required
+		 */
 		decodeConfig: DecodeConfig;
 
-		/** Information about the demodulation <code>Config</code>. */
+		/**
+		 * Information about the demodulation <code>Config</code>.
+		 * Required
+		 */
 		demodulationConfig: DemodulationConfig;
 
-		/** Object that describes a spectral <code>Config</code>. */
+		/**
+		 * Object that describes a spectral <code>Config</code>.
+		 * Required
+		 */
 		spectrumConfig: SpectrumConfig;
 	}
 
@@ -95,10 +113,16 @@ export namespace MyNS {
 	/** Information about the uplink <code>Config</code> of an antenna. */
 	export interface AntennaUplinkConfig {
 
-		/** Information about the uplink spectral <code>Config</code>. */
+		/**
+		 * Information about the uplink spectral <code>Config</code>.
+		 * Required
+		 */
 		spectrumConfig: UplinkSpectrumConfig;
 
-		/** Object that represents EIRP. */
+		/**
+		 * Object that represents EIRP.
+		 * Required
+		 */
 		targetEirp: Eirp;
 	}
 
@@ -106,7 +130,10 @@ export namespace MyNS {
 	/** Information about the uplink spectral <code>Config</code>. */
 	export interface UplinkSpectrumConfig {
 
-		/** Object that describes the frequency. */
+		/**
+		 * Object that describes the frequency.
+		 * Required
+		 */
 		centerFrequency: Frequency;
 		polarization?: SpectrumConfigPolarization;
 	}
@@ -234,7 +261,10 @@ export namespace MyNS {
 	export interface GetConfigResponse {
 		configArn: string;
 
-		/** <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p> */
+		/**
+		 * <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+		 * Required
+		 */
 		configData: ConfigTypeData;
 		configId: string;
 		configType?: GetConfigResponseConfigType;
@@ -449,7 +479,10 @@ export namespace MyNS {
 	/** <p/> */
 	export interface CreateConfigRequest {
 
-		/** <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p> */
+		/**
+		 * <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+		 * Required
+		 */
 		configData: ConfigTypeData;
 		name: string;
 		tags?: TagsMap;
@@ -598,7 +631,10 @@ export namespace MyNS {
 	/** <p/> */
 	export interface UpdateConfigRequest {
 
-		/** <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p> */
+		/**
+		 * <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+		 * Required
+		 */
 		configData: ConfigTypeData;
 		name: string;
 	}
@@ -878,11 +914,15 @@ export namespace MyNS {
 
 	export interface CreateConfigPostBody {
 
-		/** <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p> */
+		/**
+		 * <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+		 * Required
+		 */
 		configData: CreateConfigPostBodyConfigData;
 
 		/**
 		 * Name of a <code>Config</code>.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
@@ -916,7 +956,10 @@ export namespace MyNS {
 
 	export interface CreateDataflowEndpointGroupPostBody {
 
-		/** Endpoint details of each endpoint in the dataflow endpoint group. */
+		/**
+		 * Endpoint details of each endpoint in the dataflow endpoint group.
+		 * Required
+		 */
 		endpointDetails: Array<EndpointDetails>;
 
 		/** Tags of a dataflow endpoint group. */
@@ -939,11 +982,15 @@ export namespace MyNS {
 		 */
 		contactPrePassDurationSeconds?: number;
 
-		/** A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>. */
+		/**
+		 * A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.
+		 * Required
+		 */
 		dataflowEdges: Array<Array<string>>;
 
 		/**
 		 * Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.
+		 * Required
 		 * Minimum: 1
 		 * Maximum: 21600
 		 */
@@ -951,6 +998,7 @@ export namespace MyNS {
 
 		/**
 		 * Name of a mission profile.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
@@ -960,7 +1008,10 @@ export namespace MyNS {
 		/** Tags assigned to a mission profile. */
 		tags?: {[id: string]: string };
 
-		/** ARN of a tracking <code>Config</code>. */
+		/**
+		 * ARN of a tracking <code>Config</code>.
+		 * Required
+		 */
 		trackingConfigArn: string;
 	}
 
@@ -972,11 +1023,15 @@ export namespace MyNS {
 
 	export interface UpdateConfigPutBody {
 
-		/** <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p> */
+		/**
+		 * <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+		 * Required
+		 */
 		configData: UpdateConfigPutBodyConfigData;
 
 		/**
 		 * Name of a <code>Config</code>.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
@@ -1045,16 +1100,25 @@ export namespace MyNS {
 
 	export interface GetMinuteUsagePostBody {
 
-		/** The month being requested, with a value of 1-12. */
+		/**
+		 * The month being requested, with a value of 1-12.
+		 * Required
+		 */
 		month: number;
 
-		/** The year being requested, in the format of YYYY. */
+		/**
+		 * The year being requested, in the format of YYYY.
+		 * Required
+		 */
 		year: number;
 	}
 
 	export interface ListContactsPostBody {
 
-		/** End time of a contact. */
+		/**
+		 * End time of a contact.
+		 * Required
+		 */
 		endTime: Date;
 
 		/** Name of a ground station. */
@@ -1072,34 +1136,58 @@ export namespace MyNS {
 		/** ARN of a satellite. */
 		satelliteArn?: string;
 
-		/** Start time of a contact. */
+		/**
+		 * Start time of a contact.
+		 * Required
+		 */
 		startTime: Date;
 
-		/** Status of a contact reservation. */
+		/**
+		 * Status of a contact reservation.
+		 * Required
+		 */
 		statusList: Array<ContactStatus>;
 	}
 
 	export interface TagResourcePostBody {
 
-		/** Tags assigned to a resource. */
+		/**
+		 * Tags assigned to a resource.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
 	export interface ReserveContactPostBody {
 
-		/** End time of a contact. */
+		/**
+		 * End time of a contact.
+		 * Required
+		 */
 		endTime: Date;
 
-		/** Name of a ground station. */
+		/**
+		 * Name of a ground station.
+		 * Required
+		 */
 		groundStation: string;
 
-		/** ARN of a mission profile. */
+		/**
+		 * ARN of a mission profile.
+		 * Required
+		 */
 		missionProfileArn: string;
 
-		/** ARN of a satellite */
+		/**
+		 * ARN of a satellite
+		 * Required
+		 */
 		satelliteArn: string;
 
-		/** Start time of a contact. */
+		/**
+		 * Start time of a contact.
+		 * Required
+		 */
 		startTime: Date;
 
 		/** Tags assigned to a contact. */

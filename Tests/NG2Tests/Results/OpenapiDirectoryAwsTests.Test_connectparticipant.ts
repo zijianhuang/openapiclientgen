@@ -179,6 +179,7 @@ export namespace MyNS {
 
 		/**
 		 * Type of connection information required.
+		 * Required
 		 * Minimum items: 1
 		 */
 		Type: Array<ConnectionType>;
@@ -236,6 +237,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The content type of the request. Supported types are:</p> <ul> <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li> </ul>
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 */
@@ -259,6 +261,7 @@ export namespace MyNS {
 
 		/**
 		 * The type of the content. Supported types are text/plain.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 */
@@ -266,6 +269,7 @@ export namespace MyNS {
 
 		/**
 		 * The content of the message.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 */

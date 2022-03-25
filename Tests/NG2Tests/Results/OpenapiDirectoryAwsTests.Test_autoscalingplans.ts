@@ -9,7 +9,10 @@ export namespace MyNS {
 	export interface CreateScalingPlanRequest {
 		ScalingPlanName: string;
 
-		/** Represents an application source. */
+		/**
+		 * Represents an application source.
+		 * Required
+		 */
 		ApplicationSource: ApplicationSource;
 		ScalingInstructions: Array<ScalingInstruction>;
 	}
@@ -202,7 +205,10 @@ export namespace MyNS {
 		ScalingPlanName: string;
 		ScalingPlanVersion: number;
 
-		/** Represents an application source. */
+		/**
+		 * Represents an application source.
+		 * Required
+		 */
 		ApplicationSource: ApplicationSource;
 		ScalingInstructions: Array<ScalingInstruction>;
 		StatusCode: ScalingPlanStatusCode;

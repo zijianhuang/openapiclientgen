@@ -503,10 +503,16 @@ export namespace MyNS {
 
 	export interface CreateApplicationPostBody {
 
-		/** <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p> */
+		/**
+		 * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+		 * Required
+		 */
 		author: string;
 
-		/** <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p> */
+		/**
+		 * <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+		 * Required
+		 */
 		description: string;
 
 		/** A URL with more information about the application, for example the location of your GitHub repository for the application. */
@@ -524,7 +530,10 @@ export namespace MyNS {
 		/** <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p> */
 		licenseUrl?: string;
 
-		/** <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p> */
+		/**
+		 * <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+		 * Required
+		 */
 		name: string;
 
 		/**
@@ -655,6 +664,7 @@ export namespace MyNS {
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
+		 * Required
 		 */
 		stackName: string;
 
@@ -706,13 +716,19 @@ export namespace MyNS {
 
 	export interface PutApplicationPolicyPutBody {
 
-		/** An array of policy statements applied to the application. */
+		/**
+		 * An array of policy statements applied to the application.
+		 * Required
+		 */
 		statements: Array<ApplicationPolicyStatement>;
 	}
 
 	export interface UnshareApplicationPostBody {
 
-		/** The AWS Organization ID to unshare the application from. */
+		/**
+		 * The AWS Organization ID to unshare the application from.
+		 * Required
+		 */
 		organizationId: string;
 	}
 

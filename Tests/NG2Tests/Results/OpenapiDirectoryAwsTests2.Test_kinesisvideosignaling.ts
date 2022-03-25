@@ -80,6 +80,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -110,6 +111,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the signaling channel by which Alexa and the master peer communicate.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -118,6 +120,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier for the sender client.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
@@ -126,6 +129,7 @@ export namespace MyNS {
 
 		/**
 		 * The base64-encoded SDP offer content.
+		 * Required
 		 * Max length: 10000
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9+/=]+

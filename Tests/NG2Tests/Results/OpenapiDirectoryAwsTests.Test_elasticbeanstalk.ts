@@ -990,7 +990,10 @@ export namespace MyNS {
 		PlatformName: string;
 		PlatformVersion: string;
 
-		/** The bucket and key of an item stored in Amazon S3. */
+		/**
+		 * The bucket and key of an item stored in Amazon S3.
+		 * Required
+		 */
 		PlatformDefinitionBundle: S3Location;
 		EnvironmentName?: string;
 		OptionSettings?: Array<ConfigurationOptionSetting>;
@@ -1233,7 +1236,10 @@ export namespace MyNS {
 	export interface UpdateApplicationResourceLifecycleMessage {
 		ApplicationName: string;
 
-		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
+		/**
+		 * The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.
+		 * Required
+		 */
 		ResourceLifecycleConfig: ApplicationResourceLifecycleConfig;
 	}
 

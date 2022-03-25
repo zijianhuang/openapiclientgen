@@ -227,7 +227,10 @@ export namespace MyNS {
 
 	export interface UploadDocumentsPostBody {
 
-		/** A batch of documents formatted in JSON or HTML. */
+		/**
+		 * A batch of documents formatted in JSON or HTML.
+		 * Required
+		 */
 		documents: string;
 	}
 

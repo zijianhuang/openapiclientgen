@@ -293,6 +293,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the CloudWatch metric to which the monitored log information should be published. For example, you may publish to a metric called ErrorCount.
+		 * Required
 		 * Max length: 255
 		 * Pattern: [^:*$]*
 		 */
@@ -301,6 +302,7 @@ export namespace MyNS {
 
 		/**
 		 * The value to publish to the CloudWatch metric. For example, if you're counting the occurrences of a term like "Error", the value is "1" for each occurrence. If you're counting the bytes transferred, the value is the value in the log event.
+		 * Required
 		 * Max length: 100
 		 */
 		metricValue: string;
@@ -679,6 +681,7 @@ export namespace MyNS {
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 0
 		 */
@@ -711,7 +714,10 @@ export namespace MyNS {
 	export interface PutRetentionPolicyRequest {
 		logGroupName: string;
 
-		/** The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653. */
+		/**
+		 * The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.
+		 * Required
+		 */
 		retentionInDays: number;
 	}
 
@@ -721,6 +727,7 @@ export namespace MyNS {
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 0
 		 */
@@ -780,6 +787,7 @@ export namespace MyNS {
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 0
 		 */

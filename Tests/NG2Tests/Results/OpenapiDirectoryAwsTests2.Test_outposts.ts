@@ -229,6 +229,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the site.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: os-[a-f0-9]{17}
@@ -359,6 +360,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the site.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: os-[a-f0-9]{17}

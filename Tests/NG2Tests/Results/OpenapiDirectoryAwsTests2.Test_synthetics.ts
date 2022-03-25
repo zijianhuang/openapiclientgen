@@ -245,12 +245,18 @@ export namespace MyNS {
 	export interface CreateCanaryRequest {
 		Name: string;
 
-		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
+		/**
+		 * Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.
+		 * Required
+		 */
 		Code: CanaryCodeInput;
 		ArtifactS3Location: string;
 		ExecutionRoleArn: string;
 
-		/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
+		/**
+		 * This structure specifies how often a canary is to make runs and the date and time when it should stop making runs.
+		 * Required
+		 */
 		Schedule: CanaryScheduleInput;
 
 		/** A structure that contains input information for a canary run. */
@@ -470,17 +476,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
+		 * Required
 		 * Max length: 21
 		 * Min length: 1
 		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name: string;
 
-		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
+		/**
+		 * Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.
+		 * Required
+		 */
 		Code: CreateCanaryPostBodyCode;
 
 		/**
 		 * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 */
@@ -488,11 +499,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
+		 * Required
 		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
 		 */
 		ExecutionRoleArn: string;
 
-		/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
+		/**
+		 * This structure specifies how often a canary is to make runs and the date and time when it should stop making runs.
+		 * Required
+		 */
 		Schedule: CreateCanaryPostBodySchedule;
 
 		/** A structure that contains input information for a canary run. */
@@ -514,6 +529,7 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 */
@@ -680,7 +696,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The list of key-value pairs to associate with the canary. */
+		/**
+		 * The list of key-value pairs to associate with the canary.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 

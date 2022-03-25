@@ -566,7 +566,10 @@ export namespace MyNS {
 
 	export interface CreateBackupPlanInput {
 
-		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
+		/**
+		 * Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
+		 * Required
+		 */
 		BackupPlan: BackupPlanInput;
 		BackupPlanTags?: Tags;
 		CreatorRequestId?: string;
@@ -574,7 +577,10 @@ export namespace MyNS {
 
 	export interface CreateBackupSelectionInput {
 
-		/** Used to specify a set of resources to a backup plan. */
+		/**
+		 * Used to specify a set of resources to a backup plan.
+		 * Required
+		 */
 		BackupSelection: BackupSelection;
 		CreatorRequestId?: string;
 	}
@@ -745,7 +751,10 @@ export namespace MyNS {
 
 	export interface UpdateBackupPlanInput {
 
-		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
+		/**
+		 * Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
+		 * Required
+		 */
 		BackupPlan: BackupPlanInput;
 	}
 
@@ -1305,7 +1314,10 @@ export namespace MyNS {
 
 	export interface CreateBackupPlanPutBody {
 
-		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
+		/**
+		 * Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
+		 * Required
+		 */
 		BackupPlan: CreateBackupPlanPutBodyBackupPlan;
 
 		/** To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan. */
@@ -1322,7 +1334,10 @@ export namespace MyNS {
 
 	export interface CreateBackupSelectionPutBody {
 
-		/** Used to specify a set of resources to a backup plan. */
+		/**
+		 * Used to specify a set of resources to a backup plan.
+		 * Required
+		 */
 		BackupSelection: CreateBackupSelectionPutBodyBackupSelection;
 
 		/** A unique string that identifies the request and allows failed requests to be retried without the risk of executing the operation twice. */
@@ -1350,7 +1365,10 @@ export namespace MyNS {
 
 	export interface UpdateBackupPlanPostBody {
 
-		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
+		/**
+		 * Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
+		 * Required
+		 */
 		BackupPlan: UpdateBackupPlanPostBodyBackupPlan;
 	}
 
@@ -1367,10 +1385,16 @@ export namespace MyNS {
 
 	export interface PutBackupVaultNotificationsPutBody {
 
-		/** The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>. */
+		/**
+		 * The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.
+		 * Required
+		 */
 		SNSTopicArn: string;
 
-		/** An array of events that indicate the status of jobs to back up resources to the backup vault. */
+		/**
+		 * An array of events that indicate the status of jobs to back up resources to the backup vault.
+		 * Required
+		 */
 		BackupVaultEvents: Array<BackupVaultEvent>;
 	}
 
@@ -1393,7 +1417,10 @@ export namespace MyNS {
 
 	export interface GetBackupPlanFromJSONPostBody {
 
-		/** A customer-supplied backup plan document in JSON format. */
+		/**
+		 * A customer-supplied backup plan document in JSON format.
+		 * Required
+		 */
 		BackupPlanTemplateJson: string;
 	}
 
@@ -1401,14 +1428,21 @@ export namespace MyNS {
 
 		/**
 		 * The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+		 * Required
 		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
 		 */
 		BackupVaultName: string;
 
-		/** An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type. */
+		/**
+		 * An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.
+		 * Required
+		 */
 		ResourceArn: string;
 
-		/** Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>. */
+		/**
+		 * Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+		 * Required
+		 */
 		IamRoleArn: string;
 
 		/** A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>. */
@@ -1434,19 +1468,29 @@ export namespace MyNS {
 
 	export interface StartCopyJobPutBody {
 
-		/** An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. */
+		/**
+		 * An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+		 * Required
+		 */
 		RecoveryPointArn: string;
 
 		/**
 		 * The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+		 * Required
 		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
 		 */
 		SourceBackupVaultName: string;
 
-		/** An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. */
+		/**
+		 * An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+		 * Required
+		 */
 		DestinationBackupVaultArn: string;
 
-		/** Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>. */
+		/**
+		 * Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+		 * Required
+		 */
 		IamRoleArn: string;
 
 		/** A customer chosen string that can be used to distinguish between calls to <code>StartCopyJob</code>. */
@@ -1463,13 +1507,22 @@ export namespace MyNS {
 
 	export interface StartRestoreJobPutBody {
 
-		/** An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>. */
+		/**
+		 * An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+		 * Required
+		 */
 		RecoveryPointArn: string;
 
-		/** <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p> <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p> <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p> <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p> <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li> </ul> */
+		/**
+		 * <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p> <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p> <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p> <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p> <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li> </ul>
+		 * Required
+		 */
 		Metadata: {[id: string]: string };
 
-		/** The Amazon Resource Name (ARN) of the IAM role that AWS Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>. */
+		/**
+		 * The Amazon Resource Name (ARN) of the IAM role that AWS Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+		 * Required
+		 */
 		IamRoleArn: string;
 
 		/** A customer chosen string that can be used to distinguish between calls to <code>StartRestoreJob</code>. */
@@ -1484,13 +1537,19 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. */
+		/**
+		 * Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 
 	export interface UntagResourcePostBody {
 
-		/** A list of keys to identify which key-value tags to remove from a resource. */
+		/**
+		 * A list of keys to identify which key-value tags to remove from a resource.
+		 * Required
+		 */
 		TagKeyList: Array<string>;
 	}
 

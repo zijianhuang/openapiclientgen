@@ -13,13 +13,17 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
-		/** <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p> */
+		/**
+		 * <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p>
+		 * Required
+		 */
 		Budget: Budget;
 
 		/**
@@ -35,6 +39,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
@@ -51,7 +56,10 @@ export namespace MyNS {
 		/** <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p> */
 		CostTypes?: CostTypes;
 
-		/** The time unit of the budget, such as MONTHLY or QUARTERLY. */
+		/**
+		 * The time unit of the budget, such as MONTHLY or QUARTERLY.
+		 * Required
+		 */
 		TimeUnit: BudgetTimeUnit;
 
 		/** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. */
@@ -60,7 +68,10 @@ export namespace MyNS {
 		/** <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.</p> <p>For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p> */
 		CalculatedSpend?: CalculatedSpend;
 
-		/** <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.</p> */
+		/**
+		 * <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.</p>
+		 * Required
+		 */
 		BudgetType: BudgetBudgetType;
 
 		/** A generic time stamp. In Java, it is transformed to a <code>Date</code> object. */
@@ -73,6 +84,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents a numeric value.
+		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
 		 * Pattern: ([0-9]*\.)?[0-9]+
@@ -81,6 +93,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the spend unit of a budget. It can't be null or empty.
+		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
 		 * Pattern: .*
@@ -129,7 +142,10 @@ export namespace MyNS {
 	/** <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.</p> <p>For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p> */
 	export interface CalculatedSpend {
 
-		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
+		/**
+		 * <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul>
+		 * Required
+		 */
 		ActualSpend: Spend;
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
@@ -142,11 +158,15 @@ export namespace MyNS {
 	/** A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers. */
 	export interface NotificationWithSubscribers {
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		Notification: Notification;
 
 		/**
 		 * A list of subscribers.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 11
 		 */
@@ -157,14 +177,21 @@ export namespace MyNS {
 	/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
 	export interface Notification {
 
-		/** The type of a notification. It must be ACTUAL or FORECASTED. */
+		/**
+		 * The type of a notification. It must be ACTUAL or FORECASTED.
+		 * Required
+		 */
 		NotificationType: NotificationNotificationType;
 
-		/** <p> The comparison operator of a notification. Currently the service supports the following operators:</p> <p> <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code> </p> */
+		/**
+		 * <p> The comparison operator of a notification. Currently the service supports the following operators:</p> <p> <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code> </p>
+		 * Required
+		 */
 		ComparisonOperator: NotificationComparisonOperator;
 
 		/**
 		 * The threshold of a notification. It must be a number between 0 and 1,000,000,000.
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 1000000000
 		 */
@@ -187,11 +214,15 @@ export namespace MyNS {
 	/** <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul> */
 	export interface Subscriber {
 
-		/** The subscription type of the subscriber. It can be SMS or EMAIL. */
+		/**
+		 * The subscription type of the subscriber. It can be SMS or EMAIL.
+		 * Required
+		 */
 		SubscriptionType: SubscriberSubscriptionType;
 
 		/**
 		 * A string that contains an email address or SNS topic for the subscriber's address.
+		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
 		 * Pattern: (.*[\n\r\t\f\ ]?)*
@@ -227,6 +258,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -235,17 +267,22 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		Notification: Notification;
 
 		/**
 		 * A list of subscribers.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 11
 		 */
@@ -266,6 +303,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -274,16 +312,23 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		Notification: Notification;
 
-		/** <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul> */
+		/**
+		 * <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul>
+		 * Required
+		 */
 		Subscriber: Subscriber;
 	}
 
@@ -298,6 +343,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -306,6 +352,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
@@ -324,6 +371,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -332,13 +380,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		Notification: Notification;
 	}
 
@@ -353,6 +405,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -361,16 +414,23 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		Notification: Notification;
 
-		/** <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul> */
+		/**
+		 * <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul>
+		 * Required
+		 */
 		Subscriber: Subscriber;
 	}
 
@@ -388,6 +448,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -396,6 +457,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
@@ -461,6 +523,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -469,6 +532,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
@@ -522,6 +586,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -566,6 +631,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -574,6 +640,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
@@ -622,6 +689,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -630,13 +698,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		Notification: Notification;
 
 		/**
@@ -666,13 +738,17 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
-		/** <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p> */
+		/**
+		 * <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p>
+		 * Required
+		 */
 		NewBudget: Budget;
 	}
 
@@ -687,6 +763,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -695,16 +772,23 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		OldNotification: Notification;
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		NewNotification: Notification;
 	}
 
@@ -719,6 +803,7 @@ export namespace MyNS {
 
 		/**
 		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
 		 * Max length: 12
 		 * Min length: 12
 		 * Pattern: \d{12}
@@ -727,19 +812,29 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
-		/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+		/**
+		 * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+		 * Required
+		 */
 		Notification: Notification;
 
-		/** <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul> */
+		/**
+		 * <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul>
+		 * Required
+		 */
 		OldSubscriber: Subscriber;
 
-		/** <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul> */
+		/**
+		 * <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul>
+		 * Required
+		 */
 		NewSubscriber: Subscriber;
 	}
 

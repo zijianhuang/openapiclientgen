@@ -418,7 +418,10 @@ export namespace MyNS {
 		MediaSampleRateHertz?: number;
 		MediaFormat?: MedicalTranscriptionJobMediaFormat;
 
-		/** Describes the input media file in a transcription request. */
+		/**
+		 * Describes the input media file in a transcription request.
+		 * Required
+		 */
 		Media: Media;
 		OutputBucketName: string;
 		OutputEncryptionKMSKeyId?: string;
@@ -443,7 +446,10 @@ export namespace MyNS {
 		MediaSampleRateHertz?: number;
 		MediaFormat?: MedicalTranscriptionJobMediaFormat;
 
-		/** Describes the input media file in a transcription request. */
+		/**
+		 * Describes the input media file in a transcription request.
+		 * Required
+		 */
 		Media: Media;
 		OutputBucketName?: string;
 		OutputEncryptionKMSKeyId?: string;

@@ -152,7 +152,10 @@ export namespace MyNS {
 	/** This structure defines the metric to be returned, along with the statistics, period, and units. */
 	export interface MetricStat {
 
-		/** Represents a specific metric. */
+		/**
+		 * Represents a specific metric.
+		 * Required
+		 */
 		Metric: Metric;
 		Period: number;
 		Stat: string;

@@ -340,7 +340,10 @@ export namespace MyNS {
 
 	export interface CreateApprovalRuleTemplateOutput {
 
-		/** Returns information about an approval rule template. */
+		/**
+		 * Returns information about an approval rule template.
+		 * Required
+		 */
 		approvalRuleTemplate: ApprovalRuleTemplate;
 	}
 
@@ -547,7 +550,10 @@ export namespace MyNS {
 
 	export interface CreatePullRequestOutput {
 
-		/** Returns information about a pull request. */
+		/**
+		 * Returns information about a pull request.
+		 * Required
+		 */
 		pullRequest: PullRequest;
 	}
 
@@ -682,7 +688,10 @@ export namespace MyNS {
 
 	export interface CreatePullRequestApprovalRuleOutput {
 
-		/** Returns information about an approval rule. */
+		/**
+		 * Returns information about an approval rule.
+		 * Required
+		 */
 		approvalRule: ApprovalRule;
 	}
 
@@ -944,7 +953,10 @@ export namespace MyNS {
 
 	export interface DescribeMergeConflictsOutput {
 
-		/** Information about the metadata for a conflict in a merge operation. */
+		/**
+		 * Information about the metadata for a conflict in a merge operation.
+		 * Required
+		 */
 		conflictMetadata: ConflictMetadata;
 		mergeHunks: Array<MergeHunk>;
 		nextToken?: string;
@@ -1089,7 +1101,10 @@ export namespace MyNS {
 
 	export interface EvaluatePullRequestApprovalRulesOutput {
 
-		/** Returns information about the approval rules applied to a pull request and whether conditions have been met. */
+		/**
+		 * Returns information about the approval rules applied to a pull request and whether conditions have been met.
+		 * Required
+		 */
 		evaluation: Evaluation;
 	}
 
@@ -1118,7 +1133,10 @@ export namespace MyNS {
 
 	export interface GetApprovalRuleTemplateOutput {
 
-		/** Returns information about an approval rule template. */
+		/**
+		 * Returns information about an approval rule template.
+		 * Required
+		 */
 		approvalRuleTemplate: ApprovalRuleTemplate;
 	}
 
@@ -1249,7 +1267,10 @@ export namespace MyNS {
 	/** Represents the output of a get commit operation. */
 	export interface GetCommitOutput {
 
-		/** Returns information about a specific commit. */
+		/**
+		 * Returns information about a specific commit.
+		 * Required
+		 */
 		commit: Commit;
 	}
 
@@ -1429,7 +1450,10 @@ export namespace MyNS {
 
 	export interface GetPullRequestOutput {
 
-		/** Returns information about a pull request. */
+		/**
+		 * Returns information about a pull request.
+		 * Required
+		 */
 		pullRequest: PullRequest;
 	}
 
@@ -1950,7 +1974,10 @@ export namespace MyNS {
 
 	export interface UpdateApprovalRuleTemplateContentOutput {
 
-		/** Returns information about an approval rule template. */
+		/**
+		 * Returns information about an approval rule template.
+		 * Required
+		 */
 		approvalRuleTemplate: ApprovalRuleTemplate;
 	}
 
@@ -1965,7 +1992,10 @@ export namespace MyNS {
 
 	export interface UpdateApprovalRuleTemplateDescriptionOutput {
 
-		/** Returns information about an approval rule template. */
+		/**
+		 * Returns information about an approval rule template.
+		 * Required
+		 */
 		approvalRuleTemplate: ApprovalRuleTemplate;
 	}
 
@@ -1976,7 +2006,10 @@ export namespace MyNS {
 
 	export interface UpdateApprovalRuleTemplateNameOutput {
 
-		/** Returns information about an approval rule template. */
+		/**
+		 * Returns information about an approval rule template.
+		 * Required
+		 */
 		approvalRuleTemplate: ApprovalRuleTemplate;
 	}
 
@@ -2008,7 +2041,10 @@ export namespace MyNS {
 
 	export interface UpdatePullRequestApprovalRuleContentOutput {
 
-		/** Returns information about an approval rule. */
+		/**
+		 * Returns information about an approval rule.
+		 * Required
+		 */
 		approvalRule: ApprovalRule;
 	}
 
@@ -2045,7 +2081,10 @@ export namespace MyNS {
 
 	export interface UpdatePullRequestDescriptionOutput {
 
-		/** Returns information about a pull request. */
+		/**
+		 * Returns information about a pull request.
+		 * Required
+		 */
 		pullRequest: PullRequest;
 	}
 
@@ -2056,7 +2095,10 @@ export namespace MyNS {
 
 	export interface UpdatePullRequestStatusOutput {
 
-		/** Returns information about a pull request. */
+		/**
+		 * Returns information about a pull request.
+		 * Required
+		 */
 		pullRequest: PullRequest;
 	}
 
@@ -2073,7 +2115,10 @@ export namespace MyNS {
 
 	export interface UpdatePullRequestTitleOutput {
 
-		/** Returns information about a pull request. */
+		/**
+		 * Returns information about a pull request.
+		 * Required
+		 */
 		pullRequest: PullRequest;
 	}
 

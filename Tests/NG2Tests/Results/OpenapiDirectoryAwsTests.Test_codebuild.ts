@@ -494,20 +494,29 @@ export namespace MyNS {
 		name: string;
 		description?: string;
 
-		/** Information about the build input source code for the build project. */
+		/**
+		 * Information about the build input source code for the build project.
+		 * Required
+		 */
 		source: ProjectSource;
 		secondarySources?: Array<ProjectSource>;
 		sourceVersion?: string;
 		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
-		/** Information about the build output artifacts for the build project. */
+		/**
+		 * Information about the build output artifacts for the build project.
+		 * Required
+		 */
 		artifacts: ProjectArtifacts;
 		secondaryArtifacts?: Array<ProjectArtifacts>;
 
 		/** Information about the cache for the build project. */
 		cache?: ProjectCache;
 
-		/** Information about the build environment of the build project. */
+		/**
+		 * Information about the build environment of the build project.
+		 * Required
+		 */
 		environment: ProjectEnvironment;
 		serviceRole: string;
 		timeoutInMinutes?: number;
@@ -540,7 +549,10 @@ export namespace MyNS {
 		name: string;
 		type: ReportGroupType;
 
-		/** Information about the location where the run of a report is exported. */
+		/**
+		 * Information about the location where the run of a report is exported.
+		 * Required
+		 */
 		exportConfig: ReportExportConfig;
 		tags?: Array<Tag>;
 	}

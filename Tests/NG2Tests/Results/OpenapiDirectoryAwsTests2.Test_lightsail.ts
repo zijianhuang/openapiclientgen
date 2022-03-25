@@ -110,7 +110,10 @@ export namespace MyNS {
 
 	export interface CloseInstancePublicPortsRequest {
 
-		/** Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol. */
+		/**
+		 * Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
+		 * Required
+		 */
 		portInfo: PortInfo;
 		instanceName: string;
 	}
@@ -256,7 +259,10 @@ export namespace MyNS {
 	export interface CreateDomainEntryRequest {
 		domainName: string;
 
-		/** Describes a domain recordset entry. */
+		/**
+		 * Describes a domain recordset entry.
+		 * Required
+		 */
 		domainEntry: DomainEntry;
 	}
 
@@ -484,7 +490,10 @@ export namespace MyNS {
 	export interface DeleteDomainEntryRequest {
 		domainName: string;
 
-		/** Describes a domain recordset entry. */
+		/**
+		 * Describes a domain recordset entry.
+		 * Required
+		 */
 		domainEntry: DomainEntry;
 	}
 
@@ -608,7 +617,10 @@ export namespace MyNS {
 	export interface EnableAddOnRequest {
 		resourceName: string;
 
-		/** <p>Describes a request to enable, modify, or disable an add-on for an Amazon Lightsail resource.</p> <note> <p>An additional cost may be associated with enabling add-ons. For more information, see the <a href="https://aws.amazon.com/lightsail/pricing/">Lightsail pricing page</a>.</p> </note> */
+		/**
+		 * <p>Describes a request to enable, modify, or disable an add-on for an Amazon Lightsail resource.</p> <note> <p>An additional cost may be associated with enabling add-ons. For more information, see the <a href="https://aws.amazon.com/lightsail/pricing/">Lightsail pricing page</a>.</p> </note>
+		 * Required
+		 */
 		addOnRequest: AddOnRequest;
 	}
 
@@ -1890,7 +1902,10 @@ export namespace MyNS {
 
 	export interface OpenInstancePublicPortsRequest {
 
-		/** Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol. */
+		/**
+		 * Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
+		 * Required
+		 */
 		portInfo: PortInfo;
 		instanceName: string;
 	}
@@ -2046,7 +2061,10 @@ export namespace MyNS {
 	export interface UpdateDomainEntryRequest {
 		domainName: string;
 
-		/** Describes a domain recordset entry. */
+		/**
+		 * Describes a domain recordset entry.
+		 * Required
+		 */
 		domainEntry: DomainEntry;
 	}
 

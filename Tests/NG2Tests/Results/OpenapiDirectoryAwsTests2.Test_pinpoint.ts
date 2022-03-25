@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateAppResponse {
 
-		/** Provides information about an application. */
+		/**
+		 * Provides information about an application.
+		 * Required
+		 */
 		ApplicationResponse: ApplicationResponse;
 	}
 
@@ -43,7 +46,10 @@ export namespace MyNS {
 
 	export interface CreateCampaignResponse {
 
-		/** Provides information about the status, configuration, and other settings for a campaign. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a campaign.
+		 * Required
+		 */
 		CampaignResponse: CampaignResponse;
 	}
 
@@ -218,7 +224,10 @@ export namespace MyNS {
 	/** Specifies the settings for events that cause a campaign to be sent. */
 	export interface CampaignEventFilter {
 
-		/** Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed. */
+		/**
+		 * Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed.
+		 * Required
+		 */
 		Dimensions: EventDimensions;
 		FilterType: CampaignEventFilterFilterType;
 	}
@@ -332,7 +341,10 @@ export namespace MyNS {
 
 	export interface CreateEmailTemplateResponse {
 
-		/** Provides information about a request to create a message template. */
+		/**
+		 * Provides information about a request to create a message template.
+		 * Required
+		 */
 		CreateTemplateMessageBody: CreateTemplateMessageBody;
 	}
 
@@ -346,7 +358,10 @@ export namespace MyNS {
 
 	export interface CreateExportJobResponse {
 
-		/** Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console. */
+		/**
+		 * Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
+		 * Required
+		 */
 		ExportJobResponse: ExportJobResponse;
 	}
 
@@ -358,7 +373,10 @@ export namespace MyNS {
 		CompletionDate?: string;
 		CreationDate: string;
 
-		/** Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console. */
+		/**
+		 * Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
+		 * Required
+		 */
 		Definition: ExportJobResource;
 		FailedPieces?: number;
 		Failures?: Array<string>;
@@ -383,7 +401,10 @@ export namespace MyNS {
 
 	export interface CreateImportJobResponse {
 
-		/** Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console. */
+		/**
+		 * Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
+		 * Required
+		 */
 		ImportJobResponse: ImportJobResponse;
 	}
 
@@ -395,7 +416,10 @@ export namespace MyNS {
 		CompletionDate?: string;
 		CreationDate: string;
 
-		/** Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console. */
+		/**
+		 * Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
+		 * Required
+		 */
 		Definition: ImportJobResource;
 		FailedPieces?: number;
 		Failures?: Array<string>;
@@ -426,7 +450,10 @@ export namespace MyNS {
 
 	export interface CreateJourneyResponse {
 
-		/** Provides information about the status, configuration, and other settings for a journey. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a journey.
+		 * Required
+		 */
 		JourneyResponse: JourneyResponse;
 	}
 
@@ -498,7 +525,10 @@ export namespace MyNS {
 
 	export interface CreatePushTemplateResponse {
 
-		/** Provides information about a request to create a message template. */
+		/**
+		 * Provides information about a request to create a message template.
+		 * Required
+		 */
 		CreateTemplateMessageBody: CreateTemplateMessageBody;
 	}
 
@@ -540,7 +570,10 @@ export namespace MyNS {
 
 	export interface CreateRecommenderConfigurationResponse {
 
-		/** Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model. */
+		/**
+		 * Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.
+		 * Required
+		 */
 		RecommenderConfigurationResponse: RecommenderConfigurationResponse;
 	}
 
@@ -563,7 +596,10 @@ export namespace MyNS {
 
 	export interface CreateSegmentResponse {
 
-		/** Provides information about the configuration, dimension, and other settings for a segment. */
+		/**
+		 * Provides information about the configuration, dimension, and other settings for a segment.
+		 * Required
+		 */
 		SegmentResponse: SegmentResponse;
 	}
 
@@ -664,7 +700,10 @@ export namespace MyNS {
 	/** Specifies GPS-based criteria for including or excluding endpoints from a segment. */
 	export interface GPSPointDimension {
 
-		/** Specifies the GPS coordinates of a location. */
+		/**
+		 * Specifies the GPS coordinates of a location.
+		 * Required
+		 */
 		Coordinates: GPSCoordinates;
 		RangeInKilometers?: number;
 	}
@@ -719,19 +758,28 @@ export namespace MyNS {
 
 	export interface CreateSmsTemplateResponse {
 
-		/** Provides information about a request to create a message template. */
+		/**
+		 * Provides information about a request to create a message template.
+		 * Required
+		 */
 		CreateTemplateMessageBody: CreateTemplateMessageBody;
 	}
 
 	export interface CreateVoiceTemplateResponse {
 
-		/** Provides information about a request to create a message template. */
+		/**
+		 * Provides information about a request to create a message template.
+		 * Required
+		 */
 		CreateTemplateMessageBody: CreateTemplateMessageBody;
 	}
 
 	export interface DeleteAdmChannelResponse {
 
-		/** Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+		 * Required
+		 */
 		ADMChannelResponse: ADMChannelResponse;
 	}
 
@@ -752,7 +800,10 @@ export namespace MyNS {
 
 	export interface DeleteApnsChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.
+		 * Required
+		 */
 		APNSChannelResponse: APNSChannelResponse;
 	}
 
@@ -775,7 +826,10 @@ export namespace MyNS {
 
 	export interface DeleteApnsSandboxChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+		 * Required
+		 */
 		APNSSandboxChannelResponse: APNSSandboxChannelResponse;
 	}
 
@@ -798,7 +852,10 @@ export namespace MyNS {
 
 	export interface DeleteApnsVoipChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
+		 * Required
+		 */
 		APNSVoipChannelResponse: APNSVoipChannelResponse;
 	}
 
@@ -821,7 +878,10 @@ export namespace MyNS {
 
 	export interface DeleteApnsVoipSandboxChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
+		 * Required
+		 */
 		APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse;
 	}
 
@@ -844,13 +904,19 @@ export namespace MyNS {
 
 	export interface DeleteAppResponse {
 
-		/** Provides information about an application. */
+		/**
+		 * Provides information about an application.
+		 * Required
+		 */
 		ApplicationResponse: ApplicationResponse;
 	}
 
 	export interface DeleteBaiduChannelResponse {
 
-		/** Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
+		 * Required
+		 */
 		BaiduChannelResponse: BaiduChannelResponse;
 	}
 
@@ -872,13 +938,19 @@ export namespace MyNS {
 
 	export interface DeleteCampaignResponse {
 
-		/** Provides information about the status, configuration, and other settings for a campaign. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a campaign.
+		 * Required
+		 */
 		CampaignResponse: CampaignResponse;
 	}
 
 	export interface DeleteEmailChannelResponse {
 
-		/** Provides information about the status and settings of the email channel for an application. */
+		/**
+		 * Provides information about the status and settings of the email channel for an application.
+		 * Required
+		 */
 		EmailChannelResponse: EmailChannelResponse;
 	}
 
@@ -904,7 +976,10 @@ export namespace MyNS {
 
 	export interface DeleteEmailTemplateResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
@@ -917,7 +992,10 @@ export namespace MyNS {
 
 	export interface DeleteEndpointResponse {
 
-		/** Provides information about the channel type and other settings for an endpoint. */
+		/**
+		 * Provides information about the channel type and other settings for an endpoint.
+		 * Required
+		 */
 		EndpointResponse: EndpointResponse;
 	}
 
@@ -986,7 +1064,10 @@ export namespace MyNS {
 
 	export interface DeleteEventStreamResponse {
 
-		/** Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream. */
+		/**
+		 * Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.
+		 * Required
+		 */
 		EventStream: EventStream;
 	}
 
@@ -1003,7 +1084,10 @@ export namespace MyNS {
 
 	export interface DeleteGcmChannelResponse {
 
-		/** Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
+		/**
+		 * Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+		 * Required
+		 */
 		GCMChannelResponse: GCMChannelResponse;
 	}
 
@@ -1025,31 +1109,46 @@ export namespace MyNS {
 
 	export interface DeleteJourneyResponse {
 
-		/** Provides information about the status, configuration, and other settings for a journey. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a journey.
+		 * Required
+		 */
 		JourneyResponse: JourneyResponse;
 	}
 
 	export interface DeletePushTemplateResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
 	export interface DeleteRecommenderConfigurationResponse {
 
-		/** Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model. */
+		/**
+		 * Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.
+		 * Required
+		 */
 		RecommenderConfigurationResponse: RecommenderConfigurationResponse;
 	}
 
 	export interface DeleteSegmentResponse {
 
-		/** Provides information about the configuration, dimension, and other settings for a segment. */
+		/**
+		 * Provides information about the configuration, dimension, and other settings for a segment.
+		 * Required
+		 */
 		SegmentResponse: SegmentResponse;
 	}
 
 	export interface DeleteSmsChannelResponse {
 
-		/** Provides information about the status and settings of the SMS channel for an application. */
+		/**
+		 * Provides information about the status and settings of the SMS channel for an application.
+		 * Required
+		 */
 		SMSChannelResponse: SMSChannelResponse;
 	}
 
@@ -1074,13 +1173,19 @@ export namespace MyNS {
 
 	export interface DeleteSmsTemplateResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
 	export interface DeleteUserEndpointsResponse {
 
-		/** Provides information about all the endpoints that are associated with a user ID. */
+		/**
+		 * Provides information about all the endpoints that are associated with a user ID.
+		 * Required
+		 */
 		EndpointsResponse: EndpointsResponse;
 	}
 
@@ -1092,7 +1197,10 @@ export namespace MyNS {
 
 	export interface DeleteVoiceChannelResponse {
 
-		/** Provides information about the status and settings of the voice channel for an application. */
+		/**
+		 * Provides information about the status and settings of the voice channel for an application.
+		 * Required
+		 */
 		VoiceChannelResponse: VoiceChannelResponse;
 	}
 
@@ -1113,49 +1221,73 @@ export namespace MyNS {
 
 	export interface DeleteVoiceTemplateResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
 	export interface GetAdmChannelResponse {
 
-		/** Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+		 * Required
+		 */
 		ADMChannelResponse: ADMChannelResponse;
 	}
 
 	export interface GetApnsChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.
+		 * Required
+		 */
 		APNSChannelResponse: APNSChannelResponse;
 	}
 
 	export interface GetApnsSandboxChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+		 * Required
+		 */
 		APNSSandboxChannelResponse: APNSSandboxChannelResponse;
 	}
 
 	export interface GetApnsVoipChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
+		 * Required
+		 */
 		APNSVoipChannelResponse: APNSVoipChannelResponse;
 	}
 
 	export interface GetApnsVoipSandboxChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
+		 * Required
+		 */
 		APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse;
 	}
 
 	export interface GetAppResponse {
 
-		/** Provides information about an application. */
+		/**
+		 * Provides information about an application.
+		 * Required
+		 */
 		ApplicationResponse: ApplicationResponse;
 	}
 
 	export interface GetApplicationDateRangeKpiResponse {
 
-		/** Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query. */
+		/**
+		 * Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.
+		 * Required
+		 */
 		ApplicationDateRangeKpiResponse: ApplicationDateRangeKpiResponse;
 	}
 
@@ -1166,7 +1298,10 @@ export namespace MyNS {
 		EndTime: Date;
 		KpiName: string;
 
-		/** Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey. */
+		/**
+		 * Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
+		 * Required
+		 */
 		KpiResult: BaseKpiResult;
 		NextToken?: string;
 		StartTime: Date;
@@ -1195,7 +1330,10 @@ export namespace MyNS {
 
 	export interface GetApplicationSettingsResponse {
 
-		/** Provides information about an application, including the default settings for an application. */
+		/**
+		 * Provides information about an application, including the default settings for an application.
+		 * Required
+		 */
 		ApplicationSettingsResource: ApplicationSettingsResource;
 	}
 
@@ -1217,7 +1355,10 @@ export namespace MyNS {
 
 	export interface GetAppsResponse {
 
-		/** Provides information about all of your applications. */
+		/**
+		 * Provides information about all of your applications.
+		 * Required
+		 */
 		ApplicationsResponse: ApplicationsResponse;
 	}
 
@@ -1230,19 +1371,28 @@ export namespace MyNS {
 
 	export interface GetBaiduChannelResponse {
 
-		/** Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
+		 * Required
+		 */
 		BaiduChannelResponse: BaiduChannelResponse;
 	}
 
 	export interface GetCampaignResponse {
 
-		/** Provides information about the status, configuration, and other settings for a campaign. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a campaign.
+		 * Required
+		 */
 		CampaignResponse: CampaignResponse;
 	}
 
 	export interface GetCampaignActivitiesResponse {
 
-		/** Provides information about the activities that were performed by a campaign. */
+		/**
+		 * Provides information about the activities that were performed by a campaign.
+		 * Required
+		 */
 		ActivitiesResponse: ActivitiesResponse;
 	}
 
@@ -1273,7 +1423,10 @@ export namespace MyNS {
 
 	export interface GetCampaignDateRangeKpiResponse {
 
-		/** Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query. */
+		/**
+		 * Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.
+		 * Required
+		 */
 		CampaignDateRangeKpiResponse: CampaignDateRangeKpiResponse;
 	}
 
@@ -1285,7 +1438,10 @@ export namespace MyNS {
 		EndTime: Date;
 		KpiName: string;
 
-		/** Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey. */
+		/**
+		 * Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
+		 * Required
+		 */
 		KpiResult: BaseKpiResult;
 		NextToken?: string;
 		StartTime: Date;
@@ -1293,13 +1449,19 @@ export namespace MyNS {
 
 	export interface GetCampaignVersionResponse {
 
-		/** Provides information about the status, configuration, and other settings for a campaign. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a campaign.
+		 * Required
+		 */
 		CampaignResponse: CampaignResponse;
 	}
 
 	export interface GetCampaignVersionsResponse {
 
-		/** Provides information about the configuration and other settings for all the campaigns that are associated with an application. */
+		/**
+		 * Provides information about the configuration and other settings for all the campaigns that are associated with an application.
+		 * Required
+		 */
 		CampaignsResponse: CampaignsResponse;
 	}
 
@@ -1312,13 +1474,19 @@ export namespace MyNS {
 
 	export interface GetCampaignsResponse {
 
-		/** Provides information about the configuration and other settings for all the campaigns that are associated with an application. */
+		/**
+		 * Provides information about the configuration and other settings for all the campaigns that are associated with an application.
+		 * Required
+		 */
 		CampaignsResponse: CampaignsResponse;
 	}
 
 	export interface GetChannelsResponse {
 
-		/** Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application. */
+		/**
+		 * Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.
+		 * Required
+		 */
 		ChannelsResponse: ChannelsResponse;
 	}
 
@@ -1333,13 +1501,19 @@ export namespace MyNS {
 
 	export interface GetEmailChannelResponse {
 
-		/** Provides information about the status and settings of the email channel for an application. */
+		/**
+		 * Provides information about the status and settings of the email channel for an application.
+		 * Required
+		 */
 		EmailChannelResponse: EmailChannelResponse;
 	}
 
 	export interface GetEmailTemplateResponse {
 
-		/** Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel. */
+		/**
+		 * Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.
+		 * Required
+		 */
 		EmailTemplateResponse: EmailTemplateResponse;
 	}
 
@@ -1365,25 +1539,37 @@ export namespace MyNS {
 
 	export interface GetEndpointResponse {
 
-		/** Provides information about the channel type and other settings for an endpoint. */
+		/**
+		 * Provides information about the channel type and other settings for an endpoint.
+		 * Required
+		 */
 		EndpointResponse: EndpointResponse;
 	}
 
 	export interface GetEventStreamResponse {
 
-		/** Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream. */
+		/**
+		 * Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.
+		 * Required
+		 */
 		EventStream: EventStream;
 	}
 
 	export interface GetExportJobResponse {
 
-		/** Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console. */
+		/**
+		 * Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
+		 * Required
+		 */
 		ExportJobResponse: ExportJobResponse;
 	}
 
 	export interface GetExportJobsResponse {
 
-		/** Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file. */
+		/**
+		 * Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.
+		 * Required
+		 */
 		ExportJobsResponse: ExportJobsResponse;
 	}
 
@@ -1396,19 +1582,28 @@ export namespace MyNS {
 
 	export interface GetGcmChannelResponse {
 
-		/** Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
+		/**
+		 * Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+		 * Required
+		 */
 		GCMChannelResponse: GCMChannelResponse;
 	}
 
 	export interface GetImportJobResponse {
 
-		/** Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console. */
+		/**
+		 * Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
+		 * Required
+		 */
 		ImportJobResponse: ImportJobResponse;
 	}
 
 	export interface GetImportJobsResponse {
 
-		/** Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files. */
+		/**
+		 * Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.
+		 * Required
+		 */
 		ImportJobsResponse: ImportJobsResponse;
 	}
 
@@ -1421,13 +1616,19 @@ export namespace MyNS {
 
 	export interface GetJourneyResponse {
 
-		/** Provides information about the status, configuration, and other settings for a journey. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a journey.
+		 * Required
+		 */
 		JourneyResponse: JourneyResponse;
 	}
 
 	export interface GetJourneyDateRangeKpiResponse {
 
-		/** Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query. */
+		/**
+		 * Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.
+		 * Required
+		 */
 		JourneyDateRangeKpiResponse: JourneyDateRangeKpiResponse;
 	}
 
@@ -1439,7 +1640,10 @@ export namespace MyNS {
 		JourneyId: string;
 		KpiName: string;
 
-		/** Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey. */
+		/**
+		 * Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.
+		 * Required
+		 */
 		KpiResult: BaseKpiResult;
 		NextToken?: string;
 		StartTime: Date;
@@ -1447,7 +1651,10 @@ export namespace MyNS {
 
 	export interface GetJourneyExecutionActivityMetricsResponse {
 
-		/** Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query. */
+		/**
+		 * Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.
+		 * Required
+		 */
 		JourneyExecutionActivityMetricsResponse: JourneyExecutionActivityMetricsResponse;
 	}
 
@@ -1464,7 +1671,10 @@ export namespace MyNS {
 
 	export interface GetJourneyExecutionMetricsResponse {
 
-		/** Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query. */
+		/**
+		 * Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.
+		 * Required
+		 */
 		JourneyExecutionMetricsResponse: JourneyExecutionMetricsResponse;
 	}
 
@@ -1479,7 +1689,10 @@ export namespace MyNS {
 
 	export interface GetPushTemplateResponse {
 
-		/** Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel. */
+		/**
+		 * Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+		 * Required
+		 */
 		PushNotificationTemplateResponse: PushNotificationTemplateResponse;
 	}
 
@@ -1515,13 +1728,19 @@ export namespace MyNS {
 
 	export interface GetRecommenderConfigurationResponse {
 
-		/** Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model. */
+		/**
+		 * Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.
+		 * Required
+		 */
 		RecommenderConfigurationResponse: RecommenderConfigurationResponse;
 	}
 
 	export interface GetRecommenderConfigurationsResponse {
 
-		/** Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account. */
+		/**
+		 * Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.
+		 * Required
+		 */
 		ListRecommenderConfigurationsResponse: ListRecommenderConfigurationsResponse;
 	}
 
@@ -1534,31 +1753,46 @@ export namespace MyNS {
 
 	export interface GetSegmentResponse {
 
-		/** Provides information about the configuration, dimension, and other settings for a segment. */
+		/**
+		 * Provides information about the configuration, dimension, and other settings for a segment.
+		 * Required
+		 */
 		SegmentResponse: SegmentResponse;
 	}
 
 	export interface GetSegmentExportJobsResponse {
 
-		/** Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file. */
+		/**
+		 * Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.
+		 * Required
+		 */
 		ExportJobsResponse: ExportJobsResponse;
 	}
 
 	export interface GetSegmentImportJobsResponse {
 
-		/** Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files. */
+		/**
+		 * Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.
+		 * Required
+		 */
 		ImportJobsResponse: ImportJobsResponse;
 	}
 
 	export interface GetSegmentVersionResponse {
 
-		/** Provides information about the configuration, dimension, and other settings for a segment. */
+		/**
+		 * Provides information about the configuration, dimension, and other settings for a segment.
+		 * Required
+		 */
 		SegmentResponse: SegmentResponse;
 	}
 
 	export interface GetSegmentVersionsResponse {
 
-		/** Provides information about all the segments that are associated with an application. */
+		/**
+		 * Provides information about all the segments that are associated with an application.
+		 * Required
+		 */
 		SegmentsResponse: SegmentsResponse;
 	}
 
@@ -1571,19 +1805,28 @@ export namespace MyNS {
 
 	export interface GetSegmentsResponse {
 
-		/** Provides information about all the segments that are associated with an application. */
+		/**
+		 * Provides information about all the segments that are associated with an application.
+		 * Required
+		 */
 		SegmentsResponse: SegmentsResponse;
 	}
 
 	export interface GetSmsChannelResponse {
 
-		/** Provides information about the status and settings of the SMS channel for an application. */
+		/**
+		 * Provides information about the status and settings of the SMS channel for an application.
+		 * Required
+		 */
 		SMSChannelResponse: SMSChannelResponse;
 	}
 
 	export interface GetSmsTemplateResponse {
 
-		/** Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel. */
+		/**
+		 * Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+		 * Required
+		 */
 		SMSTemplateResponse: SMSTemplateResponse;
 	}
 
@@ -1605,19 +1848,28 @@ export namespace MyNS {
 
 	export interface GetUserEndpointsResponse {
 
-		/** Provides information about all the endpoints that are associated with a user ID. */
+		/**
+		 * Provides information about all the endpoints that are associated with a user ID.
+		 * Required
+		 */
 		EndpointsResponse: EndpointsResponse;
 	}
 
 	export interface GetVoiceChannelResponse {
 
-		/** Provides information about the status and settings of the voice channel for an application. */
+		/**
+		 * Provides information about the status and settings of the voice channel for an application.
+		 * Required
+		 */
 		VoiceChannelResponse: VoiceChannelResponse;
 	}
 
 	export interface GetVoiceTemplateResponse {
 
-		/** Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel. */
+		/**
+		 * Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.
+		 * Required
+		 */
 		VoiceTemplateResponse: VoiceTemplateResponse;
 	}
 
@@ -1640,7 +1892,10 @@ export namespace MyNS {
 
 	export interface ListJourneysResponse {
 
-		/** Provides information about the status, configuration, and other settings for all the journeys that are associated with an application. */
+		/**
+		 * Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.
+		 * Required
+		 */
 		JourneysResponse: JourneysResponse;
 	}
 
@@ -1653,7 +1908,10 @@ export namespace MyNS {
 
 	export interface ListTagsForResourceResponse {
 
-		/** Specifies the tags (keys and values) for an application, campaign, message template, or segment. */
+		/**
+		 * Specifies the tags (keys and values) for an application, campaign, message template, or segment.
+		 * Required
+		 */
 		TagsModel: TagsModel;
 	}
 
@@ -1665,7 +1923,10 @@ export namespace MyNS {
 
 	export interface ListTemplateVersionsResponse {
 
-		/** Provides information about all the versions of a specific message template. */
+		/**
+		 * Provides information about all the versions of a specific message template.
+		 * Required
+		 */
 		TemplateVersionsResponse: TemplateVersionsResponse;
 	}
 
@@ -1692,7 +1953,10 @@ export namespace MyNS {
 
 	export interface ListTemplatesResponse {
 
-		/** Provides information about all the message templates that are associated with your Amazon Pinpoint account. */
+		/**
+		 * Provides information about all the message templates that are associated with your Amazon Pinpoint account.
+		 * Required
+		 */
 		TemplatesResponse: TemplatesResponse;
 	}
 
@@ -1719,7 +1983,10 @@ export namespace MyNS {
 
 	export interface PhoneNumberValidateResponse {
 
-		/** Provides information about a phone number. */
+		/**
+		 * Provides information about a phone number.
+		 * Required
+		 */
 		NumberValidateResponse: NumberValidateResponse;
 	}
 
@@ -1744,13 +2011,19 @@ export namespace MyNS {
 
 	export interface PutEventStreamResponse {
 
-		/** Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream. */
+		/**
+		 * Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.
+		 * Required
+		 */
 		EventStream: EventStream;
 	}
 
 	export interface PutEventsResponse {
 
-		/** Provides information about endpoints and the events that they're associated with. */
+		/**
+		 * Provides information about endpoints and the events that they're associated with.
+		 * Required
+		 */
 		EventsResponse: EventsResponse;
 	}
 
@@ -1768,7 +2041,10 @@ export namespace MyNS {
 
 	export interface RemoveAttributesResponse {
 
-		/** Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application. */
+		/**
+		 * Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.
+		 * Required
+		 */
 		AttributesResource: AttributesResource;
 	}
 
@@ -1782,7 +2058,10 @@ export namespace MyNS {
 
 	export interface SendMessagesResponse {
 
-		/** Provides information about the results of a request to send a message to an endpoint address. */
+		/**
+		 * Provides information about the results of a request to send a message to an endpoint address.
+		 * Required
+		 */
 		MessageResponse: MessageResponse;
 	}
 
@@ -2010,7 +2289,10 @@ export namespace MyNS {
 
 	export interface SendUsersMessagesResponse {
 
-		/** Provides information about which users and endpoints a message was sent to. */
+		/**
+		 * Provides information about which users and endpoints a message was sent to.
+		 * Required
+		 */
 		SendUsersMessageResponse: SendUsersMessageResponse;
 	}
 
@@ -2027,67 +2309,100 @@ export namespace MyNS {
 
 	export interface UpdateAdmChannelResponse {
 
-		/** Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+		 * Required
+		 */
 		ADMChannelResponse: ADMChannelResponse;
 	}
 
 	export interface UpdateApnsChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.
+		 * Required
+		 */
 		APNSChannelResponse: APNSChannelResponse;
 	}
 
 	export interface UpdateApnsSandboxChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+		 * Required
+		 */
 		APNSSandboxChannelResponse: APNSSandboxChannelResponse;
 	}
 
 	export interface UpdateApnsVoipChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
+		 * Required
+		 */
 		APNSVoipChannelResponse: APNSVoipChannelResponse;
 	}
 
 	export interface UpdateApnsVoipSandboxChannelResponse {
 
-		/** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application. */
+		/**
+		 * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
+		 * Required
+		 */
 		APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse;
 	}
 
 	export interface UpdateApplicationSettingsResponse {
 
-		/** Provides information about an application, including the default settings for an application. */
+		/**
+		 * Provides information about an application, including the default settings for an application.
+		 * Required
+		 */
 		ApplicationSettingsResource: ApplicationSettingsResource;
 	}
 
 	export interface UpdateBaiduChannelResponse {
 
-		/** Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
+		/**
+		 * Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
+		 * Required
+		 */
 		BaiduChannelResponse: BaiduChannelResponse;
 	}
 
 	export interface UpdateCampaignResponse {
 
-		/** Provides information about the status, configuration, and other settings for a campaign. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a campaign.
+		 * Required
+		 */
 		CampaignResponse: CampaignResponse;
 	}
 
 	export interface UpdateEmailChannelResponse {
 
-		/** Provides information about the status and settings of the email channel for an application. */
+		/**
+		 * Provides information about the status and settings of the email channel for an application.
+		 * Required
+		 */
 		EmailChannelResponse: EmailChannelResponse;
 	}
 
 	export interface UpdateEmailTemplateResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
 	export interface UpdateEndpointResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
@@ -2095,7 +2410,10 @@ export namespace MyNS {
 
 	export interface UpdateEndpointsBatchResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
@@ -2124,67 +2442,100 @@ export namespace MyNS {
 
 	export interface UpdateGcmChannelResponse {
 
-		/** Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
+		/**
+		 * Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+		 * Required
+		 */
 		GCMChannelResponse: GCMChannelResponse;
 	}
 
 	export interface UpdateJourneyResponse {
 
-		/** Provides information about the status, configuration, and other settings for a journey. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a journey.
+		 * Required
+		 */
 		JourneyResponse: JourneyResponse;
 	}
 
 	export interface UpdateJourneyStateResponse {
 
-		/** Provides information about the status, configuration, and other settings for a journey. */
+		/**
+		 * Provides information about the status, configuration, and other settings for a journey.
+		 * Required
+		 */
 		JourneyResponse: JourneyResponse;
 	}
 
 	export interface UpdatePushTemplateResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
 	export interface UpdateRecommenderConfigurationResponse {
 
-		/** Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model. */
+		/**
+		 * Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.
+		 * Required
+		 */
 		RecommenderConfigurationResponse: RecommenderConfigurationResponse;
 	}
 
 	export interface UpdateSegmentResponse {
 
-		/** Provides information about the configuration, dimension, and other settings for a segment. */
+		/**
+		 * Provides information about the configuration, dimension, and other settings for a segment.
+		 * Required
+		 */
 		SegmentResponse: SegmentResponse;
 	}
 
 	export interface UpdateSmsChannelResponse {
 
-		/** Provides information about the status and settings of the SMS channel for an application. */
+		/**
+		 * Provides information about the status and settings of the SMS channel for an application.
+		 * Required
+		 */
 		SMSChannelResponse: SMSChannelResponse;
 	}
 
 	export interface UpdateSmsTemplateResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
 	export interface UpdateTemplateActiveVersionResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
 	export interface UpdateVoiceChannelResponse {
 
-		/** Provides information about the status and settings of the voice channel for an application. */
+		/**
+		 * Provides information about the status and settings of the voice channel for an application.
+		 * Required
+		 */
 		VoiceChannelResponse: VoiceChannelResponse;
 	}
 
 	export interface UpdateVoiceTemplateResponse {
 
-		/** Provides information about an API request or response. */
+		/**
+		 * Provides information about an API request or response.
+		 * Required
+		 */
 		MessageBody: MessageBody;
 	}
 
@@ -2515,7 +2866,10 @@ export namespace MyNS {
 
 	export interface CreateAppRequest {
 
-		/** Specifies the display name of an application and the tags to associate with the application. */
+		/**
+		 * Specifies the display name of an application and the tags to associate with the application.
+		 * Required
+		 */
 		CreateApplicationRequest: CreateApplicationRequest;
 	}
 
@@ -2554,7 +2908,10 @@ export namespace MyNS {
 
 	export interface CreateCampaignRequest {
 
-		/** Specifies the configuration and other settings for a campaign. */
+		/**
+		 * Specifies the configuration and other settings for a campaign.
+		 * Required
+		 */
 		WriteCampaignRequest: WriteCampaignRequest;
 	}
 
@@ -2572,7 +2929,10 @@ export namespace MyNS {
 
 	export interface CreateEmailTemplateRequest {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through the email channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
+		 * Required
+		 */
 		EmailTemplateRequest: EmailTemplateRequest;
 	}
 
@@ -2587,7 +2947,10 @@ export namespace MyNS {
 
 	export interface CreateExportJobRequest {
 
-		/** Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket. */
+		/**
+		 * Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.
+		 * Required
+		 */
 		ExportJobRequest: ExportJobRequest;
 	}
 
@@ -2606,7 +2969,10 @@ export namespace MyNS {
 
 	export interface CreateImportJobRequest {
 
-		/** Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket. */
+		/**
+		 * Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.
+		 * Required
+		 */
 		ImportJobRequest: ImportJobRequest;
 	}
 
@@ -2637,7 +3003,10 @@ export namespace MyNS {
 
 	export interface CreateJourneyRequest {
 
-		/** Specifies the configuration and other settings for a journey. */
+		/**
+		 * Specifies the configuration and other settings for a journey.
+		 * Required
+		 */
 		WriteJourneyRequest: WriteJourneyRequest;
 	}
 
@@ -2667,7 +3036,10 @@ export namespace MyNS {
 
 	export interface CreatePushTemplateRequest {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+		 * Required
+		 */
 		PushNotificationTemplateRequest: PushNotificationTemplateRequest;
 	}
 
@@ -2687,7 +3059,10 @@ export namespace MyNS {
 
 	export interface CreateRecommenderConfigurationRequest {
 
-		/** Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model. */
+		/**
+		 * Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
+		 * Required
+		 */
 		CreateRecommenderConfiguration: CreateRecommenderConfiguration;
 	}
 
@@ -2706,7 +3081,10 @@ export namespace MyNS {
 
 	export interface CreateSegmentRequest {
 
-		/** Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both. */
+		/**
+		 * Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
+		 * Required
+		 */
 		WriteSegmentRequest: WriteSegmentRequest;
 	}
 
@@ -2722,7 +3100,10 @@ export namespace MyNS {
 
 	export interface CreateSmsTemplateRequest {
 
-		/** Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+		 * Required
+		 */
 		SMSTemplateRequest: SMSTemplateRequest;
 	}
 
@@ -2739,7 +3120,10 @@ export namespace MyNS {
 
 	export interface CreateVoiceTemplateRequest {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
+		 * Required
+		 */
 		VoiceTemplateRequest: VoiceTemplateRequest;
 	}
 
@@ -2945,7 +3329,10 @@ export namespace MyNS {
 	/** Specifies a batch of endpoints and events to process. */
 	export interface EventsBatch {
 
-		/** Specifies the properties and attributes of an endpoint that's associated with an event. */
+		/**
+		 * Specifies the properties and attributes of an endpoint that's associated with an event.
+		 * Required
+		 */
 		Endpoint: PublicEndpoint;
 		Events: MapOfEvent;
 	}
@@ -3138,7 +3525,10 @@ export namespace MyNS {
 		Context?: MapOf__string;
 		Endpoints?: MapOfEndpointSendConfiguration;
 
-		/** Specifies the settings and content for the default message and any default messages that you tailored for specific channels. */
+		/**
+		 * Specifies the settings and content for the default message and any default messages that you tailored for specific channels.
+		 * Required
+		 */
 		MessageConfiguration: DirectMessageConfiguration;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
@@ -3172,7 +3562,10 @@ export namespace MyNS {
 
 	export interface PhoneNumberValidateRequest {
 
-		/** Specifies a phone number to validate and retrieve information about. */
+		/**
+		 * Specifies a phone number to validate and retrieve information about.
+		 * Required
+		 */
 		NumberValidateRequest: NumberValidateRequest;
 	}
 
@@ -3185,13 +3578,19 @@ export namespace MyNS {
 
 	export interface PutEventStreamRequest {
 
-		/** Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events. */
+		/**
+		 * Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.
+		 * Required
+		 */
 		WriteEventStream: WriteEventStream;
 	}
 
 	export interface PutEventsRequest {
 
-		/** Specifies a batch of events to process. */
+		/**
+		 * Specifies a batch of events to process.
+		 * Required
+		 */
 		EventsRequest: EventsRequest;
 	}
 
@@ -3205,7 +3604,10 @@ export namespace MyNS {
 
 	export interface RemoveAttributesRequest {
 
-		/** Specifies one or more attributes to remove from all the endpoints that are associated with an application. */
+		/**
+		 * Specifies one or more attributes to remove from all the endpoints that are associated with an application.
+		 * Required
+		 */
 		UpdateAttributesRequest: UpdateAttributesRequest;
 	}
 
@@ -3225,7 +3627,10 @@ export namespace MyNS {
 
 	export interface SendMessagesRequest {
 
-		/** Specifies the configuration and other settings for a message. */
+		/**
+		 * Specifies the configuration and other settings for a message.
+		 * Required
+		 */
 		MessageRequest: MessageRequest;
 	}
 
@@ -3234,7 +3639,10 @@ export namespace MyNS {
 	export interface SendUsersMessageRequest {
 		Context?: MapOf__string;
 
-		/** Specifies the settings and content for the default message and any default messages that you tailored for specific channels. */
+		/**
+		 * Specifies the settings and content for the default message and any default messages that you tailored for specific channels.
+		 * Required
+		 */
 		MessageConfiguration: DirectMessageConfiguration;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
@@ -3245,13 +3653,19 @@ export namespace MyNS {
 
 	export interface SendUsersMessagesRequest {
 
-		/** Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users. */
+		/**
+		 * Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.
+		 * Required
+		 */
 		SendUsersMessageRequest: SendUsersMessageRequest;
 	}
 
 	export interface TagResourceRequest {
 
-		/** Specifies the tags (keys and values) for an application, campaign, message template, or segment. */
+		/**
+		 * Specifies the tags (keys and values) for an application, campaign, message template, or segment.
+		 * Required
+		 */
 		TagsModel: TagsModel;
 	}
 
@@ -3266,31 +3680,46 @@ export namespace MyNS {
 
 	export interface UpdateAdmChannelRequest {
 
-		/** Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application. */
+		/**
+		 * Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+		 * Required
+		 */
 		ADMChannelRequest: ADMChannelRequest;
 	}
 
 	export interface UpdateApnsChannelRequest {
 
-		/** Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application. */
+		/**
+		 * Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.
+		 * Required
+		 */
 		APNSChannelRequest: APNSChannelRequest;
 	}
 
 	export interface UpdateApnsSandboxChannelRequest {
 
-		/** Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application. */
+		/**
+		 * Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+		 * Required
+		 */
 		APNSSandboxChannelRequest: APNSSandboxChannelRequest;
 	}
 
 	export interface UpdateApnsVoipChannelRequest {
 
-		/** Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application. */
+		/**
+		 * Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
+		 * Required
+		 */
 		APNSVoipChannelRequest: APNSVoipChannelRequest;
 	}
 
 	export interface UpdateApnsVoipSandboxChannelRequest {
 
-		/** Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application. */
+		/**
+		 * Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
+		 * Required
+		 */
 		APNSVoipSandboxChannelRequest: APNSVoipSandboxChannelRequest;
 	}
 
@@ -3311,67 +3740,100 @@ export namespace MyNS {
 
 	export interface UpdateApplicationSettingsRequest {
 
-		/** Specifies the default settings for an application. */
+		/**
+		 * Specifies the default settings for an application.
+		 * Required
+		 */
 		WriteApplicationSettingsRequest: WriteApplicationSettingsRequest;
 	}
 
 	export interface UpdateBaiduChannelRequest {
 
-		/** Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
+		/**
+		 * Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
+		 * Required
+		 */
 		BaiduChannelRequest: BaiduChannelRequest;
 	}
 
 	export interface UpdateCampaignRequest {
 
-		/** Specifies the configuration and other settings for a campaign. */
+		/**
+		 * Specifies the configuration and other settings for a campaign.
+		 * Required
+		 */
 		WriteCampaignRequest: WriteCampaignRequest;
 	}
 
 	export interface UpdateEmailChannelRequest {
 
-		/** Specifies the status and settings of the email channel for an application. */
+		/**
+		 * Specifies the status and settings of the email channel for an application.
+		 * Required
+		 */
 		EmailChannelRequest: EmailChannelRequest;
 	}
 
 	export interface UpdateEmailTemplateRequest {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through the email channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
+		 * Required
+		 */
 		EmailTemplateRequest: EmailTemplateRequest;
 	}
 
 	export interface UpdateEndpointRequest {
 
-		/** Specifies the channel type and other settings for an endpoint. */
+		/**
+		 * Specifies the channel type and other settings for an endpoint.
+		 * Required
+		 */
 		EndpointRequest: EndpointRequest;
 	}
 
 	export interface UpdateEndpointsBatchRequest {
 
-		/** Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint. */
+		/**
+		 * Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.
+		 * Required
+		 */
 		EndpointBatchRequest: EndpointBatchRequest;
 	}
 
 	export interface UpdateGcmChannelRequest {
 
-		/** Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
+		/**
+		 * Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+		 * Required
+		 */
 		GCMChannelRequest: GCMChannelRequest;
 	}
 
 	export interface UpdateJourneyRequest {
 
-		/** Specifies the configuration and other settings for a journey. */
+		/**
+		 * Specifies the configuration and other settings for a journey.
+		 * Required
+		 */
 		WriteJourneyRequest: WriteJourneyRequest;
 	}
 
 	export interface UpdateJourneyStateRequest {
 
-		/** Changes the status of a journey. */
+		/**
+		 * Changes the status of a journey.
+		 * Required
+		 */
 		JourneyStateRequest: JourneyStateRequest;
 	}
 
 	export interface UpdatePushTemplateRequest {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+		 * Required
+		 */
 		PushNotificationTemplateRequest: PushNotificationTemplateRequest;
 	}
 
@@ -3391,31 +3853,46 @@ export namespace MyNS {
 
 	export interface UpdateRecommenderConfigurationRequest {
 
-		/** Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model. */
+		/**
+		 * Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
+		 * Required
+		 */
 		UpdateRecommenderConfiguration: UpdateRecommenderConfiguration;
 	}
 
 	export interface UpdateSegmentRequest {
 
-		/** Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both. */
+		/**
+		 * Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
+		 * Required
+		 */
 		WriteSegmentRequest: WriteSegmentRequest;
 	}
 
 	export interface UpdateSmsChannelRequest {
 
-		/** Specifies the status and settings of the SMS channel for an application. */
+		/**
+		 * Specifies the status and settings of the SMS channel for an application.
+		 * Required
+		 */
 		SMSChannelRequest: SMSChannelRequest;
 	}
 
 	export interface UpdateSmsTemplateRequest {
 
-		/** Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+		 * Required
+		 */
 		SMSTemplateRequest: SMSTemplateRequest;
 	}
 
 	export interface UpdateTemplateActiveVersionRequest {
 
-		/** Specifies which version of a message template to use as the active version of the template. */
+		/**
+		 * Specifies which version of a message template to use as the active version of the template.
+		 * Required
+		 */
 		TemplateActiveVersionRequest: TemplateActiveVersionRequest;
 	}
 
@@ -3427,13 +3904,19 @@ export namespace MyNS {
 
 	export interface UpdateVoiceChannelRequest {
 
-		/** Specifies the status and settings of the voice channel for an application. */
+		/**
+		 * Specifies the status and settings of the voice channel for an application.
+		 * Required
+		 */
 		VoiceChannelRequest: VoiceChannelRequest;
 	}
 
 	export interface UpdateVoiceTemplateRequest {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
+		 * Required
+		 */
 		VoiceTemplateRequest: VoiceTemplateRequest;
 	}
 
@@ -4659,7 +5142,10 @@ export namespace MyNS {
 
 	export interface CreateAppPostBody {
 
-		/** Specifies the display name of an application and the tags to associate with the application. */
+		/**
+		 * Specifies the display name of an application and the tags to associate with the application.
+		 * Required
+		 */
 		CreateApplicationRequest: CreateAppPostBodyCreateApplicationRequest;
 	}
 
@@ -4670,7 +5156,10 @@ export namespace MyNS {
 
 	export interface CreateCampaignPostBody {
 
-		/** Specifies the configuration and other settings for a campaign. */
+		/**
+		 * Specifies the configuration and other settings for a campaign.
+		 * Required
+		 */
 		WriteCampaignRequest: CreateCampaignPostBodyWriteCampaignRequest;
 	}
 
@@ -4707,7 +5196,10 @@ export namespace MyNS {
 
 	export interface CreateEmailTemplatePostBody {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through the email channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
+		 * Required
+		 */
 		EmailTemplateRequest: CreateEmailTemplatePostBodyEmailTemplateRequest;
 	}
 
@@ -4723,7 +5215,10 @@ export namespace MyNS {
 
 	export interface UpdateEmailTemplatePutBody {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through the email channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.
+		 * Required
+		 */
 		EmailTemplateRequest: UpdateEmailTemplatePutBodyEmailTemplateRequest;
 	}
 
@@ -4739,7 +5234,10 @@ export namespace MyNS {
 
 	export interface CreateExportJobPostBody {
 
-		/** Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket. */
+		/**
+		 * Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.
+		 * Required
+		 */
 		ExportJobRequest: CreateExportJobPostBodyExportJobRequest;
 	}
 
@@ -4752,7 +5250,10 @@ export namespace MyNS {
 
 	export interface CreateImportJobPostBody {
 
-		/** Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket. */
+		/**
+		 * Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.
+		 * Required
+		 */
 		ImportJobRequest: CreateImportJobPostBodyImportJobRequest;
 	}
 
@@ -4769,7 +5270,10 @@ export namespace MyNS {
 
 	export interface CreateJourneyPostBody {
 
-		/** Specifies the configuration and other settings for a journey. */
+		/**
+		 * Specifies the configuration and other settings for a journey.
+		 * Required
+		 */
 		WriteJourneyRequest: CreateJourneyPostBodyWriteJourneyRequest;
 	}
 
@@ -4798,7 +5302,10 @@ export namespace MyNS {
 
 	export interface CreatePushTemplatePostBody {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+		 * Required
+		 */
 		PushNotificationTemplateRequest: CreatePushTemplatePostBodyPushNotificationTemplateRequest;
 	}
 
@@ -4826,7 +5333,10 @@ export namespace MyNS {
 
 	export interface UpdatePushTemplatePutBody {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
+		 * Required
+		 */
 		PushNotificationTemplateRequest: UpdatePushTemplatePutBodyPushNotificationTemplateRequest;
 	}
 
@@ -4854,7 +5364,10 @@ export namespace MyNS {
 
 	export interface CreateRecommenderConfigurationPostBody {
 
-		/** Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model. */
+		/**
+		 * Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
+		 * Required
+		 */
 		CreateRecommenderConfiguration: CreateRecommenderConfigurationPostBodyCreateRecommenderConfiguration;
 	}
 
@@ -4872,7 +5385,10 @@ export namespace MyNS {
 
 	export interface CreateSegmentPostBody {
 
-		/** Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both. */
+		/**
+		 * Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
+		 * Required
+		 */
 		WriteSegmentRequest: CreateSegmentPostBodyWriteSegmentRequest;
 	}
 
@@ -4889,7 +5405,10 @@ export namespace MyNS {
 
 	export interface CreateSmsTemplatePostBody {
 
-		/** Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+		 * Required
+		 */
 		SMSTemplateRequest: CreateSmsTemplatePostBodySMSTemplateRequest;
 	}
 
@@ -4903,7 +5422,10 @@ export namespace MyNS {
 
 	export interface UpdateSmsTemplatePutBody {
 
-		/** Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.
+		 * Required
+		 */
 		SMSTemplateRequest: UpdateSmsTemplatePutBodySMSTemplateRequest;
 	}
 
@@ -4917,7 +5439,10 @@ export namespace MyNS {
 
 	export interface CreateVoiceTemplatePostBody {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
+		 * Required
+		 */
 		VoiceTemplateRequest: CreateVoiceTemplatePostBodyVoiceTemplateRequest;
 	}
 
@@ -4932,7 +5457,10 @@ export namespace MyNS {
 
 	export interface UpdateVoiceTemplatePutBody {
 
-		/** Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel. */
+		/**
+		 * Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.
+		 * Required
+		 */
 		VoiceTemplateRequest: UpdateVoiceTemplatePutBodyVoiceTemplateRequest;
 	}
 
@@ -4947,7 +5475,10 @@ export namespace MyNS {
 
 	export interface UpdateAdmChannelPutBody {
 
-		/** Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application. */
+		/**
+		 * Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+		 * Required
+		 */
 		ADMChannelRequest: UpdateAdmChannelPutBodyADMChannelRequest;
 	}
 
@@ -4959,7 +5490,10 @@ export namespace MyNS {
 
 	export interface UpdateApnsChannelPutBody {
 
-		/** Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application. */
+		/**
+		 * Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.
+		 * Required
+		 */
 		APNSChannelRequest: UpdateApnsChannelPutBodyAPNSChannelRequest;
 	}
 
@@ -4976,7 +5510,10 @@ export namespace MyNS {
 
 	export interface UpdateApnsSandboxChannelPutBody {
 
-		/** Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application. */
+		/**
+		 * Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+		 * Required
+		 */
 		APNSSandboxChannelRequest: UpdateApnsSandboxChannelPutBodyAPNSSandboxChannelRequest;
 	}
 
@@ -4993,7 +5530,10 @@ export namespace MyNS {
 
 	export interface UpdateApnsVoipChannelPutBody {
 
-		/** Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application. */
+		/**
+		 * Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
+		 * Required
+		 */
 		APNSVoipChannelRequest: UpdateApnsVoipChannelPutBodyAPNSVoipChannelRequest;
 	}
 
@@ -5010,7 +5550,10 @@ export namespace MyNS {
 
 	export interface UpdateApnsVoipSandboxChannelPutBody {
 
-		/** Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application. */
+		/**
+		 * Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
+		 * Required
+		 */
 		APNSVoipSandboxChannelRequest: UpdateApnsVoipSandboxChannelPutBodyAPNSVoipSandboxChannelRequest;
 	}
 
@@ -5027,7 +5570,10 @@ export namespace MyNS {
 
 	export interface UpdateBaiduChannelPutBody {
 
-		/** Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
+		/**
+		 * Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
+		 * Required
+		 */
 		BaiduChannelRequest: UpdateBaiduChannelPutBodyBaiduChannelRequest;
 	}
 
@@ -5039,7 +5585,10 @@ export namespace MyNS {
 
 	export interface UpdateCampaignPutBody {
 
-		/** Specifies the configuration and other settings for a campaign. */
+		/**
+		 * Specifies the configuration and other settings for a campaign.
+		 * Required
+		 */
 		WriteCampaignRequest: UpdateCampaignPutBodyWriteCampaignRequest;
 	}
 
@@ -5076,7 +5625,10 @@ export namespace MyNS {
 
 	export interface UpdateEmailChannelPutBody {
 
-		/** Specifies the status and settings of the email channel for an application. */
+		/**
+		 * Specifies the status and settings of the email channel for an application.
+		 * Required
+		 */
 		EmailChannelRequest: UpdateEmailChannelPutBodyEmailChannelRequest;
 	}
 
@@ -5090,7 +5642,10 @@ export namespace MyNS {
 
 	export interface UpdateEndpointPutBody {
 
-		/** Specifies the channel type and other settings for an endpoint. */
+		/**
+		 * Specifies the channel type and other settings for an endpoint.
+		 * Required
+		 */
 		EndpointRequest: UpdateEndpointPutBodyEndpointRequest;
 	}
 
@@ -5116,7 +5671,10 @@ export namespace MyNS {
 
 	export interface PutEventStreamPostBody {
 
-		/** Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events. */
+		/**
+		 * Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.
+		 * Required
+		 */
 		WriteEventStream: PutEventStreamPostBodyWriteEventStream;
 	}
 
@@ -5127,7 +5685,10 @@ export namespace MyNS {
 
 	export interface UpdateGcmChannelPutBody {
 
-		/** Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
+		/**
+		 * Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+		 * Required
+		 */
 		GCMChannelRequest: UpdateGcmChannelPutBodyGCMChannelRequest;
 	}
 
@@ -5138,7 +5699,10 @@ export namespace MyNS {
 
 	export interface UpdateJourneyPutBody {
 
-		/** Specifies the configuration and other settings for a journey. */
+		/**
+		 * Specifies the configuration and other settings for a journey.
+		 * Required
+		 */
 		WriteJourneyRequest: UpdateJourneyPutBodyWriteJourneyRequest;
 	}
 
@@ -5167,7 +5731,10 @@ export namespace MyNS {
 
 	export interface UpdateRecommenderConfigurationPutBody {
 
-		/** Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model. */
+		/**
+		 * Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
+		 * Required
+		 */
 		UpdateRecommenderConfiguration: UpdateRecommenderConfigurationPutBodyUpdateRecommenderConfiguration;
 	}
 
@@ -5185,7 +5752,10 @@ export namespace MyNS {
 
 	export interface UpdateSegmentPutBody {
 
-		/** Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both. */
+		/**
+		 * Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
+		 * Required
+		 */
 		WriteSegmentRequest: UpdateSegmentPutBodyWriteSegmentRequest;
 	}
 
@@ -5202,7 +5772,10 @@ export namespace MyNS {
 
 	export interface UpdateSmsChannelPutBody {
 
-		/** Specifies the status and settings of the SMS channel for an application. */
+		/**
+		 * Specifies the status and settings of the SMS channel for an application.
+		 * Required
+		 */
 		SMSChannelRequest: UpdateSmsChannelPutBodySMSChannelRequest;
 	}
 
@@ -5214,7 +5787,10 @@ export namespace MyNS {
 
 	export interface UpdateVoiceChannelPutBody {
 
-		/** Specifies the status and settings of the voice channel for an application. */
+		/**
+		 * Specifies the status and settings of the voice channel for an application.
+		 * Required
+		 */
 		VoiceChannelRequest: UpdateVoiceChannelPutBodyVoiceChannelRequest;
 	}
 
@@ -5224,7 +5800,10 @@ export namespace MyNS {
 
 	export interface UpdateApplicationSettingsPutBody {
 
-		/** Specifies the default settings for an application. */
+		/**
+		 * Specifies the default settings for an application.
+		 * Required
+		 */
 		WriteApplicationSettingsRequest: UpdateApplicationSettingsPutBodyWriteApplicationSettingsRequest;
 	}
 
@@ -5243,7 +5822,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** Specifies the tags (keys and values) for an application, campaign, message template, or segment. */
+		/**
+		 * Specifies the tags (keys and values) for an application, campaign, message template, or segment.
+		 * Required
+		 */
 		TagsModel: TagResourcePostBodyTagsModel;
 	}
 
@@ -5253,7 +5835,10 @@ export namespace MyNS {
 
 	export interface PhoneNumberValidatePostBody {
 
-		/** Specifies a phone number to validate and retrieve information about. */
+		/**
+		 * Specifies a phone number to validate and retrieve information about.
+		 * Required
+		 */
 		NumberValidateRequest: PhoneNumberValidatePostBodyNumberValidateRequest;
 	}
 
@@ -5264,7 +5849,10 @@ export namespace MyNS {
 
 	export interface PutEventsPostBody {
 
-		/** Specifies a batch of events to process. */
+		/**
+		 * Specifies a batch of events to process.
+		 * Required
+		 */
 		EventsRequest: PutEventsPostBodyEventsRequest;
 	}
 
@@ -5274,7 +5862,10 @@ export namespace MyNS {
 
 	export interface RemoveAttributesPutBody {
 
-		/** Specifies one or more attributes to remove from all the endpoints that are associated with an application. */
+		/**
+		 * Specifies one or more attributes to remove from all the endpoints that are associated with an application.
+		 * Required
+		 */
 		UpdateAttributesRequest: RemoveAttributesPutBodyUpdateAttributesRequest;
 	}
 
@@ -5284,7 +5875,10 @@ export namespace MyNS {
 
 	export interface SendMessagesPostBody {
 
-		/** Specifies the configuration and other settings for a message. */
+		/**
+		 * Specifies the configuration and other settings for a message.
+		 * Required
+		 */
 		MessageRequest: SendMessagesPostBodyMessageRequest;
 	}
 
@@ -5303,7 +5897,10 @@ export namespace MyNS {
 
 	export interface SendUsersMessagesPostBody {
 
-		/** Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users. */
+		/**
+		 * Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.
+		 * Required
+		 */
 		SendUsersMessageRequest: SendUsersMessagesPostBodySendUsersMessageRequest;
 	}
 
@@ -5321,7 +5918,10 @@ export namespace MyNS {
 
 	export interface UpdateEndpointsBatchPutBody {
 
-		/** Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint. */
+		/**
+		 * Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.
+		 * Required
+		 */
 		EndpointBatchRequest: UpdateEndpointsBatchPutBodyEndpointBatchRequest;
 	}
 
@@ -5331,7 +5931,10 @@ export namespace MyNS {
 
 	export interface UpdateJourneyStatePutBody {
 
-		/** Changes the status of a journey. */
+		/**
+		 * Changes the status of a journey.
+		 * Required
+		 */
 		JourneyStateRequest: UpdateJourneyStatePutBodyJourneyStateRequest;
 	}
 
@@ -5341,7 +5944,10 @@ export namespace MyNS {
 
 	export interface UpdateTemplateActiveVersionPutBody {
 
-		/** Specifies which version of a message template to use as the active version of the template. */
+		/**
+		 * Specifies which version of a message template to use as the active version of the template.
+		 * Required
+		 */
 		TemplateActiveVersionRequest: UpdateTemplateActiveVersionPutBodyTemplateActiveVersionRequest;
 	}
 

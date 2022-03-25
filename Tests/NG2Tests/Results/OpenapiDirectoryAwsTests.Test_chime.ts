@@ -667,7 +667,10 @@ export namespace MyNS {
 	/** Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging. */
 	export interface UserSettings {
 
-		/** Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging. */
+		/**
+		 * Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging.
+		 * Required
+		 */
 		Telephony: TelephonySettings;
 	}
 
@@ -1360,19 +1363,28 @@ export namespace MyNS {
 
 	export interface PutRetentionSettingsRequest {
 
-		/** The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages. */
+		/**
+		 * The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages.
+		 * Required
+		 */
 		RetentionSettings: RetentionSettings;
 	}
 
 	export interface PutVoiceConnectorLoggingConfigurationRequest {
 
-		/** The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs. */
+		/**
+		 * The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
+		 * Required
+		 */
 		LoggingConfiguration: LoggingConfiguration;
 	}
 
 	export interface PutVoiceConnectorOriginationRequest {
 
-		/** Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. */
+		/**
+		 * Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector.
+		 * Required
+		 */
 		Origination: Origination;
 	}
 
@@ -1385,7 +1397,10 @@ export namespace MyNS {
 
 	export interface PutVoiceConnectorStreamingConfigurationRequest {
 
-		/** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours. */
+		/**
+		 * The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.
+		 * Required
+		 */
 		StreamingConfiguration: StreamingConfiguration;
 	}
 
@@ -1395,7 +1410,10 @@ export namespace MyNS {
 
 	export interface PutVoiceConnectorTerminationRequest {
 
-		/** Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector. */
+		/**
+		 * Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector.
+		 * Required
+		 */
 		Termination: Termination;
 	}
 
@@ -1451,7 +1469,10 @@ export namespace MyNS {
 
 	export interface UpdateAccountSettingsRequest {
 
-		/** Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>. */
+		/**
+		 * Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
+		 * Required
+		 */
 		AccountSettings: AccountSettings;
 	}
 
@@ -1461,10 +1482,16 @@ export namespace MyNS {
 
 	export interface UpdateGlobalSettingsRequest {
 
-		/** The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records. */
+		/**
+		 * The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.
+		 * Required
+		 */
 		BusinessCalling: BusinessCallingSettings;
 
-		/** The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records. */
+		/**
+		 * The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records.
+		 * Required
+		 */
 		VoiceConnector: VoiceConnectorSettings;
 	}
 
@@ -1500,7 +1527,10 @@ export namespace MyNS {
 
 	export interface UpdateUserSettingsRequest {
 
-		/** Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging. */
+		/**
+		 * Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging.
+		 * Required
+		 */
 		UserSettings: UserSettings;
 	}
 
@@ -2757,6 +2787,7 @@ export namespace MyNS {
 
 		/**
 		 * The phone number, in E.164 format.
+		 * Required
 		 * Pattern: ^\+?[1-9]\d{1,14}$
 		 */
 		E164PhoneNumber: string;
@@ -2788,7 +2819,10 @@ export namespace MyNS {
 
 	export interface AssociateSigninDelegateGroupsWithAccountPostBody {
 
-		/** The sign-in delegate groups. */
+		/**
+		 * The sign-in delegate groups.
+		 * Required
+		 */
 		SigninDelegateGroups: Array<SigninDelegateGroup>;
 	}
 
@@ -2796,7 +2830,10 @@ export namespace MyNS {
 
 	export interface BatchCreateAttendeePostBody {
 
-		/** The request containing the attendees to create. */
+		/**
+		 * The request containing the attendees to create.
+		 * Required
+		 */
 		Attendees: Array<CreateAttendeeRequestItem>;
 	}
 
@@ -2806,6 +2843,7 @@ export namespace MyNS {
 
 		/**
 		 * The list of membership items.
+		 * Required
 		 * Maximum items: 50
 		 */
 		MembershipItemList: Array<MembershipItem>;
@@ -2817,6 +2855,7 @@ export namespace MyNS {
 
 		/**
 		 * List of phone number IDs.
+		 * Required
 		 * Minimum items: 1
 		 */
 		PhoneNumberIds: Array<string>;
@@ -2828,6 +2867,7 @@ export namespace MyNS {
 
 		/**
 		 * The request containing the user IDs to suspend.
+		 * Required
 		 * Maximum items: 50
 		 */
 		UserIdList: Array<string>;
@@ -2839,6 +2879,7 @@ export namespace MyNS {
 
 		/**
 		 * The request containing the user IDs to unsuspend.
+		 * Required
 		 * Maximum items: 50
 		 */
 		UserIdList: Array<string>;
@@ -2848,7 +2889,10 @@ export namespace MyNS {
 
 	export interface BatchUpdatePhoneNumberPostBody {
 
-		/** The request containing the phone number IDs and product types or calling names to update. */
+		/**
+		 * The request containing the phone number IDs and product types or calling names to update.
+		 * Required
+		 */
 		UpdatePhoneNumberRequestItems: Array<UpdatePhoneNumberRequestItem>;
 	}
 
@@ -2856,6 +2900,7 @@ export namespace MyNS {
 
 		/**
 		 * The request containing the user IDs and details to update.
+		 * Required
 		 * Maximum items: 20
 		 */
 		UpdateUserRequestItems: Array<UpdateUserRequestItem>;
@@ -2865,6 +2910,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Amazon Chime account.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: .*\S.*
@@ -2876,6 +2922,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+		 * Required
 		 * Max length: 64
 		 * Min length: 2
 		 */
@@ -2891,7 +2938,10 @@ export namespace MyNS {
 
 	export interface CreateBotPostBody {
 
-		/** The bot display name. */
+		/**
+		 * The bot display name.
+		 * Required
+		 */
 		DisplayName: string;
 
 		/**
@@ -2905,6 +2955,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier for the client request. Use a different token for different meetings.
+		 * Required
 		 * Max length: 64
 		 * Min length: 2
 		 * Pattern: [-_a-zA-Z0-9]*
@@ -2946,10 +2997,16 @@ export namespace MyNS {
 
 	export interface CreatePhoneNumberOrderPostBody {
 
-		/** The phone number product type. */
+		/**
+		 * The phone number product type.
+		 * Required
+		 */
 		ProductType: UpdatePhoneNumberRequestItemProductType;
 
-		/** List of phone numbers, in E.164 format. */
+		/**
+		 * List of phone numbers, in E.164 format.
+		 * Required
+		 */
 		E164PhoneNumbers: Array<string>;
 	}
 
@@ -2957,6 +3014,7 @@ export namespace MyNS {
 
 		/**
 		 * The participant phone numbers.
+		 * Required
 		 * Minimum items: 2
 		 * Maximum items: 2
 		 */
@@ -2974,7 +3032,10 @@ export namespace MyNS {
 		 */
 		ExpiryMinutes?: number;
 
-		/** The proxy session capabilities. */
+		/**
+		 * The proxy session capabilities.
+		 * Required
+		 */
 		Capabilities: Array<Capability>;
 
 		/** The preference for proxy phone number reuse, or stickiness, between the same participants across sessions. */
@@ -2994,7 +3055,10 @@ export namespace MyNS {
 
 	export interface CreateRoomPostBody {
 
-		/** The room name. */
+		/**
+		 * The room name.
+		 * Required
+		 */
 		Name: string;
 
 		/**
@@ -3010,6 +3074,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Chime member ID (user ID or bot ID).
+		 * Required
 		 * Pattern: .*\S.*
 		 */
 		MemberId: string;
@@ -3039,6 +3104,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Amazon Chime Voice Connector.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -3047,7 +3113,10 @@ export namespace MyNS {
 		/** The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>. */
 		AwsRegion?: CreateVoiceConnectorPostBodyAwsRegion;
 
-		/** When enabled, requires encryption for the Amazon Chime Voice Connector. */
+		/**
+		 * When enabled, requires encryption for the Amazon Chime Voice Connector.
+		 * Required
+		 */
 		RequireEncryption: boolean;
 	}
 
@@ -3057,6 +3126,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Amazon Chime Voice Connector group.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -3100,7 +3170,10 @@ export namespace MyNS {
 
 	export interface UpdateProxySessionPostBody {
 
-		/** The proxy session capabilities. */
+		/**
+		 * The proxy session capabilities.
+		 * Required
+		 */
 		Capabilities: Array<Capability>;
 
 		/**
@@ -3126,12 +3199,16 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Amazon Chime Voice Connector.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
 		Name: string;
 
-		/** When enabled, requires encryption for the Amazon Chime Voice Connector. */
+		/**
+		 * When enabled, requires encryption for the Amazon Chime Voice Connector.
+		 * Required
+		 */
 		RequireEncryption: boolean;
 	}
 
@@ -3139,18 +3216,25 @@ export namespace MyNS {
 
 		/**
 		 * The name of the Amazon Chime Voice Connector group.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
 		Name: string;
 
-		/** The <code>VoiceConnectorItems</code> to associate with the group. */
+		/**
+		 * The <code>VoiceConnectorItems</code> to associate with the group.
+		 * Required
+		 */
 		VoiceConnectorItems: Array<VoiceConnectorItem>;
 	}
 
 	export interface PutVoiceConnectorOriginationPutBody {
 
-		/** Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. */
+		/**
+		 * Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector.
+		 * Required
+		 */
 		Origination: PutVoiceConnectorOriginationPutBodyOrigination;
 	}
 
@@ -3161,11 +3245,15 @@ export namespace MyNS {
 
 	export interface PutVoiceConnectorProxyPutBody {
 
-		/** The default number of minutes allowed for proxy sessions. */
+		/**
+		 * The default number of minutes allowed for proxy sessions.
+		 * Required
+		 */
 		DefaultSessionExpiryMinutes: number;
 
 		/**
 		 * The countries for proxy phone numbers to be selected from.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
@@ -3183,7 +3271,10 @@ export namespace MyNS {
 
 	export interface PutVoiceConnectorStreamingConfigurationPutBody {
 
-		/** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours. */
+		/**
+		 * The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.
+		 * Required
+		 */
 		StreamingConfiguration: PutVoiceConnectorStreamingConfigurationPutBodyStreamingConfiguration;
 	}
 
@@ -3195,7 +3286,10 @@ export namespace MyNS {
 
 	export interface PutVoiceConnectorTerminationPutBody {
 
-		/** Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector. */
+		/**
+		 * Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector.
+		 * Required
+		 */
 		Termination: PutVoiceConnectorTerminationPutBodyTermination;
 	}
 
@@ -3239,6 +3333,7 @@ export namespace MyNS {
 
 		/**
 		 * The sign-in delegate group names.
+		 * Required
 		 * Minimum items: 1
 		 */
 		GroupNames: Array<string>;
@@ -3246,7 +3341,10 @@ export namespace MyNS {
 
 	export interface UpdateAccountSettingsPutBody {
 
-		/** Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>. */
+		/**
+		 * Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
+		 * Required
+		 */
 		AccountSettings: UpdateAccountSettingsPutBodyAccountSettings;
 	}
 
@@ -3263,10 +3361,16 @@ export namespace MyNS {
 
 	export interface UpdateGlobalSettingsPutBody {
 
-		/** The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records. */
+		/**
+		 * The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.
+		 * Required
+		 */
 		BusinessCalling: UpdateGlobalSettingsPutBodyBusinessCalling;
 
-		/** The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records. */
+		/**
+		 * The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records.
+		 * Required
+		 */
 		VoiceConnector: UpdateGlobalSettingsPutBodyVoiceConnector;
 	}
 
@@ -3282,6 +3386,7 @@ export namespace MyNS {
 
 		/**
 		 * The default outbound calling name for the account.
+		 * Required
 		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
 		 */
 		CallingName: string;
@@ -3289,7 +3394,10 @@ export namespace MyNS {
 
 	export interface PutRetentionSettingsPutBody {
 
-		/** The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages. */
+		/**
+		 * The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages.
+		 * Required
+		 */
 		RetentionSettings: PutRetentionSettingsPutBodyRetentionSettings;
 	}
 
@@ -3321,7 +3429,10 @@ export namespace MyNS {
 
 	export interface UpdateUserSettingsPutBody {
 
-		/** Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging. */
+		/**
+		 * Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging.
+		 * Required
+		 */
 		UserSettings: UpdateUserSettingsPutBodyUserSettings;
 	}
 
@@ -3333,7 +3444,10 @@ export namespace MyNS {
 
 	export interface PutVoiceConnectorLoggingConfigurationPutBody {
 
-		/** The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs. */
+		/**
+		 * The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
+		 * Required
+		 */
 		LoggingConfiguration: PutVoiceConnectorLoggingConfigurationPutBodyLoggingConfiguration;
 	}
 
@@ -3347,6 +3461,7 @@ export namespace MyNS {
 
 		/**
 		 * The user email addresses to which to send the email invitation.
+		 * Required
 		 * Maximum items: 50
 		 */
 		UserEmailList: Array<string>;
@@ -3379,6 +3494,7 @@ export namespace MyNS {
 
 		/**
 		 * The tag key-value pairs.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
@@ -3389,6 +3505,7 @@ export namespace MyNS {
 
 		/**
 		 * The tag key-value pairs.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -3401,6 +3518,7 @@ export namespace MyNS {
 
 		/**
 		 * The resource ARN.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
@@ -3409,6 +3527,7 @@ export namespace MyNS {
 
 		/**
 		 * The tag key-value pairs.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -3419,6 +3538,7 @@ export namespace MyNS {
 
 		/**
 		 * The tag keys.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
@@ -3429,6 +3549,7 @@ export namespace MyNS {
 
 		/**
 		 * The tag keys.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -3441,6 +3562,7 @@ export namespace MyNS {
 
 		/**
 		 * The resource ARN.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
@@ -3449,6 +3571,7 @@ export namespace MyNS {
 
 		/**
 		 * The tag keys.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */

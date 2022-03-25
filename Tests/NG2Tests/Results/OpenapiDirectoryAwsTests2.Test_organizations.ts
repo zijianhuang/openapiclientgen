@@ -481,7 +481,10 @@ export namespace MyNS {
 
 	export interface InviteAccountToOrganizationRequest {
 
-		/** Identifies a participant in a handshake. */
+		/**
+		 * Identifies a participant in a handshake.
+		 * Required
+		 */
 		Target: HandshakeParty;
 		Notes?: string;
 	}

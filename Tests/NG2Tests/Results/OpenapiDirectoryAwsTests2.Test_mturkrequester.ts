@@ -123,6 +123,7 @@ export namespace MyNS {
 
 		/**
 		 * A string representing a currency amount.
+		 * Required
 		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
 		 */
 		Reward: string;
@@ -182,6 +183,7 @@ export namespace MyNS {
 
 		/**
 		 * A string representing a currency amount.
+		 * Required
 		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
 		 */
 		Reward: string;
@@ -771,6 +773,7 @@ export namespace MyNS {
 
 		/**
 		 * A string representing a currency amount.
+		 * Required
 		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
 		 */
 		BonusAmount: string;
@@ -784,7 +787,10 @@ export namespace MyNS {
 
 	export interface SendTestEventNotificationRequest {
 
-		/** The NotificationSpecification data structure describes a HIT event notification for a HIT type. */
+		/**
+		 * The NotificationSpecification data structure describes a HIT event notification for a HIT type.
+		 * Required
+		 */
 		Notification: NotificationSpecification;
 		TestEventType: EventType;
 	}

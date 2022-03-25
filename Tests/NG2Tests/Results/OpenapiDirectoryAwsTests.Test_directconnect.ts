@@ -168,7 +168,10 @@ export namespace MyNS {
 		connectionId: string;
 		ownerAccount: string;
 
-		/** Information about a private virtual interface to be provisioned on a connection. */
+		/**
+		 * Information about a private virtual interface to be provisioned on a connection.
+		 * Required
+		 */
 		newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation;
 	}
 
@@ -190,7 +193,10 @@ export namespace MyNS {
 		connectionId: string;
 		ownerAccount: string;
 
-		/** Information about a public virtual interface to be provisioned on a connection. */
+		/**
+		 * Information about a public virtual interface to be provisioned on a connection.
+		 * Required
+		 */
 		newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation;
 	}
 
@@ -218,7 +224,10 @@ export namespace MyNS {
 		connectionId: string;
 		ownerAccount: string;
 
-		/** Information about a transit virtual interface to be provisioned on a connection. */
+		/**
+		 * Information about a transit virtual interface to be provisioned on a connection.
+		 * Required
+		 */
 		newTransitVirtualInterfaceAllocation: NewTransitVirtualInterfaceAllocation;
 	}
 
@@ -451,7 +460,10 @@ export namespace MyNS {
 	export interface CreatePrivateVirtualInterfaceRequest {
 		connectionId: string;
 
-		/** Information about a private virtual interface. */
+		/**
+		 * Information about a private virtual interface.
+		 * Required
+		 */
 		newPrivateVirtualInterface: NewPrivateVirtualInterface;
 	}
 
@@ -474,7 +486,10 @@ export namespace MyNS {
 	export interface CreatePublicVirtualInterfaceRequest {
 		connectionId: string;
 
-		/** Information about a public virtual interface. */
+		/**
+		 * Information about a public virtual interface.
+		 * Required
+		 */
 		newPublicVirtualInterface: NewPublicVirtualInterface;
 	}
 
@@ -501,7 +516,10 @@ export namespace MyNS {
 	export interface CreateTransitVirtualInterfaceRequest {
 		connectionId: string;
 
-		/** Information about a transit virtual interface. */
+		/**
+		 * Information about a transit virtual interface.
+		 * Required
+		 */
 		newTransitVirtualInterface: NewTransitVirtualInterface;
 	}
 

@@ -404,7 +404,10 @@ export namespace MyNS {
 		version?: string;
 		roleArn: string;
 
-		/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
+		/**
+		 * An object representing the VPC configuration to use for an Amazon EKS cluster.
+		 * Required
+		 */
 		resourcesVpcConfig: VpcConfigRequest;
 
 		/** An object representing the logging configuration for resources in your cluster. */
@@ -765,6 +768,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique name to give to your cluster.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
@@ -774,10 +778,16 @@ export namespace MyNS {
 		/** The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used. */
 		version?: string;
 
-		/** The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. */
+		/**
+		 * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+		 * Required
+		 */
 		roleArn: string;
 
-		/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
+		/**
+		 * An object representing the VPC configuration to use for an Amazon EKS cluster.
+		 * Required
+		 */
 		resourcesVpcConfig: CreateClusterPostBodyResourcesVpcConfig;
 
 		/** An object representing the logging configuration for resources in your cluster. */
@@ -810,10 +820,16 @@ export namespace MyNS {
 
 	export interface CreateFargateProfilePostBody {
 
-		/** The name of the Fargate profile. */
+		/**
+		 * The name of the Fargate profile.
+		 * Required
+		 */
 		fargateProfileName: string;
 
-		/** The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>. */
+		/**
+		 * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+		 * Required
+		 */
 		podExecutionRoleArn: string;
 
 		/** The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter. */
@@ -831,7 +847,10 @@ export namespace MyNS {
 
 	export interface CreateNodegroupPostBody {
 
-		/** The unique name to give your node group. */
+		/**
+		 * The unique name to give your node group.
+		 * Required
+		 */
 		nodegroupName: string;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
@@ -840,7 +859,10 @@ export namespace MyNS {
 		/** The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. */
 		diskSize?: number;
 
-		/** The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name of your cluster. */
+		/**
+		 * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
+		 * Required
+		 */
 		subnets: Array<string>;
 
 		/** The instance type to use for your node group. Currently, you can specify a single instance type for a node group. The default value for this parameter is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify the <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. */
@@ -852,7 +874,10 @@ export namespace MyNS {
 		/** An object representing the remote access configuration for the managed node group. */
 		remoteAccess?: CreateNodegroupPostBodyRemoteAccess;
 
-		/** The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. */
+		/**
+		 * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+		 * Required
+		 */
 		nodeRole: string;
 
 		/** The Kubernetes labels to be applied to the nodes in the node group when they are created. */
@@ -884,13 +909,19 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The tags to add to the resource. A tag is an array of key-value pairs. */
+		/**
+		 * The tags to add to the resource. A tag is an array of key-value pairs.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
 	export interface UpdateClusterVersionPostBody {
 
-		/** The desired Kubernetes version following a successful update. */
+		/**
+		 * The desired Kubernetes version following a successful update.
+		 * Required
+		 */
 		version: string;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */

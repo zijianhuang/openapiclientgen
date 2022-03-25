@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateMeshOutput {
 
-		/** An object that represents a service mesh returned by a describe operation. */
+		/**
+		 * An object that represents a service mesh returned by a describe operation.
+		 * Required
+		 */
 		mesh: MeshData;
 	}
 
@@ -13,13 +16,22 @@ export namespace MyNS {
 	export interface MeshData {
 		meshName: string;
 
-		/** An object that represents metadata for a resource. */
+		/**
+		 * An object that represents metadata for a resource.
+		 * Required
+		 */
 		metadata: ResourceMetadata;
 
-		/** An object that represents the specification of a service mesh. */
+		/**
+		 * An object that represents the specification of a service mesh.
+		 * Required
+		 */
 		spec: MeshSpec;
 
-		/** An object that represents the status of a service mesh. */
+		/**
+		 * An object that represents the status of a service mesh.
+		 * Required
+		 */
 		status: MeshStatus;
 	}
 
@@ -97,7 +109,10 @@ export namespace MyNS {
 
 	export interface CreateRouteOutput {
 
-		/** An object that represents a route returned by a describe operation. */
+		/**
+		 * An object that represents a route returned by a describe operation.
+		 * Required
+		 */
 		route: RouteData;
 	}
 
@@ -106,14 +121,23 @@ export namespace MyNS {
 	export interface RouteData {
 		meshName: string;
 
-		/** An object that represents metadata for a resource. */
+		/**
+		 * An object that represents metadata for a resource.
+		 * Required
+		 */
 		metadata: ResourceMetadata;
 		routeName: string;
 
-		/** An object that represents a route specification. Specify one route type. */
+		/**
+		 * An object that represents a route specification. Specify one route type.
+		 * Required
+		 */
 		spec: RouteSpec;
 
-		/** An object that represents the current status of a route. */
+		/**
+		 * An object that represents the current status of a route.
+		 * Required
+		 */
 		status: RouteStatus;
 		virtualRouterName: string;
 	}
@@ -140,10 +164,16 @@ export namespace MyNS {
 	/** An object that represents a gRPC route type. */
 	export interface GrpcRoute {
 
-		/** An object that represents the action to take if a match is determined. */
+		/**
+		 * An object that represents the action to take if a match is determined.
+		 * Required
+		 */
 		action: GrpcRouteAction;
 
-		/** An object that represents the criteria for determining a request match. */
+		/**
+		 * An object that represents the criteria for determining a request match.
+		 * Required
+		 */
 		match: GrpcRouteMatch;
 
 		/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
@@ -212,7 +242,10 @@ export namespace MyNS {
 		httpRetryEvents?: Array<string>;
 		maxRetries: number;
 
-		/** An object that represents a duration of time. */
+		/**
+		 * An object that represents a duration of time.
+		 * Required
+		 */
 		perRetryTimeout: Duration;
 		tcpRetryEvents?: Array<TcpRetryPolicyEvent>;
 	}
@@ -234,12 +267,16 @@ export namespace MyNS {
 	/** An object that represents an HTTP or HTTP/2 route type. */
 	export interface HttpRoute {
 
-		/** An object that represents the action to take if a match is determined. */
+		/**
+		 * An object that represents the action to take if a match is determined.
+		 * Required
+		 */
 		action: HttpRouteAction;
 
 		/**
 		 * An object that represents the requirements for a route to match HTTP requests for a
 		 * virtual router.
+		 * Required
 		 */
 		match: HttpRouteMatch;
 
@@ -303,7 +340,10 @@ export namespace MyNS {
 		httpRetryEvents?: Array<string>;
 		maxRetries: number;
 
-		/** An object that represents a duration of time. */
+		/**
+		 * An object that represents a duration of time.
+		 * Required
+		 */
 		perRetryTimeout: Duration;
 		tcpRetryEvents?: Array<TcpRetryPolicyEvent>;
 	}
@@ -312,7 +352,10 @@ export namespace MyNS {
 	/** An object that represents a TCP route type. */
 	export interface TcpRoute {
 
-		/** An object that represents the action to take if a match is determined. */
+		/**
+		 * An object that represents the action to take if a match is determined.
+		 * Required
+		 */
 		action: TcpRouteAction;
 	}
 
@@ -330,7 +373,10 @@ export namespace MyNS {
 
 	export interface CreateVirtualNodeOutput {
 
-		/** An object that represents a virtual node returned by a describe operation. */
+		/**
+		 * An object that represents a virtual node returned by a describe operation.
+		 * Required
+		 */
 		virtualNode: VirtualNodeData;
 	}
 
@@ -339,13 +385,22 @@ export namespace MyNS {
 	export interface VirtualNodeData {
 		meshName: string;
 
-		/** An object that represents metadata for a resource. */
+		/**
+		 * An object that represents metadata for a resource.
+		 * Required
+		 */
 		metadata: ResourceMetadata;
 
-		/** An object that represents the specification of a virtual node. */
+		/**
+		 * An object that represents the specification of a virtual node.
+		 * Required
+		 */
 		spec: VirtualNodeSpec;
 
-		/** An object that represents the current status of the virtual node. */
+		/**
+		 * An object that represents the current status of the virtual node.
+		 * Required
+		 */
 		status: VirtualNodeStatus;
 		virtualNodeName: string;
 	}
@@ -388,7 +443,10 @@ export namespace MyNS {
 		enforce?: boolean;
 		ports?: Array<number>;
 
-		/** An object that represents a Transport Layer Security (TLS) validation context. */
+		/**
+		 * An object that represents a Transport Layer Security (TLS) validation context.
+		 * Required
+		 */
 		validation: TlsValidationContext;
 	}
 
@@ -396,7 +454,10 @@ export namespace MyNS {
 	/** An object that represents a Transport Layer Security (TLS) validation context. */
 	export interface TlsValidationContext {
 
-		/** An object that represents a Transport Layer Security (TLS) validation context trust. */
+		/**
+		 * An object that represents a Transport Layer Security (TLS) validation context trust.
+		 * Required
+		 */
 		trust: TlsValidationContextTrust;
 	}
 
@@ -456,7 +517,10 @@ export namespace MyNS {
 		/** An object that represents the health check policy for a virtual node's listener. */
 		healthCheck?: HealthCheckPolicy;
 
-		/** An object that represents a port mapping. */
+		/**
+		 * An object that represents a port mapping.
+		 * Required
+		 */
 		portMapping: PortMapping;
 
 		/** An object that represents the Transport Layer Security (TLS) properties for a listener. */
@@ -488,7 +552,10 @@ export namespace MyNS {
 	/** An object that represents the Transport Layer Security (TLS) properties for a listener. */
 	export interface ListenerTls {
 
-		/** An object that represents a listener's Transport Layer Security (TLS) certificate. */
+		/**
+		 * An object that represents a listener's Transport Layer Security (TLS) certificate.
+		 * Required
+		 */
 		certificate: ListenerTlsCertificate;
 		mode: ListenerTlsMode;
 	}
@@ -602,7 +669,10 @@ export namespace MyNS {
 
 	export interface CreateVirtualRouterOutput {
 
-		/** An object that represents a virtual router returned by a describe operation. */
+		/**
+		 * An object that represents a virtual router returned by a describe operation.
+		 * Required
+		 */
 		virtualRouter: VirtualRouterData;
 	}
 
@@ -611,13 +681,22 @@ export namespace MyNS {
 	export interface VirtualRouterData {
 		meshName: string;
 
-		/** An object that represents metadata for a resource. */
+		/**
+		 * An object that represents metadata for a resource.
+		 * Required
+		 */
 		metadata: ResourceMetadata;
 
-		/** An object that represents the specification of a virtual router. */
+		/**
+		 * An object that represents the specification of a virtual router.
+		 * Required
+		 */
 		spec: VirtualRouterSpec;
 
-		/** An object that represents the status of a virtual router. */
+		/**
+		 * An object that represents the status of a virtual router.
+		 * Required
+		 */
 		status: VirtualRouterStatus;
 		virtualRouterName: string;
 	}
@@ -632,7 +711,10 @@ export namespace MyNS {
 	/** An object that represents a virtual router listener. */
 	export interface VirtualRouterListener {
 
-		/** An object that represents a port mapping. */
+		/**
+		 * An object that represents a port mapping.
+		 * Required
+		 */
 		portMapping: PortMapping;
 	}
 
@@ -644,7 +726,10 @@ export namespace MyNS {
 
 	export interface CreateVirtualServiceOutput {
 
-		/** An object that represents a virtual service returned by a describe operation. */
+		/**
+		 * An object that represents a virtual service returned by a describe operation.
+		 * Required
+		 */
 		virtualService: VirtualServiceData;
 	}
 
@@ -653,13 +738,22 @@ export namespace MyNS {
 	export interface VirtualServiceData {
 		meshName: string;
 
-		/** An object that represents metadata for a resource. */
+		/**
+		 * An object that represents metadata for a resource.
+		 * Required
+		 */
 		metadata: ResourceMetadata;
 
-		/** An object that represents the specification of a virtual service. */
+		/**
+		 * An object that represents the specification of a virtual service.
+		 * Required
+		 */
 		spec: VirtualServiceSpec;
 
-		/** An object that represents the status of a virtual service. */
+		/**
+		 * An object that represents the status of a virtual service.
+		 * Required
+		 */
 		status: VirtualServiceStatus;
 		virtualServiceName: string;
 	}
@@ -703,7 +797,10 @@ export namespace MyNS {
 
 	export interface DeleteMeshOutput {
 
-		/** An object that represents a service mesh returned by a describe operation. */
+		/**
+		 * An object that represents a service mesh returned by a describe operation.
+		 * Required
+		 */
 		mesh: MeshData;
 	}
 
@@ -712,55 +809,82 @@ export namespace MyNS {
 
 	export interface DeleteRouteOutput {
 
-		/** An object that represents a route returned by a describe operation. */
+		/**
+		 * An object that represents a route returned by a describe operation.
+		 * Required
+		 */
 		route: RouteData;
 	}
 
 	export interface DeleteVirtualNodeOutput {
 
-		/** An object that represents a virtual node returned by a describe operation. */
+		/**
+		 * An object that represents a virtual node returned by a describe operation.
+		 * Required
+		 */
 		virtualNode: VirtualNodeData;
 	}
 
 	export interface DeleteVirtualRouterOutput {
 
-		/** An object that represents a virtual router returned by a describe operation. */
+		/**
+		 * An object that represents a virtual router returned by a describe operation.
+		 * Required
+		 */
 		virtualRouter: VirtualRouterData;
 	}
 
 	export interface DeleteVirtualServiceOutput {
 
-		/** An object that represents a virtual service returned by a describe operation. */
+		/**
+		 * An object that represents a virtual service returned by a describe operation.
+		 * Required
+		 */
 		virtualService: VirtualServiceData;
 	}
 
 	export interface DescribeMeshOutput {
 
-		/** An object that represents a service mesh returned by a describe operation. */
+		/**
+		 * An object that represents a service mesh returned by a describe operation.
+		 * Required
+		 */
 		mesh: MeshData;
 	}
 
 	export interface DescribeRouteOutput {
 
-		/** An object that represents a route returned by a describe operation. */
+		/**
+		 * An object that represents a route returned by a describe operation.
+		 * Required
+		 */
 		route: RouteData;
 	}
 
 	export interface DescribeVirtualNodeOutput {
 
-		/** An object that represents a virtual node returned by a describe operation. */
+		/**
+		 * An object that represents a virtual node returned by a describe operation.
+		 * Required
+		 */
 		virtualNode: VirtualNodeData;
 	}
 
 	export interface DescribeVirtualRouterOutput {
 
-		/** An object that represents a virtual router returned by a describe operation. */
+		/**
+		 * An object that represents a virtual router returned by a describe operation.
+		 * Required
+		 */
 		virtualRouter: VirtualRouterData;
 	}
 
 	export interface DescribeVirtualServiceOutput {
 
-		/** An object that represents a virtual service returned by a describe operation. */
+		/**
+		 * An object that represents a virtual service returned by a describe operation.
+		 * Required
+		 */
 		virtualService: VirtualServiceData;
 	}
 
@@ -870,31 +994,46 @@ export namespace MyNS {
 
 	export interface UpdateMeshOutput {
 
-		/** An object that represents a service mesh returned by a describe operation. */
+		/**
+		 * An object that represents a service mesh returned by a describe operation.
+		 * Required
+		 */
 		mesh: MeshData;
 	}
 
 	export interface UpdateRouteOutput {
 
-		/** An object that represents a route returned by a describe operation. */
+		/**
+		 * An object that represents a route returned by a describe operation.
+		 * Required
+		 */
 		route: RouteData;
 	}
 
 	export interface UpdateVirtualNodeOutput {
 
-		/** An object that represents a virtual node returned by a describe operation. */
+		/**
+		 * An object that represents a virtual node returned by a describe operation.
+		 * Required
+		 */
 		virtualNode: VirtualNodeData;
 	}
 
 	export interface UpdateVirtualRouterOutput {
 
-		/** An object that represents a virtual router returned by a describe operation. */
+		/**
+		 * An object that represents a virtual router returned by a describe operation.
+		 * Required
+		 */
 		virtualRouter: VirtualRouterData;
 	}
 
 	export interface UpdateVirtualServiceOutput {
 
-		/** An object that represents a virtual service returned by a describe operation. */
+		/**
+		 * An object that represents a virtual service returned by a describe operation.
+		 * Required
+		 */
 		virtualService: VirtualServiceData;
 	}
 
@@ -918,7 +1057,10 @@ export namespace MyNS {
 	export interface CreateVirtualRouterInput {
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual router. */
+		/**
+		 * An object that represents the specification of a virtual router.
+		 * Required
+		 */
 		spec: VirtualRouterSpec;
 		tags?: Array<TagRef>;
 		virtualRouterName: string;
@@ -942,7 +1084,10 @@ export namespace MyNS {
 	export interface CreateVirtualNodeInput {
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual node. */
+		/**
+		 * An object that represents the specification of a virtual node.
+		 * Required
+		 */
 		spec: VirtualNodeSpec;
 		tags?: Array<TagRef>;
 		virtualNodeName: string;
@@ -954,7 +1099,10 @@ export namespace MyNS {
 	export interface UpdateVirtualNodeInput {
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual node. */
+		/**
+		 * An object that represents the specification of a virtual node.
+		 * Required
+		 */
 		spec: VirtualNodeSpec;
 	}
 
@@ -964,7 +1112,10 @@ export namespace MyNS {
 	export interface CreateVirtualServiceInput {
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual service. */
+		/**
+		 * An object that represents the specification of a virtual service.
+		 * Required
+		 */
 		spec: VirtualServiceSpec;
 		tags?: Array<TagRef>;
 		virtualServiceName: string;
@@ -973,7 +1124,10 @@ export namespace MyNS {
 	export interface UpdateVirtualRouterInput {
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual router. */
+		/**
+		 * An object that represents the specification of a virtual router.
+		 * Required
+		 */
 		spec: VirtualRouterSpec;
 	}
 
@@ -991,7 +1145,10 @@ export namespace MyNS {
 	export interface UpdateVirtualServiceInput {
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual service. */
+		/**
+		 * An object that represents the specification of a virtual service.
+		 * Required
+		 */
 		spec: VirtualServiceSpec;
 	}
 
@@ -1031,7 +1188,10 @@ export namespace MyNS {
 		clientToken?: string;
 		routeName: string;
 
-		/** An object that represents a route specification. Specify one route type. */
+		/**
+		 * An object that represents a route specification. Specify one route type.
+		 * Required
+		 */
 		spec: RouteSpec;
 		tags?: Array<TagRef>;
 	}
@@ -1039,7 +1199,10 @@ export namespace MyNS {
 	export interface UpdateRouteInput {
 		clientToken?: string;
 
-		/** An object that represents a route specification. Specify one route type. */
+		/**
+		 * An object that represents a route specification. Specify one route type.
+		 * Required
+		 */
 		spec: RouteSpec;
 	}
 
@@ -1533,6 +1696,7 @@ export namespace MyNS {
 
 		/**
 		 * The name to use for the service mesh.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
@@ -1568,12 +1732,16 @@ export namespace MyNS {
 
 		/**
 		 * The name to use for the route.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
 		routeName: string;
 
-		/** An object that represents a route specification. Specify one route type. */
+		/**
+		 * An object that represents a route specification. Specify one route type.
+		 * Required
+		 */
 		spec: CreateRoutePutBodySpec;
 
 		/**
@@ -1611,7 +1779,10 @@ export namespace MyNS {
 		 */
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual node. */
+		/**
+		 * An object that represents the specification of a virtual node.
+		 * Required
+		 */
 		spec: CreateVirtualNodePutBodySpec;
 
 		/**
@@ -1626,6 +1797,7 @@ export namespace MyNS {
 
 		/**
 		 * The name to use for the virtual node.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
@@ -1654,7 +1826,10 @@ export namespace MyNS {
 		 */
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual router. */
+		/**
+		 * An object that represents the specification of a virtual router.
+		 * Required
+		 */
 		spec: CreateVirtualRouterPutBodySpec;
 
 		/**
@@ -1669,6 +1844,7 @@ export namespace MyNS {
 
 		/**
 		 * The name to use for the virtual router.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
@@ -1687,7 +1863,10 @@ export namespace MyNS {
 		 */
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual service. */
+		/**
+		 * An object that represents the specification of a virtual service.
+		 * Required
+		 */
 		spec: CreateVirtualServicePutBodySpec;
 
 		/**
@@ -1700,7 +1879,10 @@ export namespace MyNS {
 		 */
 		tags?: Array<TagRef>;
 
-		/** The name to use for the virtual service. */
+		/**
+		 * The name to use for the virtual service.
+		 * Required
+		 */
 		virtualServiceName: string;
 	}
 
@@ -1736,7 +1918,10 @@ export namespace MyNS {
 		 */
 		clientToken?: string;
 
-		/** An object that represents a route specification. Specify one route type. */
+		/**
+		 * An object that represents a route specification. Specify one route type.
+		 * Required
+		 */
 		spec: UpdateRoutePutBodySpec;
 	}
 
@@ -1764,7 +1949,10 @@ export namespace MyNS {
 		 */
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual node. */
+		/**
+		 * An object that represents the specification of a virtual node.
+		 * Required
+		 */
 		spec: UpdateVirtualNodePutBodySpec;
 	}
 
@@ -1790,7 +1978,10 @@ export namespace MyNS {
 		 */
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual router. */
+		/**
+		 * An object that represents the specification of a virtual router.
+		 * Required
+		 */
 		spec: UpdateVirtualRouterPutBodySpec;
 	}
 
@@ -1806,7 +1997,10 @@ export namespace MyNS {
 		 */
 		clientToken?: string;
 
-		/** An object that represents the specification of a virtual service. */
+		/**
+		 * An object that represents the specification of a virtual service.
+		 * Required
+		 */
 		spec: UpdateVirtualServicePutBodySpec;
 	}
 
@@ -1822,6 +2016,7 @@ export namespace MyNS {
 		 * The tags to add to the resource. A tag is an array of key-value pairs.
 		 * Tag keys can have a maximum character length of 128 characters, and tag values can have
 		 * a maximum length of 256 characters.
+		 * Required
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
@@ -1832,6 +2027,7 @@ export namespace MyNS {
 
 		/**
 		 * The keys of the tags to be removed.
+		 * Required
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */

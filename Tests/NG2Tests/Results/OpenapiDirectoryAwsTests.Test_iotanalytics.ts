@@ -128,7 +128,10 @@ export namespace MyNS {
 		image: string;
 		executionRoleArn: string;
 
-		/** The configuration of the resource used to execute the "containerAction". */
+		/**
+		 * The configuration of the resource used to execute the "containerAction".
+		 * Required
+		 */
 		resourceConfiguration: ResourceConfiguration;
 		variables?: Array<Variable>;
 	}
@@ -196,7 +199,10 @@ export namespace MyNS {
 	export interface DatasetContentDeliveryRule {
 		entryName?: string;
 
-		/** The destination to which data set contents are delivered. */
+		/**
+		 * The destination to which data set contents are delivered.
+		 * Required
+		 */
 		destination: DatasetContentDeliveryDestination;
 	}
 
@@ -864,7 +870,10 @@ export namespace MyNS {
 
 	export interface PutLoggingOptionsRequest {
 
-		/** Information about logging options. */
+		/**
+		 * Information about logging options.
+		 * Required
+		 */
 		loggingOptions: LoggingOptions;
 	}
 
@@ -872,7 +881,10 @@ export namespace MyNS {
 
 	export interface RunPipelineActivityRequest {
 
-		/** An activity that performs a transformation on a message. */
+		/**
+		 * An activity that performs a transformation on a message.
+		 * Required
+		 */
 		pipelineActivity: PipelineActivity;
 		payloads: Array<string>;
 	}
@@ -1285,13 +1297,17 @@ export namespace MyNS {
 
 		/**
 		 * The name of the channel where the messages are sent.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: string;
 
-		/** <p>The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.</p> <p>Note that the field names of message payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li> </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p> */
+		/**
+		 * <p>The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.</p> <p>Note that the field names of message payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li> </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+		 * Required
+		 */
 		messages: Array<Message>;
 	}
 
@@ -1299,6 +1315,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the channel.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9_]+$
@@ -1337,6 +1354,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the data set.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9_]+$
@@ -1345,6 +1363,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of actions that create the data set contents.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
@@ -1392,6 +1411,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the data store.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9_]+$
@@ -1430,6 +1450,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the pipeline.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9_]+$
@@ -1438,6 +1459,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p> <p>The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:</p> <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 25
 		 */
@@ -1478,6 +1500,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of "DatasetAction" objects.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
@@ -1541,6 +1564,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p> <p>The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:</p> <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 25
 		 */
@@ -1549,7 +1573,10 @@ export namespace MyNS {
 
 	export interface PutLoggingOptionsPutBody {
 
-		/** Information about logging options. */
+		/**
+		 * Information about logging options.
+		 * Required
+		 */
 		loggingOptions: PutLoggingOptionsPutBodyLoggingOptions;
 	}
 
@@ -1563,6 +1590,7 @@ export namespace MyNS {
 
 		/**
 		 * The new or modified tags for the resource.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -1571,11 +1599,15 @@ export namespace MyNS {
 
 	export interface RunPipelineActivityPostBody {
 
-		/** An activity that performs a transformation on a message. */
+		/**
+		 * An activity that performs a transformation on a message.
+		 * Required
+		 */
 		pipelineActivity: RunPipelineActivityPostBodyPipelineActivity;
 
 		/**
 		 * The sample message payloads on which the pipeline activity is run.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */

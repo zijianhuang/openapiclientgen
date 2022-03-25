@@ -1358,12 +1358,14 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		imageBuildVersionArn: string;
 
 		/**
 		 * The idempotency token used to make this request idempotent.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -1374,12 +1376,14 @@ export namespace MyNS {
 
 		/**
 		 * The name of the component.
+		 * Required
 		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
 
 		/**
 		 * The semantic version of the component. This version follows the semantic version syntax. For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
+		 * Required
 		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: string;
@@ -1398,7 +1402,10 @@ export namespace MyNS {
 		 */
 		changeDescription?: string;
 
-		/** The platform of the component. */
+		/**
+		 * The platform of the component.
+		 * Required
+		 */
 		platform: ComponentPlatform;
 
 		/**
@@ -1430,6 +1437,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token of the component.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -1440,6 +1448,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the distribution configuration.
+		 * Required
 		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
@@ -1451,7 +1460,10 @@ export namespace MyNS {
 		 */
 		description?: string;
 
-		/** The distributions of the distribution configuration. */
+		/**
+		 * The distributions of the distribution configuration.
+		 * Required
+		 */
 		distributions: Array<Distribution>;
 
 		/** The tags of the distribution configuration. */
@@ -1459,6 +1471,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token of the distribution configuration.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -1469,6 +1482,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: string;
@@ -1481,6 +1495,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: string;
@@ -1496,6 +1511,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token used to make this request idempotent.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -1511,6 +1527,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the image pipeline.
+		 * Required
 		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
@@ -1524,12 +1541,14 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: string;
@@ -1557,6 +1576,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token used to make this request idempotent.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -1577,6 +1597,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the image recipe.
+		 * Required
 		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
@@ -1590,18 +1611,21 @@ export namespace MyNS {
 
 		/**
 		 * The semantic version of the image recipe.
+		 * Required
 		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: string;
 
 		/**
 		 * The components of the image recipe.
+		 * Required
 		 * Minimum items: 1
 		 */
 		components: Array<ComponentConfiguration>;
 
 		/**
 		 * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 */
@@ -1615,6 +1639,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token used to make this request idempotent.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -1625,6 +1650,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the infrastructure configuration.
+		 * Required
 		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
@@ -1641,6 +1667,7 @@ export namespace MyNS {
 
 		/**
 		 * The instance profile to associate with the instance used to customize your EC2 AMI.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 */
@@ -1680,6 +1707,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token used to make this request idempotent.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -1696,12 +1724,14 @@ export namespace MyNS {
 
 		/**
 		 * The name of the component.
+		 * Required
 		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
 
 		/**
 		 * The semantic version of the component. This version follows the semantic version syntax. For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
+		 * Required
 		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: string;
@@ -1720,13 +1750,22 @@ export namespace MyNS {
 		 */
 		changeDescription?: string;
 
-		/** The type of the component denotes whether the component is used to build the image or only to test it. */
+		/**
+		 * The type of the component denotes whether the component is used to build the image or only to test it.
+		 * Required
+		 */
 		type: ComponentType;
 
-		/** The format of the resource that you want to import as a component. */
+		/**
+		 * The format of the resource that you want to import as a component.
+		 * Required
+		 */
 		format: ComponentFormat;
 
-		/** The platform of the component. */
+		/**
+		 * The platform of the component.
+		 * Required
+		 */
 		platform: ComponentPlatform;
 
 		/**
@@ -1751,6 +1790,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token of the component.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -1761,6 +1801,7 @@ export namespace MyNS {
 
 		/**
 		 * The component version Amazon Resource Name (ARN) whose versions you want to list.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		componentVersionArn: string;
@@ -1835,6 +1876,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageVersionArn: string;
@@ -1865,6 +1907,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: string;
@@ -1995,7 +2038,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The tags to apply to the resource. */
+		/**
+		 * The tags to apply to the resource.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
@@ -2003,12 +2049,14 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the component that this policy should be applied to.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		componentArn: string;
 
 		/**
 		 * The policy to apply.
+		 * Required
 		 * Max length: 30000
 		 * Min length: 1
 		 */
@@ -2019,12 +2067,14 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image that this policy should be applied to.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		imageArn: string;
 
 		/**
 		 * The policy to apply.
+		 * Required
 		 * Max length: 30000
 		 * Min length: 1
 		 */
@@ -2035,12 +2085,14 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: string;
 
 		/**
 		 * The policy to apply.
+		 * Required
 		 * Max length: 30000
 		 * Min length: 1
 		 */
@@ -2051,12 +2103,14 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: string;
 
 		/**
 		 * The idempotency token used to make this request idempotent.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -2067,6 +2121,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the distribution configuration that you want to update.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
 		 */
 		distributionConfigurationArn: string;
@@ -2078,11 +2133,15 @@ export namespace MyNS {
 		 */
 		description?: string;
 
-		/** The distributions of the distribution configuration. */
+		/**
+		 * The distributions of the distribution configuration.
+		 * Required
+		 */
 		distributions: Array<Distribution>;
 
 		/**
 		 * The idempotency token of the distribution configuration.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -2093,6 +2152,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline that you want to update.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: string;
@@ -2106,12 +2166,14 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: string;
@@ -2136,6 +2198,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token used to make this request idempotent.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */
@@ -2156,6 +2219,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
+		 * Required
 		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: string;
@@ -2172,6 +2236,7 @@ export namespace MyNS {
 
 		/**
 		 * The instance profile to associate with the instance used to customize your EC2 AMI.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 */
@@ -2208,6 +2273,7 @@ export namespace MyNS {
 
 		/**
 		 * The idempotency token used to make this request idempotent.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 */

@@ -557,7 +557,10 @@ export namespace MyNS {
 		Role: string;
 		Handler: string;
 
-		/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
+		/**
+		 * The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
+		 * Required
+		 */
 		Code: FunctionCode;
 		Description?: string;
 		Timeout?: number;
@@ -702,7 +705,10 @@ export namespace MyNS {
 	export interface PublishLayerVersionRequest {
 		Description?: string;
 
-		/** A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly. */
+		/**
+		 * A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly.
+		 * Required
+		 */
 		Content: LayerVersionContentInput;
 		CompatibleRuntimes?: Array<Runtime>;
 		LicenseInfo?: string;
@@ -1355,6 +1361,7 @@ export namespace MyNS {
 
 		/**
 		 * An identifier that distinguishes the policy from others on the same layer version.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: ([a-zA-Z0-9-_]+)
@@ -1363,12 +1370,14 @@ export namespace MyNS {
 
 		/**
 		 * The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.
+		 * Required
 		 * Pattern: lambda:GetLayerVersion
 		 */
 		Action: string;
 
 		/**
 		 * An account ID, or <code>*</code> to grant permission to all AWS accounts.
+		 * Required
 		 * Pattern: \d{12}|\*|arn:(aws[a-zA-Z-]*):iam::\d{12}:root
 		 */
 		Principal: string;
@@ -1384,6 +1393,7 @@ export namespace MyNS {
 
 		/**
 		 * A statement identifier that differentiates the statement from others in the same policy.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 * Pattern: ([a-zA-Z0-9-_]+)
@@ -1392,12 +1402,14 @@ export namespace MyNS {
 
 		/**
 		 * The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.
+		 * Required
 		 * Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
 		 */
 		Action: string;
 
 		/**
 		 * The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.
+		 * Required
 		 * Pattern: .*
 		 */
 		Principal: string;
@@ -1430,6 +1442,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the alias.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
@@ -1438,6 +1451,7 @@ export namespace MyNS {
 
 		/**
 		 * The function version that the alias invokes.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: (\$LATEST|[0-9]+)
@@ -1463,12 +1477,14 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li> </ul>
+		 * Required
 		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
 		 */
 		EventSourceArn: string;
 
 		/**
 		 * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+		 * Required
 		 * Max length: 140
 		 * Min length: 1
 		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
@@ -1539,29 +1555,38 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		 * Required
 		 * Max length: 140
 		 * Min length: 1
 		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: string;
 
-		/** The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. */
+		/**
+		 * The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+		 * Required
+		 */
 		Runtime: CreateFunctionPostBodyRuntime;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the function's execution role.
+		 * Required
 		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
 		 */
 		Role: string;
 
 		/**
 		 * The name of the method within your code that Lambda calls to execute your function. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
+		 * Required
 		 * Max length: 128
 		 * Pattern: [^\s]+
 		 */
 		Handler: string;
 
-		/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
+		/**
+		 * The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
+		 * Required
+		 */
 		Code: CreateFunctionPostBodyCode;
 
 		/**
@@ -1734,6 +1759,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of simultaneous executions to reserve for the function.
+		 * Required
 		 * Minimum: 0
 		 */
 		ReservedConcurrentExecutions: number;
@@ -1801,6 +1827,7 @@ export namespace MyNS {
 
 		/**
 		 * The amount of provisioned concurrency to allocate for the version or alias.
+		 * Required
 		 * Minimum: 1
 		 */
 		ProvisionedConcurrentExecutions: number;
@@ -1898,7 +1925,10 @@ export namespace MyNS {
 
 	export interface InvokeAsyncPostBody {
 
-		/** The JSON that you want to provide to your Lambda function as input. */
+		/**
+		 * The JSON that you want to provide to your Lambda function as input.
+		 * Required
+		 */
 		InvokeArgs: string;
 	}
 
@@ -1913,7 +1943,10 @@ export namespace MyNS {
 		 */
 		Description?: string;
 
-		/** A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly. */
+		/**
+		 * A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly.
+		 * Required
+		 */
 		Content: PublishLayerVersionPostBodyContent;
 
 		/**
@@ -1940,7 +1973,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** A list of tags to apply to the function. */
+		/**
+		 * A list of tags to apply to the function.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 

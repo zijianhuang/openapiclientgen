@@ -723,6 +723,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -730,6 +731,7 @@ export namespace MyNS {
 
 		/**
 		 * The fully qualified domain name (FQDN).
+		 * Required
 		 * Max length: 253
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
@@ -744,6 +746,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of an issued ACM certificate that is valid for the domain being associated.
+		 * Required
 		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		AcmCertificateArn: string;
@@ -753,12 +756,16 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
 		FleetArn: string;
 
-		/** The authorization provider type. */
+		/**
+		 * The authorization provider type.
+		 * Required
+		 */
 		AuthorizationProviderType: DescribeIdentityProviderConfigurationResponseIdentityProviderType;
 
 		/**
@@ -774,6 +781,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -781,6 +789,7 @@ export namespace MyNS {
 
 		/**
 		 * The root certificate of the CA.
+		 * Required
 		 * Max length: 8192
 		 * Min length: 1
 		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
@@ -798,6 +807,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique name for the fleet.
+		 * Required
 		 * Max length: 48
 		 * Min length: 1
 		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
@@ -821,6 +831,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -831,6 +842,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -841,6 +853,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -851,6 +864,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -858,6 +872,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique identifier for a registered user's device.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -868,6 +883,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -878,6 +894,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -885,6 +902,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the domain.
+		 * Required
 		 * Max length: 253
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
@@ -896,6 +914,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -906,6 +925,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -916,6 +936,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -923,6 +944,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique identifier for the certificate authority.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -933,6 +955,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -940,6 +963,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the domain.
+		 * Required
 		 * Max length: 253
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
@@ -951,6 +975,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -958,6 +983,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique identifier for the authorization provider.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -968,6 +994,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -975,6 +1002,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique identifier for the CA.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -985,6 +1013,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1009,6 +1038,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1048,7 +1078,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The tags to add to the resource. A tag is a key-value pair. */
+		/**
+		 * The tags to add to the resource. A tag is a key-value pair.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 
@@ -1056,6 +1089,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1080,6 +1114,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1104,6 +1139,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1111,6 +1147,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the domain.
+		 * Required
 		 * Max length: 253
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
@@ -1122,6 +1159,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1129,6 +1167,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the domain.
+		 * Required
 		 * Max length: 253
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
@@ -1140,6 +1179,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1147,6 +1187,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the user.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -1157,6 +1198,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1173,6 +1215,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1180,15 +1223,20 @@ export namespace MyNS {
 
 		/**
 		 * The VPC with connectivity to associated websites.
+		 * Required
 		 * Pattern: ^vpc-([0-9a-f]{8}|[0-9a-f]{17})$
 		 */
 		VpcId: string;
 
-		/** The subnets used for X-ENI connections from Amazon WorkLink rendering containers. */
+		/**
+		 * The subnets used for X-ENI connections from Amazon WorkLink rendering containers.
+		 * Required
+		 */
 		SubnetIds: Array<string>;
 
 		/**
 		 * The security groups associated with access to the provided subnets.
+		 * Required
 		 * Maximum items: 5
 		 */
 		SecurityGroupIds: Array<string>;
@@ -1198,6 +1246,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1216,6 +1265,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1223,6 +1273,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the domain.
+		 * Required
 		 * Max length: 253
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
@@ -1240,6 +1291,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -1259,12 +1311,16 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the fleet.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
 		FleetArn: string;
 
-		/** The type of identity provider. */
+		/**
+		 * The type of identity provider.
+		 * Required
+		 */
 		IdentityProviderType: DescribeIdentityProviderConfigurationResponseIdentityProviderType;
 
 		/**

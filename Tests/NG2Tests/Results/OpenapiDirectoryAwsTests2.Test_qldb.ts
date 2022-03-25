@@ -52,7 +52,10 @@ export namespace MyNS {
 		Arn?: string;
 		Status: JournalKinesisStreamDescriptionStatus;
 
-		/** The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream. */
+		/**
+		 * The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
+		 * Required
+		 */
 		KinesisConfiguration: KinesisConfiguration;
 		ErrorCause?: JournalKinesisStreamDescriptionErrorCause;
 		StreamName: string;
@@ -71,7 +74,10 @@ export namespace MyNS {
 
 	export interface DescribeJournalS3ExportResponse {
 
-		/** The information about a journal export job, including the ledger name, export ID, when it was created, current status, and its start and end time export parameters. */
+		/**
+		 * The information about a journal export job, including the ledger name, export ID, when it was created, current status, and its start and end time export parameters.
+		 * Required
+		 */
 		ExportDescription: JournalS3ExportDescription;
 	}
 
@@ -85,7 +91,10 @@ export namespace MyNS {
 		InclusiveStartTime: Date;
 		ExclusiveEndTime: Date;
 
-		/** The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents. */
+		/**
+		 * The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.
+		 * Required
+		 */
 		S3ExportConfiguration: S3ExportConfiguration;
 		RoleArn: string;
 	}
@@ -98,7 +107,10 @@ export namespace MyNS {
 		Bucket: string;
 		Prefix: string;
 
-		/** The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket. */
+		/**
+		 * The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.
+		 * Required
+		 */
 		EncryptionConfiguration: S3EncryptionConfiguration;
 	}
 
@@ -125,7 +137,10 @@ export namespace MyNS {
 
 	export interface GetBlockResponse {
 
-		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
+		/**
+		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
+		 * Required
+		 */
 		Block: ValueHolder;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
@@ -141,7 +156,10 @@ export namespace MyNS {
 	export interface GetDigestResponse {
 		Digest: string;
 
-		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
+		/**
+		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
+		 * Required
+		 */
 		DigestTipAddress: ValueHolder;
 	}
 
@@ -150,7 +168,10 @@ export namespace MyNS {
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
 		Proof?: ValueHolder;
 
-		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
+		/**
+		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
+		 * Required
+		 */
 		Revision: ValueHolder;
 	}
 
@@ -239,7 +260,10 @@ export namespace MyNS {
 		InclusiveStartTime: Date;
 		ExclusiveEndTime: Date;
 
-		/** The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents. */
+		/**
+		 * The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.
+		 * Required
+		 */
 		S3ExportConfiguration: S3ExportConfiguration;
 		RoleArn: string;
 	}
@@ -248,7 +272,10 @@ export namespace MyNS {
 
 	export interface GetBlockRequest {
 
-		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
+		/**
+		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
+		 * Required
+		 */
 		BlockAddress: ValueHolder;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
@@ -260,7 +287,10 @@ export namespace MyNS {
 
 	export interface GetRevisionRequest {
 
-		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
+		/**
+		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
+		 * Required
+		 */
 		BlockAddress: ValueHolder;
 		DocumentId: string;
 
@@ -293,7 +323,10 @@ export namespace MyNS {
 		InclusiveStartTime: Date;
 		ExclusiveEndTime?: Date;
 
-		/** The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream. */
+		/**
+		 * The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
+		 * Required
+		 */
 		KinesisConfiguration: KinesisConfiguration;
 		StreamName: string;
 	}
@@ -526,6 +559,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the ledger that you want to create. The name must be unique among all of your ledgers in the current AWS Region.
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
@@ -535,7 +569,10 @@ export namespace MyNS {
 		/** The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null. */
 		Tags?: {[id: string]: string };
 
-		/** The permissions mode to assign to the ledger that you want to create. */
+		/**
+		 * The permissions mode to assign to the ledger that you want to create.
+		 * Required
+		 */
 		PermissionsMode: PermissionsMode;
 
 		/** <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you use it to delete a ledger.</p> */
@@ -550,17 +587,27 @@ export namespace MyNS {
 
 	export interface ExportJournalToS3PostBody {
 
-		/** <p>The inclusive start date and time for the range of journal contents that you want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p> <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p> */
+		/**
+		 * <p>The inclusive start date and time for the range of journal contents that you want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p> <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
+		 * Required
+		 */
 		InclusiveStartTime: Date;
 
-		/** <p>The exclusive end date and time for the range of journal contents that you want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p> */
+		/**
+		 * <p>The exclusive end date and time for the range of journal contents that you want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
+		 * Required
+		 */
 		ExclusiveEndTime: Date;
 
-		/** The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents. */
+		/**
+		 * The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.
+		 * Required
+		 */
 		S3ExportConfiguration: ExportJournalToS3PostBodyS3ExportConfiguration;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> <ul> <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li> <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+		 * Required
 		 * Max length: 1600
 		 * Min length: 20
 		 */
@@ -577,7 +624,10 @@ export namespace MyNS {
 
 	export interface GetBlockPostBody {
 
-		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
+		/**
+		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
+		 * Required
+		 */
 		BlockAddress: GetBlockPostBodyBlockAddress;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
@@ -594,11 +644,15 @@ export namespace MyNS {
 
 	export interface GetRevisionPostBody {
 
-		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
+		/**
+		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
+		 * Required
+		 */
 		BlockAddress: GetRevisionPostBodyBlockAddress;
 
 		/**
 		 * The unique ID of the document to be verified.
+		 * Required
 		 * Max length: 22
 		 * Min length: 22
 		 * Pattern: ^[A-Za-z-0-9]+$
@@ -621,6 +675,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.
+		 * Required
 		 * Max length: 1600
 		 * Min length: 20
 		 */
@@ -629,17 +684,24 @@ export namespace MyNS {
 		/** The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null. */
 		Tags?: {[id: string]: string };
 
-		/** <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p> <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p> */
+		/**
+		 * <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p> <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
+		 * Required
+		 */
 		InclusiveStartTime: Date;
 
 		/** <p>The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the stream runs indefinitely until you cancel it.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> */
 		ExclusiveEndTime?: Date;
 
-		/** The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream. */
+		/**
+		 * The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
+		 * Required
+		 */
 		KinesisConfiguration: StreamJournalToKinesisPostBodyKinesisConfiguration;
 
 		/**
 		 * <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p> <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to create a stream with the same name and configuration of an active, existing stream for the same ledger, QLDB simply returns the existing stream. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
@@ -654,7 +716,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null. */
+		/**
+		 * The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 

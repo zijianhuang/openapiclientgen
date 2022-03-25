@@ -35,7 +35,10 @@ export namespace MyNS {
 
 	export interface Call {
 
-		/** Unique identifier of the account */
+		/**
+		 * Unique identifier of the account
+		 * Required
+		 */
 		accountId: number;
 
 		/** Time to answer the call */
@@ -44,10 +47,16 @@ export namespace MyNS {
 		/** Remote caller ID */
 		callerId?: string;
 
-		/** Direction of the call */
+		/**
+		 * Direction of the call
+		 * Required
+		 */
 		direction: CallDirection;
 
-		/** Duration of the call in milliseconds */
+		/**
+		 * Duration of the call in milliseconds
+		 * Required
+		 */
 		duration: number;
 
 		/** End time of the call */
@@ -56,25 +65,46 @@ export namespace MyNS {
 		/** External identifier of the call */
 		externalId?: string;
 
-		/** Unique identifier of the call */
+		/**
+		 * Unique identifier of the call
+		 * Required
+		 */
 		id: number;
 
-		/** Unique identifier of the account */
+		/**
+		 * Unique identifier of the account
+		 * Required
+		 */
 		phoneNumber: string;
 
-		/** Start time of the call */
+		/**
+		 * Start time of the call
+		 * Required
+		 */
 		startTime: Date;
 
-		/** Status of the call */
+		/**
+		 * Status of the call
+		 * Required
+		 */
 		state: CallState;
 
-		/** Record type */
+		/**
+		 * Record type
+		 * Required
+		 */
 		type: CallType;
 
-		/** Unique identifier of communications provider */
+		/**
+		 * Unique identifier of communications provider
+		 * Required
+		 */
 		uciId: number;
 
-		/** Unique identifier of the user */
+		/**
+		 * Unique identifier of the user
+		 * Required
+		 */
 		userId: number;
 	}
 
@@ -86,13 +116,19 @@ export namespace MyNS {
 
 	export interface CallCreate {
 
-		/** Phone number to call */
+		/**
+		 * Phone number to call
+		 * Required
+		 */
 		phoneNumber: string;
 	}
 
 	export interface CallTransfer {
 
-		/** Phone number to transfer to */
+		/**
+		 * Phone number to transfer to
+		 * Required
+		 */
 		phoneNumber: string;
 	}
 
@@ -109,7 +145,10 @@ export namespace MyNS {
 
 	export interface Event {
 
-		/** Unique identifier of the account */
+		/**
+		 * Unique identifier of the account
+		 * Required
+		 */
 		accountId: number;
 
 		/** Time to answer the event */
@@ -118,7 +157,10 @@ export namespace MyNS {
 		/** Remote caller ID */
 		callerId?: string;
 
-		/** Direction of the event */
+		/**
+		 * Direction of the event
+		 * Required
+		 */
 		direction: CallDirection;
 
 		/** Duration of the call in milliseconds */
@@ -130,26 +172,47 @@ export namespace MyNS {
 		/** External identifier of the event */
 		externalId?: string;
 
-		/** Unique identifier of the event */
+		/**
+		 * Unique identifier of the event
+		 * Required
+		 */
 		id: number;
 
-		/** Unique identifier of the account */
+		/**
+		 * Unique identifier of the account
+		 * Required
+		 */
 		phoneNumber: string;
 		smsData?: string;
 
-		/** Start time of the event */
+		/**
+		 * Start time of the event
+		 * Required
+		 */
 		startTime: Date;
 
-		/** Status of the event */
+		/**
+		 * Status of the event
+		 * Required
+		 */
 		state: CallState;
 
-		/** Record type */
+		/**
+		 * Record type
+		 * Required
+		 */
 		type: CallType;
 
-		/** Unique identifier of communications provider */
+		/**
+		 * Unique identifier of communications provider
+		 * Required
+		 */
 		uciId: number;
 
-		/** Unique identifier of the user */
+		/**
+		 * Unique identifier of the user
+		 * Required
+		 */
 		userId: number;
 	}
 

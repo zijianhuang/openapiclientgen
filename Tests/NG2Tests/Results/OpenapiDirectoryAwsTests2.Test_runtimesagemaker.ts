@@ -42,6 +42,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p> <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+		 * Required
 		 * Max length: 6291456
 		 */
 		Body: string;

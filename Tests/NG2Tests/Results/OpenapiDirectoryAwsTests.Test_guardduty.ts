@@ -96,7 +96,10 @@ export namespace MyNS {
 		Status: DescribePublishingDestinationResponseStatus;
 		PublishingFailureStartTimestamp: number;
 
-		/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
+		/**
+		 * Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
+		 * Required
+		 */
 		DestinationProperties: DestinationProperties;
 	}
 
@@ -146,7 +149,10 @@ export namespace MyNS {
 		Action: GetFilterResponseAction;
 		Rank?: number;
 
-		/** Contains information about the criteria used for querying findings. */
+		/**
+		 * Contains information about the criteria used for querying findings.
+		 * Required
+		 */
 		FindingCriteria: FindingCriteria;
 		Tags?: TagMap;
 	}
@@ -175,7 +181,10 @@ export namespace MyNS {
 		Partition?: string;
 		Region: string;
 
-		/** Contains information about the AWS resource associated with the activity that prompted GuardDuty to generate a finding. */
+		/**
+		 * Contains information about the AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+		 * Required
+		 */
 		Resource: Resource;
 		SchemaVersion: string;
 
@@ -564,7 +573,10 @@ export namespace MyNS {
 
 	export interface GetFindingsStatisticsResponse {
 
-		/** Contains information about finding statistics. */
+		/**
+		 * Contains information about finding statistics.
+		 * Required
+		 */
 		FindingStatistics: FindingStatistics;
 	}
 
@@ -597,7 +609,10 @@ export namespace MyNS {
 
 	export interface GetMasterAccountResponse {
 
-		/** Contains information about the master account and invitation. */
+		/**
+		 * Contains information about the master account and invitation.
+		 * Required
+		 */
 		Master: Master;
 	}
 
@@ -798,7 +813,10 @@ export namespace MyNS {
 		Action?: GetFilterResponseAction;
 		Rank?: number;
 
-		/** Contains information about the criteria used for querying findings. */
+		/**
+		 * Contains information about the criteria used for querying findings.
+		 * Required
+		 */
 		FindingCriteria: FindingCriteria;
 		ClientToken?: string;
 		Tags?: TagMap;
@@ -824,7 +842,10 @@ export namespace MyNS {
 	export interface CreatePublishingDestinationRequest {
 		DestinationType: DescribePublishingDestinationResponseDestinationType;
 
-		/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
+		/**
+		 * Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
+		 * Required
+		 */
 		DestinationProperties: DestinationProperties;
 		ClientToken?: string;
 	}
@@ -1647,10 +1668,16 @@ export namespace MyNS {
 
 	export interface AcceptInvitationPostBody {
 
-		/** The account ID of the master GuardDuty account whose invitation you're accepting. */
+		/**
+		 * The account ID of the master GuardDuty account whose invitation you're accepting.
+		 * Required
+		 */
 		masterId: string;
 
-		/** The value that is used to validate the master account to the member account. */
+		/**
+		 * The value that is used to validate the master account to the member account.
+		 * Required
+		 */
 		invitationId: string;
 	}
 
@@ -1658,6 +1685,7 @@ export namespace MyNS {
 
 		/**
 		 * The IDs of the findings that you want to archive.
+		 * Required
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
@@ -1666,7 +1694,10 @@ export namespace MyNS {
 
 	export interface CreateDetectorPostBody {
 
-		/** A Boolean value that specifies whether the detector is to be enabled. */
+		/**
+		 * A Boolean value that specifies whether the detector is to be enabled.
+		 * Required
+		 */
 		enable: boolean;
 
 		/**
@@ -1687,6 +1718,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the filter.
+		 * Required
 		 * Max length: 64
 		 * Min length: 3
 		 */
@@ -1713,7 +1745,10 @@ export namespace MyNS {
 		 */
 		rank?: number;
 
-		/** Contains information about the criteria used for querying findings. */
+		/**
+		 * Contains information about the criteria used for querying findings.
+		 * Required
+		 */
 		findingCriteria: CreateFilterPostBodyFindingCriteria;
 
 		/**
@@ -1735,6 +1770,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+		 * Required
 		 * Max length: 300
 		 * Min length: 1
 		 */
@@ -1742,6 +1778,7 @@ export namespace MyNS {
 
 		/**
 		 * The format of the file that contains the IPSet.
+		 * Required
 		 * Max length: 300
 		 * Min length: 1
 		 */
@@ -1749,12 +1786,16 @@ export namespace MyNS {
 
 		/**
 		 * The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+		 * Required
 		 * Max length: 300
 		 * Min length: 1
 		 */
 		location: string;
 
-		/** A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet. */
+		/**
+		 * A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+		 * Required
+		 */
 		activate: boolean;
 
 		/**
@@ -1772,6 +1813,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account ID and email address pairs of the accounts that you want to associate with the master GuardDuty account.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -1782,12 +1824,16 @@ export namespace MyNS {
 
 		/**
 		 * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
+		 * Required
 		 * Max length: 300
 		 * Min length: 1
 		 */
 		destinationType: DescribePublishingDestinationResponseDestinationType;
 
-		/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
+		/**
+		 * Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
+		 * Required
+		 */
 		destinationProperties: CreatePublishingDestinationPostBodyDestinationProperties;
 
 		/**
@@ -1817,6 +1863,7 @@ export namespace MyNS {
 
 		/**
 		 * A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.
+		 * Required
 		 * Max length: 300
 		 * Min length: 1
 		 */
@@ -1824,6 +1871,7 @@ export namespace MyNS {
 
 		/**
 		 * The format of the file that contains the ThreatIntelSet.
+		 * Required
 		 * Max length: 300
 		 * Min length: 1
 		 */
@@ -1831,12 +1879,16 @@ export namespace MyNS {
 
 		/**
 		 * The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+		 * Required
 		 * Max length: 300
 		 * Min length: 1
 		 */
 		location: string;
 
-		/** A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet. */
+		/**
+		 * A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.
+		 * Required
+		 */
 		activate: boolean;
 
 		/**
@@ -1854,6 +1906,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -1924,6 +1977,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -1934,6 +1988,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account IDs of the GuardDuty member accounts that you want to delete.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -1973,13 +2028,19 @@ export namespace MyNS {
 
 	export interface UpdateOrganizationConfigurationPostBody {
 
-		/** Indicates whether to automatically enable member accounts in the organization. */
+		/**
+		 * Indicates whether to automatically enable member accounts in the organization.
+		 * Required
+		 */
 		autoEnable: boolean;
 	}
 
 	export interface DisableOrganizationAdminAccountPostBody {
 
-		/** The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator. */
+		/**
+		 * The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.
+		 * Required
+		 */
 		adminAccountId: string;
 	}
 
@@ -1987,6 +2048,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master account.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -1995,7 +2057,10 @@ export namespace MyNS {
 
 	export interface EnableOrganizationAdminAccountPostBody {
 
-		/** The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator. */
+		/**
+		 * The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.
+		 * Required
+		 */
 		adminAccountId: string;
 	}
 
@@ -2003,6 +2068,7 @@ export namespace MyNS {
 
 		/**
 		 * The IDs of the findings that you want to retrieve.
+		 * Required
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
@@ -2021,6 +2087,7 @@ export namespace MyNS {
 
 		/**
 		 * The types of finding statistics to retrieve.
+		 * Required
 		 * Minimum items: 0
 		 * Maximum items: 10
 		 */
@@ -2038,6 +2105,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account IDs of the GuardDuty member accounts that you want to describe.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -2048,6 +2116,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account IDs of the accounts that you want to invite to GuardDuty as members.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -2090,7 +2159,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The tags to be added to a resource. */
+		/**
+		 * The tags to be added to a resource.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
@@ -2098,6 +2170,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account IDs of the GuardDuty member accounts to start monitoring.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -2108,6 +2181,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of account IDs for the member accounts to stop monitoring.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -2118,6 +2192,7 @@ export namespace MyNS {
 
 		/**
 		 * The IDs of the findings to unarchive.
+		 * Required
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
@@ -2128,12 +2203,16 @@ export namespace MyNS {
 
 		/**
 		 * The IDs of the findings that you want to mark as useful or not useful.
+		 * Required
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
 		findingIds: Array<string>;
 
-		/** The feedback for the finding. */
+		/**
+		 * The feedback for the finding.
+		 * Required
+		 */
 		feedback: Feedback;
 
 		/** Additional feedback about the GuardDuty findings. */

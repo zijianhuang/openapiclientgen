@@ -115,7 +115,10 @@ export namespace MyNS {
 	/** <p/> */
 	export interface S3AccessControlList {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		Owner: S3ObjectOwner;
 		Grants?: Array<S3Grant>;
 	}
@@ -148,7 +151,10 @@ export namespace MyNS {
 	/** Contains the configuration parameters for a Set Object Legal Hold operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds">PUT Object Legal Hold</a>. */
 	export interface S3SetObjectLegalHoldOperation {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		LegalHold: S3ObjectLockLegalHold;
 	}
 
@@ -163,7 +169,10 @@ export namespace MyNS {
 	export interface S3SetObjectRetentionOperation {
 		BypassGovernanceRetention?: boolean;
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		Retention: S3Retention;
 	}
 
@@ -257,10 +266,16 @@ export namespace MyNS {
 	/** Contains the configuration information for a job's manifest. */
 	export interface JobManifest {
 
-		/** Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest. */
+		/**
+		 * Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.
+		 * Required
+		 */
 		Spec: JobManifestSpec;
 
-		/** Contains the information required to locate a manifest object. */
+		/**
+		 * Contains the information required to locate a manifest object.
+		 * Required
+		 */
 		Location: JobManifestLocation;
 	}
 
@@ -455,14 +470,23 @@ export namespace MyNS {
 	export interface CreateJobRequest {
 		ConfirmationRequired?: boolean;
 
-		/** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. */
+		/**
+		 * The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+		 * Required
+		 */
 		Operation: JobOperation;
 
-		/** Contains the configuration parameters for a job-completion report. */
+		/**
+		 * Contains the configuration parameters for a job-completion report.
+		 * Required
+		 */
 		Report: JobReport;
 		ClientRequestToken: string;
 
-		/** Contains the configuration information for a job's manifest. */
+		/**
+		 * Contains the configuration information for a job's manifest.
+		 * Required
+		 */
 		Manifest: JobManifest;
 		Description?: string;
 		Priority: number;
@@ -520,7 +544,10 @@ export namespace MyNS {
 
 	export interface PutPublicAccessBlockRequest {
 
-		/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
+		/**
+		 * The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide.
+		 * Required
+		 */
 		PublicAccessBlockConfiguration: PublicAccessBlockConfiguration;
 	}
 

@@ -1473,7 +1473,10 @@ export namespace MyNS {
 		deviceSelectionConfiguration?: DeviceSelectionConfiguration;
 		name?: string;
 
-		/** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>. */
+		/**
+		 * Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+		 * Required
+		 */
 		test: ScheduleRunTest;
 
 		/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */

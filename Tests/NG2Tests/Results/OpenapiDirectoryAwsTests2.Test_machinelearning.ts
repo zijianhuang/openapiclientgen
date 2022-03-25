@@ -73,6 +73,7 @@ export namespace MyNS {
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Required
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
@@ -102,11 +103,15 @@ export namespace MyNS {
 		 */
 		DataSourceName?: string;
 
-		/** The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>. */
+		/**
+		 * The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.
+		 * Required
+		 */
 		RDSData: RDSDataSpec;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
+		 * Required
 		 * Max length: 110
 		 * Min length: 1
 		 */
@@ -118,21 +123,29 @@ export namespace MyNS {
 	/** The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>. */
 	export interface RDSDataSpec {
 
-		/** The database details of an Amazon RDS database. */
+		/**
+		 * The database details of an Amazon RDS database.
+		 * Required
+		 */
 		DatabaseInformation: RDSDatabase;
 
 		/**
 		 * The SQL query to be executed against the Amazon RDS database. The SQL query should be valid for the Amazon RDS type being used.
+		 * Required
 		 * Max length: 16777216
 		 * Min length: 1
 		 */
 		SelectSqlQuery: string;
 
-		/** The database credentials to connect to a database on an RDS DB instance. */
+		/**
+		 * The database credentials to connect to a database on an RDS DB instance.
+		 * Required
+		 */
 		DatabaseCredentials: RDSDatabaseCredentials;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Required
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
@@ -163,6 +176,7 @@ export namespace MyNS {
 
 		/**
 		 * Identifier of RDS DB Instances.
+		 * Required
 		 * Max length: 63
 		 * Min length: 1
 		 * Pattern: [a-z0-9-]+
@@ -171,6 +185,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of a database hosted on an RDS DB instance.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -183,6 +198,7 @@ export namespace MyNS {
 
 		/**
 		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
@@ -190,6 +206,7 @@ export namespace MyNS {
 
 		/**
 		 * The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.
+		 * Required
 		 * Max length: 128
 		 * Min length: 8
 		 */
@@ -212,11 +229,15 @@ export namespace MyNS {
 		 */
 		DataSourceName?: string;
 
-		/** Describes the data specification of an Amazon Redshift <code>DataSource</code>. */
+		/**
+		 * Describes the data specification of an Amazon Redshift <code>DataSource</code>.
+		 * Required
+		 */
 		DataSpec: RedshiftDataSpec;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
+		 * Required
 		 * Max length: 110
 		 * Min length: 1
 		 */
@@ -228,21 +249,29 @@ export namespace MyNS {
 	/** Describes the data specification of an Amazon Redshift <code>DataSource</code>. */
 	export interface RedshiftDataSpec {
 
-		/** Describes the database details required to connect to an Amazon Redshift database. */
+		/**
+		 * Describes the database details required to connect to an Amazon Redshift database.
+		 * Required
+		 */
 		DatabaseInformation: RedshiftDatabase;
 
 		/**
 		 * Describes the SQL query to execute on the Amazon Redshift database. The SQL query should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_SELECT_synopsis.html">SELECT</a>.
+		 * Required
 		 * Max length: 16777216
 		 * Min length: 1
 		 */
 		SelectSqlQuery: string;
 
-		/** Describes the database credentials for connecting to a database on an Amazon Redshift cluster. */
+		/**
+		 * Describes the database credentials for connecting to a database on an Amazon Redshift cluster.
+		 * Required
+		 */
 		DatabaseCredentials: RedshiftDatabaseCredentials;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Required
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
@@ -269,6 +298,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of a database hosted on an Amazon Redshift cluster.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z0-9]+
@@ -277,6 +307,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of an Amazon Redshift cluster.
+		 * Required
 		 * Max length: 63
 		 * Min length: 1
 		 * Pattern: [a-z0-9-]+
@@ -290,6 +321,7 @@ export namespace MyNS {
 
 		/**
 		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
@@ -297,6 +329,7 @@ export namespace MyNS {
 
 		/**
 		 * A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
+		 * Required
 		 * Max length: 64
 		 * Min length: 8
 		 */
@@ -319,7 +352,10 @@ export namespace MyNS {
 		 */
 		DataSourceName?: string;
 
-		/** Describes the data specification of a <code>DataSource</code>. */
+		/**
+		 * Describes the data specification of a <code>DataSource</code>.
+		 * Required
+		 */
 		DataSpec: S3DataSpec;
 		ComputeStatistics?: boolean;
 	}
@@ -330,6 +366,7 @@ export namespace MyNS {
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Required
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
@@ -1429,7 +1466,10 @@ export namespace MyNS {
 	export interface PredictInput {
 		MLModelId: string;
 
-		/** A map of variable name-value pairs that represent an observation. */
+		/**
+		 * A map of variable name-value pairs that represent an observation.
+		 * Required
+		 */
 		Record: Record;
 		PredictEndpoint: string;
 	}
@@ -1463,6 +1503,7 @@ export namespace MyNS {
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
+		 * Required
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
@@ -1480,6 +1521,7 @@ export namespace MyNS {
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
+		 * Required
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
@@ -1497,6 +1539,7 @@ export namespace MyNS {
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
+		 * Required
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */

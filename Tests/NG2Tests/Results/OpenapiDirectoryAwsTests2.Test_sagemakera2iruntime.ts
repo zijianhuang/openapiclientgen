@@ -97,7 +97,10 @@ export namespace MyNS {
 		HumanLoopName: string;
 		FlowDefinitionArn: string;
 
-		/** An object containing the human loop input in JSON format. */
+		/**
+		 * An object containing the human loop input in JSON format.
+		 * Required
+		 */
 		HumanLoopInput: HumanLoopInput;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
@@ -171,6 +174,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the human loop.
+		 * Required
 		 * Max length: 63
 		 * Min length: 1
 		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
@@ -179,12 +183,16 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
+		 * Required
 		 * Max length: 1024
 		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
 		 */
 		FlowDefinitionArn: string;
 
-		/** An object containing the human loop input in JSON format. */
+		/**
+		 * An object containing the human loop input in JSON format.
+		 * Required
+		 */
 		HumanLoopInput: StartHumanLoopPostBodyHumanLoopInput;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
@@ -203,6 +211,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the human loop that you want to stop.
+		 * Required
 		 * Max length: 63
 		 * Min length: 1
 		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$

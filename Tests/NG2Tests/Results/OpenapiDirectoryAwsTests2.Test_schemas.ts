@@ -366,7 +366,10 @@ export namespace MyNS {
 
 	export interface TagResourceRequest {
 
-		/** Key-value pairs associated with a resource. */
+		/**
+		 * Key-value pairs associated with a resource.
+		 * Required
+		 */
 		Tags: Tags;
 	}
 
@@ -742,6 +745,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the event bus.
+		 * Required
 		 * Max length: 1600
 		 * Min length: 20
 		 */
@@ -778,6 +782,7 @@ export namespace MyNS {
 
 		/**
 		 * The source of the schema definition.
+		 * Required
 		 * Max length: 100000
 		 * Min length: 1
 		 */
@@ -793,7 +798,10 @@ export namespace MyNS {
 		/** Key-value pairs associated with a resource. */
 		tags?: {[id: string]: string };
 
-		/** The type of schema. */
+		/**
+		 * The type of schema.
+		 * Required
+		 */
 		Type: Type;
 	}
 
@@ -836,7 +844,10 @@ export namespace MyNS {
 
 	export interface PutResourcePolicyPutBody {
 
-		/** The resource-based policy. */
+		/**
+		 * The resource-based policy.
+		 * Required
+		 */
 		Policy: string;
 
 		/** The revision ID of the policy. */
@@ -847,18 +858,25 @@ export namespace MyNS {
 
 		/**
 		 * An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
 		Events: Array<string>;
 
-		/** The type of event. */
+		/**
+		 * The type of event.
+		 * Required
+		 */
 		Type: Type;
 	}
 
 	export interface TagResourcePostBody {
 
-		/** Key-value pairs associated with a resource. */
+		/**
+		 * Key-value pairs associated with a resource.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

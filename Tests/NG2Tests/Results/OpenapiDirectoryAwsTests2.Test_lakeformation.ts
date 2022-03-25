@@ -216,10 +216,16 @@ export namespace MyNS {
 	export interface GrantPermissionsRequest {
 		CatalogId?: string;
 
-		/** The AWS Lake Formation principal. */
+		/**
+		 * The AWS Lake Formation principal.
+		 * Required
+		 */
 		Principal: DataLakePrincipal;
 
-		/** A structure for the resource. */
+		/**
+		 * A structure for the resource.
+		 * Required
+		 */
 		Resource: Resource;
 		Permissions: Array<Permission>;
 		PermissionsWithGrantOption?: Array<Permission>;
@@ -277,7 +283,10 @@ export namespace MyNS {
 	export interface PutDataLakeSettingsRequest {
 		CatalogId?: string;
 
-		/** The AWS Lake Formation principal. */
+		/**
+		 * The AWS Lake Formation principal.
+		 * Required
+		 */
 		DataLakeSettings: DataLakeSettings;
 	}
 
@@ -299,10 +308,16 @@ export namespace MyNS {
 	export interface RevokePermissionsRequest {
 		CatalogId?: string;
 
-		/** The AWS Lake Formation principal. */
+		/**
+		 * The AWS Lake Formation principal.
+		 * Required
+		 */
 		Principal: DataLakePrincipal;
 
-		/** A structure for the resource. */
+		/**
+		 * A structure for the resource.
+		 * Required
+		 */
 		Resource: Resource;
 		Permissions: Array<Permission>;
 		PermissionsWithGrantOption?: Array<Permission>;

@@ -742,7 +742,10 @@ export namespace MyNS {
 
 	export interface TagResourceRequest {
 
-		/** A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects. */
+		/**
+		 * A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects.
+		 * Required
+		 */
 		tags: TagMap;
 	}
 
@@ -1284,7 +1287,10 @@ export namespace MyNS {
 
 	export interface CreateApiCachePostBody {
 
-		/** <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600 seconds.</p> */
+		/**
+		 * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600 seconds.</p>
+		 * Required
+		 */
 		ttl: number;
 
 		/** Transit encryption flag when connecting to cache. This setting cannot be updated after creation. */
@@ -1293,10 +1299,16 @@ export namespace MyNS {
 		/** At rest encryption flag for cache. This setting cannot be updated after creation. */
 		atRestEncryptionEnabled?: boolean;
 
-		/** <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.</p> </li> </ul> */
+		/**
+		 * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.</p> </li> </ul>
+		 * Required
+		 */
 		apiCachingBehavior: ApiCacheApiCachingBehavior;
 
-		/** <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul> */
+		/**
+		 * <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
+		 * Required
+		 */
 		type: ApiCacheType;
 	}
 
@@ -1313,6 +1325,7 @@ export namespace MyNS {
 
 		/**
 		 * A user-supplied name for the <code>DataSource</code>.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
@@ -1322,7 +1335,10 @@ export namespace MyNS {
 		/** A description of the <code>DataSource</code>. */
 		description?: string;
 
-		/** The type of the <code>DataSource</code>. */
+		/**
+		 * The type of the <code>DataSource</code>.
+		 * Required
+		 */
 		type: DataSourceType;
 
 		/** The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data source. */
@@ -1381,6 +1397,7 @@ export namespace MyNS {
 
 		/**
 		 * The <code>Function</code> name. The function name does not have to be unique.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
@@ -1392,6 +1409,7 @@ export namespace MyNS {
 
 		/**
 		 * The <code>Function</code> <code>DataSource</code> name.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
@@ -1400,6 +1418,7 @@ export namespace MyNS {
 
 		/**
 		 * The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -1412,19 +1431,28 @@ export namespace MyNS {
 		 */
 		responseMappingTemplate?: string;
 
-		/** The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. */
+		/**
+		 * The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29.
+		 * Required
+		 */
 		functionVersion: string;
 	}
 
 	export interface CreateGraphqlApiPostBody {
 
-		/** A user-supplied name for the <code>GraphqlApi</code>. */
+		/**
+		 * A user-supplied name for the <code>GraphqlApi</code>.
+		 * Required
+		 */
 		name: string;
 
 		/** The CloudWatch Logs configuration. */
 		logConfig?: CreateGraphqlApiPostBodyLogConfig;
 
-		/** The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools. */
+		/**
+		 * The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools.
+		 * Required
+		 */
 		authenticationType: GraphqlApiAuthenticationType;
 
 		/** Describes an Amazon Cognito user pool configuration. */
@@ -1467,6 +1495,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the field to attach the resolver to.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
@@ -1483,6 +1512,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The mapping template to be used for requests.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -1527,10 +1557,16 @@ export namespace MyNS {
 
 	export interface CreateTypePostBody {
 
-		/** <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p> <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p> */
+		/**
+		 * <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p> <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
+		 * Required
+		 */
 		definition: string;
 
-		/** The type format: SDL or JSON. */
+		/**
+		 * The type format: SDL or JSON.
+		 * Required
+		 */
 		format: TypeFormat;
 	}
 
@@ -1548,7 +1584,10 @@ export namespace MyNS {
 		/** The new description for the data source. */
 		description?: string;
 
-		/** The new data source type. */
+		/**
+		 * The new data source type.
+		 * Required
+		 */
 		type: DataSourceType;
 
 		/** The new service role ARN for the data source. */
@@ -1607,6 +1646,7 @@ export namespace MyNS {
 
 		/**
 		 * The <code>Function</code> name.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
@@ -1618,6 +1658,7 @@ export namespace MyNS {
 
 		/**
 		 * The <code>Function</code> <code>DataSource</code> name.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
@@ -1626,6 +1667,7 @@ export namespace MyNS {
 
 		/**
 		 * The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -1638,13 +1680,19 @@ export namespace MyNS {
 		 */
 		responseMappingTemplate?: string;
 
-		/** The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. */
+		/**
+		 * The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29.
+		 * Required
+		 */
 		functionVersion: string;
 	}
 
 	export interface UpdateGraphqlApiPostBody {
 
-		/** The new name for the <code>GraphqlApi</code> object. */
+		/**
+		 * The new name for the <code>GraphqlApi</code> object.
+		 * Required
+		 */
 		name: string;
 
 		/** The CloudWatch Logs configuration. */
@@ -1698,6 +1746,7 @@ export namespace MyNS {
 
 		/**
 		 * The new request mapping template.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -1745,31 +1794,49 @@ export namespace MyNS {
 		/** The new definition. */
 		definition?: string;
 
-		/** The new type format: SDL or JSON. */
+		/**
+		 * The new type format: SDL or JSON.
+		 * Required
+		 */
 		format: TypeFormat;
 	}
 
 	export interface StartSchemaCreationPostBody {
 
-		/** The schema definition, in GraphQL schema language format. */
+		/**
+		 * The schema definition, in GraphQL schema language format.
+		 * Required
+		 */
 		definition: string;
 	}
 
 	export interface TagResourcePostBody {
 
-		/** A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects. */
+		/**
+		 * A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
 	export interface UpdateApiCachePostBody {
 
-		/** <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600 seconds.</p> */
+		/**
+		 * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600 seconds.</p>
+		 * Required
+		 */
 		ttl: number;
 
-		/** <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.</p> </li> </ul> */
+		/**
+		 * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.</p> </li> </ul>
+		 * Required
+		 */
 		apiCachingBehavior: ApiCacheApiCachingBehavior;
 
-		/** <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul> */
+		/**
+		 * <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
+		 * Required
+		 */
 		type: ApiCacheType;
 	}
 

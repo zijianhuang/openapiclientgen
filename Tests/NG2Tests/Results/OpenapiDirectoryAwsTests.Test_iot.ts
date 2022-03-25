@@ -158,7 +158,10 @@ export namespace MyNS {
 		baseRatePerMinute: number;
 		incrementFactor: number;
 
-		/** Allows you to define a criteria to initiate the increase in rate of rollout for a job. */
+		/**
+		 * Allows you to define a criteria to initiate the increase in rate of rollout for a job.
+		 * Required
+		 */
 		rateIncreaseCriteria: RateIncreaseCriteria;
 	}
 
@@ -640,7 +643,10 @@ export namespace MyNS {
 	export interface DynamoDBv2Action {
 		roleArn: string;
 
-		/** The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written. */
+		/**
+		 * The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
+		 * Required
+		 */
 		putItem: PutItemInput;
 	}
 
@@ -790,10 +796,16 @@ export namespace MyNS {
 	/** An asset property value entry containing the following information. */
 	export interface AssetPropertyValue {
 
-		/** Contains an asset property value (of a single type). */
+		/**
+		 * Contains an asset property value (of a single type).
+		 * Required
+		 */
 		value: AssetPropertyVariant;
 
-		/** An asset property timestamp entry containing the following information. */
+		/**
+		 * An asset property timestamp entry containing the following information.
+		 * Required
+		 */
 		timestamp: AssetPropertyTimestamp;
 		quality?: string;
 	}
@@ -3066,7 +3078,10 @@ export namespace MyNS {
 	export interface CreateMitigationActionRequest {
 		roleArn: string;
 
-		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
+		/**
+		 * The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
+		 * Required
+		 */
 		actionParams: MitigationActionParams;
 		tags?: Array<Tag>;
 	}
@@ -3191,7 +3206,10 @@ export namespace MyNS {
 
 	export interface CreateTopicRuleDestinationRequest {
 
-		/** Configuration of the topic rule destination. */
+		/**
+		 * Configuration of the topic rule destination.
+		 * Required
+		 */
 		destinationConfiguration: TopicRuleDestinationConfiguration;
 	}
 
@@ -3212,7 +3230,10 @@ export namespace MyNS {
 	/** The input for the CreateTopicRule operation. */
 	export interface CreateTopicRuleRequest {
 
-		/** Describes a rule. */
+		/**
+		 * Describes a rule.
+		 * Required
+		 */
 		topicRulePayload: TopicRulePayload;
 	}
 
@@ -3744,6 +3765,7 @@ export namespace MyNS {
 
 		/**
 		 * The PEM of a certificate.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -3751,6 +3773,7 @@ export namespace MyNS {
 
 		/**
 		 * The PEM of a certificate.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -3767,6 +3790,7 @@ export namespace MyNS {
 
 		/**
 		 * The PEM of a certificate.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -3785,6 +3809,7 @@ export namespace MyNS {
 
 		/**
 		 * The PEM of a certificate.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -3821,7 +3846,10 @@ export namespace MyNS {
 	/** The input for the ReplaceTopicRule operation. */
 	export interface ReplaceTopicRuleRequest {
 
-		/** Describes a rule. */
+		/**
+		 * Describes a rule.
+		 * Required
+		 */
 		topicRulePayload: TopicRulePayload;
 	}
 
@@ -3848,13 +3876,19 @@ export namespace MyNS {
 	/** The input for the SetLoggingOptions operation. */
 	export interface SetLoggingOptionsRequest {
 
-		/** Describes the logging options payload. */
+		/**
+		 * Describes the logging options payload.
+		 * Required
+		 */
 		loggingOptionsPayload: LoggingOptionsPayload;
 	}
 
 	export interface SetV2LoggingLevelRequest {
 
-		/** A log target. */
+		/**
+		 * A log target.
+		 * Required
+		 */
 		logTarget: LogTarget;
 		logLevel: EnableIoTLoggingParamsLogLevel;
 	}
@@ -3867,7 +3901,10 @@ export namespace MyNS {
 
 	export interface StartAuditMitigationActionsTaskRequest {
 
-		/** Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears. */
+		/**
+		 * Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears.
+		 * Required
+		 */
 		target: AuditMitigationActionsTaskTarget;
 		auditCheckToActionsMapping: AuditCheckToActionsMapping;
 		clientRequestToken: string;
@@ -3946,7 +3983,10 @@ export namespace MyNS {
 
 	export interface UpdateBillingGroupRequest {
 
-		/** The properties of a billing group. */
+		/**
+		 * The properties of a billing group.
+		 * Required
+		 */
 		billingGroupProperties: BillingGroupProperties;
 		expectedVersion?: number;
 	}
@@ -3979,7 +4019,10 @@ export namespace MyNS {
 
 	export interface UpdateDynamicThingGroupRequest {
 
-		/** Thing group properties. */
+		/**
+		 * Thing group properties.
+		 * Required
+		 */
 		thingGroupProperties: ThingGroupProperties;
 		expectedVersion?: number;
 		indexName?: string;
@@ -4065,7 +4108,10 @@ export namespace MyNS {
 
 	export interface UpdateThingGroupRequest {
 
-		/** Thing group properties. */
+		/**
+		 * Thing group properties.
+		 * Required
+		 */
 		thingGroupProperties: ThingGroupProperties;
 		expectedVersion?: number;
 	}
@@ -6342,6 +6388,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of thing group ARNs that define the targets of the job.
+		 * Required
 		 * Minimum items: 1
 		 */
 		targets: Array<string>;
@@ -6356,13 +6403,19 @@ export namespace MyNS {
 
 	export interface AttachPolicyPutBody {
 
-		/** The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to which the policy is attached. */
+		/**
+		 * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to which the policy is attached.
+		 * Required
+		 */
 		target: string;
 	}
 
 	export interface DetachPolicyPostBody {
 
-		/** The target from which the policy will be detached. */
+		/**
+		 * The target from which the policy will be detached.
+		 * Required
+		 */
 		target: string;
 	}
 
@@ -6396,6 +6449,7 @@ export namespace MyNS {
 
 		/**
 		 * The authorizer name.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: [\w=,@-]+
@@ -6405,7 +6459,10 @@ export namespace MyNS {
 
 	export interface CreateAuthorizerPostBody {
 
-		/** The ARN of the authorizer's Lambda function. */
+		/**
+		 * The ARN of the authorizer's Lambda function.
+		 * Required
+		 */
 		authorizerFunctionArn: string;
 
 		/**
@@ -6464,7 +6521,10 @@ export namespace MyNS {
 
 	export interface UpdateBillingGroupPatchBody {
 
-		/** The properties of a billing group. */
+		/**
+		 * The properties of a billing group.
+		 * Required
+		 */
 		billingGroupProperties: UpdateBillingGroupPatchBodyBillingGroupProperties;
 
 		/** The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>. */
@@ -6479,6 +6539,7 @@ export namespace MyNS {
 
 		/**
 		 * The certificate signing request (CSR).
+		 * Required
 		 * Min length: 1
 		 */
 		certificateSigningRequest: string;
@@ -6486,11 +6547,15 @@ export namespace MyNS {
 
 	export interface CreateDimensionPostBody {
 
-		/** Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> */
+		/**
+		 * Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
+		 * Required
+		 */
 		type: DescribeDimensionResponseType;
 
 		/**
 		 * Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
@@ -6501,6 +6566,7 @@ export namespace MyNS {
 
 		/**
 		 * Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9-_]+$
@@ -6512,6 +6578,7 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
@@ -6589,6 +6656,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The dynamic thing group search query string.</p> <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
+		 * Required
 		 * Min length: 1
 		 */
 		queryString: string;
@@ -6609,7 +6677,10 @@ export namespace MyNS {
 
 	export interface UpdateDynamicThingGroupPatchBody {
 
-		/** Thing group properties. */
+		/**
+		 * Thing group properties.
+		 * Required
+		 */
 		thingGroupProperties: UpdateDynamicThingGroupPatchBodyThingGroupProperties;
 
 		/** The expected version of the dynamic thing group to update. */
@@ -6644,6 +6715,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of things and thing groups to which the job should be sent.
+		 * Required
 		 * Minimum items: 1
 		 */
 		targets: Array<string>;
@@ -6753,12 +6825,16 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM role that is used to apply the mitigation action.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
 		roleArn: string;
 
-		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
+		/**
+		 * The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
+		 * Required
+		 */
 		actionParams: CreateMitigationActionPostBodyActionParams;
 
 		/** Metadata that can be used to manage the mitigation action. */
@@ -6831,6 +6907,7 @@ export namespace MyNS {
 
 		/**
 		 * The targeted devices to receive OTA updates.
+		 * Required
 		 * Minimum items: 1
 		 */
 		targets: Array<string>;
@@ -6853,6 +6930,7 @@ export namespace MyNS {
 
 		/**
 		 * The files to be streamed by the OTA update.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -6860,6 +6938,7 @@ export namespace MyNS {
 
 		/**
 		 * The IAM role that allows access to the AWS IoT Jobs service.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -6882,7 +6961,10 @@ export namespace MyNS {
 
 	export interface CreatePolicyPostBody {
 
-		/** The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace. */
+		/**
+		 * The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.
+		 * Required
+		 */
 		policyDocument: string;
 
 		/** <p>Metadata which can be used to manage the policy.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
@@ -6891,7 +6973,10 @@ export namespace MyNS {
 
 	export interface CreatePolicyVersionPostBody {
 
-		/** The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace. */
+		/**
+		 * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
+		 * Required
+		 */
 		policyDocument: string;
 	}
 
@@ -6899,6 +6984,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the fleet provisioning template.
+		 * Required
 		 * Max length: 36
 		 * Min length: 1
 		 * Pattern: ^[0-9A-Za-z_-]+$
@@ -6913,7 +6999,10 @@ export namespace MyNS {
 		 */
 		description?: string;
 
-		/** The JSON formatted contents of the fleet provisioning template. */
+		/**
+		 * The JSON formatted contents of the fleet provisioning template.
+		 * Required
+		 */
 		templateBody: string;
 
 		/** True to enable the fleet provisioning template, otherwise false. */
@@ -6921,6 +7010,7 @@ export namespace MyNS {
 
 		/**
 		 * The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -6940,7 +7030,10 @@ export namespace MyNS {
 
 	export interface CreateProvisioningTemplateVersionPostBody {
 
-		/** The JSON formatted contents of the fleet provisioning template. */
+		/**
+		 * The JSON formatted contents of the fleet provisioning template.
+		 * Required
+		 */
 		templateBody: string;
 	}
 
@@ -6948,6 +7041,7 @@ export namespace MyNS {
 
 		/**
 		 * The role ARN.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -6983,7 +7077,10 @@ export namespace MyNS {
 
 	export interface CreateScheduledAuditPostBody {
 
-		/** How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the system. */
+		/**
+		 * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the system.
+		 * Required
+		 */
 		frequency: DescribeScheduledAuditResponseFrequency;
 
 		/**
@@ -6995,7 +7092,10 @@ export namespace MyNS {
 		/** The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY". */
 		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek;
 
-		/** Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
+		/**
+		 * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+		 * Required
+		 */
 		targetCheckNames: Array<string>;
 
 		/** Metadata that can be used to manage the scheduled audit. */
@@ -7093,6 +7193,7 @@ export namespace MyNS {
 
 		/**
 		 * The files to stream.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -7100,6 +7201,7 @@ export namespace MyNS {
 
 		/**
 		 * An IAM role that allows the IoT service principal assumes to access your S3 files.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -7211,7 +7313,10 @@ export namespace MyNS {
 
 	export interface UpdateThingGroupPatchBody {
 
-		/** Thing group properties. */
+		/**
+		 * Thing group properties.
+		 * Required
+		 */
 		thingGroupProperties: UpdateThingGroupPatchBodyThingGroupProperties;
 
 		/** The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail. */
@@ -7241,7 +7346,10 @@ export namespace MyNS {
 
 	export interface CreateTopicRulePostBody {
 
-		/** Describes a rule. */
+		/**
+		 * Describes a rule.
+		 * Required
+		 */
 		topicRulePayload: CreateTopicRulePostBodyTopicRulePayload;
 	}
 
@@ -7258,7 +7366,10 @@ export namespace MyNS {
 
 	export interface ReplaceTopicRulePatchBody {
 
-		/** Describes a rule. */
+		/**
+		 * Describes a rule.
+		 * Required
+		 */
 		topicRulePayload: ReplaceTopicRulePatchBodyTopicRulePayload;
 	}
 
@@ -7275,7 +7386,10 @@ export namespace MyNS {
 
 	export interface CreateTopicRuleDestinationPostBody {
 
-		/** Configuration of the topic rule destination. */
+		/**
+		 * Configuration of the topic rule destination.
+		 * Required
+		 */
 		destinationConfiguration: CreateTopicRuleDestinationPostBodyDestinationConfiguration;
 	}
 
@@ -7287,10 +7401,16 @@ export namespace MyNS {
 
 	export interface UpdateTopicRuleDestinationPatchBody {
 
-		/** The ARN of the topic rule destination. */
+		/**
+		 * The ARN of the topic rule destination.
+		 * Required
+		 */
 		arn: string;
 
-		/** <p>The status of the topic rule destination. Valid values are:</p> <dl> <dt>IN_PROGRESS</dt> <dd> <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p> </dd> <dt>ENABLED</dt> <dd> <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p> </dd> <dt>DISABLED</dt> <dd> <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p> </dd> <dt>ERROR</dt> <dd> <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p> </dd> </dl> */
+		/**
+		 * <p>The status of the topic rule destination. Valid values are:</p> <dl> <dt>IN_PROGRESS</dt> <dd> <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p> </dd> <dt>ENABLED</dt> <dd> <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p> </dd> <dt>DISABLED</dt> <dd> <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p> </dd> <dt>ERROR</dt> <dd> <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p> </dd> </dl>
+		 * Required
+		 */
 		status: TopicRuleDestinationStatus;
 	}
 
@@ -7367,14 +7487,21 @@ export namespace MyNS {
 
 	export interface StartAuditMitigationActionsTaskPostBody {
 
-		/** Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears. */
+		/**
+		 * Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears.
+		 * Required
+		 */
 		target: StartAuditMitigationActionsTaskPostBodyTarget;
 
-		/** For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your AWS account. */
+		/**
+		 * For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your AWS account.
+		 * Required
+		 */
 		auditCheckToActionsMapping: {[id: string]: Array<string> };
 
 		/**
 		 * Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9-_]+$
@@ -7406,6 +7533,7 @@ export namespace MyNS {
 
 		/**
 		 * The search query.
+		 * Required
 		 * Min length: 1
 		 */
 		queryString: string;
@@ -7453,7 +7581,10 @@ export namespace MyNS {
 
 	export interface SetLoggingOptionsPostBody {
 
-		/** Describes the logging options payload. */
+		/**
+		 * Describes the logging options payload.
+		 * Required
+		 */
 		loggingOptionsPayload: SetLoggingOptionsPostBodyLoggingOptionsPayload;
 	}
 
@@ -7474,6 +7605,7 @@ export namespace MyNS {
 
 		/**
 		 * The query string.
+		 * Required
 		 * Min length: 1
 		 */
 		queryString: string;
@@ -7503,6 +7635,7 @@ export namespace MyNS {
 
 		/**
 		 * The query used to search. You can specify "*" for the query string to get the count of all indexed things in your AWS account.
+		 * Required
 		 * Min length: 1
 		 */
 		queryString: string;
@@ -7577,11 +7710,15 @@ export namespace MyNS {
 
 	export interface StartThingRegistrationTaskPostBody {
 
-		/** The provisioning template. */
+		/**
+		 * The provisioning template.
+		 * Required
+		 */
 		templateBody: string;
 
 		/**
 		 * The S3 bucket that contains the input file.
+		 * Required
 		 * Max length: 256
 		 * Min length: 3
 		 * Pattern: [a-zA-Z0-9._-]+
@@ -7590,6 +7727,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9!_.*'()-\/]+
@@ -7598,6 +7736,7 @@ export namespace MyNS {
 
 		/**
 		 * The IAM role ARN that grants permission the input file.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 */
@@ -7606,7 +7745,10 @@ export namespace MyNS {
 
 	export interface RegisterThingPostBody {
 
-		/** The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information. */
+		/**
+		 * The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.
+		 * Required
+		 */
 		templateBody: string;
 
 		/** The parameters for provisioning a thing. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning Templates</a> for more information. */
@@ -7615,10 +7757,16 @@ export namespace MyNS {
 
 	export interface SetV2LoggingLevelPostBody {
 
-		/** A log target. */
+		/**
+		 * A log target.
+		 * Required
+		 */
 		logTarget: SetV2LoggingLevelPostBodyLogTarget;
 
-		/** The log level. */
+		/**
+		 * The log level.
+		 * Required
+		 */
 		logLevel: EnableIoTLoggingParamsLogLevel;
 	}
 
@@ -7631,6 +7779,7 @@ export namespace MyNS {
 
 		/**
 		 * The PEM of a certificate.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -7638,6 +7787,7 @@ export namespace MyNS {
 
 		/**
 		 * The PEM of a certificate.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -7659,6 +7809,7 @@ export namespace MyNS {
 
 		/**
 		 * The PEM of a certificate.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -7679,6 +7830,7 @@ export namespace MyNS {
 
 		/**
 		 * The PEM of a certificate.
+		 * Required
 		 * Max length: 65536
 		 * Min length: 1
 		 */
@@ -7759,6 +7911,7 @@ export namespace MyNS {
 
 		/**
 		 * The search query string.
+		 * Required
 		 * Min length: 1
 		 */
 		queryString: string;
@@ -7779,16 +7932,25 @@ export namespace MyNS {
 
 	export interface StartOnDemandAuditTaskPostBody {
 
-		/** Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled. */
+		/**
+		 * Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.
+		 * Required
+		 */
 		targetCheckNames: Array<string>;
 	}
 
 	export interface TagResourcePostBody {
 
-		/** The ARN of the resource. */
+		/**
+		 * The ARN of the resource.
+		 * Required
+		 */
 		resourceArn: string;
 
-		/** The new or modified tags for the resource. */
+		/**
+		 * The new or modified tags for the resource.
+		 * Required
+		 */
 		tags: Array<Tag>;
 	}
 
@@ -7802,6 +7964,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
@@ -7867,10 +8030,16 @@ export namespace MyNS {
 
 	export interface UntagResourcePostBody {
 
-		/** The ARN of the resource. */
+		/**
+		 * The ARN of the resource.
+		 * Required
+		 */
 		resourceArn: string;
 
-		/** A list of the keys of the tags to be removed from the resource. */
+		/**
+		 * A list of the keys of the tags to be removed from the resource.
+		 * Required
+		 */
 		tagKeys: Array<string>;
 	}
 
@@ -7898,6 +8067,7 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the behaviors that, when violated by a device (thing), cause an alert.
+		 * Required
 		 * Maximum items: 100
 		 */
 		behaviors: Array<Behavior>;

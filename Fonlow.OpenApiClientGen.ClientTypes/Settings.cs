@@ -211,10 +211,15 @@
 		/// </summary>
 		public ArrayAsIEnumerableDerived ArrayAs { get; set; }
 
-		///// <summary>not working well, the references to default value and api parameters not yet valid.
-		///// TitleCase Enum value names, while OpenApiClientGen by default use whatever defined in OpenApi definitions, commonly in camel casing.
-		///// </summary>
-		//public bool TitleCaseEnumValueNames { get; set; }
+		/// <summary>
+		/// Use pascal case for properties and model class names
+		/// </summary>
+		public bool UsePascalCase { get; set; }
+
+		/// <summary>
+		/// Prefix class names with enclosing Type name. Default True.
+		/// </summary>
+		public bool PrefixWithTypeName { get; set; } = true;
 
 		/// <summary>
 		/// Create destination folder if not exists. Applied to both CS and TS.
@@ -225,7 +230,6 @@
 		/// Meta for plugins that generate TypeScript/JavaScript codes.
 		/// </summary>
 		public JSPlugin[] Plugins { get; set; }
-
 	}
 
 	/// <summary>

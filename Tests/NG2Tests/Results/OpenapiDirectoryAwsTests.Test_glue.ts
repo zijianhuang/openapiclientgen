@@ -777,7 +777,10 @@ export namespace MyNS {
 	export interface CreateConnectionRequest {
 		CatalogId?: string;
 
-		/** A structure that is used to specify a connection to create or update. */
+		/**
+		 * A structure that is used to specify a connection to create or update.
+		 * Required
+		 */
 		ConnectionInput: ConnectionInput;
 	}
 
@@ -816,7 +819,10 @@ export namespace MyNS {
 		DatabaseName?: string;
 		Description?: string;
 
-		/** Specifies data stores to crawl. */
+		/**
+		 * Specifies data stores to crawl.
+		 * Required
+		 */
 		Targets: CrawlerTargets;
 		Schedule?: string;
 		Classifiers?: Array<string>;
@@ -838,7 +844,10 @@ export namespace MyNS {
 	export interface CreateDatabaseRequest {
 		CatalogId?: string;
 
-		/** The structure used to create or update a database. */
+		/**
+		 * The structure used to create or update a database.
+		 * Required
+		 */
 		DatabaseInput: DatabaseInput;
 	}
 
@@ -932,7 +941,10 @@ export namespace MyNS {
 		/** An execution property of a job. */
 		ExecutionProperty?: ExecutionProperty;
 
-		/** Specifies code executed when a job is run. */
+		/**
+		 * Specifies code executed when a job is run.
+		 * Required
+		 */
 		Command: JobCommand;
 		DefaultArguments?: GenericMap;
 		NonOverridableArguments?: GenericMap;
@@ -967,7 +979,10 @@ export namespace MyNS {
 		Description?: string;
 		InputRecordTables: Array<GlueTable>;
 
-		/** The algorithm-specific parameters that are associated with the machine learning transform. */
+		/**
+		 * The algorithm-specific parameters that are associated with the machine learning transform.
+		 * Required
+		 */
 		Parameters: TransformParameters;
 		Role: string;
 		GlueVersion?: string;
@@ -1018,7 +1033,10 @@ export namespace MyNS {
 		DatabaseName: string;
 		TableName: string;
 
-		/** The structure used to create and update a partition. */
+		/**
+		 * The structure used to create and update a partition.
+		 * Required
+		 */
 		PartitionInput: PartitionInput;
 	}
 
@@ -1068,7 +1086,10 @@ export namespace MyNS {
 	export interface CreateSecurityConfigurationRequest {
 		Name: string;
 
-		/** Specifies an encryption configuration. */
+		/**
+		 * Specifies an encryption configuration.
+		 * Required
+		 */
 		EncryptionConfiguration: EncryptionConfiguration;
 	}
 
@@ -1118,7 +1139,10 @@ export namespace MyNS {
 		CatalogId?: string;
 		DatabaseName: string;
 
-		/** A structure used to define a table. */
+		/**
+		 * A structure used to define a table.
+		 * Required
+		 */
 		TableInput: TableInput;
 	}
 
@@ -1166,7 +1190,10 @@ export namespace MyNS {
 		CatalogId?: string;
 		DatabaseName: string;
 
-		/** A structure used to create or update a user-defined function. */
+		/**
+		 * A structure used to create or update a user-defined function.
+		 * Required
+		 */
 		FunctionInput: UserDefinedFunctionInput;
 	}
 
@@ -1970,7 +1997,10 @@ export namespace MyNS {
 
 	export interface GetMappingRequest {
 
-		/** Specifies a table definition in the AWS Glue Data Catalog. */
+		/**
+		 * Specifies a table definition in the AWS Glue Data Catalog.
+		 * Required
+		 */
 		Source: CatalogEntry;
 		Sinks?: Array<CatalogEntry>;
 
@@ -2038,7 +2068,10 @@ export namespace MyNS {
 	export interface GetPlanRequest {
 		Mapping: Array<MappingEntry>;
 
-		/** Specifies a table definition in the AWS Glue Data Catalog. */
+		/**
+		 * Specifies a table definition in the AWS Glue Data Catalog.
+		 * Required
+		 */
 		Source: CatalogEntry;
 		Sinks?: Array<CatalogEntry>;
 
@@ -2366,7 +2399,10 @@ export namespace MyNS {
 	export interface PutDataCatalogEncryptionSettingsRequest {
 		CatalogId?: string;
 
-		/** Contains configuration information for maintaining Data Catalog security. */
+		/**
+		 * Contains configuration information for maintaining Data Catalog security.
+		 * Required
+		 */
 		DataCatalogEncryptionSettings: DataCatalogEncryptionSettings;
 	}
 
@@ -2656,7 +2692,10 @@ export namespace MyNS {
 		CatalogId?: string;
 		Name: string;
 
-		/** A structure that is used to specify a connection to create or update. */
+		/**
+		 * A structure that is used to specify a connection to create or update.
+		 * Required
+		 */
 		ConnectionInput: ConnectionInput;
 	}
 
@@ -2696,7 +2735,10 @@ export namespace MyNS {
 		CatalogId?: string;
 		Name: string;
 
-		/** The structure used to create or update a database. */
+		/**
+		 * The structure used to create or update a database.
+		 * Required
+		 */
 		DatabaseInput: DatabaseInput;
 	}
 
@@ -2730,7 +2772,10 @@ export namespace MyNS {
 	export interface UpdateJobRequest {
 		JobName: string;
 
-		/** Specifies information used to update an existing job definition. The previous job definition is completely overwritten by this information. */
+		/**
+		 * Specifies information used to update an existing job definition. The previous job definition is completely overwritten by this information.
+		 * Required
+		 */
 		JobUpdate: JobUpdate;
 	}
 
@@ -2797,7 +2842,10 @@ export namespace MyNS {
 		TableName: string;
 		PartitionValueList: Array<string>;
 
-		/** The structure used to create and update a partition. */
+		/**
+		 * The structure used to create and update a partition.
+		 * Required
+		 */
 		PartitionInput: PartitionInput;
 	}
 
@@ -2808,7 +2856,10 @@ export namespace MyNS {
 		CatalogId?: string;
 		DatabaseName: string;
 
-		/** A structure used to define a table. */
+		/**
+		 * A structure used to define a table.
+		 * Required
+		 */
 		TableInput: TableInput;
 		SkipArchive?: boolean;
 	}
@@ -2822,7 +2873,10 @@ export namespace MyNS {
 	export interface UpdateTriggerRequest {
 		Name: string;
 
-		/** A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely. */
+		/**
+		 * A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.
+		 * Required
+		 */
 		TriggerUpdate: TriggerUpdate;
 	}
 
@@ -2846,7 +2900,10 @@ export namespace MyNS {
 		DatabaseName: string;
 		FunctionName: string;
 
-		/** A structure used to create or update a user-defined function. */
+		/**
+		 * A structure used to create or update a user-defined function.
+		 * Required
+		 */
 		FunctionInput: UserDefinedFunctionInput;
 	}
 

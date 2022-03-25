@@ -35,6 +35,7 @@ export namespace MyNS {
 
 		/**
 		 * The data to be sent to the client specified by its connection id.
+		 * Required
 		 * Max length: 131072
 		 */
 		Data: string;
@@ -78,6 +79,7 @@ export namespace MyNS {
 
 		/**
 		 * The data to be sent to the client specified by its connection id.
+		 * Required
 		 * Max length: 131072
 		 */
 		Data: string;

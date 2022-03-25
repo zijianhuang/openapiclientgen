@@ -122,16 +122,28 @@ export namespace MyNS {
 
 	export interface CreateTokenPostBody {
 
-		/** The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API. */
+		/**
+		 * The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.
+		 * Required
+		 */
 		clientId: string;
 
-		/** A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API. */
+		/**
+		 * A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.
+		 * Required
+		 */
 		clientSecret: string;
 
-		/** Supports grant types for authorization code, refresh token, and device code request. */
+		/**
+		 * Supports grant types for authorization code, refresh token, and device code request.
+		 * Required
+		 */
 		grantType: string;
 
-		/** Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <a>StartDeviceAuthorization</a> API. */
+		/**
+		 * Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <a>StartDeviceAuthorization</a> API.
+		 * Required
+		 */
 		deviceCode: string;
 
 		/** The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token. */
@@ -149,10 +161,16 @@ export namespace MyNS {
 
 	export interface RegisterClientPostBody {
 
-		/** The friendly name of the client. */
+		/**
+		 * The friendly name of the client.
+		 * Required
+		 */
 		clientName: string;
 
-		/** The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service. */
+		/**
+		 * The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.
+		 * Required
+		 */
 		clientType: string;
 
 		/** The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token. */
@@ -161,13 +179,22 @@ export namespace MyNS {
 
 	export interface StartDeviceAuthorizationPostBody {
 
-		/** The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <a>RegisterClient</a> API operation. */
+		/**
+		 * The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <a>RegisterClient</a> API operation.
+		 * Required
+		 */
 		clientId: string;
 
-		/** A secret string that is generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API operation. */
+		/**
+		 * A secret string that is generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API operation.
+		 * Required
+		 */
 		clientSecret: string;
 
-		/** The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>. */
+		/**
+		 * The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.
+		 * Required
+		 */
 		startUrl: string;
 	}
 

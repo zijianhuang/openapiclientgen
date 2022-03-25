@@ -31,7 +31,10 @@ export namespace MyNS {
 
 	export interface CreateAddressRequest {
 
-		/** The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown. */
+		/**
+		 * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
+		 * Required
+		 */
 		Address: Address;
 	}
 
@@ -67,7 +70,10 @@ export namespace MyNS {
 	export interface CreateClusterRequest {
 		JobType: CreateClusterRequestJobType;
 
-		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
+		/**
+		 * Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
+		 * Required
+		 */
 		Resources: JobResource;
 		Description?: string;
 		AddressId: string;

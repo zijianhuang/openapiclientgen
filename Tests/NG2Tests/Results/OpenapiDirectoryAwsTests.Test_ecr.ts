@@ -287,7 +287,10 @@ export namespace MyNS {
 		registryId?: string;
 		repositoryName: string;
 
-		/** An object with identifying information for an Amazon ECR image. */
+		/**
+		 * An object with identifying information for an Amazon ECR image.
+		 * Required
+		 */
 		imageId: ImageIdentifier;
 		nextToken?: string;
 		maxResults?: number;
@@ -550,7 +553,10 @@ export namespace MyNS {
 		registryId?: string;
 		repositoryName: string;
 
-		/** The image scanning configuration for a repository. */
+		/**
+		 * The image scanning configuration for a repository.
+		 * Required
+		 */
 		imageScanningConfiguration: ImageScanningConfiguration;
 	}
 
@@ -606,7 +612,10 @@ export namespace MyNS {
 		registryId?: string;
 		repositoryName: string;
 
-		/** An object with identifying information for an Amazon ECR image. */
+		/**
+		 * An object with identifying information for an Amazon ECR image.
+		 * Required
+		 */
 		imageId: ImageIdentifier;
 	}
 

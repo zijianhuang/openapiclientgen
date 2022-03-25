@@ -641,6 +641,7 @@ export namespace MyNS {
 
 		/**
 		 * A name for the application.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -661,6 +662,7 @@ export namespace MyNS {
 
 		/**
 		 * A name for the configuration profile.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -675,6 +677,7 @@ export namespace MyNS {
 
 		/**
 		 * A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json
+		 * Required
 		 * Max length: 2048
 		 * Min length: 1
 		 */
@@ -682,6 +685,7 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of an IAM role with permission to access the configuration at the specified LocationUri.
+		 * Required
 		 * Max length: 2048
 		 * Min length: 20
 		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
@@ -703,6 +707,7 @@ export namespace MyNS {
 
 		/**
 		 * A name for the deployment strategy.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -717,6 +722,7 @@ export namespace MyNS {
 
 		/**
 		 * Total amount of time for a deployment to last.
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 1440
 		 */
@@ -731,6 +737,7 @@ export namespace MyNS {
 
 		/**
 		 * The percentage of targets to receive a deployed configuration during each interval.
+		 * Required
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
@@ -739,7 +746,10 @@ export namespace MyNS {
 		/** <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the following growth types:</p> <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p> <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p> <p> <code>2*(2^0)</code> </p> <p> <code>2*(2^1)</code> </p> <p> <code>2*(2^2)</code> </p> <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p> */
 		GrowthType?: DeploymentStrategyGrowthType;
 
-		/** Save the deployment strategy to a Systems Manager (SSM) document. */
+		/**
+		 * Save the deployment strategy to a Systems Manager (SSM) document.
+		 * Required
+		 */
 		ReplicateTo: DeploymentStrategyReplicateTo;
 
 		/** Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. */
@@ -750,6 +760,7 @@ export namespace MyNS {
 
 		/**
 		 * A name for the environment.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -884,18 +895,21 @@ export namespace MyNS {
 
 		/**
 		 * The deployment strategy ID.
+		 * Required
 		 * Pattern: ([a-z0-9]{4,7}|arn:aws.*)
 		 */
 		DeploymentStrategyId: string;
 
 		/**
 		 * The configuration profile ID.
+		 * Required
 		 * Pattern: [a-z0-9]{4,7}
 		 */
 		ConfigurationProfileId: string;
 
 		/**
 		 * The configuration version to deploy.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 */
@@ -914,7 +928,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters. */
+		/**
+		 * The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 

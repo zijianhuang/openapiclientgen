@@ -517,6 +517,7 @@ export namespace MyNS {
 
 		/**
 		 * A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
@@ -553,6 +554,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
@@ -589,6 +591,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -608,6 +611,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the stream that you want to delete.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -679,7 +683,10 @@ export namespace MyNS {
 		 */
 		StreamARN?: string;
 
-		/** The name of the API action for which to get an endpoint. */
+		/**
+		 * The name of the API action for which to get an endpoint.
+		 * Required
+		 */
 		APIName: APIName;
 	}
 
@@ -687,6 +694,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -766,6 +774,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -804,6 +813,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -812,6 +822,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -836,7 +847,10 @@ export namespace MyNS {
 		 */
 		StreamName?: string;
 
-		/** A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional). */
+		/**
+		 * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 
@@ -844,6 +858,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -852,6 +867,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of the keys of the tags that you want to remove.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -878,6 +894,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of the keys of the tags that you want to remove.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -904,17 +921,22 @@ export namespace MyNS {
 
 		/**
 		 * The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: string;
 
-		/** Indicates whether you want to increase or decrease the retention period. */
+		/**
+		 * Indicates whether you want to increase or decrease the retention period.
+		 * Required
+		 */
 		Operation: UpdateDataRetentionOperation;
 
 		/**
 		 * The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).
+		 * Required
 		 * Minimum: 1
 		 */
 		DataRetentionChangeInHours: number;
@@ -924,6 +946,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the signaling channel that you want to update.
+		 * Required
 		 * Max length: 1024
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
@@ -932,6 +955,7 @@ export namespace MyNS {
 
 		/**
 		 * The current version of the signaling channel that you want to update.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9]+
@@ -966,6 +990,7 @@ export namespace MyNS {
 
 		/**
 		 * The version of the stream whose metadata you want to update.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9]+

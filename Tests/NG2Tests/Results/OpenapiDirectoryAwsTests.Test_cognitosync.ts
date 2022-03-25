@@ -602,13 +602,19 @@ export namespace MyNS {
 		/** A list of patch operations. */
 		RecordPatches?: Array<RecordPatch>;
 
-		/** The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity. */
+		/**
+		 * The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+		 * Required
+		 */
 		SyncSessionToken: string;
 	}
 
 	export interface SetCognitoEventsPostBody {
 
-		/** The events to configure */
+		/**
+		 * The events to configure
+		 * Required
+		 */
 		Events: {[id: string]: string };
 	}
 
@@ -634,10 +640,16 @@ export namespace MyNS {
 
 	export interface RegisterDevicePostBody {
 
-		/** The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX). */
+		/**
+		 * The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).
+		 * Required
+		 */
 		Platform: Platform;
 
-		/** The push token. */
+		/**
+		 * The push token.
+		 * Required
+		 */
 		Token: string;
 	}
 

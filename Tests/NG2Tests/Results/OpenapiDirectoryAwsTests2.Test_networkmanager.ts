@@ -337,7 +337,10 @@ export namespace MyNS {
 		Description?: string;
 		Type?: string;
 
-		/** Describes bandwidth information. */
+		/**
+		 * Describes bandwidth information.
+		 * Required
+		 */
 		Bandwidth: Bandwidth;
 		Provider?: string;
 		SiteId: string;
@@ -787,10 +790,16 @@ export namespace MyNS {
 
 	export interface AssociateCustomerGatewayPostBody {
 
-		/** The Amazon Resource Name (ARN) of the customer gateway. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>. */
+		/**
+		 * The Amazon Resource Name (ARN) of the customer gateway. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.
+		 * Required
+		 */
 		CustomerGatewayArn: string;
 
-		/** The ID of the device. */
+		/**
+		 * The ID of the device.
+		 * Required
+		 */
 		DeviceId: string;
 
 		/** The ID of the link. */
@@ -799,10 +808,16 @@ export namespace MyNS {
 
 	export interface AssociateLinkPostBody {
 
-		/** The ID of the device. */
+		/**
+		 * The ID of the device.
+		 * Required
+		 */
 		DeviceId: string;
 
-		/** The ID of the link. */
+		/**
+		 * The ID of the link.
+		 * Required
+		 */
 		LinkId: string;
 	}
 
@@ -856,13 +871,19 @@ export namespace MyNS {
 		/** <p>The type of the link.</p> <p>Constraints: Cannot include the following characters: | \ ^</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
 		Type?: string;
 
-		/** Describes bandwidth information. */
+		/**
+		 * Describes bandwidth information.
+		 * Required
+		 */
 		Bandwidth: CreateLinkPostBodyBandwidth;
 
 		/** <p>The provider of the link.</p> <p>Constraints: Cannot include the following characters: | \ ^</p> <p>Length Constraints: Maximum length of 128 characters.</p> */
 		Provider?: string;
 
-		/** The ID of the site. */
+		/**
+		 * The ID of the site.
+		 * Required
+		 */
 		SiteId: string;
 
 		/** The tags to apply to the resource during creation. */
@@ -965,13 +986,19 @@ export namespace MyNS {
 
 	export interface RegisterTransitGatewayPostBody {
 
-		/** The Amazon Resource Name (ARN) of the transit gateway. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>. */
+		/**
+		 * The Amazon Resource Name (ARN) of the transit gateway. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.
+		 * Required
+		 */
 		TransitGatewayArn: string;
 	}
 
 	export interface TagResourcePostBody {
 
-		/** The tags to apply to the specified resource. */
+		/**
+		 * The tags to apply to the specified resource.
+		 * Required
+		 */
 		Tags: Array<Tag>;
 	}
 

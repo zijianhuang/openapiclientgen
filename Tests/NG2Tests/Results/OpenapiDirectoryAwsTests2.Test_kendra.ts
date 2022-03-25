@@ -93,7 +93,10 @@ export namespace MyNS {
 	export interface DocumentAttribute {
 		Key: string;
 
-		/** The value of a custom document attribute. You can only provide one value for a custom attribute. */
+		/**
+		 * The value of a custom document attribute. You can only provide one value for a custom attribute.
+		 * Required
+		 */
 		Value: DocumentAttributeValue;
 	}
 
@@ -132,7 +135,10 @@ export namespace MyNS {
 		IndexId: string;
 		Type: CreateDataSourceRequestType;
 
-		/** Configuration information for a Amazon Kendra data source. */
+		/**
+		 * Configuration information for a Amazon Kendra data source.
+		 * Required
+		 */
 		Configuration: DataSourceConfiguration;
 		Description?: string;
 		Schedule?: string;
@@ -230,13 +236,19 @@ export namespace MyNS {
 	export interface DatabaseConfiguration {
 		DatabaseEngineType: DatabaseConfigurationDatabaseEngineType;
 
-		/** Provides the information necessary to connect to a database. */
+		/**
+		 * Provides the information necessary to connect to a database.
+		 * Required
+		 */
 		ConnectionConfiguration: ConnectionConfiguration;
 
 		/** Provides information for connecting to an Amazon VPC. */
 		VpcConfiguration?: DataSourceVpcConfiguration;
 
-		/** Provides information about how Amazon Kendra should use the columns of a database in an index. */
+		/**
+		 * Provides information about how Amazon Kendra should use the columns of a database in an index.
+		 * Required
+		 */
 		ColumnConfiguration: ColumnConfiguration;
 
 		/** Provides information about the column that should be used for filtering the query response by groups. */
@@ -355,7 +367,10 @@ export namespace MyNS {
 		TenantDomain: string;
 		SecretArn: string;
 
-		/** User accounts whose documents should be indexed. */
+		/**
+		 * User accounts whose documents should be indexed.
+		 * Required
+		 */
 		OneDriveUsers: OneDriveUsers;
 		InclusionPatterns?: Array<string>;
 		ExclusionPatterns?: Array<string>;
@@ -428,7 +443,10 @@ export namespace MyNS {
 		Name: string;
 		Description?: string;
 
-		/** Information required to find a specific file in an Amazon S3 bucket. */
+		/**
+		 * Information required to find a specific file in an Amazon S3 bucket.
+		 * Required
+		 */
 		S3Path: S3Path;
 		RoleArn: string;
 		Tags?: Array<Tag>;
@@ -584,10 +602,16 @@ export namespace MyNS {
 	/** Provides information about the number of documents and the number of questions and answers in an index. */
 	export interface IndexStatistics {
 
-		/** Provides statistical information about the FAQ questions and answers contained in an index. */
+		/**
+		 * Provides statistical information about the FAQ questions and answers contained in an index.
+		 * Required
+		 */
 		FaqStatistics: FaqStatistics;
 
-		/** Provides information about text documents indexed in an index. */
+		/**
+		 * Provides information about text documents indexed in an index.
+		 * Required
+		 */
 		TextDocumentStatistics: TextDocumentStatistics;
 	}
 
@@ -772,7 +796,10 @@ export namespace MyNS {
 		Key: string;
 		ValueType: AdditionalResultAttributeValueType;
 
-		/** An attribute returned with a document from a search. */
+		/**
+		 * An attribute returned with a document from a search.
+		 * Required
+		 */
 		Value: AdditionalResultAttributeValue;
 	}
 

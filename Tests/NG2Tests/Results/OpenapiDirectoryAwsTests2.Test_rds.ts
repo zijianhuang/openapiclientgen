@@ -2105,7 +2105,10 @@ export namespace MyNS {
 	export interface AddTagsToResourceMessage {
 		ResourceName: string;
 
-		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
+		/**
+		 * A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>
+		 * Required
+		 */
 		Tags: Array<Tag>;
 	}
 

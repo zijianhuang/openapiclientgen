@@ -53,7 +53,10 @@ export namespace MyNS {
 		Subdirectory?: string;
 		EfsFilesystemArn: string;
 
-		/** The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. */
+		/**
+		 * The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
+		 * Required
+		 */
 		Ec2Config: Ec2Config;
 		Tags?: Array<TagListEntry>;
 	}
@@ -91,7 +94,10 @@ export namespace MyNS {
 		Subdirectory: string;
 		ServerHostname: string;
 
-		/** A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location. */
+		/**
+		 * A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.
+		 * Required
+		 */
 		OnPremConfig: OnPremConfig;
 
 		/** Represents the mount options that are available for DataSync to access an NFS location. */
@@ -126,7 +132,10 @@ export namespace MyNS {
 		S3BucketArn: string;
 		S3StorageClass?: CreateLocationS3RequestS3StorageClass;
 
-		/** <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p> <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.</p> */
+		/**
+		 * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p> <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.</p>
+		 * Required
+		 */
 		S3Config: S3Config;
 		Tags?: Array<TagListEntry>;
 	}

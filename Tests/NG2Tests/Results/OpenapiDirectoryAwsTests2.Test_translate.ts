@@ -135,7 +135,10 @@ export namespace MyNS {
 		MergeStrategy: ImportTerminologyRequestMergeStrategy;
 		Description?: string;
 
-		/** The data associated with the custom terminology. */
+		/**
+		 * The data associated with the custom terminology.
+		 * Required
+		 */
 		TerminologyData: TerminologyData;
 
 		/** The encryption key used to encrypt the custom terminologies used by Amazon Translate. */
@@ -200,10 +203,16 @@ export namespace MyNS {
 	export interface StartTextTranslationJobRequest {
 		JobName?: string;
 
-		/** The input configuration properties for requesting a batch translation job. */
+		/**
+		 * The input configuration properties for requesting a batch translation job.
+		 * Required
+		 */
 		InputDataConfig: InputDataConfig;
 
-		/** The output configuration properties for a batch translation job. */
+		/**
+		 * The output configuration properties for a batch translation job.
+		 * Required
+		 */
 		OutputDataConfig: OutputDataConfig;
 		DataAccessRoleArn: string;
 		SourceLanguageCode: string;

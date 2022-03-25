@@ -1127,7 +1127,10 @@ export namespace MyNS {
 	export interface GetApplicationRevisionInput {
 		applicationName: string;
 
-		/** Information about the location of an application revision. */
+		/**
+		 * Information about the location of an application revision.
+		 * Required
+		 */
 		revision: RevisionLocation;
 	}
 
@@ -1479,7 +1482,10 @@ export namespace MyNS {
 		applicationName: string;
 		description?: string;
 
-		/** Information about the location of an application revision. */
+		/**
+		 * Information about the location of an application revision.
+		 * Required
+		 */
 		revision: RevisionLocation;
 	}
 

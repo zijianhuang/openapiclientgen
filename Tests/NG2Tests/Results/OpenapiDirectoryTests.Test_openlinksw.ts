@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface ActionDescription {
 
-		/** A unique one word identifier for the action. */
+		/**
+		 * A unique one word identifier for the action.
+		 * Required
+		 */
 		action_id: string;
 
 		/** A short description of the action. */
@@ -14,28 +17,52 @@ export namespace MyNS {
 
 	export interface EntryPoint {
 
-		/** The supported MIME type(s) for an EntryPoint response. */
+		/**
+		 * The supported MIME type(s) for an EntryPoint response.
+		 * Required
+		 */
 		content_types: Array<string>;
 
-		/** A short description of the action. Optional - may be null. */
+		/**
+		 * A short description of the action. Optional - may be null.
+		 * Required
+		 */
 		description: string;
 
-		/** The supported MIME type(s) for an EntryPoint request. Null if not applicable. */
+		/**
+		 * The supported MIME type(s) for an EntryPoint request. Null if not applicable.
+		 * Required
+		 */
 		encoding_types: Array<string>;
 
-		/** The HTTP method used by the EntryPoint. */
+		/**
+		 * The HTTP method used by the EntryPoint.
+		 * Required
+		 */
 		http_method: EntryPointHttp_method;
 
-		/** A word or short phrase to be used as the action's display name. Optional - may be null. */
+		/**
+		 * A word or short phrase to be used as the action's display name. Optional - may be null.
+		 * Required
+		 */
 		name: string;
 
-		/** Descriptions of the EntryPoint parameters. Null if not applicable. */
+		/**
+		 * Descriptions of the EntryPoint parameters. Null if not applicable.
+		 * Required
+		 */
 		parameters: Array<EntryPointParameter>;
 
-		/** The EntryPoint URL. It will be non-null if url_template is null. */
+		/**
+		 * The EntryPoint URL. It will be non-null if url_template is null.
+		 * Required
+		 */
 		url: string;
 
-		/** The EntryPoint's URL template. Only required if the entry point URL is parameterized. Property 'url' will be null if url_template is non-null. */
+		/**
+		 * The EntryPoint's URL template. Only required if the entry point URL is parameterized. Property 'url' will be null if url_template is non-null.
+		 * Required
+		 */
 		url_template: string;
 	}
 
@@ -43,26 +70,42 @@ export namespace MyNS {
 
 	export interface EntryPointParameter {
 
-		/** A short description of the parameter for use in the OSDB Action Console. Optional - may be null. */
+		/**
+		 * A short description of the parameter for use in the OSDB Action Console. Optional - may be null.
+		 * Required
+		 */
 		description: string;
 
-		/** The parameter's display name in the OSDB Action Console. Optional - may be null. */
+		/**
+		 * The parameter's display name in the OSDB Action Console. Optional - may be null.
+		 * Required
+		 */
 		display_name: string;
 
-		/** The parameter name as present in the HTTP request. e.g. the key name in a query string key-value pair. */
+		/**
+		 * The parameter name as present in the HTTP request. e.g. the key name in a query string key-value pair.
+		 * Required
+		 */
 		parameter_name: string;
 
-		/** If the parameter accepts only a limited set of values, the allowed set of values. Null if not applicable. */
+		/**
+		 * If the parameter accepts only a limited set of values, the allowed set of values. Null if not applicable.
+		 * Required
+		 */
 		permitted_values: Array<string>;
 
 		/**
 		 * A flag indicating if the parameter is optional.
+		 * Required
 		 * Minimum: 0
 		 * Maximum: 1
 		 */
 		required: number;
 
-		/** The type of the parameter, indicating its location in the HTTP request. */
+		/**
+		 * The type of the parameter, indicating its location in the HTTP request.
+		 * Required
+		 */
 		type: EntryPointParameterType;
 	}
 
@@ -70,22 +113,37 @@ export namespace MyNS {
 
 	export interface ActionHelp {
 
-		/** A unique one word identifier for the action. */
+		/**
+		 * A unique one word identifier for the action.
+		 * Required
+		 */
 		action_id: string;
 
-		/** The help text for the action. */
+		/**
+		 * The help text for the action.
+		 * Required
+		 */
 		help_text: string;
 
-		/** A unique one word identifier for the service. */
+		/**
+		 * A unique one word identifier for the service.
+		 * Required
+		 */
 		service_id: string;
 	}
 
 	export interface ActionHelpResponse {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 		response: ActionHelp;
 		status: ActionHelpResponseStatus;
@@ -95,10 +153,16 @@ export namespace MyNS {
 
 	export interface DescribeActionResponse {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 		response: ActionDescription;
 		status: ActionHelpResponseStatus;
@@ -106,10 +170,16 @@ export namespace MyNS {
 
 	export interface DescribeServiceResponse {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 		response: ServiceDescription;
 		status: ActionHelpResponseStatus;
@@ -120,13 +190,22 @@ export namespace MyNS {
 		/** A short description of the service. */
 		description?: string;
 
-		/** The URI of the source service description document used to load the service into OSDB. */
+		/**
+		 * The URI of the source service description document used to load the service into OSDB.
+		 * Required
+		 */
 		import_source_uri: string;
 
-		/** A unique one word identifier for the service. */
+		/**
+		 * A unique one word identifier for the service.
+		 * Required
+		 */
 		service_id: string;
 
-		/** A word or phrase naming the service. */
+		/**
+		 * A word or phrase naming the service.
+		 * Required
+		 */
 		service_name: string;
 	}
 
@@ -173,10 +252,16 @@ export namespace MyNS {
 
 	export interface ListActionsResponse {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 		response: Array<ActionDescription>;
 		status: ActionHelpResponseStatus;
@@ -184,10 +269,16 @@ export namespace MyNS {
 
 	export interface ListServicesResponse {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 		response: Array<ServiceDescription>;
 		status: ActionHelpResponseStatus;
@@ -195,10 +286,16 @@ export namespace MyNS {
 
 	export interface LoginResponse {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 		response: LoginResponseResponse;
 		status: ActionHelpResponseStatus;
@@ -206,16 +303,25 @@ export namespace MyNS {
 
 	export interface LoginResponseResponse {
 
-		/** The WebID of the user who has logged in. */
+		/**
+		 * The WebID of the user who has logged in.
+		 * Required
+		 */
 		user: string;
 	}
 
 	export interface LogoutResponse {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 		response: LogoutResponseResponse;
 		status: ActionHelpResponseStatus;
@@ -223,7 +329,10 @@ export namespace MyNS {
 
 	export interface LogoutResponseResponse {
 
-		/** The WebID of the user who has logged out. */
+		/**
+		 * The WebID of the user who has logged out.
+		 * Required
+		 */
 		user: string;
 	}
 
@@ -359,7 +468,10 @@ export namespace MyNS {
 
 	export interface LoadServicePostBody {
 
-		/** The URL of the resource containing the service description to load. */
+		/**
+		 * The URL of the resource containing the service description to load.
+		 * Required
+		 */
 		service_description_url: string;
 
 		/** Service ID to be used to uniquely identify the service. (Optional: Required for anonymous services or to override the service name in the service description.) */
@@ -368,26 +480,44 @@ export namespace MyNS {
 
 	export interface LoadServiceReturn {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 
-		/** Confirmation message */
+		/**
+		 * Confirmation message
+		 * Required
+		 */
 		response: string;
 		status: ActionHelpResponseStatus;
 	}
 
 	export interface UnloadServiceReturn {
 
-		/** The path of the REST API method */
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
 		api: string;
 
-		/** The name of the REST API method */
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
 		method: string;
 
-		/** Confirmation message */
+		/**
+		 * Confirmation message
+		 * Required
+		 */
 		response: string;
 		status: ActionHelpResponseStatus;
 	}

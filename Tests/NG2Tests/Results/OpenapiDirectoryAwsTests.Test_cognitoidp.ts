@@ -207,7 +207,10 @@ export namespace MyNS {
 	export interface AdminDisableProviderForUserRequest {
 		UserPoolId: string;
 
-		/** A container for information about an identity provider for a user pool. */
+		/**
+		 * A container for information about an identity provider for a user pool.
+		 * Required
+		 */
 		User: ProviderUserIdentifierType;
 	}
 
@@ -261,7 +264,10 @@ export namespace MyNS {
 	/** Gets the device response, as an administrator. */
 	export interface AdminGetDeviceResponse {
 
-		/** The device type. */
+		/**
+		 * The device type.
+		 * Required
+		 */
 		Device: DeviceType;
 	}
 
@@ -399,10 +405,16 @@ export namespace MyNS {
 	export interface AdminLinkProviderForUserRequest {
 		UserPoolId: string;
 
-		/** A container for information about an identity provider for a user pool. */
+		/**
+		 * A container for information about an identity provider for a user pool.
+		 * Required
+		 */
 		DestinationUser: ProviderUserIdentifierType;
 
-		/** A container for information about an identity provider for a user pool. */
+		/**
+		 * A container for information about an identity provider for a user pool.
+		 * Required
+		 */
 		SourceUser: ProviderUserIdentifierType;
 	}
 
@@ -806,7 +818,10 @@ export namespace MyNS {
 
 	export interface CreateIdentityProviderResponse {
 
-		/** A container for information about an identity provider. */
+		/**
+		 * A container for information about an identity provider.
+		 * Required
+		 */
 		IdentityProvider: IdentityProviderType;
 	}
 
@@ -845,7 +860,10 @@ export namespace MyNS {
 
 	export interface CreateResourceServerResponse {
 
-		/** A container for information about a resource server for a user pool. */
+		/**
+		 * A container for information about a resource server for a user pool.
+		 * Required
+		 */
 		ResourceServer: ResourceServerType;
 	}
 
@@ -1309,7 +1327,10 @@ export namespace MyNS {
 
 	export interface DescribeIdentityProviderResponse {
 
-		/** A container for information about an identity provider. */
+		/**
+		 * A container for information about an identity provider.
+		 * Required
+		 */
 		IdentityProvider: IdentityProviderType;
 	}
 
@@ -1320,7 +1341,10 @@ export namespace MyNS {
 
 	export interface DescribeResourceServerResponse {
 
-		/** A container for information about a resource server for a user pool. */
+		/**
+		 * A container for information about a resource server for a user pool.
+		 * Required
+		 */
 		ResourceServer: ResourceServerType;
 	}
 
@@ -1331,7 +1355,10 @@ export namespace MyNS {
 
 	export interface DescribeRiskConfigurationResponse {
 
-		/** The risk configuration type. */
+		/**
+		 * The risk configuration type.
+		 * Required
+		 */
 		RiskConfiguration: RiskConfigurationType;
 	}
 
@@ -1357,7 +1384,10 @@ export namespace MyNS {
 	export interface CompromisedCredentialsRiskConfigurationType {
 		EventFilter?: Array<EventFilterType>;
 
-		/** The compromised credentials actions type */
+		/**
+		 * The compromised credentials actions type
+		 * Required
+		 */
 		Actions: CompromisedCredentialsActionsType;
 	}
 
@@ -1378,7 +1408,10 @@ export namespace MyNS {
 		/** The notify configuration type. */
 		NotifyConfiguration?: NotifyConfigurationType;
 
-		/** Account takeover actions type. */
+		/**
+		 * Account takeover actions type.
+		 * Required
+		 */
 		Actions: AccountTakeoverActionsType;
 	}
 
@@ -1568,7 +1601,10 @@ export namespace MyNS {
 	/** Gets the device response. */
 	export interface GetDeviceResponse {
 
-		/** The device type. */
+		/**
+		 * The device type.
+		 * Required
+		 */
 		Device: DeviceType;
 	}
 
@@ -1592,7 +1628,10 @@ export namespace MyNS {
 
 	export interface GetIdentityProviderByIdentifierResponse {
 
-		/** A container for information about an identity provider. */
+		/**
+		 * A container for information about an identity provider.
+		 * Required
+		 */
 		IdentityProvider: IdentityProviderType;
 	}
 
@@ -1615,7 +1654,10 @@ export namespace MyNS {
 
 	export interface GetUICustomizationResponse {
 
-		/** A container for the UI customization information for a user pool's built-in app UI. */
+		/**
+		 * A container for the UI customization information for a user pool's built-in app UI.
+		 * Required
+		 */
 		UICustomization: UICustomizationType;
 	}
 
@@ -1945,7 +1987,10 @@ export namespace MyNS {
 
 	export interface SetRiskConfigurationResponse {
 
-		/** The risk configuration type. */
+		/**
+		 * The risk configuration type.
+		 * Required
+		 */
 		RiskConfiguration: RiskConfigurationType;
 	}
 
@@ -1965,7 +2010,10 @@ export namespace MyNS {
 
 	export interface SetUICustomizationResponse {
 
-		/** A container for the UI customization information for a user pool's built-in app UI. */
+		/**
+		 * A container for the UI customization information for a user pool's built-in app UI.
+		 * Required
+		 */
 		UICustomization: UICustomizationType;
 	}
 
@@ -2136,7 +2184,10 @@ export namespace MyNS {
 
 	export interface UpdateIdentityProviderResponse {
 
-		/** A container for information about an identity provider. */
+		/**
+		 * A container for information about an identity provider.
+		 * Required
+		 */
 		IdentityProvider: IdentityProviderType;
 	}
 
@@ -2150,7 +2201,10 @@ export namespace MyNS {
 
 	export interface UpdateResourceServerResponse {
 
-		/** A container for information about a resource server for a user pool. */
+		/**
+		 * A container for information about a resource server for a user pool.
+		 * Required
+		 */
 		ResourceServer: ResourceServerType;
 	}
 
@@ -2266,7 +2320,10 @@ export namespace MyNS {
 		Domain: string;
 		UserPoolId: string;
 
-		/** The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application. */
+		/**
+		 * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+		 * Required
+		 */
 		CustomDomainConfig: CustomDomainConfigType;
 	}
 

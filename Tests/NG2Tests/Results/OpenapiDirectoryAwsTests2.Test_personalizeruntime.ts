@@ -70,16 +70,21 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.
+		 * Required
 		 * Max length: 256
 		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: string;
 
-		/** A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500. */
+		/**
+		 * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.
+		 * Required
+		 */
 		inputList: Array<string>;
 
 		/**
 		 * The user for which you want the campaign to provide a personalized ranking.
+		 * Required
 		 * Max length: 256
 		 */
 		userId: string;
@@ -92,6 +97,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.
+		 * Required
 		 * Max length: 256
 		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */

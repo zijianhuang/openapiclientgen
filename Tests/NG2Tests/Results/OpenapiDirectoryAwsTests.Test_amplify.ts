@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateAppResult {
 
-		/** Amplify App represents different branches of a repository for building, deploying, and hosting. */
+		/**
+		 * Amplify App represents different branches of a repository for building, deploying, and hosting.
+		 * Required
+		 */
 		app: App;
 	}
 
@@ -113,7 +116,10 @@ export namespace MyNS {
 	/**  Result structure for create backend environment.  */
 	export interface CreateBackendEnvironmentResult {
 
-		/** Backend environment for an Amplify App. */
+		/**
+		 * Backend environment for an Amplify App.
+		 * Required
+		 */
 		backendEnvironment: BackendEnvironment;
 	}
 
@@ -135,7 +141,10 @@ export namespace MyNS {
 	/**  Result structure for create branch request.  */
 	export interface CreateBranchResult {
 
-		/** Branch for an Amplify App, which maps to a 3rd party repository branch. */
+		/**
+		 * Branch for an Amplify App, which maps to a 3rd party repository branch.
+		 * Required
+		 */
 		branch: Branch;
 	}
 
@@ -168,7 +177,10 @@ export namespace MyNS {
 		 */
 		buildSpec?: string;
 
-		/** The content TTL for the website in seconds. */
+		/**
+		 * The content TTL for the website in seconds.
+		 * Required
+		 */
 		ttl: string;
 		associatedResources?: Array<string>;
 		enablePullRequestPreview: boolean;
@@ -193,7 +205,10 @@ export namespace MyNS {
 	/**  Result structure for the create Domain Association request.  */
 	export interface CreateDomainAssociationResult {
 
-		/** Structure for Domain Association, which associates a custom domain with an Amplify App. */
+		/**
+		 * Structure for Domain Association, which associates a custom domain with an Amplify App.
+		 * Required
+		 */
 		domainAssociation: DomainAssociation;
 	}
 
@@ -215,7 +230,10 @@ export namespace MyNS {
 	/**  Subdomain for the Domain Association.  */
 	export interface SubDomain {
 
-		/** Setting for the Subdomain. */
+		/**
+		 * Setting for the Subdomain.
+		 * Required
+		 */
 		subDomainSetting: SubDomainSetting;
 		verified: boolean;
 		dnsRecord: string;
@@ -232,7 +250,10 @@ export namespace MyNS {
 	/**  Result structure for the create webhook request.  */
 	export interface CreateWebhookResult {
 
-		/** Structure for webhook, which associates a webhook with an Amplify App. */
+		/**
+		 * Structure for webhook, which associates a webhook with an Amplify App.
+		 * Required
+		 */
 		webhook: Webhook;
 	}
 
@@ -252,7 +273,10 @@ export namespace MyNS {
 	/**  Result structure for an Amplify App delete request.  */
 	export interface DeleteAppResult {
 
-		/** Amplify App represents different branches of a repository for building, deploying, and hosting. */
+		/**
+		 * Amplify App represents different branches of a repository for building, deploying, and hosting.
+		 * Required
+		 */
 		app: App;
 	}
 
@@ -260,7 +284,10 @@ export namespace MyNS {
 	/**  Result structure of a delete backend environment result.  */
 	export interface DeleteBackendEnvironmentResult {
 
-		/** Backend environment for an Amplify App. */
+		/**
+		 * Backend environment for an Amplify App.
+		 * Required
+		 */
 		backendEnvironment: BackendEnvironment;
 	}
 
@@ -268,13 +295,19 @@ export namespace MyNS {
 	/**  Result structure for delete branch request.  */
 	export interface DeleteBranchResult {
 
-		/** Branch for an Amplify App, which maps to a 3rd party repository branch. */
+		/**
+		 * Branch for an Amplify App, which maps to a 3rd party repository branch.
+		 * Required
+		 */
 		branch: Branch;
 	}
 
 	export interface DeleteDomainAssociationResult {
 
-		/** Structure for Domain Association, which associates a custom domain with an Amplify App. */
+		/**
+		 * Structure for Domain Association, which associates a custom domain with an Amplify App.
+		 * Required
+		 */
 		domainAssociation: DomainAssociation;
 	}
 
@@ -282,7 +315,10 @@ export namespace MyNS {
 	/**  Result structure for the delete job request.  */
 	export interface DeleteJobResult {
 
-		/** Structure for the summary of a Job. */
+		/**
+		 * Structure for the summary of a Job.
+		 * Required
+		 */
 		jobSummary: JobSummary;
 	}
 
@@ -308,7 +344,10 @@ export namespace MyNS {
 	/**  Result structure for the delete webhook request.  */
 	export interface DeleteWebhookResult {
 
-		/** Structure for webhook, which associates a webhook with an Amplify App. */
+		/**
+		 * Structure for webhook, which associates a webhook with an Amplify App.
+		 * Required
+		 */
 		webhook: Webhook;
 	}
 
@@ -320,7 +359,10 @@ export namespace MyNS {
 
 	export interface GetAppResult {
 
-		/** Amplify App represents different branches of a repository for building, deploying, and hosting. */
+		/**
+		 * Amplify App represents different branches of a repository for building, deploying, and hosting.
+		 * Required
+		 */
 		app: App;
 	}
 
@@ -335,13 +377,19 @@ export namespace MyNS {
 	/**  Result structure for get backend environment result.  */
 	export interface GetBackendEnvironmentResult {
 
-		/** Backend environment for an Amplify App. */
+		/**
+		 * Backend environment for an Amplify App.
+		 * Required
+		 */
 		backendEnvironment: BackendEnvironment;
 	}
 
 	export interface GetBranchResult {
 
-		/** Branch for an Amplify App, which maps to a 3rd party repository branch. */
+		/**
+		 * Branch for an Amplify App, which maps to a 3rd party repository branch.
+		 * Required
+		 */
 		branch: Branch;
 	}
 
@@ -349,13 +397,19 @@ export namespace MyNS {
 	/**  Result structure for the get Domain Association request.  */
 	export interface GetDomainAssociationResult {
 
-		/** Structure for Domain Association, which associates a custom domain with an Amplify App. */
+		/**
+		 * Structure for Domain Association, which associates a custom domain with an Amplify App.
+		 * Required
+		 */
 		domainAssociation: DomainAssociation;
 	}
 
 	export interface GetJobResult {
 
-		/** Structure for an execution job for an Amplify App. */
+		/**
+		 * Structure for an execution job for an Amplify App.
+		 * Required
+		 */
 		job: Job;
 	}
 
@@ -363,7 +417,10 @@ export namespace MyNS {
 	/**  Structure for an execution job for an Amplify App.  */
 	export interface Job {
 
-		/** Structure for the summary of a Job. */
+		/**
+		 * Structure for the summary of a Job.
+		 * Required
+		 */
 		summary: JobSummary;
 		steps: Array<Step>;
 	}
@@ -391,7 +448,10 @@ export namespace MyNS {
 	/**  Result structure for the get webhook request.  */
 	export interface GetWebhookResult {
 
-		/** Structure for webhook, which associates a webhook with an Amplify App. */
+		/**
+		 * Structure for webhook, which associates a webhook with an Amplify App.
+		 * Required
+		 */
 		webhook: Webhook;
 	}
 
@@ -464,7 +524,10 @@ export namespace MyNS {
 	/**  Result structure for start a deployment.  */
 	export interface StartDeploymentResult {
 
-		/** Structure for the summary of a Job. */
+		/**
+		 * Structure for the summary of a Job.
+		 * Required
+		 */
 		jobSummary: JobSummary;
 	}
 
@@ -472,7 +535,10 @@ export namespace MyNS {
 	/**  Result structure for run job request.  */
 	export interface StartJobResult {
 
-		/** Structure for the summary of a Job. */
+		/**
+		 * Structure for the summary of a Job.
+		 * Required
+		 */
 		jobSummary: JobSummary;
 	}
 
@@ -480,7 +546,10 @@ export namespace MyNS {
 	/**  Result structure for the stop job request.  */
 	export interface StopJobResult {
 
-		/** Structure for the summary of a Job. */
+		/**
+		 * Structure for the summary of a Job.
+		 * Required
+		 */
 		jobSummary: JobSummary;
 	}
 
@@ -498,7 +567,10 @@ export namespace MyNS {
 	/**  Result structure for an Amplify App update request.  */
 	export interface UpdateAppResult {
 
-		/** Amplify App represents different branches of a repository for building, deploying, and hosting. */
+		/**
+		 * Amplify App represents different branches of a repository for building, deploying, and hosting.
+		 * Required
+		 */
 		app: App;
 	}
 
@@ -506,7 +578,10 @@ export namespace MyNS {
 	/**  Result structure for update branch request.  */
 	export interface UpdateBranchResult {
 
-		/** Branch for an Amplify App, which maps to a 3rd party repository branch. */
+		/**
+		 * Branch for an Amplify App, which maps to a 3rd party repository branch.
+		 * Required
+		 */
 		branch: Branch;
 	}
 
@@ -514,7 +589,10 @@ export namespace MyNS {
 	/**  Result structure for the update Domain Association request.  */
 	export interface UpdateDomainAssociationResult {
 
-		/** Structure for Domain Association, which associates a custom domain with an Amplify App. */
+		/**
+		 * Structure for Domain Association, which associates a custom domain with an Amplify App.
+		 * Required
+		 */
 		domainAssociation: DomainAssociation;
 	}
 
@@ -522,7 +600,10 @@ export namespace MyNS {
 	/**  Result structure for the update webhook request.  */
 	export interface UpdateWebhookResult {
 
-		/** Structure for webhook, which associates a webhook with an Amplify App. */
+		/**
+		 * Structure for webhook, which associates a webhook with an Amplify App.
+		 * Required
+		 */
 		webhook: Webhook;
 	}
 
@@ -1256,6 +1337,7 @@ export namespace MyNS {
 
 		/**
 		 * Name for the Amplify App
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
@@ -1356,6 +1438,7 @@ export namespace MyNS {
 
 		/**
 		 * Name for the backend environment.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
@@ -1380,6 +1463,7 @@ export namespace MyNS {
 
 		/**
 		 * Name for the branch.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
@@ -1464,6 +1548,7 @@ export namespace MyNS {
 
 		/**
 		 * Domain name for the Domain Association.
+		 * Required
 		 * Max length: 255
 		 */
 		domainName: string;
@@ -1473,6 +1558,7 @@ export namespace MyNS {
 
 		/**
 		 * Setting structure for the Subdomain.
+		 * Required
 		 * Maximum items: 255
 		 */
 		subDomainSettings: Array<SubDomainSetting>;
@@ -1482,6 +1568,7 @@ export namespace MyNS {
 
 		/**
 		 * Name for a branch, part of an Amplify App.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 */
@@ -1666,6 +1753,7 @@ export namespace MyNS {
 
 		/**
 		 * Setting structure for the Subdomain.
+		 * Required
 		 * Maximum items: 255
 		 */
 		subDomainSettings: Array<SubDomainSetting>;
@@ -1697,6 +1785,7 @@ export namespace MyNS {
 
 		/**
 		 * Name of the domain.
+		 * Required
 		 * Max length: 255
 		 */
 		domainName: string;
@@ -1712,6 +1801,7 @@ export namespace MyNS {
 
 		/**
 		 * Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the specified branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing job. JobId is required for this type of job.
+		 * Required
 		 * Max length: 10
 		 */
 		jobType: JobSummaryJobType;
@@ -1740,7 +1830,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** Tags used to tag resource. */
+		/**
+		 * Tags used to tag resource.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

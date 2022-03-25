@@ -449,7 +449,10 @@ export namespace MyNS {
 		/** Contains information about the identity of a user. */
 		IdentityInfo?: UserIdentityInfo;
 
-		/** Contains information about the phone configuration settings for a user. */
+		/**
+		 * Contains information about the phone configuration settings for a user.
+		 * Required
+		 */
 		PhoneConfig: UserPhoneConfig;
 		DirectoryUserId?: string;
 		SecurityProfileIds: Array<string>;
@@ -484,7 +487,10 @@ export namespace MyNS {
 
 	export interface GetCurrentMetricDataRequest {
 
-		/** Contains the filter to apply when retrieving metrics. */
+		/**
+		 * Contains the filter to apply when retrieving metrics.
+		 * Required
+		 */
 		Filters: Filters;
 		Groupings?: Array<Grouping>;
 		CurrentMetrics: Array<CurrentMetric>;
@@ -499,7 +505,10 @@ export namespace MyNS {
 		StartTime: Date;
 		EndTime: Date;
 
-		/** Contains the filter to apply when retrieving metrics. */
+		/**
+		 * Contains the filter to apply when retrieving metrics.
+		 * Required
+		 */
 		Filters: Filters;
 		Groupings?: Array<Grouping>;
 		HistoricalMetrics: Array<HistoricalMetric>;
@@ -547,7 +556,10 @@ export namespace MyNS {
 		ContactFlowId: string;
 		Attributes?: Attributes;
 
-		/** The customer's details. */
+		/**
+		 * The customer's details.
+		 * Required
+		 */
 		ParticipantDetails: ParticipantDetails;
 
 		/** A chat message. */
@@ -589,13 +601,19 @@ export namespace MyNS {
 
 	export interface UpdateUserIdentityInfoRequest {
 
-		/** Contains information about the identity of a user. */
+		/**
+		 * Contains information about the identity of a user.
+		 * Required
+		 */
 		IdentityInfo: UserIdentityInfo;
 	}
 
 	export interface UpdateUserPhoneConfigRequest {
 
-		/** Contains information about the phone configuration settings for a user. */
+		/**
+		 * Contains information about the phone configuration settings for a user.
+		 * Required
+		 */
 		PhoneConfig: UserPhoneConfig;
 	}
 
@@ -953,6 +971,7 @@ export namespace MyNS {
 
 		/**
 		 * The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 */
@@ -967,7 +986,10 @@ export namespace MyNS {
 		/** Contains information about the identity of a user. */
 		IdentityInfo?: CreateUserPutBodyIdentityInfo;
 
-		/** Contains information about the phone configuration settings for a user. */
+		/**
+		 * Contains information about the phone configuration settings for a user.
+		 * Required
+		 */
 		PhoneConfig: CreateUserPutBodyPhoneConfig;
 
 		/** <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p> <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p> */
@@ -975,12 +997,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the security profile for the user.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
 		SecurityProfileIds: Array<string>;
 
-		/** The identifier of the routing profile for the user. */
+		/**
+		 * The identifier of the routing profile for the user.
+		 * Required
+		 */
 		RoutingProfileId: string;
 
 		/** The identifier of the hierarchy group for the user. */
@@ -1005,7 +1031,10 @@ export namespace MyNS {
 
 	export interface GetCurrentMetricDataPostBody {
 
-		/** Contains the filter to apply when retrieving metrics. */
+		/**
+		 * Contains the filter to apply when retrieving metrics.
+		 * Required
+		 */
 		Filters: GetCurrentMetricDataPostBodyFilters;
 
 		/**
@@ -1014,7 +1043,10 @@ export namespace MyNS {
 		 */
 		Groupings?: Array<Grouping>;
 
-		/** <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> </dl> */
+		/**
+		 * <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> </dl>
+		 * Required
+		 */
 		CurrentMetrics: Array<CurrentMetric>;
 
 		/** <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p> */
@@ -1035,13 +1067,22 @@ export namespace MyNS {
 
 	export interface GetMetricDataPostBody {
 
-		/** <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p> <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p> */
+		/**
+		 * <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p> <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
+		 * Required
+		 */
 		StartTime: Date;
 
-		/** <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p> <p>The time range between the start and end time must be less than 24 hours.</p> */
+		/**
+		 * <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p> <p>The time range between the start and end time must be less than 24 hours.</p>
+		 * Required
+		 */
 		EndTime: Date;
 
-		/** Contains the filter to apply when retrieving metrics. */
+		/**
+		 * Contains the filter to apply when retrieving metrics.
+		 * Required
+		 */
 		Filters: GetMetricDataPostBodyFilters;
 
 		/**
@@ -1050,7 +1091,10 @@ export namespace MyNS {
 		 */
 		Groupings?: Array<Grouping>;
 
-		/** <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available:</p> <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_MISSED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>HANDLE_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>HOLD_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>INTERACTION_AND_HOLD_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>INTERACTION_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>OCCUPANCY</dt> <dd> <p>Unit: PERCENT</p> <p>Statistic: AVG</p> </dd> <dt>QUEUE_ANSWER_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>QUEUED_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: MAX</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>Unit: PERCENT</p> <p>Statistic: AVG</p> <p>Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15, 20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600</p> </dd> </dl> */
+		/**
+		 * <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available:</p> <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_MISSED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd> <dt>HANDLE_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>HOLD_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>INTERACTION_AND_HOLD_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>INTERACTION_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>OCCUPANCY</dt> <dd> <p>Unit: PERCENT</p> <p>Statistic: AVG</p> </dd> <dt>QUEUE_ANSWER_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd> <dt>QUEUED_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: MAX</p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>Unit: PERCENT</p> <p>Statistic: AVG</p> <p>Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15, 20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600</p> </dd> </dl>
+		 * Required
+		 */
 		HistoricalMetrics: Array<HistoricalMetric>;
 
 		/** The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. */
@@ -1071,7 +1115,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }. */
+		/**
+		 * One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
@@ -1079,6 +1126,7 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the Amazon Connect instance.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 */
@@ -1086,6 +1134,7 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the contact flow for the chat.
+		 * Required
 		 * Max length: 500
 		 */
 		ContactFlowId: string;
@@ -1093,7 +1142,10 @@ export namespace MyNS {
 		/** <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p> */
 		Attributes?: {[id: string]: string };
 
-		/** The customer's details. */
+		/**
+		 * The customer's details.
+		 * Required
+		 */
 		ParticipantDetails: StartChatContactPutBodyParticipantDetails;
 
 		/** A chat message. */
@@ -1117,17 +1169,22 @@ export namespace MyNS {
 
 	export interface StartOutboundVoiceContactPutBody {
 
-		/** The phone number of the customer, in E.164 format. */
+		/**
+		 * The phone number of the customer, in E.164 format.
+		 * Required
+		 */
 		DestinationPhoneNumber: string;
 
 		/**
 		 * The identifier of the contact flow for the outbound call.
+		 * Required
 		 * Max length: 500
 		 */
 		ContactFlowId: string;
 
 		/**
 		 * The identifier of the Amazon Connect instance.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 */
@@ -1153,6 +1210,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the contact.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -1160,6 +1218,7 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the Amazon Connect instance.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 */
@@ -1170,6 +1229,7 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 */
@@ -1177,12 +1237,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the Amazon Connect instance.
+		 * Required
 		 * Max length: 100
 		 * Min length: 1
 		 */
 		InstanceId: string;
 
-		/** <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p> */
+		/**
+		 * <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+		 * Required
+		 */
 		Attributes: {[id: string]: string };
 	}
 
@@ -1194,7 +1258,10 @@ export namespace MyNS {
 
 	export interface UpdateUserIdentityInfoPostBody {
 
-		/** Contains information about the identity of a user. */
+		/**
+		 * Contains information about the identity of a user.
+		 * Required
+		 */
 		IdentityInfo: UpdateUserIdentityInfoPostBodyIdentityInfo;
 	}
 
@@ -1206,7 +1273,10 @@ export namespace MyNS {
 
 	export interface UpdateUserPhoneConfigPostBody {
 
-		/** Contains information about the phone configuration settings for a user. */
+		/**
+		 * Contains information about the phone configuration settings for a user.
+		 * Required
+		 */
 		PhoneConfig: UpdateUserPhoneConfigPostBodyPhoneConfig;
 	}
 
@@ -1219,7 +1289,10 @@ export namespace MyNS {
 
 	export interface UpdateUserRoutingProfilePostBody {
 
-		/** The identifier of the routing profile for the user. */
+		/**
+		 * The identifier of the routing profile for the user.
+		 * Required
+		 */
 		RoutingProfileId: string;
 	}
 
@@ -1227,6 +1300,7 @@ export namespace MyNS {
 
 		/**
 		 * The identifiers of the security profiles for the user.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */

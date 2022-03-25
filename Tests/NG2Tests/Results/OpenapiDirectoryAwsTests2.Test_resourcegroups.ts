@@ -75,7 +75,10 @@ export namespace MyNS {
 	export interface GroupQuery {
 		GroupName: string;
 
-		/** The query that is used to define a resource group or a search for resources. */
+		/**
+		 * The query that is used to define a resource group or a search for resources.
+		 * Required
+		 */
 		ResourceQuery: ResourceQuery;
 	}
 
@@ -172,7 +175,10 @@ export namespace MyNS {
 		Name: string;
 		Description?: string;
 
-		/** The query that is used to define a resource group or a search for resources. */
+		/**
+		 * The query that is used to define a resource group or a search for resources.
+		 * Required
+		 */
 		ResourceQuery: ResourceQuery;
 		Tags?: Tags;
 	}
@@ -201,7 +207,10 @@ export namespace MyNS {
 
 	export interface SearchResourcesInput {
 
-		/** The query that is used to define a resource group or a search for resources. */
+		/**
+		 * The query that is used to define a resource group or a search for resources.
+		 * Required
+		 */
 		ResourceQuery: ResourceQuery;
 		MaxResults?: number;
 		NextToken?: string;
@@ -221,7 +230,10 @@ export namespace MyNS {
 
 	export interface UpdateGroupQueryInput {
 
-		/** The query that is used to define a resource group or a search for resources. */
+		/**
+		 * The query that is used to define a resource group or a search for resources.
+		 * Required
+		 */
 		ResourceQuery: ResourceQuery;
 	}
 
@@ -362,6 +374,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\.-]+
@@ -375,7 +388,10 @@ export namespace MyNS {
 		 */
 		Description?: string;
 
-		/** The query that is used to define a resource group or a search for resources. */
+		/**
+		 * The query that is used to define a resource group or a search for resources.
+		 * Required
+		 */
 		ResourceQuery: CreateGroupPostBodyResourceQuery;
 
 		/** The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
@@ -399,7 +415,10 @@ export namespace MyNS {
 
 	export interface UpdateGroupQueryPutBody {
 
-		/** The query that is used to define a resource group or a search for resources. */
+		/**
+		 * The query that is used to define a resource group or a search for resources.
+		 * Required
+		 */
 		ResourceQuery: UpdateGroupQueryPutBodyResourceQuery;
 	}
 
@@ -410,13 +429,19 @@ export namespace MyNS {
 
 	export interface TagPutBody {
 
-		/** The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
+		/**
+		 * The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+		 * Required
+		 */
 		Tags: {[id: string]: string };
 	}
 
 	export interface UntagPatchBody {
 
-		/** The keys of the tags to be removed. */
+		/**
+		 * The keys of the tags to be removed.
+		 * Required
+		 */
 		Keys: Array<string>;
 	}
 
@@ -434,7 +459,10 @@ export namespace MyNS {
 
 	export interface SearchResourcesPostBody {
 
-		/** The query that is used to define a resource group or a search for resources. */
+		/**
+		 * The query that is used to define a resource group or a search for resources.
+		 * Required
+		 */
 		ResourceQuery: SearchResourcesPostBodyResourceQuery;
 
 		/**

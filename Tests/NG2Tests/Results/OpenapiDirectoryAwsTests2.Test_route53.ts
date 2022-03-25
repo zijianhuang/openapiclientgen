@@ -6,7 +6,10 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request. */
 	export interface AssociateVPCWithHostedZoneResponse {
 
-		/** A complex type that describes change information about changes made to your hosted zone. */
+		/**
+		 * A complex type that describes change information about changes made to your hosted zone.
+		 * Required
+		 */
 		ChangeInfo: ChangeInfo;
 	}
 
@@ -48,7 +51,10 @@ export namespace MyNS {
 	/** A complex type containing the response for the request. */
 	export interface ChangeResourceRecordSetsResponse {
 
-		/** A complex type that describes change information about changes made to your hosted zone. */
+		/**
+		 * A complex type that describes change information about changes made to your hosted zone.
+		 * Required
+		 */
 		ChangeInfo: ChangeInfo;
 	}
 
@@ -57,7 +63,10 @@ export namespace MyNS {
 	export interface Change {
 		Action: ChangeAction;
 
-		/** Information about the resource record set to create or delete. */
+		/**
+		 * Information about the resource record set to create or delete.
+		 * Required
+		 */
 		ResourceRecordSet: ResourceRecordSet;
 	}
 
@@ -141,7 +150,10 @@ export namespace MyNS {
 	/** A complex type containing the response information for the new health check. */
 	export interface CreateHealthCheckResponse {
 
-		/** A complex type that contains information about one health check that is associated with the current AWS account. */
+		/**
+		 * A complex type that contains information about one health check that is associated with the current AWS account.
+		 * Required
+		 */
 		HealthCheck: HealthCheck;
 	}
 
@@ -154,7 +166,10 @@ export namespace MyNS {
 		/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. */
 		LinkedService?: LinkedService;
 
-		/** A complex type that contains information about the health check. */
+		/**
+		 * A complex type that contains information about the health check.
+		 * Required
+		 */
 		HealthCheckConfig: HealthCheckConfig;
 		HealthCheckVersion: number;
 
@@ -246,13 +261,22 @@ export namespace MyNS {
 	/** A complex type containing the response information for the hosted zone. */
 	export interface CreateHostedZoneResponse {
 
-		/** A complex type that contains general information about the hosted zone. */
+		/**
+		 * A complex type that contains general information about the hosted zone.
+		 * Required
+		 */
 		HostedZone: HostedZone;
 
-		/** A complex type that describes change information about changes made to your hosted zone. */
+		/**
+		 * A complex type that describes change information about changes made to your hosted zone.
+		 * Required
+		 */
 		ChangeInfo: ChangeInfo;
 
-		/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
+		/**
+		 * A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.
+		 * Required
+		 */
 		DelegationSet: DelegationSet;
 
 		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
@@ -323,7 +347,10 @@ export namespace MyNS {
 
 	export interface CreateQueryLoggingConfigResponse {
 
-		/** A complex type that contains information about a configuration for DNS query logging. */
+		/**
+		 * A complex type that contains information about a configuration for DNS query logging.
+		 * Required
+		 */
 		QueryLoggingConfig: QueryLoggingConfig;
 	}
 
@@ -349,7 +376,10 @@ export namespace MyNS {
 
 	export interface CreateReusableDelegationSetResponse {
 
-		/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
+		/**
+		 * A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.
+		 * Required
+		 */
 		DelegationSet: DelegationSet;
 	}
 
@@ -369,7 +399,10 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the <code>CreateTrafficPolicy</code> request. */
 	export interface CreateTrafficPolicyResponse {
 
-		/** A complex type that contains settings for a traffic policy. */
+		/**
+		 * A complex type that contains settings for a traffic policy.
+		 * Required
+		 */
 		TrafficPolicy: TrafficPolicy;
 	}
 
@@ -397,7 +430,10 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the <code>CreateTrafficPolicyInstance</code> request. */
 	export interface CreateTrafficPolicyInstanceResponse {
 
-		/** A complex type that contains settings for the new traffic policy instance. */
+		/**
+		 * A complex type that contains settings for the new traffic policy instance.
+		 * Required
+		 */
 		TrafficPolicyInstance: TrafficPolicyInstance;
 	}
 
@@ -428,7 +464,10 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request. */
 	export interface CreateTrafficPolicyVersionResponse {
 
-		/** A complex type that contains settings for a traffic policy. */
+		/**
+		 * A complex type that contains settings for a traffic policy.
+		 * Required
+		 */
 		TrafficPolicy: TrafficPolicy;
 	}
 
@@ -440,7 +479,10 @@ export namespace MyNS {
 	export interface CreateVPCAssociationAuthorizationResponse {
 		HostedZoneId: string;
 
-		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
+		/**
+		 * (Private hosted zones only) A complex type that contains information about an Amazon VPC.
+		 * Required
+		 */
 		VPC: VPC;
 	}
 
@@ -459,7 +501,10 @@ export namespace MyNS {
 	/** A complex type that contains the response to a <code>DeleteHostedZone</code> request. */
 	export interface DeleteHostedZoneResponse {
 
-		/** A complex type that describes change information about changes made to your hosted zone. */
+		/**
+		 * A complex type that describes change information about changes made to your hosted zone.
+		 * Required
+		 */
 		ChangeInfo: ChangeInfo;
 	}
 
@@ -508,7 +553,10 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the disassociate request. */
 	export interface DisassociateVPCFromHostedZoneResponse {
 
-		/** A complex type that describes change information about changes made to your hosted zone. */
+		/**
+		 * A complex type that describes change information about changes made to your hosted zone.
+		 * Required
+		 */
 		ChangeInfo: ChangeInfo;
 	}
 
@@ -522,7 +570,10 @@ export namespace MyNS {
 	/** A complex type that contains the requested limit.  */
 	export interface GetAccountLimitResponse {
 
-		/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
+		/**
+		 * A complex type that contains the type of limit that you specified in the request and the current value for that limit.
+		 * Required
+		 */
 		Limit: AccountLimit;
 		Count: number;
 	}
@@ -540,7 +591,10 @@ export namespace MyNS {
 	/** A complex type that contains the <code>ChangeInfo</code> element. */
 	export interface GetChangeResponse {
 
-		/** A complex type that describes change information about changes made to your hosted zone. */
+		/**
+		 * A complex type that describes change information about changes made to your hosted zone.
+		 * Required
+		 */
 		ChangeInfo: ChangeInfo;
 	}
 
@@ -557,7 +611,10 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the specified geolocation code. */
 	export interface GetGeoLocationResponse {
 
-		/** A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code. */
+		/**
+		 * A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code.
+		 * Required
+		 */
 		GeoLocationDetails: GeoLocationDetails;
 	}
 
@@ -579,7 +636,10 @@ export namespace MyNS {
 	/** A complex type that contains the response to a <code>GetHealthCheck</code> request. */
 	export interface GetHealthCheckResponse {
 
-		/** A complex type that contains information about one health check that is associated with the current AWS account. */
+		/**
+		 * A complex type that contains information about one health check that is associated with the current AWS account.
+		 * Required
+		 */
 		HealthCheck: HealthCheck;
 	}
 
@@ -627,7 +687,10 @@ export namespace MyNS {
 	/** A complex type that contain the response to a <code>GetHostedZone</code> request. */
 	export interface GetHostedZoneResponse {
 
-		/** A complex type that contains general information about the hosted zone. */
+		/**
+		 * A complex type that contains general information about the hosted zone.
+		 * Required
+		 */
 		HostedZone: HostedZone;
 
 		/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
@@ -650,7 +713,10 @@ export namespace MyNS {
 	/** A complex type that contains the requested limit.  */
 	export interface GetHostedZoneLimitResponse {
 
-		/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
+		/**
+		 * A complex type that contains the type of limit that you specified in the request and the current value for that limit.
+		 * Required
+		 */
 		Limit: HostedZoneLimit;
 		Count: number;
 	}
@@ -669,7 +735,10 @@ export namespace MyNS {
 
 	export interface GetQueryLoggingConfigResponse {
 
-		/** A complex type that contains information about a configuration for DNS query logging. */
+		/**
+		 * A complex type that contains information about a configuration for DNS query logging.
+		 * Required
+		 */
 		QueryLoggingConfig: QueryLoggingConfig;
 	}
 
@@ -677,7 +746,10 @@ export namespace MyNS {
 	/** A complex type that contains the response to the <code>GetReusableDelegationSet</code> request. */
 	export interface GetReusableDelegationSetResponse {
 
-		/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
+		/**
+		 * A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.
+		 * Required
+		 */
 		DelegationSet: DelegationSet;
 	}
 
@@ -685,7 +757,10 @@ export namespace MyNS {
 	/** A complex type that contains the requested limit.  */
 	export interface GetReusableDelegationSetLimitResponse {
 
-		/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
+		/**
+		 * A complex type that contains the type of limit that you specified in the request and the current value for that limit.
+		 * Required
+		 */
 		Limit: ReusableDelegationSetLimit;
 		Count: number;
 	}
@@ -703,7 +778,10 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the request. */
 	export interface GetTrafficPolicyResponse {
 
-		/** A complex type that contains settings for a traffic policy. */
+		/**
+		 * A complex type that contains settings for a traffic policy.
+		 * Required
+		 */
 		TrafficPolicy: TrafficPolicy;
 	}
 
@@ -711,7 +789,10 @@ export namespace MyNS {
 	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
 	export interface GetTrafficPolicyInstanceResponse {
 
-		/** A complex type that contains settings for the new traffic policy instance. */
+		/**
+		 * A complex type that contains settings for the new traffic policy instance.
+		 * Required
+		 */
 		TrafficPolicyInstance: TrafficPolicyInstance;
 	}
 
@@ -795,7 +876,10 @@ export namespace MyNS {
 	/** A complex type that contains information about the health checks or hosted zones for which you want to list tags. */
 	export interface ListTagsForResourceResponse {
 
-		/** A complex type containing a resource and its associated tags. */
+		/**
+		 * A complex type containing a resource and its associated tags.
+		 * Required
+		 */
 		ResourceTagSet: ResourceTagSet;
 	}
 
@@ -883,6 +967,7 @@ export namespace MyNS {
 
 		/**
 		 * (Private hosted zones only) A list of <code>VPC</code> elements.
+		 * Required
 		 * Minimum items: 1
 		 */
 		VPCs: Array<VPC>;
@@ -903,7 +988,10 @@ export namespace MyNS {
 	/** A complex type that contains the response to the <code>UpdateHealthCheck</code> request. */
 	export interface UpdateHealthCheckResponse {
 
-		/** A complex type that contains information about one health check that is associated with the current AWS account. */
+		/**
+		 * A complex type that contains information about one health check that is associated with the current AWS account.
+		 * Required
+		 */
 		HealthCheck: HealthCheck;
 	}
 
@@ -918,7 +1006,10 @@ export namespace MyNS {
 	/** A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request. */
 	export interface UpdateHostedZoneCommentResponse {
 
-		/** A complex type that contains general information about the hosted zone. */
+		/**
+		 * A complex type that contains general information about the hosted zone.
+		 * Required
+		 */
 		HostedZone: HostedZone;
 	}
 
@@ -926,7 +1017,10 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the traffic policy. */
 	export interface UpdateTrafficPolicyCommentResponse {
 
-		/** A complex type that contains settings for a traffic policy. */
+		/**
+		 * A complex type that contains settings for a traffic policy.
+		 * Required
+		 */
 		TrafficPolicy: TrafficPolicy;
 	}
 
@@ -934,7 +1028,10 @@ export namespace MyNS {
 	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
 	export interface UpdateTrafficPolicyInstanceResponse {
 
-		/** A complex type that contains settings for the new traffic policy instance. */
+		/**
+		 * A complex type that contains settings for the new traffic policy instance.
+		 * Required
+		 */
 		TrafficPolicyInstance: TrafficPolicyInstance;
 	}
 
@@ -945,7 +1042,10 @@ export namespace MyNS {
 	/** A complex type that contains information about the request to associate a VPC with a private hosted zone. */
 	export interface AssociateVPCWithHostedZoneRequest {
 
-		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
+		/**
+		 * (Private hosted zones only) A complex type that contains information about an Amazon VPC.
+		 * Required
+		 */
 		VPC: VPC;
 		Comment?: string;
 	}
@@ -963,7 +1063,10 @@ export namespace MyNS {
 	/** A complex type that contains change information for the resource record set. */
 	export interface ChangeResourceRecordSetsRequest {
 
-		/** The information for a change request. */
+		/**
+		 * The information for a change request.
+		 * Required
+		 */
 		ChangeBatch: ChangeBatch;
 	}
 
@@ -985,7 +1088,10 @@ export namespace MyNS {
 	export interface CreateHealthCheckRequest {
 		CallerReference: string;
 
-		/** A complex type that contains information about the health check. */
+		/**
+		 * A complex type that contains information about the health check.
+		 * Required
+		 */
 		HealthCheckConfig: HealthCheckConfig;
 	}
 
@@ -1042,7 +1148,10 @@ export namespace MyNS {
 	/** A complex type that contains information about the request to authorize associating a VPC with your private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by using different accounts. */
 	export interface CreateVPCAssociationAuthorizationRequest {
 
-		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
+		/**
+		 * (Private hosted zones only) A complex type that contains information about an Amazon VPC.
+		 * Required
+		 */
 		VPC: VPC;
 	}
 
@@ -1078,7 +1187,10 @@ export namespace MyNS {
 	/** A complex type that contains information about the request to remove authorization to associate a VPC that was created by one AWS account with a hosted zone that was created with a different AWS account.  */
 	export interface DeleteVPCAssociationAuthorizationRequest {
 
-		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
+		/**
+		 * (Private hosted zones only) A complex type that contains information about an Amazon VPC.
+		 * Required
+		 */
 		VPC: VPC;
 	}
 
@@ -1086,7 +1198,10 @@ export namespace MyNS {
 	/** A complex type that contains information about the VPC that you want to disassociate from a specified private hosted zone. */
 	export interface DisassociateVPCFromHostedZoneRequest {
 
-		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
+		/**
+		 * (Private hosted zones only) A complex type that contains information about an Amazon VPC.
+		 * Required
+		 */
 		VPC: VPC;
 		Comment?: string;
 	}

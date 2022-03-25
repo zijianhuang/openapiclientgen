@@ -81,7 +81,10 @@ export namespace MyNS {
 		Name?: string;
 		NumberOfMountTargets: number;
 
-		/** The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time. */
+		/**
+		 * The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.
+		 * Required
+		 */
 		SizeInBytes: FileSystemSize;
 		PerformanceMode: FileSystemDescriptionPerformanceMode;
 		Encrypted?: boolean;
@@ -612,6 +615,7 @@ export namespace MyNS {
 
 		/**
 		 * A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -620,7 +624,10 @@ export namespace MyNS {
 		/** Creates tags associated with the access point. Each tag is a key-value pair. */
 		Tags?: Array<Tag>;
 
-		/** The ID of the EFS file system that the access point provides access to. */
+		/**
+		 * The ID of the EFS file system that the access point provides access to.
+		 * Required
+		 */
 		FileSystemId: string;
 
 		/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
@@ -647,6 +654,7 @@ export namespace MyNS {
 
 		/**
 		 * A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -680,10 +688,16 @@ export namespace MyNS {
 
 	export interface CreateMountTargetPostBody {
 
-		/** The ID of the file system for which to create the mount target. */
+		/**
+		 * The ID of the file system for which to create the mount target.
+		 * Required
+		 */
 		FileSystemId: string;
 
-		/** The ID of the subnet to add the mount target in. */
+		/**
+		 * The ID of the subnet to add the mount target in.
+		 * Required
+		 */
 		SubnetId: string;
 
 		/** Valid IPv4 address within the address range of the specified subnet. */
@@ -698,7 +712,10 @@ export namespace MyNS {
 
 	export interface CreateTagsPostBody {
 
-		/** An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. */
+		/**
+		 * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+		 * Required
+		 */
 		Tags: Array<Tag>;
 	}
 
@@ -716,7 +733,10 @@ export namespace MyNS {
 
 	export interface PutFileSystemPolicyPutBody {
 
-		/** The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>. */
+		/**
+		 * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
+		 * Required
+		 */
 		Policy: string;
 
 		/** (Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. */
@@ -727,6 +747,7 @@ export namespace MyNS {
 
 		/**
 		 * A list of tag keys to delete.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
@@ -735,7 +756,10 @@ export namespace MyNS {
 
 	export interface PutLifecycleConfigurationPutBody {
 
-		/** An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object tells lifecycle management when to transition files from the Standard storage class to the Infrequent Access storage class. */
+		/**
+		 * An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object tells lifecycle management when to transition files from the Standard storage class to the Infrequent Access storage class.
+		 * Required
+		 */
 		LifecyclePolicies: Array<LifecyclePolicy>;
 	}
 
@@ -750,7 +774,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		Tags: Array<Tag>;
 	}
 

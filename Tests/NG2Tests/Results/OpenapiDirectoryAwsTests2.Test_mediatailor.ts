@@ -279,6 +279,7 @@ export namespace MyNS {
 		 * "Key1": "Value1",
 		 * "Key2": "Value2"
 		 * }
+		 * Required
 		 */
 		tags: {[id: string]: string };
 	}

@@ -580,7 +580,10 @@ export namespace MyNS {
 	/** Represents an API mapping. */
 	export interface ApiMapping {
 
-		/** The identifier. */
+		/**
+		 * The identifier.
+		 * Required
+		 */
 		ApiId: string;
 
 		/** The identifier. */
@@ -589,7 +592,10 @@ export namespace MyNS {
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		ApiMappingKey?: string;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Stage: string;
 	}
 
@@ -620,13 +626,22 @@ export namespace MyNS {
 		DisableSchemaValidation?: boolean;
 		ImportInfo?: Array<string>;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Name: string;
 
-		/** Represents a protocol type. */
+		/**
+		 * Represents a protocol type.
+		 * Required
+		 */
 		ProtocolType: CreateApiResponseProtocolType;
 
-		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		/**
+		 * An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information.
+		 * Required
+		 */
 		RouteSelectionExpression: string;
 
 		/** Represents a collection of tags associated with the resource. */
@@ -710,7 +725,10 @@ export namespace MyNS {
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
 		JwtConfiguration?: JWTConfiguration;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Name: string;
 	}
 
@@ -782,7 +800,10 @@ export namespace MyNS {
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		ApiMappingSelectionExpression?: string;
 
-		/** A string with a length between [1-512]. */
+		/**
+		 * A string with a length between [1-512].
+		 * Required
+		 */
 		DomainName1: string;
 
 		/** The domain name configurations. */
@@ -889,7 +910,10 @@ export namespace MyNS {
 		/** The identifier. */
 		IntegrationResponseId?: string;
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		IntegrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
@@ -1012,7 +1036,10 @@ export namespace MyNS {
 		/** The identifier. */
 		ModelId?: string;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Name: string;
 
 		/** A string with a length between [0-32768]. */
@@ -1098,7 +1125,10 @@ export namespace MyNS {
 		/** The identifier. */
 		RouteResponseId?: string;
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		RouteResponseKey: string;
 	}
 
@@ -1139,7 +1169,10 @@ export namespace MyNS {
 		/** The identifier. */
 		RouteId?: string;
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		RouteKey: string;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
@@ -1218,7 +1251,10 @@ export namespace MyNS {
 		/** The route settings map. */
 		RouteSettings?: RouteSettingsMap;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		StageName: string;
 
 		/** The stage variable map. */
@@ -1274,19 +1310,31 @@ export namespace MyNS {
 	export interface VpcLink {
 		CreatedDate?: Date;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Name: string;
 
-		/** A list of security group IDs for the VPC link. */
+		/**
+		 * A list of security group IDs for the VPC link.
+		 * Required
+		 */
 		SecurityGroupIds: Array<string>;
 
-		/** A list of subnet IDs to include in the VPC link. */
+		/**
+		 * A list of subnet IDs to include in the VPC link.
+		 * Required
+		 */
 		SubnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
 		Tags?: Tags;
 
-		/** The identifier. */
+		/**
+		 * The identifier.
+		 * Required
+		 */
 		VpcLinkId: string;
 
 		/** The status of the VPC link. */
@@ -1727,13 +1775,19 @@ export namespace MyNS {
 	/** Creates a new ApiMapping resource to represent an API mapping. */
 	export interface CreateApiMappingRequest {
 
-		/** The identifier. */
+		/**
+		 * The identifier.
+		 * Required
+		 */
 		ApiId: string;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		ApiMappingKey?: string;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Stage: string;
 	}
 
@@ -1754,10 +1808,16 @@ export namespace MyNS {
 		Description?: string;
 		DisableSchemaValidation?: boolean;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Name: string;
 
-		/** Represents a protocol type. */
+		/**
+		 * Represents a protocol type.
+		 * Required
+		 */
 		ProtocolType: CreateApiResponseProtocolType;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
@@ -1790,13 +1850,19 @@ export namespace MyNS {
 		 */
 		AuthorizerResultTtlInSeconds?: number;
 
-		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
+		/**
+		 * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
+		 * Required
+		 */
 		AuthorizerType: CreateAuthorizerResponseAuthorizerType;
 
 		/** A string representation of a URI with a length between [1-2048]. */
 		AuthorizerUri?: string;
 
-		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
+		/**
+		 * The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.
+		 * Required
+		 */
 		IdentitySource: Array<string>;
 
 		/** A string with a length between [0-1024]. */
@@ -1805,7 +1871,10 @@ export namespace MyNS {
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
 		JwtConfiguration?: JWTConfiguration;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Name: string;
 	}
 
@@ -1828,7 +1897,10 @@ export namespace MyNS {
 	/** Creates a new DomainName resource to represent a domain name. */
 	export interface CreateDomainNameRequest {
 
-		/** A string with a length between [1-512]. */
+		/**
+		 * A string with a length between [1-512].
+		 * Required
+		 */
 		DomainName: string;
 
 		/** The domain name configurations. */
@@ -1876,7 +1948,10 @@ export namespace MyNS {
 		/** A string with a length between [1-64]. */
 		IntegrationMethod?: string;
 
-		/** Represents an API method integration type. */
+		/**
+		 * Represents an API method integration type.
+		 * Required
+		 */
 		IntegrationType: CreateIntegrationResultIntegrationType;
 
 		/** A string representation of a URI with a length between [1-2048]. */
@@ -1915,7 +1990,10 @@ export namespace MyNS {
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
 		ContentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		IntegrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
@@ -1938,10 +2016,16 @@ export namespace MyNS {
 		/** A string with a length between [0-1024]. */
 		Description?: string;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Name: string;
 
-		/** A string with a length between [0-32768]. */
+		/**
+		 * A string with a length between [0-32768].
+		 * Required
+		 */
 		Schema: string;
 	}
 
@@ -1971,7 +2055,10 @@ export namespace MyNS {
 		/** The route parameters. */
 		RequestParameters?: RouteParameters;
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		RouteKey: string;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
@@ -1994,7 +2081,10 @@ export namespace MyNS {
 		/** The route parameters. */
 		ResponseParameters?: RouteParameters;
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		RouteResponseKey: string;
 	}
 
@@ -2021,7 +2111,10 @@ export namespace MyNS {
 		/** The route settings map. */
 		RouteSettings?: RouteSettingsMap;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		StageName: string;
 
 		/** The stage variable map. */
@@ -2035,13 +2128,19 @@ export namespace MyNS {
 	/** Creates a VPC link */
 	export interface CreateVpcLinkRequest {
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		Name: string;
 
 		/** A list of security group IDs for the VPC link. */
 		SecurityGroupIds?: Array<string>;
 
-		/** A list of subnet IDs to include in the VPC link. */
+		/**
+		 * A list of subnet IDs to include in the VPC link.
+		 * Required
+		 */
 		SubnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
@@ -2220,7 +2319,10 @@ export namespace MyNS {
 	/** Updates an ApiMapping. */
 	export interface UpdateApiMappingRequest {
 
-		/** The identifier. */
+		/**
+		 * The identifier.
+		 * Required
+		 */
 		ApiId: string;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
@@ -3293,10 +3395,16 @@ export namespace MyNS {
 		/** Avoid validating models when creating a deployment. Supported only for WebSocket APIs. */
 		disableSchemaValidation?: boolean;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		name: string;
 
-		/** Represents a protocol type. */
+		/**
+		 * Represents a protocol type.
+		 * Required
+		 */
 		protocolType: CreateApiResponseProtocolType;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
@@ -3340,19 +3448,28 @@ export namespace MyNS {
 
 	export interface ImportApiPutBody {
 
-		/** The OpenAPI definition. Supported only for HTTP APIs. */
+		/**
+		 * The OpenAPI definition. Supported only for HTTP APIs.
+		 * Required
+		 */
 		body: string;
 	}
 
 	export interface CreateApiMappingPostBody {
 
-		/** The identifier. */
+		/**
+		 * The identifier.
+		 * Required
+		 */
 		apiId: string;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		apiMappingKey?: string;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		stage: string;
 	}
 
@@ -3368,13 +3485,19 @@ export namespace MyNS {
 		 */
 		authorizerResultTtlInSeconds?: number;
 
-		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
+		/**
+		 * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
+		 * Required
+		 */
 		authorizerType: CreateAuthorizerResponseAuthorizerType;
 
 		/** A string representation of a URI with a length between [1-2048]. */
 		authorizerUri?: string;
 
-		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
+		/**
+		 * The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.
+		 * Required
+		 */
 		identitySource: Array<string>;
 
 		/** A string with a length between [0-1024]. */
@@ -3383,7 +3506,10 @@ export namespace MyNS {
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
 		jwtConfiguration?: CreateAuthorizerPostBodyJwtConfiguration;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		name: string;
 	}
 
@@ -3405,7 +3531,10 @@ export namespace MyNS {
 
 	export interface CreateDomainNamePostBody {
 
-		/** A string with a length between [1-512]. */
+		/**
+		 * A string with a length between [1-512].
+		 * Required
+		 */
 		domainName: string;
 
 		/** The domain name configurations. */
@@ -3435,7 +3564,10 @@ export namespace MyNS {
 		/** A string with a length between [1-64]. */
 		integrationMethod?: string;
 
-		/** Represents an API method integration type. */
+		/**
+		 * Represents an API method integration type.
+		 * Required
+		 */
 		integrationType: CreateIntegrationResultIntegrationType;
 
 		/** A string representation of a URI with a length between [1-2048]. */
@@ -3478,7 +3610,10 @@ export namespace MyNS {
 		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
 		contentHandlingStrategy?: CreateIntegrationResultContentHandlingStrategy;
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		integrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
@@ -3499,10 +3634,16 @@ export namespace MyNS {
 		/** A string with a length between [0-1024]. */
 		description?: string;
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		name: string;
 
-		/** A string with a length between [0-32768]. */
+		/**
+		 * A string with a length between [0-32768].
+		 * Required
+		 */
 		schema: string;
 	}
 
@@ -3532,7 +3673,10 @@ export namespace MyNS {
 		/** The route parameters. */
 		requestParameters?: {[id: string]: ParameterConstraints };
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		routeKey: string;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
@@ -3553,7 +3697,10 @@ export namespace MyNS {
 		/** The route parameters. */
 		responseParameters?: {[id: string]: ParameterConstraints };
 
-		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
 		routeResponseKey: string;
 	}
 
@@ -3580,7 +3727,10 @@ export namespace MyNS {
 		/** The route settings map. */
 		routeSettings?: {[id: string]: RouteSettings };
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		stageName: string;
 
 		/** The stage variable map. */
@@ -3611,13 +3761,19 @@ export namespace MyNS {
 
 	export interface CreateVpcLinkPostBody {
 
-		/** A string with a length between [1-128]. */
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
 		name: string;
 
 		/** A list of security group IDs for the VPC link. */
 		securityGroupIds?: Array<string>;
 
-		/** A list of subnet IDs to include in the VPC link. */
+		/**
+		 * A list of subnet IDs to include in the VPC link.
+		 * Required
+		 */
 		subnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
@@ -3626,7 +3782,10 @@ export namespace MyNS {
 
 	export interface ReimportApiPutBody {
 
-		/** The OpenAPI definition. Supported only for HTTP APIs. */
+		/**
+		 * The OpenAPI definition. Supported only for HTTP APIs.
+		 * Required
+		 */
 		body: string;
 	}
 
@@ -3688,7 +3847,10 @@ export namespace MyNS {
 
 	export interface UpdateApiMappingPatchBody {
 
-		/** The identifier. */
+		/**
+		 * The identifier.
+		 * Required
+		 */
 		apiId: string;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */

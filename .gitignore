@@ -47,3 +47,4 @@ node_modules
 /jq/_reports
 /Tests/NG2TestBed/src/clientapi/ClientApiAuto.ts
 /Tests/openapi-directory
+/Tests/NG2TestBed/.angular

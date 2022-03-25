@@ -190,7 +190,10 @@ export namespace MyNS {
 
 	export interface GetExecutionHistoryOutput {
 
-		/** Contains details about the events that occurred during an execution. */
+		/**
+		 * Contains details about the events that occurred during an execution.
+		 * Required
+		 */
 		events: Array<HistoryEvent>;
 		nextToken?: string;
 	}

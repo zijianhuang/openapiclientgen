@@ -59,7 +59,10 @@ export namespace MyNS {
 
 	export interface PutEventsPostBody {
 
-		/** An array of Event JSON objects */
+		/**
+		 * An array of Event JSON objects
+		 * Required
+		 */
 		events: Array<Event>;
 	}
 

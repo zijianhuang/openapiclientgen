@@ -563,7 +563,10 @@ export namespace MyNS {
 
 	export interface CreateSamplingRuleRequest {
 
-		/** A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties. */
+		/**
+		 * A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.
+		 * Required
+		 */
 		SamplingRule: SamplingRule;
 	}
 
@@ -690,7 +693,10 @@ export namespace MyNS {
 
 	export interface UpdateSamplingRuleRequest {
 
-		/** A document specifying changes to a sampling rule's configuration. */
+		/**
+		 * A document specifying changes to a sampling rule's configuration.
+		 * Required
+		 */
 		SamplingRuleUpdate: SamplingRuleUpdate;
 	}
 
@@ -890,7 +896,10 @@ export namespace MyNS {
 
 	export interface BatchGetTracesPostBody {
 
-		/** Specify the trace IDs of requests for which to retrieve segments. */
+		/**
+		 * Specify the trace IDs of requests for which to retrieve segments.
+		 * Required
+		 */
 		TraceIds: Array<string>;
 
 		/** Pagination token. */
@@ -901,6 +910,7 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the new group. Default is a reserved name and names must be unique.
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 */
@@ -912,7 +922,10 @@ export namespace MyNS {
 
 	export interface CreateSamplingRulePostBody {
 
-		/** A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties. */
+		/**
+		 * A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.
+		 * Required
+		 */
 		SamplingRule: CreateSamplingRulePostBodySamplingRule;
 	}
 
@@ -1001,6 +1014,7 @@ export namespace MyNS {
 
 		/**
 		 * Information about rules that the service is using to sample requests.
+		 * Required
 		 * Maximum items: 25
 		 */
 		SamplingStatisticsDocuments: Array<SamplingStatisticsDocument>;
@@ -1008,10 +1022,16 @@ export namespace MyNS {
 
 	export interface GetServiceGraphPostBody {
 
-		/** The start of the time frame for which to generate a graph. */
+		/**
+		 * The start of the time frame for which to generate a graph.
+		 * Required
+		 */
 		StartTime: Date;
 
-		/** The end of the timeframe for which to generate a graph. */
+		/**
+		 * The end of the timeframe for which to generate a graph.
+		 * Required
+		 */
 		EndTime: Date;
 
 		/**
@@ -1034,10 +1054,16 @@ export namespace MyNS {
 
 	export interface GetTimeSeriesServiceStatisticsPostBody {
 
-		/** The start of the time frame for which to aggregate statistics. */
+		/**
+		 * The start of the time frame for which to aggregate statistics.
+		 * Required
+		 */
 		StartTime: Date;
 
-		/** The end of the time frame for which to aggregate statistics. */
+		/**
+		 * The end of the time frame for which to aggregate statistics.
+		 * Required
+		 */
 		EndTime: Date;
 
 		/**
@@ -1070,7 +1096,10 @@ export namespace MyNS {
 
 	export interface GetTraceGraphPostBody {
 
-		/** Trace IDs of requests for which to generate a service graph. */
+		/**
+		 * Trace IDs of requests for which to generate a service graph.
+		 * Required
+		 */
 		TraceIds: Array<string>;
 
 		/** Pagination token. */
@@ -1079,10 +1108,16 @@ export namespace MyNS {
 
 	export interface GetTraceSummariesPostBody {
 
-		/** The start of the time frame for which to retrieve traces. */
+		/**
+		 * The start of the time frame for which to retrieve traces.
+		 * Required
+		 */
 		StartTime: Date;
 
-		/** The end of the time frame for which to retrieve traces. */
+		/**
+		 * The end of the time frame for which to retrieve traces.
+		 * Required
+		 */
 		EndTime: Date;
 
 		/** A parameter to indicate whether to query trace summaries by TraceId or Event time. */
@@ -1115,13 +1150,19 @@ export namespace MyNS {
 		 */
 		KeyId?: string;
 
-		/** The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption. */
+		/**
+		 * The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.
+		 * Required
+		 */
 		Type: EncryptionConfigType;
 	}
 
 	export interface PutTelemetryRecordsPostBody {
 
-		/** <p/> */
+		/**
+		 * <p/>
+		 * Required
+		 */
 		TelemetryRecords: Array<TelemetryRecord>;
 
 		/**
@@ -1145,7 +1186,10 @@ export namespace MyNS {
 
 	export interface PutTraceSegmentsPostBody {
 
-		/** A string containing a JSON document defining one or more segments or subsegments. */
+		/**
+		 * A string containing a JSON document defining one or more segments or subsegments.
+		 * Required
+		 */
 		TraceSegmentDocuments: Array<string>;
 	}
 
@@ -1171,7 +1215,10 @@ export namespace MyNS {
 
 	export interface UpdateSamplingRulePostBody {
 
-		/** A document specifying changes to a sampling rule's configuration. */
+		/**
+		 * A document specifying changes to a sampling rule's configuration.
+		 * Required
+		 */
 		SamplingRuleUpdate: UpdateSamplingRulePostBodySamplingRuleUpdate;
 	}
 

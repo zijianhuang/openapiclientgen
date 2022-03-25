@@ -111,7 +111,10 @@ export namespace MyNS {
 		Description?: string;
 		Size: ConnectDirectoryRequestSize;
 
-		/** Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created. */
+		/**
+		 * Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.
+		 * Required
+		 */
 		ConnectSettings: DirectoryConnectSettings;
 		Tags?: Array<Tag>;
 	}
@@ -248,7 +251,10 @@ export namespace MyNS {
 		Password: string;
 		Description?: string;
 
-		/** Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation. */
+		/**
+		 * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
+		 * Required
+		 */
 		VpcSettings: DirectoryVpcSettings;
 		Edition?: CreateMicrosoftADRequestEdition;
 		Tags?: Array<Tag>;
@@ -760,7 +766,10 @@ export namespace MyNS {
 	export interface EnableRadiusRequest {
 		DirectoryId: string;
 
-		/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
+		/**
+		 * Contains information about a Remote Authentication Dial In User Service (RADIUS) server.
+		 * Required
+		 */
 		RadiusSettings: RadiusSettings;
 	}
 
@@ -1013,7 +1022,10 @@ export namespace MyNS {
 		DirectoryId: string;
 		ShareNotes?: string;
 
-		/** Identifier that contains details about the directory consumer account. */
+		/**
+		 * Identifier that contains details about the directory consumer account.
+		 * Required
+		 */
 		ShareTarget: ShareTarget;
 		ShareMethod: SharedDirectoryShareMethod;
 	}
@@ -1057,7 +1069,10 @@ export namespace MyNS {
 	export interface UnshareDirectoryRequest {
 		DirectoryId: string;
 
-		/** Identifier that contains details about the directory consumer account with whom the directory is being unshared. */
+		/**
+		 * Identifier that contains details about the directory consumer account with whom the directory is being unshared.
+		 * Required
+		 */
 		UnshareTarget: UnshareTarget;
 	}
 
@@ -1105,7 +1120,10 @@ export namespace MyNS {
 	export interface UpdateRadiusRequest {
 		DirectoryId: string;
 
-		/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
+		/**
+		 * Contains information about a Remote Authentication Dial In User Service (RADIUS) server.
+		 * Required
+		 */
 		RadiusSettings: RadiusSettings;
 	}
 

@@ -566,7 +566,10 @@ export namespace MyNS {
 	export interface ModifyClientPropertiesRequest {
 		ResourceId: string;
 
-		/** Describes an Amazon WorkSpaces client. */
+		/**
+		 * Describes an Amazon WorkSpaces client.
+		 * Required
+		 */
 		ClientProperties: ClientProperties;
 	}
 
@@ -576,7 +579,10 @@ export namespace MyNS {
 	export interface ModifySelfservicePermissionsRequest {
 		ResourceId: string;
 
-		/** Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>. */
+		/**
+		 * Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.
+		 * Required
+		 */
 		SelfservicePermissions: SelfservicePermissions;
 	}
 
@@ -586,7 +592,10 @@ export namespace MyNS {
 	export interface ModifyWorkspaceAccessPropertiesRequest {
 		ResourceId: string;
 
-		/** The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>. */
+		/**
+		 * The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>.
+		 * Required
+		 */
 		WorkspaceAccessProperties: WorkspaceAccessProperties;
 	}
 
@@ -596,7 +605,10 @@ export namespace MyNS {
 	export interface ModifyWorkspaceCreationPropertiesRequest {
 		ResourceId: string;
 
-		/** Describes the default properties that are used for creating WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>. */
+		/**
+		 * Describes the default properties that are used for creating WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>.
+		 * Required
+		 */
 		WorkspaceCreationProperties: WorkspaceCreationProperties;
 	}
 
@@ -616,7 +628,10 @@ export namespace MyNS {
 	export interface ModifyWorkspacePropertiesRequest {
 		WorkspaceId: string;
 
-		/** Describes a WorkSpace. */
+		/**
+		 * Describes a WorkSpace.
+		 * Required
+		 */
 		WorkspaceProperties: WorkspaceProperties;
 	}
 

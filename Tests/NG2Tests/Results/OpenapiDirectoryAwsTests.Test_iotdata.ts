@@ -151,7 +151,10 @@ export namespace MyNS {
 
 	export interface UpdateThingShadowPostBody {
 
-		/** The state information, in JSON format. */
+		/**
+		 * The state information, in JSON format.
+		 * Required
+		 */
 		payload: string;
 	}
 

@@ -40,7 +40,10 @@ export namespace MyNS {
 
 	export interface DescribePlacementResponse {
 
-		/** An object describing a project's placement. */
+		/**
+		 * An object describing a project's placement.
+		 * Required
+		 */
 		placement: PlacementDescription;
 	}
 
@@ -59,7 +62,10 @@ export namespace MyNS {
 
 	export interface DescribeProjectResponse {
 
-		/** An object providing detailed information for a particular project associated with an AWS account and region. */
+		/**
+		 * An object providing detailed information for a particular project associated with an AWS account and region.
+		 * Required
+		 */
 		project: ProjectDescription;
 	}
 
@@ -396,6 +402,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.
+		 * Required
 		 * Max length: 32
 		 * Min length: 1
 		 */
@@ -406,6 +413,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the placement to be created.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9_-]+$
@@ -420,6 +428,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the project to create.
+		 * Required
 		 * Max length: 128
 		 * Min length: 1
 		 * Pattern: ^[0-9A-Za-z_-]+$
@@ -471,7 +480,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource. */
+		/**
+		 * The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 

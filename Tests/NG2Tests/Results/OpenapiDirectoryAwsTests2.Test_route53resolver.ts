@@ -32,7 +32,10 @@ export namespace MyNS {
 	export interface AssociateResolverEndpointIpAddressRequest {
 		ResolverEndpointId: string;
 
-		/** In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update. */
+		/**
+		 * In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update.
+		 * Required
+		 */
 		IpAddress: IpAddressUpdate;
 	}
 
@@ -200,7 +203,10 @@ export namespace MyNS {
 	export interface DisassociateResolverEndpointIpAddressRequest {
 		ResolverEndpointId: string;
 
-		/** In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update. */
+		/**
+		 * In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update.
+		 * Required
+		 */
 		IpAddress: IpAddressUpdate;
 	}
 
@@ -392,7 +398,10 @@ export namespace MyNS {
 	export interface UpdateResolverRuleRequest {
 		ResolverRuleId: string;
 
-		/** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make. */
+		/**
+		 * In an <a>UpdateResolverRule</a> request, information about the changes that you want to make.
+		 * Required
+		 */
 		Config: ResolverRuleConfig;
 	}
 

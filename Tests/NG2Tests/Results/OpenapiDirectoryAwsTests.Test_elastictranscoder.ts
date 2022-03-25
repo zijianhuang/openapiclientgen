@@ -681,7 +681,10 @@ export namespace MyNS {
 	/** The <code>UpdatePipelineNotificationsRequest</code> structure. */
 	export interface UpdatePipelineNotificationsRequest {
 
-		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
+		/**
+		 * <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+		 * Required
+		 */
 		Notifications: Notifications;
 	}
 
@@ -891,6 +894,7 @@ export namespace MyNS {
 
 		/**
 		 * The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.
+		 * Required
 		 * Pattern: ^\d{13}-\w{6}$
 		 */
 		PipelineId: string;
@@ -977,6 +981,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters.</p>
+		 * Required
 		 * Max length: 40
 		 * Min length: 1
 		 */
@@ -984,6 +989,7 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon S3 bucket in which you saved the media files that you want to transcode.
+		 * Required
 		 * Pattern: ^(\w|\.|-){1,255}$
 		 */
 		InputBucket: string;
@@ -996,6 +1002,7 @@ export namespace MyNS {
 
 		/**
 		 * The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.
+		 * Required
 		 * Pattern: ^arn:aws:iam::\w{12}:role/.+$
 		 */
 		Role: string;
@@ -1040,6 +1047,7 @@ export namespace MyNS {
 
 		/**
 		 * The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.
+		 * Required
 		 * Max length: 40
 		 * Min length: 1
 		 */
@@ -1054,6 +1062,7 @@ export namespace MyNS {
 
 		/**
 		 * The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
+		 * Required
 		 * Pattern: (^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)|(^mp2$)
 		 */
 		Container: string;
@@ -1169,24 +1178,28 @@ export namespace MyNS {
 
 		/**
 		 * The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.
+		 * Required
 		 * Pattern: ^arn:aws:iam::\w{12}:role/.+$
 		 */
 		Role: string;
 
 		/**
 		 * The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.
+		 * Required
 		 * Pattern: ^(\w|\.|-){1,255}$
 		 */
 		InputBucket: string;
 
 		/**
 		 * The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.
+		 * Required
 		 * Pattern: ^(\w|\.|-){1,255}$
 		 */
 		OutputBucket: string;
 
 		/**
 		 * The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.
+		 * Required
 		 * Maximum items: 30
 		 */
 		Topics: Array<string>;
@@ -1194,7 +1207,10 @@ export namespace MyNS {
 
 	export interface UpdatePipelineNotificationsPostBody {
 
-		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
+		/**
+		 * <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+		 * Required
+		 */
 		Notifications: UpdatePipelineNotificationsPostBodyNotifications;
 	}
 
@@ -1209,6 +1225,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li> </ul>
+		 * Required
 		 * Pattern: (^Active$)|(^Paused$)
 		 */
 		Status: string;

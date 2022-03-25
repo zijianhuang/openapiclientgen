@@ -80,10 +80,16 @@ export namespace MyNS {
 	/** Contains asset property value information. */
 	export interface AssetPropertyValue {
 
-		/** Contains an asset property value (of a single type only). */
+		/**
+		 * Contains an asset property value (of a single type only).
+		 * Required
+		 */
 		value: Variant;
 
-		/** Contains a timestamp with optional nanosecond granularity. */
+		/**
+		 * Contains a timestamp with optional nanosecond granularity.
+		 * Required
+		 */
 		timestamp: TimeInNanos;
 		quality?: AssetPropertyValueQuality;
 	}
@@ -135,7 +141,10 @@ export namespace MyNS {
 		assetId: string;
 		assetArn: string;
 
-		/** Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		assetStatus: AssetStatus;
 	}
 
@@ -166,7 +175,10 @@ export namespace MyNS {
 		assetModelId: string;
 		assetModelArn: string;
 
-		/** Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		assetModelStatus: AssetModelStatus;
 	}
 
@@ -188,7 +200,10 @@ export namespace MyNS {
 		dataType: AssetModelPropertyDefinitionDataType;
 		unit?: string;
 
-		/** Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>. */
+		/**
+		 * Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.
+		 * Required
+		 */
 		type: PropertyType;
 	}
 
@@ -234,7 +249,10 @@ export namespace MyNS {
 	export interface ExpressionVariable {
 		name: string;
 
-		/** Identifies a property value used in an expression. */
+		/**
+		 * Identifies a property value used in an expression.
+		 * Required
+		 */
 		value: VariableValue;
 	}
 
@@ -251,7 +269,10 @@ export namespace MyNS {
 		expression: string;
 		variables: Array<ExpressionVariable>;
 
-		/** Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on). */
+		/**
+		 * Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).
+		 * Required
+		 */
 		window: MetricWindow;
 	}
 
@@ -297,7 +318,10 @@ export namespace MyNS {
 		portalArn: string;
 		portalStartUrl: string;
 
-		/** Contains information about the current status of a portal. */
+		/**
+		 * Contains information about the current status of a portal.
+		 * Required
+		 */
 		portalStatus: PortalStatus;
 		ssoApplicationId: string;
 	}
@@ -332,13 +356,19 @@ export namespace MyNS {
 
 	export interface DeleteAssetResponse {
 
-		/** Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		assetStatus: AssetStatus;
 	}
 
 	export interface DeleteAssetModelResponse {
 
-		/** Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		assetModelStatus: AssetModelStatus;
 	}
 
@@ -347,7 +377,10 @@ export namespace MyNS {
 
 	export interface DeletePortalResponse {
 
-		/** Contains information about the current status of a portal. */
+		/**
+		 * Contains information about the current status of a portal.
+		 * Required
+		 */
 		portalStatus: PortalStatus;
 	}
 
@@ -358,10 +391,16 @@ export namespace MyNS {
 		accessPolicyId: string;
 		accessPolicyArn: string;
 
-		/** <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note> */
+		/**
+		 * <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note>
+		 * Required
+		 */
 		accessPolicyIdentity: Identity;
 
-		/** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project. */
+		/**
+		 * Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+		 * Required
+		 */
 		accessPolicyResource: Resource;
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
 		accessPolicyCreationDate: Date;
@@ -402,7 +441,10 @@ export namespace MyNS {
 		assetCreationDate: Date;
 		assetLastUpdateDate: Date;
 
-		/** Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		assetStatus: AssetStatus;
 	}
 
@@ -445,7 +487,10 @@ export namespace MyNS {
 		assetModelCreationDate: Date;
 		assetModelLastUpdateDate: Date;
 
-		/** Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		assetModelStatus: AssetModelStatus;
 	}
 
@@ -457,7 +502,10 @@ export namespace MyNS {
 		dataType: AssetModelPropertyDefinitionDataType;
 		unit?: string;
 
-		/** Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>. */
+		/**
+		 * Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.
+		 * Required
+		 */
 		type: PropertyType;
 	}
 
@@ -474,7 +522,10 @@ export namespace MyNS {
 		assetName: string;
 		assetModelId: string;
 
-		/** Contains asset property information. */
+		/**
+		 * Contains asset property information.
+		 * Required
+		 */
 		assetProperty: Property;
 	}
 
@@ -521,7 +572,10 @@ export namespace MyNS {
 	/** Contains a gateway's platform information. */
 	export interface GatewayPlatform {
 
-		/** Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		greengrass: Greengrass;
 	}
 
@@ -543,7 +597,10 @@ export namespace MyNS {
 
 	export interface DescribeLoggingOptionsResponse {
 
-		/** Contains logging options. */
+		/**
+		 * Contains logging options.
+		 * Required
+		 */
 		loggingOptions: LoggingOptions;
 	}
 
@@ -564,7 +621,10 @@ export namespace MyNS {
 		portalStartUrl: string;
 		portalContactEmail: string;
 
-		/** Contains information about the current status of a portal. */
+		/**
+		 * Contains information about the current status of a portal.
+		 * Required
+		 */
 		portalStatus: PortalStatus;
 		portalCreationDate: Date;
 		portalLastUpdateDate: Date;
@@ -602,7 +662,10 @@ export namespace MyNS {
 		timestamp: Date;
 		quality?: AssetPropertyValueQuality;
 
-		/** Contains the (pre-calculated) aggregate values for an asset property. */
+		/**
+		 * Contains the (pre-calculated) aggregate values for an asset property.
+		 * Required
+		 */
 		value: Aggregates;
 	}
 
@@ -642,10 +705,16 @@ export namespace MyNS {
 	export interface AccessPolicySummary {
 		id: string;
 
-		/** <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note> */
+		/**
+		 * <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note>
+		 * Required
+		 */
 		identity: Identity;
 
-		/** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project. */
+		/**
+		 * Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+		 * Required
+		 */
 		resource: Resource;
 		permission: DescribeAccessPolicyResponseAccessPolicyPermission;
 		creationDate?: Date;
@@ -667,7 +736,10 @@ export namespace MyNS {
 		creationDate: Date;
 		lastUpdateDate: Date;
 
-		/** Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		status: AssetModelStatus;
 	}
 
@@ -686,7 +758,10 @@ export namespace MyNS {
 		creationDate: Date;
 		lastUpdateDate: Date;
 
-		/** Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		status: AssetStatus;
 		hierarchies: Array<AssetHierarchy>;
 	}
@@ -706,7 +781,10 @@ export namespace MyNS {
 		creationDate: Date;
 		lastUpdateDate: Date;
 
-		/** Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		status: AssetStatus;
 		hierarchies: Array<AssetHierarchy>;
 	}
@@ -804,13 +882,19 @@ export namespace MyNS {
 
 	export interface UpdateAssetResponse {
 
-		/** Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		assetStatus: AssetStatus;
 	}
 
 	export interface UpdateAssetModelResponse {
 
-		/** Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		assetModelStatus: AssetModelStatus;
 	}
 
@@ -824,7 +908,10 @@ export namespace MyNS {
 
 	export interface UpdatePortalResponse {
 
-		/** Contains information about the current status of a portal. */
+		/**
+		 * Contains information about the current status of a portal.
+		 * Required
+		 */
 		portalStatus: PortalStatus;
 	}
 
@@ -874,10 +961,16 @@ export namespace MyNS {
 
 	export interface CreateAccessPolicyRequest {
 
-		/** <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note> */
+		/**
+		 * <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note>
+		 * Required
+		 */
 		accessPolicyIdentity: Identity;
 
-		/** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project. */
+		/**
+		 * Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+		 * Required
+		 */
 		accessPolicyResource: Resource;
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
 		clientToken?: string;
@@ -912,7 +1005,10 @@ export namespace MyNS {
 	export interface CreateGatewayRequest {
 		gatewayName: string;
 
-		/** Contains a gateway's platform information. */
+		/**
+		 * Contains a gateway's platform information.
+		 * Required
+		 */
 		gatewayPlatform: GatewayPlatform;
 		tags?: TagMap;
 	}
@@ -1058,7 +1154,10 @@ export namespace MyNS {
 
 	export interface PutLoggingOptionsRequest {
 
-		/** Contains logging options. */
+		/**
+		 * Contains logging options.
+		 * Required
+		 */
 		loggingOptions: LoggingOptions;
 	}
 
@@ -1071,10 +1170,16 @@ export namespace MyNS {
 
 	export interface UpdateAccessPolicyRequest {
 
-		/** <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note> */
+		/**
+		 * <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note>
+		 * Required
+		 */
 		accessPolicyIdentity: Identity;
 
-		/** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project. */
+		/**
+		 * Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+		 * Required
+		 */
 		accessPolicyResource: Resource;
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
 		clientToken?: string;
@@ -1722,6 +1827,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
 		 * Max length: 36
 		 * Min length: 36
 		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
@@ -1730,6 +1836,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the child asset to be associated.
+		 * Required
 		 * Max length: 36
 		 * Min length: 36
 		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
@@ -1749,6 +1856,7 @@ export namespace MyNS {
 
 		/**
 		 * The IDs of the assets to be associated to the project.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
@@ -1767,6 +1875,7 @@ export namespace MyNS {
 
 		/**
 		 * The IDs of the assets to be disassociated from the project.
+		 * Required
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
@@ -1783,19 +1892,31 @@ export namespace MyNS {
 
 	export interface BatchPutAssetPropertyValuePostBody {
 
-		/** The list of asset property value entries for the batch put request. You can specify up to 10 entries per request. */
+		/**
+		 * The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.
+		 * Required
+		 */
 		entries: Array<PutAssetPropertyValueEntry>;
 	}
 
 	export interface CreateAccessPolicyPostBody {
 
-		/** <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note> */
+		/**
+		 * <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note>
+		 * Required
+		 */
 		accessPolicyIdentity: CreateAccessPolicyPostBodyAccessPolicyIdentity;
 
-		/** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project. */
+		/**
+		 * Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+		 * Required
+		 */
 		accessPolicyResource: CreateAccessPolicyPostBodyAccessPolicyResource;
 
-		/** The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner. */
+		/**
+		 * The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.
+		 * Required
+		 */
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
 
 		/**
@@ -1832,6 +1953,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique, friendly name for the asset.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -1840,6 +1962,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the asset model from which to create the asset.
+		 * Required
 		 * Max length: 36
 		 * Min length: 36
 		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
@@ -1862,6 +1985,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique, friendly name for the asset model.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -1898,6 +2022,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the project in which to create the dashboard.
+		 * Required
 		 * Max length: 36
 		 * Min length: 36
 		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
@@ -1906,6 +2031,7 @@ export namespace MyNS {
 
 		/**
 		 * A friendly name for the dashboard.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -1922,6 +2048,7 @@ export namespace MyNS {
 
 		/**
 		 * The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
 		 * Max length: 204800
 		 * Min length: 0
 		 * Pattern: .+
@@ -1944,13 +2071,17 @@ export namespace MyNS {
 
 		/**
 		 * A unique, friendly name for the gateway.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
 		gatewayName: string;
 
-		/** Contains a gateway's platform information. */
+		/**
+		 * Contains a gateway's platform information.
+		 * Required
+		 */
 		gatewayPlatform: CreateGatewayPostBodyGatewayPlatform;
 
 		/** A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
@@ -1967,6 +2098,7 @@ export namespace MyNS {
 
 		/**
 		 * A friendly name for the portal.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -1983,6 +2115,7 @@ export namespace MyNS {
 
 		/**
 		 * The AWS administrator's contact email address.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: [^@]+@[^@]+
@@ -2002,6 +2135,7 @@ export namespace MyNS {
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
 		 * Max length: 1600
 		 * Min length: 1
 		 * Pattern: .*
@@ -2021,6 +2155,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the portal in which to create the project.
+		 * Required
 		 * Max length: 36
 		 * Min length: 36
 		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
@@ -2029,6 +2164,7 @@ export namespace MyNS {
 
 		/**
 		 * A friendly name for the project.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -2057,13 +2193,22 @@ export namespace MyNS {
 
 	export interface UpdateAccessPolicyPutBody {
 
-		/** <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note> */
+		/**
+		 * <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note>
+		 * Required
+		 */
 		accessPolicyIdentity: UpdateAccessPolicyPutBodyAccessPolicyIdentity;
 
-		/** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project. */
+		/**
+		 * Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+		 * Required
+		 */
 		accessPolicyResource: UpdateAccessPolicyPutBodyAccessPolicyResource;
 
-		/** The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner. */
+		/**
+		 * The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.
+		 * Required
+		 */
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
 
 		/**
@@ -2097,6 +2242,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique, friendly name for the asset.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -2116,6 +2262,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique, friendly name for the asset model.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -2149,6 +2296,7 @@ export namespace MyNS {
 
 		/**
 		 * A new friendly name for the dashboard.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -2165,6 +2313,7 @@ export namespace MyNS {
 
 		/**
 		 * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
 		 * Max length: 204800
 		 * Min length: 0
 		 * Pattern: .+
@@ -2184,6 +2333,7 @@ export namespace MyNS {
 
 		/**
 		 * A unique, friendly name for the gateway.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -2195,6 +2345,7 @@ export namespace MyNS {
 
 		/**
 		 * A new friendly name for the portal.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -2211,6 +2362,7 @@ export namespace MyNS {
 
 		/**
 		 * The AWS administrator's contact email address.
+		 * Required
 		 * Max length: 255
 		 * Min length: 1
 		 * Pattern: [^@]+@[^@]+
@@ -2222,6 +2374,7 @@ export namespace MyNS {
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
 		 * Max length: 1600
 		 * Min length: 1
 		 * Pattern: .*
@@ -2248,6 +2401,7 @@ export namespace MyNS {
 
 		/**
 		 * A new friendly name for the project.
+		 * Required
 		 * Max length: 256
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
@@ -2295,7 +2449,10 @@ export namespace MyNS {
 
 	export interface PutLoggingOptionsPutBody {
 
-		/** Contains logging options. */
+		/**
+		 * Contains logging options.
+		 * Required
+		 */
 		loggingOptions: PutLoggingOptionsPutBodyLoggingOptions;
 	}
 
@@ -2307,6 +2464,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
 		 * Max length: 36
 		 * Min length: 36
 		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
@@ -2315,6 +2473,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the child asset to disassociate.
+		 * Required
 		 * Max length: 36
 		 * Min length: 36
 		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
@@ -2332,7 +2491,10 @@ export namespace MyNS {
 
 	export interface TagResourcePostBody {
 
-		/** A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		/**
+		 * A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
 		tags: {[id: string]: string };
 	}
 
@@ -2340,6 +2502,7 @@ export namespace MyNS {
 
 		/**
 		 * The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
+		 * Required
 		 * Max length: 512
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$
@@ -2348,6 +2511,7 @@ export namespace MyNS {
 
 		/**
 		 * The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
 		 * Max length: 204800
 		 * Min length: 1
 		 */

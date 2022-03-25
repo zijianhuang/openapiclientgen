@@ -33,6 +33,7 @@ export namespace MyNS {
 
 		/**
 		 * An internally generated unique identifier for a domain.
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 */
@@ -40,6 +41,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -91,7 +93,10 @@ export namespace MyNS {
 	/** The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status of the newly-configured analysis scheme. */
 	export interface DefineAnalysisSchemeResponse {
 
-		/** The status and configuration of an <code>AnalysisScheme</code>. */
+		/**
+		 * The status and configuration of an <code>AnalysisScheme</code>.
+		 * Required
+		 */
 		AnalysisScheme: AnalysisSchemeStatus;
 	}
 
@@ -99,10 +104,16 @@ export namespace MyNS {
 	/** The status and configuration of an <code>AnalysisScheme</code>. */
 	export interface AnalysisSchemeStatus {
 
-		/** Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>. */
+		/**
+		 * Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.
+		 * Required
+		 */
 		Options: AnalysisScheme;
 
-		/** The status of domain configuration option. */
+		/**
+		 * The status of domain configuration option.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -112,13 +123,17 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		AnalysisSchemeName: string;
 
-		/** An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages. */
+		/**
+		 * An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.
+		 * Required
+		 */
 		AnalysisSchemeLanguage: AnalysisSchemeAnalysisSchemeLanguage;
 
 		/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
@@ -146,7 +161,10 @@ export namespace MyNS {
 		UpdateDate: Date;
 		UpdateVersion?: number;
 
-		/** <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul> */
+		/**
+		 * <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>
+		 * Required
+		 */
 		State: OptionStatusState;
 		PendingDeletion?: boolean;
 	}
@@ -164,7 +182,10 @@ export namespace MyNS {
 	/** The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression. */
 	export interface DefineExpressionResponse {
 
-		/** The value of an <code>Expression</code> and its current status. */
+		/**
+		 * The value of an <code>Expression</code> and its current status.
+		 * Required
+		 */
 		Expression: ExpressionStatus;
 	}
 
@@ -172,10 +193,16 @@ export namespace MyNS {
 	/** The value of an <code>Expression</code> and its current status. */
 	export interface ExpressionStatus {
 
-		/** A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. */
+		/**
+		 * A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.
+		 * Required
+		 */
 		Options: Expression;
 
-		/** The status of domain configuration option. */
+		/**
+		 * The status of domain configuration option.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -185,6 +212,7 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
@@ -193,6 +221,7 @@ export namespace MyNS {
 
 		/**
 		 * The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+		 * Required
 		 * Max length: 10240
 		 * Min length: 1
 		 */
@@ -203,7 +232,10 @@ export namespace MyNS {
 	/** The result of a <code><a>DefineIndexField</a></code> request. Contains the status of the newly-configured index field. */
 	export interface DefineIndexFieldResponse {
 
-		/** The value of an <code>IndexField</code> and its current status. */
+		/**
+		 * The value of an <code>IndexField</code> and its current status.
+		 * Required
+		 */
 		IndexField: IndexFieldStatus;
 	}
 
@@ -211,10 +243,16 @@ export namespace MyNS {
 	/** The value of an <code>IndexField</code> and its current status. */
 	export interface IndexFieldStatus {
 
-		/** Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>. */
+		/**
+		 * Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.
+		 * Required
+		 */
 		Options: IndexField;
 
-		/** The status of domain configuration option. */
+		/**
+		 * The status of domain configuration option.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -223,7 +261,10 @@ export namespace MyNS {
 	export interface IndexField {
 		IndexFieldName: string;
 
-		/** The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. */
+		/**
+		 * The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+		 * Required
+		 */
 		IndexFieldType: IndexFieldIndexFieldType;
 
 		/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
@@ -470,7 +511,10 @@ export namespace MyNS {
 	/** The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester. */
 	export interface DefineSuggesterResponse {
 
-		/** The value of a <code>Suggester</code> and its current status. */
+		/**
+		 * The value of a <code>Suggester</code> and its current status.
+		 * Required
+		 */
 		Suggester: SuggesterStatus;
 	}
 
@@ -478,10 +522,16 @@ export namespace MyNS {
 	/** The value of a <code>Suggester</code> and its current status. */
 	export interface SuggesterStatus {
 
-		/** Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. */
+		/**
+		 * Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>.
+		 * Required
+		 */
 		Options: Suggester;
 
-		/** The status of domain configuration option. */
+		/**
+		 * The status of domain configuration option.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -491,13 +541,17 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SuggesterName: string;
 
-		/** Options for a search suggester. */
+		/**
+		 * Options for a search suggester.
+		 * Required
+		 */
 		DocumentSuggesterOptions: DocumentSuggesterOptions;
 	}
 
@@ -507,6 +561,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
@@ -522,7 +577,10 @@ export namespace MyNS {
 	/** The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme. */
 	export interface DeleteAnalysisSchemeResponse {
 
-		/** The status and configuration of an <code>AnalysisScheme</code>. */
+		/**
+		 * The status and configuration of an <code>AnalysisScheme</code>.
+		 * Required
+		 */
 		AnalysisScheme: AnalysisSchemeStatus;
 	}
 
@@ -538,7 +596,10 @@ export namespace MyNS {
 	/** The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression being deleted. */
 	export interface DeleteExpressionResponse {
 
-		/** The value of an <code>Expression</code> and its current status. */
+		/**
+		 * The value of an <code>Expression</code> and its current status.
+		 * Required
+		 */
 		Expression: ExpressionStatus;
 	}
 
@@ -546,7 +607,10 @@ export namespace MyNS {
 	/** The result of a <code><a>DeleteIndexField</a></code> request. */
 	export interface DeleteIndexFieldResponse {
 
-		/** The value of an <code>IndexField</code> and its current status. */
+		/**
+		 * The value of an <code>IndexField</code> and its current status.
+		 * Required
+		 */
 		IndexField: IndexFieldStatus;
 	}
 
@@ -554,7 +618,10 @@ export namespace MyNS {
 	/** The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester. */
 	export interface DeleteSuggesterResponse {
 
-		/** The value of a <code>Suggester</code> and its current status. */
+		/**
+		 * The value of a <code>Suggester</code> and its current status.
+		 * Required
+		 */
 		Suggester: SuggesterStatus;
 	}
 
@@ -562,7 +629,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request. */
 	export interface DescribeAnalysisSchemesResponse {
 
-		/** A list of the analysis schemes configured for a domain. */
+		/**
+		 * A list of the analysis schemes configured for a domain.
+		 * Required
+		 */
 		AnalysisSchemes: Array<AnalysisSchemeStatus>;
 	}
 
@@ -579,7 +649,10 @@ export namespace MyNS {
 	export interface AvailabilityOptionsStatus {
 		Options: boolean;
 
-		/** The status of domain configuration option. */
+		/**
+		 * The status of domain configuration option.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -598,10 +671,16 @@ export namespace MyNS {
 	/** The configuration and status of the domain's endpoint options. */
 	export interface DomainEndpointOptionsStatus {
 
-		/** The domain's endpoint options. */
+		/**
+		 * The domain's endpoint options.
+		 * Required
+		 */
 		Options: DomainEndpointOptions;
 
-		/** The status of domain configuration option. */
+		/**
+		 * The status of domain configuration option.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -620,7 +699,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account. */
 	export interface DescribeDomainsResponse {
 
-		/** A list that contains the status of each requested domain. */
+		/**
+		 * A list that contains the status of each requested domain.
+		 * Required
+		 */
 		DomainStatusList: Array<DomainStatus>;
 	}
 
@@ -628,7 +710,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request. */
 	export interface DescribeExpressionsResponse {
 
-		/** Contains the status of multiple expressions. */
+		/**
+		 * Contains the status of multiple expressions.
+		 * Required
+		 */
 		Expressions: Array<ExpressionStatus>;
 	}
 
@@ -636,7 +721,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request. */
 	export interface DescribeIndexFieldsResponse {
 
-		/** Contains the status of multiple index fields. */
+		/**
+		 * Contains the status of multiple index fields.
+		 * Required
+		 */
 		IndexFields: Array<IndexFieldStatus>;
 	}
 
@@ -644,7 +732,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request. */
 	export interface DescribeScalingParametersResponse {
 
-		/** The status and configuration of a search domain's scaling parameters. */
+		/**
+		 * The status and configuration of a search domain's scaling parameters.
+		 * Required
+		 */
 		ScalingParameters: ScalingParametersStatus;
 	}
 
@@ -652,10 +743,16 @@ export namespace MyNS {
 	/** The status and configuration of a search domain's scaling parameters.  */
 	export interface ScalingParametersStatus {
 
-		/** The desired instance type and desired number of replicas of each index partition. */
+		/**
+		 * The desired instance type and desired number of replicas of each index partition.
+		 * Required
+		 */
 		Options: ScalingParameters;
 
-		/** The status of domain configuration option. */
+		/**
+		 * The status of domain configuration option.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -675,7 +772,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeServiceAccessPolicies</code> request. */
 	export interface DescribeServiceAccessPoliciesResponse {
 
-		/** The configured access rules for the domain's document and search endpoints, and the current status of those rules. */
+		/**
+		 * The configured access rules for the domain's document and search endpoints, and the current status of those rules.
+		 * Required
+		 */
 		AccessPolicies: AccessPoliciesStatus;
 	}
 
@@ -683,10 +783,16 @@ export namespace MyNS {
 	/** The configured access rules for the domain's document and search endpoints, and the current status of those rules. */
 	export interface AccessPoliciesStatus {
 
-		/** Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB. */
+		/**
+		 * Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.
+		 * Required
+		 */
 		Options: string;
 
-		/** The status of domain configuration option. */
+		/**
+		 * The status of domain configuration option.
+		 * Required
+		 */
 		Status: OptionStatus;
 	}
 
@@ -694,7 +800,10 @@ export namespace MyNS {
 	/** The result of a <code>DescribeSuggesters</code> request. */
 	export interface DescribeSuggestersResponse {
 
-		/** Contains the status of multiple suggesters. */
+		/**
+		 * Contains the status of multiple suggesters.
+		 * Required
+		 */
 		Suggesters: Array<SuggesterStatus>;
 	}
 
@@ -746,7 +855,10 @@ export namespace MyNS {
 	/** The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters. */
 	export interface UpdateScalingParametersResponse {
 
-		/** The status and configuration of a search domain's scaling parameters. */
+		/**
+		 * The status and configuration of a search domain's scaling parameters.
+		 * Required
+		 */
 		ScalingParameters: ScalingParametersStatus;
 	}
 
@@ -758,7 +870,10 @@ export namespace MyNS {
 	/** The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies. */
 	export interface UpdateServiceAccessPoliciesResponse {
 
-		/** The configured access rules for the domain's document and search endpoints, and the current status of those rules. */
+		/**
+		 * The configured access rules for the domain's document and search endpoints, and the current status of those rules.
+		 * Required
+		 */
 		AccessPolicies: AccessPoliciesStatus;
 	}
 
@@ -770,6 +885,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -783,6 +899,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -796,13 +913,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>. */
+		/**
+		 * Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.
+		 * Required
+		 */
 		AnalysisScheme: AnalysisScheme;
 	}
 
@@ -812,13 +933,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. */
+		/**
+		 * A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.
+		 * Required
+		 */
 		Expression: Expression;
 	}
 
@@ -828,13 +953,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>. */
+		/**
+		 * Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.
+		 * Required
+		 */
 		IndexField: IndexField;
 	}
 
@@ -844,13 +973,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. */
+		/**
+		 * Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>.
+		 * Required
+		 */
 		Suggester: Suggester;
 	}
 
@@ -860,6 +993,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -868,6 +1002,7 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
@@ -881,6 +1016,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -894,6 +1030,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -902,6 +1039,7 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
@@ -915,6 +1053,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -929,6 +1068,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -937,6 +1077,7 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
@@ -950,6 +1091,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -965,6 +1107,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -979,6 +1122,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1001,6 +1145,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1016,6 +1161,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1031,6 +1177,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1044,6 +1191,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1058,6 +1206,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1075,6 +1224,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1092,6 +1242,7 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
@@ -1106,13 +1257,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** The domain's endpoint options. */
+		/**
+		 * The domain's endpoint options.
+		 * Required
+		 */
 		DomainEndpointOptions: DomainEndpointOptions;
 	}
 
@@ -1122,13 +1277,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** The desired instance type and desired number of replicas of each index partition. */
+		/**
+		 * The desired instance type and desired number of replicas of each index partition.
+		 * Required
+		 */
 		ScalingParameters: ScalingParameters;
 	}
 
@@ -1138,13 +1297,17 @@ export namespace MyNS {
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
 		 * Max length: 28
 		 * Min length: 3
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
-		/** Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB. */
+		/**
+		 * Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.
+		 * Required
+		 */
 		AccessPolicies: string;
 	}
 
@@ -1443,13 +1606,17 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		AnalysisSchemeName: string;
 
-		/** An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages. */
+		/**
+		 * An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.
+		 * Required
+		 */
 		AnalysisSchemeLanguage: GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage;
 
 		/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
@@ -1468,6 +1635,7 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
@@ -1476,6 +1644,7 @@ export namespace MyNS {
 
 		/**
 		 * The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+		 * Required
 		 * Max length: 10240
 		 * Min length: 1
 		 */
@@ -1491,7 +1660,10 @@ export namespace MyNS {
 	export interface GET_DefineIndexFieldIndexField {
 		IndexFieldName: string;
 
-		/** The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. */
+		/**
+		 * The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+		 * Required
+		 */
 		IndexFieldType: GET_DefineIndexFieldIndexFieldIndexFieldType;
 
 		/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
@@ -1540,13 +1712,17 @@ export namespace MyNS {
 
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
 		 * Max length: 64
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SuggesterName: string;
 
-		/** Options for a search suggester. */
+		/**
+		 * Options for a search suggester.
+		 * Required
+		 */
 		DocumentSuggesterOptions: DocumentSuggesterOptions;
 	}
 
