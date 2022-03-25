@@ -209,10 +209,14 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeParameterDeclarationExpression(d.ParameterTypeReference, d.Name))
 				.ToArray();
 			method.Parameters.AddRange(parameters);
+			if (settings.CancellationTokenEnabled)
+			{
+				method.Parameters.Add(new CodeParameterDeclarationExpression("System.Threading.CancellationToken", "cancellationToken"));
+			}
+
 			if (settings.HandleHttpRequestHeaders)
 			{
-				method.Parameters.Add(new CodeParameterDeclarationExpression(
-					"Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
+				method.Parameters.Add(new CodeParameterDeclarationExpression("Action<System.Net.Http.Headers.HttpRequestHeaders>", "handleHeaders = null"));
 			}
 
 			string jsUriQuery = UriQueryHelper.CreateUriQuery(RelativePath, parameterDescriptions);
@@ -278,8 +282,9 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		void AddResponseMessageSendAsync(CodeMemberMethod method)
 		{
+			var cancellationToken = settings.CancellationTokenEnabled? ", cancellationToken" : String.Empty;
 			method.Statements.Add(new CodeVariableDeclarationStatement(
-				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression("await client.SendAsync(httpRequestMessage)") : new CodeSnippetExpression("client.SendAsync(httpRequestMessage).Result")));
+				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression($"await client.SendAsync(httpRequestMessage{cancellationToken})") : new CodeSnippetExpression($"client.SendAsync(httpRequestMessage{cancellationToken}).Result")));
 		}
 
 		void RenderPostOrPutImplementation(OperationType httpMethod, bool forAsync)
@@ -293,8 +298,12 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			if (requestBodyCodeTypeReference != null)
 			{
-				CodeParameterDeclarationExpression p = new CodeParameterDeclarationExpression(requestBodyCodeTypeReference, "requestBody");
-				method.Parameters.Add(p);
+				method.Parameters.Add(new CodeParameterDeclarationExpression(requestBodyCodeTypeReference, "requestBody"));
+			}
+
+			if (settings.CancellationTokenEnabled)
+			{
+				method.Parameters.Add(new CodeParameterDeclarationExpression("System.Threading.CancellationToken", "cancellationToken"));
 			}
 
 			if (settings.HandleHttpRequestHeaders)

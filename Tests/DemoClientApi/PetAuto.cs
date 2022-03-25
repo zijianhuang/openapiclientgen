@@ -406,7 +406,7 @@ namespace My.Pet.Client
 		/// UpdatePet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task UpdatePetAsync(Pet requestBody, System.Threading.CancellationToken cancellationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pet";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -422,7 +422,7 @@ namespace My.Pet.Client
 				handleHeaders(httpRequestMessage.Headers);
 			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

@@ -53,7 +53,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				return MetadataReference.CreateFromFile(Assembly.Load(n).Location);
 			};
-			JsonEncodedText f;
+
 			var compilation = CSharpCompilation.Create(assemblyFileName, null, null, new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, true))
 				.AddReferences(
 					CreateFromName("System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"),

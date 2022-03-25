@@ -13,8 +13,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>Fonlow.OpenApiClientGen.ClientTypes</AssemblyName>
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
-    <Version>2.1.0</Version>
-    <PackageReleaseNotes>DataAnnotation Required to in-source comment.</PackageReleaseNotes>
+    <Version>2.2.0</Version>
+    <PackageReleaseNotes>CancellationTokenEnabled</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

@@ -319,7 +319,7 @@ namespace MyNS
 		/// AddPet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task AddPetAsync(Pet requestBody)
+		public async Task AddPetAsync(Pet requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -330,7 +330,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -349,7 +349,7 @@ namespace MyNS
 		/// AddPet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public void AddPet(Pet requestBody)
+		public void AddPet(Pet requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -360,7 +360,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -378,7 +378,7 @@ namespace MyNS
 		/// UpdatePet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody)
+		public async Task UpdatePetAsync(Pet requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -389,7 +389,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -407,7 +407,7 @@ namespace MyNS
 		/// UpdatePet pet
 		/// </summary>
 		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public void UpdatePet(Pet requestBody)
+		public void UpdatePet(Pet requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -418,7 +418,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -438,12 +438,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="petId">ID of pet to return</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet> GetPetByIdAsync(long petId)
+		public async Task<Pet> GetPetByIdAsync(long petId, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -468,12 +468,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="petId">ID of pet to return</param>
 		/// <returns>successful operation</returns>
-		public Pet GetPetById(long petId)
+		public Pet GetPetById(long petId, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -496,12 +496,12 @@ namespace MyNS
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public async Task DeletePetAsync(long petId)
+		public async Task DeletePetAsync(long petId, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -518,12 +518,12 @@ namespace MyNS
 		/// DeletePet pet/{petId}
 		/// </summary>
 		/// <param name="petId">Pet id to delete</param>
-		public void DeletePet(long petId)
+		public void DeletePet(long petId, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet/"+petId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -542,12 +542,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
+		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -572,12 +572,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status">Status values that need to be considered for filter</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByStatus(PetStatus[] status)
+		public Pet[] FindPetsByStatus(PetStatus[] status, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -602,12 +602,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags)
+		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -632,12 +632,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByTags(string[] tags)
+		public Pet[] FindPetsByTags(string[] tags, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -661,12 +661,12 @@ namespace MyNS
 		/// GetInventory store/inventory
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public async Task<System.Collections.Generic.Dictionary<string, int>> GetInventoryAsync()
+		public async Task<System.Collections.Generic.Dictionary<string, int>> GetInventoryAsync(System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "store/inventory";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -690,12 +690,12 @@ namespace MyNS
 		/// GetInventory store/inventory
 		/// </summary>
 		/// <returns>successful operation</returns>
-		public System.Collections.Generic.Dictionary<string, int> GetInventory()
+		public System.Collections.Generic.Dictionary<string, int> GetInventory(System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "store/inventory";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -719,7 +719,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">order placed for purchasing the pet</param>
 		/// <returns>successful operation</returns>
-		public async Task<Order> PlaceOrderAsync(Order requestBody)
+		public async Task<Order> PlaceOrderAsync(Order requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "store/order";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -730,7 +730,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -755,7 +755,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestBody">order placed for purchasing the pet</param>
 		/// <returns>successful operation</returns>
-		public Order PlaceOrder(Order requestBody)
+		public Order PlaceOrder(Order requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "store/order";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -766,7 +766,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -792,12 +792,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="orderId">ID of pet that needs to be fetched</param>
 		/// <returns>successful operation</returns>
-		public async Task<Order> GetOrderByIdAsync(long orderId)
+		public async Task<Order> GetOrderByIdAsync(long orderId, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "store/order/"+orderId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -822,12 +822,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="orderId">ID of pet that needs to be fetched</param>
 		/// <returns>successful operation</returns>
-		public Order GetOrderById(long orderId)
+		public Order GetOrderById(long orderId, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "store/order/"+orderId;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -851,12 +851,12 @@ namespace MyNS
 		/// DeleteOrder store/order/{orderId}
 		/// </summary>
 		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public async Task DeleteOrderAsync(string orderId)
+		public async Task DeleteOrderAsync(string orderId, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -874,12 +874,12 @@ namespace MyNS
 		/// DeleteOrder store/order/{orderId}
 		/// </summary>
 		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public void DeleteOrder(string orderId)
+		public void DeleteOrder(string orderId, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -897,7 +897,7 @@ namespace MyNS
 		/// CreateUser user
 		/// </summary>
 		/// <param name="requestBody">Created user object</param>
-		public async Task CreateUserAsync(User requestBody)
+		public async Task CreateUserAsync(User requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -908,7 +908,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -927,7 +927,7 @@ namespace MyNS
 		/// CreateUser user
 		/// </summary>
 		/// <param name="requestBody">Created user object</param>
-		public void CreateUser(User requestBody)
+		public void CreateUser(User requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -938,7 +938,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -957,12 +957,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
 		/// <returns>successful operation</returns>
-		public async Task<User> GetUserByNameAsync(string username)
+		public async Task<User> GetUserByNameAsync(string username, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -986,12 +986,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
 		/// <returns>successful operation</returns>
-		public User GetUserByName(string username)
+		public User GetUserByName(string username, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1016,7 +1016,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="username">name that need to be deleted</param>
 		/// <param name="requestBody">Updated user object</param>
-		public async Task UpdateUserAsync(string username, User requestBody)
+		public async Task UpdateUserAsync(string username, User requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -1027,7 +1027,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1047,7 +1047,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="username">name that need to be deleted</param>
 		/// <param name="requestBody">Updated user object</param>
-		public void UpdateUser(string username, User requestBody)
+		public void UpdateUser(string username, User requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
@@ -1058,7 +1058,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1077,12 +1077,12 @@ namespace MyNS
 		/// DeleteUser user/{username}
 		/// </summary>
 		/// <param name="username">The name that needs to be deleted</param>
-		public async Task DeleteUserAsync(string username)
+		public async Task DeleteUserAsync(string username, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1100,12 +1100,12 @@ namespace MyNS
 		/// DeleteUser user/{username}
 		/// </summary>
 		/// <param name="username">The name that needs to be deleted</param>
-		public void DeleteUser(string username)
+		public void DeleteUser(string username, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1122,7 +1122,7 @@ namespace MyNS
 		/// CreateUsersWithArrayInput user/createWithArray
 		/// </summary>
 		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithArrayInputAsync(User[] requestBody)
+		public async Task CreateUsersWithArrayInputAsync(User[] requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/createWithArray";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1133,7 +1133,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1151,7 +1151,7 @@ namespace MyNS
 		/// CreateUsersWithArrayInput user/createWithArray
 		/// </summary>
 		/// <param name="requestBody">List of user object</param>
-		public void CreateUsersWithArrayInput(User[] requestBody)
+		public void CreateUsersWithArrayInput(User[] requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/createWithArray";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1162,7 +1162,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1180,7 +1180,7 @@ namespace MyNS
 		/// CreateUsersWithListInput user/createWithList
 		/// </summary>
 		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithListInputAsync(User[] requestBody)
+		public async Task CreateUsersWithListInputAsync(User[] requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/createWithList";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1191,7 +1191,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1209,7 +1209,7 @@ namespace MyNS
 		/// CreateUsersWithListInput user/createWithList
 		/// </summary>
 		/// <param name="requestBody">List of user object</param>
-		public void CreateUsersWithListInput(User[] requestBody)
+		public void CreateUsersWithListInput(User[] requestBody, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/createWithList";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -1220,7 +1220,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1240,12 +1240,12 @@ namespace MyNS
 		/// <param name="username">The user name for login</param>
 		/// <param name="password">The password for login in clear text</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> LoginUserAsync(string username, string password)
+		public async Task<string> LoginUserAsync(string username, string password, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1269,12 +1269,12 @@ namespace MyNS
 		/// <param name="username">The user name for login</param>
 		/// <param name="password">The password for login in clear text</param>
 		/// <returns>successful operation</returns>
-		public string LoginUser(string username, string password)
+		public string LoginUser(string username, string password, System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1295,12 +1295,12 @@ namespace MyNS
 		/// Logs out current logged in user session
 		/// LogoutUser user/logout
 		/// </summary>
-		public async Task LogoutUserAsync()
+		public async Task LogoutUserAsync(System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/logout";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await client.SendAsync(httpRequestMessage, cancellationToken);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1316,12 +1316,12 @@ namespace MyNS
 		/// Logs out current logged in user session
 		/// LogoutUser user/logout
 		/// </summary>
-		public void LogoutUser()
+		public void LogoutUser(System.Threading.CancellationToken cancellationToken)
 		{
 			var requestUri = "user/logout";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = client.SendAsync(httpRequestMessage, cancellationToken).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
