@@ -7,11 +7,10 @@
     <Authors>Zijian Huang</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
-    <Version>1.8</Version>
-    <AssemblyVersion>1.8.0.0</AssemblyVersion>
-    <FileVersion>1.8.0.0</FileVersion>
-    <Copyright>Copyright © Zijian Huang 2021</Copyright>
+    <Version>1.9</Version>
+    <Copyright>Copyright © Zijian Huang 2022</Copyright>
     <Description>Generate C# client API codes</Description>
+    <PackageReleaseNotes>CancellationTokenEnabled</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

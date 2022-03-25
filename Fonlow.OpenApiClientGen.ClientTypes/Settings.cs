@@ -159,6 +159,11 @@
 		public bool HandleHttpRequestHeaders { get; set; }
 
 		/// <summary>
+		/// Allow cancellation in Send
+		/// </summary>
+		public bool CancellationTokenEnabled { get; set; }
+
+		/// <summary>
 		/// Use System.Text.Json instead of Newtonsoft.Json
 		/// </summary>
 		public bool UseSystemTextJson { get; set; }

@@ -32,6 +32,46 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPetWithCancellationToken()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\Pet_Cancellationtoken.txt", new Settings()
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "Misc",
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				GenerateBothAsyncAndSync = true,
+				//DecorateDataModelWithSerializable = true,
+				UseEnsureSuccessStatusCodeEx = true,
+				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
+				CancellationTokenEnabled = true,
+				//HandleHttpRequestHeaders = true,
+			}
+			);
+		}
+
+		[Fact]
+		public void TestPetWithCancellationTokenAndHeadersHandling()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\Pet_CancellationtokenAndHeadersHandling.txt", new Settings()
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "Misc",
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				ActionNameStrategy = ActionNameStrategy.Default,
+				GenerateBothAsyncAndSync = true,
+				//DecorateDataModelWithSerializable = true,
+				UseEnsureSuccessStatusCodeEx = true,
+				DataAnnotationsEnabled = true,
+				DataAnnotationsToComments = true,
+				CancellationTokenEnabled = true,
+				HandleHttpRequestHeaders = true,
+			}
+			);
+		}
+
+		[Fact]
 		public void TestPet_DisableSystemNullableByDefault()
 		{
 			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);
@@ -180,7 +220,7 @@ namespace SwagTests
 				//RegexForNormalizedOperationId = @"\w*",
 				ContainerNameStrategy = ContainerNameStrategy.Tags,
 				GenerateBothAsyncAndSync = false,
-				HandleHttpRequestHeaders=true,
+				HandleHttpRequestHeaders = true,
 			});
 		}
 
@@ -197,7 +237,7 @@ namespace SwagTests
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
 				GenerateBothAsyncAndSync = false,
-				HandleHttpRequestHeaders=true,
+				HandleHttpRequestHeaders = true,
 			});
 		}
 
@@ -215,7 +255,7 @@ namespace SwagTests
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
 				PathPrefixToRemove = "/mcp",
-				HandleHttpRequestHeaders=true,
+				HandleHttpRequestHeaders = true,
 			});
 		}
 
