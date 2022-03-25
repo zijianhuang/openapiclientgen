@@ -11,9 +11,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
     <Copyright>Copyright © Zijian Huang 2021-2022</Copyright>
-    <Version>2.1</Version>
+    <Version>2.2</Version>
     <PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
-    <PackageReleaseNotes>Support DateOnly. Date is mapped to DateOnly by default.</PackageReleaseNotes>
+    <PackageReleaseNotes>CancellationTokenEnabled, UsePascalCase, PrefixWithTypeName</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
