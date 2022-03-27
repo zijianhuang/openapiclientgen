@@ -254,17 +254,23 @@
 		/// </summary>
 		public string AssemblyName { get; set; }
 
+		/// <summary>
+		/// Related path or absolute path. It is recommended to use slash / to sepparate. If you use backlash \, \\ should be used.
+		/// </summary>
 		public string TargetDir { get; set; }
 
+		/// <summary>
+		/// Generated TS file name. For example, MyNgClientAuto.ts
+		/// </summary>
 		public string TSFile { get; set; }
 
 		///// <summary>
-		///// HTTP content type used in POST of HTTP of NG2. so text/plain could be used to avoid preflight in CORS.
+		///// HTTP content type used in POST of HTTP of NG2. For example, "application/json;charset=UTF-8".
 		///// </summary>
 		public string ContentType { get; set; }
 
 		/// <summary>
-		/// True to have "export namespace"; false to have "namespace". jQuery wants "namespace".
+		/// True to have "export namespace"; false to have "namespace". jQuery wants "namespace" while Angular 2+ wants "export namespace".
 		/// </summary>
 		public bool AsModule { get; set; }
 	}
