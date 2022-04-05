@@ -230,6 +230,11 @@
 		/// Meta for plugins that generate TypeScript/JavaScript codes.
 		/// </summary>
 		public JSPlugin[] Plugins { get; set; }
+
+		/// <summary>
+		/// Use Guid for format:uuid specifier, defaults to string.
+		/// </summary>
+		public bool UseGuid { get; set; } = false;
 	}
 
 	/// <summary>
