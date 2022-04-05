@@ -234,7 +234,7 @@
 		/// <summary>
 		/// Use Guid for format:uuid specifier, defaults to string.
 		/// </summary>
-		public bool UseGuid { get; set; } = false;
+		public bool UseGuid { get; set; }
 	}
 
 	/// <summary>

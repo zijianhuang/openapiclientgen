@@ -12,7 +12,7 @@ OpenApiClientGen is a .NET Core console app.
 
 **Prerequisites**
 
-* .NET 5.
+* .NET 6.
 
 **Remarks**
 
@@ -353,4 +353,7 @@ OpenApiClientGen had been tested upon over 1000 Open API definitions in v3 forma
 * [Generated TypeScript codes for Fetch API](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/FetchResults) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/fetchapi/src)
 * [Generated TypeScript codes for jQuery](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/JqResults) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/jq/src)
 
-## [Comparison with NSwag](https://github.com/zijianhuang/openapiclientgen/wiki/Comparison-with-NSwag)
+## Comparison with NSwag
+
+* [Quick Comparison](https://github.com/zijianhuang/openapiclientgen/wiki/Comparison-with-NSwag)
+* [Detailed Comparison](https://github.com/zijianhuang/OpenApiExamples/wiki)

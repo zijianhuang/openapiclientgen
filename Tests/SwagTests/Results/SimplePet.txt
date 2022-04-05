@@ -25,5 +25,10 @@ namespace MyNS
 		public string PetType { get; set; }
 		
 		public System.Nullable<System.DateOnly> BirthDate { get; set; }
+		
+		/// <summary>
+		/// The id of a pet
+		/// </summary>
+		public string Id { get; set; }
 	}
 }

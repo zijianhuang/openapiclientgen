@@ -65,6 +65,11 @@ namespace MyNS
 		public string PetType { get; set; }//;
 		
 		public System.Nullable<System.DateOnly> BirthDate { get; set; }//;
+		
+		/// <summary>
+		/// The id of a pet
+		/// </summary>
+		public string Id { get; set; }//;
 	}
 }
 ";
@@ -194,6 +199,11 @@ namespace MyNS
 		
 		[System.ComponentModel.DataAnnotations.DataTypeAttribute(System.ComponentModel.DataAnnotationsDataType.Date)]
 		public System.Nullable<System.DateTimeOffset> BirthDate { get; set; }//;
+		
+		/// <summary>
+		/// The id of a pet
+		/// </summary>
+		public string Id { get; set; }//;
 	}
 }
 ";
