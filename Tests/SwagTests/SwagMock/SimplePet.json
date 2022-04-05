@@ -36,6 +36,12 @@
 					"BirthDate": {
 						"type": "string",
 						"format":  "date"
+					},
+					"id": {
+						"type": "string",
+						"format": "uuid",
+						"description": "The id of a pet",
+						"example": "58224473-29ca-411c-84f9-2b0ce1072dd1"
 					}
 				}
 			}

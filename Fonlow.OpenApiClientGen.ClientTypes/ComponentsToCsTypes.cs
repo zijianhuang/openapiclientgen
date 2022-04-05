@@ -486,6 +486,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						simpleType = typeof(DateTimeOffset);
 						isDateOnly = true;
 					}
+					else if (primitivePropertyType == "string" && propertySchema.Format == "uuid" && settings.UseGuid)
+					{
+						simpleType = typeof(Guid);
+					}
 					else
 					{
 						simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
