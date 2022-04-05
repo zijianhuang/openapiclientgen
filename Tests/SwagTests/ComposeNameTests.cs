@@ -11,7 +11,7 @@ namespace SwagTests
 	{
 		public DocFixture()
 		{
-			using FileStream stream = new FileStream("SwagMock" + Path.DirectorySeparatorChar + "myswagger.json", FileMode.Open, FileAccess.Read);
+			using FileStream stream = new FileStream("SwagMock\\myswagger.json", FileMode.Open, FileAccess.Read);
 			Doc = new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 			Composer = new NameComposer(new Settings
 			{
@@ -91,7 +91,6 @@ namespace SwagTests
 			Assert.Equal(typeof(string), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", ""));
 			Assert.Equal(typeof(DateOnly), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", "date"));
 			Assert.Equal(typeof(DateTimeOffset), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", "date-time"));
-			Assert.Equal(typeof(Guid), TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", "uuid"));
 		}
 
 		//[Fact]

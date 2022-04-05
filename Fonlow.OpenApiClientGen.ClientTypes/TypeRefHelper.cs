@@ -162,7 +162,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{"boolean", typeof(bool) },
 			{"string_date", typeof(DateOnly) },
 			{"string_date-time", typeof(DateTimeOffset) },
-			{"string_uuid", typeof(Guid) },
 //			{"object", typeof(object) },
 		};
 
