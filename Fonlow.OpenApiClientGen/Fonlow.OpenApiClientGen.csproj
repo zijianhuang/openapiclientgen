@@ -11,9 +11,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
     <Copyright>Copyright © Zijian Huang 2021-2022</Copyright>
-    <Version>2.2</Version>
+    <Version>2.3</Version>
     <PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
-    <PackageReleaseNotes>CancellationTokenEnabled, UsePascalCase, PrefixWithTypeName</PackageReleaseNotes>
+    <PackageReleaseNotes>Setting UseGuid to map string/uuid to GUID in C#</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

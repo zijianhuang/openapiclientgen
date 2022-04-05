@@ -207,6 +207,11 @@
 		public bool GenerateModelsOnly { get; set; }
 
 		/// <summary>
+		/// Use Guid for format:uuid specifier, defaults to string.
+		/// </summary>
+		public bool UseGuid { get; set; }
+
+		/// <summary>
 		/// By default, array type will be array in generated C#. You may generated IEnumerable and some of its derived types.
 		/// </summary>
 		public ArrayAsIEnumerableDerived ArrayAs { get; set; }
@@ -230,11 +235,6 @@
 		/// Meta for plugins that generate TypeScript/JavaScript codes.
 		/// </summary>
 		public JSPlugin[] Plugins { get; set; }
-
-		/// <summary>
-		/// Use Guid for format:uuid specifier, defaults to string.
-		/// </summary>
-		public bool UseGuid { get; set; }
 	}
 
 	/// <summary>
