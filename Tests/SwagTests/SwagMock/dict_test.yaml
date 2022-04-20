@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: Test openapi spec file for dictionary field
+  version: v1
+paths:
+  '/hello':
+    get:
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestModel'
+
+components:
+  schemas:
+    TestModel:
+      description: Model information
+      properties:
+        stringDict:
+          type: object
+          additionalProperties:
+            type: string
+        intDict:
+          type: object
+          additionalProperties:
+            type: integer
+        objectDict:
+          type: object
+          additionalProperties:
+            type: object
