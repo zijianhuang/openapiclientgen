@@ -466,7 +466,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (propertySchema.AdditionalProperties.Properties.Count == 0 //not casual type
 						&& propertySchema.AdditionalProperties.Reference == null // not complex type
 						&& propertySchema.AdditionalProperties.Items == null // not casual array type
-						&& propertySchema.AdditionalProperties.Type == null || propertySchema.AdditionalProperties.Type == "object") 
+						&& (propertySchema.AdditionalProperties.Type == null || propertySchema.AdditionalProperties.Type == "object")) 
 					{
 						dicValueTypeRef = new CodeTypeReference(typeof(object));
 					}
