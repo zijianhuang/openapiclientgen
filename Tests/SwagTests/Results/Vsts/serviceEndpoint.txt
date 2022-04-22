@@ -64,7 +64,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the key and value of the fields used for authentication.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> Inputs { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Inputs { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the type of authentication scheme of an endpoint.
@@ -330,7 +330,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the data source.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets http request body
@@ -387,7 +387,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets the parameters of data source.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the data source request content.
@@ -470,7 +470,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters for the selected authorization scheme.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> Parameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Parameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the scheme used for service endpoint authentication.
@@ -1097,7 +1097,7 @@ namespace MyNS
 		
 		public IdentityRef CreatedBy { get; set; }
 		
-		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the description of endpoint.
@@ -1212,7 +1212,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the properties of service endpoint authentication scheme.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> Properties { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
 		
 		/// <summary>
 		/// Gets or sets whether this auth scheme requires OAuth2 configuration or not.
@@ -1239,7 +1239,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the data of service endpoint.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> Data { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Data { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the type of service endpoint.
@@ -1398,7 +1398,7 @@ namespace MyNS
 		/// <summary>
 		/// Gets or sets the parameters used to make subsequent calls to the data source
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> CallbackContextParameters { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> CallbackContextParameters { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the flat that decides if another call to the data source is to be made
@@ -1649,7 +1649,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
 				}
 			}
@@ -1685,7 +1685,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
 				}
 			}
@@ -1723,7 +1723,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
 				}
 			}
@@ -1761,7 +1761,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
 				}
 			}
@@ -1903,7 +1903,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
 				}
 			}
@@ -1939,7 +1939,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
 				}
 			}
@@ -1972,7 +1972,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpointType[]>(jsonReader);
 				}
 			}
@@ -2004,7 +2004,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpointType[]>(jsonReader);
 				}
 			}
@@ -2038,7 +2038,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpointExecutionRecord[]>(jsonReader);
 				}
 			}
@@ -2072,7 +2072,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpointExecutionRecord[]>(jsonReader);
 				}
 			}
@@ -2110,7 +2110,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<string[]>(jsonReader);
 				}
 			}
@@ -2149,7 +2149,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<string[]>(jsonReader);
 				}
 			}
@@ -2187,7 +2187,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
 				}
 			}
@@ -2224,7 +2224,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
 				}
 			}
@@ -2263,7 +2263,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
 				}
 			}
@@ -2303,7 +2303,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
 				}
 			}
@@ -2337,7 +2337,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
 				}
 			}
@@ -2370,7 +2370,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
 				}
 			}

@@ -644,7 +644,7 @@ namespace MyNS
 		/// <summary>
 		/// Contribution url route parameter of the corresponding settings page
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> RouteParameterMapping { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> RouteParameterMapping { get; set; }
 		
 		/// <summary>
 		/// Scope of the settings page, either organization, project or user
@@ -851,7 +851,7 @@ namespace MyNS
 		/// <summary>
 		/// A standard set of work item fields and their values.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> Fields { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> Fields { get; set; }
 		
 		/// <summary>
 		/// Highlighted snippets of fields that match the search request. The list is sorted by relevance of the snippets.
@@ -938,7 +938,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PackageSearchResponseContent>(jsonReader);
 				}
 			}
@@ -976,7 +976,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PackageSearchResponseContent>(jsonReader);
 				}
 			}
@@ -1015,7 +1015,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CodeSearchResponse>(jsonReader);
 				}
 			}
@@ -1054,7 +1054,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CodeSearchResponse>(jsonReader);
 				}
 			}
@@ -1087,7 +1087,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RepositoryStatusResponse>(jsonReader);
 				}
 			}
@@ -1119,7 +1119,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RepositoryStatusResponse>(jsonReader);
 				}
 			}
@@ -1150,7 +1150,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcRepositoryStatusResponse>(jsonReader);
 				}
 			}
@@ -1181,7 +1181,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcRepositoryStatusResponse>(jsonReader);
 				}
 			}
@@ -1219,7 +1219,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WikiSearchResponse>(jsonReader);
 				}
 			}
@@ -1258,7 +1258,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WikiSearchResponse>(jsonReader);
 				}
 			}
@@ -1297,7 +1297,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemSearchResponse>(jsonReader);
 				}
 			}
@@ -1336,7 +1336,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemSearchResponse>(jsonReader);
 				}
 			}

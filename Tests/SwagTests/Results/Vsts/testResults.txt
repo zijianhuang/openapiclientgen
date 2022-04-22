@@ -1056,12 +1056,12 @@ namespace MyNS
 		/// <summary>
 		/// Runs count by outcome for runs with state completed and NeedInvestigation runs.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> RunSummaryByOutcome { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> RunSummaryByOutcome { get; set; }
 		
 		/// <summary>
 		/// Runs count by state.
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> RunSummaryByState { get; set; }
+		public System.Collections.Generic.Dictionary<string, int> RunSummaryByState { get; set; }
 		
 		/// <summary>
 		/// Total runs count.
@@ -2498,7 +2498,7 @@ namespace MyNS
 		/// <summary>
 		/// Meta data for Log file
 		/// </summary>
-		public System.Collections.Generic.Dictionary<string, object> MetaData { get; set; }
+		public System.Collections.Generic.Dictionary<string, string> MetaData { get; set; }
 		
 		/// <summary>
 		/// LastUpdatedDate for Log file
@@ -3355,7 +3355,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLog[]>(jsonReader);
 				}
 			}
@@ -3393,7 +3393,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLog[]>(jsonReader);
 				}
 			}
@@ -3428,7 +3428,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLogStoreEndpointDetails>(jsonReader);
 				}
 			}
@@ -3463,7 +3463,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLogStoreEndpointDetails>(jsonReader);
 				}
 			}
@@ -3499,7 +3499,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLogStoreEndpointDetails>(jsonReader);
 				}
 			}
@@ -3535,7 +3535,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLogStoreEndpointDetails>(jsonReader);
 				}
 			}
@@ -3572,7 +3572,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLog[]>(jsonReader);
 				}
 			}
@@ -3609,7 +3609,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLog[]>(jsonReader);
 				}
 			}
@@ -3643,7 +3643,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLogStoreEndpointDetails>(jsonReader);
 				}
 			}
@@ -3677,7 +3677,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLogStoreEndpointDetails>(jsonReader);
 				}
 			}
@@ -3712,7 +3712,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLogStoreEndpointDetails>(jsonReader);
 				}
 			}
@@ -3747,7 +3747,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TestLogStoreEndpointDetails>(jsonReader);
 				}
 			}
