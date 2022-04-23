@@ -271,6 +271,67 @@ namespace SwagTests
 			string s = helper.TranslateDefToCode("SwagMock\\Required.json");
 			Assert.Equal(expected, s);
 		}
+
+		[Fact]
+		public void TestDic()
+		{
+			string expected = @"import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+export namespace MyNS {
+
+	/** Model information */
+	export interface TestModel {
+		stringDict?: {[id: string]: string };
+		dateDict?: {[id: string]: Date };
+		intDict?: {[id: string]: number };
+		int32Dict?: {[id: string]: number };
+		int64Dict?: {[id: string]: number };
+		floatDict?: {[id: string]: number };
+		doubleDict?: {[id: string]: number };
+		numberDict?: {[id: string]: number };
+		tagDict?: {[id: string]: Tag };
+		objectDict?: {[id: string]: any };
+	}
+
+	export interface Tag {
+
+		/** Tag ID */
+		id?: number;
+
+		/** Tag name */
+		name?: string;
+	}
+
+	@Injectable()
+	export class Misc {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
+
+		/**
+		 * Get hello
+		 * @return {TestModel} Success
+		 */
+		HelloGet(): Observable<TestModel> {
+			return this.http.get<TestModel>(this.baseUri + 'hello', {});
+		}
+	}
+
+}
+
+";
+			string s = helper.TranslateDefToCode("SwagMock\\dict_test.yaml", new Fonlow.OpenApiClientGen.ClientTypes.Settings
+			{
+				ClientNamespace = "MyNS",
+				ActionNameStrategy= Fonlow.OpenApiClientGen.ClientTypes.ActionNameStrategy.PathMethodQueryParameters,
+				UseSystemTextJson = true,
+				UsePascalCase = true,
+				DecorateDataModelWithPropertyName = true
+			});
+			Assert.Equal(expected, s);
+		}
+
+
 	}
 
 }

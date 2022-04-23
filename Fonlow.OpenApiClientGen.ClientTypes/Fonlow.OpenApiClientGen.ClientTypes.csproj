@@ -13,8 +13,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>Fonlow.OpenApiClientGen.ClientTypes</AssemblyName>
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
-    <Version>2.3.0</Version>
-    <PackageReleaseNotes>Setting UseGuid to map string/uuid to GUID in C#</PackageReleaseNotes>
+    <Version>2.3.1</Version>
+    <PackageReleaseNotes>fixed value types in dictionary</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

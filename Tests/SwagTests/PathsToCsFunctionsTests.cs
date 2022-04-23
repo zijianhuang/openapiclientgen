@@ -32,6 +32,12 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPetDicInt64()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock\\petDicInt64.yaml", "Results\\PetDicInt64.txt");
+		}
+
+		[Fact]
 		public void TestPetWithCancellationToken()
 		{
 			helper.GenerateAndAssertAndBuild("SwagMock\\pet.yaml", "Results\\Pet_Cancellationtoken.txt", new Settings()

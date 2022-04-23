@@ -14,16 +14,16 @@ namespace SwagTests
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		static string TranslateJsonToCode(string filePath)
+		static string TranslateDefToCsTypesCode(string filePath)
 		{
-			return TranslateJsonToCodeWithSettings(filePath, new Settings()
+			return TranslateDefToCsTypesWithSettings(filePath, new Settings()
 			{
 				ClientNamespace = "MyNS",
 				DataAnnotationsToComments = true
 			});
 		}
 
-		static string TranslateJsonToCodeWithSettings(string filePath, Settings settings)
+		static string TranslateDefToCsTypesWithSettings(string filePath, Settings settings)
 		{
 			OpenApiDocument doc = ReadJson(filePath);
 			System.CodeDom.CodeCompileUnit codeCompileUnit = new System.CodeDom.CodeCompileUnit();
@@ -73,7 +73,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json");
+			string s = TranslateDefToCsTypesCode("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -114,7 +114,7 @@ namespace MyNS
 	}
 }
 ";
-			string ssssssss = TranslateJsonToCodeWithSettings("SwagMock" + Path.DirectorySeparatorChar + "petStoreWithInnerObject.yaml", new Settings()
+			string ssssssss = TranslateDefToCsTypesWithSettings("SwagMock" + Path.DirectorySeparatorChar + "petStoreWithInnerObject.yaml", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				DataAnnotationsToComments = true,
@@ -160,7 +160,7 @@ namespace MyNS
 	}
 }
 ";
-			string ssssssss = TranslateJsonToCodeWithSettings("SwagMock" + Path.DirectorySeparatorChar + "petStoreWithInnerObject.yaml", new Settings
+			string ssssssss = TranslateDefToCsTypesWithSettings("SwagMock" + Path.DirectorySeparatorChar + "petStoreWithInnerObject.yaml", new Settings
 			{
 				PrefixWithTypeName = true,
 				ClientNamespace = "MyNS"
@@ -207,7 +207,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCodeWithSettings("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json", new Settings()
+			string s = TranslateDefToCsTypesWithSettings("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				DateToDateOnly = false
@@ -253,7 +253,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCodeWithSettings("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json", new Settings()
+			string s = TranslateDefToCsTypesWithSettings("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json", new Settings()
 			{
 				ClientNamespace = "MyNS",
 				UseGuid = true
@@ -300,7 +300,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCodeWithSettings("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json", new Settings()
+			string s = TranslateDefToCsTypesWithSettings("SwagMock" + Path.DirectorySeparatorChar + "SimplePet.json", new Settings()
 			{
 				ClientNamespace = "MyNS"
 			});
@@ -332,15 +332,52 @@ namespace MyNS
 		[System.Text.Json.Serialization.JsonPropertyName(""stringDict"")]
 		public System.Collections.Generic.Dictionary<string, string> StringDict { get; set; }//;
 		
+		[System.Text.Json.Serialization.JsonPropertyName(""dateDict"")]
+		public System.Collections.Generic.Dictionary<string, System.DateOnly> DateDict { get; set; }//;
+		
 		[System.Text.Json.Serialization.JsonPropertyName(""intDict"")]
 		public System.Collections.Generic.Dictionary<string, int> IntDict { get; set; }//;
+		
+		[System.Text.Json.Serialization.JsonPropertyName(""int32Dict"")]
+		public System.Collections.Generic.Dictionary<string, int> Int32Dict { get; set; }//;
+		
+		[System.Text.Json.Serialization.JsonPropertyName(""int64Dict"")]
+		public System.Collections.Generic.Dictionary<string, long> Int64Dict { get; set; }//;
+		
+		[System.Text.Json.Serialization.JsonPropertyName(""floatDict"")]
+		public System.Collections.Generic.Dictionary<string, float> FloatDict { get; set; }//;
+		
+		[System.Text.Json.Serialization.JsonPropertyName(""doubleDict"")]
+		public System.Collections.Generic.Dictionary<string, double> DoubleDict { get; set; }//;
+		
+		[System.Text.Json.Serialization.JsonPropertyName(""numberDict"")]
+		public System.Collections.Generic.Dictionary<string, float> NumberDict { get; set; }//;
+		
+		[System.Text.Json.Serialization.JsonPropertyName(""tagDict"")]
+		public System.Collections.Generic.Dictionary<string, Tag> TagDict { get; set; }//;
 		
 		[System.Text.Json.Serialization.JsonPropertyName(""objectDict"")]
 		public System.Collections.Generic.Dictionary<string, object> ObjectDict { get; set; }//;
 	}
+	
+	public class Tag
+	{
+		
+		/// <summary>
+		/// Tag ID
+		/// </summary>
+		[System.Text.Json.Serialization.JsonPropertyName(""id"")]
+		public System.Nullable<System.Int64> Id { get; set; }//;
+		
+		/// <summary>
+		/// Tag name
+		/// </summary>
+		[System.Text.Json.Serialization.JsonPropertyName(""name"")]
+		public string Name { get; set; }//;
+	}
 }
 ";
-			string s = TranslateJsonToCodeWithSettings("SwagMock" + Path.DirectorySeparatorChar + "dict_test.yaml", new Settings
+			string s = TranslateDefToCsTypesWithSettings("SwagMock" + Path.DirectorySeparatorChar + "dict_test.yaml", new Settings
 			{
 				ClientNamespace = "MyNS",
 				UseSystemTextJson = true,
@@ -393,7 +430,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock\\SimplePetCat.json");
+			string s = TranslateDefToCsTypesCode("SwagMock\\SimplePetCat.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -430,7 +467,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock\\Enum.json");
+			string s = TranslateDefToCsTypesCode("SwagMock\\Enum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -466,7 +503,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCodeWithSettings("SwagMock" + Path.DirectorySeparatorChar + "EnumPascalCase.json", new Settings
+			string s = TranslateDefToCsTypesWithSettings("SwagMock" + Path.DirectorySeparatorChar + "EnumPascalCase.json", new Settings
 			{
 				UsePascalCase = true,
 				ClientNamespace = "MyNS"
@@ -506,7 +543,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock\\IntEnum.json");
+			string s = TranslateDefToCsTypesCode("SwagMock\\IntEnum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -556,7 +593,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock\\CasualEnum.json");
+			string s = TranslateDefToCsTypesCode("SwagMock\\CasualEnum.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -607,7 +644,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCodeWithSettings("SwagMock" + Path.DirectorySeparatorChar + "CasualEnum.json", new Settings
+			string s = TranslateDefToCsTypesWithSettings("SwagMock" + Path.DirectorySeparatorChar + "CasualEnum.json", new Settings
 			{
 				UsePascalCase = true,
 				ClientNamespace = "MyNS"
@@ -652,7 +689,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock\\StringArray.json");
+			string s = TranslateDefToCsTypesCode("SwagMock\\StringArray.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -709,7 +746,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock\\CustomTypeArray.json");
+			string s = TranslateDefToCsTypesCode("SwagMock\\CustomTypeArray.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -770,7 +807,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock\\SimpleOrder.json");
+			string s = TranslateDefToCsTypesCode("SwagMock\\SimpleOrder.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -807,7 +844,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock" + Path.DirectorySeparatorChar + "TypeAlias.json");
+			string s = TranslateDefToCsTypesCode("SwagMock" + Path.DirectorySeparatorChar + "TypeAlias.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -839,7 +876,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock" + Path.DirectorySeparatorChar + "TypeAlias2.json");
+			string s = TranslateDefToCsTypesCode("SwagMock" + Path.DirectorySeparatorChar + "TypeAlias2.json");
 			Assert.Equal(expected, s);
 		}
 
@@ -901,7 +938,7 @@ namespace MyNS
 	}
 }
 ";
-			string s = TranslateJsonToCode("SwagMock\\Required.json");
+			string s = TranslateDefToCsTypesCode("SwagMock\\Required.json");
 			Assert.Equal(expected, s);
 		}
 

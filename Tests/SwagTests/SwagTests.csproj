@@ -147,6 +147,7 @@
     <None Remove="Results\PetByTags.txt" />
     <None Remove="Results\PetDataContracts.txt" />
     <None Remove="Results\PetDelete.txt" />
+    <None Remove="Results\PetDicInt64.txt" />
     <None Remove="Results\PetFindByStatus.txt" />
     <None Remove="Results\PetGodClass.txt" />
     <None Remove="Results\PetNullable.txt" />
@@ -241,6 +242,7 @@
     <None Remove="SwagMock\petByStatus.yaml" />
     <None Remove="SwagMock\petByTags.yaml" />
     <None Remove="SwagMock\PetDelete.json" />
+    <None Remove="SwagMock\petDicInt64.yaml" />
     <None Remove="SwagMock\PetDogCat.json" />
     <None Remove="SwagMock\PetFindByStatus.json" />
     <None Remove="SwagMock\petStore.yaml" />
@@ -715,6 +717,9 @@
     <Content Include="Results\mcp.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Results\PetDicInt64.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Results\Pet_EnumToString.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -989,6 +994,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\mcp.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petDicInt64.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\petByNumbers.yaml">

@@ -3,7 +3,7 @@ info:
   title: Test openapi spec file for dictionary field
   version: v1
 paths:
-  '/hello':
+  /hello:
     get:
       responses:
         '200':
@@ -15,6 +15,7 @@ paths:
 
 components:
   schemas:
+     
     TestModel:
       description: Model information
       properties:
@@ -22,11 +23,61 @@ components:
           type: object
           additionalProperties:
             type: string
+        dateDict:
+          type: object
+          additionalProperties:
+            type: string
+            format: date
         intDict:
           type: object
           additionalProperties:
             type: integer
+        int32Dict:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
+        int64Dict:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+        floatDict:
+          type: object
+          additionalProperties:
+            type: number
+            format: float
+        doubleDict:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+        numberDict:
+          type: object
+          additionalProperties:
+            type: number
+        tagDict:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Tag'
         objectDict:
           type: object
           additionalProperties:
             type: object
+    Tag:
+      type: object
+      properties:
+        id:
+          description: Tag ID
+          allOf:
+            - $ref: '#/components/schemas/Id'
+        name:
+          description: Tag name
+          type: string
+          minLength: 1
+      xml:
+        name: Tag
+    Id:
+      type: integer
+      format: int64
+      readOnly: true
