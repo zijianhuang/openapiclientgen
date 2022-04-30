@@ -216,9 +216,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			OpenApiSchema arrayItemsSchema = propertySchema.Items;
 			if (arrayItemsSchema == null)//ritekit.com has parameter as array but without items type. Presumbly it may be string.
 			{
-				Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", null);
-				CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
-				return Tuple.Create(arrayCodeTypeReference, String.Empty);
+				if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
+				{
+					Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType("string", null);
+					CodeTypeReference arrayCodeTypeReference = TypeRefHelper.CreateArrayTypeReference(clrType, 1);
+					return Tuple.Create(arrayCodeTypeReference, String.Empty);
+				}
+				else
+				{
+					var typeRef = TypeRefHelper.ArrayAsIEnumerableDerivedToType("string", settings.ArrayAs);
+					return Tuple.Create(new CodeTypeReference(typeRef), string.Empty);
+				}
 			}
 			else if (arrayItemsSchema.Reference != null) //array of custom type
 			{
@@ -274,7 +282,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (existingDeclaration != null)
 					{
 						string existingTypeName = existingDeclaration.Name;
-						CodeTypeReference enumArrayReference = TypeRefHelper.CreateArrayOfCustomTypeReference(existingTypeName, 1);
+						CodeTypeReference enumArrayReference = settings.ArrayAs== ArrayAsIEnumerableDerived.Array ? TypeRefHelper.CreateArrayOfCustomTypeReference(existingTypeName, 1) : new CodeTypeReference(TypeRefHelper.ArrayAsIEnumerableDerivedToType(existingTypeName, settings.ArrayAs));
 						return Tuple.Create(enumArrayReference, String.Empty);
 					}
 
@@ -283,14 +291,30 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 				{
-					var casualTypeName = settings.PrefixWithTypeName ? typeDeclarationName + NameFunc.RefinePropertyName(propertyName) : NameFunc.RefinePropertyName(propertyName);			
+					var casualTypeName = settings.PrefixWithTypeName ? typeDeclarationName + NameFunc.RefinePropertyName(propertyName) : NameFunc.RefinePropertyName(propertyName);
 					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
 					AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
-					return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1), casualTypeName);
+					if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
+					{
+						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1), casualTypeName);
+					}
+					else
+					{
+						var typeRef = TypeRefHelper.ArrayAsIEnumerableDerivedToType(casualTypeName, settings.ArrayAs);
+						return Tuple.Create(new CodeTypeReference(typeRef), string.Empty);
+					}
 				}
 
 				Type clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(arrayType, null);
-				return Tuple.Create(TypeRefHelper.CreateArrayTypeReference(clrType, 1), String.Empty);
+				if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
+				{
+					return Tuple.Create(TypeRefHelper.CreateArrayTypeReference(clrType, 1), String.Empty);
+				}
+				else
+				{
+					var typeRef = TypeRefHelper.ArrayAsIEnumerableDerivedToType(clrType.Name, settings.ArrayAs);
+					return Tuple.Create(new CodeTypeReference(typeRef), string.Empty);
+				}
 			}
 		}
 

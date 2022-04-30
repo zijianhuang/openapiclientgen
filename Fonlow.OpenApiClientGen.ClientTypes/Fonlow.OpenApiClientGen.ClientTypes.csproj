@@ -13,8 +13,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>Fonlow.OpenApiClientGen.ClientTypes</AssemblyName>
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
-    <Version>2.3.1</Version>
-    <PackageReleaseNotes>fixed value types in dictionary</PackageReleaseNotes>
+    <Version>2.3.2</Version>
+    <PackageReleaseNotes>fixed ArrayAs for standard types #41</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

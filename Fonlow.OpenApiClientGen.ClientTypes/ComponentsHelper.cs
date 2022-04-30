@@ -69,6 +69,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ns.FindTypeDeclaration(typeName);
 		}
 
+		/// <summary>
+		/// According to settings.ArrayAs
+		/// </summary>
+		/// <param name="typeName"></param>
+		/// <param name="arrayRank"></param>
+		/// <param name="settings"></param>
+		/// <returns></returns>
 		public static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank, Settings settings = null)
 		{
 			if (settings != null)
