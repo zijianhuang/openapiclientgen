@@ -28,7 +28,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected override void AddConstructor(CodeTypeDeclaration targetClass)
 		{
-			CodeConstructor constructor = new CodeConstructor
+			CodeConstructor constructor = new()
 			{
 				Attributes =
 				MemberAttributes.Public | MemberAttributes.Final

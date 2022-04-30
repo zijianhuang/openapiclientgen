@@ -118,7 +118,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		void CreateDocComments()
 		{
-			StringBuilder builder = new StringBuilder();
+			StringBuilder builder = new();
 			string[] linesNoIndent = Fonlow.DocComment.StringFunctions.TrimIndentedMultiLineTextToArray(
 				apiOperation.Summary
 				+ ((String.IsNullOrEmpty(apiOperation.Summary) || string.IsNullOrEmpty(apiOperation.Description)) ? String.Empty : "\n")

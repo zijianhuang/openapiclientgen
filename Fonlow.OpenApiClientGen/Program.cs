@@ -63,14 +63,14 @@ namespace Fonlow.OpenApiClientGen
 
 			logger.LogInformation("Program logger loaded");
 
-			using Diagnostics.LoggerTraceListener listener = new Fonlow.Diagnostics.LoggerTraceListener(logger);
+			using Diagnostics.LoggerTraceListener listener = new(logger);
 			System.Diagnostics.Trace.Listeners.Add(listener);
 
 			string settingsString = File.ReadAllText(settingsFile);
 			ClientTypes.Settings settings = System.Text.Json.JsonSerializer.Deserialize<ClientTypes.Settings>(settingsString);
 
 			OpenApiDocument doc;
-			using (FileStream stream = new FileStream(defFile, FileMode.Open, FileAccess.Read))
+			using (FileStream stream = new(defFile, FileMode.Open, FileAccess.Read))
 			{
 				doc = new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 			}
@@ -102,7 +102,7 @@ Example:
 	{
 		public static string FormatOpenApiInfo(this OpenApiInfo info)
 		{
-			StringBuilder builder = new StringBuilder();
+			StringBuilder builder = new();
 			builder.AppendLine(info.Title);
 			builder.AppendLine("V " + info.Version);
 			builder.AppendLine(info.Description);

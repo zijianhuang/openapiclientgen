@@ -18,7 +18,7 @@ namespace SwagTests
 
 		static OpenApiDocument ReadDef(string filePath)
 		{
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read);
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
@@ -27,7 +27,7 @@ namespace SwagTests
 			OpenApiDocument doc = ReadDef(filePath);
 
 			Settings settings = mySettings ?? CodeGenSettings.Default;
-			ControllersClientApiGen gen = new ControllersClientApiGen(settings);
+			ControllersClientApiGen gen = new(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
 		}
@@ -43,7 +43,7 @@ namespace SwagTests
 			//File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
-			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
+			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null && mySettings.UseSystemTextJson);
 
 			if (!r.Success)
 			{

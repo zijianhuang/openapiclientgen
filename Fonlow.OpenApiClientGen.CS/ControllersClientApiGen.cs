@@ -60,7 +60,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
 
 			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
-			CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
+			CodeGeneratorOptions options = new() { BracingStyle = "C", IndentString = "\t" };
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
@@ -71,7 +71,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		// hack inspired by https://csharpcodewhisperer.blogspot.com/2014/10/create-c-class-code-from-datatable.html
 		public void Save(string fileName)
 		{
-			using StreamWriter streamWriter = new StreamWriter(fileName);
+			using StreamWriter streamWriter = new(fileName);
 			GenerateCodesToWriter(streamWriter);
 		}
 
@@ -81,7 +81,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		/// <returns>C# codes</returns>
 		public string WriteToText()
 		{
-			using StringWriter stringWriter = new StringWriter();
+			using StringWriter stringWriter = new();
 			GenerateCodesToWriter(stringWriter);
 			return stringWriter.ToString();
 		}
@@ -92,13 +92,13 @@ namespace Fonlow.OpenApiClientGen.CS
 		/// <param name="textWriter">To receive refined codes</param>
 		void GenerateCodesToWriter(TextWriter textWriter)
 		{
-			using MemoryStream stream = new MemoryStream();
-			using StreamWriter writer = new StreamWriter(stream);
+			using MemoryStream stream = new();
+			using StreamWriter writer = new(stream);
 			GenerateHackyCodesToWriter(writer);
 
 			writer.Flush();
 			stream.Position = 0;
-			using StreamReader streamReader = new StreamReader(stream);
+			using StreamReader streamReader = new(stream);
 			string s = streamReader.ReadToEnd();
 			if (settings.UseEnsureSuccessStatusCodeEx && settings.IncludeEnsureSuccessStatusCodeExBlock)
 			{
@@ -124,7 +124,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			clientNamespace = new CodeNamespace(settings.ClientNamespace);
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
-			ComponentsToCsTypes componentsToCsTypes = new ComponentsToCsTypes(settings, codeCompileUnit, clientNamespace);
+			ComponentsToCsTypes componentsToCsTypes = new(settings, codeCompileUnit, clientNamespace);
 			componentsToCsTypes.CreateCodeDom(components);
 
 			if (settings.GenerateModelsOnly)
@@ -164,7 +164,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				foreach (KeyValuePair<OperationType, OpenApiOperation> op in p.Value.Operations)
 				{
-					ClientApiFunctionGen apiFunctionGen = new ClientApiFunctionGen();
+					ClientApiFunctionGen apiFunctionGen = new();
 					CodeMemberMethod apiFunction = apiFunctionGen.CreateApiFunction(settings, p.Key, op.Key, op.Value, componentsToCsTypes, true, settings.UseEnsureSuccessStatusCodeEx);
 					if (apiFunction == null)
 					{
@@ -178,7 +178,7 @@ namespace Fonlow.OpenApiClientGen.CS
 					existingClass.Members.Add(apiFunction);
 					if (settings.GenerateBothAsyncAndSync)
 					{
-						ClientApiFunctionGen functionGen2 = new ClientApiFunctionGen();
+						ClientApiFunctionGen functionGen2 = new();
 						existingClass.Members.Add(functionGen2.CreateApiFunction(settings, p.Key, op.Key, op.Value, componentsToCsTypes, false, settings.UseEnsureSuccessStatusCodeEx));
 					}
 				}
@@ -214,7 +214,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				return new string[] { settings.ContainerClassName };
 			}
 
-			List<string> names = new List<string>();
+			List<string> names = new();
 
 			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
 			{
@@ -254,7 +254,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		CodeTypeDeclaration CreateControllerClientClass(CodeNamespace ns, string className)
 		{
-			CodeTypeDeclaration targetClass = new CodeTypeDeclaration(className)
+			CodeTypeDeclaration targetClass = new(className)
 			{
 				IsClass = true,
 				IsPartial = true,
@@ -271,7 +271,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		void AddLocalFields(CodeTypeDeclaration targetClass)
 		{
-			CodeMemberField clientField = new CodeMemberField
+			CodeMemberField clientField = new()
 			{
 				Attributes = MemberAttributes.Private,
 				Name = "client",
@@ -279,7 +279,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			};
 			targetClass.Members.Add(clientField);
 
-			CodeMemberField jsonSettingsField = new CodeMemberField
+			CodeMemberField jsonSettingsField = new()
 			{
 				Attributes = MemberAttributes.Private,
 				Name = "jsonSerializerSettings",
@@ -290,7 +290,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		void AddConstructorWithHttpClient(CodeTypeDeclaration targetClass)
 		{
-			CodeConstructor constructor = new CodeConstructor
+			CodeConstructor constructor = new()
 			{
 				Attributes =
 				MemberAttributes.Public | MemberAttributes.Final

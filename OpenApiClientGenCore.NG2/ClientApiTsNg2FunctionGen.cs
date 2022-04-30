@@ -79,7 +79,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			string callbackTypeText = $"Observable{typeCast}";
 			Debug.WriteLine("callback: " + callbackTypeText);
-			CodeSnipetTypeReference returnTypeReferenceWithObservable = new CodeSnipetTypeReference(callbackTypeText);
+			CodeSnipetTypeReference returnTypeReferenceWithObservable = new(callbackTypeText);
 
 			return new CodeMemberMethod()
 			{
@@ -101,7 +101,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			Method.Parameters.AddRange(parameters);
 			if (RequestBodyCodeTypeReference != null)
 			{
-				CodeParameterDeclarationExpression p = new CodeParameterDeclarationExpression(RequestBodyCodeTypeReference, "requestBody");
+				CodeParameterDeclarationExpression p = new(RequestBodyCodeTypeReference, "requestBody");
 				Method.Parameters.Add(p);
 			}
 

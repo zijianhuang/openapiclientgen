@@ -19,7 +19,7 @@ namespace SwagTests
 
 		public static OpenApiDocument ReadDef(string filePath)
 		{
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read);
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
@@ -64,10 +64,10 @@ namespace SwagTests
 				DataAnnotationsToComments = true,
 			};
 
-			System.CodeDom.CodeCompileUnit codeCompileUnit = new System.CodeDom.CodeCompileUnit();
-			System.CodeDom.CodeNamespace clientNamespace = new System.CodeDom.CodeNamespace(settings.ClientNamespace);
+			System.CodeDom.CodeCompileUnit codeCompileUnit = new();
+			System.CodeDom.CodeNamespace clientNamespace = new(settings.ClientNamespace);
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
-			JSOutput jsOutput = new JSOutput
+			JSOutput jsOutput = new()
 			{
 				JSPath = CreateTsPath("Results", filePath),
 				AsModule = true,

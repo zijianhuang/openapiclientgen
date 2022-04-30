@@ -155,7 +155,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		public string PathToActionOrContainerName(string path)
 		{
-			Uri uri = new Uri("http://dummy.net" + path.Replace('-', '_'));
+			Uri uri = new("http://dummy.net" + path.Replace('-', '_'));
 			IEnumerable<string> pathSegments = uri.Segments.Select(s=> { 
 				if (s.Contains("%7B")&& s.Contains("%7D"))
 				{
@@ -176,7 +176,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				localPath = "/" + localPath;
 			}
 
-			Uri uriWithPaths = new Uri("http://dummy.net" + localPath);
+			Uri uriWithPaths = new("http://dummy.net" + localPath);
 			return String.Join(String.Empty, uriWithPaths.Segments.Select(p => ToTitleCase(p.Replace("/", String.Empty))));
 		}
 

@@ -57,7 +57,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			if (RequestBodyCodeTypeReference != null)
 			{
-				CodeParameterDeclarationExpression p = new CodeParameterDeclarationExpression(RequestBodyCodeTypeReference, "requestBody");
+				CodeParameterDeclarationExpression p = new(RequestBodyCodeTypeReference, "requestBody");
 				Method.Parameters.Add(p);
 			}
 

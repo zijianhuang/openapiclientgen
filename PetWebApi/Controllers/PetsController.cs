@@ -651,7 +651,7 @@ namespace MyNamespace
 	public sealed class PetData
 	{
 		private static readonly Lazy<PetData> lazy =
-			new Lazy<PetData>(() => new PetData());
+			new(() => new PetData());
 
 		public static PetData Instance { get { return lazy.Value; } }
 

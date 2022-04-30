@@ -47,7 +47,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (content.Schema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = PrimitiveSwaggerTypeToClrType(content.Schema.Type, content.Schema.Format);
-					CodeTypeReference codeTypeReference = new CodeTypeReference(simpleType);
+					CodeTypeReference codeTypeReference = new(simpleType);
 					return codeTypeReference;
 				}
 				else if (content.Schema.Enum.Count > 0)
@@ -125,7 +125,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
 		{
-			CodeTypeReference otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
+			CodeTypeReference otherArrayType = new(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
 			{
 				ArrayElementType = TranslateToClientTypeReference(elementType),
 			};
@@ -134,8 +134,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank)
 		{
-			CodeTypeReference elementTypeReference = new CodeTypeReference(typeName);
-			CodeTypeReference typeReference = new CodeTypeReference(new CodeTypeReference(), arrayRank)
+			CodeTypeReference elementTypeReference = new(typeName);
+			CodeTypeReference typeReference = new(new CodeTypeReference(), arrayRank)
 			{
 				ArrayElementType = elementTypeReference,
 			};
@@ -150,7 +150,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <summary>
 		/// Mapping between openapi types and primitive CLR types
 		/// </summary>
-		static readonly Dictionary<string, Type> basicClrTypeDic = new Dictionary<string, Type>()
+		static readonly Dictionary<string, Type> basicClrTypeDic = new()
 		{
 			{"integer_int32", typeof(int) },
 			{"integer_int64", typeof(long) },
@@ -165,7 +165,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 //			{"object", typeof(object) },
 		};
 
-		static readonly Dictionary<string, string> basicTsTypeDic = new Dictionary<string, string>()
+		static readonly Dictionary<string, string> basicTsTypeDic = new()
 		{
 			{"integer_int32", "number" },
 			{"integer_int64", "number" },

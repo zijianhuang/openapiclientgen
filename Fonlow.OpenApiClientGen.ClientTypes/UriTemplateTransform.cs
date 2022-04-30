@@ -7,7 +7,7 @@ namespace Fonlow.CodeDom.Web
 {
 	internal static class UriTemplateTransform
 	{
-		static readonly HashSet<string> simpleListTypeNames = new HashSet<string>(
+		static readonly HashSet<string> simpleListTypeNames = new(
 		new string[] {
 			typeof(IEnumerable<>).Name,
 			typeof(IList<>).Name,

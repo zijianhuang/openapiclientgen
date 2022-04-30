@@ -42,7 +42,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					var ns = NameFunc.GetNamespaceOfClassName(op.RequestBody.Reference.Id);
 					string typeName = NameFunc.RefineTypeName(op.RequestBody.Reference.Id, ns);
-					CodeTypeReference codeTypeReference = new CodeTypeReference(NameFunc.CombineNamespaceWithClassName(ns, typeName));
+					CodeTypeReference codeTypeReference = new(NameFunc.CombineNamespaceWithClassName(ns, typeName));
 					return Tuple.Create(codeTypeReference, description, true);
 				}
 				else if (op.RequestBody.Content.TryGetValue("application/json", out content))

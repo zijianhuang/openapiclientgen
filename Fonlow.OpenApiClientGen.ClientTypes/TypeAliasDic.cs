@@ -7,7 +7,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// </summary>
 	public class TypeAliasDic
 	{
-		readonly Dictionary<string, string> dic = new Dictionary<string, string>();
+		readonly Dictionary<string, string> dic = new();
 
 		public void Add(string alias, string typeName)
 		{

@@ -55,8 +55,8 @@ namespace Fonlow.CodeDom.Web.Ts
 		/// </summary>
 		public void Save()
 		{
-			using FileStream fs = new FileStream(jsOutput.JSPath, FileMode.Create, FileAccess.Write);
-			using StreamWriter writer = new StreamWriter(fs);
+			using FileStream fs = new(jsOutput.JSPath, FileMode.Create, FileAccess.Write);
+			using StreamWriter writer = new(fs);
 			WriteCode(writer);
 		}
 
@@ -69,7 +69,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
 
-			using TypeScriptCodeProvider provider = new TypeScriptCodeProvider(jsOutput.AsModule);
+			using TypeScriptCodeProvider provider = new(jsOutput.AsModule);
 			provider.GenerateCodeFromCompileUnit(CodeCompileUnit, writer, TsCodeGenerationOptions.Instance);
 		}
 
@@ -79,7 +79,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		/// <returns></returns>
 		public string WriteToText()
 		{
-			using StringWriter writer = new StringWriter();
+			using StringWriter writer = new();
 			WriteCode(writer);
 			return writer.ToString();
 		}
@@ -98,7 +98,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			clientNamespace = new CodeNamespace(settings.ClientNamespace);
 			CodeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
-			ComponentsToTsTypes componentsToTsTypes = new ComponentsToTsTypes(settings, CodeCompileUnit, clientNamespace);
+			ComponentsToTsTypes componentsToTsTypes = new(settings, CodeCompileUnit, clientNamespace);
 			componentsToTsTypes.CreateCodeDom(components);
 
 			if (paths == null)
@@ -168,7 +168,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				return new string[] { settings.ContainerClassName };
 			}
 
-			List<string> names = new List<string>();
+			List<string> names = new();
 
 			foreach (KeyValuePair<string, OpenApiPathItem> p in paths)
 			{
@@ -184,7 +184,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		CodeTypeDeclaration CreateControllerClientClass(CodeNamespace ns, string className)
 		{
-			CodeTypeDeclaration targetClass = new CodeTypeDeclaration(className)
+			CodeTypeDeclaration targetClass = new(className)
 			{
 				IsClass = true,
 				IsPartial = true,

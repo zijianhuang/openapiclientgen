@@ -32,7 +32,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected IDictionary<string, OpenApiSchema> ComponentsSchemas { get; private set; }
 
-		readonly List<string> registeredSchemaRefIds = new List<string>();
+		readonly List<string> registeredSchemaRefIds = new();
 
 		public List<CodeNamespace> ClassNamespaces { get; private set; } = new List<CodeNamespace>();
 
@@ -67,7 +67,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public string WriteToText()
 		{
-			using StringWriter writer = new StringWriter();
+			using StringWriter writer = new();
 			WriteCode(writer);
 			return writer.ToString();
 		}

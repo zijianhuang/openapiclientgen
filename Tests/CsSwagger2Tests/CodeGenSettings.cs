@@ -4,7 +4,7 @@ namespace SwagTests
 {
 	public static class CodeGenSettings
 	{
-		public static readonly Settings Default = new Settings()
+		public static readonly Settings Default = new()
 		{
 			ClientNamespace = "MyNS",
 			PathPrefixToRemove = "/api",

@@ -10,7 +10,7 @@ namespace SwagTests
 	{
 		static OpenApiDocument ReadJson(string filePath)
 		{
-			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read);
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
@@ -26,11 +26,11 @@ namespace SwagTests
 		static string TranslateDefToCsTypesWithSettings(string filePath, Settings settings)
 		{
 			OpenApiDocument doc = ReadJson(filePath);
-			System.CodeDom.CodeCompileUnit codeCompileUnit = new System.CodeDom.CodeCompileUnit();
-			System.CodeDom.CodeNamespace clientNamespace = new System.CodeDom.CodeNamespace(settings.ClientNamespace);
+			System.CodeDom.CodeCompileUnit codeCompileUnit = new();
+			System.CodeDom.CodeNamespace clientNamespace = new(settings.ClientNamespace);
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
-			ComponentsToCsTypes gen = new ComponentsToCsTypes(settings, codeCompileUnit, clientNamespace);
+			ComponentsToCsTypes gen = new(settings, codeCompileUnit, clientNamespace);
 			gen.CreateCodeDom(doc.Components);
 			return gen.WriteToText();
 		}

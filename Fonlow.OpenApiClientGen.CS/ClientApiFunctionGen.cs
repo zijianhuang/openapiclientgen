@@ -110,12 +110,12 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				case OperationType.Get:
 				case OperationType.Delete:
-					RenderGetOrDeleteImplementation(httpMethod, forAsync);
+					RenderGetOrDeleteImplementation(httpMethod);
 					break;
 				case OperationType.Post:
 				case OperationType.Put:
 				case OperationType.Patch:
-					RenderPostOrPutImplementation(httpMethod, forAsync);
+					RenderPostOrPutImplementation(httpMethod);
 					break;
 				default:
 					Trace.TraceWarning("This HTTP method {0} is not yet supported", httpMethod);
@@ -202,7 +202,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			CreateDocComment("returns", NameComposer.GetOperationReturnComment(apiOperation));
 		}
 
-		void RenderGetOrDeleteImplementation(OperationType httpMethod, bool forAsync)
+		void RenderGetOrDeleteImplementation(OperationType httpMethod)
 		{
 			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
 				.Select(d =>
@@ -244,10 +244,10 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			AddResponseMessageSendAsync(method);
 
-			CodeVariableReferenceExpression resultReference = new CodeVariableReferenceExpression("responseMessage");
+			CodeVariableReferenceExpression resultReference = new("responseMessage");
 
 
-			CodeTryCatchFinallyStatement try1 = new CodeTryCatchFinallyStatement();
+			CodeTryCatchFinallyStatement try1 = new();
 			try1.TryStatements.Add(new CodeMethodInvokeExpression(resultReference, statementOfEnsureSuccessStatusCode));
 			method.Statements.Add(try1);
 
@@ -287,7 +287,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression($"await client.SendAsync(httpRequestMessage{cancellationToken})") : new CodeSnippetExpression($"client.SendAsync(httpRequestMessage{cancellationToken}).Result")));
 		}
 
-		void RenderPostOrPutImplementation(OperationType httpMethod, bool forAsync)
+		void RenderPostOrPutImplementation(OperationType httpMethod)
 		{
 			//Create function parameters in prototype
 			CodeParameterDeclarationExpression[] parameters = parameterDescriptions.Where(p => p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri || p.ParameterDescriptor.ParameterBinder == ParameterBinder.FromQuery)
@@ -377,9 +377,9 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			AddResponseMessageSendAsync(method);
 
-			CodeVariableReferenceExpression resultReference = new CodeVariableReferenceExpression("responseMessage");
+			CodeVariableReferenceExpression resultReference = new("responseMessage");
 
-			CodeTryCatchFinallyStatement try1 = new CodeTryCatchFinallyStatement();
+			CodeTryCatchFinallyStatement try1 = new();
 			method.Statements.Add(try1);
 			try1.TryStatements.Add(new CodeMethodInvokeExpression(resultReference, statementOfEnsureSuccessStatusCode));
 

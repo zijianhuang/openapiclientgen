@@ -32,13 +32,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			try
 			{
-				using MemoryStream stream = new MemoryStream();
-				using StreamWriter writer = new StreamWriter(stream);
+				using MemoryStream stream = new();
+				using StreamWriter writer = new(stream);
 				WriteCode(writer);
 				writer.Flush();
 				stream.Position = 0;
-				using StreamReader stringReader = new StreamReader(stream);
-				using StreamWriter fileWriter = new StreamWriter(fileName);
+				using StreamReader stringReader = new(stream);
+				using StreamWriter fileWriter = new(fileName);
 				string s = stringReader.ReadToEnd();
 				fileWriter.Write(s.Replace("//;", ""));
 			}
@@ -66,7 +66,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//	throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
 
 			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
-			CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
+			CodeGeneratorOptions options = new() { BracingStyle = "C", IndentString = "\t" };
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
@@ -267,7 +267,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string memberName = NameFunc.RefineEnumMemberName(stringMemberValue, settings);
 					bool hasFunkyMemberName = memberName != stringMemberValue;
 					int intValue = k;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),
@@ -292,7 +292,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = NameFunc.RefineEnumMemberName(intMember.Value.ToString());//take care of negative value
 					int intValue = intMember.Value;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),
@@ -310,7 +310,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = NameFunc.RefineEnumMemberName(longMember.Value.ToString());
 					long longValue = longMember.Value;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(longValue),
@@ -328,7 +328,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = NameFunc.RefineEnumMemberName(passwordMember.Value);
 					int intValue = k;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),
@@ -346,7 +346,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = "_" + doubleMember.Value.ToString();
 					double doubleValue = doubleMember.Value;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(doubleValue),
@@ -475,7 +475,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, typeDeclaration.Name, propertyName);
 					}
 
-					CodeTypeReference dicCtr = new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
+					CodeTypeReference dicCtr = new(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
 					clientProperty = CreateProperty(dicCtr, propertyName, null);
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
@@ -556,7 +556,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (primitivePropertyType != "string" && TypeAliasDic.TryGet(primitivePropertyType, out string aliasTypeName)) //check TypeAliasDic
 				{
-					CodeTypeReference r = new CodeTypeReference(aliasTypeName);
+					CodeTypeReference r = new(aliasTypeName);
 					clientProperty = CreateProperty(r, propertyName, defaultValue);
 				}
 				else if (propertySchema.Reference != null)
@@ -618,43 +618,43 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (fieldSchema.Type == "string")
 				{
-					List<CodeAttributeArgument> attributeParams = new List<CodeAttributeArgument>();
+					List<CodeAttributeArgument> attributeParams = new();
 
 					if (fieldSchema.MaxLength.HasValue)
 					{
-						CodeSnippetExpression max = new CodeSnippetExpression(fieldSchema.MaxLength.Value.ToString());
+						CodeSnippetExpression max = new(fieldSchema.MaxLength.Value.ToString());
 						attributeParams.Add(new CodeAttributeArgument(max));
 					}
 					else
 					{
-						CodeSnippetExpression max = new CodeSnippetExpression("int.MaxValue");
+						CodeSnippetExpression max = new("int.MaxValue");
 						attributeParams.Add(new CodeAttributeArgument(max));
 					}
 
 					if (fieldSchema.MinLength.HasValue)
 					{
-						CodeSnippetExpression min = new CodeSnippetExpression(fieldSchema.MinLength.Value.ToString());
+						CodeSnippetExpression min = new(fieldSchema.MinLength.Value.ToString());
 						attributeParams.Add(new CodeAttributeArgument("MinimumLength", min));
 					}
 
-					CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.StringLength", attributeParams.ToArray());
+					CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.StringLength", attributeParams.ToArray());
 					memberField.CustomAttributes.Add(cad);
 				}
 				else
 				{
 					if (fieldSchema.MinLength.HasValue)
 					{
-						CodeSnippetExpression len = new CodeSnippetExpression(fieldSchema.MinLength.Value.ToString());
+						CodeSnippetExpression len = new(fieldSchema.MinLength.Value.ToString());
 						CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-						CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
+						CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
 						memberField.CustomAttributes.Add(cad);
 					}
 
 					if (fieldSchema.MaxLength.HasValue)
 					{
-						CodeSnippetExpression len = new CodeSnippetExpression(fieldSchema.MaxLength.Value.ToString());
+						CodeSnippetExpression len = new(fieldSchema.MaxLength.Value.ToString());
 						CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-						CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
+						CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
 						memberField.CustomAttributes.Add(cad);
 					}
 
@@ -664,7 +664,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (fieldSchema.Maximum.HasValue || fieldSchema.Minimum.HasValue)
 			{
 				Type type = TypeRefHelper.PrimitiveSwaggerTypeToClrType(fieldSchema.Type, fieldSchema.Format);
-				List<CodeAttributeArgument> attributeParams = new List<CodeAttributeArgument>();
+				List<CodeAttributeArgument> attributeParams = new();
 				if (fieldSchema.Type == "string")
 				{
 					Trace.TraceWarning("A string type property shouldn't be decorated by Maximum or Minimum but MaxLength or MinLength.");//Xero_bankfeeds.yaml has such problem.
@@ -673,43 +673,43 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 				if (fieldSchema.Minimum.HasValue)
 				{
-					CodeSnippetExpression min = new CodeSnippetExpression($"{fieldSchema.Minimum.Value}");
+					CodeSnippetExpression min = new($"{fieldSchema.Minimum.Value}");
 					attributeParams.Add(new CodeAttributeArgument(min));
 				}
 				else
 				{
-					CodeSnippetExpression min = new CodeSnippetExpression($"{type.FullName}.MinValue");
+					CodeSnippetExpression min = new($"{type.FullName}.MinValue");
 					attributeParams.Add(new CodeAttributeArgument(min));
 				}
 
 				if (fieldSchema.Maximum.HasValue)
 				{
-					CodeSnippetExpression max = new CodeSnippetExpression($"{fieldSchema.Maximum.Value}");
+					CodeSnippetExpression max = new($"{fieldSchema.Maximum.Value}");
 					attributeParams.Add(new CodeAttributeArgument(max));
 				}
 				else
 				{
-					CodeSnippetExpression max = new CodeSnippetExpression($"{type.FullName}.MaxValue");
+					CodeSnippetExpression max = new($"{type.FullName}.MaxValue");
 					attributeParams.Add(new CodeAttributeArgument(max));
 				}
 
-				CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Range", attributeParams.ToArray());
+				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.Range", attributeParams.ToArray());
 				memberField.CustomAttributes.Add(cad);
 			}
 
 			if (fieldSchema.MinItems.HasValue)
 			{
-				CodeSnippetExpression len = new CodeSnippetExpression(fieldSchema.MinItems.Value.ToString());
+				CodeSnippetExpression len = new(fieldSchema.MinItems.Value.ToString());
 				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-				CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
+				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
 				memberField.CustomAttributes.Add(cad);
 			}
 
 			if (fieldSchema.MaxItems.HasValue)
 			{
-				CodeSnippetExpression len = new CodeSnippetExpression(fieldSchema.MaxItems.Value.ToString());
+				CodeSnippetExpression len = new(fieldSchema.MaxItems.Value.ToString());
 				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-				CodeAttributeDeclaration cad = new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
+				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
 				memberField.CustomAttributes.Add(cad);
 			}
 
@@ -857,7 +857,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
-			CodeMemberField result = new CodeMemberField() { Type = TypeRefHelper.TranslateToClientTypeReference(type), Name = memberName };
+			CodeMemberField result = new() { Type = TypeRefHelper.TranslateToClientTypeReference(type), Name = memberName };
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
 
 			if (!String.IsNullOrEmpty(defaultValue))
@@ -890,7 +890,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					typeName = $"{type.FullName}?";
 			}
 
-			CodeMemberField result = new CodeMemberField(typeName, memberName)
+			CodeMemberField result = new(typeName, memberName)
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final,
 			};
@@ -905,7 +905,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//  Later, we remove the commented out semicolons.
 			string memberName = propertyName + " { get; set; }//";
 
-			CodeMemberField result = new CodeMemberField(settings.UseNullableQuestionMark ? $"{codeTypeReference.BaseType}?" : $"System.Nullable<{codeTypeReference.BaseType}>", memberName)
+			CodeMemberField result = new(settings.UseNullableQuestionMark ? $"{codeTypeReference.BaseType}?" : $"System.Nullable<{codeTypeReference.BaseType}>", memberName)
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
@@ -925,7 +925,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
 
-			CodeMemberField result = new CodeMemberField(codeTypeReference, memberName)
+			CodeMemberField result = new(codeTypeReference, memberName)
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};

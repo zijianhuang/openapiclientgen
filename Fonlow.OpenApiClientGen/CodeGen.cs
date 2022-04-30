@@ -30,7 +30,7 @@ namespace Fonlow.CodeDom.Web
 				}
 
 				string path = System.IO.Path.Combine(csharpClientProjectDir, settings.ClientLibraryFileName);
-				ControllersClientApiGen gen = new ControllersClientApiGen(settings);
+				ControllersClientApiGen gen = new(settings);
 				gen.CreateCodeDom(paths, components);
 				gen.Save(path);
 			}
@@ -82,7 +82,7 @@ namespace Fonlow.CodeDom.Web
 				string exeDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 				foreach (JSPlugin plugin in settings.Plugins)
 				{
-					JSOutput jsOutput = new JSOutput
+					JSOutput jsOutput = new()
 					{
 						JSPath = CreateTsPath(plugin.TargetDir, plugin.TSFile),
 						AsModule = plugin.AsModule,

@@ -46,7 +46,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		public static EmitResult CompileThenSave(SyntaxTree tree, string assemblyPath, bool useSystemTextJson)
 		{
 			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
-			CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "C", IndentString = "\t" };
+			CodeGeneratorOptions options = new() { BracingStyle = "C", IndentString = "\t" };
 			var assemblyFileName = Path.GetFileName(assemblyPath);
 
 			static MetadataReference CreateFromName(string n)

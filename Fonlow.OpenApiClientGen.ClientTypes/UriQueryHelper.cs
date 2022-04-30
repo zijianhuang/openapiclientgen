@@ -12,7 +12,7 @@ namespace Fonlow.CodeDom.Web
 	{
 		public static string CreateUriQuery(string uriText, ParameterDescriptionEx[] parameterDescriptions)
 		{
-			UriTemplate template = new UriTemplate(uriText);
+			UriTemplate template = new(uriText);
 			string[] parameterNames;
 			try
 			{
@@ -44,7 +44,7 @@ namespace Fonlow.CodeDom.Web
 
 		public static string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions)
 		{
-			UriTemplate template = new UriTemplate(uriText);
+			UriTemplate template = new(uriText);
 			string[] parameterNames;
 			try
 			{

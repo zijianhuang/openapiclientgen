@@ -32,7 +32,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			try
 			{
-				using StreamWriter writer = new StreamWriter(fileName);
+				using StreamWriter writer = new(fileName);
 				WriteCode(writer);
 			}
 			catch (IOException e)
@@ -59,7 +59,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			//	throw new ArgumentNullException("writer", "No TextWriter instance is defined.");
 
 			using CodeDomProvider provider = new Fonlow.TypeScriptCodeDom.TypeScriptCodeProvider(true);
-			CodeGeneratorOptions options = new CodeGeneratorOptions() { BracingStyle = "JS", IndentString = "\t" };
+			CodeGeneratorOptions options = new() { BracingStyle = "JS", IndentString = "\t" };
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
@@ -268,7 +268,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						dicValueTypeRef = PropertySchemaToCodeTypeReference(propertySchema.AdditionalProperties, typeDeclaration.Name, propertyName);
 					}
 
-					CodeTypeReference dicCtr = new CodeTypeReference(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
+					CodeTypeReference dicCtr = new(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
 					clientProperty = CreateProperty(dicCtr, propertyName, isRequired);
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
@@ -341,7 +341,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		CodeMemberField CreatePropertyOfType(string propertyName, Type type, bool isRequired)
 		{
 			string memberName = propertyName + (isRequired ? String.Empty : "?");
-			CodeMemberField result = new CodeMemberField() { Type = TranslateToClientTypeReference(type), Name = memberName };
+			CodeMemberField result = new() { Type = TranslateToClientTypeReference(type), Name = memberName };
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
 			return result;
 		}
@@ -417,7 +417,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeReference CreateArrayTypeReference(Type elementType, int arrayRank)
 		{
-			CodeTypeReference otherArrayType = new CodeTypeReference(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
+			CodeTypeReference otherArrayType = new(new CodeTypeReference(), arrayRank)//CodeDom does not care. The baseType is always overwritten by ArrayElementType.
 			{
 				ArrayElementType = TranslateToClientTypeReference(elementType),
 			};
@@ -427,7 +427,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		static CodeMemberField CreateProperty(string propertyName, string typeName, bool isRequired)
 		{
 			string memberName = propertyName + (isRequired ? String.Empty : "?");
-			CodeMemberField result = new CodeMemberField() { Type = ComponentsHelper.TranslateTypeNameToClientTypeReference(typeName), Name = memberName };
+			CodeMemberField result = new() { Type = ComponentsHelper.TranslateTypeNameToClientTypeReference(typeName), Name = memberName };
 			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
 			return result;
 		}
@@ -435,7 +435,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		static CodeMemberField CreateProperty(CodeTypeReference codeTypeReference, string propertyName, bool isRequired)
 		{
 			string memberName = propertyName + (isRequired ? String.Empty : "?");
-			CodeMemberField result = new CodeMemberField(codeTypeReference, memberName)
+			CodeMemberField result = new(codeTypeReference, memberName)
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
@@ -480,7 +480,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value);
 					bool hasFunkyMemberName = memberName != stringMember.Value;
 					int intValue = k;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = settings.EnumToString ? new CodePrimitiveExpression("'" + memberName + "'") : new CodePrimitiveExpression(intValue),
@@ -493,7 +493,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = "_" + intMember.Value.ToString();
 					int intValue = k;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),
@@ -506,7 +506,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = "_" + longMember.Value.ToString();
 					int intValue = k;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),
@@ -519,7 +519,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = NameFunc.RefineEnumMemberName(passwordMember.Value);
 					int intValue = k;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),
@@ -532,7 +532,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					string memberName = "_" + doubleMember.Value.ToString();
 					int intValue = k;
-					CodeMemberField clientField = new CodeMemberField()
+					CodeMemberField clientField = new()
 					{
 						Name = memberName,
 						InitExpression = new CodePrimitiveExpression(intValue),

@@ -23,7 +23,7 @@ namespace PetWebApi.Controllers
 		[HttpGet]
 		public IEnumerable<WeatherForecast> Get()
 		{
-			Random rng = new Random();
+			Random rng = new();
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
 			{
 				Date = DateTime.Now.AddDays(index),
