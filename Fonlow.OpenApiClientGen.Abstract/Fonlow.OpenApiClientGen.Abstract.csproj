@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Tavis.UriTemplates" Version="1.1.1" />
+    <PackageReference Include="Tavis.UriTemplates" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
