@@ -548,7 +548,7 @@ export namespace MyNS {
 		 * The client-assigned labels which were provided when the operation was
 		 * created. May also include additional labels.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The type of the operation. Can be used as a filter in
@@ -684,7 +684,7 @@ export namespace MyNS {
 		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
 
 		/** Client-assigned labels. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Required. Location for the export metadata and data files.
@@ -802,7 +802,7 @@ export namespace MyNS {
 		inputUrl?: string;
 
 		/** Client-assigned labels. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 
@@ -884,7 +884,7 @@ export namespace MyNS {
 		 * The client-assigned labels which were provided when the operation was
 		 * created. May also include additional labels.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The type of the operation. Can be used as a filter in

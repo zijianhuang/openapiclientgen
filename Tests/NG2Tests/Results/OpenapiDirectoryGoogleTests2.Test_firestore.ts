@@ -1237,7 +1237,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;
@@ -1263,7 +1263,7 @@ export namespace MyNS {
 		addTarget?: Target;
 
 		/** Labels associated with this target change. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The ID of a target to remove from this stream. */
 		removeTarget?: number;
@@ -1557,7 +1557,7 @@ export namespace MyNS {
 	export interface WriteRequest {
 
 		/** Labels associated with this write request. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The ID of the write stream to resume.

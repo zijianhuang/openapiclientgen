@@ -59,7 +59,7 @@ export namespace MyNS {
 		 * For creating Groups under a namespace, set label key to
 		 * 'labels/system/groups/external' and label value as empty.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the

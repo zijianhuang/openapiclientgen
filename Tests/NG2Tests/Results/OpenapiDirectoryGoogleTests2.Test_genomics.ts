@@ -59,7 +59,7 @@ export namespace MyNS {
 		 * set will contain any ports exposed using the `PUBLISH_EXPOSED_PORTS` flag
 		 * as well as any specified in the `Action` definition.
 		 */
-		portMappings?: {[id: string]: any };
+		portMappings?: {[id: string]: number };
 	}
 
 
@@ -271,7 +271,7 @@ export namespace MyNS {
 		 * Optionally provided by the caller when submitting the request that creates
 		 * the operation.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The Google Cloud Project in which the job is scoped. */
 		projectId?: string;

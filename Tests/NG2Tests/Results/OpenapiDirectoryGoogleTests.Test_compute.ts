@@ -611,7 +611,7 @@ export namespace MyNS {
 		diskType?: string;
 
 		/** Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Specifies which action to take on instance update with this disk. Default is to use the existing disk. */
 		onUpdateAction?: AttachedDiskInitializeParamsOnUpdateAction;
@@ -2096,7 +2096,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** Labels to apply to this disk. These can be later modified by the setLabels method. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** [Output Only] Last attach timestamp in RFC3339 text format. */
 		lastAttachTimestamp?: string;
@@ -2660,7 +2660,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** Labels to apply to this ExternalVpnGateway resource. These can be later modified by the setLabels method. Each label key/value must comply with RFC1035. Label values may be empty. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -3282,7 +3282,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** A list of labels to apply for this resource. Each label key & value must comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. For example, "webserver-frontend": "images". A label value can also be empty (e.g. "my-label": ""). */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 	export interface GlobalSetPolicyRequest {
@@ -4495,7 +4495,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** Labels to apply to this image. These can be later modified by the setLabels method. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Integer license codes indicating which licenses are attached to this image. */
 		licenseCodes?: Array<string>;
@@ -4692,7 +4692,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** Labels to apply to this instance. These can be later modified by the setLabels method. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
@@ -5948,7 +5948,7 @@ export namespace MyNS {
 		guestAccelerators?: Array<AcceleratorConfig>;
 
 		/** Labels to apply to instances that are created from this template. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The machine type to use for instances that are created from this template. */
 		machineType?: string;
@@ -6092,7 +6092,7 @@ export namespace MyNS {
 
 		/** Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels. */
 		labelFingerprint?: string;
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 	export interface InstancesSetMachineResourcesRequest {
@@ -7863,7 +7863,7 @@ export namespace MyNS {
 		name?: string;
 
 		/** Labels to use for node affinity, which will be used in instance scheduling. */
-		nodeAffinityLabels?: {[id: string]: any };
+		nodeAffinityLabels?: {[id: string]: string };
 
 		/** The node type to use for nodes group that are created from this template. */
 		nodeType?: string;
@@ -9338,7 +9338,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** The labels to set for this resource. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 	export interface RegionSetPolicyRequest {
@@ -9762,7 +9762,7 @@ export namespace MyNS {
 		guestFlush?: boolean;
 
 		/** Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional). */
 		storageLocations?: Array<string>;
@@ -10724,7 +10724,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** [Output Only] Integer license codes indicating which licenses are attached to this snapshot. */
 		licenseCodes?: Array<string>;
@@ -12832,7 +12832,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** Labels to apply to this VpnGateway resource. These can be later modified by the setLabels method. Each label key/value must comply with RFC1035. Label values may be empty. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -13402,7 +13402,7 @@ export namespace MyNS {
 		labelFingerprint?: string;
 
 		/** The labels to set for this resource. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 	export interface ZoneSetPolicyRequest {

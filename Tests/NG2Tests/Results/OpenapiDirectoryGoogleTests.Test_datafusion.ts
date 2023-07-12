@@ -295,7 +295,7 @@ export namespace MyNS {
 		 * resources such as Compute Engine VMs. The character '=' is not allowed to
 		 * be used within the labels.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. The name of this instance is in the form of
@@ -317,7 +317,7 @@ export namespace MyNS {
 		 * Map of additional options used to configure the behavior of
 		 * Data Fusion instance.
 		 */
-		options?: {[id: string]: any };
+		options?: {[id: string]: string };
 
 		/**
 		 * Specifies whether the Data Fusion instance should be private. If set to
@@ -438,7 +438,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;

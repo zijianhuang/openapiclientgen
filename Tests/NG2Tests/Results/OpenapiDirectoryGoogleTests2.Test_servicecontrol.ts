@@ -43,7 +43,7 @@ export namespace MyNS {
 		consumerId?: string;
 
 		/** Labels describing the operation. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Fully qualified name of the API method for which this quota operation is
@@ -138,7 +138,7 @@ export namespace MyNS {
 		 * the overriding relationship.
 		 * Note that this map must not contain monitored resource labels.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Represents an amount of money with its currency type. */
 		moneyValue?: Money;
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * The labels or tags on the resource, such as AWS resource tags and
 		 * Kubernetes resource labels.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The stable identifier (name) of a resource on the `service`. A resource
@@ -792,7 +792,7 @@ export namespace MyNS {
 		ip?: string;
 
 		/** The labels associated with the peer. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The network port of the peer. */
 		port?: string;
@@ -832,7 +832,7 @@ export namespace MyNS {
 		 * must be merged according to the HTTP spec. All header keys must be
 		 * lowercased, because HTTP header keys are case-insensitive.
 		 */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/** The HTTP request `Host` header value. */
 		host?: string;
@@ -1157,7 +1157,7 @@ export namespace MyNS {
 		 * where the API is served, such as App Engine, Compute Engine, or
 		 * Kubernetes Engine.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Represents information to be logged. */
 		logEntries?: Array<LogEntry>;
@@ -1214,7 +1214,7 @@ export namespace MyNS {
 		 * with. Only a combination of 1000 user labels per consumer project are
 		 * allowed.
 		 */
-		userLabels?: {[id: string]: any };
+		userLabels?: {[id: string]: string };
 	}
 
 	export enum OperationImportance { LOW = 0, HIGH = 1, DEBUG = 2 }
@@ -1240,7 +1240,7 @@ export namespace MyNS {
 		 * A set of user-defined (key, value) data that provides additional
 		 * information about the log entry.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Required. The log to which this log entry belongs. Examples: `"syslog"`,
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 		 * keep this field for Castor (that scales quota usage) and 'quota_metrics'
 		 * for SuperQuota (that doesn't scale quota usage).
 		 */
-		quotaConsumed?: {[id: string]: any };
+		quotaConsumed?: {[id: string]: number };
 
 		/**
 		 * Quota metrics to indicate the usage. Depending on the check request, one or

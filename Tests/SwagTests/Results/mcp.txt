@@ -20,6 +20,9 @@ namespace MyNS
 	public class BBSReportRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType PayeeProvider { get; set; }
 		
@@ -37,6 +40,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Max length: 8
 		/// Min length: 8
 		/// </summary>
@@ -58,6 +62,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ClaimSummaryType[] ClaimSummary { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -75,6 +82,9 @@ namespace MyNS
 	public class PaymentType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public BankAccountType AccountInfo { get; set; }
 		
@@ -134,10 +144,14 @@ namespace MyNS
 	public class ServiceMessagesType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ServiceMessagesTypeHighestSeverity HighestSeverity { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -160,12 +174,21 @@ namespace MyNS
 	public class ServiceMessageType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Code { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ServiceMessagesTypeHighestSeverity Severity { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Reason { get; set; }
 	}
@@ -175,6 +198,9 @@ namespace MyNS
 		
 		public ClaimAssessmentType ClaimAssessment { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -306,6 +332,9 @@ namespace MyNS
 	public class BulkBillStoreForwardRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public BulkBillClaimStoreForwardClaimType Claim { get; set; }
 	}
@@ -328,6 +357,7 @@ namespace MyNS
 		public string HospitalInd { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -336,10 +366,14 @@ namespace MyNS
 		
 		public ProviderType PayeeProvider { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType ServiceProvider { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -352,6 +386,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Max length: 2
 		/// Min length: 2
 		/// </summary>
@@ -359,12 +394,21 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string Id { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly AuthorisationDate { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateTimeOffset CreateDateTime { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly MedicalEventDate { get; set; }
 		
@@ -373,6 +417,9 @@ namespace MyNS
 		/// </summary>
 		public string MedicalEventTime { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public MedicarePatientType Patient { get; set; }
 		
@@ -386,6 +433,7 @@ namespace MyNS
 		public string ReferralOverrideCode { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -393,6 +441,7 @@ namespace MyNS
 		public ServiceType[] Service { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -404,9 +453,15 @@ namespace MyNS
 	public class MedicarePatientType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public IdentityType Identity { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public MembershipType Medicare { get; set; }
 	}
@@ -414,6 +469,9 @@ namespace MyNS
 	public class ReferralType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly IssueDate { get; set; }
 		
@@ -431,10 +489,14 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string PeriodCode { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType Provider { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -447,6 +509,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Max length: 4
 		/// Min length: 4
 		/// </summary>
@@ -562,9 +625,15 @@ namespace MyNS
 	public class BulkBillStoreForwardResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string ClaimId { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -572,6 +641,9 @@ namespace MyNS
 	public class AlliedHealthClaimRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public VAAClaimType Claim { get; set; }
 	}
@@ -587,6 +659,7 @@ namespace MyNS
 		public string HospitalInd { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -595,10 +668,14 @@ namespace MyNS
 		
 		public ProviderType PayeeProvider { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType ServiceProvider { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -611,6 +688,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Max length: 2
 		/// Min length: 2
 		/// </summary>
@@ -620,6 +698,9 @@ namespace MyNS
 		
 		public AcceptedDisabilityType AcceptedDisability { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly AuthorisationDate { get; set; }
 		
@@ -648,6 +729,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=1)]
 		public string NumberOfCNCVisits { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateTimeOffset CreateDateTime { get; set; }
 		
@@ -672,6 +756,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
 		public string FacilityId { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly MedicalEventDate { get; set; }
 		
@@ -694,6 +781,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength=1)]
 		public string NumberOfNSSVisits { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public VeteranPatientType Patient { get; set; }
 		
@@ -721,6 +811,7 @@ namespace MyNS
 		public string NumberOfRNVisits { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -728,6 +819,7 @@ namespace MyNS
 		public VAAServiceType[] Service { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -739,10 +831,14 @@ namespace MyNS
 	public class AcceptedDisabilityType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Code { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -755,6 +851,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Max length: 4
 		/// Min length: 4
 		/// </summary>
@@ -790,6 +887,7 @@ namespace MyNS
 		public string DuplicateServiceOverrideInd { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 5
 		/// Min length: 1
 		/// </summary>
@@ -880,6 +978,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Max length: 9
 		/// Min length: 3
 		/// </summary>
@@ -891,6 +990,9 @@ namespace MyNS
 	public class PatientType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public IdentityType Identity { get; set; }
 		
@@ -932,9 +1034,15 @@ namespace MyNS
 	public class AlliedHealthClaimResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string ClaimId { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -942,6 +1050,9 @@ namespace MyNS
 	public class DVAClaimRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public DVAClaimType Claim { get; set; }
 	}
@@ -957,6 +1068,7 @@ namespace MyNS
 		public string HospitalInd { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -965,12 +1077,16 @@ namespace MyNS
 		public string ServiceTypeCode { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public DVAMedicalEventType[] MedicalEvent { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType ServiceProvider { get; set; }
 		
@@ -981,6 +1097,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Max length: 2
 		/// Min length: 2
 		/// </summary>
@@ -988,9 +1105,15 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string Id { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly AuthorisationDate { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateTimeOffset CreateDateTime { get; set; }
 		
@@ -1001,6 +1124,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(8, MinimumLength=8)]
 		public string FacilityId { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly MedicalEventDate { get; set; }
 		
@@ -1017,6 +1143,7 @@ namespace MyNS
 		public string ReferralOverrideCode { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -1035,10 +1162,14 @@ namespace MyNS
 		
 		public ReferralType Referral { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public VeteranPatientType Patient { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1062,9 +1193,15 @@ namespace MyNS
 	public class DVAClaimResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string ClaimId { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -1072,6 +1209,9 @@ namespace MyNS
 	public class DVAReportRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType PayeeProvider { get; set; }
 		
@@ -1098,6 +1238,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public ClaimSummaryType[] ClaimSummary { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -1107,6 +1250,9 @@ namespace MyNS
 		
 		public DVAClaimAssessmentType ClaimAssessment { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -1199,6 +1345,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1209,6 +1356,9 @@ namespace MyNS
 	public class ReferenceConcessionVerificationRequestType : ConcessionVerificationRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Id { get; set; }
 	}
@@ -1216,6 +1366,9 @@ namespace MyNS
 	public class ConcessionVerificationRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public MedicarePatientType Patient { get; set; }
 		
@@ -1225,6 +1378,9 @@ namespace MyNS
 	public class EnterpriseConcessionVerificationResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 		
@@ -1238,6 +1394,9 @@ namespace MyNS
 	public class ReferenceConcessionVerificationResponseType : ConcessionVerificationResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Id { get; set; }
 	}
@@ -1245,9 +1404,15 @@ namespace MyNS
 	public class ConcessionVerificationResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public MembershipStatusType MedicareStatus { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ConcessionStatusType ConcessionStatus { get; set; }
 	}
@@ -1266,6 +1431,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1276,6 +1442,9 @@ namespace MyNS
 	public class ReferencePatientVerificationRequestType : PatientVerificationRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Id { get; set; }
 	}
@@ -1283,6 +1452,9 @@ namespace MyNS
 	public class PatientVerificationRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public FundPatientType Patient { get; set; }
 		
@@ -1291,6 +1463,7 @@ namespace MyNS
 		public System.Nullable<System.DateOnly> DateOfService { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 3
 		/// Min length: 3
 		/// </summary>
@@ -1337,6 +1510,9 @@ namespace MyNS
 	public class EnterprisePatientVerificationResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 		
@@ -1350,6 +1526,9 @@ namespace MyNS
 	public class ReferencePatientVerificationResponseType : PatientVerificationResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Id { get; set; }
 	}
@@ -1380,6 +1559,7 @@ namespace MyNS
 		public System.Nullable<System.Int32> Timeout { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1390,6 +1570,9 @@ namespace MyNS
 	public class ReferenceVeteranVerificationRequestType : VeteranVerificationRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Id { get; set; }
 	}
@@ -1397,6 +1580,9 @@ namespace MyNS
 	public class VeteranVerificationRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public VeteranPatientType Patient { get; set; }
 	}
@@ -1404,6 +1590,9 @@ namespace MyNS
 	public class EnterpriseVeteranVerificationResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 		
@@ -1429,6 +1618,9 @@ namespace MyNS
 	public class PatientClaimInteractiveRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public PatientClaimInteractiveType PatientClaimInteractive { get; set; }
 	}
@@ -1436,15 +1628,22 @@ namespace MyNS
 	public class PatientClaimInteractiveType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public MedicarePatientType Patient { get; set; }
 		
 		public ReferralType Referral { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ClaimantType Claimant { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1453,6 +1652,9 @@ namespace MyNS
 		
 		public ProviderType PayeeProvider { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public ProviderType ServiceProvider { get; set; }
 		
@@ -1464,6 +1666,7 @@ namespace MyNS
 		public string ReferralOverrideCode { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -1474,6 +1677,7 @@ namespace MyNS
 		public string AccountReferenceId { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 1
 		/// Min length: 1
 		/// </summary>
@@ -1481,6 +1685,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(1, MinimumLength=1)]
 		public string SubmissionAuthorityInd { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly AuthorisationDate { get; set; }
 	}
@@ -1489,6 +1696,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1496,6 +1704,7 @@ namespace MyNS
 		public PCIServiceType[] Service { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 2
 		/// Min length: 2
 		/// </summary>
@@ -1503,6 +1712,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength=2)]
 		public string Id { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly MedicalEventDate { get; set; }
 		
@@ -1570,9 +1782,15 @@ namespace MyNS
 	public class PatientClaimInteractiveResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public PCIAssessmentType ClaimAssessment { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -1592,6 +1810,9 @@ namespace MyNS
 		
 		public StatusType Error { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string ClaimId { get; set; }
 	}
@@ -1599,6 +1820,9 @@ namespace MyNS
 	public class CurrentMembershipType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public MembershipType CurrentMembership { get; set; }
 	}
@@ -1621,6 +1845,7 @@ namespace MyNS
 	{
 		
 		/// <summary>
+		/// Required
 		/// Minimum items: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1667,6 +1892,9 @@ namespace MyNS
 	public class SameDayDeleteRequestType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public SameDayDeleteType SameDayDelete { get; set; }
 	}
@@ -1674,10 +1902,14 @@ namespace MyNS
 	public class SameDayDeleteType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public MedicarePatientType Patient { get; set; }
 		
 		/// <summary>
+		/// Required
 		/// Max length: 3
 		/// Min length: 3
 		/// </summary>
@@ -1689,6 +1921,9 @@ namespace MyNS
 	public class SameDayDeleteResponseType
 	{
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -1724,6 +1959,9 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public TransactionStatusType[] TransactionStatus { get; set; }
 		
+		/// <summary>
+		/// Required
+		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Status { get; set; }
 	}
@@ -1793,7 +2031,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BBSPaymentReportResponseType>(jsonReader);
 				}
 			}
@@ -1833,7 +2071,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BBSProcessingReportResponseType>(jsonReader);
 				}
 			}
@@ -1873,7 +2111,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BulkBillStoreForwardResponseType>(jsonReader);
 				}
 			}
@@ -1913,7 +2151,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BulkBillStoreForwardResponseType>(jsonReader);
 				}
 			}
@@ -1953,7 +2191,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BulkBillStoreForwardResponseType>(jsonReader);
 				}
 			}
@@ -1993,7 +2231,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AlliedHealthClaimResponseType>(jsonReader);
 				}
 			}
@@ -2033,7 +2271,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AlliedHealthClaimResponseType>(jsonReader);
 				}
 			}
@@ -2073,7 +2311,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AlliedHealthClaimResponseType>(jsonReader);
 				}
 			}
@@ -2113,7 +2351,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AlliedHealthClaimResponseType>(jsonReader);
 				}
 			}
@@ -2153,7 +2391,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AlliedHealthClaimResponseType>(jsonReader);
 				}
 			}
@@ -2193,7 +2431,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AlliedHealthClaimResponseType>(jsonReader);
 				}
 			}
@@ -2233,7 +2471,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DVAClaimResponseType>(jsonReader);
 				}
 			}
@@ -2273,7 +2511,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DVAClaimResponseType>(jsonReader);
 				}
 			}
@@ -2313,7 +2551,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DVAClaimResponseType>(jsonReader);
 				}
 			}
@@ -2353,7 +2591,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DVAPaymentReportResponseType>(jsonReader);
 				}
 			}
@@ -2393,7 +2631,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DVAProcessingReportResponseType>(jsonReader);
 				}
 			}
@@ -2433,7 +2671,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EnterpriseConcessionVerificationResponseType>(jsonReader);
 				}
 			}
@@ -2473,7 +2711,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EnterprisePatientVerificationResponseType>(jsonReader);
 				}
 			}
@@ -2513,7 +2751,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EnterpriseVeteranVerificationResponseType>(jsonReader);
 				}
 			}
@@ -2553,7 +2791,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PatientClaimInteractiveResponseType>(jsonReader);
 				}
 			}
@@ -2593,7 +2831,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PatientClaimInteractiveResponseType>(jsonReader);
 				}
 			}
@@ -2633,7 +2871,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PatientClaimInteractiveResponseType>(jsonReader);
 				}
 			}
@@ -2673,7 +2911,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PatientVerificationResponseType>(jsonReader);
 				}
 			}
@@ -2713,7 +2951,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PatientVerificationResponseType>(jsonReader);
 				}
 			}
@@ -2753,7 +2991,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PatientVerificationResponseType>(jsonReader);
 				}
 			}
@@ -2793,7 +3031,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RetrieveReportResponseType>(jsonReader);
 				}
 			}
@@ -2833,7 +3071,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RetrieveReportResponseType>(jsonReader);
 				}
 			}
@@ -2873,7 +3111,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<RetrieveReportResponseType>(jsonReader);
 				}
 			}
@@ -2913,7 +3151,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SameDayDeleteResponseType>(jsonReader);
 				}
 			}
@@ -2953,7 +3191,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<StatusReportResponseType>(jsonReader);
 				}
 			}
@@ -2993,7 +3231,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<VeteranVerificationResponseType>(jsonReader);
 				}
 			}

@@ -175,7 +175,7 @@ export namespace MyNS {
 	export interface ManagedConfigurationTemplate {
 
 		/** Optional, a map containing <key, value> configuration variables defined for the configuration. */
-		configurationVariables?: {[id: string]: any };
+		configurationVariables?: {[id: string]: string };
 
 		/** The ID of the managed configurations template. */
 		templateId?: string;
@@ -464,7 +464,7 @@ export namespace MyNS {
 		state?: DeviceAppliedState;
 
 		/** Map of selected system properties name and value related to the device. This information is only available if systemPropertiesEnabled is true in the device's policy. */
-		systemProperties?: {[id: string]: any };
+		systemProperties?: {[id: string]: string };
 
 		/** A user belonging to an enterprise. */
 		user?: User;
@@ -511,7 +511,7 @@ export namespace MyNS {
 		defaultMessage?: string;
 
 		/** A map containing <locale, message> pairs, where locale is a well-formed BCP 47 language (https://www.w3.org/International/articles/language-tags/) code, such as en-US, es-ES, or fr. */
-		localizedMessages?: {[id: string]: any };
+		localizedMessages?: {[id: string]: string };
 	}
 
 

@@ -1549,7 +1549,7 @@ export namespace MyNS {
 		 * Label values are optional.
 		 * There can not be more than 64 labels per resource.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Required. Machine type of the worker, such as `n1-standard-2`.

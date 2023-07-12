@@ -119,7 +119,7 @@ export namespace MyNS {
 		 * the size, there is a limit on the maximum size of the Task. For more
 		 * information, see the CreateTask documentation.
 		 */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/**
 		 * The HTTP method to use for the request. The default is POST.
@@ -671,7 +671,7 @@ export namespace MyNS {
 		 * specified using comma-separated values.
 		 * The size of the headers must be less than 80KB.
 		 */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/** The HTTP method to use for the request. The default is POST. */
 		httpMethod?: AppEngineHttpRequestHttpMethod;
@@ -820,7 +820,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;

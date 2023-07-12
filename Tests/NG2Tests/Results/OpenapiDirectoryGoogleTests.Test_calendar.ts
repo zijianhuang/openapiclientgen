@@ -238,7 +238,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** Additional parameters controlling delivery channel behavior. Optional. */
-		params?: {[id: string]: any };
+		params?: {[id: string]: string };
 
 		/** A Boolean value to indicate whether payload is wanted. Optional. */
 		payload?: boolean;
@@ -444,7 +444,7 @@ export namespace MyNS {
 	}
 
 	export interface ConferenceParametersAddOnParameters {
-		parameters?: {[id: string]: any };
+		parameters?: {[id: string]: string };
 	}
 
 	export interface Error {
@@ -703,10 +703,10 @@ export namespace MyNS {
 	export interface EventExtendedProperties {
 
 		/** Properties that are private to the copy of the event that appears on this calendar. */
-		private?: {[id: string]: any };
+		private?: {[id: string]: string };
 
 		/** Properties that are shared between copies of the event on other attendees' calendars. */
-		shared?: {[id: string]: any };
+		shared?: {[id: string]: string };
 	}
 
 	export interface EventGadget {
@@ -728,7 +728,7 @@ export namespace MyNS {
 		link?: string;
 
 		/** Preferences. */
-		preferences?: {[id: string]: any };
+		preferences?: {[id: string]: string };
 
 		/** The gadget's title. */
 		title?: string;

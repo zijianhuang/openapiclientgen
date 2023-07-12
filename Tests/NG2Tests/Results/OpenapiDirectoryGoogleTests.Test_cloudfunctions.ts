@@ -280,7 +280,7 @@ export namespace MyNS {
 		entryPoint?: string;
 
 		/** Environment variables that shall be available during function execution. */
-		environmentVariables?: {[id: string]: any };
+		environmentVariables?: {[id: string]: string };
 
 		/**
 		 * Describes EventTrigger, used to request events be sent from another
@@ -298,7 +298,7 @@ export namespace MyNS {
 		ingressSettings?: CloudFunctionIngressSettings;
 
 		/** Labels associated with this Cloud Function. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The limit on the maximum number of function instances that may coexist at a
@@ -614,7 +614,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;

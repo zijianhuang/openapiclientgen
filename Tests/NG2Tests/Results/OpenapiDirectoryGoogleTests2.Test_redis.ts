@@ -178,7 +178,7 @@ export namespace MyNS {
 		host?: string;
 
 		/** Resource labels to represent user provided metadata */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Optional. The zone where the instance will be provisioned. If not provided,
@@ -232,7 +232,7 @@ export namespace MyNS {
 		 * *   stream-node-max-bytes
 		 * *   stream-node-max-entries
 		 */
-		redisConfigs?: {[id: string]: any };
+		redisConfigs?: {[id: string]: string };
 
 		/**
 		 * Optional. The version of Redis software.
@@ -323,7 +323,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Resource ID for the region. For example: "us-east1". */
 		locationId?: string;

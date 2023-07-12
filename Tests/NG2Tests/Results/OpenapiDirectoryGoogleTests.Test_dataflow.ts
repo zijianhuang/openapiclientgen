@@ -914,7 +914,7 @@ export namespace MyNS {
 		location?: string;
 
 		/** The runtime parameters to pass to the job. */
-		parameters?: {[id: string]: any };
+		parameters?: {[id: string]: string };
 	}
 
 
@@ -930,7 +930,7 @@ export namespace MyNS {
 		 * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
 		 * page.
 		 */
-		additionalUserLabels?: {[id: string]: any };
+		additionalUserLabels?: {[id: string]: string };
 
 		/**
 		 * Whether to bypass the safety checks for the job's temporary directory.
@@ -1409,7 +1409,7 @@ export namespace MyNS {
 		machineType?: string;
 
 		/** Metadata to set on the Google Compute Engine VMs. */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 
 		/**
 		 * Network to which VMs will be assigned.  If empty or unspecified,
@@ -2016,7 +2016,7 @@ export namespace MyNS {
 		 * * Both keys and values are additionally constrained to be <= 128 bytes in
 		 * size.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The [regional endpoint]
@@ -2113,7 +2113,7 @@ export namespace MyNS {
 		 * The map of transform name prefixes of the job to be replaced to the
 		 * corresponding name prefixes of the new job.
 		 */
-		transformNameMapping?: {[id: string]: any };
+		transformNameMapping?: {[id: string]: string };
 
 		/** The type of Cloud Dataflow job. */
 		type?: JobType;
@@ -2429,7 +2429,7 @@ export namespace MyNS {
 		 * context['step'] = <step-name>. Counters associated with PCollections
 		 * in the SDK will have context['pcollection'] = <pcollection-name>.
 		 */
-		context?: {[id: string]: any };
+		context?: {[id: string]: string };
 
 		/** Worker-defined metric name. */
 		name?: string;
@@ -2482,7 +2482,7 @@ export namespace MyNS {
 		 * The parameters for FlexTemplate.
 		 * Ex. {"num_workers":"5"}
 		 */
-		parameters?: {[id: string]: any };
+		parameters?: {[id: string]: string };
 	}
 
 
@@ -2518,13 +2518,13 @@ export namespace MyNS {
 		jobName?: string;
 
 		/** The runtime parameters to pass to the job. */
-		parameters?: {[id: string]: any };
+		parameters?: {[id: string]: string };
 
 		/**
 		 * Only applicable when updating a pipeline. Map of transform name prefixes of
 		 * the job to be replaced to the corresponding name prefixes of the new job.
 		 */
-		transformNameMapping?: {[id: string]: any };
+		transformNameMapping?: {[id: string]: string };
 
 		/**
 		 * If set, replace the existing pipeline with the name specified by jobName
@@ -3086,7 +3086,7 @@ export namespace MyNS {
 		streamingComputationConfigs?: Array<StreamingComputationConfig>;
 
 		/** Map from user step names to state families. */
-		userStepToStateFamilyNameMap?: {[id: string]: any };
+		userStepToStateFamilyNameMap?: {[id: string]: string };
 
 		/**
 		 * If present, the worker must use this endpoint to communicate with Windmill
@@ -3123,7 +3123,7 @@ export namespace MyNS {
 		 * Map from user name of stateful transforms in this stage to their state
 		 * family.
 		 */
-		transformUserNameToStateFamily?: {[id: string]: any };
+		transformUserNameToStateFamily?: {[id: string]: string };
 	}
 
 
@@ -3186,7 +3186,7 @@ export namespace MyNS {
 		persistentStateVersion?: number;
 
 		/** Maps user stage names to stable computation names. */
-		userStageToComputationNameMap?: {[id: string]: any };
+		userStageToComputationNameMap?: {[id: string]: string };
 	}
 
 
@@ -3676,7 +3676,7 @@ export namespace MyNS {
 		 * of development other strings can be used as tags. LABEL_UNSPECIFIED should
 		 * not be used here.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The timestamp of the worker_message. */
 		time?: string;
@@ -3789,7 +3789,7 @@ export namespace MyNS {
 		 * Other stats that can accompany an event. E.g.
 		 * { "downloaded_bytes" : "123456" }
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 	}
 
 	export enum WorkerLifecycleEventEvent { UNKNOWN_EVENT = 0, OS_START = 1, CONTAINER_START = 2, NETWORK_UP = 3, STAGING_FILES_DOWNLOAD_START = 4, STAGING_FILES_DOWNLOAD_FINISH = 5, SDK_INSTALL_START = 6, SDK_INSTALL_FINISH = 7 }

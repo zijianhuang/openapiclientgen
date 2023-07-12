@@ -1031,7 +1031,7 @@ export namespace MyNS {
 		 * be assigned. If the map is empty or unset, all duplicate objects will
 		 * receive a new random ID.
 		 */
-		objectIds?: {[id: string]: any };
+		objectIds?: {[id: string]: string };
 	}
 
 

@@ -290,7 +290,7 @@ export namespace MyNS {
 		 * Labels with user-defined metadata. For more information, see
 		 * [Labeling Keys](/kms/docs/labeling-keys).
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. The resource name for this CryptoKey in the format
@@ -834,7 +834,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;

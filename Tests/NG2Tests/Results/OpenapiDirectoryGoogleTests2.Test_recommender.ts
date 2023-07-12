@@ -123,7 +123,7 @@ export namespace MyNS {
 		state?: GoogleCloudRecommenderV1beta1InsightStateInfoState;
 
 		/** A map of metadata for the state, provided by user or automations systems. */
-		stateMetadata?: {[id: string]: any };
+		stateMetadata?: {[id: string]: string };
 	}
 
 	export enum GoogleCloudRecommenderV1beta1InsightStateInfoState { STATE_UNSPECIFIED = 0, ACTIVE = 1, ACCEPTED = 2, DISMISSED = 3 }
@@ -367,7 +367,7 @@ export namespace MyNS {
 		state?: GoogleCloudRecommenderV1beta1RecommendationStateInfoState;
 
 		/** A map of metadata for the state, provided by user or automations systems. */
-		stateMetadata?: {[id: string]: any };
+		stateMetadata?: {[id: string]: string };
 	}
 
 	export enum GoogleCloudRecommenderV1beta1RecommendationStateInfoState { STATE_UNSPECIFIED = 0, ACTIVE = 1, CLAIMED = 2, SUCCEEDED = 3, FAILED = 4, DISMISSED = 5 }
@@ -383,7 +383,7 @@ export namespace MyNS {
 		 * Optional. State properties user wish to include with this state.  Full replace of the
 		 * current state_metadata.
 		 */
-		stateMetadata?: {[id: string]: any };
+		stateMetadata?: {[id: string]: string };
 	}
 
 
@@ -399,7 +399,7 @@ export namespace MyNS {
 		 * Keys must match the regex /^a-z0-9{0,62}$/.
 		 * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
 		 */
-		stateMetadata?: {[id: string]: any };
+		stateMetadata?: {[id: string]: string };
 	}
 
 
@@ -415,7 +415,7 @@ export namespace MyNS {
 		 * Keys must match the regex /^a-z0-9{0,62}$/.
 		 * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
 		 */
-		stateMetadata?: {[id: string]: any };
+		stateMetadata?: {[id: string]: string };
 	}
 
 
@@ -431,7 +431,7 @@ export namespace MyNS {
 		 * Keys must match the regex /^a-z0-9{0,62}$/.
 		 * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
 		 */
-		stateMetadata?: {[id: string]: any };
+		stateMetadata?: {[id: string]: string };
 	}
 
 	@Injectable()

@@ -196,7 +196,7 @@ export namespace MyNS {
 		config?: ClusterConfig;
 
 		/** Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Contains cluster daemon metrics, such as HDFS and YARN stats.Beta Feature: This report is available for testing purposes only. It may be changed before final release. */
 		metrics?: ClusterMetrics;
@@ -274,7 +274,7 @@ export namespace MyNS {
 		internalIpOnly?: boolean;
 
 		/** The Compute Engine metadata entries to add to all instances (see Project and instance metadata (https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)). */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 
 		/**
 		 * Optional. The Compute Engine network to be used for machine communications. Cannot be specified with subnetwork_uri. If neither network_uri nor subnetwork_uri is specified, the "default" network of the project is used, if it exists. Cannot be a "Custom Subnet Network" (see Using Subnetworks (https://cloud.google.com/compute/docs/subnetworks) for more information).A full URL, partial URI, or short name are valid. Examples:
@@ -520,7 +520,7 @@ export namespace MyNS {
 		 * spark: spark-defaults.conf
 		 * yarn: yarn-site.xmlFor more information, see Cluster properties (https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
 		 */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 	}
 
 
@@ -528,10 +528,10 @@ export namespace MyNS {
 	export interface ClusterMetrics {
 
 		/** The HDFS metrics. */
-		hdfsMetrics?: {[id: string]: any };
+		hdfsMetrics?: {[id: string]: string };
 
 		/** The YARN metrics. */
-		yarnMetrics?: {[id: string]: any };
+		yarnMetrics?: {[id: string]: string };
 	}
 
 
@@ -583,7 +583,7 @@ export namespace MyNS {
 		description?: string;
 
 		/** Output only. Labels associated with the operation */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Output only. The operation type. */
 		operationType?: string;
@@ -622,7 +622,7 @@ export namespace MyNS {
 	export interface ClusterSelector {
 
 		/** Required. The cluster labels. Cluster must have all labels to match. */
-		clusterLabels?: {[id: string]: any };
+		clusterLabels?: {[id: string]: string };
 
 		/** Optional. The zone where workflow process executes. This parameter does not affect the selection of the cluster.If unspecified, the zone of the first cluster matching the selector is used. */
 		zone?: string;
@@ -694,7 +694,7 @@ export namespace MyNS {
 		mainJarFileUri?: string;
 
 		/** Optional. A mapping of property names to values, used to configure Hadoop. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site and classes in user code. */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 	}
 
 
@@ -702,8 +702,10 @@ export namespace MyNS {
 	export interface LoggingConfig {
 
 		/** The per-package log levels for the driver. This may include "root" package name to configure rootLogger. Examples:  'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG' */
-		driverLogLevels?: {[id: string]: any };
+		driverLogLevels?: {[id: string]: LoggingConfigDriverLogLevels };
 	}
+
+	export enum LoggingConfigDriverLogLevels { LEVEL_UNSPECIFIED = 0, ALL = 1, TRACE = 2, DEBUG = 3, INFO = 4, WARN = 5, ERROR = 6, FATAL = 7, OFF = 8 }
 
 
 	/** A Dataproc job for running Apache Hive (https://hive.apache.org/) queries on YARN. */
@@ -716,7 +718,7 @@ export namespace MyNS {
 		jarFileUris?: Array<string>;
 
 		/** Optional. A mapping of property names and values, used to configure Hive. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/hive/conf/hive-site.xml, and classes in user code. */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 
 		/** The HCFS URI of the script that contains Hive queries. */
 		queryFileUri?: string;
@@ -725,7 +727,7 @@ export namespace MyNS {
 		queryList?: QueryList;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Hive command: SET name="value";). */
-		scriptVariables?: {[id: string]: any };
+		scriptVariables?: {[id: string]: string };
 	}
 
 
@@ -752,7 +754,7 @@ export namespace MyNS {
 	export interface InstantiateWorkflowTemplateRequest {
 
 		/** Optional. Map from parameter names to values that should be used for those parameters. Values may not exceed 100 characters. */
-		parameters?: {[id: string]: any };
+		parameters?: {[id: string]: string };
 
 		/** Optional. A tag that prevents multiple concurrent workflow instances with the same tag from running. This mitigates risk of concurrent instances started due to retries.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The tag must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters. */
 		requestId?: string;
@@ -784,7 +786,7 @@ export namespace MyNS {
 		jobUuid?: string;
 
 		/** Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** A Dataproc job for running Apache Pig (https://pig.apache.org/) queries on YARN. */
 		pigJob?: PigJob;
@@ -837,7 +839,7 @@ export namespace MyNS {
 		loggingConfig?: LoggingConfig;
 
 		/** Optional. A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/pig/conf/pig.properties, and classes in user code. */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 
 		/** The HCFS URI of the script that contains the Pig queries. */
 		queryFileUri?: string;
@@ -846,7 +848,7 @@ export namespace MyNS {
 		queryList?: QueryList;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Pig command: name=[value]). */
-		scriptVariables?: {[id: string]: any };
+		scriptVariables?: {[id: string]: string };
 	}
 
 
@@ -877,7 +879,7 @@ export namespace MyNS {
 		outputFormat?: string;
 
 		/** Optional. A mapping of property names to values. Used to set Presto session properties (https://prestodb.io/docs/current/sql/set-session.html) Equivalent to using the --session flag in the Presto CLI */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 
 		/** The HCFS URI of the script that contains SQL queries. */
 		queryFileUri?: string;
@@ -909,7 +911,7 @@ export namespace MyNS {
 		mainPythonFileUri?: string;
 
 		/** Optional. A mapping of property names to values, used to configure PySpark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 
 		/** Optional. HCFS file URIs of Python files to pass to the PySpark framework. Supported file types: .py, .egg, and .zip. */
 		pythonFileUris?: Array<string>;
@@ -960,7 +962,7 @@ export namespace MyNS {
 		mainJarFileUri?: string;
 
 		/** Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 	}
 
 
@@ -983,7 +985,7 @@ export namespace MyNS {
 		mainRFileUri?: string;
 
 		/** Optional. A mapping of property names to values, used to configure SparkR. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 	}
 
 
@@ -997,7 +999,7 @@ export namespace MyNS {
 		loggingConfig?: LoggingConfig;
 
 		/** Optional. A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Dataproc API may be overwritten. */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 
 		/** The HCFS URI of the script that contains SQL queries. */
 		queryFileUri?: string;
@@ -1006,7 +1008,7 @@ export namespace MyNS {
 		queryList?: QueryList;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Spark SQL command: SET name="value";). */
-		scriptVariables?: {[id: string]: any };
+		scriptVariables?: {[id: string]: string };
 	}
 
 
@@ -1167,7 +1169,7 @@ export namespace MyNS {
 		jobs?: Array<OrderedJob>;
 
 		/** Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names.
@@ -1200,7 +1202,7 @@ export namespace MyNS {
 		hiveJob?: HiveJob;
 
 		/** Optional. The labels to associate with this job.Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following regular expression: \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a given job. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** A Dataproc job for running Apache Pig (https://pig.apache.org/) queries on YARN. */
 		pigJob?: PigJob;
@@ -1322,7 +1324,7 @@ export namespace MyNS {
 		config?: ClusterConfig;
 
 		/** Optional. The labels to associate with this cluster.Label keys must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a given cluster. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 
@@ -1521,7 +1523,7 @@ export namespace MyNS {
 		graph?: WorkflowGraph;
 
 		/** Map from parameter names to values that were used for those parameters. */
-		parameters?: {[id: string]: any };
+		parameters?: {[id: string]: string };
 
 		/** Output only. Workflow start time. */
 		startTime?: string;

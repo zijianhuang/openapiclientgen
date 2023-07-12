@@ -70,7 +70,7 @@ export namespace MyNS {
 	export interface DeviceMetadata {
 
 		/** Metadata entries recorded as key-value pairs. */
-		entries?: {[id: string]: any };
+		entries?: {[id: string]: string };
 	}
 
 	export enum ClaimDeviceRequestSectionType { SECTION_TYPE_UNSPECIFIED = 0, SECTION_TYPE_SIM_LOCK = 1, SECTION_TYPE_ZERO_TOUCH = 2 }

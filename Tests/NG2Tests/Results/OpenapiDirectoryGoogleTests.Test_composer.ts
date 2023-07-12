@@ -34,7 +34,7 @@ export namespace MyNS {
 		 * * Both keys and values are additionally constrained to be <= 128 bytes in
 		 * size.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The resource name of the environment, in the form:
@@ -351,7 +351,7 @@ export namespace MyNS {
 		 * [blacklisted](/composer/docs/how-to/managing/setting-airflow-configurations#airflow_configuration_blacklists),
 		 * and cannot be overridden.
 		 */
-		airflowConfigOverrides?: {[id: string]: any };
+		airflowConfigOverrides?: {[id: string]: string };
 
 		/**
 		 * Optional. Additional environment variables to provide to the Apache Airflow
@@ -375,7 +375,7 @@ export namespace MyNS {
 		 * * `SQL_REGION`
 		 * * `SQL_USER`
 		 */
-		envVariables?: {[id: string]: any };
+		envVariables?: {[id: string]: string };
 
 		/**
 		 * The version of the software running in the environment.
@@ -407,7 +407,7 @@ export namespace MyNS {
 		 * package without pinning it to a version specifier, use the empty string as
 		 * the value.
 		 */
-		pypiPackages?: {[id: string]: any };
+		pypiPackages?: {[id: string]: string };
 
 		/**
 		 * Optional. The major version of Python used to run the Apache Airflow

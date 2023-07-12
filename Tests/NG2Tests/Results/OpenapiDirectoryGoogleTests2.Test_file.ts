@@ -53,7 +53,7 @@ export namespace MyNS {
 		 * is a key-value pair, where both the key and the value are arbitrary strings
 		 * provided by the user.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The MaintenancePolicies that have been attached to the instance.
@@ -62,7 +62,7 @@ export namespace MyNS {
 		 * type. For complete details of MaintenancePolicy, please refer to
 		 * go/cloud-saas-mw-ug.
 		 */
-		maintenancePolicyNames?: {[id: string]: any };
+		maintenancePolicyNames?: {[id: string]: string };
 
 		/**
 		 * The MaintenanceSchedule contains the scheduling information of published
@@ -81,7 +81,7 @@ export namespace MyNS {
 		 * producer-specific information in monitoring dashboards.
 		 * See go/get-instance-metadata.
 		 */
-		producerMetadata?: {[id: string]: any };
+		producerMetadata?: {[id: string]: string };
 
 		/**
 		 * Output only. The list of data plane resources provisioned for this
@@ -107,7 +107,7 @@ export namespace MyNS {
 		 * Software versions that are used to deploy this instance. This can be
 		 * mutated by rollout services.
 		 */
-		softwareVersions?: {[id: string]: any };
+		softwareVersions?: {[id: string]: string };
 
 		/**
 		 * Output only. Current lifecycle state of the resource (e.g. if it's being
@@ -326,7 +326,7 @@ export namespace MyNS {
 		fileShares?: Array<FileShareConfig>;
 
 		/** Resource labels to represent user provided metadata. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. The resource name of the instance, in the format
@@ -439,7 +439,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;

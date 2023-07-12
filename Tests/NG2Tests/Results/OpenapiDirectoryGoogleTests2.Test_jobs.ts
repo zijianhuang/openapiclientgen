@@ -107,7 +107,7 @@ export namespace MyNS {
 		 * At most 20 keys are supported. The maximum total size of all keys and
 		 * values is 2 KB.
 		 */
-		extraInfo?: {[id: string]: any };
+		extraInfo?: {[id: string]: string };
 
 		/**
 		 * An event issued when a job seeker interacts with the application that
@@ -1266,7 +1266,7 @@ export namespace MyNS {
 		 * Stores a map from the values of string custom field associated
 		 * with `key` to the number of jobs with that value in this histogram result.
 		 */
-		stringValueHistogramResult?: {[id: string]: any };
+		stringValueHistogramResult?: {[id: string]: number };
 	}
 
 
@@ -1348,7 +1348,7 @@ export namespace MyNS {
 		 * Key: search type (filter names, such as the companyName).
 		 * Values: the count of jobs that match the filter for this search.
 		 */
-		values?: {[id: string]: any };
+		values?: {[id: string]: number };
 	}
 
 	export enum HistogramResultSearchType { SEARCH_TYPE_UNSPECIFIED = 0, COMPANY_ID = 1, EMPLOYMENT_TYPE = 2, COMPANY_SIZE = 3, DATE_PUBLISHED = 4, EDUCATION_LEVEL = 5, EXPERIENCE_LEVEL = 6, ADMIN_1 = 7, COUNTRY = 8, CITY = 9, LOCALE = 10, LANGUAGE = 11, CATEGORY = 12, CITY_COORDINATE = 13, ADMIN_1_COUNTRY = 14, COMPANY_DISPLAY_NAME = 15, BASE_COMPENSATION_UNIT = 16 }
@@ -1800,13 +1800,13 @@ export namespace MyNS {
 		 * Flags to force in a particular experiment state.
 		 * Map from flag name to flag value.
 		 */
-		forcedFlags?: {[id: string]: any };
+		forcedFlags?: {[id: string]: string };
 
 		/**
 		 * Rollouts to force in a particular experiment state.
 		 * Map from rollout name to rollout value.
 		 */
-		forcedRollouts?: {[id: string]: any };
+		forcedRollouts?: {[id: string]: boolean };
 	}
 
 

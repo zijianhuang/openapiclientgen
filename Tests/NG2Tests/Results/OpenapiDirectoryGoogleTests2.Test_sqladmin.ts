@@ -800,7 +800,7 @@ export namespace MyNS {
 		 * User-provided labels, represented as a dictionary where each label is a
 		 * single key value pair.
 		 */
-		userLabels?: {[id: string]: any };
+		userLabels?: {[id: string]: string };
 	}
 
 	export enum SettingsActivationPolicy { SQL_ACTIVATION_POLICY_UNSPECIFIED = 0, ALWAYS = 1, NEVER = 2, ON_DEMAND = 3 }

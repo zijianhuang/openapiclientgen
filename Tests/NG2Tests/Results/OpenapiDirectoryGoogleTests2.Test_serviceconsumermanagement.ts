@@ -43,7 +43,7 @@ export namespace MyNS {
 		folder?: string;
 
 		/** Labels that are applied to this project. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Describes the service account configuration for the tenant project. */
 		serviceAccountConfig?: ServiceAccountConfig;
@@ -2060,7 +2060,7 @@ export namespace MyNS {
 		 * increased for the metric against which the quota limits are defined.
 		 * The value must not be negative.
 		 */
-		metricCosts?: {[id: string]: any };
+		metricCosts?: {[id: string]: string };
 
 		/**
 		 * Selects the methods to which this rule applies.
@@ -2354,7 +2354,7 @@ export namespace MyNS {
 		 * integer value that is the maximum number of requests allowed for the
 		 * specified unit. Currently only STANDARD is supported.
 		 */
-		values?: {[id: string]: any };
+		values?: {[id: string]: string };
 	}
 
 
@@ -3067,7 +3067,7 @@ export namespace MyNS {
 		 * all valid keys other than "region" or "zone" must also appear in the
 		 * map.
 		 */
-		dimensions?: {[id: string]: any };
+		dimensions?: {[id: string]: string };
 
 		/**
 		 * The name of the metric to which this override applies.

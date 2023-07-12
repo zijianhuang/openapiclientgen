@@ -565,7 +565,7 @@ export namespace MyNS {
 		 * * No more than 64 labels can be associated with a given resource.
 		 * * Keys and values must both be under 128 bytes.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Required. (`OutputOnly`)
@@ -838,7 +838,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;

@@ -254,7 +254,7 @@ export namespace MyNS {
 		 * The total size of all keys and values must be less than 256 KB, and the
 		 * maximum number of key-value pairs is 500.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 
 		/**
 		 * The resource path name. For example,

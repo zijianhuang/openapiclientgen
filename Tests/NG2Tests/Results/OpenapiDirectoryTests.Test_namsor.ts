@@ -21,7 +21,7 @@ export namespace MyNS {
 		createdDateTime?: number;
 		lastFlushedDateTime?: number;
 		lastUsedDateTime?: number;
-		serviceFeaturesUsage?: {[id: string]: any };
+		serviceFeaturesUsage?: {[id: string]: number };
 		totalUsage?: number;
 	}
 

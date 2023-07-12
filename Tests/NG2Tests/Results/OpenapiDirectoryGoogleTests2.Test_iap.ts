@@ -167,7 +167,7 @@ export namespace MyNS {
 		 * data availability and management requirements.
 		 * * Talk to iam-conditions-eng@ about your use case.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Name of the resource on which conditions will be evaluated.

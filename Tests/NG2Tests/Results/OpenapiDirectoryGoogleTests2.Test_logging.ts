@@ -282,7 +282,7 @@ export namespace MyNS {
 		jsonPayload?: {[id: string]: any };
 
 		/** Optional. A set of user-defined (key, value) data that provides additional information about the log entry. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Required. The resource name of the log to which this log entry belongs:
@@ -349,7 +349,7 @@ export namespace MyNS {
 		systemLabels?: {[id: string]: any };
 
 		/** Output only. A map of user-defined metadata labels. */
-		userLabels?: {[id: string]: any };
+		userLabels?: {[id: string]: string };
 	}
 
 
@@ -379,7 +379,7 @@ export namespace MyNS {
 	export interface MonitoredResource {
 
 		/** Required. Values for all of the labels listed in the associated monitored resource descriptor. For example, Compute Engine VM instances use the labels "project_id", "instance_id", and "zone". */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Required. The monitored resource type. This field must match the type field of a MonitoredResourceDescriptor object. For example, the type of a Compute Engine VM instance is gce_instance. */
 		type?: string;
@@ -433,7 +433,7 @@ export namespace MyNS {
 		filter?: string;
 
 		/** Optional. A map from a label key string to an extractor expression which is used to extract data from a log entry field and assign as the label value. Each label key specified in the LabelDescriptor must have an associated extractor expression in this map. The syntax of the extractor expression is the same as for the value_extractor field.The extracted value is converted to the type defined in the label descriptor. If the either the extraction or the type conversion fails, the label will have a default value. The default value for a string label is an empty string, for an integer label its 0, and for a boolean label its false.Note that there are upper bounds on the maximum number of labels and the number of active time series that are allowed in a project. */
-		labelExtractors?: {[id: string]: any };
+		labelExtractors?: {[id: string]: string };
 
 		/** Defines a metric type and its schema. Once a metric descriptor is created, deleting or altering it stops data collection and makes the metric type's existing data unusable. */
 		metricDescriptor?: MetricDescriptor;
@@ -825,7 +825,7 @@ export namespace MyNS {
 		entries?: Array<LogEntry>;
 
 		/** Optional. Default labels that are added to the labels field of all log entries in entries. If a log entry already has a label with the same key as a label in this parameter, then the log entry's label is not changed. See LogEntry. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Optional. A default log resource name that is assigned to all log entries in entries that do not specify a value for log_name:

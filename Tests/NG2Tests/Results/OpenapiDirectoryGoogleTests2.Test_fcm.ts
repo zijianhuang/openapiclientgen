@@ -20,7 +20,7 @@ export namespace MyNS {
 		 * Arbitrary key/value payload. If present, it will override
 		 * google.firebase.fcm.v1.Message.data.
 		 */
-		data?: {[id: string]: any };
+		data?: {[id: string]: string };
 
 		/**
 		 * If set to true, messages will be allowed to be delivered to the app while
@@ -553,7 +553,7 @@ export namespace MyNS {
 		 * headers](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns)
 		 * for supported headers, e.g. "apns-priority": "10".
 		 */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/**
 		 * APNs payload as a JSON object, including both `aps` dictionary and custom
@@ -611,7 +611,7 @@ export namespace MyNS {
 		 * Input only. Arbitrary key/value payload. The key should not be a reserved
 		 * word ("from", "message_type", or any word starting with "google" or "gcm").
 		 */
-		data?: {[id: string]: any };
+		data?: {[id: string]: string };
 
 		/** Platform independent options for features provided by the FCM SDKs. */
 		fcmOptions?: FcmOptions;
@@ -669,7 +669,7 @@ export namespace MyNS {
 		 * Arbitrary key/value payload. If present, it will override
 		 * google.firebase.fcm.v1.Message.data.
 		 */
-		data?: {[id: string]: any };
+		data?: {[id: string]: string };
 
 		/** Options for features provided by the FCM SDK for Web. */
 		fcmOptions?: WebpushFcmOptions;
@@ -679,7 +679,7 @@ export namespace MyNS {
 		 * [Webpush protocol](https://tools.ietf.org/html/rfc8030#section-5) for
 		 * supported headers, e.g. "TTL": "15".
 		 */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/**
 		 * Web Notification options as a JSON object. Supports Notification instance

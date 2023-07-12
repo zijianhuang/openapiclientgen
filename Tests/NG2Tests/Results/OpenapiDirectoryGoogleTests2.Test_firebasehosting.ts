@@ -211,7 +211,7 @@ export namespace MyNS {
 		glob?: string;
 
 		/** Required. The additional headers to add to the response. */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/**
 		 * The user-supplied RE2 regular expression to match against the request
@@ -343,7 +343,7 @@ export namespace MyNS {
 		finalizeUser?: ActingUser;
 
 		/** The labels used for extra metadata and/or filtering. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The unique identifier for a version, in the format:
@@ -662,7 +662,7 @@ export namespace MyNS {
 		 * the path from the version. Calculate a hash by Gzipping the file then
 		 * taking the SHA256 hash of the newly compressed file.
 		 */
-		files?: {[id: string]: any };
+		files?: {[id: string]: string };
 	}
 
 

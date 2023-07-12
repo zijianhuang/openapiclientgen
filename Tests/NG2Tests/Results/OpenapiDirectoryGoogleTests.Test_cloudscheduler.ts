@@ -64,7 +64,7 @@ export namespace MyNS {
 		 * In addition, some App Engine headers, which contain
 		 * job-specific information, are also be sent to the job handler.
 		 */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/**
 		 * The HTTP method to use for the request. PATCH and OPTIONS are not
@@ -221,7 +221,7 @@ export namespace MyNS {
 		 * * `X-AppEngine-*`: Google internal use only.
 		 * The total size of headers must be less than 80KB.
 		 */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/** Which HTTP method to use for the request. */
 		httpMethod?: AppEngineHttpTargetHttpMethod;
@@ -463,7 +463,7 @@ export namespace MyNS {
 		 * Pubsub message must contain either non-empty data, or at least one
 		 * attribute.
 		 */
-		attributes?: {[id: string]: any };
+		attributes?: {[id: string]: string };
 
 		/**
 		 * The message payload for PubsubMessage.
@@ -626,7 +626,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;
@@ -666,7 +666,7 @@ export namespace MyNS {
 		 * Attributes for this message. If this field is empty, the message must
 		 * contain non-empty data.
 		 */
-		attributes?: {[id: string]: any };
+		attributes?: {[id: string]: string };
 
 		/**
 		 * The message data field. If this field is empty, the message must contain
