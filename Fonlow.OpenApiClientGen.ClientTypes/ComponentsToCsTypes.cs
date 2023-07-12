@@ -749,7 +749,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return isNullable ? CreateNullableProperty(r.Item1, propertyName) : CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
 		}
 
-		static string GetDefaultValue(OpenApiSchema s)
+		string GetDefaultValue(OpenApiSchema s)
 		{
 			if (s.Default == null)
 			{
@@ -762,6 +762,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (s.Type == "string")
 					{
+						// Handle a blank default date/date-time otherwise the code generated is invalid DateOnly or DateTimeOffset name { get; set; } = "";
+						if (s.Format is "date" or "date-time") 
+						{
+							if (string.IsNullOrEmpty(stringValue.Value))
+							{
+								return null;
+							}
+						}
+
 						return "\"" + EscapeString(stringValue.Value) + "\"";
 					}
 
