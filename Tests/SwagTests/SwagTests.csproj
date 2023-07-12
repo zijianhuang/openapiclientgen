@@ -12,6 +12,7 @@
 		<None Remove="AureliaResults\*.txt" />
 		<None Remove="AxiosResults\*.txt" />
 		<None Remove="NG2Results\*.ts" />
+		<None Remove="NG2Results\*.txt" />
 		<None Remove="Results\*.txt" />
 		<None Remove="Results\Vsts\*.txt" />
 		<None Remove="SwagMock\*.json" />
@@ -33,6 +34,9 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="NG2Results\*.ts">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="NG2Results\*.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="Results\*.txt">
