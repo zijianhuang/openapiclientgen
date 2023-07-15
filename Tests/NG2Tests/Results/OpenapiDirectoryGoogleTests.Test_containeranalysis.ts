@@ -873,7 +873,7 @@ export namespace MyNS {
 		 * Special options applied to this build. This is a catch-all field where
 		 * build providers can enter any desired additional details.
 		 */
-		buildOptions?: {[id: string]: any };
+		buildOptions?: {[id: string]: string };
 
 		/** Version string of the builder at the time this build was executed. */
 		builderVersion?: string;
@@ -1006,7 +1006,7 @@ export namespace MyNS {
 		git?: GitSourceContext;
 
 		/** Labels with user defined metadata. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 

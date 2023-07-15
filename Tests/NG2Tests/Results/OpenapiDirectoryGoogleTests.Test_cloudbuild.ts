@@ -210,7 +210,7 @@ export namespace MyNS {
 		steps?: Array<BuildStep>;
 
 		/** Substitutions data for `Build` resource. */
-		substitutions?: {[id: string]: any };
+		substitutions?: {[id: string]: string };
 
 		/** Tags for annotation of a `Build`. These are not docker tags. */
 		tags?: Array<string>;
@@ -410,7 +410,7 @@ export namespace MyNS {
 		 * 64 KB in size. There can be at most 100 secret values across all of a
 		 * build's secrets.
 		 */
-		secretEnv?: {[id: string]: any };
+		secretEnv?: {[id: string]: string };
 	}
 
 
@@ -464,7 +464,7 @@ export namespace MyNS {
 		 * Substitutions to use in a triggered build.
 		 * Should only be used with RunBuildTrigger
 		 */
-		substitutions?: {[id: string]: any };
+		substitutions?: {[id: string]: string };
 
 		/**
 		 * Regex matching tags to build.
@@ -745,7 +745,7 @@ export namespace MyNS {
 		 * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
 		 * keys in bindings.
 		 */
-		substitutions?: {[id: string]: any };
+		substitutions?: {[id: string]: string };
 
 		/** Tags for annotation of a `BuildTrigger` */
 		tags?: Array<string>;

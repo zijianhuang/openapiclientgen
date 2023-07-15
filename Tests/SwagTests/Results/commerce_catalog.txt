@@ -1147,7 +1147,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ChangeRequest>(jsonReader);
 				}
 			}
@@ -1176,7 +1176,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ChangeRequest>(jsonReader);
 				}
 			}
@@ -1207,7 +1207,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GetChangeRequestsResponse>(jsonReader);
 				}
 			}
@@ -1238,7 +1238,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GetChangeRequestsResponse>(jsonReader);
 				}
 			}
@@ -1325,7 +1325,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Product>(jsonReader);
 				}
 			}
@@ -1354,7 +1354,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Product>(jsonReader);
 				}
 			}
@@ -1390,7 +1390,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProductSearchResponse>(jsonReader);
 				}
 			}
@@ -1426,7 +1426,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProductSearchResponse>(jsonReader);
 				}
 			}
@@ -1457,7 +1457,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProductMetadata>(jsonReader);
 				}
 			}
@@ -1488,7 +1488,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProductMetadata>(jsonReader);
 				}
 			}
@@ -1518,7 +1518,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProductMetadataForCategories>(jsonReader);
 				}
 			}
@@ -1548,7 +1548,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProductMetadataForCategories>(jsonReader);
 				}
 			}

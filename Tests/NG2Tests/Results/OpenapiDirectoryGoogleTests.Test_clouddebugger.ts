@@ -83,7 +83,7 @@ export namespace MyNS {
 		 * A set of custom breakpoint properties, populated by the agent, to be
 		 * displayed to the user.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Represents a location in the source code. */
 		location?: SourceLocation;
@@ -484,7 +484,7 @@ export namespace MyNS {
 		 * A set of custom debuggee properties, populated by the agent, to be
 		 * displayed to the user.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Project the debuggee is associated with.
@@ -534,7 +534,7 @@ export namespace MyNS {
 		context?: SourceContext;
 
 		/** Labels with user defined metadata. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 

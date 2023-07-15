@@ -62,7 +62,7 @@ export namespace MyNS {
 		notificationChannels?: Array<string>;
 
 		/** User-supplied key/value data to be used for organizing and identifying the AlertPolicy objects.The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter. */
-		userLabels?: {[id: string]: any };
+		userLabels?: {[id: string]: string };
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 		validity?: Status;
@@ -500,7 +500,7 @@ export namespace MyNS {
 	export interface MonitoredResource {
 
 		/** Required. Values for all of the labels listed in the associated monitored resource descriptor. For example, Compute Engine VM instances use the labels "project_id", "instance_id", and "zone". */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Required. The monitored resource type. This field must match the type field of a MonitoredResourceDescriptor object. For example, the type of a Compute Engine VM instance is gce_instance. For a list of types, see Monitoring resource types and Logging resource types. */
 		type?: string;
@@ -591,7 +591,7 @@ export namespace MyNS {
 		systemLabels?: {[id: string]: any };
 
 		/** Output only. A map of user-defined metadata labels. */
-		userLabels?: {[id: string]: any };
+		userLabels?: {[id: string]: string };
 	}
 
 
@@ -599,7 +599,7 @@ export namespace MyNS {
 	export interface Metric {
 
 		/** The set of label values that uniquely identify this metric. All labels listed in the MetricDescriptor must be assigned values. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** An existing metric type, see google.api.MetricDescriptor. For example, custom.googleapis.com/invoice/paid/amount. */
 		type?: string;
@@ -679,7 +679,7 @@ export namespace MyNS {
 	export interface DroppedLabels {
 
 		/** Map from label to its value, for all labels dropped in any aggregation. */
-		label?: {[id: string]: any };
+		label?: {[id: string]: string };
 	}
 
 
@@ -798,7 +798,7 @@ export namespace MyNS {
 		authInfo?: BasicAuthentication;
 
 		/** The list of headers to send as part of the Uptime check request. If two headers have the same key and different values, they should be entered as a single header, with the value being a comma-separated list of all the desired values as described at https://www.w3.org/Protocols/rfc2616/rfc2616.txt (page 31). Entering two separate headers with the same key in a Create call will cause the first to be overwritten by the second. The maximum number of headers allowed is 100. */
-		headers?: {[id: string]: any };
+		headers?: {[id: string]: string };
 
 		/** Boolean specifiying whether to encrypt the header information. Encryption should be specified for any headers related to authentication that you do not wish to be seen when retrieving the configuration. The server will be responsible for encrypting the headers. On Get/List calls, if mask_headers is set to true then the headers will be obscured with ******. */
 		maskHeaders?: boolean;
@@ -1127,7 +1127,7 @@ export namespace MyNS {
 		enabled?: boolean;
 
 		/** Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the NotificationChannelDescriptor.labels of the NotificationChannelDescriptor corresponding to the type field. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The full REST resource name for this channel. The format is:
@@ -1140,7 +1140,7 @@ export namespace MyNS {
 		type?: string;
 
 		/** User-supplied key/value data that does not need to conform to the corresponding NotificationChannelDescriptor's schema, unlike the labels field. This field is intended to be used for organizing and identifying the NotificationChannel objects.The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter. */
-		userLabels?: {[id: string]: any };
+		userLabels?: {[id: string]: string };
 
 		/** Indicates whether this channel has been verified or not. On a ListNotificationChannels or GetNotificationChannel operation, this field is expected to be populated.If the value is UNVERIFIED, then it indicates that the channel is non-functioning (it both requires verification and lacks verification); otherwise, it is assumed that the channel works.If the channel is neither VERIFIED nor UNVERIFIED, it implies that the channel is of a type that does not require verification or that this specific channel has been exempted from verification because it was created prior to verification being required for channels of this type.This field cannot be modified using a standard UpdateNotificationChannel operation. To change the value of this field, you must call VerifyNotificationChannel. */
 		verificationStatus?: NotificationChannelVerificationStatus;

@@ -175,7 +175,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** Additional parameters controlling delivery channel behavior. Optional. */
-		params?: {[id: string]: any };
+		params?: {[id: string]: string };
 
 		/** A Boolean value to indicate whether payload is wanted. Optional. */
 		payload?: boolean;

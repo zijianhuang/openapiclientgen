@@ -37,7 +37,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** User-provided labels, in key/value pairs. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The bucket's lifecycle configuration. See lifecycle management for more information. */
 		lifecycle?: BucketLifecycle;
@@ -403,7 +403,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** Additional parameters controlling delivery channel behavior. Optional. */
-		params?: {[id: string]: any };
+		params?: {[id: string]: string };
 
 		/** A Boolean value to indicate whether payload is wanted. Optional. */
 		payload?: boolean;
@@ -494,7 +494,7 @@ export namespace MyNS {
 		mediaLink?: string;
 
 		/** User-provided metadata, in key/value pairs. */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 
 		/** The version of the metadata for this object at this generation. Used for preconditions and for detecting changes in metadata. A metageneration number is only meaningful in the context of a particular generation of a particular object. */
 		metageneration?: string;
@@ -654,7 +654,7 @@ export namespace MyNS {
 	export interface Notification {
 
 		/** An optional list of additional attributes to attach to each Cloud PubSub message published for this notification subscription. */
-		custom_attributes?: {[id: string]: any };
+		custom_attributes?: {[id: string]: string };
 
 		/** HTTP 1.1 Entity tag for this subscription notification. */
 		etag?: string;

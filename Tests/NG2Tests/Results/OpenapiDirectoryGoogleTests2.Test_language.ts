@@ -95,7 +95,7 @@ export namespace MyNS {
 		 * and Knowledge Graph MID (`mid`), if they are available. For the metadata
 		 * associated with other entity types, see the Type table below.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 
 		/** The representative name for the entity. */
 		name?: string;

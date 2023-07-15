@@ -723,7 +723,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: "us-east1". */
 		locationId?: string;
@@ -810,7 +810,7 @@ export namespace MyNS {
 	export interface TrafficSplit {
 
 		/** Mapping from version IDs within the service to fractional (0.000, 1] allocations of traffic for that version. Each version can be specified only once, but some versions in the service may not have any traffic allocation. Services that have traffic allocated cannot be deleted until either the service is deleted or their traffic allocation is removed. Allocations must sum to 1. Up to two decimal place precision is supported for IP-based splits and up to three decimal places is supported for cookie-based splits. */
-		allocations?: {[id: string]: any };
+		allocations?: {[id: string]: number };
 
 		/** Mechanism used to determine which version a request is sent to. The traffic selection algorithm will be stable for either type until allocations are changed. */
 		shardBy?: TrafficSplitShardBy;
@@ -843,7 +843,7 @@ export namespace MyNS {
 		basicScaling?: BasicScaling;
 
 		/** Metadata settings that are supplied to this version to enable beta runtime features. */
-		betaSettings?: {[id: string]: any };
+		betaSettings?: {[id: string]: string };
 
 		/** Time that this version was created.@OutputOnly */
 		createTime?: string;
@@ -870,7 +870,7 @@ export namespace MyNS {
 		env?: string;
 
 		/** Environment variables available to the application.Only returned in GET requests if view=FULL is set. */
-		envVariables?: {[id: string]: any };
+		envVariables?: {[id: string]: string };
 
 		/** Custom static error pages. Limited to 10KB per page.Only returned in GET requests if view=FULL is set. */
 		errorHandlers?: Array<ErrorHandler>;
@@ -999,7 +999,7 @@ export namespace MyNS {
 		expiration?: string;
 
 		/** HTTP headers to use for all responses from these URLs. */
-		httpHeaders?: {[id: string]: any };
+		httpHeaders?: {[id: string]: string };
 
 		/** MIME type used to serve all files served by this handler.Defaults to file-specific MIME types, which are derived from each file's filename extension. */
 		mimeType?: string;

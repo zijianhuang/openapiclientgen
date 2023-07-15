@@ -31,7 +31,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** A map of maximum import sizes by MIME type, in bytes. */
-		maxImportSizes?: {[id: string]: any };
+		maxImportSizes?: {[id: string]: string };
 
 		/** The maximum upload size in bytes. */
 		maxUploadSize?: string;
@@ -279,7 +279,7 @@ export namespace MyNS {
 		 * A collection of arbitrary key-value pairs which are private to the requesting app.
 		 * Entries with null values are cleared in update and copy requests.
 		 */
-		appProperties?: {[id: string]: any };
+		appProperties?: {[id: string]: string };
 
 		/** Capabilities the current user has on this file. Each capability corresponds to a fine-grained action that a user may take. */
 		capabilities?: FileCapabilities;
@@ -303,7 +303,7 @@ export namespace MyNS {
 		explicitlyTrashed?: boolean;
 
 		/** Links for exporting Google Docs to specific formats. */
-		exportLinks?: {[id: string]: any };
+		exportLinks?: {[id: string]: string };
 
 		/** The final component of fullFileExtension. This is only available for files with binary content in Google Drive. */
 		fileExtension?: string;
@@ -397,7 +397,7 @@ export namespace MyNS {
 		 * A collection of arbitrary key-value pairs which are visible to all apps.
 		 * Entries with null values are cleared in update and copy requests.
 		 */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 
 		/** The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled. */
 		quotaBytesUsed?: string;
@@ -951,7 +951,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** Additional parameters controlling delivery channel behavior. Optional. */
-		params?: {[id: string]: any };
+		params?: {[id: string]: string };
 
 		/** A Boolean value to indicate whether payload is wanted. Optional. */
 		payload?: boolean;
@@ -1147,7 +1147,7 @@ export namespace MyNS {
 	export interface Revision {
 
 		/** Links for exporting Google Docs to specific formats. */
-		exportLinks?: {[id: string]: any };
+		exportLinks?: {[id: string]: string };
 
 		/** The ID of the revision. */
 		id?: string;

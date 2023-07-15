@@ -124,7 +124,7 @@ export namespace MyNS {
 		 * * No more than 64 labels can be associated with a given session.
 		 * See https://goo.gl/xmQnxf for more information on and examples of labels.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The name of the session. This is always system-assigned; values provided
@@ -1447,7 +1447,7 @@ export namespace MyNS {
 		 * as the string:  name + "_" + value  would prove problematic if we were to
 		 * allow "_" in a future release.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Required. A unique identifier for the instance, which cannot be changed
@@ -2337,7 +2337,7 @@ export namespace MyNS {
 		 * referenced `SCALAR` subquery may not necessarily be a direct child of
 		 * this node.
 		 */
-		subqueries?: {[id: string]: any };
+		subqueries?: {[id: string]: number };
 	}
 
 

@@ -169,6 +169,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Address line 1 for employee home address
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string AddressLine1 { get; set; }
@@ -180,12 +181,14 @@ namespace MyNS
 		
 		/// <summary>
 		/// Suburb for employee home address
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string City { get; set; }
 		
 		/// <summary>
 		/// PostCode for employee home address
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string PostCode { get; set; }
@@ -416,24 +419,28 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Xero identifier for LeaveType
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string LeaveTypeID { get; set; }
 		
 		/// <summary>
 		/// The description of the leave  (max length = 50)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Description { get; set; }
 		
 		/// <summary>
 		/// Start date of the leave (YYYY-MM-DD)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly StartDate { get; set; }
 		
 		/// <summary>
 		/// End date of the leave (YYYY-MM-DD)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly EndDate { get; set; }
@@ -681,24 +688,28 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique identifier (guid) of the employee
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string EmployeeID { get; set; }
 		
 		/// <summary>
 		/// The unique identifier (guid) of the "Statutory Sick Leave (non-pensionable)" pay item
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string LeaveTypeID { get; set; }
 		
 		/// <summary>
 		/// The date when the leave starts
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly StartDate { get; set; }
 		
 		/// <summary>
 		/// The date when the leave ends
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly EndDate { get; set; }
@@ -715,18 +726,21 @@ namespace MyNS
 		
 		/// <summary>
 		/// The days of the work week the employee is scheduled to work at the time the leave is taken
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string[] WorkPattern { get; set; }
 		
 		/// <summary>
 		/// Whether the sick leave was pregnancy related
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public bool IsPregnancyRelated { get; set; }
 		
 		/// <summary>
 		/// Whether the employee provided sufficent notice and documentation as required by the employer supporting the sick leave request
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public bool SufficientNotice { get; set; }
@@ -793,12 +807,14 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Xero identifier for leave type
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string LeaveTypeID { get; set; }
 		
 		/// <summary>
 		/// The schedule of accrual
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public EmployeeLeaveTypeScheduleOfAccrual ScheduleOfAccrual { get; set; }
@@ -956,42 +972,49 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the employer pension
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Category type of the employer pension
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public BenefitCategory Category { get; set; }
 		
 		/// <summary>
 		/// Xero identifier for Liability Account
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string LiabilityAccountId { get; set; }
 		
 		/// <summary>
 		/// Xero identifier for Expense Account
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string ExpenseAccountId { get; set; }
 		
 		/// <summary>
 		/// Standard amount of the employer pension
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public double StandardAmount { get; set; }
 		
 		/// <summary>
 		/// Percentage of gross of the employer pension
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public double Percentage { get; set; }
 		
 		/// <summary>
 		/// Calculation Type of the employer pension (FixedAmount or PercentageOfGross).
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public BenefitCalculationType CalculationType { get; set; }
@@ -1079,18 +1102,21 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the deduction
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string DeductionName { get; set; }
 		
 		/// <summary>
 		/// Deduction Category type
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public DeductionDeductionCategory DeductionCategory { get; set; }
 		
 		/// <summary>
 		/// Xero identifier for Liability Account
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string LiabilityAccountId { get; set; }
@@ -1117,6 +1143,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// determine the calculation type whether fixed amount or percentage of gross
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public BenefitCalculationType CalculationType { get; set; }
@@ -1303,6 +1330,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the earning order
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
@@ -1359,24 +1387,28 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the earning rate
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Indicates how an employee will be paid when taking this type of earning
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public EarningsRateEarningsType EarningsType { get; set; }
 		
 		/// <summary>
 		/// Indicates the type of the earning rate
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public EarningsRateRateType RateType { get; set; }
 		
 		/// <summary>
 		/// The type of units used to record earnings
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string TypeOfUnits { get; set; }
@@ -1388,6 +1420,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// The account that will be used for the earnings rate
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string ExpenseAccountID { get; set; }
@@ -1483,18 +1516,21 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the leave type
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Indicate that an employee will be paid when taking this type of leave
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public bool IsPaidLeave { get; set; }
 		
 		/// <summary>
 		/// Indicate that a balance for this leave type to be shown on the employee’s payslips
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public bool ShowOnPayslip { get; set; }
@@ -1551,12 +1587,14 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the reimbursement
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Xero unique identifier for the account used for the reimbursement
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string AccountID { get; set; }
@@ -1603,24 +1641,28 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Xero identifier for the Payroll Calandar that the Timesheet applies to
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string PayrollCalendarID { get; set; }
 		
 		/// <summary>
 		/// The Xero identifier for the Employee that the Timesheet is for
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string EmployeeID { get; set; }
 		
 		/// <summary>
 		/// The Start Date of the Timesheet period (YYYY-MM-DD)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly StartDate { get; set; }
 		
 		/// <summary>
 		/// The End Date of the Timesheet period (YYYY-MM-DD)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly EndDate { get; set; }
@@ -1663,12 +1705,14 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Date that this Timesheet Line is for (YYYY-MM-DD)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly Date { get; set; }
 		
 		/// <summary>
 		/// The Xero identifier for the Earnings Rate that the Timesheet is for
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string EarningsRateID { get; set; }
@@ -1680,6 +1724,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Number of Units of the Timesheet Line
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public double NumberOfUnits { get; set; }
@@ -1734,18 +1779,21 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the calendar
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// Type of the calendar
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public PayRunCalendarCalendarType CalendarType { get; set; }
 		
 		/// <summary>
 		/// Period start date of the calendar
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly PeriodStartDate { get; set; }
@@ -1757,6 +1805,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// Payment date of the calendar
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly PaymentDate { get; set; }
@@ -1814,6 +1863,7 @@ namespace MyNS
 		
 		/// <summary>
 		/// The payment method code
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public PaymentMethodPaymentMethod1 PaymentMethod1 { get; set; }
@@ -1836,18 +1886,21 @@ namespace MyNS
 		
 		/// <summary>
 		/// Bank account name (max length = 32)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string AccountName { get; set; }
 		
 		/// <summary>
 		/// Bank account number (digits only; max length = 8)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string AccountNumber { get; set; }
 		
 		/// <summary>
 		/// Bank account sort code (6 digits)
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string SortCode { get; set; }
@@ -1876,48 +1929,56 @@ namespace MyNS
 		
 		/// <summary>
 		/// Xero unique identifier for an earnings rate
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public string EarningsRateID { get; set; }
 		
 		/// <summary>
 		/// The Number of Units per week for the corresponding salary and wages
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public double NumberOfUnitsPerWeek { get; set; }
 		
 		/// <summary>
 		/// The rate of each unit for the corresponding salary and wages
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public double RatePerUnit { get; set; }
 		
 		/// <summary>
 		/// The Number of Units per day for the corresponding salary and wages
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public double NumberOfUnitsPerDay { get; set; }
 		
 		/// <summary>
 		/// The effective date of the corresponding salary and wages
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public System.DateOnly EffectiveFrom { get; set; }
 		
 		/// <summary>
 		/// The annual salary
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public double AnnualSalary { get; set; }
 		
 		/// <summary>
 		/// The current status of the corresponding salary and wages
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public SalaryAndWageStatus Status { get; set; }
 		
 		/// <summary>
 		/// The type of the payment of the corresponding salary and wages
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		public SalaryAndWagePaymentType PaymentType { get; set; }
@@ -2597,7 +2658,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Employees>(jsonReader);
 				}
 			}
@@ -2628,7 +2689,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Employees>(jsonReader);
 				}
 			}
@@ -2662,7 +2723,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeObject>(jsonReader);
 				}
 			}
@@ -2697,7 +2758,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeObject>(jsonReader);
 				}
 			}
@@ -2727,7 +2788,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeObject>(jsonReader);
 				}
 			}
@@ -2756,7 +2817,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeObject>(jsonReader);
 				}
 			}
@@ -2791,7 +2852,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeObject>(jsonReader);
 				}
 			}
@@ -2827,7 +2888,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeObject>(jsonReader);
 				}
 			}
@@ -2863,7 +2924,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmploymentObject>(jsonReader);
 				}
 			}
@@ -2899,7 +2960,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmploymentObject>(jsonReader);
 				}
 			}
@@ -2929,7 +2990,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeTaxObject>(jsonReader);
 				}
 			}
@@ -2958,7 +3019,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeTaxObject>(jsonReader);
 				}
 			}
@@ -2987,7 +3048,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeOpeningBalancesObject>(jsonReader);
 				}
 			}
@@ -3016,7 +3077,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeOpeningBalancesObject>(jsonReader);
 				}
 			}
@@ -3051,7 +3112,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeOpeningBalancesObject>(jsonReader);
 				}
 			}
@@ -3087,7 +3148,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeOpeningBalancesObject>(jsonReader);
 				}
 			}
@@ -3123,7 +3184,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeOpeningBalancesObject>(jsonReader);
 				}
 			}
@@ -3159,7 +3220,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeOpeningBalancesObject>(jsonReader);
 				}
 			}
@@ -3189,7 +3250,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaves>(jsonReader);
 				}
 			}
@@ -3218,7 +3279,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaves>(jsonReader);
 				}
 			}
@@ -3253,7 +3314,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveObject>(jsonReader);
 				}
 			}
@@ -3289,7 +3350,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveObject>(jsonReader);
 				}
 			}
@@ -3320,7 +3381,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveObject>(jsonReader);
 				}
 			}
@@ -3350,7 +3411,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveObject>(jsonReader);
 				}
 			}
@@ -3386,7 +3447,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveObject>(jsonReader);
 				}
 			}
@@ -3423,7 +3484,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveObject>(jsonReader);
 				}
 			}
@@ -3454,7 +3515,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveObject>(jsonReader);
 				}
 			}
@@ -3484,7 +3545,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveObject>(jsonReader);
 				}
 			}
@@ -3513,7 +3574,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveBalances>(jsonReader);
 				}
 			}
@@ -3542,7 +3603,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveBalances>(jsonReader);
 				}
 			}
@@ -3573,7 +3634,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeStatutoryLeaveBalanceObject>(jsonReader);
 				}
 			}
@@ -3604,7 +3665,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeStatutoryLeaveBalanceObject>(jsonReader);
 				}
 			}
@@ -3634,7 +3695,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeStatutoryLeavesSummaries>(jsonReader);
 				}
 			}
@@ -3664,7 +3725,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeStatutoryLeavesSummaries>(jsonReader);
 				}
 			}
@@ -3698,7 +3759,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeStatutorySickLeaveObject>(jsonReader);
 				}
 			}
@@ -3733,7 +3794,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeStatutorySickLeaveObject>(jsonReader);
 				}
 			}
@@ -3763,7 +3824,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeStatutorySickLeaveObject>(jsonReader);
 				}
 			}
@@ -3792,7 +3853,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeStatutorySickLeaveObject>(jsonReader);
 				}
 			}
@@ -3823,7 +3884,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<LeavePeriods>(jsonReader);
 				}
 			}
@@ -3854,7 +3915,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<LeavePeriods>(jsonReader);
 				}
 			}
@@ -3883,7 +3944,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveTypes>(jsonReader);
 				}
 			}
@@ -3912,7 +3973,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveTypes>(jsonReader);
 				}
 			}
@@ -3947,7 +4008,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveTypeObject>(jsonReader);
 				}
 			}
@@ -3983,7 +4044,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeeLeaveTypeObject>(jsonReader);
 				}
 			}
@@ -4013,7 +4074,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentMethodObject>(jsonReader);
 				}
 			}
@@ -4042,7 +4103,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentMethodObject>(jsonReader);
 				}
 			}
@@ -4077,7 +4138,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentMethodObject>(jsonReader);
 				}
 			}
@@ -4113,7 +4174,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PaymentMethodObject>(jsonReader);
 				}
 			}
@@ -4143,7 +4204,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeePayTemplateObject>(jsonReader);
 				}
 			}
@@ -4172,7 +4233,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeePayTemplateObject>(jsonReader);
 				}
 			}
@@ -4207,7 +4268,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsTemplateObject>(jsonReader);
 				}
 			}
@@ -4243,7 +4304,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsTemplateObject>(jsonReader);
 				}
 			}
@@ -4280,7 +4341,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsTemplateObject>(jsonReader);
 				}
 			}
@@ -4317,7 +4378,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsTemplateObject>(jsonReader);
 				}
 			}
@@ -4401,7 +4462,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeePayTemplates>(jsonReader);
 				}
 			}
@@ -4437,7 +4498,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EmployeePayTemplates>(jsonReader);
 				}
 			}
@@ -4467,7 +4528,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Benefits>(jsonReader);
 				}
 			}
@@ -4496,7 +4557,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Benefits>(jsonReader);
 				}
 			}
@@ -4530,7 +4591,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BenefitObject>(jsonReader);
 				}
 			}
@@ -4565,7 +4626,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BenefitObject>(jsonReader);
 				}
 			}
@@ -4595,7 +4656,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BenefitObject>(jsonReader);
 				}
 			}
@@ -4624,7 +4685,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<BenefitObject>(jsonReader);
 				}
 			}
@@ -4653,7 +4714,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Deductions>(jsonReader);
 				}
 			}
@@ -4682,7 +4743,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Deductions>(jsonReader);
 				}
 			}
@@ -4716,7 +4777,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DeductionObject>(jsonReader);
 				}
 			}
@@ -4751,7 +4812,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DeductionObject>(jsonReader);
 				}
 			}
@@ -4781,7 +4842,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DeductionObject>(jsonReader);
 				}
 			}
@@ -4810,7 +4871,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DeductionObject>(jsonReader);
 				}
 			}
@@ -4839,7 +4900,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsOrders>(jsonReader);
 				}
 			}
@@ -4868,7 +4929,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsOrders>(jsonReader);
 				}
 			}
@@ -4897,7 +4958,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsOrderObject>(jsonReader);
 				}
 			}
@@ -4926,7 +4987,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsOrderObject>(jsonReader);
 				}
 			}
@@ -4955,7 +5016,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsRates>(jsonReader);
 				}
 			}
@@ -4984,7 +5045,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsRates>(jsonReader);
 				}
 			}
@@ -5018,7 +5079,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsRateObject>(jsonReader);
 				}
 			}
@@ -5053,7 +5114,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsRateObject>(jsonReader);
 				}
 			}
@@ -5083,7 +5144,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsRateObject>(jsonReader);
 				}
 			}
@@ -5112,7 +5173,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<EarningsRateObject>(jsonReader);
 				}
 			}
@@ -5142,7 +5203,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<LeaveTypes>(jsonReader);
 				}
 			}
@@ -5172,7 +5233,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<LeaveTypes>(jsonReader);
 				}
 			}
@@ -5206,7 +5267,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<LeaveTypeObject>(jsonReader);
 				}
 			}
@@ -5241,7 +5302,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<LeaveTypeObject>(jsonReader);
 				}
 			}
@@ -5271,7 +5332,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<LeaveTypeObject>(jsonReader);
 				}
 			}
@@ -5300,7 +5361,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<LeaveTypeObject>(jsonReader);
 				}
 			}
@@ -5329,7 +5390,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Reimbursements>(jsonReader);
 				}
 			}
@@ -5358,7 +5419,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Reimbursements>(jsonReader);
 				}
 			}
@@ -5392,7 +5453,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReimbursementObject>(jsonReader);
 				}
 			}
@@ -5427,7 +5488,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReimbursementObject>(jsonReader);
 				}
 			}
@@ -5457,7 +5518,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReimbursementObject>(jsonReader);
 				}
 			}
@@ -5486,7 +5547,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReimbursementObject>(jsonReader);
 				}
 			}
@@ -5517,7 +5578,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Timesheets>(jsonReader);
 				}
 			}
@@ -5548,7 +5609,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Timesheets>(jsonReader);
 				}
 			}
@@ -5582,7 +5643,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetObject>(jsonReader);
 				}
 			}
@@ -5617,7 +5678,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetObject>(jsonReader);
 				}
 			}
@@ -5647,7 +5708,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetObject>(jsonReader);
 				}
 			}
@@ -5676,7 +5737,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetObject>(jsonReader);
 				}
 			}
@@ -5705,7 +5766,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetLine>(jsonReader);
 				}
 			}
@@ -5734,7 +5795,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetLine>(jsonReader);
 				}
 			}
@@ -5769,7 +5830,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetLineObject>(jsonReader);
 				}
 			}
@@ -5805,7 +5866,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetLineObject>(jsonReader);
 				}
 			}
@@ -5835,7 +5896,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetObject>(jsonReader);
 				}
 			}
@@ -5864,7 +5925,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetObject>(jsonReader);
 				}
 			}
@@ -5893,7 +5954,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetObject>(jsonReader);
 				}
 			}
@@ -5922,7 +5983,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetObject>(jsonReader);
 				}
 			}
@@ -5958,7 +6019,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetLineObject>(jsonReader);
 				}
 			}
@@ -5995,7 +6056,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetLineObject>(jsonReader);
 				}
 			}
@@ -6026,7 +6087,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetLine>(jsonReader);
 				}
 			}
@@ -6056,7 +6117,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TimesheetLine>(jsonReader);
 				}
 			}
@@ -6085,7 +6146,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunCalendars>(jsonReader);
 				}
 			}
@@ -6114,7 +6175,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunCalendars>(jsonReader);
 				}
 			}
@@ -6148,7 +6209,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunCalendarObject>(jsonReader);
 				}
 			}
@@ -6183,7 +6244,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunCalendarObject>(jsonReader);
 				}
 			}
@@ -6213,7 +6274,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunCalendarObject>(jsonReader);
 				}
 			}
@@ -6242,7 +6303,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunCalendarObject>(jsonReader);
 				}
 			}
@@ -6272,7 +6333,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalaryAndWages>(jsonReader);
 				}
 			}
@@ -6302,7 +6363,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalaryAndWages>(jsonReader);
 				}
 			}
@@ -6337,7 +6398,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalaryAndWageObject>(jsonReader);
 				}
 			}
@@ -6373,7 +6434,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalaryAndWageObject>(jsonReader);
 				}
 			}
@@ -6404,7 +6465,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalaryAndWages>(jsonReader);
 				}
 			}
@@ -6434,7 +6495,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalaryAndWages>(jsonReader);
 				}
 			}
@@ -6470,7 +6531,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalaryAndWageObject>(jsonReader);
 				}
 			}
@@ -6507,7 +6568,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<SalaryAndWageObject>(jsonReader);
 				}
 			}
@@ -6586,7 +6647,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRuns>(jsonReader);
 				}
 			}
@@ -6616,7 +6677,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRuns>(jsonReader);
 				}
 			}
@@ -6645,7 +6706,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunObject>(jsonReader);
 				}
 			}
@@ -6674,7 +6735,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunObject>(jsonReader);
 				}
 			}
@@ -6709,7 +6770,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunObject>(jsonReader);
 				}
 			}
@@ -6745,7 +6806,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayRunObject>(jsonReader);
 				}
 			}
@@ -6776,7 +6837,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Payslips>(jsonReader);
 				}
 			}
@@ -6806,7 +6867,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Payslips>(jsonReader);
 				}
 			}
@@ -6835,7 +6896,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayslipObject>(jsonReader);
 				}
 			}
@@ -6864,7 +6925,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<PayslipObject>(jsonReader);
 				}
 			}
@@ -6892,7 +6953,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Settings>(jsonReader);
 				}
 			}
@@ -6920,7 +6981,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Settings>(jsonReader);
 				}
 			}
@@ -6948,7 +7009,7 @@ namespace MyNS
 				var stream = await responseMessage.Content.ReadAsStreamAsync();
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TrackingCategories>(jsonReader);
 				}
 			}
@@ -6976,7 +7037,7 @@ namespace MyNS
 				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-				var serializer = new JsonSerializer();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TrackingCategories>(jsonReader);
 				}
 			}

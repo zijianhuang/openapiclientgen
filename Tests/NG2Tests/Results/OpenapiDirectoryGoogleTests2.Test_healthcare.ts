@@ -275,7 +275,7 @@ export namespace MyNS {
 		 * following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63}
 		 * No more than 64 labels can be associated with a given store.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The message type for this message. MSH-9.1. */
 		messageType?: string;
@@ -333,7 +333,7 @@ export namespace MyNS {
 		 * * (1[0].1, "HbA1c") denotes that the first component of the
 		 * first Instance of Field 1, which is repeated, has the value "HbA1c".
 		 */
-		fields?: {[id: string]: any };
+		fields?: {[id: string]: string };
 
 		/** A string that indicates the type of segment. For example, EVN or PID. */
 		segmentId?: string;
@@ -783,7 +783,7 @@ export namespace MyNS {
 		 * following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63}
 		 * No more than 64 labels can be associated with a given store.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. Resource name of the DICOM store, of the form
@@ -1119,7 +1119,7 @@ export namespace MyNS {
 		 * following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63}
 		 * No more than 64 labels can be associated with a given store.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. Resource name of the FHIR store, of the form
@@ -1566,7 +1566,7 @@ export namespace MyNS {
 		 * following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63}
 		 * No more than 64 labels can be associated with a given store.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. Resource name of the HL7v2 store, of the form
@@ -1874,7 +1874,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;

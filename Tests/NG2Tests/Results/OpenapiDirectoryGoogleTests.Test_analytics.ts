@@ -476,7 +476,7 @@ export namespace MyNS {
 	export interface Column {
 
 		/** Map of attribute name and value for this column. */
-		attributes?: {[id: string]: any };
+		attributes?: {[id: string]: string };
 
 		/** Column id. */
 		id?: string;
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 		totalResults?: number;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: any };
+		totalsForAllResults?: {[id: string]: string };
 	}
 
 	export interface GaDataColumnHeaders {
@@ -1837,7 +1837,7 @@ export namespace MyNS {
 		totalResults?: number;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: any };
+		totalsForAllResults?: {[id: string]: string };
 	}
 
 	export interface McfDataColumnHeaders {
@@ -2023,7 +2023,7 @@ export namespace MyNS {
 		totalResults?: number;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: any };
+		totalsForAllResults?: {[id: string]: string };
 	}
 
 	export interface RealtimeDataColumnHeaders {

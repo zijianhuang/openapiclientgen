@@ -146,7 +146,7 @@ export namespace MyNS {
 		 * See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
 		 * managing labels</a>.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Required. The subscription whose backlog the snapshot retains.
@@ -271,7 +271,7 @@ export namespace MyNS {
 		 * See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
 		 * managing labels</a>.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The name of the snapshot. */
 		name?: string;
@@ -338,7 +338,7 @@ export namespace MyNS {
 		 * See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
 		 * managing labels</a>.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * How long to retain unacknowledged messages in the subscription's backlog,
@@ -405,7 +405,7 @@ export namespace MyNS {
 		 * For example:
 		 * <pre><code>attributes { "x-goog-version": "v1" } </code></pre>
 		 */
-		attributes?: {[id: string]: any };
+		attributes?: {[id: string]: string };
 
 		/**
 		 * Contains information needed for generating an
@@ -508,7 +508,7 @@ export namespace MyNS {
 		 * See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
 		 * managing labels</a>.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 		messageStoragePolicy?: MessageStoragePolicy;
 
 		/**
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * Attributes for this message. If this field is empty, the message must
 		 * contain non-empty data.
 		 */
-		attributes?: {[id: string]: any };
+		attributes?: {[id: string]: string };
 
 		/**
 		 * The message data field. If this field is empty, the message must contain

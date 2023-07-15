@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		DemoCodeGen.json = DemoCodeGen.json
 		README.md = README.md
 		ReleaseBuild.bat = ReleaseBuild.bat
+		StartPetsApi.ps1 = StartPetsApi.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiClientGenCore.Axios", "OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj", "{B66919B1-86F7-4F44-B339-2BA9ABACC94B}"
@@ -62,7 +63,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoClientApiTextJson", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwagApiTestsTextJson", "Tests\SwagApiTestsTextJson\SwagApiTestsTextJson.csproj", "{EF4ED355-9EE6-40C7-B323-746122A838D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgBuild", "Tests\NgBuild\NgBuild.csproj", "{CCF86651-A0E0-4402-8BC9-1E94AC72E6D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgBuild", "Tests\NgBuild\NgBuild.csproj", "{CCF86651-A0E0-4402-8BC9-1E94AC72E6D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

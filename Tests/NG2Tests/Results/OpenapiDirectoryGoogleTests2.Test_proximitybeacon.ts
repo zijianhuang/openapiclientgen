@@ -143,7 +143,7 @@ export namespace MyNS {
 		 * version.
 		 * Optional.
 		 */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: string };
 
 		/**
 		 * Some beacons may require a user to provide an authorization key before

@@ -580,7 +580,7 @@ export namespace MyNS {
 		 * The resource labels for the cluster to use to annotate any related
 		 * Google Compute Engine resources.
 		 */
-		resourceLabels?: {[id: string]: any };
+		resourceLabels?: {[id: string]: string };
 
 		/** Configuration for exporting cluster resource usages. */
 		resourceUsageExportConfig?: ResourceUsageExportConfig;
@@ -1110,7 +1110,7 @@ export namespace MyNS {
 		 * For more information, including usage and the valid values, see:
 		 * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * The number of local SSD disks to be attached to the node.
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 		 * that each value's size must be less than or equal to 32 KB.
 		 * The total size of all keys and values must be less than 512 KB.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 
 		/**
 		 * Minimum CPU platform to be used by this instance. The instance may be
@@ -2280,7 +2280,7 @@ export namespace MyNS {
 		projectId?: string;
 
 		/** Required. The labels to set for that cluster. */
-		resourceLabels?: {[id: string]: any };
+		resourceLabels?: {[id: string]: string };
 
 		/**
 		 * Deprecated. The name of the Google Compute Engine

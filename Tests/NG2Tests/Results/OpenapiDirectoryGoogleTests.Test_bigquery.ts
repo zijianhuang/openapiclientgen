@@ -610,7 +610,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See Creating and Updating Dataset Labels for more information. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** [Output-only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch. */
 		lastModifiedTime?: string;
@@ -687,7 +687,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** The labels associated with this dataset. You can use these to organize and group your datasets. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The geographic location where the data resides. */
 		location?: string;
@@ -702,7 +702,7 @@ export namespace MyNS {
 		friendlyName?: string;
 
 		/** [Optional] The labels associated with this table. You can use these to organize and group your tables. This will only be used if the destination table is newly created. If the table already exists and labels are different than the current labels are provided, the job will fail. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 	}
 
 	export interface ErrorProto {
@@ -1146,7 +1146,7 @@ export namespace MyNS {
 		jobType?: string;
 
 		/** The labels associated with this job. You can use these to organize and group your jobs. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 		load?: JobConfigurationLoad;
 		query?: JobConfigurationQuery;
 	}
@@ -1770,7 +1770,7 @@ export namespace MyNS {
 		 * Label values are optional. Label keys must start with a letter and each
 		 * label in the list must have a different key.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Output only. The time when this model was last modified, in millisecs since the epoch. */
 		lastModifiedTime?: string;
@@ -1899,7 +1899,7 @@ export namespace MyNS {
 		 * Weights associated with each label class, for rebalancing the
 		 * training data. Only applicable for classification models.
 		 */
-		labelClassWeights?: {[id: string]: any };
+		labelClassWeights?: {[id: string]: number };
 
 		/** Learning rate in training. Used only for iterative training algorithms. */
 		learnRate?: number;
@@ -2262,7 +2262,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** [Output-only] The time when this table was last modified, in milliseconds since the epoch. */
 		lastModifiedTime?: string;
@@ -2412,7 +2412,7 @@ export namespace MyNS {
 		kind?: string;
 
 		/** The labels associated with this table. You can use these to organize and group your tables. */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 		rangePartitioning?: RangePartitioning;
 		tableReference?: TableReference;
 		timePartitioning?: TimePartitioning;

@@ -141,7 +141,7 @@ export namespace MyNS {
 		 * * Values have leading and trailing whitespace trimmed, remaining
 		 * characters must be between 1 - 4096 characters (inclusive)
 		 */
-		marks?: {[id: string]: any };
+		marks?: {[id: string]: string };
 
 		/**
 		 * The relative resource name of the SecurityMarks. See:
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * * Values have leading and trailing whitespace trimmed, remaining
 		 * characters must be between 1 - 4096 characters (inclusive)
 		 */
-		marks?: {[id: string]: any };
+		marks?: {[id: string]: string };
 
 		/**
 		 * The relative resource name of the SecurityMarks. See:

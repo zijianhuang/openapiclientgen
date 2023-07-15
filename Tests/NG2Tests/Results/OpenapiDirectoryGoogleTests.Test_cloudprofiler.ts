@@ -35,7 +35,7 @@ export namespace MyNS {
 		 * is "us-central1-a", an example of a region is "us-central1" or
 		 * "us-central".
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Project ID is the ID of a cloud project.
@@ -76,7 +76,7 @@ export namespace MyNS {
 		 * get merged with the deployment labels for the final data set.  See
 		 * documentation on deployment labels for validation rules and limits.
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Output only. Opaque, server-assigned, unique ID for this profile. */
 		name?: string;

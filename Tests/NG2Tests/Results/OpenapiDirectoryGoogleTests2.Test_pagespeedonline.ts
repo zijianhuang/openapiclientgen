@@ -309,7 +309,7 @@ export namespace MyNS {
 	export interface StackPack {
 
 		/** The stack pack advice strings. */
-		descriptions?: {[id: string]: any };
+		descriptions?: {[id: string]: string };
 
 		/** The stack pack icon data uri. */
 		iconDataURL?: string;

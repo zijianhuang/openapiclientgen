@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <Copyright>Copyright © Zijian Huang 2021</Copyright>
@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Tavis.UriTemplates" Version="1.1.1" />
+    <PackageReference Include="Tavis.UriTemplates" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>

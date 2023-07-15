@@ -481,7 +481,7 @@ export namespace MyNS {
 		 * are not queryable and should be preserved when modifying objects. More
 		 * info: http://kubernetes.io/docs/user-guide/annotations
 		 */
-		annotations?: {[id: string]: any };
+		annotations?: {[id: string]: string };
 
 		/**
 		 * (Optional)
@@ -595,7 +595,7 @@ export namespace MyNS {
 		 * and routes.
 		 * More info: http://kubernetes.io/docs/user-guide/labels
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Name must be unique within a namespace, within a Cloud Run region.
@@ -1361,7 +1361,7 @@ export namespace MyNS {
 		 * The values of the map is string form of the 'quantity' k8s type:
 		 * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
 		 */
-		limits?: {[id: string]: any };
+		limits?: {[id: string]: string };
 
 		/**
 		 * (Optional)
@@ -1374,7 +1374,7 @@ export namespace MyNS {
 		 * The values of the map is string form of the 'quantity' k8s type:
 		 * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
 		 */
-		requests?: {[id: string]: any };
+		requests?: {[id: string]: string };
 	}
 
 
@@ -1817,7 +1817,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;
@@ -2441,7 +2441,7 @@ export namespace MyNS {
 		 * base64 encoded string, representing the arbitrary (possibly non-string)
 		 * data value here. Described in https://tools.ietf.org/html/rfc4648#section-4
 		 */
-		data?: {[id: string]: any };
+		data?: {[id: string]: string };
 
 		/**
 		 * k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta is metadata that all
@@ -2456,7 +2456,7 @@ export namespace MyNS {
 		 * any existing values. It is never output when reading from the API.
 		 * +k8s:conversion-gen=false
 		 */
-		stringData?: {[id: string]: any };
+		stringData?: {[id: string]: string };
 
 		/** Used to facilitate programmatic handling of secret data. */
 		type?: string;

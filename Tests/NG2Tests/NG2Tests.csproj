@@ -1,395 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-
+    <TargetFramework>net7.0</TargetFramework>
     <IsPackable>false</IsPackable>
-
     <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="NG2BuildResults\air.ts" />
-    <None Remove="NG2BuildResults\mcp.ts" />
-    <None Remove="NG2BuildResults\Pet.ts" />
-    <None Remove="NG2BuildResults\Pet.txt" />
-    <None Remove="NG2BuildResults\PetDelete.ts" />
-    <None Remove="NG2BuildResults\PetDelete.txt" />
-    <None Remove="NG2BuildResults\PetStore.ts" />
-    <None Remove="NG2BuildResults\PetStore.txt" />
-    <None Remove="NG2BuildResults\PetStoreExpanded.ts" />
-    <None Remove="NG2BuildResults\PetStoreExpanded.txt" />
-    <None Remove="NG2BuildResults\redocOpenApi200501.ts" />
-    <None Remove="NG2BuildResults\redocOpenApi200501.txt" />
-    <None Remove="NG2BuildResults\sell_account.ts" />
-    <None Remove="NG2BuildResults\sell_account.txt" />
-    <None Remove="NG2BuildResults\sell_analytics.ts" />
-    <None Remove="NG2BuildResults\sell_analytics.txt" />
-    <None Remove="NG2BuildResults\sell_compliance.ts" />
-    <None Remove="NG2BuildResults\sell_compliance.txt" />
-    <None Remove="NG2BuildResults\sell_finances.ts" />
-    <None Remove="NG2BuildResults\sell_finances.txt" />
-    <None Remove="NG2BuildResults\sell_inventory.ts" />
-    <None Remove="NG2BuildResults\sell_inventory.txt" />
-    <None Remove="NG2BuildResults\sell_listing.ts" />
-    <None Remove="NG2BuildResults\sell_listing.txt" />
-    <None Remove="NG2BuildResults\sell_logistics.ts" />
-    <None Remove="NG2BuildResults\sell_logistics.txt" />
-    <None Remove="NG2BuildResults\sell_marketing.ts" />
-    <None Remove="NG2BuildResults\sell_marketing.txt" />
-    <None Remove="NG2BuildResults\sell_metadata.ts" />
-    <None Remove="NG2BuildResults\sell_metadata.txt" />
-    <None Remove="NG2BuildResults\sell_negotiation.ts" />
-    <None Remove="NG2BuildResults\sell_negotiation.txt" />
-    <None Remove="NG2BuildResults\sell_recommendation.ts" />
-    <None Remove="NG2BuildResults\sell_recommendation.txt" />
-    <None Remove="NG2BuildResults\Uspto.ts" />
-    <None Remove="NG2BuildResults\Uspto.txt" />
-    <None Remove="NG2BuildResults\ValuesPaths.ts" />
-    <None Remove="NG2BuildResults\ValuesPaths.txt" />
-    <None Remove="NG2BuildResults\xero-identity.ts" />
-    <None Remove="NG2BuildResults\xero-identity.txt" />
-    <None Remove="NG2BuildResults\xero-payroll-au.ts" />
-    <None Remove="NG2BuildResults\xero-payroll-au.txt" />
-    <None Remove="NG2BuildResults\xero-payroll-uk.ts" />
-    <None Remove="NG2BuildResults\xero-payroll-uk.txt" />
-    <None Remove="NG2BuildResults\xero_accounting.ts" />
-    <None Remove="NG2BuildResults\xero_accounting.txt" />
-    <None Remove="NG2BuildResults\xero_assets.ts" />
-    <None Remove="NG2BuildResults\xero_assets.txt" />
-    <None Remove="NG2BuildResults\xero_bankfeeds.ts" />
-    <None Remove="NG2BuildResults\xero_bankfeeds.txt" />
-    <None Remove="SwagMock\AirOne.yaml" />
-    <None Remove="SwagMock\buy_browse_v1_beta_oas3.json" />
-    <None Remove="SwagMock\buy_feed_v1_beta_oas3.json" />
-    <None Remove="SwagMock\buy_marketing_v1_beta_oas3.yaml" />
-    <None Remove="SwagMock\buy_marketplace_insights_v1_beta_oas3.yaml" />
-    <None Remove="SwagMock\buy_offer_v1_beta_oas3.yaml" />
-    <None Remove="SwagMock\buy_order_v1_beta_oas3.json" />
-    <None Remove="SwagMock\CasualEnum.json" />
-    <None Remove="SwagMock\commerce_catalog_v1_beta_oas3.json" />
-    <None Remove="SwagMock\commerce_identity_v1_oas3.json" />
-    <None Remove="SwagMock\commerce_taxonomy_v1_beta_oas3.json" />
-    <None Remove="SwagMock\commerce_translation_v1_oas3.json" />
-    <None Remove="SwagMock\CustomTypeArray.json" />
-    <None Remove="SwagMock\developer_analytics_v1_beta_oas3.json" />
-    <None Remove="SwagMock\Enum.json" />
-    <None Remove="SwagMock\IntEnum.json" />
-    <None Remove="SwagMock\mcp.yaml" />
-    <None Remove="SwagMock\mcp3.yaml" />
-    <None Remove="SwagMock\myswagger.json" />
-    <None Remove="SwagMock\PathItemValues.json" />
-    <None Remove="SwagMock\pet.json" />
-    <None Remove="SwagMock\pet.yaml" />
-    <None Remove="SwagMock\petBackup.yaml" />
-    <None Remove="SwagMock\petByNumbers.yaml" />
-    <None Remove="SwagMock\petByStatus.yaml" />
-    <None Remove="SwagMock\petByTags.yaml" />
-    <None Remove="SwagMock\PetDelete.json" />
-    <None Remove="SwagMock\PetDogCat.json" />
-    <None Remove="SwagMock\PetFindByStatus.json" />
-    <None Remove="SwagMock\petStore.yaml" />
-    <None Remove="SwagMock\petStoreExpanded.yaml" />
-    <None Remove="SwagMock\petTypes.json" />
-    <None Remove="SwagMock\redocOpenApi200501.json" />
-    <None Remove="SwagMock\Required.json" />
-    <None Remove="SwagMock\sell_account_v1_oas3.json" />
-    <None Remove="SwagMock\sell_analytics_v1_oas3.yaml" />
-    <None Remove="SwagMock\sell_compliance_v1_oas3.yaml" />
-    <None Remove="SwagMock\sell_finances_v1_oas3.yaml" />
-    <None Remove="SwagMock\sell_inventory_v1_oas3.yaml" />
-    <None Remove="SwagMock\sell_listing_v1_beta_oas3.yaml" />
-    <None Remove="SwagMock\sell_logistics_v1_oas3.json" />
-    <None Remove="SwagMock\sell_marketing_v1_oas3.json" />
-    <None Remove="SwagMock\sell_metadata_v1_oas3.json" />
-    <None Remove="SwagMock\sell_negotiation_v1_oas3.yaml" />
-    <None Remove="SwagMock\sell_recommendation_v1_oas3.yaml" />
-    <None Remove="SwagMock\SimpleOrder.json" />
-    <None Remove="SwagMock\SimplePet.json" />
-    <None Remove="SwagMock\SimplePetCat.json" />
-    <None Remove="SwagMock\StringArray.json" />
-    <None Remove="SwagMock\TypeAlias.json" />
-    <None Remove="SwagMock\TypeAlias2.json" />
-    <None Remove="SwagMock\uspto.yaml" />
-    <None Remove="SwagMock\ValuesPaths.json" />
-    <None Remove="SwagMock\xero-identity.yaml" />
-    <None Remove="SwagMock\xero-payroll-au.yaml" />
-    <None Remove="SwagMock\xero-payroll-uk.yaml" />
-    <None Remove="SwagMock\Xero-projects.yaml" />
-    <None Remove="SwagMock\xero_accounting.yaml" />
-    <None Remove="SwagMock\xero_assets.yaml" />
-    <None Remove="SwagMock\xero_bankfeeds.yaml" />
+    <None Remove="NG2BuildResults\*.ts" />
+    <None Remove="NG2BuildResults\*.txt" />
+    <None Remove="SwagMock\*.yaml" />
+    <None Remove="SwagMock\*.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="NG2BuildResults\air.ts">
+    <Content Include="NG2BuildResults\*.ts">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="NG2BuildResults\mcp.ts">
+    <Content Include="NG2BuildResults\*.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="NG2BuildResults\Pet.ts">
+	  <Content Include="SwagMock\*.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="NG2BuildResults\PetDelete.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\PetStore.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\PetStoreExpanded.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\redocOpenApi200501.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_account.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_analytics.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_compliance.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_finances.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_inventory.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_listing.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_logistics.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_marketing.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_metadata.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_negotiation.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\sell_recommendation.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\Uspto.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\ValuesPaths.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\xero-identity.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\xero-payroll-au.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\xero-payroll-uk.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\xero_accounting.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\xero_assets.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NG2BuildResults\xero_bankfeeds.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\AirOne.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\buy_browse_v1_beta_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\buy_feed_v1_beta_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\buy_marketing_v1_beta_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\buy_marketplace_insights_v1_beta_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\buy_offer_v1_beta_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\buy_order_v1_beta_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\CasualEnum.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\commerce_catalog_v1_beta_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\commerce_identity_v1_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\commerce_taxonomy_v1_beta_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\commerce_translation_v1_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\CustomTypeArray.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\developer_analytics_v1_beta_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\Enum.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\IntEnum.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\mcp.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\mcp3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\myswagger.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\PathItemValues.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\pet.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\pet.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\petBackup.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\petByNumbers.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\petByStatus.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\petByTags.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\PetDelete.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\PetDogCat.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\PetFindByStatus.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\petStore.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\petStoreExpanded.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\petTypes.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\redocOpenApi200501.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\Required.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_account_v1_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_analytics_v1_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_compliance_v1_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_finances_v1_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_inventory_v1_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_listing_v1_beta_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_logistics_v1_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_marketing_v1_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_metadata_v1_oas3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_negotiation_v1_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\sell_recommendation_v1_oas3.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\SimpleOrder.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\SimplePet.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\SimplePetCat.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\StringArray.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\TypeAlias.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\TypeAlias2.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\uspto.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\ValuesPaths.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\xero-identity.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\xero-payroll-au.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\xero-payroll-uk.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\Xero-projects.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\xero_accounting.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\xero_assets.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\xero_bankfeeds.yaml">
+    <Content Include="SwagMock\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
-    <PackageReference Include="xunit" Version="2.4.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="xunit" Version="2.5.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="3.1.2">
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

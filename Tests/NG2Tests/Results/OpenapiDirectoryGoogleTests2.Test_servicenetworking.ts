@@ -2051,7 +2051,7 @@ export namespace MyNS {
 		 * increased for the metric against which the quota limits are defined.
 		 * The value must not be negative.
 		 */
-		metricCosts?: {[id: string]: any };
+		metricCosts?: {[id: string]: string };
 
 		/**
 		 * Selects the methods to which this rule applies.
@@ -2345,7 +2345,7 @@ export namespace MyNS {
 		 * integer value that is the maximum number of requests allowed for the
 		 * specified unit. Currently only STANDARD is supported.
 		 */
-		values?: {[id: string]: any };
+		values?: {[id: string]: string };
 	}
 
 

@@ -3049,7 +3049,7 @@ export namespace MyNS {
 		 * * `"environment" : "production"`
 		 * * `"pipeline" : "etl"`
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * These are labels that each inspection request must include within their
@@ -3777,7 +3777,7 @@ export namespace MyNS {
 		 * * `"environment" : "production"`
 		 * * `"pipeline" : "etl"`
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** Confidence of how likely it is that the `info_type` is correct. */
 		likelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood;
@@ -3907,7 +3907,7 @@ export namespace MyNS {
 		 * * `"environment" : "production"`
 		 * * `"pipeline" : "etl"`
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/**
 		 * Offset of the row for tables. Populate if the row(s) being scanned are

@@ -574,7 +574,7 @@ export namespace MyNS {
 		 * A map from granularity key to example count for that key.
 		 * E.g. for hour_of_day `13` means 1pm, or for month_of_year `5` means May).
 		 */
-		buckets?: {[id: string]: any };
+		buckets?: {[id: string]: string };
 	}
 
 
@@ -1816,7 +1816,7 @@ export namespace MyNS {
 		 * at least that long as a relative value of video frame size will be
 		 * returned. Value in 0 to 1 range. Default is 0.
 		 */
-		params?: {[id: string]: any };
+		params?: {[id: string]: string };
 	}
 
 
@@ -1836,7 +1836,7 @@ export namespace MyNS {
 		 * `max_bounding_box_count` - (int64) At most that many bounding boxes per
 		 * frame could have been returned.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 	}
 
 
@@ -3413,7 +3413,7 @@ export namespace MyNS {
 		 * schema (columns' DataTypes) of the table the data is being imported
 		 * into. Allowed values: "1".
 		 */
-		params?: {[id: string]: any };
+		params?: {[id: string]: string };
 	}
 
 
@@ -3730,7 +3730,7 @@ export namespace MyNS {
 		 * `cpu_architecture` - (string) "x86_64" (default).
 		 * `gpu_architecture` - (string) "none" (default), "nvidia".
 		 */
-		params?: {[id: string]: any };
+		params?: {[id: string]: string };
 	}
 
 
@@ -4348,7 +4348,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: any };
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string;
@@ -5200,7 +5200,7 @@ export namespace MyNS {
 		 * should be populated in the returned TablesAnnotation.
 		 * The default is false.
 		 */
-		params?: {[id: string]: any };
+		params?: {[id: string]: string };
 
 		/** Example data used for training or prediction. */
 		payload?: ExamplePayload;
@@ -5225,7 +5225,7 @@ export namespace MyNS {
 		 * The sentiment_score shouldn't be confused with "score" or "magnitude"
 		 * from the previous Natural Language Sentiment Analysis API.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: string };
 
 		/**
 		 * Prediction result.
