@@ -4,12 +4,11 @@
     <TargetFramework>net7.0</TargetFramework>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
-    <Copyright>Copyright © Zijian Huang 2021</Copyright>
+    <Copyright>Copyright © Zijian Huang 2021-2023</Copyright>
     <Authors>Zijian Huang</Authors>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <Description>Shared component for plugins that generate TypeScript client API codes</Description>
-    <Version>2.0.0</Version>
+    <Version>2.5.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

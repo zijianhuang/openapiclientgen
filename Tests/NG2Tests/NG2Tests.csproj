@@ -29,6 +29,64 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="NG2BuildResults\air.ts" />
+    <Content Remove="NG2BuildResults\mcp.ts" />
+    <Content Remove="NG2BuildResults\Pet.ts" />
+    <Content Remove="NG2BuildResults\PetDelete.ts" />
+    <Content Remove="NG2BuildResults\PetStore.ts" />
+    <Content Remove="NG2BuildResults\PetStoreExpanded.ts" />
+    <Content Remove="NG2BuildResults\redocOpenApi200501.ts" />
+    <Content Remove="NG2BuildResults\sell_account.ts" />
+    <Content Remove="NG2BuildResults\sell_analytics.ts" />
+    <Content Remove="NG2BuildResults\sell_compliance.ts" />
+    <Content Remove="NG2BuildResults\sell_finances.ts" />
+    <Content Remove="NG2BuildResults\sell_inventory.ts" />
+    <Content Remove="NG2BuildResults\sell_listing.ts" />
+    <Content Remove="NG2BuildResults\sell_logistics.ts" />
+    <Content Remove="NG2BuildResults\sell_marketing.ts" />
+    <Content Remove="NG2BuildResults\sell_metadata.ts" />
+    <Content Remove="NG2BuildResults\sell_negotiation.ts" />
+    <Content Remove="NG2BuildResults\sell_recommendation.ts" />
+    <Content Remove="NG2BuildResults\Uspto.ts" />
+    <Content Remove="NG2BuildResults\ValuesPaths.ts" />
+    <Content Remove="NG2BuildResults\xero-identity.ts" />
+    <Content Remove="NG2BuildResults\xero-payroll-au.ts" />
+    <Content Remove="NG2BuildResults\xero-payroll-uk.ts" />
+    <Content Remove="NG2BuildResults\xero_accounting.ts" />
+    <Content Remove="NG2BuildResults\xero_assets.ts" />
+    <Content Remove="NG2BuildResults\xero_bankfeeds.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="NG2BuildResults\air.ts" />
+    <None Include="NG2BuildResults\mcp.ts" />
+    <None Include="NG2BuildResults\Pet.ts" />
+    <None Include="NG2BuildResults\PetDelete.ts" />
+    <None Include="NG2BuildResults\PetStore.ts" />
+    <None Include="NG2BuildResults\PetStoreExpanded.ts" />
+    <None Include="NG2BuildResults\redocOpenApi200501.ts" />
+    <None Include="NG2BuildResults\sell_account.ts" />
+    <None Include="NG2BuildResults\sell_analytics.ts" />
+    <None Include="NG2BuildResults\sell_compliance.ts" />
+    <None Include="NG2BuildResults\sell_finances.ts" />
+    <None Include="NG2BuildResults\sell_inventory.ts" />
+    <None Include="NG2BuildResults\sell_listing.ts" />
+    <None Include="NG2BuildResults\sell_logistics.ts" />
+    <None Include="NG2BuildResults\sell_marketing.ts" />
+    <None Include="NG2BuildResults\sell_metadata.ts" />
+    <None Include="NG2BuildResults\sell_negotiation.ts" />
+    <None Include="NG2BuildResults\sell_recommendation.ts" />
+    <None Include="NG2BuildResults\Uspto.ts" />
+    <None Include="NG2BuildResults\ValuesPaths.ts" />
+    <None Include="NG2BuildResults\xero-identity.ts" />
+    <None Include="NG2BuildResults\xero-payroll-au.ts" />
+    <None Include="NG2BuildResults\xero-payroll-uk.ts" />
+    <None Include="NG2BuildResults\xero_accounting.ts" />
+    <None Include="NG2BuildResults\xero_assets.ts" />
+    <None Include="NG2BuildResults\xero_bankfeeds.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
     <PackageReference Include="xunit" Version="2.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">

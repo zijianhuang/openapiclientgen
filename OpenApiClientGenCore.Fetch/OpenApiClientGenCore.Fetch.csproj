@@ -4,11 +4,11 @@
     <TargetFramework>net7.0</TargetFramework>
     <AssemblyName>Fonlow.OpenApiClientGen.Fetch</AssemblyName>
     <Authors>Zijian Huang</Authors>
-    <Copyright>Copyright © Zijian Huang 2020</Copyright>
+    <Copyright>Copyright © Zijian Huang 2020-2023</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>1.3</Version>
+    <Version>1.5</Version>
   </PropertyGroup>
 
   <ItemGroup>

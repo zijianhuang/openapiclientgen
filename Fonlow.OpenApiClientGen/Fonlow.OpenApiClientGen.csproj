@@ -10,10 +10,10 @@
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
-    <Copyright>Copyright © Zijian Huang 2021-2022</Copyright>
-    <Version>2.3.2</Version>
+    <Copyright>Copyright © Zijian Huang 2021-2023</Copyright>
+    <Version>2.5.0</Version>
     <PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
-    <PackageReleaseNotes>fixed ArrayAs for standard types #41</PackageReleaseNotes>
+    <PackageReleaseNotes>.NET 7</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
