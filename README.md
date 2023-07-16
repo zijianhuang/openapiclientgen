@@ -12,7 +12,7 @@ OpenApiClientGen is a .NET Core console app.
 
 **Prerequisites**
 
-* .NET 6.
+* .NET 7.
 
 **Remarks**
 
@@ -28,8 +28,11 @@ The plugin assemblies should be copied accordingly after a release build.
 
 ### Binary Download
 
-Download the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) and extract to a local folder.
+Download the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) and extract to a local folder. 
 
+If you are using Mac OS or Linux for development, you may use "dotnet publish", for example:
+
+`dotnet publish -r osx-x64 --output %target% --configuration release --self-contained false`
 
 ## Code Generation
 
