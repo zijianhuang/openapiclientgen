@@ -30,9 +30,24 @@ The plugin assemblies should be copied accordingly after a release build.
 
 Download the [zip files](https://github.com/zijianhuang/openapiclientgen/releases) and extract to a local folder. 
 
+#### MacOS
 If you are using Mac OS or Linux for development, you may use "dotnet publish", for example:
 
 `dotnet publish -r osx-x64 --output %target% --configuration release --self-contained false`
+
+Under folder "Fonlow.OpenApiClienGen", there are 2 batch files to build a release for MacOS:
+* BuildForMac.bat
+* BuildForMacSelfContained.bat
+
+On Mac, you may run 
+
+```dotnet Fonlow.OpenApiClientGen.dll my.yaml codegen.json```
+
+or 
+
+```./Fonlow.OpenApiClientGen my.yaml codegen.json```
+
+After running `chmod 755 Fonlow.OpenApiClientGen` once.
 
 ## Code Generation
 
